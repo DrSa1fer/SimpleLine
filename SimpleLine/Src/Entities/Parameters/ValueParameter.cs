@@ -7,8 +7,8 @@ namespace SimpleLineLibrary.Src.Entities.Parameters
     public class ValueParameter<T> : Parameter<T>
     {
         public ValueParameter
-            (string[] aliasses, IValueBinder<T> binder, bool isrequired = true, string defaultValue = "")
-            : base(aliasses, isrequired)
+            (string[] aliasses, IValueBinder<T> binder, string defaultValue = "")
+            : base(aliasses, defaultValue == "")
         {
             _binder = binder;
             DefaultValue = defaultValue;
