@@ -24,7 +24,7 @@ namespace SimpleLineLibrary
                     Console.WriteLine(x + y);
                 },
                 new IntParameter("--left", "-l"),
-                new ValueParameter<int>(new string[] { "--right", "-r" }, new IntBinder(), false, "32"));
+                new ValueParameter<int>(new string[] { "--right", "-r" }, new IntBinder(),"32"));
 
             simp.RegisterCommand(new Command("divive", "devive first number on second"))
                 .SetHandler((x, y) => {                    
