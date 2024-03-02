@@ -17,6 +17,10 @@ namespace SimpleLineLibrary.Src
             _commands.Add(command);
             return command;
         }
+        public Command RegisterCommand(string name, string helpInfo)
+        {
+            return RegisterCommand(new Command(name, helpInfo));
+        }
 
         public void Run(string[] args)
         {
