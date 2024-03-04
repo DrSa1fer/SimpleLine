@@ -1,4 +1,4 @@
-﻿namespace SimpleLineLibrary.Src.Utils.Binders.Impl
+﻿namespace SimpleLineLibrary.Src.Utils.Binders
 {
     public class StringBinder : IValueBinder<string>
     {

@@ -1,4 +1,4 @@
-﻿using SimpleLineLibrary.Src.Entities.Parameters;
+﻿using SimpleLineLibrary.Src.Entities.Parameters.Abs;
 
 namespace SimpleLineLibrary.Src.Entities.Commands
 {

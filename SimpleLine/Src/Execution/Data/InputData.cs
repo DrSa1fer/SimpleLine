@@ -1,4 +1,5 @@
 ﻿using SimpleLineLibrary.Src.Exceptions;
+using SimpleLineLibrary.Src.Exceptions.InputExceptions;
 
 namespace SimpleLineLibrary.Src.Execution
 {

@@ -12,21 +12,21 @@ namespace SimpleLineLibrary
         {                                   
             var simp = new SimpleLine();
 
-            simp.RegisterCommand(new Command("multiply", "multiply two numbers"))
+            simp.RegisterCommand("multiply", "multiply two numbers")
                 .SetHandler((x, y) => {
                     Console.WriteLine(x * y);
                 }, 
                 new IntParameter("--left", "-l"),
                 new IntParameter("--right", "-r"));
 
-            simp.RegisterCommand(new Command("sum", "sum two numbers"))
+            simp.RegisterCommand("sum", "sum two numbers")
                 .SetHandler((x, y) => {
                     Console.WriteLine(x + y);
                 },
                 new IntParameter("--left", "-l"),
-                new ValueParameter<int>(new string[] { "--right", "-r" }, new IntBinder(),"32"));
+                new ValueParameter<int>(new string[] { "--right", "-r" }, new IntBinder(),"32", true));
 
-            simp.RegisterCommand(new Command("divive", "devive first number on second"))
+            simp.RegisterCommand("divive", "devive first number on second")
                 .SetHandler((x, y) => {                    
                     Console.WriteLine(x / y);
                 },

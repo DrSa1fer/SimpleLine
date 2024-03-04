@@ -1,4 +1,4 @@
-﻿namespace SimpleLineLibrary.Src.Exceptions
+﻿namespace SimpleLineLibrary.Src.Exceptions.InputExceptions
 {
     [Serializable]
     public class InvalidInputException : Exception

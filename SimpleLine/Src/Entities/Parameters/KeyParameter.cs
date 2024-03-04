@@ -1,4 +1,6 @@
-﻿using SimpleLineLibrary.Src.Exceptions;
+﻿using SimpleLineLibrary.Src.Entities.Parameters.Abs;
+using SimpleLineLibrary.Src.Exceptions;
+using SimpleLineLibrary.Src.Exceptions.ParameterExceptions;
 using SimpleLineLibrary.Src.Execution;
 
 namespace SimpleLineLibrary.Src.Entities.Parameters
@@ -9,17 +11,17 @@ namespace SimpleLineLibrary.Src.Entities.Parameters
         {
         }
 
-        internal override bool GetValue(InputData data)
+        protected override bool OnWithoutValue()
         {
-            if(data.Items.Find(Aliasses.Contains) is not null)
-            {
-                if(MakeValuesFromData(data)?.Count > 0)
-                {
-                    throw new KeyValueException();
-                }
-                return true;
-            }
+            return true;
+        }
+        protected override bool OnNotFound()
+        {
             return false;
-        }   
+        }
+        protected override bool OnWithValue(string value)
+        {
+            throw new KeyWithValueException();
+        }
     }
 }
