@@ -22,10 +22,22 @@ namespace SimpleLineLibrary.Src
             return RegisterCommand(new Command(name, helpInfo));
         }
 
+        /// <include file='SimpleLine' path='[@name="s"]'/>
+        /// 
+        /// 
+        /// 
         public void Run(string[] args)
         {
-            var input = InputData.Make(args);
-            _commands.Find(x => x.Name == input.CommandName)?.Execute(input);
+            try
+            {
+                var input = InputData.Make(args);
+                _commands.Find(x => x.Name == input.CommandName)?.Execute(input);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+            }
         }
         public void Run()
         {

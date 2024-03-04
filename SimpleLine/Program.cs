@@ -1,5 +1,5 @@
 ﻿using SimpleLineLibrary.Src;
-using SimpleLineLibrary.Src.Entities.Commands;
+using SimpleLineLibrary.Src.Entities.Commands.Handler;
 using SimpleLineLibrary.Src.Entities.Parameters;
 using SimpleLineLibrary.Src.Entities.Parameters.Impl;
 using SimpleLineLibrary.Src.Utils.Binders;
@@ -8,34 +8,27 @@ namespace SimpleLineLibrary
 {
     internal class Program
     {
+       
         static void Main(string[] args)
         {                                   
             var simp = new SimpleLine();
 
-            simp.RegisterCommand("multiply", "multiply two numbers")
-                .SetHandler((x, y) => {
-                    Console.WriteLine(x * y);
-                }, 
-                new IntParameter("--left", "-l"),
-                new IntParameter("--right", "-r"));
 
-            simp.RegisterCommand("sum", "sum two numbers")
-                .SetHandler((x, y) => {
-                    Console.WriteLine(x + y);
-                },
-                new IntParameter("--left", "-l"),
-                new ValueParameter<int>(new string[] { "--right", "-r" }, new IntBinder(),"32", true));
+            var a = simp.RegisterCommand("sum", "");
 
-            simp.RegisterCommand("divive", "devive first number on second")
-                .SetHandler((x, y) => {                    
-                    Console.WriteLine(x / y);
-                },
-                new IntParameter("--left", "-l"),
-                new IntParameter("--right", "-r"));
+                a.SetHandler((left, right) =>
+            {
+                Console.WriteLine(left + right);
+                Console.WriteLine("Run");
+            },
+                new IntParameter(new string[] { "right", "r" }, "right operand"),
+                new IntParameter(new string[] { "left", "l"}, "left operand")
+            );
 
+            //simp.Run(new string[] {"a", "--n", "b"});
+            Console.WriteLine(a.ToString());
 
-            simp.Run(args);
-
+            simp.Run(new string[] {"sum", "--right", "10", "--left", "1", "9"});
             Console.ReadKey();
         }        
     }

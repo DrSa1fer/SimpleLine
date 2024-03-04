@@ -1,36 +1,36 @@
-﻿using SimpleLineLibrary.Src.Execution;
+﻿using SimpleLineLibrary.Src.Entities.Parameters.Info;
+using SimpleLineLibrary.Src.Execution;
 
 namespace SimpleLineLibrary.Src.Entities.Parameters.Abs
 {
     public abstract class Parameter<T>
     {
-        public Parameter(string[] aliasses, bool isrequired = true)
+        public Parameter(bool isrequired, string helpInfo)
         {
-            _aliasses = new(aliasses);
             IsRequired = isrequired;
+            ParameterInfo = new ParameterInfo(helpInfo);
         }
-
-        public IReadOnlySet<string> Aliasses => _aliasses;
         public bool IsRequired { get; }
-        protected string _value = "";
-
-
-        private readonly HashSet<string> _aliasses;
+        public ParameterInfo ParameterInfo { get; }
 
         internal T GetValue(InputData data)
         {            
-            var i = data.Items.FindIndex(Aliasses.Contains);
+            var i = GetIndex(data);
 
             if (i == -1)
             {
                 return OnNotFound();                               
             }
 
-            var items = data.Items;
+            var items = data.Items ?? new();
 
-            if (i + 1 == items.Count
-                | IsValueParameter(items[i + 1])
-                | IsKeyParameter(items[i + 1])) 
+            if (i + 1 >= items.Count)
+            {
+                return OnWithoutValue();
+            }
+            
+            if (IsValueParameter(items[i + 1])
+                | IsKeyParameter(items[i + 1]))
             {
                 return OnWithoutValue();
             }
@@ -38,6 +38,7 @@ namespace SimpleLineLibrary.Src.Entities.Parameters.Abs
             return OnWithValue(items[i + 1]);
         }
 
+        protected abstract int GetIndex(InputData data);
         protected abstract T OnNotFound();
         protected abstract T OnWithoutValue();
         protected abstract T OnWithValue(string value);
