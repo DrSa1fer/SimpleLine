@@ -1,0 +1,548 @@
+{
+  "source_base_path": "/home/danil/Projects/SimpleLine/Docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.API.CommandAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.API.CommandAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.API.HandlerAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.API.HandlerAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.API.ReflectionCommandFInder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.API.ReflectionCommandFInder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.API.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.API.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.EmptyRegionException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.EmptyRegionException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotClosedRegionException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotClosedRegionException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotOpenedRegionException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotOpenedRegionException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.ParseException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.ParseException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Core.Services.Parsing.StringParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Core.Services.Parsing.StringParser.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Core.Services.Parsing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Core.Services.Parsing.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Extensions.StringExtentions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Extensions.StringExtentions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Extensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Models.IGetInfo-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Models.IGetInfo-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Models.Info.BaseInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Models.Info.BaseInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Models.Info.CommandInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Models.Info.CommandInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Models.Info.HandlerInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Models.Info.HandlerInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Models.Info.IGetInfo-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Models.Info.IGetInfo-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Models.Info.KeyInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Models.Info.KeyInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Models.Info.ParameterInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Models.Info.ParameterInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Models.Info.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Models.Info.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Models.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Services.Invokation.Execution.Argument.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Services.Invokation.Execution.Argument.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Services.Invokation.Execution.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Services.Invokation.Execution.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Services.Parsing.EmptyRegionException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Services.Parsing.EmptyRegionException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Services.Parsing.NotClosedRegionException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Services.Parsing.NotClosedRegionException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Services.Parsing.NotOpenedRegionException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Services.Parsing.NotOpenedRegionException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Services.Parsing.ParseException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Services.Parsing.ParseException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Services.Parsing.StringParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Services.Parsing.StringParser.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Services.Parsing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Services.Parsing.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Settings.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Settings.Configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Settings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Settings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Setup.BaseOption-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Setup.BaseOption-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Setup.CommandBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Setup.CommandBuilder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Setup.CommandProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Setup.CommandProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Setup.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Setup.Configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Setup.Inject-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Setup.Inject-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Setup.Key.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Setup.Key.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Setup.Parameter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Setup.Parameter-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Setup.Reflection.CommandAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Setup.Reflection.CommandAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Setup.Reflection.HandlerAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Setup.Reflection.HandlerAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Setup.Reflection.ReflectionCommandFInder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Setup.Reflection.ReflectionCommandFInder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Setup.Reflection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Setup.Reflection.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Setup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Setup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.SimpleLine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.SimpleLine.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "docs/toc.json"
+        },
+        ".html": {
+          "relative_path": "docs/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

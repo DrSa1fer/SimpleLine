@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: SimpleLineLibrary.Services.Invokation.Execution
+  commentId: N:SimpleLineLibrary.Services.Invokation.Execution
+  id: SimpleLineLibrary.Services.Invokation.Execution
+  children:
+  - SimpleLineLibrary.Services.Invokation.Execution.Argument
+  langs:
+  - csharp
+  - vb
+  name: SimpleLineLibrary.Services.Invokation.Execution
+  nameWithType: SimpleLineLibrary.Services.Invokation.Execution
+  fullName: SimpleLineLibrary.Services.Invokation.Execution
+  type: Namespace
+  assemblies:
+  - SimpleLine
+references:
+- uid: SimpleLineLibrary.Services.Invokation.Execution.Argument
+  commentId: T:SimpleLineLibrary.Services.Invokation.Execution.Argument
+  href: SimpleLineLibrary.Services.Invokation.Execution.Argument.html
+  name: Argument
+  nameWithType: Argument
+  fullName: SimpleLineLibrary.Services.Invokation.Execution.Argument

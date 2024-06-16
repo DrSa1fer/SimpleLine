@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: SimpleLineLibrary.API
+  commentId: N:SimpleLineLibrary.API
+  id: SimpleLineLibrary.API
+  children:
+  - SimpleLineLibrary.API.CommandAttribute
+  - SimpleLineLibrary.API.HandlerAttribute
+  - SimpleLineLibrary.API.ReflectionCommandFInder
+  langs:
+  - csharp
+  - vb
+  name: SimpleLineLibrary.API
+  nameWithType: SimpleLineLibrary.API
+  fullName: SimpleLineLibrary.API
+  type: Namespace
+  assemblies:
+  - SimpleLine
+references:
+- uid: SimpleLineLibrary.API.CommandAttribute
+  commentId: T:SimpleLineLibrary.API.CommandAttribute
+  href: SimpleLineLibrary.API.CommandAttribute.html
+  name: CommandAttribute
+  nameWithType: CommandAttribute
+  fullName: SimpleLineLibrary.API.CommandAttribute
+- uid: SimpleLineLibrary.API.HandlerAttribute
+  commentId: T:SimpleLineLibrary.API.HandlerAttribute
+  href: SimpleLineLibrary.API.HandlerAttribute.html
+  name: HandlerAttribute
+  nameWithType: HandlerAttribute
+  fullName: SimpleLineLibrary.API.HandlerAttribute
+- uid: SimpleLineLibrary.API.ReflectionCommandFInder
+  commentId: T:SimpleLineLibrary.API.ReflectionCommandFInder
+  href: SimpleLineLibrary.API.ReflectionCommandFInder.html
+  name: ReflectionCommandFInder
+  nameWithType: ReflectionCommandFInder
+  fullName: SimpleLineLibrary.API.ReflectionCommandFInder

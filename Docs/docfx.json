@@ -1,0 +1,58 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "../SimpleLine",
+          "files": [
+            "**/*.csproj"
+          ]
+        }
+      ],
+      "dest": "api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ],
+        "exclude": [
+          "_site/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "output": "_site",
+    
+    "template": [
+      "default",
+      "modern",
+      "templates/material"
+    ]
+    
+    ,
+    "globalMetadata": {
+      "_appLogoPath": "",
+      "_appName": "",
+      "_appTitle": "SimpleLine",
+      "_appFooter": "@ 2024 Danil Kucherenko",
+      "_enableSearch": true,
+      "pdf": true
+    },
+
+    "markdownEngineProperties": {
+      "markdigExtensions": [
+          "Abbreviations",
+          "Footnotes"
+      ]
+    }
+  }
+}

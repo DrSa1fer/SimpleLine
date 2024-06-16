@@ -1,0 +1,105 @@
+### YamlMime:ManagedReference
+items:
+- uid: SimpleLineLibrary.Models.IGetInfo`1
+  commentId: T:SimpleLineLibrary.Models.IGetInfo`1
+  id: IGetInfo`1
+  parent: SimpleLineLibrary.Models
+  children:
+  - SimpleLineLibrary.Models.IGetInfo`1.GetInfo
+  langs:
+  - csharp
+  - vb
+  name: IGetInfo<T>
+  nameWithType: IGetInfo<T>
+  fullName: SimpleLineLibrary.Models.IGetInfo<T>
+  type: Interface
+  source:
+    remote:
+      path: SimpleLine/Models/_IGetInfo.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: IGetInfo
+    path: ../SimpleLine/Models/_IGetInfo.cs
+    startLine: 4
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Models
+  syntax:
+    content: 'public interface IGetInfo<T> where T : BaseInfo'
+    typeParameters:
+    - id: T
+    content.vb: Public Interface IGetInfo(Of T As BaseInfo)
+  nameWithType.vb: IGetInfo(Of T)
+  fullName.vb: SimpleLineLibrary.Models.IGetInfo(Of T)
+  name.vb: IGetInfo(Of T)
+- uid: SimpleLineLibrary.Models.IGetInfo`1.GetInfo
+  commentId: M:SimpleLineLibrary.Models.IGetInfo`1.GetInfo
+  id: GetInfo
+  parent: SimpleLineLibrary.Models.IGetInfo`1
+  langs:
+  - csharp
+  - vb
+  name: GetInfo()
+  nameWithType: IGetInfo<T>.GetInfo()
+  fullName: SimpleLineLibrary.Models.IGetInfo<T>.GetInfo()
+  type: Method
+  source:
+    remote:
+      path: SimpleLine/Models/_IGetInfo.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: GetInfo
+    path: ../SimpleLine/Models/_IGetInfo.cs
+    startLine: 6
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Models
+  syntax:
+    content: T GetInfo()
+    return:
+      type: '{T}'
+    content.vb: Function GetInfo() As T
+  overload: SimpleLineLibrary.Models.IGetInfo`1.GetInfo*
+  nameWithType.vb: IGetInfo(Of T).GetInfo()
+  fullName.vb: SimpleLineLibrary.Models.IGetInfo(Of T).GetInfo()
+references:
+- uid: SimpleLineLibrary.Models
+  commentId: N:SimpleLineLibrary.Models
+  href: SimpleLineLibrary.html
+  name: SimpleLineLibrary.Models
+  nameWithType: SimpleLineLibrary.Models
+  fullName: SimpleLineLibrary.Models
+  spec.csharp:
+  - uid: SimpleLineLibrary
+    name: SimpleLineLibrary
+    href: SimpleLineLibrary.html
+  - name: .
+  - uid: SimpleLineLibrary.Models
+    name: Models
+    href: SimpleLineLibrary.Models.html
+  spec.vb:
+  - uid: SimpleLineLibrary
+    name: SimpleLineLibrary
+    href: SimpleLineLibrary.html
+  - name: .
+  - uid: SimpleLineLibrary.Models
+    name: Models
+    href: SimpleLineLibrary.Models.html
+- uid: SimpleLineLibrary.Models.IGetInfo`1.GetInfo*
+  commentId: Overload:SimpleLineLibrary.Models.IGetInfo`1.GetInfo
+  href: SimpleLineLibrary.Models.IGetInfo-1.html#SimpleLineLibrary_Models_IGetInfo_1_GetInfo
+  name: GetInfo
+  nameWithType: IGetInfo<T>.GetInfo
+  fullName: SimpleLineLibrary.Models.IGetInfo<T>.GetInfo
+  nameWithType.vb: IGetInfo(Of T).GetInfo
+  fullName.vb: SimpleLineLibrary.Models.IGetInfo(Of T).GetInfo
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T

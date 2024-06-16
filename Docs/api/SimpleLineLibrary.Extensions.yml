@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: SimpleLineLibrary.Extensions
+  commentId: N:SimpleLineLibrary.Extensions
+  id: SimpleLineLibrary.Extensions
+  children:
+  - SimpleLineLibrary.Extensions.StringExtentions
+  langs:
+  - csharp
+  - vb
+  name: SimpleLineLibrary.Extensions
+  nameWithType: SimpleLineLibrary.Extensions
+  fullName: SimpleLineLibrary.Extensions
+  type: Namespace
+  assemblies:
+  - SimpleLine
+references:
+- uid: SimpleLineLibrary.Extensions.StringExtentions
+  commentId: T:SimpleLineLibrary.Extensions.StringExtentions
+  href: SimpleLineLibrary.Extensions.StringExtentions.html
+  name: StringExtentions
+  nameWithType: StringExtentions
+  fullName: SimpleLineLibrary.Extensions.StringExtentions

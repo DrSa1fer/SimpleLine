@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: SimpleLineLibrary
+  commentId: N:SimpleLineLibrary
+  id: SimpleLineLibrary
+  children:
+  - SimpleLineLibrary.SimpleLine
+  langs:
+  - csharp
+  - vb
+  name: SimpleLineLibrary
+  nameWithType: SimpleLineLibrary
+  fullName: SimpleLineLibrary
+  type: Namespace
+  assemblies:
+  - SimpleLine
+references:
+- uid: SimpleLineLibrary.SimpleLine
+  commentId: T:SimpleLineLibrary.SimpleLine
+  href: SimpleLineLibrary.SimpleLine.html
+  name: SimpleLine
+  nameWithType: SimpleLine
+  fullName: SimpleLineLibrary.SimpleLine

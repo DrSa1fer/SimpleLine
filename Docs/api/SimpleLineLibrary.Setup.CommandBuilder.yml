@@ -1,0 +1,1517 @@
+### YamlMime:ManagedReference
+items:
+- uid: SimpleLineLibrary.Setup.CommandBuilder
+  commentId: T:SimpleLineLibrary.Setup.CommandBuilder
+  id: CommandBuilder
+  parent: SimpleLineLibrary.Setup
+  children:
+  - SimpleLineLibrary.Setup.CommandBuilder.SetDescription(System.String)
+  - SimpleLineLibrary.Setup.CommandBuilder.WithGetInfo(System.Action{SimpleLineLibrary.Models.Info.CommandInfo},SimpleLineLibrary.Setup.Key)
+  - SimpleLineLibrary.Setup.CommandBuilder.WithHandler(System.Action,SimpleLineLibrary.Setup.Key[])
+  - SimpleLineLibrary.Setup.CommandBuilder.WithHandler``1(System.Action{``0},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.Key[])
+  - SimpleLineLibrary.Setup.CommandBuilder.WithHandler``2(System.Action{``0,``1},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.Key[])
+  - SimpleLineLibrary.Setup.CommandBuilder.WithHandler``3(System.Action{``0,``1,``2},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.Key[])
+  - SimpleLineLibrary.Setup.CommandBuilder.WithHandler``4(System.Action{``0,``1,``2,``3},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.BaseOption{``3},SimpleLineLibrary.Setup.Key[])
+  - SimpleLineLibrary.Setup.CommandBuilder.WithHandler``5(System.Action{``0,``1,``2,``3,``4},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.BaseOption{``3},SimpleLineLibrary.Setup.BaseOption{``4},SimpleLineLibrary.Setup.Key[])
+  - SimpleLineLibrary.Setup.CommandBuilder.WithHandler``6(System.Action{``0,``1,``2,``3,``4,``5},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.BaseOption{``3},SimpleLineLibrary.Setup.BaseOption{``4},SimpleLineLibrary.Setup.BaseOption{``5},SimpleLineLibrary.Setup.Key[])
+  langs:
+  - csharp
+  - vb
+  name: CommandBuilder
+  nameWithType: CommandBuilder
+  fullName: SimpleLineLibrary.Setup.CommandBuilder
+  type: Class
+  source:
+    remote:
+      path: SimpleLine/Setup/CommandBuilder.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: CommandBuilder
+    path: ../SimpleLine/Setup/CommandBuilder.cs
+    startLine: 5
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Setup
+  syntax:
+    content: public class CommandBuilder
+    content.vb: Public Class CommandBuilder
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: SimpleLineLibrary.Setup.CommandBuilder.SetDescription(System.String)
+  commentId: M:SimpleLineLibrary.Setup.CommandBuilder.SetDescription(System.String)
+  id: SetDescription(System.String)
+  parent: SimpleLineLibrary.Setup.CommandBuilder
+  langs:
+  - csharp
+  - vb
+  name: SetDescription(string)
+  nameWithType: CommandBuilder.SetDescription(string)
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.SetDescription(string)
+  type: Method
+  source:
+    remote:
+      path: SimpleLine/Setup/CommandBuilder.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: SetDescription
+    path: ../SimpleLine/Setup/CommandBuilder.cs
+    startLine: 14
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Setup
+  syntax:
+    content: public CommandBuilder SetDescription(string desc)
+    parameters:
+    - id: desc
+      type: System.String
+    return:
+      type: SimpleLineLibrary.Setup.CommandBuilder
+    content.vb: Public Function SetDescription(desc As String) As CommandBuilder
+  overload: SimpleLineLibrary.Setup.CommandBuilder.SetDescription*
+  nameWithType.vb: CommandBuilder.SetDescription(String)
+  fullName.vb: SimpleLineLibrary.Setup.CommandBuilder.SetDescription(String)
+  name.vb: SetDescription(String)
+- uid: SimpleLineLibrary.Setup.CommandBuilder.WithHandler(System.Action,SimpleLineLibrary.Setup.Key[])
+  commentId: M:SimpleLineLibrary.Setup.CommandBuilder.WithHandler(System.Action,SimpleLineLibrary.Setup.Key[])
+  id: WithHandler(System.Action,SimpleLineLibrary.Setup.Key[])
+  parent: SimpleLineLibrary.Setup.CommandBuilder
+  langs:
+  - csharp
+  - vb
+  name: WithHandler(Action, params Key[])
+  nameWithType: CommandBuilder.WithHandler(Action, params Key[])
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.WithHandler(System.Action, params SimpleLineLibrary.Setup.Key[])
+  type: Method
+  source:
+    remote:
+      path: SimpleLine/Setup/CommandBuilder.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: WithHandler
+    path: ../SimpleLine/Setup/CommandBuilder.cs
+    startLine: 31
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Setup
+  summary: Hello world
+  example: []
+  syntax:
+    content: public CommandBuilder WithHandler(Action action, params Key[] keys)
+    parameters:
+    - id: action
+      type: System.Action
+      description: ''
+    - id: keys
+      type: SimpleLineLibrary.Setup.Key[]
+      description: ''
+    return:
+      type: SimpleLineLibrary.Setup.CommandBuilder
+      description: ''
+    content.vb: Public Function WithHandler(action As Action, ParamArray keys As Key()) As CommandBuilder
+  overload: SimpleLineLibrary.Setup.CommandBuilder.WithHandler*
+  nameWithType.vb: CommandBuilder.WithHandler(Action, ParamArray Key())
+  fullName.vb: SimpleLineLibrary.Setup.CommandBuilder.WithHandler(System.Action, ParamArray SimpleLineLibrary.Setup.Key())
+  name.vb: WithHandler(Action, ParamArray Key())
+- uid: SimpleLineLibrary.Setup.CommandBuilder.WithHandler``1(System.Action{``0},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.Key[])
+  commentId: M:SimpleLineLibrary.Setup.CommandBuilder.WithHandler``1(System.Action{``0},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.Key[])
+  id: WithHandler``1(System.Action{``0},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.Key[])
+  parent: SimpleLineLibrary.Setup.CommandBuilder
+  langs:
+  - csharp
+  - vb
+  name: WithHandler<T1>(Action<T1>, BaseOption<T1>, params Key[])
+  nameWithType: CommandBuilder.WithHandler<T1>(Action<T1>, BaseOption<T1>, params Key[])
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.WithHandler<T1>(System.Action<T1>, SimpleLineLibrary.Setup.BaseOption<T1>, params SimpleLineLibrary.Setup.Key[])
+  type: Method
+  source:
+    remote:
+      path: SimpleLine/Setup/CommandBuilder.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: WithHandler
+    path: ../SimpleLine/Setup/CommandBuilder.cs
+    startLine: 44
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Setup
+  syntax:
+    content: public CommandBuilder WithHandler<T1>(Action<T1> action, BaseOption<T1> p1, params Key[] keys)
+    parameters:
+    - id: action
+      type: System.Action{{T1}}
+    - id: p1
+      type: SimpleLineLibrary.Setup.BaseOption{{T1}}
+    - id: keys
+      type: SimpleLineLibrary.Setup.Key[]
+    typeParameters:
+    - id: T1
+    return:
+      type: SimpleLineLibrary.Setup.CommandBuilder
+    content.vb: Public Function WithHandler(Of T1)(action As Action(Of T1), p1 As BaseOption(Of T1), ParamArray keys As Key()) As CommandBuilder
+  overload: SimpleLineLibrary.Setup.CommandBuilder.WithHandler*
+  nameWithType.vb: CommandBuilder.WithHandler(Of T1)(Action(Of T1), BaseOption(Of T1), ParamArray Key())
+  fullName.vb: SimpleLineLibrary.Setup.CommandBuilder.WithHandler(Of T1)(System.Action(Of T1), SimpleLineLibrary.Setup.BaseOption(Of T1), ParamArray SimpleLineLibrary.Setup.Key())
+  name.vb: WithHandler(Of T1)(Action(Of T1), BaseOption(Of T1), ParamArray Key())
+- uid: SimpleLineLibrary.Setup.CommandBuilder.WithHandler``2(System.Action{``0,``1},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.Key[])
+  commentId: M:SimpleLineLibrary.Setup.CommandBuilder.WithHandler``2(System.Action{``0,``1},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.Key[])
+  id: WithHandler``2(System.Action{``0,``1},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.Key[])
+  parent: SimpleLineLibrary.Setup.CommandBuilder
+  langs:
+  - csharp
+  - vb
+  name: WithHandler<T1, T2>(Action<T1, T2>, BaseOption<T1>, BaseOption<T2>, params Key[])
+  nameWithType: CommandBuilder.WithHandler<T1, T2>(Action<T1, T2>, BaseOption<T1>, BaseOption<T2>, params Key[])
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.WithHandler<T1, T2>(System.Action<T1, T2>, SimpleLineLibrary.Setup.BaseOption<T1>, SimpleLineLibrary.Setup.BaseOption<T2>, params SimpleLineLibrary.Setup.Key[])
+  type: Method
+  source:
+    remote:
+      path: SimpleLine/Setup/CommandBuilder.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: WithHandler
+    path: ../SimpleLine/Setup/CommandBuilder.cs
+    startLine: 65
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Setup
+  syntax:
+    content: public CommandBuilder WithHandler<T1, T2>(Action<T1, T2> action, BaseOption<T1> p1, BaseOption<T2> p2, params Key[] keys)
+    parameters:
+    - id: action
+      type: System.Action{{T1},{T2}}
+    - id: p1
+      type: SimpleLineLibrary.Setup.BaseOption{{T1}}
+    - id: p2
+      type: SimpleLineLibrary.Setup.BaseOption{{T2}}
+    - id: keys
+      type: SimpleLineLibrary.Setup.Key[]
+    typeParameters:
+    - id: T1
+    - id: T2
+    return:
+      type: SimpleLineLibrary.Setup.CommandBuilder
+    content.vb: Public Function WithHandler(Of T1, T2)(action As Action(Of T1, T2), p1 As BaseOption(Of T1), p2 As BaseOption(Of T2), ParamArray keys As Key()) As CommandBuilder
+  overload: SimpleLineLibrary.Setup.CommandBuilder.WithHandler*
+  nameWithType.vb: CommandBuilder.WithHandler(Of T1, T2)(Action(Of T1, T2), BaseOption(Of T1), BaseOption(Of T2), ParamArray Key())
+  fullName.vb: SimpleLineLibrary.Setup.CommandBuilder.WithHandler(Of T1, T2)(System.Action(Of T1, T2), SimpleLineLibrary.Setup.BaseOption(Of T1), SimpleLineLibrary.Setup.BaseOption(Of T2), ParamArray SimpleLineLibrary.Setup.Key())
+  name.vb: WithHandler(Of T1, T2)(Action(Of T1, T2), BaseOption(Of T1), BaseOption(Of T2), ParamArray Key())
+- uid: SimpleLineLibrary.Setup.CommandBuilder.WithHandler``3(System.Action{``0,``1,``2},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.Key[])
+  commentId: M:SimpleLineLibrary.Setup.CommandBuilder.WithHandler``3(System.Action{``0,``1,``2},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.Key[])
+  id: WithHandler``3(System.Action{``0,``1,``2},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.Key[])
+  parent: SimpleLineLibrary.Setup.CommandBuilder
+  langs:
+  - csharp
+  - vb
+  name: WithHandler<T1, T2, T3>(Action<T1, T2, T3>, BaseOption<T1>, BaseOption<T2>, BaseOption<T3>, params Key[])
+  nameWithType: CommandBuilder.WithHandler<T1, T2, T3>(Action<T1, T2, T3>, BaseOption<T1>, BaseOption<T2>, BaseOption<T3>, params Key[])
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.WithHandler<T1, T2, T3>(System.Action<T1, T2, T3>, SimpleLineLibrary.Setup.BaseOption<T1>, SimpleLineLibrary.Setup.BaseOption<T2>, SimpleLineLibrary.Setup.BaseOption<T3>, params SimpleLineLibrary.Setup.Key[])
+  type: Method
+  source:
+    remote:
+      path: SimpleLine/Setup/CommandBuilder.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: WithHandler
+    path: ../SimpleLine/Setup/CommandBuilder.cs
+    startLine: 89
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Setup
+  syntax:
+    content: public CommandBuilder WithHandler<T1, T2, T3>(Action<T1, T2, T3> action, BaseOption<T1> p1, BaseOption<T2> p2, BaseOption<T3> p3, params Key[] keys)
+    parameters:
+    - id: action
+      type: System.Action{{T1},{T2},{T3}}
+    - id: p1
+      type: SimpleLineLibrary.Setup.BaseOption{{T1}}
+    - id: p2
+      type: SimpleLineLibrary.Setup.BaseOption{{T2}}
+    - id: p3
+      type: SimpleLineLibrary.Setup.BaseOption{{T3}}
+    - id: keys
+      type: SimpleLineLibrary.Setup.Key[]
+    typeParameters:
+    - id: T1
+    - id: T2
+    - id: T3
+    return:
+      type: SimpleLineLibrary.Setup.CommandBuilder
+    content.vb: Public Function WithHandler(Of T1, T2, T3)(action As Action(Of T1, T2, T3), p1 As BaseOption(Of T1), p2 As BaseOption(Of T2), p3 As BaseOption(Of T3), ParamArray keys As Key()) As CommandBuilder
+  overload: SimpleLineLibrary.Setup.CommandBuilder.WithHandler*
+  nameWithType.vb: CommandBuilder.WithHandler(Of T1, T2, T3)(Action(Of T1, T2, T3), BaseOption(Of T1), BaseOption(Of T2), BaseOption(Of T3), ParamArray Key())
+  fullName.vb: SimpleLineLibrary.Setup.CommandBuilder.WithHandler(Of T1, T2, T3)(System.Action(Of T1, T2, T3), SimpleLineLibrary.Setup.BaseOption(Of T1), SimpleLineLibrary.Setup.BaseOption(Of T2), SimpleLineLibrary.Setup.BaseOption(Of T3), ParamArray SimpleLineLibrary.Setup.Key())
+  name.vb: WithHandler(Of T1, T2, T3)(Action(Of T1, T2, T3), BaseOption(Of T1), BaseOption(Of T2), BaseOption(Of T3), ParamArray Key())
+- uid: SimpleLineLibrary.Setup.CommandBuilder.WithHandler``4(System.Action{``0,``1,``2,``3},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.BaseOption{``3},SimpleLineLibrary.Setup.Key[])
+  commentId: M:SimpleLineLibrary.Setup.CommandBuilder.WithHandler``4(System.Action{``0,``1,``2,``3},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.BaseOption{``3},SimpleLineLibrary.Setup.Key[])
+  id: WithHandler``4(System.Action{``0,``1,``2,``3},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.BaseOption{``3},SimpleLineLibrary.Setup.Key[])
+  parent: SimpleLineLibrary.Setup.CommandBuilder
+  langs:
+  - csharp
+  - vb
+  name: WithHandler<T1, T2, T3, T4>(Action<T1, T2, T3, T4>, BaseOption<T1>, BaseOption<T2>, BaseOption<T3>, BaseOption<T4>, params Key[])
+  nameWithType: CommandBuilder.WithHandler<T1, T2, T3, T4>(Action<T1, T2, T3, T4>, BaseOption<T1>, BaseOption<T2>, BaseOption<T3>, BaseOption<T4>, params Key[])
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.WithHandler<T1, T2, T3, T4>(System.Action<T1, T2, T3, T4>, SimpleLineLibrary.Setup.BaseOption<T1>, SimpleLineLibrary.Setup.BaseOption<T2>, SimpleLineLibrary.Setup.BaseOption<T3>, SimpleLineLibrary.Setup.BaseOption<T4>, params SimpleLineLibrary.Setup.Key[])
+  type: Method
+  source:
+    remote:
+      path: SimpleLine/Setup/CommandBuilder.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: WithHandler
+    path: ../SimpleLine/Setup/CommandBuilder.cs
+    startLine: 116
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Setup
+  syntax:
+    content: public CommandBuilder WithHandler<T1, T2, T3, T4>(Action<T1, T2, T3, T4> action, BaseOption<T1> p1, BaseOption<T2> p2, BaseOption<T3> p3, BaseOption<T4> p4, params Key[] keys)
+    parameters:
+    - id: action
+      type: System.Action{{T1},{T2},{T3},{T4}}
+    - id: p1
+      type: SimpleLineLibrary.Setup.BaseOption{{T1}}
+    - id: p2
+      type: SimpleLineLibrary.Setup.BaseOption{{T2}}
+    - id: p3
+      type: SimpleLineLibrary.Setup.BaseOption{{T3}}
+    - id: p4
+      type: SimpleLineLibrary.Setup.BaseOption{{T4}}
+    - id: keys
+      type: SimpleLineLibrary.Setup.Key[]
+    typeParameters:
+    - id: T1
+    - id: T2
+    - id: T3
+    - id: T4
+    return:
+      type: SimpleLineLibrary.Setup.CommandBuilder
+    content.vb: Public Function WithHandler(Of T1, T2, T3, T4)(action As Action(Of T1, T2, T3, T4), p1 As BaseOption(Of T1), p2 As BaseOption(Of T2), p3 As BaseOption(Of T3), p4 As BaseOption(Of T4), ParamArray keys As Key()) As CommandBuilder
+  overload: SimpleLineLibrary.Setup.CommandBuilder.WithHandler*
+  nameWithType.vb: CommandBuilder.WithHandler(Of T1, T2, T3, T4)(Action(Of T1, T2, T3, T4), BaseOption(Of T1), BaseOption(Of T2), BaseOption(Of T3), BaseOption(Of T4), ParamArray Key())
+  fullName.vb: SimpleLineLibrary.Setup.CommandBuilder.WithHandler(Of T1, T2, T3, T4)(System.Action(Of T1, T2, T3, T4), SimpleLineLibrary.Setup.BaseOption(Of T1), SimpleLineLibrary.Setup.BaseOption(Of T2), SimpleLineLibrary.Setup.BaseOption(Of T3), SimpleLineLibrary.Setup.BaseOption(Of T4), ParamArray SimpleLineLibrary.Setup.Key())
+  name.vb: WithHandler(Of T1, T2, T3, T4)(Action(Of T1, T2, T3, T4), BaseOption(Of T1), BaseOption(Of T2), BaseOption(Of T3), BaseOption(Of T4), ParamArray Key())
+- uid: SimpleLineLibrary.Setup.CommandBuilder.WithHandler``5(System.Action{``0,``1,``2,``3,``4},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.BaseOption{``3},SimpleLineLibrary.Setup.BaseOption{``4},SimpleLineLibrary.Setup.Key[])
+  commentId: M:SimpleLineLibrary.Setup.CommandBuilder.WithHandler``5(System.Action{``0,``1,``2,``3,``4},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.BaseOption{``3},SimpleLineLibrary.Setup.BaseOption{``4},SimpleLineLibrary.Setup.Key[])
+  id: WithHandler``5(System.Action{``0,``1,``2,``3,``4},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.BaseOption{``3},SimpleLineLibrary.Setup.BaseOption{``4},SimpleLineLibrary.Setup.Key[])
+  parent: SimpleLineLibrary.Setup.CommandBuilder
+  langs:
+  - csharp
+  - vb
+  name: WithHandler<T1, T2, T3, T4, T5>(Action<T1, T2, T3, T4, T5>, BaseOption<T1>, BaseOption<T2>, BaseOption<T3>, BaseOption<T4>, BaseOption<T5>, params Key[])
+  nameWithType: CommandBuilder.WithHandler<T1, T2, T3, T4, T5>(Action<T1, T2, T3, T4, T5>, BaseOption<T1>, BaseOption<T2>, BaseOption<T3>, BaseOption<T4>, BaseOption<T5>, params Key[])
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.WithHandler<T1, T2, T3, T4, T5>(System.Action<T1, T2, T3, T4, T5>, SimpleLineLibrary.Setup.BaseOption<T1>, SimpleLineLibrary.Setup.BaseOption<T2>, SimpleLineLibrary.Setup.BaseOption<T3>, SimpleLineLibrary.Setup.BaseOption<T4>, SimpleLineLibrary.Setup.BaseOption<T5>, params SimpleLineLibrary.Setup.Key[])
+  type: Method
+  source:
+    remote:
+      path: SimpleLine/Setup/CommandBuilder.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: WithHandler
+    path: ../SimpleLine/Setup/CommandBuilder.cs
+    startLine: 147
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Setup
+  syntax:
+    content: public CommandBuilder WithHandler<T1, T2, T3, T4, T5>(Action<T1, T2, T3, T4, T5> action, BaseOption<T1> p1, BaseOption<T2> p2, BaseOption<T3> p3, BaseOption<T4> p4, BaseOption<T5> p5, params Key[] keys)
+    parameters:
+    - id: action
+      type: System.Action{{T1},{T2},{T3},{T4},{T5}}
+    - id: p1
+      type: SimpleLineLibrary.Setup.BaseOption{{T1}}
+    - id: p2
+      type: SimpleLineLibrary.Setup.BaseOption{{T2}}
+    - id: p3
+      type: SimpleLineLibrary.Setup.BaseOption{{T3}}
+    - id: p4
+      type: SimpleLineLibrary.Setup.BaseOption{{T4}}
+    - id: p5
+      type: SimpleLineLibrary.Setup.BaseOption{{T5}}
+    - id: keys
+      type: SimpleLineLibrary.Setup.Key[]
+    typeParameters:
+    - id: T1
+    - id: T2
+    - id: T3
+    - id: T4
+    - id: T5
+    return:
+      type: SimpleLineLibrary.Setup.CommandBuilder
+    content.vb: Public Function WithHandler(Of T1, T2, T3, T4, T5)(action As Action(Of T1, T2, T3, T4, T5), p1 As BaseOption(Of T1), p2 As BaseOption(Of T2), p3 As BaseOption(Of T3), p4 As BaseOption(Of T4), p5 As BaseOption(Of T5), ParamArray keys As Key()) As CommandBuilder
+  overload: SimpleLineLibrary.Setup.CommandBuilder.WithHandler*
+  nameWithType.vb: CommandBuilder.WithHandler(Of T1, T2, T3, T4, T5)(Action(Of T1, T2, T3, T4, T5), BaseOption(Of T1), BaseOption(Of T2), BaseOption(Of T3), BaseOption(Of T4), BaseOption(Of T5), ParamArray Key())
+  fullName.vb: SimpleLineLibrary.Setup.CommandBuilder.WithHandler(Of T1, T2, T3, T4, T5)(System.Action(Of T1, T2, T3, T4, T5), SimpleLineLibrary.Setup.BaseOption(Of T1), SimpleLineLibrary.Setup.BaseOption(Of T2), SimpleLineLibrary.Setup.BaseOption(Of T3), SimpleLineLibrary.Setup.BaseOption(Of T4), SimpleLineLibrary.Setup.BaseOption(Of T5), ParamArray SimpleLineLibrary.Setup.Key())
+  name.vb: WithHandler(Of T1, T2, T3, T4, T5)(Action(Of T1, T2, T3, T4, T5), BaseOption(Of T1), BaseOption(Of T2), BaseOption(Of T3), BaseOption(Of T4), BaseOption(Of T5), ParamArray Key())
+- uid: SimpleLineLibrary.Setup.CommandBuilder.WithHandler``6(System.Action{``0,``1,``2,``3,``4,``5},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.BaseOption{``3},SimpleLineLibrary.Setup.BaseOption{``4},SimpleLineLibrary.Setup.BaseOption{``5},SimpleLineLibrary.Setup.Key[])
+  commentId: M:SimpleLineLibrary.Setup.CommandBuilder.WithHandler``6(System.Action{``0,``1,``2,``3,``4,``5},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.BaseOption{``3},SimpleLineLibrary.Setup.BaseOption{``4},SimpleLineLibrary.Setup.BaseOption{``5},SimpleLineLibrary.Setup.Key[])
+  id: WithHandler``6(System.Action{``0,``1,``2,``3,``4,``5},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.BaseOption{``3},SimpleLineLibrary.Setup.BaseOption{``4},SimpleLineLibrary.Setup.BaseOption{``5},SimpleLineLibrary.Setup.Key[])
+  parent: SimpleLineLibrary.Setup.CommandBuilder
+  langs:
+  - csharp
+  - vb
+  name: WithHandler<T1, T2, T3, T4, T5, T6>(Action<T1, T2, T3, T4, T5, T6>, BaseOption<T1>, BaseOption<T2>, BaseOption<T3>, BaseOption<T4>, BaseOption<T5>, BaseOption<T6>, params Key[])
+  nameWithType: CommandBuilder.WithHandler<T1, T2, T3, T4, T5, T6>(Action<T1, T2, T3, T4, T5, T6>, BaseOption<T1>, BaseOption<T2>, BaseOption<T3>, BaseOption<T4>, BaseOption<T5>, BaseOption<T6>, params Key[])
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.WithHandler<T1, T2, T3, T4, T5, T6>(System.Action<T1, T2, T3, T4, T5, T6>, SimpleLineLibrary.Setup.BaseOption<T1>, SimpleLineLibrary.Setup.BaseOption<T2>, SimpleLineLibrary.Setup.BaseOption<T3>, SimpleLineLibrary.Setup.BaseOption<T4>, SimpleLineLibrary.Setup.BaseOption<T5>, SimpleLineLibrary.Setup.BaseOption<T6>, params SimpleLineLibrary.Setup.Key[])
+  type: Method
+  source:
+    remote:
+      path: SimpleLine/Setup/CommandBuilder.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: WithHandler
+    path: ../SimpleLine/Setup/CommandBuilder.cs
+    startLine: 180
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Setup
+  syntax:
+    content: public CommandBuilder WithHandler<T1, T2, T3, T4, T5, T6>(Action<T1, T2, T3, T4, T5, T6> action, BaseOption<T1> p1, BaseOption<T2> p2, BaseOption<T3> p3, BaseOption<T4> p4, BaseOption<T5> p5, BaseOption<T6> p6, params Key[] keys)
+    parameters:
+    - id: action
+      type: System.Action{{T1},{T2},{T3},{T4},{T5},{T6}}
+    - id: p1
+      type: SimpleLineLibrary.Setup.BaseOption{{T1}}
+    - id: p2
+      type: SimpleLineLibrary.Setup.BaseOption{{T2}}
+    - id: p3
+      type: SimpleLineLibrary.Setup.BaseOption{{T3}}
+    - id: p4
+      type: SimpleLineLibrary.Setup.BaseOption{{T4}}
+    - id: p5
+      type: SimpleLineLibrary.Setup.BaseOption{{T5}}
+    - id: p6
+      type: SimpleLineLibrary.Setup.BaseOption{{T6}}
+    - id: keys
+      type: SimpleLineLibrary.Setup.Key[]
+    typeParameters:
+    - id: T1
+    - id: T2
+    - id: T3
+    - id: T4
+    - id: T5
+    - id: T6
+    return:
+      type: SimpleLineLibrary.Setup.CommandBuilder
+    content.vb: Public Function WithHandler(Of T1, T2, T3, T4, T5, T6)(action As Action(Of T1, T2, T3, T4, T5, T6), p1 As BaseOption(Of T1), p2 As BaseOption(Of T2), p3 As BaseOption(Of T3), p4 As BaseOption(Of T4), p5 As BaseOption(Of T5), p6 As BaseOption(Of T6), ParamArray keys As Key()) As CommandBuilder
+  overload: SimpleLineLibrary.Setup.CommandBuilder.WithHandler*
+  nameWithType.vb: CommandBuilder.WithHandler(Of T1, T2, T3, T4, T5, T6)(Action(Of T1, T2, T3, T4, T5, T6), BaseOption(Of T1), BaseOption(Of T2), BaseOption(Of T3), BaseOption(Of T4), BaseOption(Of T5), BaseOption(Of T6), ParamArray Key())
+  fullName.vb: SimpleLineLibrary.Setup.CommandBuilder.WithHandler(Of T1, T2, T3, T4, T5, T6)(System.Action(Of T1, T2, T3, T4, T5, T6), SimpleLineLibrary.Setup.BaseOption(Of T1), SimpleLineLibrary.Setup.BaseOption(Of T2), SimpleLineLibrary.Setup.BaseOption(Of T3), SimpleLineLibrary.Setup.BaseOption(Of T4), SimpleLineLibrary.Setup.BaseOption(Of T5), SimpleLineLibrary.Setup.BaseOption(Of T6), ParamArray SimpleLineLibrary.Setup.Key())
+  name.vb: WithHandler(Of T1, T2, T3, T4, T5, T6)(Action(Of T1, T2, T3, T4, T5, T6), BaseOption(Of T1), BaseOption(Of T2), BaseOption(Of T3), BaseOption(Of T4), BaseOption(Of T5), BaseOption(Of T6), ParamArray Key())
+- uid: SimpleLineLibrary.Setup.CommandBuilder.WithGetInfo(System.Action{SimpleLineLibrary.Models.Info.CommandInfo},SimpleLineLibrary.Setup.Key)
+  commentId: M:SimpleLineLibrary.Setup.CommandBuilder.WithGetInfo(System.Action{SimpleLineLibrary.Models.Info.CommandInfo},SimpleLineLibrary.Setup.Key)
+  id: WithGetInfo(System.Action{SimpleLineLibrary.Models.Info.CommandInfo},SimpleLineLibrary.Setup.Key)
+  parent: SimpleLineLibrary.Setup.CommandBuilder
+  langs:
+  - csharp
+  - vb
+  name: WithGetInfo(Action<CommandInfo>, Key)
+  nameWithType: CommandBuilder.WithGetInfo(Action<CommandInfo>, Key)
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.WithGetInfo(System.Action<SimpleLineLibrary.Models.Info.CommandInfo>, SimpleLineLibrary.Setup.Key)
+  type: Method
+  source:
+    remote:
+      path: SimpleLine/Setup/CommandBuilder.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: WithGetInfo
+    path: ../SimpleLine/Setup/CommandBuilder.cs
+    startLine: 217
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Setup
+  syntax:
+    content: public CommandBuilder WithGetInfo(Action<CommandInfo> action, Key infoKey)
+    parameters:
+    - id: action
+      type: System.Action{SimpleLineLibrary.Models.Info.CommandInfo}
+    - id: infoKey
+      type: SimpleLineLibrary.Setup.Key
+    return:
+      type: SimpleLineLibrary.Setup.CommandBuilder
+    content.vb: Public Function WithGetInfo(action As Action(Of CommandInfo), infoKey As Key) As CommandBuilder
+  overload: SimpleLineLibrary.Setup.CommandBuilder.WithGetInfo*
+  nameWithType.vb: CommandBuilder.WithGetInfo(Action(Of CommandInfo), Key)
+  fullName.vb: SimpleLineLibrary.Setup.CommandBuilder.WithGetInfo(System.Action(Of SimpleLineLibrary.Models.Info.CommandInfo), SimpleLineLibrary.Setup.Key)
+  name.vb: WithGetInfo(Action(Of CommandInfo), Key)
+references:
+- uid: SimpleLineLibrary.Setup
+  commentId: N:SimpleLineLibrary.Setup
+  href: SimpleLineLibrary.html
+  name: SimpleLineLibrary.Setup
+  nameWithType: SimpleLineLibrary.Setup
+  fullName: SimpleLineLibrary.Setup
+  spec.csharp:
+  - uid: SimpleLineLibrary
+    name: SimpleLineLibrary
+    href: SimpleLineLibrary.html
+  - name: .
+  - uid: SimpleLineLibrary.Setup
+    name: Setup
+    href: SimpleLineLibrary.Setup.html
+  spec.vb:
+  - uid: SimpleLineLibrary
+    name: SimpleLineLibrary
+    href: SimpleLineLibrary.html
+  - name: .
+  - uid: SimpleLineLibrary.Setup
+    name: Setup
+    href: SimpleLineLibrary.Setup.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: SimpleLineLibrary.Setup.CommandBuilder.SetDescription*
+  commentId: Overload:SimpleLineLibrary.Setup.CommandBuilder.SetDescription
+  href: SimpleLineLibrary.Setup.CommandBuilder.html#SimpleLineLibrary_Setup_CommandBuilder_SetDescription_System_String_
+  name: SetDescription
+  nameWithType: CommandBuilder.SetDescription
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.SetDescription
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: SimpleLineLibrary.Setup.CommandBuilder
+  commentId: T:SimpleLineLibrary.Setup.CommandBuilder
+  parent: SimpleLineLibrary.Setup
+  href: SimpleLineLibrary.Setup.CommandBuilder.html
+  name: CommandBuilder
+  nameWithType: CommandBuilder
+  fullName: SimpleLineLibrary.Setup.CommandBuilder
+- uid: SimpleLineLibrary.Setup.CommandBuilder.WithHandler*
+  commentId: Overload:SimpleLineLibrary.Setup.CommandBuilder.WithHandler
+  href: SimpleLineLibrary.Setup.CommandBuilder.html#SimpleLineLibrary_Setup_CommandBuilder_WithHandler_System_Action_SimpleLineLibrary_Setup_Key___
+  name: WithHandler
+  nameWithType: CommandBuilder.WithHandler
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.WithHandler
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: SimpleLineLibrary.Setup.Key[]
+  isExternal: true
+  href: SimpleLineLibrary.Setup.Key.html
+  name: Key[]
+  nameWithType: Key[]
+  fullName: SimpleLineLibrary.Setup.Key[]
+  nameWithType.vb: Key()
+  fullName.vb: SimpleLineLibrary.Setup.Key()
+  name.vb: Key()
+  spec.csharp:
+  - uid: SimpleLineLibrary.Setup.Key
+    name: Key
+    href: SimpleLineLibrary.Setup.Key.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: SimpleLineLibrary.Setup.Key
+    name: Key
+    href: SimpleLineLibrary.Setup.Key.html
+  - name: (
+  - name: )
+- uid: System.Action{{T1}}
+  commentId: T:System.Action{``0}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T1>
+  nameWithType: Action<T1>
+  fullName: System.Action<T1>
+  nameWithType.vb: Action(Of T1)
+  fullName.vb: System.Action(Of T1)
+  name.vb: Action(Of T1)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T1
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: )
+- uid: SimpleLineLibrary.Setup.BaseOption{{T1}}
+  commentId: T:SimpleLineLibrary.Setup.BaseOption{``0}
+  parent: SimpleLineLibrary.Setup
+  definition: SimpleLineLibrary.Setup.BaseOption`1
+  href: SimpleLineLibrary.Setup.BaseOption-1.html
+  name: BaseOption<T1>
+  nameWithType: BaseOption<T1>
+  fullName: SimpleLineLibrary.Setup.BaseOption<T1>
+  nameWithType.vb: BaseOption(Of T1)
+  fullName.vb: SimpleLineLibrary.Setup.BaseOption(Of T1)
+  name.vb: BaseOption(Of T1)
+  spec.csharp:
+  - uid: SimpleLineLibrary.Setup.BaseOption`1
+    name: BaseOption
+    href: SimpleLineLibrary.Setup.BaseOption-1.html
+  - name: <
+  - name: T1
+  - name: '>'
+  spec.vb:
+  - uid: SimpleLineLibrary.Setup.BaseOption`1
+    name: BaseOption
+    href: SimpleLineLibrary.Setup.BaseOption-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: SimpleLineLibrary.Setup.BaseOption`1
+  commentId: T:SimpleLineLibrary.Setup.BaseOption`1
+  href: SimpleLineLibrary.Setup.BaseOption-1.html
+  name: BaseOption<T>
+  nameWithType: BaseOption<T>
+  fullName: SimpleLineLibrary.Setup.BaseOption<T>
+  nameWithType.vb: BaseOption(Of T)
+  fullName.vb: SimpleLineLibrary.Setup.BaseOption(Of T)
+  name.vb: BaseOption(Of T)
+  spec.csharp:
+  - uid: SimpleLineLibrary.Setup.BaseOption`1
+    name: BaseOption
+    href: SimpleLineLibrary.Setup.BaseOption-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: SimpleLineLibrary.Setup.BaseOption`1
+    name: BaseOption
+    href: SimpleLineLibrary.Setup.BaseOption-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Action{{T1},{T2}}
+  commentId: T:System.Action{``0,``1}
+  parent: System
+  definition: System.Action`2
+  href: https://learn.microsoft.com/dotnet/api/system.action-2
+  name: Action<T1, T2>
+  nameWithType: Action<T1, T2>
+  fullName: System.Action<T1, T2>
+  nameWithType.vb: Action(Of T1, T2)
+  fullName.vb: System.Action(Of T1, T2)
+  name.vb: Action(Of T1, T2)
+  spec.csharp:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+- uid: SimpleLineLibrary.Setup.BaseOption{{T2}}
+  commentId: T:SimpleLineLibrary.Setup.BaseOption{``1}
+  parent: SimpleLineLibrary.Setup
+  definition: SimpleLineLibrary.Setup.BaseOption`1
+  href: SimpleLineLibrary.Setup.BaseOption-1.html
+  name: BaseOption<T2>
+  nameWithType: BaseOption<T2>
+  fullName: SimpleLineLibrary.Setup.BaseOption<T2>
+  nameWithType.vb: BaseOption(Of T2)
+  fullName.vb: SimpleLineLibrary.Setup.BaseOption(Of T2)
+  name.vb: BaseOption(Of T2)
+  spec.csharp:
+  - uid: SimpleLineLibrary.Setup.BaseOption`1
+    name: BaseOption
+    href: SimpleLineLibrary.Setup.BaseOption-1.html
+  - name: <
+  - name: T2
+  - name: '>'
+  spec.vb:
+  - uid: SimpleLineLibrary.Setup.BaseOption`1
+    name: BaseOption
+    href: SimpleLineLibrary.Setup.BaseOption-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T2
+  - name: )
+- uid: System.Action`2
+  commentId: T:System.Action`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-2
+  name: Action<T1, T2>
+  nameWithType: Action<T1, T2>
+  fullName: System.Action<T1, T2>
+  nameWithType.vb: Action(Of T1, T2)
+  fullName.vb: System.Action(Of T1, T2)
+  name.vb: Action(Of T1, T2)
+  spec.csharp:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+- uid: System.Action{{T1},{T2},{T3}}
+  commentId: T:System.Action{``0,``1,``2}
+  parent: System
+  definition: System.Action`3
+  href: https://learn.microsoft.com/dotnet/api/system.action-3
+  name: Action<T1, T2, T3>
+  nameWithType: Action<T1, T2, T3>
+  fullName: System.Action<T1, T2, T3>
+  nameWithType.vb: Action(Of T1, T2, T3)
+  fullName.vb: System.Action(Of T1, T2, T3)
+  name.vb: Action(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Action`3
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-3
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`3
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: )
+- uid: SimpleLineLibrary.Setup.BaseOption{{T3}}
+  commentId: T:SimpleLineLibrary.Setup.BaseOption{``2}
+  parent: SimpleLineLibrary.Setup
+  definition: SimpleLineLibrary.Setup.BaseOption`1
+  href: SimpleLineLibrary.Setup.BaseOption-1.html
+  name: BaseOption<T3>
+  nameWithType: BaseOption<T3>
+  fullName: SimpleLineLibrary.Setup.BaseOption<T3>
+  nameWithType.vb: BaseOption(Of T3)
+  fullName.vb: SimpleLineLibrary.Setup.BaseOption(Of T3)
+  name.vb: BaseOption(Of T3)
+  spec.csharp:
+  - uid: SimpleLineLibrary.Setup.BaseOption`1
+    name: BaseOption
+    href: SimpleLineLibrary.Setup.BaseOption-1.html
+  - name: <
+  - name: T3
+  - name: '>'
+  spec.vb:
+  - uid: SimpleLineLibrary.Setup.BaseOption`1
+    name: BaseOption
+    href: SimpleLineLibrary.Setup.BaseOption-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T3
+  - name: )
+- uid: System.Action`3
+  commentId: T:System.Action`3
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-3
+  name: Action<T1, T2, T3>
+  nameWithType: Action<T1, T2, T3>
+  fullName: System.Action<T1, T2, T3>
+  nameWithType.vb: Action(Of T1, T2, T3)
+  fullName.vb: System.Action(Of T1, T2, T3)
+  name.vb: Action(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Action`3
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-3
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`3
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: )
+- uid: System.Action{{T1},{T2},{T3},{T4}}
+  commentId: T:System.Action{``0,``1,``2,``3}
+  parent: System
+  definition: System.Action`4
+  href: https://learn.microsoft.com/dotnet/api/system.action-4
+  name: Action<T1, T2, T3, T4>
+  nameWithType: Action<T1, T2, T3, T4>
+  fullName: System.Action<T1, T2, T3, T4>
+  nameWithType.vb: Action(Of T1, T2, T3, T4)
+  fullName.vb: System.Action(Of T1, T2, T3, T4)
+  name.vb: Action(Of T1, T2, T3, T4)
+  spec.csharp:
+  - uid: System.Action`4
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-4
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`4
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-4
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: )
+- uid: SimpleLineLibrary.Setup.BaseOption{{T4}}
+  commentId: T:SimpleLineLibrary.Setup.BaseOption{``3}
+  parent: SimpleLineLibrary.Setup
+  definition: SimpleLineLibrary.Setup.BaseOption`1
+  href: SimpleLineLibrary.Setup.BaseOption-1.html
+  name: BaseOption<T4>
+  nameWithType: BaseOption<T4>
+  fullName: SimpleLineLibrary.Setup.BaseOption<T4>
+  nameWithType.vb: BaseOption(Of T4)
+  fullName.vb: SimpleLineLibrary.Setup.BaseOption(Of T4)
+  name.vb: BaseOption(Of T4)
+  spec.csharp:
+  - uid: SimpleLineLibrary.Setup.BaseOption`1
+    name: BaseOption
+    href: SimpleLineLibrary.Setup.BaseOption-1.html
+  - name: <
+  - name: T4
+  - name: '>'
+  spec.vb:
+  - uid: SimpleLineLibrary.Setup.BaseOption`1
+    name: BaseOption
+    href: SimpleLineLibrary.Setup.BaseOption-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T4
+  - name: )
+- uid: System.Action`4
+  commentId: T:System.Action`4
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-4
+  name: Action<T1, T2, T3, T4>
+  nameWithType: Action<T1, T2, T3, T4>
+  fullName: System.Action<T1, T2, T3, T4>
+  nameWithType.vb: Action(Of T1, T2, T3, T4)
+  fullName.vb: System.Action(Of T1, T2, T3, T4)
+  name.vb: Action(Of T1, T2, T3, T4)
+  spec.csharp:
+  - uid: System.Action`4
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-4
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`4
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-4
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: )
+- uid: System.Action{{T1},{T2},{T3},{T4},{T5}}
+  commentId: T:System.Action{``0,``1,``2,``3,``4}
+  parent: System
+  definition: System.Action`5
+  href: https://learn.microsoft.com/dotnet/api/system.action-5
+  name: Action<T1, T2, T3, T4, T5>
+  nameWithType: Action<T1, T2, T3, T4, T5>
+  fullName: System.Action<T1, T2, T3, T4, T5>
+  nameWithType.vb: Action(Of T1, T2, T3, T4, T5)
+  fullName.vb: System.Action(Of T1, T2, T3, T4, T5)
+  name.vb: Action(Of T1, T2, T3, T4, T5)
+  spec.csharp:
+  - uid: System.Action`5
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-5
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: ','
+  - name: " "
+  - name: T5
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`5
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-5
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: ','
+  - name: " "
+  - name: T5
+  - name: )
+- uid: SimpleLineLibrary.Setup.BaseOption{{T5}}
+  commentId: T:SimpleLineLibrary.Setup.BaseOption{``4}
+  parent: SimpleLineLibrary.Setup
+  definition: SimpleLineLibrary.Setup.BaseOption`1
+  href: SimpleLineLibrary.Setup.BaseOption-1.html
+  name: BaseOption<T5>
+  nameWithType: BaseOption<T5>
+  fullName: SimpleLineLibrary.Setup.BaseOption<T5>
+  nameWithType.vb: BaseOption(Of T5)
+  fullName.vb: SimpleLineLibrary.Setup.BaseOption(Of T5)
+  name.vb: BaseOption(Of T5)
+  spec.csharp:
+  - uid: SimpleLineLibrary.Setup.BaseOption`1
+    name: BaseOption
+    href: SimpleLineLibrary.Setup.BaseOption-1.html
+  - name: <
+  - name: T5
+  - name: '>'
+  spec.vb:
+  - uid: SimpleLineLibrary.Setup.BaseOption`1
+    name: BaseOption
+    href: SimpleLineLibrary.Setup.BaseOption-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T5
+  - name: )
+- uid: System.Action`5
+  commentId: T:System.Action`5
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-5
+  name: Action<T1, T2, T3, T4, T5>
+  nameWithType: Action<T1, T2, T3, T4, T5>
+  fullName: System.Action<T1, T2, T3, T4, T5>
+  nameWithType.vb: Action(Of T1, T2, T3, T4, T5)
+  fullName.vb: System.Action(Of T1, T2, T3, T4, T5)
+  name.vb: Action(Of T1, T2, T3, T4, T5)
+  spec.csharp:
+  - uid: System.Action`5
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-5
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: ','
+  - name: " "
+  - name: T5
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`5
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-5
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: ','
+  - name: " "
+  - name: T5
+  - name: )
+- uid: System.Action{{T1},{T2},{T3},{T4},{T5},{T6}}
+  commentId: T:System.Action{``0,``1,``2,``3,``4,``5}
+  parent: System
+  definition: System.Action`6
+  href: https://learn.microsoft.com/dotnet/api/system.action-6
+  name: Action<T1, T2, T3, T4, T5, T6>
+  nameWithType: Action<T1, T2, T3, T4, T5, T6>
+  fullName: System.Action<T1, T2, T3, T4, T5, T6>
+  nameWithType.vb: Action(Of T1, T2, T3, T4, T5, T6)
+  fullName.vb: System.Action(Of T1, T2, T3, T4, T5, T6)
+  name.vb: Action(Of T1, T2, T3, T4, T5, T6)
+  spec.csharp:
+  - uid: System.Action`6
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-6
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: ','
+  - name: " "
+  - name: T5
+  - name: ','
+  - name: " "
+  - name: T6
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`6
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-6
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: ','
+  - name: " "
+  - name: T5
+  - name: ','
+  - name: " "
+  - name: T6
+  - name: )
+- uid: SimpleLineLibrary.Setup.BaseOption{{T6}}
+  commentId: T:SimpleLineLibrary.Setup.BaseOption{``5}
+  parent: SimpleLineLibrary.Setup
+  definition: SimpleLineLibrary.Setup.BaseOption`1
+  href: SimpleLineLibrary.Setup.BaseOption-1.html
+  name: BaseOption<T6>
+  nameWithType: BaseOption<T6>
+  fullName: SimpleLineLibrary.Setup.BaseOption<T6>
+  nameWithType.vb: BaseOption(Of T6)
+  fullName.vb: SimpleLineLibrary.Setup.BaseOption(Of T6)
+  name.vb: BaseOption(Of T6)
+  spec.csharp:
+  - uid: SimpleLineLibrary.Setup.BaseOption`1
+    name: BaseOption
+    href: SimpleLineLibrary.Setup.BaseOption-1.html
+  - name: <
+  - name: T6
+  - name: '>'
+  spec.vb:
+  - uid: SimpleLineLibrary.Setup.BaseOption`1
+    name: BaseOption
+    href: SimpleLineLibrary.Setup.BaseOption-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T6
+  - name: )
+- uid: System.Action`6
+  commentId: T:System.Action`6
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-6
+  name: Action<T1, T2, T3, T4, T5, T6>
+  nameWithType: Action<T1, T2, T3, T4, T5, T6>
+  fullName: System.Action<T1, T2, T3, T4, T5, T6>
+  nameWithType.vb: Action(Of T1, T2, T3, T4, T5, T6)
+  fullName.vb: System.Action(Of T1, T2, T3, T4, T5, T6)
+  name.vb: Action(Of T1, T2, T3, T4, T5, T6)
+  spec.csharp:
+  - uid: System.Action`6
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-6
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: ','
+  - name: " "
+  - name: T5
+  - name: ','
+  - name: " "
+  - name: T6
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`6
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-6
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: ','
+  - name: " "
+  - name: T5
+  - name: ','
+  - name: " "
+  - name: T6
+  - name: )
+- uid: SimpleLineLibrary.Setup.CommandBuilder.WithGetInfo*
+  commentId: Overload:SimpleLineLibrary.Setup.CommandBuilder.WithGetInfo
+  href: SimpleLineLibrary.Setup.CommandBuilder.html#SimpleLineLibrary_Setup_CommandBuilder_WithGetInfo_System_Action_SimpleLineLibrary_Models_Info_CommandInfo__SimpleLineLibrary_Setup_Key_
+  name: WithGetInfo
+  nameWithType: CommandBuilder.WithGetInfo
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.WithGetInfo
+- uid: System.Action{SimpleLineLibrary.Models.Info.CommandInfo}
+  commentId: T:System.Action{SimpleLineLibrary.Models.Info.CommandInfo}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<CommandInfo>
+  nameWithType: Action<CommandInfo>
+  fullName: System.Action<SimpleLineLibrary.Models.Info.CommandInfo>
+  nameWithType.vb: Action(Of CommandInfo)
+  fullName.vb: System.Action(Of SimpleLineLibrary.Models.Info.CommandInfo)
+  name.vb: Action(Of CommandInfo)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: SimpleLineLibrary.Models.Info.CommandInfo
+    name: CommandInfo
+    href: SimpleLineLibrary.Models.Info.CommandInfo.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: SimpleLineLibrary.Models.Info.CommandInfo
+    name: CommandInfo
+    href: SimpleLineLibrary.Models.Info.CommandInfo.html
+  - name: )
+- uid: SimpleLineLibrary.Setup.Key
+  commentId: T:SimpleLineLibrary.Setup.Key
+  parent: SimpleLineLibrary.Setup
+  href: SimpleLineLibrary.Setup.Key.html
+  name: Key
+  nameWithType: Key
+  fullName: SimpleLineLibrary.Setup.Key

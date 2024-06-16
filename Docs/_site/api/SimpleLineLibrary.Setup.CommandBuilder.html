@@ -1,0 +1,623 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class CommandBuilder | SimpleLine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CommandBuilder | SimpleLine ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/DrSa1fer/SimpleLine/new/Rewrite/apiSpec/new?filename=SimpleLineLibrary_Setup_CommandBuilder.md&amp;value=---%0Auid%3A%20SimpleLineLibrary.Setup.CommandBuilder%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SimpleLineLibrary.Setup.CommandBuilder">
+
+
+
+  <h1 id="SimpleLineLibrary_Setup_CommandBuilder" data-uid="SimpleLineLibrary.Setup.CommandBuilder" class="text-break">
+Class CommandBuilder  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/Rewrite/SimpleLine/Setup/CommandBuilder.cs/#L6"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SimpleLineLibrary.html">SimpleLineLibrary</a>.<a class="xref" href="SimpleLineLibrary.Setup.html">Setup</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>SimpleLine.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CommandBuilder</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">CommandBuilder</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SimpleLineLibrary_Setup_CommandBuilder_SetDescription_" data-uid="SimpleLineLibrary.Setup.CommandBuilder.SetDescription*"></a>
+
+  <h3 id="SimpleLineLibrary_Setup_CommandBuilder_SetDescription_System_String_" data-uid="SimpleLineLibrary.Setup.CommandBuilder.SetDescription(System.String)">
+  SetDescription(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/Rewrite/SimpleLine/Setup/CommandBuilder.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CommandBuilder SetDescription(string desc)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>desc</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SimpleLineLibrary.Setup.CommandBuilder.html">CommandBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SimpleLineLibrary_Setup_CommandBuilder_WithGetInfo_" data-uid="SimpleLineLibrary.Setup.CommandBuilder.WithGetInfo*"></a>
+
+  <h3 id="SimpleLineLibrary_Setup_CommandBuilder_WithGetInfo_System_Action_SimpleLineLibrary_Models_Info_CommandInfo__SimpleLineLibrary_Setup_Key_" data-uid="SimpleLineLibrary.Setup.CommandBuilder.WithGetInfo(System.Action{SimpleLineLibrary.Models.Info.CommandInfo},SimpleLineLibrary.Setup.Key)">
+  WithGetInfo(Action&lt;CommandInfo&gt;, Key)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/Rewrite/SimpleLine/Setup/CommandBuilder.cs/#L218"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CommandBuilder WithGetInfo(Action&lt;CommandInfo&gt; action, Key infoKey)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SimpleLineLibrary.Models.Info.CommandInfo.html">CommandInfo</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>infoKey</code> <a class="xref" href="SimpleLineLibrary.Setup.Key.html">Key</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SimpleLineLibrary.Setup.CommandBuilder.html">CommandBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SimpleLineLibrary_Setup_CommandBuilder_WithHandler_" data-uid="SimpleLineLibrary.Setup.CommandBuilder.WithHandler*"></a>
+
+  <h3 id="SimpleLineLibrary_Setup_CommandBuilder_WithHandler_System_Action_SimpleLineLibrary_Setup_Key___" data-uid="SimpleLineLibrary.Setup.CommandBuilder.WithHandler(System.Action,SimpleLineLibrary.Setup.Key[])">
+  WithHandler(Action, params Key[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/Rewrite/SimpleLine/Setup/CommandBuilder.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Hello world</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CommandBuilder WithHandler(Action action, params Key[] keys)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+    <dt><code>keys</code> <a class="xref" href="SimpleLineLibrary.Setup.Key.html">Key</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SimpleLineLibrary.Setup.CommandBuilder.html">CommandBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SimpleLineLibrary_Setup_CommandBuilder_WithHandler_" data-uid="SimpleLineLibrary.Setup.CommandBuilder.WithHandler*"></a>
+
+  <h3 id="SimpleLineLibrary_Setup_CommandBuilder_WithHandler__1_System_Action___0__SimpleLineLibrary_Setup_BaseOption___0__SimpleLineLibrary_Setup_Key___" data-uid="SimpleLineLibrary.Setup.CommandBuilder.WithHandler``1(System.Action{``0},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.Key[])">
+  WithHandler&lt;T1&gt;(Action&lt;T1&gt;, BaseOption&lt;T1&gt;, params Key[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/Rewrite/SimpleLine/Setup/CommandBuilder.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CommandBuilder WithHandler&lt;T1&gt;(Action&lt;T1&gt; action, BaseOption&lt;T1&gt; p1, params Key[] keys)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;T1&gt;</dt>
+    <dd></dd>
+    <dt><code>p1</code> <a class="xref" href="SimpleLineLibrary.Setup.BaseOption-1.html">BaseOption</a>&lt;T1&gt;</dt>
+    <dd></dd>
+    <dt><code>keys</code> <a class="xref" href="SimpleLineLibrary.Setup.Key.html">Key</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SimpleLineLibrary.Setup.CommandBuilder.html">CommandBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T1</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="SimpleLineLibrary_Setup_CommandBuilder_WithHandler_" data-uid="SimpleLineLibrary.Setup.CommandBuilder.WithHandler*"></a>
+
+  <h3 id="SimpleLineLibrary_Setup_CommandBuilder_WithHandler__2_System_Action___0___1__SimpleLineLibrary_Setup_BaseOption___0__SimpleLineLibrary_Setup_BaseOption___1__SimpleLineLibrary_Setup_Key___" data-uid="SimpleLineLibrary.Setup.CommandBuilder.WithHandler``2(System.Action{``0,``1},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.Key[])">
+  WithHandler&lt;T1, T2&gt;(Action&lt;T1, T2&gt;, BaseOption&lt;T1&gt;, BaseOption&lt;T2&gt;, params Key[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/Rewrite/SimpleLine/Setup/CommandBuilder.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CommandBuilder WithHandler&lt;T1, T2&gt;(Action&lt;T1, T2&gt; action, BaseOption&lt;T1&gt; p1, BaseOption&lt;T2&gt; p2, params Key[] keys)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;T1, T2&gt;</dt>
+    <dd></dd>
+    <dt><code>p1</code> <a class="xref" href="SimpleLineLibrary.Setup.BaseOption-1.html">BaseOption</a>&lt;T1&gt;</dt>
+    <dd></dd>
+    <dt><code>p2</code> <a class="xref" href="SimpleLineLibrary.Setup.BaseOption-1.html">BaseOption</a>&lt;T2&gt;</dt>
+    <dd></dd>
+    <dt><code>keys</code> <a class="xref" href="SimpleLineLibrary.Setup.Key.html">Key</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SimpleLineLibrary.Setup.CommandBuilder.html">CommandBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T1</code></dt>
+    <dd></dd>
+    <dt><code>T2</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="SimpleLineLibrary_Setup_CommandBuilder_WithHandler_" data-uid="SimpleLineLibrary.Setup.CommandBuilder.WithHandler*"></a>
+
+  <h3 id="SimpleLineLibrary_Setup_CommandBuilder_WithHandler__3_System_Action___0___1___2__SimpleLineLibrary_Setup_BaseOption___0__SimpleLineLibrary_Setup_BaseOption___1__SimpleLineLibrary_Setup_BaseOption___2__SimpleLineLibrary_Setup_Key___" data-uid="SimpleLineLibrary.Setup.CommandBuilder.WithHandler``3(System.Action{``0,``1,``2},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.Key[])">
+  WithHandler&lt;T1, T2, T3&gt;(Action&lt;T1, T2, T3&gt;, BaseOption&lt;T1&gt;, BaseOption&lt;T2&gt;, BaseOption&lt;T3&gt;, params Key[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/Rewrite/SimpleLine/Setup/CommandBuilder.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CommandBuilder WithHandler&lt;T1, T2, T3&gt;(Action&lt;T1, T2, T3&gt; action, BaseOption&lt;T1&gt; p1, BaseOption&lt;T2&gt; p2, BaseOption&lt;T3&gt; p3, params Key[] keys)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-3">Action</a>&lt;T1, T2, T3&gt;</dt>
+    <dd></dd>
+    <dt><code>p1</code> <a class="xref" href="SimpleLineLibrary.Setup.BaseOption-1.html">BaseOption</a>&lt;T1&gt;</dt>
+    <dd></dd>
+    <dt><code>p2</code> <a class="xref" href="SimpleLineLibrary.Setup.BaseOption-1.html">BaseOption</a>&lt;T2&gt;</dt>
+    <dd></dd>
+    <dt><code>p3</code> <a class="xref" href="SimpleLineLibrary.Setup.BaseOption-1.html">BaseOption</a>&lt;T3&gt;</dt>
+    <dd></dd>
+    <dt><code>keys</code> <a class="xref" href="SimpleLineLibrary.Setup.Key.html">Key</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SimpleLineLibrary.Setup.CommandBuilder.html">CommandBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T1</code></dt>
+    <dd></dd>
+    <dt><code>T2</code></dt>
+    <dd></dd>
+    <dt><code>T3</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="SimpleLineLibrary_Setup_CommandBuilder_WithHandler_" data-uid="SimpleLineLibrary.Setup.CommandBuilder.WithHandler*"></a>
+
+  <h3 id="SimpleLineLibrary_Setup_CommandBuilder_WithHandler__4_System_Action___0___1___2___3__SimpleLineLibrary_Setup_BaseOption___0__SimpleLineLibrary_Setup_BaseOption___1__SimpleLineLibrary_Setup_BaseOption___2__SimpleLineLibrary_Setup_BaseOption___3__SimpleLineLibrary_Setup_Key___" data-uid="SimpleLineLibrary.Setup.CommandBuilder.WithHandler``4(System.Action{``0,``1,``2,``3},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.BaseOption{``3},SimpleLineLibrary.Setup.Key[])">
+  WithHandler&lt;T1, T2, T3, T4&gt;(Action&lt;T1, T2, T3, T4&gt;, BaseOption&lt;T1&gt;, BaseOption&lt;T2&gt;, BaseOption&lt;T3&gt;, BaseOption&lt;T4&gt;, params Key[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/Rewrite/SimpleLine/Setup/CommandBuilder.cs/#L117"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CommandBuilder WithHandler&lt;T1, T2, T3, T4&gt;(Action&lt;T1, T2, T3, T4&gt; action, BaseOption&lt;T1&gt; p1, BaseOption&lt;T2&gt; p2, BaseOption&lt;T3&gt; p3, BaseOption&lt;T4&gt; p4, params Key[] keys)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-4">Action</a>&lt;T1, T2, T3, T4&gt;</dt>
+    <dd></dd>
+    <dt><code>p1</code> <a class="xref" href="SimpleLineLibrary.Setup.BaseOption-1.html">BaseOption</a>&lt;T1&gt;</dt>
+    <dd></dd>
+    <dt><code>p2</code> <a class="xref" href="SimpleLineLibrary.Setup.BaseOption-1.html">BaseOption</a>&lt;T2&gt;</dt>
+    <dd></dd>
+    <dt><code>p3</code> <a class="xref" href="SimpleLineLibrary.Setup.BaseOption-1.html">BaseOption</a>&lt;T3&gt;</dt>
+    <dd></dd>
+    <dt><code>p4</code> <a class="xref" href="SimpleLineLibrary.Setup.BaseOption-1.html">BaseOption</a>&lt;T4&gt;</dt>
+    <dd></dd>
+    <dt><code>keys</code> <a class="xref" href="SimpleLineLibrary.Setup.Key.html">Key</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SimpleLineLibrary.Setup.CommandBuilder.html">CommandBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T1</code></dt>
+    <dd></dd>
+    <dt><code>T2</code></dt>
+    <dd></dd>
+    <dt><code>T3</code></dt>
+    <dd></dd>
+    <dt><code>T4</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="SimpleLineLibrary_Setup_CommandBuilder_WithHandler_" data-uid="SimpleLineLibrary.Setup.CommandBuilder.WithHandler*"></a>
+
+  <h3 id="SimpleLineLibrary_Setup_CommandBuilder_WithHandler__5_System_Action___0___1___2___3___4__SimpleLineLibrary_Setup_BaseOption___0__SimpleLineLibrary_Setup_BaseOption___1__SimpleLineLibrary_Setup_BaseOption___2__SimpleLineLibrary_Setup_BaseOption___3__SimpleLineLibrary_Setup_BaseOption___4__SimpleLineLibrary_Setup_Key___" data-uid="SimpleLineLibrary.Setup.CommandBuilder.WithHandler``5(System.Action{``0,``1,``2,``3,``4},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.BaseOption{``3},SimpleLineLibrary.Setup.BaseOption{``4},SimpleLineLibrary.Setup.Key[])">
+  WithHandler&lt;T1, T2, T3, T4, T5&gt;(Action&lt;T1, T2, T3, T4, T5&gt;, BaseOption&lt;T1&gt;, BaseOption&lt;T2&gt;, BaseOption&lt;T3&gt;, BaseOption&lt;T4&gt;, BaseOption&lt;T5&gt;, params Key[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/Rewrite/SimpleLine/Setup/CommandBuilder.cs/#L148"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CommandBuilder WithHandler&lt;T1, T2, T3, T4, T5&gt;(Action&lt;T1, T2, T3, T4, T5&gt; action, BaseOption&lt;T1&gt; p1, BaseOption&lt;T2&gt; p2, BaseOption&lt;T3&gt; p3, BaseOption&lt;T4&gt; p4, BaseOption&lt;T5&gt; p5, params Key[] keys)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-5">Action</a>&lt;T1, T2, T3, T4, T5&gt;</dt>
+    <dd></dd>
+    <dt><code>p1</code> <a class="xref" href="SimpleLineLibrary.Setup.BaseOption-1.html">BaseOption</a>&lt;T1&gt;</dt>
+    <dd></dd>
+    <dt><code>p2</code> <a class="xref" href="SimpleLineLibrary.Setup.BaseOption-1.html">BaseOption</a>&lt;T2&gt;</dt>
+    <dd></dd>
+    <dt><code>p3</code> <a class="xref" href="SimpleLineLibrary.Setup.BaseOption-1.html">BaseOption</a>&lt;T3&gt;</dt>
+    <dd></dd>
+    <dt><code>p4</code> <a class="xref" href="SimpleLineLibrary.Setup.BaseOption-1.html">BaseOption</a>&lt;T4&gt;</dt>
+    <dd></dd>
+    <dt><code>p5</code> <a class="xref" href="SimpleLineLibrary.Setup.BaseOption-1.html">BaseOption</a>&lt;T5&gt;</dt>
+    <dd></dd>
+    <dt><code>keys</code> <a class="xref" href="SimpleLineLibrary.Setup.Key.html">Key</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SimpleLineLibrary.Setup.CommandBuilder.html">CommandBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T1</code></dt>
+    <dd></dd>
+    <dt><code>T2</code></dt>
+    <dd></dd>
+    <dt><code>T3</code></dt>
+    <dd></dd>
+    <dt><code>T4</code></dt>
+    <dd></dd>
+    <dt><code>T5</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="SimpleLineLibrary_Setup_CommandBuilder_WithHandler_" data-uid="SimpleLineLibrary.Setup.CommandBuilder.WithHandler*"></a>
+
+  <h3 id="SimpleLineLibrary_Setup_CommandBuilder_WithHandler__6_System_Action___0___1___2___3___4___5__SimpleLineLibrary_Setup_BaseOption___0__SimpleLineLibrary_Setup_BaseOption___1__SimpleLineLibrary_Setup_BaseOption___2__SimpleLineLibrary_Setup_BaseOption___3__SimpleLineLibrary_Setup_BaseOption___4__SimpleLineLibrary_Setup_BaseOption___5__SimpleLineLibrary_Setup_Key___" data-uid="SimpleLineLibrary.Setup.CommandBuilder.WithHandler``6(System.Action{``0,``1,``2,``3,``4,``5},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.BaseOption{``3},SimpleLineLibrary.Setup.BaseOption{``4},SimpleLineLibrary.Setup.BaseOption{``5},SimpleLineLibrary.Setup.Key[])">
+  WithHandler&lt;T1, T2, T3, T4, T5, T6&gt;(Action&lt;T1, T2, T3, T4, T5, T6&gt;, BaseOption&lt;T1&gt;, BaseOption&lt;T2&gt;, BaseOption&lt;T3&gt;, BaseOption&lt;T4&gt;, BaseOption&lt;T5&gt;, BaseOption&lt;T6&gt;, params Key[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/Rewrite/SimpleLine/Setup/CommandBuilder.cs/#L181"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CommandBuilder WithHandler&lt;T1, T2, T3, T4, T5, T6&gt;(Action&lt;T1, T2, T3, T4, T5, T6&gt; action, BaseOption&lt;T1&gt; p1, BaseOption&lt;T2&gt; p2, BaseOption&lt;T3&gt; p3, BaseOption&lt;T4&gt; p4, BaseOption&lt;T5&gt; p5, BaseOption&lt;T6&gt; p6, params Key[] keys)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-6">Action</a>&lt;T1, T2, T3, T4, T5, T6&gt;</dt>
+    <dd></dd>
+    <dt><code>p1</code> <a class="xref" href="SimpleLineLibrary.Setup.BaseOption-1.html">BaseOption</a>&lt;T1&gt;</dt>
+    <dd></dd>
+    <dt><code>p2</code> <a class="xref" href="SimpleLineLibrary.Setup.BaseOption-1.html">BaseOption</a>&lt;T2&gt;</dt>
+    <dd></dd>
+    <dt><code>p3</code> <a class="xref" href="SimpleLineLibrary.Setup.BaseOption-1.html">BaseOption</a>&lt;T3&gt;</dt>
+    <dd></dd>
+    <dt><code>p4</code> <a class="xref" href="SimpleLineLibrary.Setup.BaseOption-1.html">BaseOption</a>&lt;T4&gt;</dt>
+    <dd></dd>
+    <dt><code>p5</code> <a class="xref" href="SimpleLineLibrary.Setup.BaseOption-1.html">BaseOption</a>&lt;T5&gt;</dt>
+    <dd></dd>
+    <dt><code>p6</code> <a class="xref" href="SimpleLineLibrary.Setup.BaseOption-1.html">BaseOption</a>&lt;T6&gt;</dt>
+    <dd></dd>
+    <dt><code>keys</code> <a class="xref" href="SimpleLineLibrary.Setup.Key.html">Key</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SimpleLineLibrary.Setup.CommandBuilder.html">CommandBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T1</code></dt>
+    <dd></dd>
+    <dt><code>T2</code></dt>
+    <dd></dd>
+    <dt><code>T3</code></dt>
+    <dd></dd>
+    <dt><code>T4</code></dt>
+    <dd></dd>
+    <dt><code>T5</code></dt>
+    <dd></dd>
+    <dt><code>T6</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/DrSa1fer/SimpleLine/blob/Rewrite/SimpleLine/Setup/CommandBuilder.cs/#L6" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          @ 2024 Danil Kucherenko
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

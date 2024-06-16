@@ -1,0 +1,42 @@
+### YamlMime:ManagedReference
+items:
+- uid: SimpleLineLibrary.Models
+  commentId: N:SimpleLineLibrary.Models
+  id: SimpleLineLibrary.Models
+  children:
+  - SimpleLineLibrary.Models.IGetInfo`1
+  langs:
+  - csharp
+  - vb
+  name: SimpleLineLibrary.Models
+  nameWithType: SimpleLineLibrary.Models
+  fullName: SimpleLineLibrary.Models
+  type: Namespace
+  assemblies:
+  - SimpleLine
+references:
+- uid: SimpleLineLibrary.Models.IGetInfo`1
+  commentId: T:SimpleLineLibrary.Models.IGetInfo`1
+  href: SimpleLineLibrary.Models.IGetInfo-1.html
+  name: IGetInfo<T>
+  nameWithType: IGetInfo<T>
+  fullName: SimpleLineLibrary.Models.IGetInfo<T>
+  nameWithType.vb: IGetInfo(Of T)
+  fullName.vb: SimpleLineLibrary.Models.IGetInfo(Of T)
+  name.vb: IGetInfo(Of T)
+  spec.csharp:
+  - uid: SimpleLineLibrary.Models.IGetInfo`1
+    name: IGetInfo
+    href: SimpleLineLibrary.Models.IGetInfo-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: SimpleLineLibrary.Models.IGetInfo`1
+    name: IGetInfo
+    href: SimpleLineLibrary.Models.IGetInfo-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

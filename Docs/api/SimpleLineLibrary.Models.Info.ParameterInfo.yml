@@ -1,0 +1,666 @@
+### YamlMime:ManagedReference
+items:
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo
+  commentId: T:SimpleLineLibrary.Models.Info.ParameterInfo
+  id: ParameterInfo
+  parent: SimpleLineLibrary.Models.Info
+  children:
+  - SimpleLineLibrary.Models.Info.ParameterInfo.Description
+  - SimpleLineLibrary.Models.Info.ParameterInfo.IsRequired
+  - SimpleLineLibrary.Models.Info.ParameterInfo.KEY_SEPARATOR
+  - SimpleLineLibrary.Models.Info.ParameterInfo.Keys
+  - SimpleLineLibrary.Models.Info.ParameterInfo.OPTIONAL
+  - SimpleLineLibrary.Models.Info.ParameterInfo.REQUIRED
+  - SimpleLineLibrary.Models.Info.ParameterInfo.ToString
+  langs:
+  - csharp
+  - vb
+  name: ParameterInfo
+  nameWithType: ParameterInfo
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo
+  type: Class
+  source:
+    remote:
+      path: SimpleLine/Models/Info/ParameterInfo.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: ParameterInfo
+    path: ../SimpleLine/Models/Info/ParameterInfo.cs
+    startLine: 2
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Models.Info
+  syntax:
+    content: 'public class ParameterInfo : BaseInfo'
+    content.vb: Public Class ParameterInfo Inherits BaseInfo
+  inheritance:
+  - System.Object
+  - SimpleLineLibrary.Models.Info.BaseInfo
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.KEY_SEPARATOR
+  commentId: F:SimpleLineLibrary.Models.Info.ParameterInfo.KEY_SEPARATOR
+  id: KEY_SEPARATOR
+  parent: SimpleLineLibrary.Models.Info.ParameterInfo
+  langs:
+  - csharp
+  - vb
+  name: KEY_SEPARATOR
+  nameWithType: ParameterInfo.KEY_SEPARATOR
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.KEY_SEPARATOR
+  type: Field
+  source:
+    remote:
+      path: SimpleLine/Models/Info/ParameterInfo.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: KEY_SEPARATOR
+    path: ../SimpleLine/Models/Info/ParameterInfo.cs
+    startLine: 4
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Models.Info
+  syntax:
+    content: public const string KEY_SEPARATOR = " | "
+    return:
+      type: System.String
+    content.vb: Public Const KEY_SEPARATOR As String = " | "
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.REQUIRED
+  commentId: F:SimpleLineLibrary.Models.Info.ParameterInfo.REQUIRED
+  id: REQUIRED
+  parent: SimpleLineLibrary.Models.Info.ParameterInfo
+  langs:
+  - csharp
+  - vb
+  name: REQUIRED
+  nameWithType: ParameterInfo.REQUIRED
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.REQUIRED
+  type: Field
+  source:
+    remote:
+      path: SimpleLine/Models/Info/ParameterInfo.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: REQUIRED
+    path: ../SimpleLine/Models/Info/ParameterInfo.cs
+    startLine: 5
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Models.Info
+  syntax:
+    content: public const string REQUIRED = "[REQUIRED]"
+    return:
+      type: System.String
+    content.vb: Public Const REQUIRED As String = "[REQUIRED]"
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.OPTIONAL
+  commentId: F:SimpleLineLibrary.Models.Info.ParameterInfo.OPTIONAL
+  id: OPTIONAL
+  parent: SimpleLineLibrary.Models.Info.ParameterInfo
+  langs:
+  - csharp
+  - vb
+  name: OPTIONAL
+  nameWithType: ParameterInfo.OPTIONAL
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.OPTIONAL
+  type: Field
+  source:
+    remote:
+      path: SimpleLine/Models/Info/ParameterInfo.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: OPTIONAL
+    path: ../SimpleLine/Models/Info/ParameterInfo.cs
+    startLine: 6
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Models.Info
+  syntax:
+    content: public const string OPTIONAL = "[OPTIONAL]"
+    return:
+      type: System.String
+    content.vb: Public Const OPTIONAL As String = "[OPTIONAL]"
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.Keys
+  commentId: P:SimpleLineLibrary.Models.Info.ParameterInfo.Keys
+  id: Keys
+  parent: SimpleLineLibrary.Models.Info.ParameterInfo
+  langs:
+  - csharp
+  - vb
+  name: Keys
+  nameWithType: ParameterInfo.Keys
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.Keys
+  type: Property
+  source:
+    remote:
+      path: SimpleLine/Models/Info/ParameterInfo.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: Keys
+    path: ../SimpleLine/Models/Info/ParameterInfo.cs
+    startLine: 8
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Models.Info
+  syntax:
+    content: public IReadOnlySet<string> Keys { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlySet{System.String}
+    content.vb: Public ReadOnly Property Keys As IReadOnlySet(Of String)
+  overload: SimpleLineLibrary.Models.Info.ParameterInfo.Keys*
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.IsRequired
+  commentId: P:SimpleLineLibrary.Models.Info.ParameterInfo.IsRequired
+  id: IsRequired
+  parent: SimpleLineLibrary.Models.Info.ParameterInfo
+  langs:
+  - csharp
+  - vb
+  name: IsRequired
+  nameWithType: ParameterInfo.IsRequired
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.IsRequired
+  type: Property
+  source:
+    remote:
+      path: SimpleLine/Models/Info/ParameterInfo.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: IsRequired
+    path: ../SimpleLine/Models/Info/ParameterInfo.cs
+    startLine: 10
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Models.Info
+  syntax:
+    content: public bool IsRequired { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsRequired As Boolean
+  overload: SimpleLineLibrary.Models.Info.ParameterInfo.IsRequired*
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.Description
+  commentId: P:SimpleLineLibrary.Models.Info.ParameterInfo.Description
+  id: Description
+  parent: SimpleLineLibrary.Models.Info.ParameterInfo
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: ParameterInfo.Description
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.Description
+  type: Property
+  source:
+    remote:
+      path: SimpleLine/Models/Info/ParameterInfo.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: Description
+    path: ../SimpleLine/Models/Info/ParameterInfo.cs
+    startLine: 11
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Models.Info
+  syntax:
+    content: public string Description { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Description As String
+  overload: SimpleLineLibrary.Models.Info.ParameterInfo.Description*
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.ToString
+  commentId: M:SimpleLineLibrary.Models.Info.ParameterInfo.ToString
+  id: ToString
+  parent: SimpleLineLibrary.Models.Info.ParameterInfo
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: ParameterInfo.ToString()
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.ToString()
+  type: Method
+  source:
+    remote:
+      path: SimpleLine/Models/Info/ParameterInfo.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: ToString
+    path: ../SimpleLine/Models/Info/ParameterInfo.cs
+    startLine: 20
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Models.Info
+  summary: Returns a string that represents the current object.
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: A string that represents the current object.
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.Object.ToString
+  overload: SimpleLineLibrary.Models.Info.ParameterInfo.ToString*
+references:
+- uid: SimpleLineLibrary.Models.Info
+  commentId: N:SimpleLineLibrary.Models.Info
+  href: SimpleLineLibrary.html
+  name: SimpleLineLibrary.Models.Info
+  nameWithType: SimpleLineLibrary.Models.Info
+  fullName: SimpleLineLibrary.Models.Info
+  spec.csharp:
+  - uid: SimpleLineLibrary
+    name: SimpleLineLibrary
+    href: SimpleLineLibrary.html
+  - name: .
+  - uid: SimpleLineLibrary.Models
+    name: Models
+    href: SimpleLineLibrary.Models.html
+  - name: .
+  - uid: SimpleLineLibrary.Models.Info
+    name: Info
+    href: SimpleLineLibrary.Models.Info.html
+  spec.vb:
+  - uid: SimpleLineLibrary
+    name: SimpleLineLibrary
+    href: SimpleLineLibrary.html
+  - name: .
+  - uid: SimpleLineLibrary.Models
+    name: Models
+    href: SimpleLineLibrary.Models.html
+  - name: .
+  - uid: SimpleLineLibrary.Models.Info
+    name: Info
+    href: SimpleLineLibrary.Models.Info.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: SimpleLineLibrary.Models.Info.BaseInfo
+  commentId: T:SimpleLineLibrary.Models.Info.BaseInfo
+  parent: SimpleLineLibrary.Models.Info
+  href: SimpleLineLibrary.Models.Info.BaseInfo.html
+  name: BaseInfo
+  nameWithType: BaseInfo
+  fullName: SimpleLineLibrary.Models.Info.BaseInfo
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.Keys*
+  commentId: Overload:SimpleLineLibrary.Models.Info.ParameterInfo.Keys
+  href: SimpleLineLibrary.Models.Info.ParameterInfo.html#SimpleLineLibrary_Models_Info_ParameterInfo_Keys
+  name: Keys
+  nameWithType: ParameterInfo.Keys
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.Keys
+- uid: System.Collections.Generic.IReadOnlySet{System.String}
+  commentId: T:System.Collections.Generic.IReadOnlySet{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlySet`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlyset-1
+  name: IReadOnlySet<string>
+  nameWithType: IReadOnlySet<string>
+  fullName: System.Collections.Generic.IReadOnlySet<string>
+  nameWithType.vb: IReadOnlySet(Of String)
+  fullName.vb: System.Collections.Generic.IReadOnlySet(Of String)
+  name.vb: IReadOnlySet(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlySet`1
+    name: IReadOnlySet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlyset-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlySet`1
+    name: IReadOnlySet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlyset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.IReadOnlySet`1
+  commentId: T:System.Collections.Generic.IReadOnlySet`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlyset-1
+  name: IReadOnlySet<T>
+  nameWithType: IReadOnlySet<T>
+  fullName: System.Collections.Generic.IReadOnlySet<T>
+  nameWithType.vb: IReadOnlySet(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlySet(Of T)
+  name.vb: IReadOnlySet(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlySet`1
+    name: IReadOnlySet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlyset-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlySet`1
+    name: IReadOnlySet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlyset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.IsRequired*
+  commentId: Overload:SimpleLineLibrary.Models.Info.ParameterInfo.IsRequired
+  href: SimpleLineLibrary.Models.Info.ParameterInfo.html#SimpleLineLibrary_Models_Info_ParameterInfo_IsRequired
+  name: IsRequired
+  nameWithType: ParameterInfo.IsRequired
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.IsRequired
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.Description*
+  commentId: Overload:SimpleLineLibrary.Models.Info.ParameterInfo.Description
+  href: SimpleLineLibrary.Models.Info.ParameterInfo.html#SimpleLineLibrary_Models_Info_ParameterInfo_Description
+  name: Description
+  nameWithType: ParameterInfo.Description
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.Description
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.ToString*
+  commentId: Overload:SimpleLineLibrary.Models.Info.ParameterInfo.ToString
+  href: SimpleLineLibrary.Models.Info.ParameterInfo.html#SimpleLineLibrary_Models_Info_ParameterInfo_ToString
+  name: ToString
+  nameWithType: ParameterInfo.ToString
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.ToString

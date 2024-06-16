@@ -1,0 +1,1438 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: SimpleLineLibrary
+  name: SimpleLineLibrary
+  href: api/SimpleLineLibrary.html
+  commentId: N:SimpleLineLibrary
+  fullName: SimpleLineLibrary
+  nameWithType: SimpleLineLibrary
+- uid: SimpleLineLibrary.API
+  name: SimpleLineLibrary.API
+  href: api/SimpleLineLibrary.API.html
+  commentId: N:SimpleLineLibrary.API
+  fullName: SimpleLineLibrary.API
+  nameWithType: SimpleLineLibrary.API
+- uid: SimpleLineLibrary.API.CommandAttribute
+  name: CommandAttribute
+  href: api/SimpleLineLibrary.API.CommandAttribute.html
+  commentId: T:SimpleLineLibrary.API.CommandAttribute
+  fullName: SimpleLineLibrary.API.CommandAttribute
+  nameWithType: CommandAttribute
+- uid: SimpleLineLibrary.API.CommandAttribute.#ctor(System.String)
+  name: CommandAttribute(string)
+  href: api/SimpleLineLibrary.API.CommandAttribute.html#SimpleLineLibrary_API_CommandAttribute__ctor_System_String_
+  commentId: M:SimpleLineLibrary.API.CommandAttribute.#ctor(System.String)
+  name.vb: New(String)
+  fullName: SimpleLineLibrary.API.CommandAttribute.CommandAttribute(string)
+  fullName.vb: SimpleLineLibrary.API.CommandAttribute.New(String)
+  nameWithType: CommandAttribute.CommandAttribute(string)
+  nameWithType.vb: CommandAttribute.New(String)
+- uid: SimpleLineLibrary.API.CommandAttribute.#ctor*
+  name: CommandAttribute
+  href: api/SimpleLineLibrary.API.CommandAttribute.html#SimpleLineLibrary_API_CommandAttribute__ctor_
+  commentId: Overload:SimpleLineLibrary.API.CommandAttribute.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.API.CommandAttribute.CommandAttribute
+  fullName.vb: SimpleLineLibrary.API.CommandAttribute.New
+  nameWithType: CommandAttribute.CommandAttribute
+  nameWithType.vb: CommandAttribute.New
+- uid: SimpleLineLibrary.API.CommandAttribute.Name
+  name: Name
+  href: api/SimpleLineLibrary.API.CommandAttribute.html#SimpleLineLibrary_API_CommandAttribute_Name
+  commentId: P:SimpleLineLibrary.API.CommandAttribute.Name
+  fullName: SimpleLineLibrary.API.CommandAttribute.Name
+  nameWithType: CommandAttribute.Name
+- uid: SimpleLineLibrary.API.CommandAttribute.Name*
+  name: Name
+  href: api/SimpleLineLibrary.API.CommandAttribute.html#SimpleLineLibrary_API_CommandAttribute_Name_
+  commentId: Overload:SimpleLineLibrary.API.CommandAttribute.Name
+  isSpec: "True"
+  fullName: SimpleLineLibrary.API.CommandAttribute.Name
+  nameWithType: CommandAttribute.Name
+- uid: SimpleLineLibrary.API.HandlerAttribute
+  name: HandlerAttribute
+  href: api/SimpleLineLibrary.API.HandlerAttribute.html
+  commentId: T:SimpleLineLibrary.API.HandlerAttribute
+  fullName: SimpleLineLibrary.API.HandlerAttribute
+  nameWithType: HandlerAttribute
+- uid: SimpleLineLibrary.API.HandlerAttribute.#ctor
+  name: HandlerAttribute()
+  href: api/SimpleLineLibrary.API.HandlerAttribute.html#SimpleLineLibrary_API_HandlerAttribute__ctor
+  commentId: M:SimpleLineLibrary.API.HandlerAttribute.#ctor
+  name.vb: New()
+  fullName: SimpleLineLibrary.API.HandlerAttribute.HandlerAttribute()
+  fullName.vb: SimpleLineLibrary.API.HandlerAttribute.New()
+  nameWithType: HandlerAttribute.HandlerAttribute()
+  nameWithType.vb: HandlerAttribute.New()
+- uid: SimpleLineLibrary.API.HandlerAttribute.#ctor(System.Int32)
+  name: HandlerAttribute(int)
+  href: api/SimpleLineLibrary.API.HandlerAttribute.html#SimpleLineLibrary_API_HandlerAttribute__ctor_System_Int32_
+  commentId: M:SimpleLineLibrary.API.HandlerAttribute.#ctor(System.Int32)
+  name.vb: New(Integer)
+  fullName: SimpleLineLibrary.API.HandlerAttribute.HandlerAttribute(int)
+  fullName.vb: SimpleLineLibrary.API.HandlerAttribute.New(Integer)
+  nameWithType: HandlerAttribute.HandlerAttribute(int)
+  nameWithType.vb: HandlerAttribute.New(Integer)
+- uid: SimpleLineLibrary.API.HandlerAttribute.#ctor*
+  name: HandlerAttribute
+  href: api/SimpleLineLibrary.API.HandlerAttribute.html#SimpleLineLibrary_API_HandlerAttribute__ctor_
+  commentId: Overload:SimpleLineLibrary.API.HandlerAttribute.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.API.HandlerAttribute.HandlerAttribute
+  fullName.vb: SimpleLineLibrary.API.HandlerAttribute.New
+  nameWithType: HandlerAttribute.HandlerAttribute
+  nameWithType.vb: HandlerAttribute.New
+- uid: SimpleLineLibrary.API.HandlerAttribute.Order
+  name: Order
+  href: api/SimpleLineLibrary.API.HandlerAttribute.html#SimpleLineLibrary_API_HandlerAttribute_Order
+  commentId: P:SimpleLineLibrary.API.HandlerAttribute.Order
+  fullName: SimpleLineLibrary.API.HandlerAttribute.Order
+  nameWithType: HandlerAttribute.Order
+- uid: SimpleLineLibrary.API.HandlerAttribute.Order*
+  name: Order
+  href: api/SimpleLineLibrary.API.HandlerAttribute.html#SimpleLineLibrary_API_HandlerAttribute_Order_
+  commentId: Overload:SimpleLineLibrary.API.HandlerAttribute.Order
+  isSpec: "True"
+  fullName: SimpleLineLibrary.API.HandlerAttribute.Order
+  nameWithType: HandlerAttribute.Order
+- uid: SimpleLineLibrary.API.ReflectionCommandFInder
+  name: ReflectionCommandFInder
+  href: api/SimpleLineLibrary.API.ReflectionCommandFInder.html
+  commentId: T:SimpleLineLibrary.API.ReflectionCommandFInder
+  fullName: SimpleLineLibrary.API.ReflectionCommandFInder
+  nameWithType: ReflectionCommandFInder
+- uid: SimpleLineLibrary.Core.Services.Parsing
+  name: SimpleLineLibrary.Core.Services.Parsing
+  href: api/SimpleLineLibrary.Core.Services.Parsing.html
+  commentId: N:SimpleLineLibrary.Core.Services.Parsing
+  fullName: SimpleLineLibrary.Core.Services.Parsing
+  nameWithType: SimpleLineLibrary.Core.Services.Parsing
+- uid: SimpleLineLibrary.Core.Services.Parsing.Exceptions
+  name: SimpleLineLibrary.Core.Services.Parsing.Exceptions
+  href: api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.html
+  commentId: N:SimpleLineLibrary.Core.Services.Parsing.Exceptions
+  fullName: SimpleLineLibrary.Core.Services.Parsing.Exceptions
+  nameWithType: SimpleLineLibrary.Core.Services.Parsing.Exceptions
+- uid: SimpleLineLibrary.Core.Services.Parsing.Exceptions.EmptyRegionException
+  name: EmptyRegionException
+  href: api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.EmptyRegionException.html
+  commentId: T:SimpleLineLibrary.Core.Services.Parsing.Exceptions.EmptyRegionException
+  fullName: SimpleLineLibrary.Core.Services.Parsing.Exceptions.EmptyRegionException
+  nameWithType: EmptyRegionException
+- uid: SimpleLineLibrary.Core.Services.Parsing.Exceptions.EmptyRegionException.#ctor
+  name: EmptyRegionException()
+  href: api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.EmptyRegionException.html#SimpleLineLibrary_Core_Services_Parsing_Exceptions_EmptyRegionException__ctor
+  commentId: M:SimpleLineLibrary.Core.Services.Parsing.Exceptions.EmptyRegionException.#ctor
+  name.vb: New()
+  fullName: SimpleLineLibrary.Core.Services.Parsing.Exceptions.EmptyRegionException.EmptyRegionException()
+  fullName.vb: SimpleLineLibrary.Core.Services.Parsing.Exceptions.EmptyRegionException.New()
+  nameWithType: EmptyRegionException.EmptyRegionException()
+  nameWithType.vb: EmptyRegionException.New()
+- uid: SimpleLineLibrary.Core.Services.Parsing.Exceptions.EmptyRegionException.#ctor*
+  name: EmptyRegionException
+  href: api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.EmptyRegionException.html#SimpleLineLibrary_Core_Services_Parsing_Exceptions_EmptyRegionException__ctor_
+  commentId: Overload:SimpleLineLibrary.Core.Services.Parsing.Exceptions.EmptyRegionException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.Core.Services.Parsing.Exceptions.EmptyRegionException.EmptyRegionException
+  fullName.vb: SimpleLineLibrary.Core.Services.Parsing.Exceptions.EmptyRegionException.New
+  nameWithType: EmptyRegionException.EmptyRegionException
+  nameWithType.vb: EmptyRegionException.New
+- uid: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotClosedRegionException
+  name: NotClosedRegionException
+  href: api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotClosedRegionException.html
+  commentId: T:SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotClosedRegionException
+  fullName: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotClosedRegionException
+  nameWithType: NotClosedRegionException
+- uid: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotClosedRegionException.#ctor
+  name: NotClosedRegionException()
+  href: api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotClosedRegionException.html#SimpleLineLibrary_Core_Services_Parsing_Exceptions_NotClosedRegionException__ctor
+  commentId: M:SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotClosedRegionException.#ctor
+  name.vb: New()
+  fullName: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotClosedRegionException.NotClosedRegionException()
+  fullName.vb: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotClosedRegionException.New()
+  nameWithType: NotClosedRegionException.NotClosedRegionException()
+  nameWithType.vb: NotClosedRegionException.New()
+- uid: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotClosedRegionException.#ctor*
+  name: NotClosedRegionException
+  href: api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotClosedRegionException.html#SimpleLineLibrary_Core_Services_Parsing_Exceptions_NotClosedRegionException__ctor_
+  commentId: Overload:SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotClosedRegionException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotClosedRegionException.NotClosedRegionException
+  fullName.vb: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotClosedRegionException.New
+  nameWithType: NotClosedRegionException.NotClosedRegionException
+  nameWithType.vb: NotClosedRegionException.New
+- uid: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotOpenedRegionException
+  name: NotOpenedRegionException
+  href: api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotOpenedRegionException.html
+  commentId: T:SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotOpenedRegionException
+  fullName: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotOpenedRegionException
+  nameWithType: NotOpenedRegionException
+- uid: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotOpenedRegionException.#ctor
+  name: NotOpenedRegionException()
+  href: api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotOpenedRegionException.html#SimpleLineLibrary_Core_Services_Parsing_Exceptions_NotOpenedRegionException__ctor
+  commentId: M:SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotOpenedRegionException.#ctor
+  name.vb: New()
+  fullName: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotOpenedRegionException.NotOpenedRegionException()
+  fullName.vb: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotOpenedRegionException.New()
+  nameWithType: NotOpenedRegionException.NotOpenedRegionException()
+  nameWithType.vb: NotOpenedRegionException.New()
+- uid: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotOpenedRegionException.#ctor*
+  name: NotOpenedRegionException
+  href: api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotOpenedRegionException.html#SimpleLineLibrary_Core_Services_Parsing_Exceptions_NotOpenedRegionException__ctor_
+  commentId: Overload:SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotOpenedRegionException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotOpenedRegionException.NotOpenedRegionException
+  fullName.vb: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotOpenedRegionException.New
+  nameWithType: NotOpenedRegionException.NotOpenedRegionException
+  nameWithType.vb: NotOpenedRegionException.New
+- uid: SimpleLineLibrary.Core.Services.Parsing.Exceptions.ParseException
+  name: ParseException
+  href: api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.ParseException.html
+  commentId: T:SimpleLineLibrary.Core.Services.Parsing.Exceptions.ParseException
+  fullName: SimpleLineLibrary.Core.Services.Parsing.Exceptions.ParseException
+  nameWithType: ParseException
+- uid: SimpleLineLibrary.Core.Services.Parsing.Exceptions.ParseException.#ctor(System.String)
+  name: ParseException(string?)
+  href: api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.ParseException.html#SimpleLineLibrary_Core_Services_Parsing_Exceptions_ParseException__ctor_System_String_
+  commentId: M:SimpleLineLibrary.Core.Services.Parsing.Exceptions.ParseException.#ctor(System.String)
+  name.vb: New(String)
+  fullName: SimpleLineLibrary.Core.Services.Parsing.Exceptions.ParseException.ParseException(string?)
+  fullName.vb: SimpleLineLibrary.Core.Services.Parsing.Exceptions.ParseException.New(String)
+  nameWithType: ParseException.ParseException(string?)
+  nameWithType.vb: ParseException.New(String)
+- uid: SimpleLineLibrary.Core.Services.Parsing.Exceptions.ParseException.#ctor*
+  name: ParseException
+  href: api/SimpleLineLibrary.Core.Services.Parsing.Exceptions.ParseException.html#SimpleLineLibrary_Core_Services_Parsing_Exceptions_ParseException__ctor_
+  commentId: Overload:SimpleLineLibrary.Core.Services.Parsing.Exceptions.ParseException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.Core.Services.Parsing.Exceptions.ParseException.ParseException
+  fullName.vb: SimpleLineLibrary.Core.Services.Parsing.Exceptions.ParseException.New
+  nameWithType: ParseException.ParseException
+  nameWithType.vb: ParseException.New
+- uid: SimpleLineLibrary.Core.Services.Parsing.StringParser
+  name: StringParser
+  href: api/SimpleLineLibrary.Core.Services.Parsing.StringParser.html
+  commentId: T:SimpleLineLibrary.Core.Services.Parsing.StringParser
+  fullName: SimpleLineLibrary.Core.Services.Parsing.StringParser
+  nameWithType: StringParser
+- uid: SimpleLineLibrary.Core.Services.Parsing.StringParser.Parse(System.String)
+  name: Parse(string)
+  href: api/SimpleLineLibrary.Core.Services.Parsing.StringParser.html#SimpleLineLibrary_Core_Services_Parsing_StringParser_Parse_System_String_
+  commentId: M:SimpleLineLibrary.Core.Services.Parsing.StringParser.Parse(System.String)
+  name.vb: Parse(String)
+  fullName: SimpleLineLibrary.Core.Services.Parsing.StringParser.Parse(string)
+  fullName.vb: SimpleLineLibrary.Core.Services.Parsing.StringParser.Parse(String)
+  nameWithType: StringParser.Parse(string)
+  nameWithType.vb: StringParser.Parse(String)
+- uid: SimpleLineLibrary.Core.Services.Parsing.StringParser.Parse*
+  name: Parse
+  href: api/SimpleLineLibrary.Core.Services.Parsing.StringParser.html#SimpleLineLibrary_Core_Services_Parsing_StringParser_Parse_
+  commentId: Overload:SimpleLineLibrary.Core.Services.Parsing.StringParser.Parse
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Core.Services.Parsing.StringParser.Parse
+  nameWithType: StringParser.Parse
+- uid: SimpleLineLibrary.Extensions
+  name: SimpleLineLibrary.Extensions
+  href: api/SimpleLineLibrary.Extensions.html
+  commentId: N:SimpleLineLibrary.Extensions
+  fullName: SimpleLineLibrary.Extensions
+  nameWithType: SimpleLineLibrary.Extensions
+- uid: SimpleLineLibrary.Extensions.StringExtentions
+  name: StringExtentions
+  href: api/SimpleLineLibrary.Extensions.StringExtentions.html
+  commentId: T:SimpleLineLibrary.Extensions.StringExtentions
+  fullName: SimpleLineLibrary.Extensions.StringExtentions
+  nameWithType: StringExtentions
+- uid: SimpleLineLibrary.Extensions.StringExtentions.HaveSpace(System.String)
+  name: HaveSpace(string)
+  href: api/SimpleLineLibrary.Extensions.StringExtentions.html#SimpleLineLibrary_Extensions_StringExtentions_HaveSpace_System_String_
+  commentId: M:SimpleLineLibrary.Extensions.StringExtentions.HaveSpace(System.String)
+  name.vb: HaveSpace(String)
+  fullName: SimpleLineLibrary.Extensions.StringExtentions.HaveSpace(string)
+  fullName.vb: SimpleLineLibrary.Extensions.StringExtentions.HaveSpace(String)
+  nameWithType: StringExtentions.HaveSpace(string)
+  nameWithType.vb: StringExtentions.HaveSpace(String)
+- uid: SimpleLineLibrary.Extensions.StringExtentions.HaveSpace*
+  name: HaveSpace
+  href: api/SimpleLineLibrary.Extensions.StringExtentions.html#SimpleLineLibrary_Extensions_StringExtentions_HaveSpace_
+  commentId: Overload:SimpleLineLibrary.Extensions.StringExtentions.HaveSpace
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Extensions.StringExtentions.HaveSpace
+  nameWithType: StringExtentions.HaveSpace
+- uid: SimpleLineLibrary.Extensions.StringExtentions.IsArray(System.String)
+  name: IsArray(string)
+  href: api/SimpleLineLibrary.Extensions.StringExtentions.html#SimpleLineLibrary_Extensions_StringExtentions_IsArray_System_String_
+  commentId: M:SimpleLineLibrary.Extensions.StringExtentions.IsArray(System.String)
+  name.vb: IsArray(String)
+  fullName: SimpleLineLibrary.Extensions.StringExtentions.IsArray(string)
+  fullName.vb: SimpleLineLibrary.Extensions.StringExtentions.IsArray(String)
+  nameWithType: StringExtentions.IsArray(string)
+  nameWithType.vb: StringExtentions.IsArray(String)
+- uid: SimpleLineLibrary.Extensions.StringExtentions.IsArray*
+  name: IsArray
+  href: api/SimpleLineLibrary.Extensions.StringExtentions.html#SimpleLineLibrary_Extensions_StringExtentions_IsArray_
+  commentId: Overload:SimpleLineLibrary.Extensions.StringExtentions.IsArray
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Extensions.StringExtentions.IsArray
+  nameWithType: StringExtentions.IsArray
+- uid: SimpleLineLibrary.Extensions.StringExtentions.IsCommandName(System.String)
+  name: IsCommandName(string)
+  href: api/SimpleLineLibrary.Extensions.StringExtentions.html#SimpleLineLibrary_Extensions_StringExtentions_IsCommandName_System_String_
+  commentId: M:SimpleLineLibrary.Extensions.StringExtentions.IsCommandName(System.String)
+  name.vb: IsCommandName(String)
+  fullName: SimpleLineLibrary.Extensions.StringExtentions.IsCommandName(string)
+  fullName.vb: SimpleLineLibrary.Extensions.StringExtentions.IsCommandName(String)
+  nameWithType: StringExtentions.IsCommandName(string)
+  nameWithType.vb: StringExtentions.IsCommandName(String)
+- uid: SimpleLineLibrary.Extensions.StringExtentions.IsCommandName*
+  name: IsCommandName
+  href: api/SimpleLineLibrary.Extensions.StringExtentions.html#SimpleLineLibrary_Extensions_StringExtentions_IsCommandName_
+  commentId: Overload:SimpleLineLibrary.Extensions.StringExtentions.IsCommandName
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Extensions.StringExtentions.IsCommandName
+  nameWithType: StringExtentions.IsCommandName
+- uid: SimpleLineLibrary.Extensions.StringExtentions.IsKey(System.String)
+  name: IsKey(string)
+  href: api/SimpleLineLibrary.Extensions.StringExtentions.html#SimpleLineLibrary_Extensions_StringExtentions_IsKey_System_String_
+  commentId: M:SimpleLineLibrary.Extensions.StringExtentions.IsKey(System.String)
+  name.vb: IsKey(String)
+  fullName: SimpleLineLibrary.Extensions.StringExtentions.IsKey(string)
+  fullName.vb: SimpleLineLibrary.Extensions.StringExtentions.IsKey(String)
+  nameWithType: StringExtentions.IsKey(string)
+  nameWithType.vb: StringExtentions.IsKey(String)
+- uid: SimpleLineLibrary.Extensions.StringExtentions.IsKey*
+  name: IsKey
+  href: api/SimpleLineLibrary.Extensions.StringExtentions.html#SimpleLineLibrary_Extensions_StringExtentions_IsKey_
+  commentId: Overload:SimpleLineLibrary.Extensions.StringExtentions.IsKey
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Extensions.StringExtentions.IsKey
+  nameWithType: StringExtentions.IsKey
+- uid: SimpleLineLibrary.Extensions.StringExtentions.MakeKeys(System.String,System.Collections.Generic.HashSet{System.String})
+  name: MakeKeys(string, HashSet<string>)
+  href: api/SimpleLineLibrary.Extensions.StringExtentions.html#SimpleLineLibrary_Extensions_StringExtentions_MakeKeys_System_String_System_Collections_Generic_HashSet_System_String__
+  commentId: M:SimpleLineLibrary.Extensions.StringExtentions.MakeKeys(System.String,System.Collections.Generic.HashSet{System.String})
+  name.vb: MakeKeys(String, HashSet(Of String))
+  fullName: SimpleLineLibrary.Extensions.StringExtentions.MakeKeys(string, System.Collections.Generic.HashSet<string>)
+  fullName.vb: SimpleLineLibrary.Extensions.StringExtentions.MakeKeys(String, System.Collections.Generic.HashSet(Of String))
+  nameWithType: StringExtentions.MakeKeys(string, HashSet<string>)
+  nameWithType.vb: StringExtentions.MakeKeys(String, HashSet(Of String))
+- uid: SimpleLineLibrary.Extensions.StringExtentions.MakeKeys*
+  name: MakeKeys
+  href: api/SimpleLineLibrary.Extensions.StringExtentions.html#SimpleLineLibrary_Extensions_StringExtentions_MakeKeys_
+  commentId: Overload:SimpleLineLibrary.Extensions.StringExtentions.MakeKeys
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Extensions.StringExtentions.MakeKeys
+  nameWithType: StringExtentions.MakeKeys
+- uid: SimpleLineLibrary.Models
+  name: SimpleLineLibrary.Models
+  href: api/SimpleLineLibrary.Models.html
+  commentId: N:SimpleLineLibrary.Models
+  fullName: SimpleLineLibrary.Models
+  nameWithType: SimpleLineLibrary.Models
+- uid: SimpleLineLibrary.Models.IGetInfo`1
+  name: IGetInfo<T>
+  href: api/SimpleLineLibrary.Models.IGetInfo-1.html
+  commentId: T:SimpleLineLibrary.Models.IGetInfo`1
+  name.vb: IGetInfo(Of T)
+  fullName: SimpleLineLibrary.Models.IGetInfo<T>
+  fullName.vb: SimpleLineLibrary.Models.IGetInfo(Of T)
+  nameWithType: IGetInfo<T>
+  nameWithType.vb: IGetInfo(Of T)
+- uid: SimpleLineLibrary.Models.IGetInfo`1.GetInfo
+  name: GetInfo()
+  href: api/SimpleLineLibrary.Models.IGetInfo-1.html#SimpleLineLibrary_Models_IGetInfo_1_GetInfo
+  commentId: M:SimpleLineLibrary.Models.IGetInfo`1.GetInfo
+  fullName: SimpleLineLibrary.Models.IGetInfo<T>.GetInfo()
+  fullName.vb: SimpleLineLibrary.Models.IGetInfo(Of T).GetInfo()
+  nameWithType: IGetInfo<T>.GetInfo()
+  nameWithType.vb: IGetInfo(Of T).GetInfo()
+- uid: SimpleLineLibrary.Models.IGetInfo`1.GetInfo*
+  name: GetInfo
+  href: api/SimpleLineLibrary.Models.IGetInfo-1.html#SimpleLineLibrary_Models_IGetInfo_1_GetInfo_
+  commentId: Overload:SimpleLineLibrary.Models.IGetInfo`1.GetInfo
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Models.IGetInfo<T>.GetInfo
+  fullName.vb: SimpleLineLibrary.Models.IGetInfo(Of T).GetInfo
+  nameWithType: IGetInfo<T>.GetInfo
+  nameWithType.vb: IGetInfo(Of T).GetInfo
+- uid: SimpleLineLibrary.Models.Info
+  name: SimpleLineLibrary.Models.Info
+  href: api/SimpleLineLibrary.Models.Info.html
+  commentId: N:SimpleLineLibrary.Models.Info
+  fullName: SimpleLineLibrary.Models.Info
+  nameWithType: SimpleLineLibrary.Models.Info
+- uid: SimpleLineLibrary.Models.Info.BaseInfo
+  name: BaseInfo
+  href: api/SimpleLineLibrary.Models.Info.BaseInfo.html
+  commentId: T:SimpleLineLibrary.Models.Info.BaseInfo
+  fullName: SimpleLineLibrary.Models.Info.BaseInfo
+  nameWithType: BaseInfo
+- uid: SimpleLineLibrary.Models.Info.CommandInfo
+  name: CommandInfo
+  href: api/SimpleLineLibrary.Models.Info.CommandInfo.html
+  commentId: T:SimpleLineLibrary.Models.Info.CommandInfo
+  fullName: SimpleLineLibrary.Models.Info.CommandInfo
+  nameWithType: CommandInfo
+- uid: SimpleLineLibrary.Models.Info.CommandInfo.Description
+  name: Description
+  href: api/SimpleLineLibrary.Models.Info.CommandInfo.html#SimpleLineLibrary_Models_Info_CommandInfo_Description
+  commentId: P:SimpleLineLibrary.Models.Info.CommandInfo.Description
+  fullName: SimpleLineLibrary.Models.Info.CommandInfo.Description
+  nameWithType: CommandInfo.Description
+- uid: SimpleLineLibrary.Models.Info.CommandInfo.Description*
+  name: Description
+  href: api/SimpleLineLibrary.Models.Info.CommandInfo.html#SimpleLineLibrary_Models_Info_CommandInfo_Description_
+  commentId: Overload:SimpleLineLibrary.Models.Info.CommandInfo.Description
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Models.Info.CommandInfo.Description
+  nameWithType: CommandInfo.Description
+- uid: SimpleLineLibrary.Models.Info.CommandInfo.HandlersInfo
+  name: HandlersInfo
+  href: api/SimpleLineLibrary.Models.Info.CommandInfo.html#SimpleLineLibrary_Models_Info_CommandInfo_HandlersInfo
+  commentId: P:SimpleLineLibrary.Models.Info.CommandInfo.HandlersInfo
+  fullName: SimpleLineLibrary.Models.Info.CommandInfo.HandlersInfo
+  nameWithType: CommandInfo.HandlersInfo
+- uid: SimpleLineLibrary.Models.Info.CommandInfo.HandlersInfo*
+  name: HandlersInfo
+  href: api/SimpleLineLibrary.Models.Info.CommandInfo.html#SimpleLineLibrary_Models_Info_CommandInfo_HandlersInfo_
+  commentId: Overload:SimpleLineLibrary.Models.Info.CommandInfo.HandlersInfo
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Models.Info.CommandInfo.HandlersInfo
+  nameWithType: CommandInfo.HandlersInfo
+- uid: SimpleLineLibrary.Models.Info.CommandInfo.Name
+  name: Name
+  href: api/SimpleLineLibrary.Models.Info.CommandInfo.html#SimpleLineLibrary_Models_Info_CommandInfo_Name
+  commentId: P:SimpleLineLibrary.Models.Info.CommandInfo.Name
+  fullName: SimpleLineLibrary.Models.Info.CommandInfo.Name
+  nameWithType: CommandInfo.Name
+- uid: SimpleLineLibrary.Models.Info.CommandInfo.Name*
+  name: Name
+  href: api/SimpleLineLibrary.Models.Info.CommandInfo.html#SimpleLineLibrary_Models_Info_CommandInfo_Name_
+  commentId: Overload:SimpleLineLibrary.Models.Info.CommandInfo.Name
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Models.Info.CommandInfo.Name
+  nameWithType: CommandInfo.Name
+- uid: SimpleLineLibrary.Models.Info.CommandInfo.ToString
+  name: ToString()
+  href: api/SimpleLineLibrary.Models.Info.CommandInfo.html#SimpleLineLibrary_Models_Info_CommandInfo_ToString
+  commentId: M:SimpleLineLibrary.Models.Info.CommandInfo.ToString
+  fullName: SimpleLineLibrary.Models.Info.CommandInfo.ToString()
+  nameWithType: CommandInfo.ToString()
+- uid: SimpleLineLibrary.Models.Info.CommandInfo.ToString*
+  name: ToString
+  href: api/SimpleLineLibrary.Models.Info.CommandInfo.html#SimpleLineLibrary_Models_Info_CommandInfo_ToString_
+  commentId: Overload:SimpleLineLibrary.Models.Info.CommandInfo.ToString
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Models.Info.CommandInfo.ToString
+  nameWithType: CommandInfo.ToString
+- uid: SimpleLineLibrary.Models.Info.HandlerInfo
+  name: HandlerInfo
+  href: api/SimpleLineLibrary.Models.Info.HandlerInfo.html
+  commentId: T:SimpleLineLibrary.Models.Info.HandlerInfo
+  fullName: SimpleLineLibrary.Models.Info.HandlerInfo
+  nameWithType: HandlerInfo
+- uid: SimpleLineLibrary.Models.Info.HandlerInfo.Keys
+  name: Keys
+  href: api/SimpleLineLibrary.Models.Info.HandlerInfo.html#SimpleLineLibrary_Models_Info_HandlerInfo_Keys
+  commentId: P:SimpleLineLibrary.Models.Info.HandlerInfo.Keys
+  fullName: SimpleLineLibrary.Models.Info.HandlerInfo.Keys
+  nameWithType: HandlerInfo.Keys
+- uid: SimpleLineLibrary.Models.Info.HandlerInfo.Keys*
+  name: Keys
+  href: api/SimpleLineLibrary.Models.Info.HandlerInfo.html#SimpleLineLibrary_Models_Info_HandlerInfo_Keys_
+  commentId: Overload:SimpleLineLibrary.Models.Info.HandlerInfo.Keys
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Models.Info.HandlerInfo.Keys
+  nameWithType: HandlerInfo.Keys
+- uid: SimpleLineLibrary.Models.Info.HandlerInfo.Parameters
+  name: Parameters
+  href: api/SimpleLineLibrary.Models.Info.HandlerInfo.html#SimpleLineLibrary_Models_Info_HandlerInfo_Parameters
+  commentId: P:SimpleLineLibrary.Models.Info.HandlerInfo.Parameters
+  fullName: SimpleLineLibrary.Models.Info.HandlerInfo.Parameters
+  nameWithType: HandlerInfo.Parameters
+- uid: SimpleLineLibrary.Models.Info.HandlerInfo.Parameters*
+  name: Parameters
+  href: api/SimpleLineLibrary.Models.Info.HandlerInfo.html#SimpleLineLibrary_Models_Info_HandlerInfo_Parameters_
+  commentId: Overload:SimpleLineLibrary.Models.Info.HandlerInfo.Parameters
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Models.Info.HandlerInfo.Parameters
+  nameWithType: HandlerInfo.Parameters
+- uid: SimpleLineLibrary.Models.Info.HandlerInfo.ToString
+  name: ToString()
+  href: api/SimpleLineLibrary.Models.Info.HandlerInfo.html#SimpleLineLibrary_Models_Info_HandlerInfo_ToString
+  commentId: M:SimpleLineLibrary.Models.Info.HandlerInfo.ToString
+  fullName: SimpleLineLibrary.Models.Info.HandlerInfo.ToString()
+  nameWithType: HandlerInfo.ToString()
+- uid: SimpleLineLibrary.Models.Info.HandlerInfo.ToString*
+  name: ToString
+  href: api/SimpleLineLibrary.Models.Info.HandlerInfo.html#SimpleLineLibrary_Models_Info_HandlerInfo_ToString_
+  commentId: Overload:SimpleLineLibrary.Models.Info.HandlerInfo.ToString
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Models.Info.HandlerInfo.ToString
+  nameWithType: HandlerInfo.ToString
+- uid: SimpleLineLibrary.Models.Info.IGetInfo`1
+  name: IGetInfo<T>
+  href: api/SimpleLineLibrary.Models.Info.IGetInfo-1.html
+  commentId: T:SimpleLineLibrary.Models.Info.IGetInfo`1
+  name.vb: IGetInfo(Of T)
+  fullName: SimpleLineLibrary.Models.Info.IGetInfo<T>
+  fullName.vb: SimpleLineLibrary.Models.Info.IGetInfo(Of T)
+  nameWithType: IGetInfo<T>
+  nameWithType.vb: IGetInfo(Of T)
+- uid: SimpleLineLibrary.Models.Info.IGetInfo`1.GetInfo
+  name: GetInfo()
+  href: api/SimpleLineLibrary.Models.Info.IGetInfo-1.html#SimpleLineLibrary_Models_Info_IGetInfo_1_GetInfo
+  commentId: M:SimpleLineLibrary.Models.Info.IGetInfo`1.GetInfo
+  fullName: SimpleLineLibrary.Models.Info.IGetInfo<T>.GetInfo()
+  fullName.vb: SimpleLineLibrary.Models.Info.IGetInfo(Of T).GetInfo()
+  nameWithType: IGetInfo<T>.GetInfo()
+  nameWithType.vb: IGetInfo(Of T).GetInfo()
+- uid: SimpleLineLibrary.Models.Info.IGetInfo`1.GetInfo*
+  name: GetInfo
+  href: api/SimpleLineLibrary.Models.Info.IGetInfo-1.html#SimpleLineLibrary_Models_Info_IGetInfo_1_GetInfo_
+  commentId: Overload:SimpleLineLibrary.Models.Info.IGetInfo`1.GetInfo
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Models.Info.IGetInfo<T>.GetInfo
+  fullName.vb: SimpleLineLibrary.Models.Info.IGetInfo(Of T).GetInfo
+  nameWithType: IGetInfo<T>.GetInfo
+  nameWithType.vb: IGetInfo(Of T).GetInfo
+- uid: SimpleLineLibrary.Models.Info.KeyInfo
+  name: KeyInfo
+  href: api/SimpleLineLibrary.Models.Info.KeyInfo.html
+  commentId: T:SimpleLineLibrary.Models.Info.KeyInfo
+  fullName: SimpleLineLibrary.Models.Info.KeyInfo
+  nameWithType: KeyInfo
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo
+  name: ParameterInfo
+  href: api/SimpleLineLibrary.Models.Info.ParameterInfo.html
+  commentId: T:SimpleLineLibrary.Models.Info.ParameterInfo
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo
+  nameWithType: ParameterInfo
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.Description
+  name: Description
+  href: api/SimpleLineLibrary.Models.Info.ParameterInfo.html#SimpleLineLibrary_Models_Info_ParameterInfo_Description
+  commentId: P:SimpleLineLibrary.Models.Info.ParameterInfo.Description
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.Description
+  nameWithType: ParameterInfo.Description
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.Description*
+  name: Description
+  href: api/SimpleLineLibrary.Models.Info.ParameterInfo.html#SimpleLineLibrary_Models_Info_ParameterInfo_Description_
+  commentId: Overload:SimpleLineLibrary.Models.Info.ParameterInfo.Description
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.Description
+  nameWithType: ParameterInfo.Description
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.IsRequired
+  name: IsRequired
+  href: api/SimpleLineLibrary.Models.Info.ParameterInfo.html#SimpleLineLibrary_Models_Info_ParameterInfo_IsRequired
+  commentId: P:SimpleLineLibrary.Models.Info.ParameterInfo.IsRequired
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.IsRequired
+  nameWithType: ParameterInfo.IsRequired
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.IsRequired*
+  name: IsRequired
+  href: api/SimpleLineLibrary.Models.Info.ParameterInfo.html#SimpleLineLibrary_Models_Info_ParameterInfo_IsRequired_
+  commentId: Overload:SimpleLineLibrary.Models.Info.ParameterInfo.IsRequired
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.IsRequired
+  nameWithType: ParameterInfo.IsRequired
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.KEY_SEPARATOR
+  name: KEY_SEPARATOR
+  href: api/SimpleLineLibrary.Models.Info.ParameterInfo.html#SimpleLineLibrary_Models_Info_ParameterInfo_KEY_SEPARATOR
+  commentId: F:SimpleLineLibrary.Models.Info.ParameterInfo.KEY_SEPARATOR
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.KEY_SEPARATOR
+  nameWithType: ParameterInfo.KEY_SEPARATOR
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.Keys
+  name: Keys
+  href: api/SimpleLineLibrary.Models.Info.ParameterInfo.html#SimpleLineLibrary_Models_Info_ParameterInfo_Keys
+  commentId: P:SimpleLineLibrary.Models.Info.ParameterInfo.Keys
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.Keys
+  nameWithType: ParameterInfo.Keys
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.Keys*
+  name: Keys
+  href: api/SimpleLineLibrary.Models.Info.ParameterInfo.html#SimpleLineLibrary_Models_Info_ParameterInfo_Keys_
+  commentId: Overload:SimpleLineLibrary.Models.Info.ParameterInfo.Keys
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.Keys
+  nameWithType: ParameterInfo.Keys
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.OPTIONAL
+  name: OPTIONAL
+  href: api/SimpleLineLibrary.Models.Info.ParameterInfo.html#SimpleLineLibrary_Models_Info_ParameterInfo_OPTIONAL
+  commentId: F:SimpleLineLibrary.Models.Info.ParameterInfo.OPTIONAL
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.OPTIONAL
+  nameWithType: ParameterInfo.OPTIONAL
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.REQUIRED
+  name: REQUIRED
+  href: api/SimpleLineLibrary.Models.Info.ParameterInfo.html#SimpleLineLibrary_Models_Info_ParameterInfo_REQUIRED
+  commentId: F:SimpleLineLibrary.Models.Info.ParameterInfo.REQUIRED
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.REQUIRED
+  nameWithType: ParameterInfo.REQUIRED
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.ToString
+  name: ToString()
+  href: api/SimpleLineLibrary.Models.Info.ParameterInfo.html#SimpleLineLibrary_Models_Info_ParameterInfo_ToString
+  commentId: M:SimpleLineLibrary.Models.Info.ParameterInfo.ToString
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.ToString()
+  nameWithType: ParameterInfo.ToString()
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo.ToString*
+  name: ToString
+  href: api/SimpleLineLibrary.Models.Info.ParameterInfo.html#SimpleLineLibrary_Models_Info_ParameterInfo_ToString_
+  commentId: Overload:SimpleLineLibrary.Models.Info.ParameterInfo.ToString
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo.ToString
+  nameWithType: ParameterInfo.ToString
+- uid: SimpleLineLibrary.Services.Invokation.Execution
+  name: SimpleLineLibrary.Services.Invokation.Execution
+  href: api/SimpleLineLibrary.Services.Invokation.Execution.html
+  commentId: N:SimpleLineLibrary.Services.Invokation.Execution
+  fullName: SimpleLineLibrary.Services.Invokation.Execution
+  nameWithType: SimpleLineLibrary.Services.Invokation.Execution
+- uid: SimpleLineLibrary.Services.Invokation.Execution.Argument
+  name: Argument
+  href: api/SimpleLineLibrary.Services.Invokation.Execution.Argument.html
+  commentId: T:SimpleLineLibrary.Services.Invokation.Execution.Argument
+  fullName: SimpleLineLibrary.Services.Invokation.Execution.Argument
+  nameWithType: Argument
+- uid: SimpleLineLibrary.Services.Invokation.Execution.Argument.#ctor
+  name: Argument()
+  href: api/SimpleLineLibrary.Services.Invokation.Execution.Argument.html#SimpleLineLibrary_Services_Invokation_Execution_Argument__ctor
+  commentId: M:SimpleLineLibrary.Services.Invokation.Execution.Argument.#ctor
+  name.vb: New()
+  fullName: SimpleLineLibrary.Services.Invokation.Execution.Argument.Argument()
+  fullName.vb: SimpleLineLibrary.Services.Invokation.Execution.Argument.New()
+  nameWithType: Argument.Argument()
+  nameWithType.vb: Argument.New()
+- uid: SimpleLineLibrary.Services.Invokation.Execution.Argument.#ctor(System.String,System.String)
+  name: Argument(string, string)
+  href: api/SimpleLineLibrary.Services.Invokation.Execution.Argument.html#SimpleLineLibrary_Services_Invokation_Execution_Argument__ctor_System_String_System_String_
+  commentId: M:SimpleLineLibrary.Services.Invokation.Execution.Argument.#ctor(System.String,System.String)
+  name.vb: New(String, String)
+  fullName: SimpleLineLibrary.Services.Invokation.Execution.Argument.Argument(string, string)
+  fullName.vb: SimpleLineLibrary.Services.Invokation.Execution.Argument.New(String, String)
+  nameWithType: Argument.Argument(string, string)
+  nameWithType.vb: Argument.New(String, String)
+- uid: SimpleLineLibrary.Services.Invokation.Execution.Argument.#ctor*
+  name: Argument
+  href: api/SimpleLineLibrary.Services.Invokation.Execution.Argument.html#SimpleLineLibrary_Services_Invokation_Execution_Argument__ctor_
+  commentId: Overload:SimpleLineLibrary.Services.Invokation.Execution.Argument.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.Services.Invokation.Execution.Argument.Argument
+  fullName.vb: SimpleLineLibrary.Services.Invokation.Execution.Argument.New
+  nameWithType: Argument.Argument
+  nameWithType.vb: Argument.New
+- uid: SimpleLineLibrary.Services.Invokation.Execution.Argument.Key
+  name: Key
+  href: api/SimpleLineLibrary.Services.Invokation.Execution.Argument.html#SimpleLineLibrary_Services_Invokation_Execution_Argument_Key
+  commentId: F:SimpleLineLibrary.Services.Invokation.Execution.Argument.Key
+  fullName: SimpleLineLibrary.Services.Invokation.Execution.Argument.Key
+  nameWithType: Argument.Key
+- uid: SimpleLineLibrary.Services.Invokation.Execution.Argument.Value
+  name: Value
+  href: api/SimpleLineLibrary.Services.Invokation.Execution.Argument.html#SimpleLineLibrary_Services_Invokation_Execution_Argument_Value
+  commentId: F:SimpleLineLibrary.Services.Invokation.Execution.Argument.Value
+  fullName: SimpleLineLibrary.Services.Invokation.Execution.Argument.Value
+  nameWithType: Argument.Value
+- uid: SimpleLineLibrary.Services.Invokation.Execution.Argument.WithKey
+  name: WithKey()
+  href: api/SimpleLineLibrary.Services.Invokation.Execution.Argument.html#SimpleLineLibrary_Services_Invokation_Execution_Argument_WithKey
+  commentId: M:SimpleLineLibrary.Services.Invokation.Execution.Argument.WithKey
+  fullName: SimpleLineLibrary.Services.Invokation.Execution.Argument.WithKey()
+  nameWithType: Argument.WithKey()
+- uid: SimpleLineLibrary.Services.Invokation.Execution.Argument.WithKey*
+  name: WithKey
+  href: api/SimpleLineLibrary.Services.Invokation.Execution.Argument.html#SimpleLineLibrary_Services_Invokation_Execution_Argument_WithKey_
+  commentId: Overload:SimpleLineLibrary.Services.Invokation.Execution.Argument.WithKey
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Services.Invokation.Execution.Argument.WithKey
+  nameWithType: Argument.WithKey
+- uid: SimpleLineLibrary.Services.Invokation.Execution.Argument.WithValue
+  name: WithValue()
+  href: api/SimpleLineLibrary.Services.Invokation.Execution.Argument.html#SimpleLineLibrary_Services_Invokation_Execution_Argument_WithValue
+  commentId: M:SimpleLineLibrary.Services.Invokation.Execution.Argument.WithValue
+  fullName: SimpleLineLibrary.Services.Invokation.Execution.Argument.WithValue()
+  nameWithType: Argument.WithValue()
+- uid: SimpleLineLibrary.Services.Invokation.Execution.Argument.WithValue*
+  name: WithValue
+  href: api/SimpleLineLibrary.Services.Invokation.Execution.Argument.html#SimpleLineLibrary_Services_Invokation_Execution_Argument_WithValue_
+  commentId: Overload:SimpleLineLibrary.Services.Invokation.Execution.Argument.WithValue
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Services.Invokation.Execution.Argument.WithValue
+  nameWithType: Argument.WithValue
+- uid: SimpleLineLibrary.Services.Parsing
+  name: SimpleLineLibrary.Services.Parsing
+  href: api/SimpleLineLibrary.Services.Parsing.html
+  commentId: N:SimpleLineLibrary.Services.Parsing
+  fullName: SimpleLineLibrary.Services.Parsing
+  nameWithType: SimpleLineLibrary.Services.Parsing
+- uid: SimpleLineLibrary.Services.Parsing.EmptyRegionException
+  name: EmptyRegionException
+  href: api/SimpleLineLibrary.Services.Parsing.EmptyRegionException.html
+  commentId: T:SimpleLineLibrary.Services.Parsing.EmptyRegionException
+  fullName: SimpleLineLibrary.Services.Parsing.EmptyRegionException
+  nameWithType: EmptyRegionException
+- uid: SimpleLineLibrary.Services.Parsing.EmptyRegionException.#ctor
+  name: EmptyRegionException()
+  href: api/SimpleLineLibrary.Services.Parsing.EmptyRegionException.html#SimpleLineLibrary_Services_Parsing_EmptyRegionException__ctor
+  commentId: M:SimpleLineLibrary.Services.Parsing.EmptyRegionException.#ctor
+  name.vb: New()
+  fullName: SimpleLineLibrary.Services.Parsing.EmptyRegionException.EmptyRegionException()
+  fullName.vb: SimpleLineLibrary.Services.Parsing.EmptyRegionException.New()
+  nameWithType: EmptyRegionException.EmptyRegionException()
+  nameWithType.vb: EmptyRegionException.New()
+- uid: SimpleLineLibrary.Services.Parsing.EmptyRegionException.#ctor*
+  name: EmptyRegionException
+  href: api/SimpleLineLibrary.Services.Parsing.EmptyRegionException.html#SimpleLineLibrary_Services_Parsing_EmptyRegionException__ctor_
+  commentId: Overload:SimpleLineLibrary.Services.Parsing.EmptyRegionException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.Services.Parsing.EmptyRegionException.EmptyRegionException
+  fullName.vb: SimpleLineLibrary.Services.Parsing.EmptyRegionException.New
+  nameWithType: EmptyRegionException.EmptyRegionException
+  nameWithType.vb: EmptyRegionException.New
+- uid: SimpleLineLibrary.Services.Parsing.NotClosedRegionException
+  name: NotClosedRegionException
+  href: api/SimpleLineLibrary.Services.Parsing.NotClosedRegionException.html
+  commentId: T:SimpleLineLibrary.Services.Parsing.NotClosedRegionException
+  fullName: SimpleLineLibrary.Services.Parsing.NotClosedRegionException
+  nameWithType: NotClosedRegionException
+- uid: SimpleLineLibrary.Services.Parsing.NotClosedRegionException.#ctor
+  name: NotClosedRegionException()
+  href: api/SimpleLineLibrary.Services.Parsing.NotClosedRegionException.html#SimpleLineLibrary_Services_Parsing_NotClosedRegionException__ctor
+  commentId: M:SimpleLineLibrary.Services.Parsing.NotClosedRegionException.#ctor
+  name.vb: New()
+  fullName: SimpleLineLibrary.Services.Parsing.NotClosedRegionException.NotClosedRegionException()
+  fullName.vb: SimpleLineLibrary.Services.Parsing.NotClosedRegionException.New()
+  nameWithType: NotClosedRegionException.NotClosedRegionException()
+  nameWithType.vb: NotClosedRegionException.New()
+- uid: SimpleLineLibrary.Services.Parsing.NotClosedRegionException.#ctor*
+  name: NotClosedRegionException
+  href: api/SimpleLineLibrary.Services.Parsing.NotClosedRegionException.html#SimpleLineLibrary_Services_Parsing_NotClosedRegionException__ctor_
+  commentId: Overload:SimpleLineLibrary.Services.Parsing.NotClosedRegionException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.Services.Parsing.NotClosedRegionException.NotClosedRegionException
+  fullName.vb: SimpleLineLibrary.Services.Parsing.NotClosedRegionException.New
+  nameWithType: NotClosedRegionException.NotClosedRegionException
+  nameWithType.vb: NotClosedRegionException.New
+- uid: SimpleLineLibrary.Services.Parsing.NotOpenedRegionException
+  name: NotOpenedRegionException
+  href: api/SimpleLineLibrary.Services.Parsing.NotOpenedRegionException.html
+  commentId: T:SimpleLineLibrary.Services.Parsing.NotOpenedRegionException
+  fullName: SimpleLineLibrary.Services.Parsing.NotOpenedRegionException
+  nameWithType: NotOpenedRegionException
+- uid: SimpleLineLibrary.Services.Parsing.NotOpenedRegionException.#ctor
+  name: NotOpenedRegionException()
+  href: api/SimpleLineLibrary.Services.Parsing.NotOpenedRegionException.html#SimpleLineLibrary_Services_Parsing_NotOpenedRegionException__ctor
+  commentId: M:SimpleLineLibrary.Services.Parsing.NotOpenedRegionException.#ctor
+  name.vb: New()
+  fullName: SimpleLineLibrary.Services.Parsing.NotOpenedRegionException.NotOpenedRegionException()
+  fullName.vb: SimpleLineLibrary.Services.Parsing.NotOpenedRegionException.New()
+  nameWithType: NotOpenedRegionException.NotOpenedRegionException()
+  nameWithType.vb: NotOpenedRegionException.New()
+- uid: SimpleLineLibrary.Services.Parsing.NotOpenedRegionException.#ctor*
+  name: NotOpenedRegionException
+  href: api/SimpleLineLibrary.Services.Parsing.NotOpenedRegionException.html#SimpleLineLibrary_Services_Parsing_NotOpenedRegionException__ctor_
+  commentId: Overload:SimpleLineLibrary.Services.Parsing.NotOpenedRegionException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.Services.Parsing.NotOpenedRegionException.NotOpenedRegionException
+  fullName.vb: SimpleLineLibrary.Services.Parsing.NotOpenedRegionException.New
+  nameWithType: NotOpenedRegionException.NotOpenedRegionException
+  nameWithType.vb: NotOpenedRegionException.New
+- uid: SimpleLineLibrary.Services.Parsing.ParseException
+  name: ParseException
+  href: api/SimpleLineLibrary.Services.Parsing.ParseException.html
+  commentId: T:SimpleLineLibrary.Services.Parsing.ParseException
+  fullName: SimpleLineLibrary.Services.Parsing.ParseException
+  nameWithType: ParseException
+- uid: SimpleLineLibrary.Services.Parsing.ParseException.#ctor(System.String)
+  name: ParseException(string?)
+  href: api/SimpleLineLibrary.Services.Parsing.ParseException.html#SimpleLineLibrary_Services_Parsing_ParseException__ctor_System_String_
+  commentId: M:SimpleLineLibrary.Services.Parsing.ParseException.#ctor(System.String)
+  name.vb: New(String)
+  fullName: SimpleLineLibrary.Services.Parsing.ParseException.ParseException(string?)
+  fullName.vb: SimpleLineLibrary.Services.Parsing.ParseException.New(String)
+  nameWithType: ParseException.ParseException(string?)
+  nameWithType.vb: ParseException.New(String)
+- uid: SimpleLineLibrary.Services.Parsing.ParseException.#ctor*
+  name: ParseException
+  href: api/SimpleLineLibrary.Services.Parsing.ParseException.html#SimpleLineLibrary_Services_Parsing_ParseException__ctor_
+  commentId: Overload:SimpleLineLibrary.Services.Parsing.ParseException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.Services.Parsing.ParseException.ParseException
+  fullName.vb: SimpleLineLibrary.Services.Parsing.ParseException.New
+  nameWithType: ParseException.ParseException
+  nameWithType.vb: ParseException.New
+- uid: SimpleLineLibrary.Services.Parsing.StringParser
+  name: StringParser
+  href: api/SimpleLineLibrary.Services.Parsing.StringParser.html
+  commentId: T:SimpleLineLibrary.Services.Parsing.StringParser
+  fullName: SimpleLineLibrary.Services.Parsing.StringParser
+  nameWithType: StringParser
+- uid: SimpleLineLibrary.Services.Parsing.StringParser.Parse(System.String)
+  name: Parse(string)
+  href: api/SimpleLineLibrary.Services.Parsing.StringParser.html#SimpleLineLibrary_Services_Parsing_StringParser_Parse_System_String_
+  commentId: M:SimpleLineLibrary.Services.Parsing.StringParser.Parse(System.String)
+  name.vb: Parse(String)
+  fullName: SimpleLineLibrary.Services.Parsing.StringParser.Parse(string)
+  fullName.vb: SimpleLineLibrary.Services.Parsing.StringParser.Parse(String)
+  nameWithType: StringParser.Parse(string)
+  nameWithType.vb: StringParser.Parse(String)
+- uid: SimpleLineLibrary.Services.Parsing.StringParser.Parse*
+  name: Parse
+  href: api/SimpleLineLibrary.Services.Parsing.StringParser.html#SimpleLineLibrary_Services_Parsing_StringParser_Parse_
+  commentId: Overload:SimpleLineLibrary.Services.Parsing.StringParser.Parse
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Services.Parsing.StringParser.Parse
+  nameWithType: StringParser.Parse
+- uid: SimpleLineLibrary.Settings
+  name: SimpleLineLibrary.Settings
+  href: api/SimpleLineLibrary.Settings.html
+  commentId: N:SimpleLineLibrary.Settings
+  fullName: SimpleLineLibrary.Settings
+  nameWithType: SimpleLineLibrary.Settings
+- uid: SimpleLineLibrary.Settings.Configuration
+  name: Configuration
+  href: api/SimpleLineLibrary.Settings.Configuration.html
+  commentId: T:SimpleLineLibrary.Settings.Configuration
+  fullName: SimpleLineLibrary.Settings.Configuration
+  nameWithType: Configuration
+- uid: SimpleLineLibrary.Settings.Configuration.CommandNotFound
+  name: CommandNotFound
+  href: api/SimpleLineLibrary.Settings.Configuration.html#SimpleLineLibrary_Settings_Configuration_CommandNotFound
+  commentId: P:SimpleLineLibrary.Settings.Configuration.CommandNotFound
+  fullName: SimpleLineLibrary.Settings.Configuration.CommandNotFound
+  nameWithType: Configuration.CommandNotFound
+- uid: SimpleLineLibrary.Settings.Configuration.CommandNotFound*
+  name: CommandNotFound
+  href: api/SimpleLineLibrary.Settings.Configuration.html#SimpleLineLibrary_Settings_Configuration_CommandNotFound_
+  commentId: Overload:SimpleLineLibrary.Settings.Configuration.CommandNotFound
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Settings.Configuration.CommandNotFound
+  nameWithType: Configuration.CommandNotFound
+- uid: SimpleLineLibrary.Settings.Configuration.ExceptionHandler
+  name: ExceptionHandler
+  href: api/SimpleLineLibrary.Settings.Configuration.html#SimpleLineLibrary_Settings_Configuration_ExceptionHandler
+  commentId: P:SimpleLineLibrary.Settings.Configuration.ExceptionHandler
+  fullName: SimpleLineLibrary.Settings.Configuration.ExceptionHandler
+  nameWithType: Configuration.ExceptionHandler
+- uid: SimpleLineLibrary.Settings.Configuration.ExceptionHandler*
+  name: ExceptionHandler
+  href: api/SimpleLineLibrary.Settings.Configuration.html#SimpleLineLibrary_Settings_Configuration_ExceptionHandler_
+  commentId: Overload:SimpleLineLibrary.Settings.Configuration.ExceptionHandler
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Settings.Configuration.ExceptionHandler
+  nameWithType: Configuration.ExceptionHandler
+- uid: SimpleLineLibrary.Settings.Configuration.HandlerNotFound
+  name: HandlerNotFound
+  href: api/SimpleLineLibrary.Settings.Configuration.html#SimpleLineLibrary_Settings_Configuration_HandlerNotFound
+  commentId: P:SimpleLineLibrary.Settings.Configuration.HandlerNotFound
+  fullName: SimpleLineLibrary.Settings.Configuration.HandlerNotFound
+  nameWithType: Configuration.HandlerNotFound
+- uid: SimpleLineLibrary.Settings.Configuration.HandlerNotFound*
+  name: HandlerNotFound
+  href: api/SimpleLineLibrary.Settings.Configuration.html#SimpleLineLibrary_Settings_Configuration_HandlerNotFound_
+  commentId: Overload:SimpleLineLibrary.Settings.Configuration.HandlerNotFound
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Settings.Configuration.HandlerNotFound
+  nameWithType: Configuration.HandlerNotFound
+- uid: SimpleLineLibrary.Settings.Configuration.NoneArgsHandler
+  name: NoneArgsHandler
+  href: api/SimpleLineLibrary.Settings.Configuration.html#SimpleLineLibrary_Settings_Configuration_NoneArgsHandler
+  commentId: P:SimpleLineLibrary.Settings.Configuration.NoneArgsHandler
+  fullName: SimpleLineLibrary.Settings.Configuration.NoneArgsHandler
+  nameWithType: Configuration.NoneArgsHandler
+- uid: SimpleLineLibrary.Settings.Configuration.NoneArgsHandler*
+  name: NoneArgsHandler
+  href: api/SimpleLineLibrary.Settings.Configuration.html#SimpleLineLibrary_Settings_Configuration_NoneArgsHandler_
+  commentId: Overload:SimpleLineLibrary.Settings.Configuration.NoneArgsHandler
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Settings.Configuration.NoneArgsHandler
+  nameWithType: Configuration.NoneArgsHandler
+- uid: SimpleLineLibrary.Setup
+  name: SimpleLineLibrary.Setup
+  href: api/SimpleLineLibrary.Setup.html
+  commentId: N:SimpleLineLibrary.Setup
+  fullName: SimpleLineLibrary.Setup
+  nameWithType: SimpleLineLibrary.Setup
+- uid: SimpleLineLibrary.Setup.BaseOption`1
+  name: BaseOption<T>
+  href: api/SimpleLineLibrary.Setup.BaseOption-1.html
+  commentId: T:SimpleLineLibrary.Setup.BaseOption`1
+  name.vb: BaseOption(Of T)
+  fullName: SimpleLineLibrary.Setup.BaseOption<T>
+  fullName.vb: SimpleLineLibrary.Setup.BaseOption(Of T)
+  nameWithType: BaseOption<T>
+  nameWithType.vb: BaseOption(Of T)
+- uid: SimpleLineLibrary.Setup.CommandBuilder
+  name: CommandBuilder
+  href: api/SimpleLineLibrary.Setup.CommandBuilder.html
+  commentId: T:SimpleLineLibrary.Setup.CommandBuilder
+  fullName: SimpleLineLibrary.Setup.CommandBuilder
+  nameWithType: CommandBuilder
+- uid: SimpleLineLibrary.Setup.CommandBuilder.SetDescription(System.String)
+  name: SetDescription(string)
+  href: api/SimpleLineLibrary.Setup.CommandBuilder.html#SimpleLineLibrary_Setup_CommandBuilder_SetDescription_System_String_
+  commentId: M:SimpleLineLibrary.Setup.CommandBuilder.SetDescription(System.String)
+  name.vb: SetDescription(String)
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.SetDescription(string)
+  fullName.vb: SimpleLineLibrary.Setup.CommandBuilder.SetDescription(String)
+  nameWithType: CommandBuilder.SetDescription(string)
+  nameWithType.vb: CommandBuilder.SetDescription(String)
+- uid: SimpleLineLibrary.Setup.CommandBuilder.SetDescription*
+  name: SetDescription
+  href: api/SimpleLineLibrary.Setup.CommandBuilder.html#SimpleLineLibrary_Setup_CommandBuilder_SetDescription_
+  commentId: Overload:SimpleLineLibrary.Setup.CommandBuilder.SetDescription
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.SetDescription
+  nameWithType: CommandBuilder.SetDescription
+- uid: SimpleLineLibrary.Setup.CommandBuilder.WithGetInfo(System.Action{SimpleLineLibrary.Models.Info.CommandInfo},SimpleLineLibrary.Setup.Key)
+  name: WithGetInfo(Action<CommandInfo>, Key)
+  href: api/SimpleLineLibrary.Setup.CommandBuilder.html#SimpleLineLibrary_Setup_CommandBuilder_WithGetInfo_System_Action_SimpleLineLibrary_Models_Info_CommandInfo__SimpleLineLibrary_Setup_Key_
+  commentId: M:SimpleLineLibrary.Setup.CommandBuilder.WithGetInfo(System.Action{SimpleLineLibrary.Models.Info.CommandInfo},SimpleLineLibrary.Setup.Key)
+  name.vb: WithGetInfo(Action(Of CommandInfo), Key)
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.WithGetInfo(System.Action<SimpleLineLibrary.Models.Info.CommandInfo>, SimpleLineLibrary.Setup.Key)
+  fullName.vb: SimpleLineLibrary.Setup.CommandBuilder.WithGetInfo(System.Action(Of SimpleLineLibrary.Models.Info.CommandInfo), SimpleLineLibrary.Setup.Key)
+  nameWithType: CommandBuilder.WithGetInfo(Action<CommandInfo>, Key)
+  nameWithType.vb: CommandBuilder.WithGetInfo(Action(Of CommandInfo), Key)
+- uid: SimpleLineLibrary.Setup.CommandBuilder.WithGetInfo*
+  name: WithGetInfo
+  href: api/SimpleLineLibrary.Setup.CommandBuilder.html#SimpleLineLibrary_Setup_CommandBuilder_WithGetInfo_
+  commentId: Overload:SimpleLineLibrary.Setup.CommandBuilder.WithGetInfo
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.WithGetInfo
+  nameWithType: CommandBuilder.WithGetInfo
+- uid: SimpleLineLibrary.Setup.CommandBuilder.WithHandler(System.Action,SimpleLineLibrary.Setup.Key[])
+  name: WithHandler(Action, params Key[])
+  href: api/SimpleLineLibrary.Setup.CommandBuilder.html#SimpleLineLibrary_Setup_CommandBuilder_WithHandler_System_Action_SimpleLineLibrary_Setup_Key___
+  commentId: M:SimpleLineLibrary.Setup.CommandBuilder.WithHandler(System.Action,SimpleLineLibrary.Setup.Key[])
+  name.vb: WithHandler(Action, ParamArray Key())
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.WithHandler(System.Action, params SimpleLineLibrary.Setup.Key[])
+  fullName.vb: SimpleLineLibrary.Setup.CommandBuilder.WithHandler(System.Action, ParamArray SimpleLineLibrary.Setup.Key())
+  nameWithType: CommandBuilder.WithHandler(Action, params Key[])
+  nameWithType.vb: CommandBuilder.WithHandler(Action, ParamArray Key())
+- uid: SimpleLineLibrary.Setup.CommandBuilder.WithHandler*
+  name: WithHandler
+  href: api/SimpleLineLibrary.Setup.CommandBuilder.html#SimpleLineLibrary_Setup_CommandBuilder_WithHandler_
+  commentId: Overload:SimpleLineLibrary.Setup.CommandBuilder.WithHandler
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.WithHandler
+  nameWithType: CommandBuilder.WithHandler
+- uid: SimpleLineLibrary.Setup.CommandBuilder.WithHandler``1(System.Action{``0},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.Key[])
+  name: WithHandler<T1>(Action<T1>, BaseOption<T1>, params Key[])
+  href: api/SimpleLineLibrary.Setup.CommandBuilder.html#SimpleLineLibrary_Setup_CommandBuilder_WithHandler__1_System_Action___0__SimpleLineLibrary_Setup_BaseOption___0__SimpleLineLibrary_Setup_Key___
+  commentId: M:SimpleLineLibrary.Setup.CommandBuilder.WithHandler``1(System.Action{``0},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.Key[])
+  name.vb: WithHandler(Of T1)(Action(Of T1), BaseOption(Of T1), ParamArray Key())
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.WithHandler<T1>(System.Action<T1>, SimpleLineLibrary.Setup.BaseOption<T1>, params SimpleLineLibrary.Setup.Key[])
+  fullName.vb: SimpleLineLibrary.Setup.CommandBuilder.WithHandler(Of T1)(System.Action(Of T1), SimpleLineLibrary.Setup.BaseOption(Of T1), ParamArray SimpleLineLibrary.Setup.Key())
+  nameWithType: CommandBuilder.WithHandler<T1>(Action<T1>, BaseOption<T1>, params Key[])
+  nameWithType.vb: CommandBuilder.WithHandler(Of T1)(Action(Of T1), BaseOption(Of T1), ParamArray Key())
+- uid: SimpleLineLibrary.Setup.CommandBuilder.WithHandler``2(System.Action{``0,``1},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.Key[])
+  name: WithHandler<T1, T2>(Action<T1, T2>, BaseOption<T1>, BaseOption<T2>, params Key[])
+  href: api/SimpleLineLibrary.Setup.CommandBuilder.html#SimpleLineLibrary_Setup_CommandBuilder_WithHandler__2_System_Action___0___1__SimpleLineLibrary_Setup_BaseOption___0__SimpleLineLibrary_Setup_BaseOption___1__SimpleLineLibrary_Setup_Key___
+  commentId: M:SimpleLineLibrary.Setup.CommandBuilder.WithHandler``2(System.Action{``0,``1},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.Key[])
+  name.vb: WithHandler(Of T1, T2)(Action(Of T1, T2), BaseOption(Of T1), BaseOption(Of T2), ParamArray Key())
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.WithHandler<T1, T2>(System.Action<T1, T2>, SimpleLineLibrary.Setup.BaseOption<T1>, SimpleLineLibrary.Setup.BaseOption<T2>, params SimpleLineLibrary.Setup.Key[])
+  fullName.vb: SimpleLineLibrary.Setup.CommandBuilder.WithHandler(Of T1, T2)(System.Action(Of T1, T2), SimpleLineLibrary.Setup.BaseOption(Of T1), SimpleLineLibrary.Setup.BaseOption(Of T2), ParamArray SimpleLineLibrary.Setup.Key())
+  nameWithType: CommandBuilder.WithHandler<T1, T2>(Action<T1, T2>, BaseOption<T1>, BaseOption<T2>, params Key[])
+  nameWithType.vb: CommandBuilder.WithHandler(Of T1, T2)(Action(Of T1, T2), BaseOption(Of T1), BaseOption(Of T2), ParamArray Key())
+- uid: SimpleLineLibrary.Setup.CommandBuilder.WithHandler``3(System.Action{``0,``1,``2},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.Key[])
+  name: WithHandler<T1, T2, T3>(Action<T1, T2, T3>, BaseOption<T1>, BaseOption<T2>, BaseOption<T3>, params Key[])
+  href: api/SimpleLineLibrary.Setup.CommandBuilder.html#SimpleLineLibrary_Setup_CommandBuilder_WithHandler__3_System_Action___0___1___2__SimpleLineLibrary_Setup_BaseOption___0__SimpleLineLibrary_Setup_BaseOption___1__SimpleLineLibrary_Setup_BaseOption___2__SimpleLineLibrary_Setup_Key___
+  commentId: M:SimpleLineLibrary.Setup.CommandBuilder.WithHandler``3(System.Action{``0,``1,``2},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.Key[])
+  name.vb: WithHandler(Of T1, T2, T3)(Action(Of T1, T2, T3), BaseOption(Of T1), BaseOption(Of T2), BaseOption(Of T3), ParamArray Key())
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.WithHandler<T1, T2, T3>(System.Action<T1, T2, T3>, SimpleLineLibrary.Setup.BaseOption<T1>, SimpleLineLibrary.Setup.BaseOption<T2>, SimpleLineLibrary.Setup.BaseOption<T3>, params SimpleLineLibrary.Setup.Key[])
+  fullName.vb: SimpleLineLibrary.Setup.CommandBuilder.WithHandler(Of T1, T2, T3)(System.Action(Of T1, T2, T3), SimpleLineLibrary.Setup.BaseOption(Of T1), SimpleLineLibrary.Setup.BaseOption(Of T2), SimpleLineLibrary.Setup.BaseOption(Of T3), ParamArray SimpleLineLibrary.Setup.Key())
+  nameWithType: CommandBuilder.WithHandler<T1, T2, T3>(Action<T1, T2, T3>, BaseOption<T1>, BaseOption<T2>, BaseOption<T3>, params Key[])
+  nameWithType.vb: CommandBuilder.WithHandler(Of T1, T2, T3)(Action(Of T1, T2, T3), BaseOption(Of T1), BaseOption(Of T2), BaseOption(Of T3), ParamArray Key())
+- uid: SimpleLineLibrary.Setup.CommandBuilder.WithHandler``4(System.Action{``0,``1,``2,``3},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.BaseOption{``3},SimpleLineLibrary.Setup.Key[])
+  name: WithHandler<T1, T2, T3, T4>(Action<T1, T2, T3, T4>, BaseOption<T1>, BaseOption<T2>, BaseOption<T3>, BaseOption<T4>, params Key[])
+  href: api/SimpleLineLibrary.Setup.CommandBuilder.html#SimpleLineLibrary_Setup_CommandBuilder_WithHandler__4_System_Action___0___1___2___3__SimpleLineLibrary_Setup_BaseOption___0__SimpleLineLibrary_Setup_BaseOption___1__SimpleLineLibrary_Setup_BaseOption___2__SimpleLineLibrary_Setup_BaseOption___3__SimpleLineLibrary_Setup_Key___
+  commentId: M:SimpleLineLibrary.Setup.CommandBuilder.WithHandler``4(System.Action{``0,``1,``2,``3},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.BaseOption{``3},SimpleLineLibrary.Setup.Key[])
+  name.vb: WithHandler(Of T1, T2, T3, T4)(Action(Of T1, T2, T3, T4), BaseOption(Of T1), BaseOption(Of T2), BaseOption(Of T3), BaseOption(Of T4), ParamArray Key())
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.WithHandler<T1, T2, T3, T4>(System.Action<T1, T2, T3, T4>, SimpleLineLibrary.Setup.BaseOption<T1>, SimpleLineLibrary.Setup.BaseOption<T2>, SimpleLineLibrary.Setup.BaseOption<T3>, SimpleLineLibrary.Setup.BaseOption<T4>, params SimpleLineLibrary.Setup.Key[])
+  fullName.vb: SimpleLineLibrary.Setup.CommandBuilder.WithHandler(Of T1, T2, T3, T4)(System.Action(Of T1, T2, T3, T4), SimpleLineLibrary.Setup.BaseOption(Of T1), SimpleLineLibrary.Setup.BaseOption(Of T2), SimpleLineLibrary.Setup.BaseOption(Of T3), SimpleLineLibrary.Setup.BaseOption(Of T4), ParamArray SimpleLineLibrary.Setup.Key())
+  nameWithType: CommandBuilder.WithHandler<T1, T2, T3, T4>(Action<T1, T2, T3, T4>, BaseOption<T1>, BaseOption<T2>, BaseOption<T3>, BaseOption<T4>, params Key[])
+  nameWithType.vb: CommandBuilder.WithHandler(Of T1, T2, T3, T4)(Action(Of T1, T2, T3, T4), BaseOption(Of T1), BaseOption(Of T2), BaseOption(Of T3), BaseOption(Of T4), ParamArray Key())
+- uid: SimpleLineLibrary.Setup.CommandBuilder.WithHandler``5(System.Action{``0,``1,``2,``3,``4},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.BaseOption{``3},SimpleLineLibrary.Setup.BaseOption{``4},SimpleLineLibrary.Setup.Key[])
+  name: WithHandler<T1, T2, T3, T4, T5>(Action<T1, T2, T3, T4, T5>, BaseOption<T1>, BaseOption<T2>, BaseOption<T3>, BaseOption<T4>, BaseOption<T5>, params Key[])
+  href: api/SimpleLineLibrary.Setup.CommandBuilder.html#SimpleLineLibrary_Setup_CommandBuilder_WithHandler__5_System_Action___0___1___2___3___4__SimpleLineLibrary_Setup_BaseOption___0__SimpleLineLibrary_Setup_BaseOption___1__SimpleLineLibrary_Setup_BaseOption___2__SimpleLineLibrary_Setup_BaseOption___3__SimpleLineLibrary_Setup_BaseOption___4__SimpleLineLibrary_Setup_Key___
+  commentId: M:SimpleLineLibrary.Setup.CommandBuilder.WithHandler``5(System.Action{``0,``1,``2,``3,``4},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.BaseOption{``3},SimpleLineLibrary.Setup.BaseOption{``4},SimpleLineLibrary.Setup.Key[])
+  name.vb: WithHandler(Of T1, T2, T3, T4, T5)(Action(Of T1, T2, T3, T4, T5), BaseOption(Of T1), BaseOption(Of T2), BaseOption(Of T3), BaseOption(Of T4), BaseOption(Of T5), ParamArray Key())
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.WithHandler<T1, T2, T3, T4, T5>(System.Action<T1, T2, T3, T4, T5>, SimpleLineLibrary.Setup.BaseOption<T1>, SimpleLineLibrary.Setup.BaseOption<T2>, SimpleLineLibrary.Setup.BaseOption<T3>, SimpleLineLibrary.Setup.BaseOption<T4>, SimpleLineLibrary.Setup.BaseOption<T5>, params SimpleLineLibrary.Setup.Key[])
+  fullName.vb: SimpleLineLibrary.Setup.CommandBuilder.WithHandler(Of T1, T2, T3, T4, T5)(System.Action(Of T1, T2, T3, T4, T5), SimpleLineLibrary.Setup.BaseOption(Of T1), SimpleLineLibrary.Setup.BaseOption(Of T2), SimpleLineLibrary.Setup.BaseOption(Of T3), SimpleLineLibrary.Setup.BaseOption(Of T4), SimpleLineLibrary.Setup.BaseOption(Of T5), ParamArray SimpleLineLibrary.Setup.Key())
+  nameWithType: CommandBuilder.WithHandler<T1, T2, T3, T4, T5>(Action<T1, T2, T3, T4, T5>, BaseOption<T1>, BaseOption<T2>, BaseOption<T3>, BaseOption<T4>, BaseOption<T5>, params Key[])
+  nameWithType.vb: CommandBuilder.WithHandler(Of T1, T2, T3, T4, T5)(Action(Of T1, T2, T3, T4, T5), BaseOption(Of T1), BaseOption(Of T2), BaseOption(Of T3), BaseOption(Of T4), BaseOption(Of T5), ParamArray Key())
+- uid: SimpleLineLibrary.Setup.CommandBuilder.WithHandler``6(System.Action{``0,``1,``2,``3,``4,``5},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.BaseOption{``3},SimpleLineLibrary.Setup.BaseOption{``4},SimpleLineLibrary.Setup.BaseOption{``5},SimpleLineLibrary.Setup.Key[])
+  name: WithHandler<T1, T2, T3, T4, T5, T6>(Action<T1, T2, T3, T4, T5, T6>, BaseOption<T1>, BaseOption<T2>, BaseOption<T3>, BaseOption<T4>, BaseOption<T5>, BaseOption<T6>, params Key[])
+  href: api/SimpleLineLibrary.Setup.CommandBuilder.html#SimpleLineLibrary_Setup_CommandBuilder_WithHandler__6_System_Action___0___1___2___3___4___5__SimpleLineLibrary_Setup_BaseOption___0__SimpleLineLibrary_Setup_BaseOption___1__SimpleLineLibrary_Setup_BaseOption___2__SimpleLineLibrary_Setup_BaseOption___3__SimpleLineLibrary_Setup_BaseOption___4__SimpleLineLibrary_Setup_BaseOption___5__SimpleLineLibrary_Setup_Key___
+  commentId: M:SimpleLineLibrary.Setup.CommandBuilder.WithHandler``6(System.Action{``0,``1,``2,``3,``4,``5},SimpleLineLibrary.Setup.BaseOption{``0},SimpleLineLibrary.Setup.BaseOption{``1},SimpleLineLibrary.Setup.BaseOption{``2},SimpleLineLibrary.Setup.BaseOption{``3},SimpleLineLibrary.Setup.BaseOption{``4},SimpleLineLibrary.Setup.BaseOption{``5},SimpleLineLibrary.Setup.Key[])
+  name.vb: WithHandler(Of T1, T2, T3, T4, T5, T6)(Action(Of T1, T2, T3, T4, T5, T6), BaseOption(Of T1), BaseOption(Of T2), BaseOption(Of T3), BaseOption(Of T4), BaseOption(Of T5), BaseOption(Of T6), ParamArray Key())
+  fullName: SimpleLineLibrary.Setup.CommandBuilder.WithHandler<T1, T2, T3, T4, T5, T6>(System.Action<T1, T2, T3, T4, T5, T6>, SimpleLineLibrary.Setup.BaseOption<T1>, SimpleLineLibrary.Setup.BaseOption<T2>, SimpleLineLibrary.Setup.BaseOption<T3>, SimpleLineLibrary.Setup.BaseOption<T4>, SimpleLineLibrary.Setup.BaseOption<T5>, SimpleLineLibrary.Setup.BaseOption<T6>, params SimpleLineLibrary.Setup.Key[])
+  fullName.vb: SimpleLineLibrary.Setup.CommandBuilder.WithHandler(Of T1, T2, T3, T4, T5, T6)(System.Action(Of T1, T2, T3, T4, T5, T6), SimpleLineLibrary.Setup.BaseOption(Of T1), SimpleLineLibrary.Setup.BaseOption(Of T2), SimpleLineLibrary.Setup.BaseOption(Of T3), SimpleLineLibrary.Setup.BaseOption(Of T4), SimpleLineLibrary.Setup.BaseOption(Of T5), SimpleLineLibrary.Setup.BaseOption(Of T6), ParamArray SimpleLineLibrary.Setup.Key())
+  nameWithType: CommandBuilder.WithHandler<T1, T2, T3, T4, T5, T6>(Action<T1, T2, T3, T4, T5, T6>, BaseOption<T1>, BaseOption<T2>, BaseOption<T3>, BaseOption<T4>, BaseOption<T5>, BaseOption<T6>, params Key[])
+  nameWithType.vb: CommandBuilder.WithHandler(Of T1, T2, T3, T4, T5, T6)(Action(Of T1, T2, T3, T4, T5, T6), BaseOption(Of T1), BaseOption(Of T2), BaseOption(Of T3), BaseOption(Of T4), BaseOption(Of T5), BaseOption(Of T6), ParamArray Key())
+- uid: SimpleLineLibrary.Setup.CommandProvider
+  name: CommandProvider
+  href: api/SimpleLineLibrary.Setup.CommandProvider.html
+  commentId: T:SimpleLineLibrary.Setup.CommandProvider
+  fullName: SimpleLineLibrary.Setup.CommandProvider
+  nameWithType: CommandProvider
+- uid: SimpleLineLibrary.Setup.CommandProvider.#ctor
+  name: CommandProvider()
+  href: api/SimpleLineLibrary.Setup.CommandProvider.html#SimpleLineLibrary_Setup_CommandProvider__ctor
+  commentId: M:SimpleLineLibrary.Setup.CommandProvider.#ctor
+  name.vb: New()
+  fullName: SimpleLineLibrary.Setup.CommandProvider.CommandProvider()
+  fullName.vb: SimpleLineLibrary.Setup.CommandProvider.New()
+  nameWithType: CommandProvider.CommandProvider()
+  nameWithType.vb: CommandProvider.New()
+- uid: SimpleLineLibrary.Setup.CommandProvider.#ctor*
+  name: CommandProvider
+  href: api/SimpleLineLibrary.Setup.CommandProvider.html#SimpleLineLibrary_Setup_CommandProvider__ctor_
+  commentId: Overload:SimpleLineLibrary.Setup.CommandProvider.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.Setup.CommandProvider.CommandProvider
+  fullName.vb: SimpleLineLibrary.Setup.CommandProvider.New
+  nameWithType: CommandProvider.CommandProvider
+  nameWithType.vb: CommandProvider.New
+- uid: SimpleLineLibrary.Setup.CommandProvider.Drop(System.String)
+  name: Drop(string)
+  href: api/SimpleLineLibrary.Setup.CommandProvider.html#SimpleLineLibrary_Setup_CommandProvider_Drop_System_String_
+  commentId: M:SimpleLineLibrary.Setup.CommandProvider.Drop(System.String)
+  name.vb: Drop(String)
+  fullName: SimpleLineLibrary.Setup.CommandProvider.Drop(string)
+  fullName.vb: SimpleLineLibrary.Setup.CommandProvider.Drop(String)
+  nameWithType: CommandProvider.Drop(string)
+  nameWithType.vb: CommandProvider.Drop(String)
+- uid: SimpleLineLibrary.Setup.CommandProvider.Drop*
+  name: Drop
+  href: api/SimpleLineLibrary.Setup.CommandProvider.html#SimpleLineLibrary_Setup_CommandProvider_Drop_
+  commentId: Overload:SimpleLineLibrary.Setup.CommandProvider.Drop
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.CommandProvider.Drop
+  nameWithType: CommandProvider.Drop
+- uid: SimpleLineLibrary.Setup.CommandProvider.Get(System.String)
+  name: Get(string)
+  href: api/SimpleLineLibrary.Setup.CommandProvider.html#SimpleLineLibrary_Setup_CommandProvider_Get_System_String_
+  commentId: M:SimpleLineLibrary.Setup.CommandProvider.Get(System.String)
+  name.vb: Get(String)
+  fullName: SimpleLineLibrary.Setup.CommandProvider.Get(string)
+  fullName.vb: SimpleLineLibrary.Setup.CommandProvider.Get(String)
+  nameWithType: CommandProvider.Get(string)
+  nameWithType.vb: CommandProvider.Get(String)
+- uid: SimpleLineLibrary.Setup.CommandProvider.Get*
+  name: Get
+  href: api/SimpleLineLibrary.Setup.CommandProvider.html#SimpleLineLibrary_Setup_CommandProvider_Get_
+  commentId: Overload:SimpleLineLibrary.Setup.CommandProvider.Get
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.CommandProvider.Get
+  nameWithType: CommandProvider.Get
+- uid: SimpleLineLibrary.Setup.CommandProvider.New(System.String)
+  name: New(string)
+  href: api/SimpleLineLibrary.Setup.CommandProvider.html#SimpleLineLibrary_Setup_CommandProvider_New_System_String_
+  commentId: M:SimpleLineLibrary.Setup.CommandProvider.New(System.String)
+  name.vb: New(String)
+  fullName: SimpleLineLibrary.Setup.CommandProvider.New(string)
+  fullName.vb: SimpleLineLibrary.Setup.CommandProvider.New(String)
+  nameWithType: CommandProvider.New(string)
+  nameWithType.vb: CommandProvider.New(String)
+- uid: SimpleLineLibrary.Setup.CommandProvider.New*
+  name: New
+  href: api/SimpleLineLibrary.Setup.CommandProvider.html#SimpleLineLibrary_Setup_CommandProvider_New_
+  commentId: Overload:SimpleLineLibrary.Setup.CommandProvider.New
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.CommandProvider.New
+  nameWithType: CommandProvider.New
+- uid: SimpleLineLibrary.Setup.CommandProvider.Root
+  name: Root()
+  href: api/SimpleLineLibrary.Setup.CommandProvider.html#SimpleLineLibrary_Setup_CommandProvider_Root
+  commentId: M:SimpleLineLibrary.Setup.CommandProvider.Root
+  fullName: SimpleLineLibrary.Setup.CommandProvider.Root()
+  nameWithType: CommandProvider.Root()
+- uid: SimpleLineLibrary.Setup.CommandProvider.Root*
+  name: Root
+  href: api/SimpleLineLibrary.Setup.CommandProvider.html#SimpleLineLibrary_Setup_CommandProvider_Root_
+  commentId: Overload:SimpleLineLibrary.Setup.CommandProvider.Root
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.CommandProvider.Root
+  nameWithType: CommandProvider.Root
+- uid: SimpleLineLibrary.Setup.Configuration
+  name: Configuration
+  href: api/SimpleLineLibrary.Setup.Configuration.html
+  commentId: T:SimpleLineLibrary.Setup.Configuration
+  fullName: SimpleLineLibrary.Setup.Configuration
+  nameWithType: Configuration
+- uid: SimpleLineLibrary.Setup.Configuration.CommandNotFound
+  name: CommandNotFound
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_CommandNotFound
+  commentId: P:SimpleLineLibrary.Setup.Configuration.CommandNotFound
+  fullName: SimpleLineLibrary.Setup.Configuration.CommandNotFound
+  nameWithType: Configuration.CommandNotFound
+- uid: SimpleLineLibrary.Setup.Configuration.CommandNotFound*
+  name: CommandNotFound
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_CommandNotFound_
+  commentId: Overload:SimpleLineLibrary.Setup.Configuration.CommandNotFound
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.Configuration.CommandNotFound
+  nameWithType: Configuration.CommandNotFound
+- uid: SimpleLineLibrary.Setup.Configuration.ExceptionHandler
+  name: ExceptionHandler
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_ExceptionHandler
+  commentId: P:SimpleLineLibrary.Setup.Configuration.ExceptionHandler
+  fullName: SimpleLineLibrary.Setup.Configuration.ExceptionHandler
+  nameWithType: Configuration.ExceptionHandler
+- uid: SimpleLineLibrary.Setup.Configuration.ExceptionHandler*
+  name: ExceptionHandler
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_ExceptionHandler_
+  commentId: Overload:SimpleLineLibrary.Setup.Configuration.ExceptionHandler
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.Configuration.ExceptionHandler
+  nameWithType: Configuration.ExceptionHandler
+- uid: SimpleLineLibrary.Setup.Configuration.HandlerNotFound
+  name: HandlerNotFound
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_HandlerNotFound
+  commentId: P:SimpleLineLibrary.Setup.Configuration.HandlerNotFound
+  fullName: SimpleLineLibrary.Setup.Configuration.HandlerNotFound
+  nameWithType: Configuration.HandlerNotFound
+- uid: SimpleLineLibrary.Setup.Configuration.HandlerNotFound*
+  name: HandlerNotFound
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_HandlerNotFound_
+  commentId: Overload:SimpleLineLibrary.Setup.Configuration.HandlerNotFound
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.Configuration.HandlerNotFound
+  nameWithType: Configuration.HandlerNotFound
+- uid: SimpleLineLibrary.Setup.Configuration.NoneArgsHandler
+  name: NoneArgsHandler
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_NoneArgsHandler
+  commentId: P:SimpleLineLibrary.Setup.Configuration.NoneArgsHandler
+  fullName: SimpleLineLibrary.Setup.Configuration.NoneArgsHandler
+  nameWithType: Configuration.NoneArgsHandler
+- uid: SimpleLineLibrary.Setup.Configuration.NoneArgsHandler*
+  name: NoneArgsHandler
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_NoneArgsHandler_
+  commentId: Overload:SimpleLineLibrary.Setup.Configuration.NoneArgsHandler
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.Configuration.NoneArgsHandler
+  nameWithType: Configuration.NoneArgsHandler
+- uid: SimpleLineLibrary.Setup.Inject`1
+  name: Inject<T>
+  href: api/SimpleLineLibrary.Setup.Inject-1.html
+  commentId: T:SimpleLineLibrary.Setup.Inject`1
+  name.vb: Inject(Of T)
+  fullName: SimpleLineLibrary.Setup.Inject<T>
+  fullName.vb: SimpleLineLibrary.Setup.Inject(Of T)
+  nameWithType: Inject<T>
+  nameWithType.vb: Inject(Of T)
+- uid: SimpleLineLibrary.Setup.Inject`1.#ctor(`0)
+  name: Inject(T)
+  href: api/SimpleLineLibrary.Setup.Inject-1.html#SimpleLineLibrary_Setup_Inject_1__ctor__0_
+  commentId: M:SimpleLineLibrary.Setup.Inject`1.#ctor(`0)
+  name.vb: New(T)
+  fullName: SimpleLineLibrary.Setup.Inject<T>.Inject(T)
+  fullName.vb: SimpleLineLibrary.Setup.Inject(Of T).New(T)
+  nameWithType: Inject<T>.Inject(T)
+  nameWithType.vb: Inject(Of T).New(T)
+- uid: SimpleLineLibrary.Setup.Inject`1.#ctor*
+  name: Inject
+  href: api/SimpleLineLibrary.Setup.Inject-1.html#SimpleLineLibrary_Setup_Inject_1__ctor_
+  commentId: Overload:SimpleLineLibrary.Setup.Inject`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.Setup.Inject<T>.Inject
+  fullName.vb: SimpleLineLibrary.Setup.Inject(Of T).New
+  nameWithType: Inject<T>.Inject
+  nameWithType.vb: Inject(Of T).New
+- uid: SimpleLineLibrary.Setup.Inject`1.New(`0)
+  name: New(T)
+  href: api/SimpleLineLibrary.Setup.Inject-1.html#SimpleLineLibrary_Setup_Inject_1_New__0_
+  commentId: M:SimpleLineLibrary.Setup.Inject`1.New(`0)
+  fullName: SimpleLineLibrary.Setup.Inject<T>.New(T)
+  fullName.vb: SimpleLineLibrary.Setup.Inject(Of T).New(T)
+  nameWithType: Inject<T>.New(T)
+  nameWithType.vb: Inject(Of T).New(T)
+- uid: SimpleLineLibrary.Setup.Inject`1.New*
+  name: New
+  href: api/SimpleLineLibrary.Setup.Inject-1.html#SimpleLineLibrary_Setup_Inject_1_New_
+  commentId: Overload:SimpleLineLibrary.Setup.Inject`1.New
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.Inject<T>.New
+  fullName.vb: SimpleLineLibrary.Setup.Inject(Of T).New
+  nameWithType: Inject<T>.New
+  nameWithType.vb: Inject(Of T).New
+- uid: SimpleLineLibrary.Setup.Key
+  name: Key
+  href: api/SimpleLineLibrary.Setup.Key.html
+  commentId: T:SimpleLineLibrary.Setup.Key
+  fullName: SimpleLineLibrary.Setup.Key
+  nameWithType: Key
+- uid: SimpleLineLibrary.Setup.Key.#ctor(System.String[])
+  name: Key(params string[])
+  href: api/SimpleLineLibrary.Setup.Key.html#SimpleLineLibrary_Setup_Key__ctor_System_String___
+  commentId: M:SimpleLineLibrary.Setup.Key.#ctor(System.String[])
+  name.vb: New(ParamArray String())
+  fullName: SimpleLineLibrary.Setup.Key.Key(params string[])
+  fullName.vb: SimpleLineLibrary.Setup.Key.New(ParamArray String())
+  nameWithType: Key.Key(params string[])
+  nameWithType.vb: Key.New(ParamArray String())
+- uid: SimpleLineLibrary.Setup.Key.#ctor*
+  name: Key
+  href: api/SimpleLineLibrary.Setup.Key.html#SimpleLineLibrary_Setup_Key__ctor_
+  commentId: Overload:SimpleLineLibrary.Setup.Key.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.Setup.Key.Key
+  fullName.vb: SimpleLineLibrary.Setup.Key.New
+  nameWithType: Key.Key
+  nameWithType.vb: Key.New
+- uid: SimpleLineLibrary.Setup.Key.New(System.String[])
+  name: New(params string[])
+  href: api/SimpleLineLibrary.Setup.Key.html#SimpleLineLibrary_Setup_Key_New_System_String___
+  commentId: M:SimpleLineLibrary.Setup.Key.New(System.String[])
+  name.vb: New(ParamArray String())
+  fullName: SimpleLineLibrary.Setup.Key.New(params string[])
+  fullName.vb: SimpleLineLibrary.Setup.Key.New(ParamArray String())
+  nameWithType: Key.New(params string[])
+  nameWithType.vb: Key.New(ParamArray String())
+- uid: SimpleLineLibrary.Setup.Key.New*
+  name: New
+  href: api/SimpleLineLibrary.Setup.Key.html#SimpleLineLibrary_Setup_Key_New_
+  commentId: Overload:SimpleLineLibrary.Setup.Key.New
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.Key.New
+  nameWithType: Key.New
+- uid: SimpleLineLibrary.Setup.Parameter`1
+  name: Parameter<T>
+  href: api/SimpleLineLibrary.Setup.Parameter-1.html
+  commentId: T:SimpleLineLibrary.Setup.Parameter`1
+  name.vb: Parameter(Of T)
+  fullName: SimpleLineLibrary.Setup.Parameter<T>
+  fullName.vb: SimpleLineLibrary.Setup.Parameter(Of T)
+  nameWithType: Parameter<T>
+  nameWithType.vb: Parameter(Of T)
+- uid: SimpleLineLibrary.Setup.Parameter`1.#ctor(System.String[])
+  name: Parameter(params string[])
+  href: api/SimpleLineLibrary.Setup.Parameter-1.html#SimpleLineLibrary_Setup_Parameter_1__ctor_System_String___
+  commentId: M:SimpleLineLibrary.Setup.Parameter`1.#ctor(System.String[])
+  name.vb: New(ParamArray String())
+  fullName: SimpleLineLibrary.Setup.Parameter<T>.Parameter(params string[])
+  fullName.vb: SimpleLineLibrary.Setup.Parameter(Of T).New(ParamArray String())
+  nameWithType: Parameter<T>.Parameter(params string[])
+  nameWithType.vb: Parameter(Of T).New(ParamArray String())
+- uid: SimpleLineLibrary.Setup.Parameter`1.#ctor(System.String[],`0)
+  name: Parameter(string[], T)
+  href: api/SimpleLineLibrary.Setup.Parameter-1.html#SimpleLineLibrary_Setup_Parameter_1__ctor_System_String____0_
+  commentId: M:SimpleLineLibrary.Setup.Parameter`1.#ctor(System.String[],`0)
+  name.vb: New(String(), T)
+  fullName: SimpleLineLibrary.Setup.Parameter<T>.Parameter(string[], T)
+  fullName.vb: SimpleLineLibrary.Setup.Parameter(Of T).New(String(), T)
+  nameWithType: Parameter<T>.Parameter(string[], T)
+  nameWithType.vb: Parameter(Of T).New(String(), T)
+- uid: SimpleLineLibrary.Setup.Parameter`1.#ctor*
+  name: Parameter
+  href: api/SimpleLineLibrary.Setup.Parameter-1.html#SimpleLineLibrary_Setup_Parameter_1__ctor_
+  commentId: Overload:SimpleLineLibrary.Setup.Parameter`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.Setup.Parameter<T>.Parameter
+  fullName.vb: SimpleLineLibrary.Setup.Parameter(Of T).New
+  nameWithType: Parameter<T>.Parameter
+  nameWithType.vb: Parameter(Of T).New
+- uid: SimpleLineLibrary.Setup.Parameter`1.CustomConverter
+  name: CustomConverter
+  href: api/SimpleLineLibrary.Setup.Parameter-1.html#SimpleLineLibrary_Setup_Parameter_1_CustomConverter
+  commentId: P:SimpleLineLibrary.Setup.Parameter`1.CustomConverter
+  fullName: SimpleLineLibrary.Setup.Parameter<T>.CustomConverter
+  fullName.vb: SimpleLineLibrary.Setup.Parameter(Of T).CustomConverter
+  nameWithType: Parameter<T>.CustomConverter
+  nameWithType.vb: Parameter(Of T).CustomConverter
+- uid: SimpleLineLibrary.Setup.Parameter`1.CustomConverter*
+  name: CustomConverter
+  href: api/SimpleLineLibrary.Setup.Parameter-1.html#SimpleLineLibrary_Setup_Parameter_1_CustomConverter_
+  commentId: Overload:SimpleLineLibrary.Setup.Parameter`1.CustomConverter
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.Parameter<T>.CustomConverter
+  fullName.vb: SimpleLineLibrary.Setup.Parameter(Of T).CustomConverter
+  nameWithType: Parameter<T>.CustomConverter
+  nameWithType.vb: Parameter(Of T).CustomConverter
+- uid: SimpleLineLibrary.Setup.Parameter`1.New(System.String[])
+  name: New(params string[])
+  href: api/SimpleLineLibrary.Setup.Parameter-1.html#SimpleLineLibrary_Setup_Parameter_1_New_System_String___
+  commentId: M:SimpleLineLibrary.Setup.Parameter`1.New(System.String[])
+  name.vb: New(ParamArray String())
+  fullName: SimpleLineLibrary.Setup.Parameter<T>.New(params string[])
+  fullName.vb: SimpleLineLibrary.Setup.Parameter(Of T).New(ParamArray String())
+  nameWithType: Parameter<T>.New(params string[])
+  nameWithType.vb: Parameter(Of T).New(ParamArray String())
+- uid: SimpleLineLibrary.Setup.Parameter`1.New(System.String[],`0)
+  name: New(string[], T)
+  href: api/SimpleLineLibrary.Setup.Parameter-1.html#SimpleLineLibrary_Setup_Parameter_1_New_System_String____0_
+  commentId: M:SimpleLineLibrary.Setup.Parameter`1.New(System.String[],`0)
+  name.vb: New(String(), T)
+  fullName: SimpleLineLibrary.Setup.Parameter<T>.New(string[], T)
+  fullName.vb: SimpleLineLibrary.Setup.Parameter(Of T).New(String(), T)
+  nameWithType: Parameter<T>.New(string[], T)
+  nameWithType.vb: Parameter(Of T).New(String(), T)
+- uid: SimpleLineLibrary.Setup.Parameter`1.New*
+  name: New
+  href: api/SimpleLineLibrary.Setup.Parameter-1.html#SimpleLineLibrary_Setup_Parameter_1_New_
+  commentId: Overload:SimpleLineLibrary.Setup.Parameter`1.New
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.Parameter<T>.New
+  fullName.vb: SimpleLineLibrary.Setup.Parameter(Of T).New
+  nameWithType: Parameter<T>.New
+  nameWithType.vb: Parameter(Of T).New
+- uid: SimpleLineLibrary.Setup.Reflection
+  name: SimpleLineLibrary.Setup.Reflection
+  href: api/SimpleLineLibrary.Setup.Reflection.html
+  commentId: N:SimpleLineLibrary.Setup.Reflection
+  fullName: SimpleLineLibrary.Setup.Reflection
+  nameWithType: SimpleLineLibrary.Setup.Reflection
+- uid: SimpleLineLibrary.Setup.Reflection.CommandAttribute
+  name: CommandAttribute
+  href: api/SimpleLineLibrary.Setup.Reflection.CommandAttribute.html
+  commentId: T:SimpleLineLibrary.Setup.Reflection.CommandAttribute
+  fullName: SimpleLineLibrary.Setup.Reflection.CommandAttribute
+  nameWithType: CommandAttribute
+- uid: SimpleLineLibrary.Setup.Reflection.CommandAttribute.#ctor(System.String)
+  name: CommandAttribute(string)
+  href: api/SimpleLineLibrary.Setup.Reflection.CommandAttribute.html#SimpleLineLibrary_Setup_Reflection_CommandAttribute__ctor_System_String_
+  commentId: M:SimpleLineLibrary.Setup.Reflection.CommandAttribute.#ctor(System.String)
+  name.vb: New(String)
+  fullName: SimpleLineLibrary.Setup.Reflection.CommandAttribute.CommandAttribute(string)
+  fullName.vb: SimpleLineLibrary.Setup.Reflection.CommandAttribute.New(String)
+  nameWithType: CommandAttribute.CommandAttribute(string)
+  nameWithType.vb: CommandAttribute.New(String)
+- uid: SimpleLineLibrary.Setup.Reflection.CommandAttribute.#ctor*
+  name: CommandAttribute
+  href: api/SimpleLineLibrary.Setup.Reflection.CommandAttribute.html#SimpleLineLibrary_Setup_Reflection_CommandAttribute__ctor_
+  commentId: Overload:SimpleLineLibrary.Setup.Reflection.CommandAttribute.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.Setup.Reflection.CommandAttribute.CommandAttribute
+  fullName.vb: SimpleLineLibrary.Setup.Reflection.CommandAttribute.New
+  nameWithType: CommandAttribute.CommandAttribute
+  nameWithType.vb: CommandAttribute.New
+- uid: SimpleLineLibrary.Setup.Reflection.CommandAttribute.Name
+  name: Name
+  href: api/SimpleLineLibrary.Setup.Reflection.CommandAttribute.html#SimpleLineLibrary_Setup_Reflection_CommandAttribute_Name
+  commentId: P:SimpleLineLibrary.Setup.Reflection.CommandAttribute.Name
+  fullName: SimpleLineLibrary.Setup.Reflection.CommandAttribute.Name
+  nameWithType: CommandAttribute.Name
+- uid: SimpleLineLibrary.Setup.Reflection.CommandAttribute.Name*
+  name: Name
+  href: api/SimpleLineLibrary.Setup.Reflection.CommandAttribute.html#SimpleLineLibrary_Setup_Reflection_CommandAttribute_Name_
+  commentId: Overload:SimpleLineLibrary.Setup.Reflection.CommandAttribute.Name
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.Reflection.CommandAttribute.Name
+  nameWithType: CommandAttribute.Name
+- uid: SimpleLineLibrary.Setup.Reflection.HandlerAttribute
+  name: HandlerAttribute
+  href: api/SimpleLineLibrary.Setup.Reflection.HandlerAttribute.html
+  commentId: T:SimpleLineLibrary.Setup.Reflection.HandlerAttribute
+  fullName: SimpleLineLibrary.Setup.Reflection.HandlerAttribute
+  nameWithType: HandlerAttribute
+- uid: SimpleLineLibrary.Setup.Reflection.HandlerAttribute.#ctor
+  name: HandlerAttribute()
+  href: api/SimpleLineLibrary.Setup.Reflection.HandlerAttribute.html#SimpleLineLibrary_Setup_Reflection_HandlerAttribute__ctor
+  commentId: M:SimpleLineLibrary.Setup.Reflection.HandlerAttribute.#ctor
+  name.vb: New()
+  fullName: SimpleLineLibrary.Setup.Reflection.HandlerAttribute.HandlerAttribute()
+  fullName.vb: SimpleLineLibrary.Setup.Reflection.HandlerAttribute.New()
+  nameWithType: HandlerAttribute.HandlerAttribute()
+  nameWithType.vb: HandlerAttribute.New()
+- uid: SimpleLineLibrary.Setup.Reflection.HandlerAttribute.#ctor(System.Int32)
+  name: HandlerAttribute(int)
+  href: api/SimpleLineLibrary.Setup.Reflection.HandlerAttribute.html#SimpleLineLibrary_Setup_Reflection_HandlerAttribute__ctor_System_Int32_
+  commentId: M:SimpleLineLibrary.Setup.Reflection.HandlerAttribute.#ctor(System.Int32)
+  name.vb: New(Integer)
+  fullName: SimpleLineLibrary.Setup.Reflection.HandlerAttribute.HandlerAttribute(int)
+  fullName.vb: SimpleLineLibrary.Setup.Reflection.HandlerAttribute.New(Integer)
+  nameWithType: HandlerAttribute.HandlerAttribute(int)
+  nameWithType.vb: HandlerAttribute.New(Integer)
+- uid: SimpleLineLibrary.Setup.Reflection.HandlerAttribute.#ctor*
+  name: HandlerAttribute
+  href: api/SimpleLineLibrary.Setup.Reflection.HandlerAttribute.html#SimpleLineLibrary_Setup_Reflection_HandlerAttribute__ctor_
+  commentId: Overload:SimpleLineLibrary.Setup.Reflection.HandlerAttribute.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.Setup.Reflection.HandlerAttribute.HandlerAttribute
+  fullName.vb: SimpleLineLibrary.Setup.Reflection.HandlerAttribute.New
+  nameWithType: HandlerAttribute.HandlerAttribute
+  nameWithType.vb: HandlerAttribute.New
+- uid: SimpleLineLibrary.Setup.Reflection.HandlerAttribute.Order
+  name: Order
+  href: api/SimpleLineLibrary.Setup.Reflection.HandlerAttribute.html#SimpleLineLibrary_Setup_Reflection_HandlerAttribute_Order
+  commentId: P:SimpleLineLibrary.Setup.Reflection.HandlerAttribute.Order
+  fullName: SimpleLineLibrary.Setup.Reflection.HandlerAttribute.Order
+  nameWithType: HandlerAttribute.Order
+- uid: SimpleLineLibrary.Setup.Reflection.HandlerAttribute.Order*
+  name: Order
+  href: api/SimpleLineLibrary.Setup.Reflection.HandlerAttribute.html#SimpleLineLibrary_Setup_Reflection_HandlerAttribute_Order_
+  commentId: Overload:SimpleLineLibrary.Setup.Reflection.HandlerAttribute.Order
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.Reflection.HandlerAttribute.Order
+  nameWithType: HandlerAttribute.Order
+- uid: SimpleLineLibrary.Setup.Reflection.ReflectionCommandFInder
+  name: ReflectionCommandFInder
+  href: api/SimpleLineLibrary.Setup.Reflection.ReflectionCommandFInder.html
+  commentId: T:SimpleLineLibrary.Setup.Reflection.ReflectionCommandFInder
+  fullName: SimpleLineLibrary.Setup.Reflection.ReflectionCommandFInder
+  nameWithType: ReflectionCommandFInder
+- uid: SimpleLineLibrary.SimpleLine
+  name: SimpleLine
+  href: api/SimpleLineLibrary.SimpleLine.html
+  commentId: T:SimpleLineLibrary.SimpleLine
+  fullName: SimpleLineLibrary.SimpleLine
+  nameWithType: SimpleLine
+- uid: SimpleLineLibrary.SimpleLine.#ctor(SimpleLineLibrary.Setup.Configuration)
+  name: SimpleLine(Configuration)
+  href: api/SimpleLineLibrary.SimpleLine.html#SimpleLineLibrary_SimpleLine__ctor_SimpleLineLibrary_Setup_Configuration_
+  commentId: M:SimpleLineLibrary.SimpleLine.#ctor(SimpleLineLibrary.Setup.Configuration)
+  name.vb: New(Configuration)
+  fullName: SimpleLineLibrary.SimpleLine.SimpleLine(SimpleLineLibrary.Setup.Configuration)
+  fullName.vb: SimpleLineLibrary.SimpleLine.New(SimpleLineLibrary.Setup.Configuration)
+  nameWithType: SimpleLine.SimpleLine(Configuration)
+  nameWithType.vb: SimpleLine.New(Configuration)
+- uid: SimpleLineLibrary.SimpleLine.#ctor*
+  name: SimpleLine
+  href: api/SimpleLineLibrary.SimpleLine.html#SimpleLineLibrary_SimpleLine__ctor_
+  commentId: Overload:SimpleLineLibrary.SimpleLine.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.SimpleLine.SimpleLine
+  fullName.vb: SimpleLineLibrary.SimpleLine.New
+  nameWithType: SimpleLine.SimpleLine
+  nameWithType.vb: SimpleLine.New
+- uid: SimpleLineLibrary.SimpleLine.Run(System.Collections.Generic.IReadOnlyList{System.String},SimpleLineLibrary.Setup.CommandProvider)
+  name: Run(IReadOnlyList<string>, CommandProvider)
+  href: api/SimpleLineLibrary.SimpleLine.html#SimpleLineLibrary_SimpleLine_Run_System_Collections_Generic_IReadOnlyList_System_String__SimpleLineLibrary_Setup_CommandProvider_
+  commentId: M:SimpleLineLibrary.SimpleLine.Run(System.Collections.Generic.IReadOnlyList{System.String},SimpleLineLibrary.Setup.CommandProvider)
+  name.vb: Run(IReadOnlyList(Of String), CommandProvider)
+  fullName: SimpleLineLibrary.SimpleLine.Run(System.Collections.Generic.IReadOnlyList<string>, SimpleLineLibrary.Setup.CommandProvider)
+  fullName.vb: SimpleLineLibrary.SimpleLine.Run(System.Collections.Generic.IReadOnlyList(Of String), SimpleLineLibrary.Setup.CommandProvider)
+  nameWithType: SimpleLine.Run(IReadOnlyList<string>, CommandProvider)
+  nameWithType.vb: SimpleLine.Run(IReadOnlyList(Of String), CommandProvider)
+- uid: SimpleLineLibrary.SimpleLine.Run(System.String,SimpleLineLibrary.Setup.CommandProvider)
+  name: Run(string, CommandProvider)
+  href: api/SimpleLineLibrary.SimpleLine.html#SimpleLineLibrary_SimpleLine_Run_System_String_SimpleLineLibrary_Setup_CommandProvider_
+  commentId: M:SimpleLineLibrary.SimpleLine.Run(System.String,SimpleLineLibrary.Setup.CommandProvider)
+  name.vb: Run(String, CommandProvider)
+  fullName: SimpleLineLibrary.SimpleLine.Run(string, SimpleLineLibrary.Setup.CommandProvider)
+  fullName.vb: SimpleLineLibrary.SimpleLine.Run(String, SimpleLineLibrary.Setup.CommandProvider)
+  nameWithType: SimpleLine.Run(string, CommandProvider)
+  nameWithType.vb: SimpleLine.Run(String, CommandProvider)
+- uid: SimpleLineLibrary.SimpleLine.Run*
+  name: Run
+  href: api/SimpleLineLibrary.SimpleLine.html#SimpleLineLibrary_SimpleLine_Run_
+  commentId: Overload:SimpleLineLibrary.SimpleLine.Run
+  isSpec: "True"
+  fullName: SimpleLineLibrary.SimpleLine.Run
+  nameWithType: SimpleLine.Run

@@ -1,0 +1,82 @@
+### YamlMime:ManagedReference
+items:
+- uid: SimpleLineLibrary.Models.Info
+  commentId: N:SimpleLineLibrary.Models.Info
+  id: SimpleLineLibrary.Models.Info
+  children:
+  - SimpleLineLibrary.Models.Info.BaseInfo
+  - SimpleLineLibrary.Models.Info.CommandInfo
+  - SimpleLineLibrary.Models.Info.HandlerInfo
+  - SimpleLineLibrary.Models.Info.KeyInfo
+  - SimpleLineLibrary.Models.Info.ParameterInfo
+  langs:
+  - csharp
+  - vb
+  name: SimpleLineLibrary.Models.Info
+  nameWithType: SimpleLineLibrary.Models.Info
+  fullName: SimpleLineLibrary.Models.Info
+  type: Namespace
+  assemblies:
+  - SimpleLine
+references:
+- uid: SimpleLineLibrary.Models.Info.BaseInfo
+  commentId: T:SimpleLineLibrary.Models.Info.BaseInfo
+  parent: SimpleLineLibrary.Models.Info
+  href: SimpleLineLibrary.Models.Info.BaseInfo.html
+  name: BaseInfo
+  nameWithType: BaseInfo
+  fullName: SimpleLineLibrary.Models.Info.BaseInfo
+- uid: SimpleLineLibrary.Models.Info.CommandInfo
+  commentId: T:SimpleLineLibrary.Models.Info.CommandInfo
+  href: SimpleLineLibrary.Models.Info.CommandInfo.html
+  name: CommandInfo
+  nameWithType: CommandInfo
+  fullName: SimpleLineLibrary.Models.Info.CommandInfo
+- uid: SimpleLineLibrary.Models.Info.HandlerInfo
+  commentId: T:SimpleLineLibrary.Models.Info.HandlerInfo
+  href: SimpleLineLibrary.Models.Info.HandlerInfo.html
+  name: HandlerInfo
+  nameWithType: HandlerInfo
+  fullName: SimpleLineLibrary.Models.Info.HandlerInfo
+- uid: SimpleLineLibrary.Models.Info.KeyInfo
+  commentId: T:SimpleLineLibrary.Models.Info.KeyInfo
+  href: SimpleLineLibrary.Models.Info.KeyInfo.html
+  name: KeyInfo
+  nameWithType: KeyInfo
+  fullName: SimpleLineLibrary.Models.Info.KeyInfo
+- uid: SimpleLineLibrary.Models.Info.ParameterInfo
+  commentId: T:SimpleLineLibrary.Models.Info.ParameterInfo
+  href: SimpleLineLibrary.Models.Info.ParameterInfo.html
+  name: ParameterInfo
+  nameWithType: ParameterInfo
+  fullName: SimpleLineLibrary.Models.Info.ParameterInfo
+- uid: SimpleLineLibrary.Models.Info
+  commentId: N:SimpleLineLibrary.Models.Info
+  href: SimpleLineLibrary.html
+  name: SimpleLineLibrary.Models.Info
+  nameWithType: SimpleLineLibrary.Models.Info
+  fullName: SimpleLineLibrary.Models.Info
+  spec.csharp:
+  - uid: SimpleLineLibrary
+    name: SimpleLineLibrary
+    href: SimpleLineLibrary.html
+  - name: .
+  - uid: SimpleLineLibrary.Models
+    name: Models
+    href: SimpleLineLibrary.Models.html
+  - name: .
+  - uid: SimpleLineLibrary.Models.Info
+    name: Info
+    href: SimpleLineLibrary.Models.Info.html
+  spec.vb:
+  - uid: SimpleLineLibrary
+    name: SimpleLineLibrary
+    href: SimpleLineLibrary.html
+  - name: .
+  - uid: SimpleLineLibrary.Models
+    name: Models
+    href: SimpleLineLibrary.Models.html
+  - name: .
+  - uid: SimpleLineLibrary.Models.Info
+    name: Info
+    href: SimpleLineLibrary.Models.Info.html

@@ -1,0 +1,655 @@
+### YamlMime:ManagedReference
+items:
+- uid: SimpleLineLibrary.Extensions.StringExtentions
+  commentId: T:SimpleLineLibrary.Extensions.StringExtentions
+  id: StringExtentions
+  parent: SimpleLineLibrary.Extensions
+  children:
+  - SimpleLineLibrary.Extensions.StringExtentions.HaveSpace(System.String)
+  - SimpleLineLibrary.Extensions.StringExtentions.IsArray(System.String)
+  - SimpleLineLibrary.Extensions.StringExtentions.IsCommandName(System.String)
+  - SimpleLineLibrary.Extensions.StringExtentions.IsKey(System.String)
+  - SimpleLineLibrary.Extensions.StringExtentions.MakeKeys(System.String,System.Collections.Generic.HashSet{System.String})
+  langs:
+  - csharp
+  - vb
+  name: StringExtentions
+  nameWithType: StringExtentions
+  fullName: SimpleLineLibrary.Extensions.StringExtentions
+  type: Class
+  source:
+    remote:
+      path: SimpleLine/Extensions/StringExtentions.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: StringExtentions
+    path: ../SimpleLine/Extensions/StringExtentions.cs
+    startLine: 2
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Extensions
+  syntax:
+    content: public static class StringExtentions
+    content.vb: Public Module StringExtentions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: SimpleLineLibrary.Extensions.StringExtentions.IsKey(System.String)
+  commentId: M:SimpleLineLibrary.Extensions.StringExtentions.IsKey(System.String)
+  id: IsKey(System.String)
+  isExtensionMethod: true
+  parent: SimpleLineLibrary.Extensions.StringExtentions
+  langs:
+  - csharp
+  - vb
+  name: IsKey(string)
+  nameWithType: StringExtentions.IsKey(string)
+  fullName: SimpleLineLibrary.Extensions.StringExtentions.IsKey(string)
+  type: Method
+  source:
+    remote:
+      path: SimpleLine/Extensions/StringExtentions.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: IsKey
+    path: ../SimpleLine/Extensions/StringExtentions.cs
+    startLine: 4
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Extensions
+  syntax:
+    content: public static bool IsKey(this string name)
+    parameters:
+    - id: name
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsKey(name As String) As Boolean
+  overload: SimpleLineLibrary.Extensions.StringExtentions.IsKey*
+  nameWithType.vb: StringExtentions.IsKey(String)
+  fullName.vb: SimpleLineLibrary.Extensions.StringExtentions.IsKey(String)
+  name.vb: IsKey(String)
+- uid: SimpleLineLibrary.Extensions.StringExtentions.IsArray(System.String)
+  commentId: M:SimpleLineLibrary.Extensions.StringExtentions.IsArray(System.String)
+  id: IsArray(System.String)
+  isExtensionMethod: true
+  parent: SimpleLineLibrary.Extensions.StringExtentions
+  langs:
+  - csharp
+  - vb
+  name: IsArray(string)
+  nameWithType: StringExtentions.IsArray(string)
+  fullName: SimpleLineLibrary.Extensions.StringExtentions.IsArray(string)
+  type: Method
+  source:
+    remote:
+      path: SimpleLine/Extensions/StringExtentions.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: IsArray
+    path: ../SimpleLine/Extensions/StringExtentions.cs
+    startLine: 10
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Extensions
+  syntax:
+    content: public static bool IsArray(this string str)
+    parameters:
+    - id: str
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsArray(str As String) As Boolean
+  overload: SimpleLineLibrary.Extensions.StringExtentions.IsArray*
+  nameWithType.vb: StringExtentions.IsArray(String)
+  fullName.vb: SimpleLineLibrary.Extensions.StringExtentions.IsArray(String)
+  name.vb: IsArray(String)
+- uid: SimpleLineLibrary.Extensions.StringExtentions.HaveSpace(System.String)
+  commentId: M:SimpleLineLibrary.Extensions.StringExtentions.HaveSpace(System.String)
+  id: HaveSpace(System.String)
+  isExtensionMethod: true
+  parent: SimpleLineLibrary.Extensions.StringExtentions
+  langs:
+  - csharp
+  - vb
+  name: HaveSpace(string)
+  nameWithType: StringExtentions.HaveSpace(string)
+  fullName: SimpleLineLibrary.Extensions.StringExtentions.HaveSpace(string)
+  type: Method
+  source:
+    remote:
+      path: SimpleLine/Extensions/StringExtentions.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: HaveSpace
+    path: ../SimpleLine/Extensions/StringExtentions.cs
+    startLine: 17
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Extensions
+  syntax:
+    content: public static bool HaveSpace(this string str)
+    parameters:
+    - id: str
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function HaveSpace(str As String) As Boolean
+  overload: SimpleLineLibrary.Extensions.StringExtentions.HaveSpace*
+  nameWithType.vb: StringExtentions.HaveSpace(String)
+  fullName.vb: SimpleLineLibrary.Extensions.StringExtentions.HaveSpace(String)
+  name.vb: HaveSpace(String)
+- uid: SimpleLineLibrary.Extensions.StringExtentions.IsCommandName(System.String)
+  commentId: M:SimpleLineLibrary.Extensions.StringExtentions.IsCommandName(System.String)
+  id: IsCommandName(System.String)
+  isExtensionMethod: true
+  parent: SimpleLineLibrary.Extensions.StringExtentions
+  langs:
+  - csharp
+  - vb
+  name: IsCommandName(string)
+  nameWithType: StringExtentions.IsCommandName(string)
+  fullName: SimpleLineLibrary.Extensions.StringExtentions.IsCommandName(string)
+  type: Method
+  source:
+    remote:
+      path: SimpleLine/Extensions/StringExtentions.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: IsCommandName
+    path: ../SimpleLine/Extensions/StringExtentions.cs
+    startLine: 22
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Extensions
+  syntax:
+    content: public static bool IsCommandName(this string name)
+    parameters:
+    - id: name
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsCommandName(name As String) As Boolean
+  overload: SimpleLineLibrary.Extensions.StringExtentions.IsCommandName*
+  nameWithType.vb: StringExtentions.IsCommandName(String)
+  fullName.vb: SimpleLineLibrary.Extensions.StringExtentions.IsCommandName(String)
+  name.vb: IsCommandName(String)
+- uid: SimpleLineLibrary.Extensions.StringExtentions.MakeKeys(System.String,System.Collections.Generic.HashSet{System.String})
+  commentId: M:SimpleLineLibrary.Extensions.StringExtentions.MakeKeys(System.String,System.Collections.Generic.HashSet{System.String})
+  id: MakeKeys(System.String,System.Collections.Generic.HashSet{System.String})
+  isExtensionMethod: true
+  parent: SimpleLineLibrary.Extensions.StringExtentions
+  langs:
+  - csharp
+  - vb
+  name: MakeKeys(string, HashSet<string>)
+  nameWithType: StringExtentions.MakeKeys(string, HashSet<string>)
+  fullName: SimpleLineLibrary.Extensions.StringExtentions.MakeKeys(string, System.Collections.Generic.HashSet<string>)
+  type: Method
+  source:
+    remote:
+      path: SimpleLine/Extensions/StringExtentions.cs
+      branch: Rewrite
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: MakeKeys
+    path: ../SimpleLine/Extensions/StringExtentions.cs
+    startLine: 29
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Extensions
+  syntax:
+    content: public static string[] MakeKeys(this string name, HashSet<string> usedKeys)
+    parameters:
+    - id: name
+      type: System.String
+    - id: usedKeys
+      type: System.Collections.Generic.HashSet{System.String}
+    return:
+      type: System.String[]
+    content.vb: Public Shared Function MakeKeys(name As String, usedKeys As HashSet(Of String)) As String()
+  overload: SimpleLineLibrary.Extensions.StringExtentions.MakeKeys*
+  nameWithType.vb: StringExtentions.MakeKeys(String, HashSet(Of String))
+  fullName.vb: SimpleLineLibrary.Extensions.StringExtentions.MakeKeys(String, System.Collections.Generic.HashSet(Of String))
+  name.vb: MakeKeys(String, HashSet(Of String))
+references:
+- uid: SimpleLineLibrary.Extensions
+  commentId: N:SimpleLineLibrary.Extensions
+  href: SimpleLineLibrary.html
+  name: SimpleLineLibrary.Extensions
+  nameWithType: SimpleLineLibrary.Extensions
+  fullName: SimpleLineLibrary.Extensions
+  spec.csharp:
+  - uid: SimpleLineLibrary
+    name: SimpleLineLibrary
+    href: SimpleLineLibrary.html
+  - name: .
+  - uid: SimpleLineLibrary.Extensions
+    name: Extensions
+    href: SimpleLineLibrary.Extensions.html
+  spec.vb:
+  - uid: SimpleLineLibrary
+    name: SimpleLineLibrary
+    href: SimpleLineLibrary.html
+  - name: .
+  - uid: SimpleLineLibrary.Extensions
+    name: Extensions
+    href: SimpleLineLibrary.Extensions.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: SimpleLineLibrary.Extensions.StringExtentions.IsKey*
+  commentId: Overload:SimpleLineLibrary.Extensions.StringExtentions.IsKey
+  href: SimpleLineLibrary.Extensions.StringExtentions.html#SimpleLineLibrary_Extensions_StringExtentions_IsKey_System_String_
+  name: IsKey
+  nameWithType: StringExtentions.IsKey
+  fullName: SimpleLineLibrary.Extensions.StringExtentions.IsKey
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: SimpleLineLibrary.Extensions.StringExtentions.IsArray*
+  commentId: Overload:SimpleLineLibrary.Extensions.StringExtentions.IsArray
+  href: SimpleLineLibrary.Extensions.StringExtentions.html#SimpleLineLibrary_Extensions_StringExtentions_IsArray_System_String_
+  name: IsArray
+  nameWithType: StringExtentions.IsArray
+  fullName: SimpleLineLibrary.Extensions.StringExtentions.IsArray
+- uid: SimpleLineLibrary.Extensions.StringExtentions.HaveSpace*
+  commentId: Overload:SimpleLineLibrary.Extensions.StringExtentions.HaveSpace
+  href: SimpleLineLibrary.Extensions.StringExtentions.html#SimpleLineLibrary_Extensions_StringExtentions_HaveSpace_System_String_
+  name: HaveSpace
+  nameWithType: StringExtentions.HaveSpace
+  fullName: SimpleLineLibrary.Extensions.StringExtentions.HaveSpace
+- uid: SimpleLineLibrary.Extensions.StringExtentions.IsCommandName*
+  commentId: Overload:SimpleLineLibrary.Extensions.StringExtentions.IsCommandName
+  href: SimpleLineLibrary.Extensions.StringExtentions.html#SimpleLineLibrary_Extensions_StringExtentions_IsCommandName_System_String_
+  name: IsCommandName
+  nameWithType: StringExtentions.IsCommandName
+  fullName: SimpleLineLibrary.Extensions.StringExtentions.IsCommandName
+- uid: SimpleLineLibrary.Extensions.StringExtentions.MakeKeys*
+  commentId: Overload:SimpleLineLibrary.Extensions.StringExtentions.MakeKeys
+  href: SimpleLineLibrary.Extensions.StringExtentions.html#SimpleLineLibrary_Extensions_StringExtentions_MakeKeys_System_String_System_Collections_Generic_HashSet_System_String__
+  name: MakeKeys
+  nameWithType: StringExtentions.MakeKeys
+  fullName: SimpleLineLibrary.Extensions.StringExtentions.MakeKeys
+- uid: System.Collections.Generic.HashSet{System.String}
+  commentId: T:System.Collections.Generic.HashSet{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.HashSet`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  name: HashSet<string>
+  nameWithType: HashSet<string>
+  fullName: System.Collections.Generic.HashSet<string>
+  nameWithType.vb: HashSet(Of String)
+  fullName.vb: System.Collections.Generic.HashSet(Of String)
+  name.vb: HashSet(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.HashSet`1
+  commentId: T:System.Collections.Generic.HashSet`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  name: HashSet<T>
+  nameWithType: HashSet<T>
+  fullName: System.Collections.Generic.HashSet<T>
+  nameWithType.vb: HashSet(Of T)
+  fullName.vb: System.Collections.Generic.HashSet(Of T)
+  name.vb: HashSet(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

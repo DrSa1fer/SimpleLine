@@ -1,0 +1,150 @@
+### YamlMime:ManagedReference
+items:
+- uid: SimpleLineLibrary.Setup
+  commentId: N:SimpleLineLibrary.Setup
+  id: SimpleLineLibrary.Setup
+  children:
+  - SimpleLineLibrary.Setup.BaseOption`1
+  - SimpleLineLibrary.Setup.CommandBuilder
+  - SimpleLineLibrary.Setup.CommandProvider
+  - SimpleLineLibrary.Setup.Configuration
+  - SimpleLineLibrary.Setup.Inject`1
+  - SimpleLineLibrary.Setup.Key
+  - SimpleLineLibrary.Setup.Parameter`1
+  langs:
+  - csharp
+  - vb
+  name: SimpleLineLibrary.Setup
+  nameWithType: SimpleLineLibrary.Setup
+  fullName: SimpleLineLibrary.Setup
+  type: Namespace
+  assemblies:
+  - SimpleLine
+references:
+- uid: SimpleLineLibrary.Setup.CommandBuilder
+  commentId: T:SimpleLineLibrary.Setup.CommandBuilder
+  parent: SimpleLineLibrary.Setup
+  href: SimpleLineLibrary.Setup.CommandBuilder.html
+  name: CommandBuilder
+  nameWithType: CommandBuilder
+  fullName: SimpleLineLibrary.Setup.CommandBuilder
+- uid: SimpleLineLibrary.Setup.CommandProvider
+  commentId: T:SimpleLineLibrary.Setup.CommandProvider
+  parent: SimpleLineLibrary.Setup
+  href: SimpleLineLibrary.Setup.CommandProvider.html
+  name: CommandProvider
+  nameWithType: CommandProvider
+  fullName: SimpleLineLibrary.Setup.CommandProvider
+- uid: SimpleLineLibrary.Setup.Configuration
+  commentId: T:SimpleLineLibrary.Setup.Configuration
+  parent: SimpleLineLibrary.Setup
+  href: SimpleLineLibrary.Setup.Configuration.html
+  name: Configuration
+  nameWithType: Configuration
+  fullName: SimpleLineLibrary.Setup.Configuration
+- uid: SimpleLineLibrary.Setup.BaseOption`1
+  commentId: T:SimpleLineLibrary.Setup.BaseOption`1
+  href: SimpleLineLibrary.Setup.BaseOption-1.html
+  name: BaseOption<T>
+  nameWithType: BaseOption<T>
+  fullName: SimpleLineLibrary.Setup.BaseOption<T>
+  nameWithType.vb: BaseOption(Of T)
+  fullName.vb: SimpleLineLibrary.Setup.BaseOption(Of T)
+  name.vb: BaseOption(Of T)
+  spec.csharp:
+  - uid: SimpleLineLibrary.Setup.BaseOption`1
+    name: BaseOption
+    href: SimpleLineLibrary.Setup.BaseOption-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: SimpleLineLibrary.Setup.BaseOption`1
+    name: BaseOption
+    href: SimpleLineLibrary.Setup.BaseOption-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: SimpleLineLibrary.Setup.Inject`1
+  commentId: T:SimpleLineLibrary.Setup.Inject`1
+  parent: SimpleLineLibrary.Setup
+  href: SimpleLineLibrary.Setup.Inject-1.html
+  name: Inject<T>
+  nameWithType: Inject<T>
+  fullName: SimpleLineLibrary.Setup.Inject<T>
+  nameWithType.vb: Inject(Of T)
+  fullName.vb: SimpleLineLibrary.Setup.Inject(Of T)
+  name.vb: Inject(Of T)
+  spec.csharp:
+  - uid: SimpleLineLibrary.Setup.Inject`1
+    name: Inject
+    href: SimpleLineLibrary.Setup.Inject-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: SimpleLineLibrary.Setup.Inject`1
+    name: Inject
+    href: SimpleLineLibrary.Setup.Inject-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: SimpleLineLibrary.Setup.Key
+  commentId: T:SimpleLineLibrary.Setup.Key
+  parent: SimpleLineLibrary.Setup
+  href: SimpleLineLibrary.Setup.Key.html
+  name: Key
+  nameWithType: Key
+  fullName: SimpleLineLibrary.Setup.Key
+- uid: SimpleLineLibrary.Setup.Parameter`1
+  commentId: T:SimpleLineLibrary.Setup.Parameter`1
+  parent: SimpleLineLibrary.Setup
+  href: SimpleLineLibrary.Setup.Parameter-1.html
+  name: Parameter<T>
+  nameWithType: Parameter<T>
+  fullName: SimpleLineLibrary.Setup.Parameter<T>
+  nameWithType.vb: Parameter(Of T)
+  fullName.vb: SimpleLineLibrary.Setup.Parameter(Of T)
+  name.vb: Parameter(Of T)
+  spec.csharp:
+  - uid: SimpleLineLibrary.Setup.Parameter`1
+    name: Parameter
+    href: SimpleLineLibrary.Setup.Parameter-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: SimpleLineLibrary.Setup.Parameter`1
+    name: Parameter
+    href: SimpleLineLibrary.Setup.Parameter-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: SimpleLineLibrary.Setup
+  commentId: N:SimpleLineLibrary.Setup
+  href: SimpleLineLibrary.html
+  name: SimpleLineLibrary.Setup
+  nameWithType: SimpleLineLibrary.Setup
+  fullName: SimpleLineLibrary.Setup
+  spec.csharp:
+  - uid: SimpleLineLibrary
+    name: SimpleLineLibrary
+    href: SimpleLineLibrary.html
+  - name: .
+  - uid: SimpleLineLibrary.Setup
+    name: Setup
+    href: SimpleLineLibrary.Setup.html
+  spec.vb:
+  - uid: SimpleLineLibrary
+    name: SimpleLineLibrary
+    href: SimpleLineLibrary.html
+  - name: .
+  - uid: SimpleLineLibrary.Setup
+    name: Setup
+    href: SimpleLineLibrary.Setup.html

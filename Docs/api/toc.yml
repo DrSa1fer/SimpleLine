@@ -1,0 +1,52 @@
+### YamlMime:TableOfContent
+items:
+- uid: SimpleLineLibrary
+  name: SimpleLineLibrary
+  items:
+  - uid: SimpleLineLibrary.SimpleLine
+    name: SimpleLine
+- uid: SimpleLineLibrary.Models
+  name: SimpleLineLibrary.Models
+  items:
+  - uid: SimpleLineLibrary.Models.IGetInfo`1
+    name: IGetInfo<T>
+- uid: SimpleLineLibrary.Models.Info
+  name: SimpleLineLibrary.Models.Info
+  items:
+  - uid: SimpleLineLibrary.Models.Info.BaseInfo
+    name: BaseInfo
+  - uid: SimpleLineLibrary.Models.Info.CommandInfo
+    name: CommandInfo
+  - uid: SimpleLineLibrary.Models.Info.HandlerInfo
+    name: HandlerInfo
+  - uid: SimpleLineLibrary.Models.Info.KeyInfo
+    name: KeyInfo
+  - uid: SimpleLineLibrary.Models.Info.ParameterInfo
+    name: ParameterInfo
+- uid: SimpleLineLibrary.Setup
+  name: SimpleLineLibrary.Setup
+  items:
+  - uid: SimpleLineLibrary.Setup.BaseOption`1
+    name: BaseOption<T>
+  - uid: SimpleLineLibrary.Setup.CommandBuilder
+    name: CommandBuilder
+  - uid: SimpleLineLibrary.Setup.CommandProvider
+    name: CommandProvider
+  - uid: SimpleLineLibrary.Setup.Configuration
+    name: Configuration
+  - uid: SimpleLineLibrary.Setup.Inject`1
+    name: Inject<T>
+  - uid: SimpleLineLibrary.Setup.Key
+    name: Key
+  - uid: SimpleLineLibrary.Setup.Parameter`1
+    name: Parameter<T>
+- uid: SimpleLineLibrary.Setup.Reflection
+  name: SimpleLineLibrary.Setup.Reflection
+  items:
+  - uid: SimpleLineLibrary.Setup.Reflection.CommandAttribute
+    name: CommandAttribute
+  - uid: SimpleLineLibrary.Setup.Reflection.HandlerAttribute
+    name: HandlerAttribute
+  - uid: SimpleLineLibrary.Setup.Reflection.ReflectionCommandFInder
+    name: ReflectionCommandFInder
+memberLayout: SamePage

@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: SimpleLineLibrary.Core.Services.Parsing
+  commentId: N:SimpleLineLibrary.Core.Services.Parsing
+  id: SimpleLineLibrary.Core.Services.Parsing
+  children:
+  - SimpleLineLibrary.Core.Services.Parsing.StringParser
+  langs:
+  - csharp
+  - vb
+  name: SimpleLineLibrary.Core.Services.Parsing
+  nameWithType: SimpleLineLibrary.Core.Services.Parsing
+  fullName: SimpleLineLibrary.Core.Services.Parsing
+  type: Namespace
+  assemblies:
+  - SimpleLine
+references:
+- uid: SimpleLineLibrary.Core.Services.Parsing.StringParser
+  commentId: T:SimpleLineLibrary.Core.Services.Parsing.StringParser
+  href: SimpleLineLibrary.Core.Services.Parsing.StringParser.html
+  name: StringParser
+  nameWithType: StringParser
+  fullName: SimpleLineLibrary.Core.Services.Parsing.StringParser

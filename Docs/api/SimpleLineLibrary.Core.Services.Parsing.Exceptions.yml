@@ -1,0 +1,91 @@
+### YamlMime:ManagedReference
+items:
+- uid: SimpleLineLibrary.Core.Services.Parsing.Exceptions
+  commentId: N:SimpleLineLibrary.Core.Services.Parsing.Exceptions
+  id: SimpleLineLibrary.Core.Services.Parsing.Exceptions
+  children:
+  - SimpleLineLibrary.Core.Services.Parsing.Exceptions.EmptyRegionException
+  - SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotClosedRegionException
+  - SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotOpenedRegionException
+  - SimpleLineLibrary.Core.Services.Parsing.Exceptions.ParseException
+  langs:
+  - csharp
+  - vb
+  name: SimpleLineLibrary.Core.Services.Parsing.Exceptions
+  nameWithType: SimpleLineLibrary.Core.Services.Parsing.Exceptions
+  fullName: SimpleLineLibrary.Core.Services.Parsing.Exceptions
+  type: Namespace
+  assemblies:
+  - SimpleLine
+references:
+- uid: SimpleLineLibrary.Core.Services.Parsing.Exceptions.EmptyRegionException
+  commentId: T:SimpleLineLibrary.Core.Services.Parsing.Exceptions.EmptyRegionException
+  href: SimpleLineLibrary.Core.Services.Parsing.Exceptions.EmptyRegionException.html
+  name: EmptyRegionException
+  nameWithType: EmptyRegionException
+  fullName: SimpleLineLibrary.Core.Services.Parsing.Exceptions.EmptyRegionException
+- uid: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotClosedRegionException
+  commentId: T:SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotClosedRegionException
+  href: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotClosedRegionException.html
+  name: NotClosedRegionException
+  nameWithType: NotClosedRegionException
+  fullName: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotClosedRegionException
+- uid: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotOpenedRegionException
+  commentId: T:SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotOpenedRegionException
+  href: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotOpenedRegionException.html
+  name: NotOpenedRegionException
+  nameWithType: NotOpenedRegionException
+  fullName: SimpleLineLibrary.Core.Services.Parsing.Exceptions.NotOpenedRegionException
+- uid: SimpleLineLibrary.Core.Services.Parsing.Exceptions.ParseException
+  commentId: T:SimpleLineLibrary.Core.Services.Parsing.Exceptions.ParseException
+  parent: SimpleLineLibrary.Core.Services.Parsing.Exceptions
+  href: SimpleLineLibrary.Core.Services.Parsing.Exceptions.ParseException.html
+  name: ParseException
+  nameWithType: ParseException
+  fullName: SimpleLineLibrary.Core.Services.Parsing.Exceptions.ParseException
+- uid: SimpleLineLibrary.Core.Services.Parsing.Exceptions
+  commentId: N:SimpleLineLibrary.Core.Services.Parsing.Exceptions
+  href: SimpleLineLibrary.html
+  name: SimpleLineLibrary.Core.Services.Parsing.Exceptions
+  nameWithType: SimpleLineLibrary.Core.Services.Parsing.Exceptions
+  fullName: SimpleLineLibrary.Core.Services.Parsing.Exceptions
+  spec.csharp:
+  - uid: SimpleLineLibrary
+    name: SimpleLineLibrary
+    href: SimpleLineLibrary.html
+  - name: .
+  - uid: SimpleLineLibrary.Core
+    name: Core
+    href: SimpleLineLibrary.Core.html
+  - name: .
+  - uid: SimpleLineLibrary.Core.Services
+    name: Services
+    href: SimpleLineLibrary.Core.Services.html
+  - name: .
+  - uid: SimpleLineLibrary.Core.Services.Parsing
+    name: Parsing
+    href: SimpleLineLibrary.Core.Services.Parsing.html
+  - name: .
+  - uid: SimpleLineLibrary.Core.Services.Parsing.Exceptions
+    name: Exceptions
+    href: SimpleLineLibrary.Core.Services.Parsing.Exceptions.html
+  spec.vb:
+  - uid: SimpleLineLibrary
+    name: SimpleLineLibrary
+    href: SimpleLineLibrary.html
+  - name: .
+  - uid: SimpleLineLibrary.Core
+    name: Core
+    href: SimpleLineLibrary.Core.html
+  - name: .
+  - uid: SimpleLineLibrary.Core.Services
+    name: Services
+    href: SimpleLineLibrary.Core.Services.html
+  - name: .
+  - uid: SimpleLineLibrary.Core.Services.Parsing
+    name: Parsing
+    href: SimpleLineLibrary.Core.Services.Parsing.html
+  - name: .
+  - uid: SimpleLineLibrary.Core.Services.Parsing.Exceptions
+    name: Exceptions
+    href: SimpleLineLibrary.Core.Services.Parsing.Exceptions.html
