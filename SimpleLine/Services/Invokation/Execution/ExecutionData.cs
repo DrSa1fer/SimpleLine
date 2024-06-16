@@ -11,11 +11,7 @@ namespace SimpleLineLibrary.Services.Invokation.Execution
 
         public ExecutionData(IReadOnlyList<Argument> args)
         {
-            _args = new List<Argument>()
-            {
-                new Argument("", "bye world!")
-            };
-
+            _args = args;
             _dict = new();
 
             foreach(var arg in _args)

@@ -1,6 +1,6 @@
-namespace SimpleLineLibrary.Services.Parsing
+namespace SimpleLineLibrary.Services.Parsing.Tokens
 {
-    public class TokenParser
+    public class TokensParser
     {
         private Dictionary<char, char> _borders = new()
         {
@@ -49,12 +49,12 @@ namespace SimpleLineLibrary.Services.Parsing
                 }
 
                 if (!open
-                    && (i == 0 || (i > 0 && char.IsWhiteSpace(input[i - 1]) && input[i - 1] != '\\'))                    
+                    && (i == 0 || i > 0 && char.IsWhiteSpace(input[i - 1]) && input[i - 1] != '\\')
                     && _borders.TryGetValue(input[i], out char e))
                 {
                     open = true;
                     end = e;
-                }               
+                }
             }
 
             ls.Add(input[start..]);

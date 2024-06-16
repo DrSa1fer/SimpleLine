@@ -7,11 +7,15 @@ internal class Program
     private static void Main(string[] args)
     {
         var simp = new SimpleLine(new()).Run(
-            new List<string>() {
-                "test",
-                "--test",
-                "-m",
-                "bye world!"
+            new List<string>() 
+            {
+                "conf", "--edit",
+                "-a", "meow",
+                "-a", "test",
+                "-a", "world!",
+                "-a", "Hello",
+                "-a", "Fuck",
+                "-a", "_main_"
             }, 
             typeof(TestCommand).GetTypeInfo(), 
             typeof(ConfigCommand).GetTypeInfo());

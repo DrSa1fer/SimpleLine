@@ -1,12 +1,13 @@
 using SimpleLineLibrary.Services.Invokation.Finding;
 using SimpleLineLibrary.Services.Invokation.Execution;
-using SimpleLineLibrary.Services.Parsing;
 using SimpleLineLibrary.Setup;
 using System.Reflection;
 using SimpleLineLibrary.Exceptions;
 using SimpleLineLibrary.Services.Invokation.Execution.Exceptions;
 using SimpleLineLibrary.Setup.Exceptions;
 using SimpleLineLibrary.Services.Invokation.Converting;
+using SimpleLineLibrary.Services.Parsing.Arguments;
+using SimpleLineLibrary.Services.Parsing.Tokens;
 
 namespace SimpleLineLibrary
 {
@@ -14,8 +15,8 @@ namespace SimpleLineLibrary
     {        
         private readonly Configuration _config;
         
-        private readonly ArgumentParser _argumentParser;
-        private readonly TokenParser _tokenParser;
+        private readonly ArgumentsParser _argumentParser;
+        private readonly TokensParser _tokenParser;
 
         private readonly CommandProvider _commandProvider;
 
@@ -30,8 +31,8 @@ namespace SimpleLineLibrary
 
             _commandProvider = new CommandProvider(new HashSet<string>());
 
-            _argumentParser = new ArgumentParser();
-            _tokenParser= new TokenParser();
+            _argumentParser = new ArgumentsParser();
+            _tokenParser= new TokensParser();
             
             _commandFinder = new CommandFinder();
             _handlerFinder = new HandlerFinder();
@@ -73,7 +74,6 @@ namespace SimpleLineLibrary
                     _config.HandlerNotFound?.Invoke(qArgs.ToList());
                     return null;
                 }
-
                 var parseArgs = _argumentParser.Parse(qArgs);
                 var execData = new ExecutionData(parseArgs);
 

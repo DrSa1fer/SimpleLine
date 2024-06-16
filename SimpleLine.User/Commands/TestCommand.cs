@@ -17,9 +17,10 @@ namespace SimpleLineLibrary.User.Commands
     public class ConfigCommand
     {
         [Handler("--edit")]
-        public void Test()
+        public void Test(
+            [CustomKeys("-a", "--args")] string[] args)
         {
-            Console.WriteLine("Edit config");
+            Console.WriteLine(">| {0} |<", string.Join(">>>", args));
         }
     }
 }

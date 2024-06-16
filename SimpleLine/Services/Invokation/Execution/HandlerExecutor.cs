@@ -68,6 +68,8 @@ namespace SimpleLineLibrary.Services.Invokation.Execution
 
                 if (p.ValueType.IsAssignableTo(typeof(Array)))
                 {
+                    throw new NotImplementedException("Array not supported :(");
+
                     var ls = new List<object?>();
                     
                     var t = p.ValueType.GetElementType()!;
