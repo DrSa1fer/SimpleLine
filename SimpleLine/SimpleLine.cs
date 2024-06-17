@@ -72,7 +72,7 @@ namespace SimpleLineLibrary
                     return null;
                 }
 
-                if (_config.HelpKeys.Contains(qArgs.Peek()))
+                if (qArgs.Count > 0 && _config.HelpKeys.Contains(qArgs.Peek()))
                 {
                     var info = _infoDisplayer.GetInfo(com);
                     Console.WriteLine(info);
@@ -87,7 +87,7 @@ namespace SimpleLineLibrary
                     return null;
                 }
 
-                if (_config.HelpKeys.Contains(qArgs.Peek()))
+                if (qArgs.Count > 0 && _config.HelpKeys.Contains(qArgs.Peek()))
                 {
                     var info = _infoDisplayer.GetInfo(han);
                     Console.WriteLine(info);

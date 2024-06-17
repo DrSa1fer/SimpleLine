@@ -14,7 +14,7 @@ namespace SimpleLineLibrary.Services.Finding
 
         public Command? Find(Queue<string> args, IReadOnlyList<Command> roots)
         {
-            if (args is null)
+            if (args is null || args.Count < 1)
             {
                 return null;
             }
@@ -24,12 +24,7 @@ namespace SimpleLineLibrary.Services.Finding
                 return null;
             }
 
-            var name = _rootName;
-
-            if (args.Count > 0)
-            {
-                name = args.Peek();
-            }
+            var name = args.Peek();
 
             var root = roots
                 .FirstOrDefault(x => x.Is(name));
@@ -43,17 +38,23 @@ namespace SimpleLineLibrary.Services.Finding
             {
                 args.Dequeue(); //skip root
 
-                var peek = args.Peek();
-                var temp = root
-                    .Subcommands
-                    .FirstOrDefault(x => x.Is(peek));
+                if (args.TryPeek(out string? peek))
+                {
+                    var temp = root
+                        .Subcommands
+                        .FirstOrDefault(x => x.Is(peek));
 
-                if (temp == null)
+                    if (temp == null)
+                    {
+                        break;
+                    }
+
+                    root = temp;
+                }
+                else
                 {
                     break;
                 }
-
-                root = temp;
             }
 
             return root;

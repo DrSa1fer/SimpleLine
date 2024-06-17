@@ -9,22 +9,25 @@ namespace SimpleLineLibrary.Services.Finding
         {
             var hs = handlers;
 
-            var peek = args.Peek();
-
-            if (peek.IsKeyTokenName())
+            if (args.TryPeek(out var peek))
             {
-                var filtered = handlers.Where(h => h.HasKey && h.Key.IsEqualsTokenName(peek));
-
-                if (filtered.Any())
+                if (peek.IsKeyTokenName())
                 {
-                    args.Dequeue();
-                    return filtered.Single();
+                    var filtered = handlers.Where(h => h.HasKey && h.Key.IsEqualsTokenName(peek));
+
+                    if (filtered.Any())
+                    {
+                        args.Dequeue();
+                        return filtered.Single();
+                    }
                 }
+
+                var withouKey = handlers.Where(x => !x.HasKey);
+
+                return withouKey.SingleOrDefault();
             }
 
-            var withouKey = handlers.Where(x => !x.HasKey);
-
-            return withouKey.SingleOrDefault();
+            return null;
         }
     }
 }
