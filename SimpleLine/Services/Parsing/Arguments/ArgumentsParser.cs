@@ -1,5 +1,4 @@
 ﻿using SimpleLineLibrary.Extensions;
-using SimpleLineLibrary.Models.Data;
 using SimpleLineLibrary.Services.Parsing.Arguments.Exceptions;
 
 namespace SimpleLineLibrary.Services.Parsing.Arguments

@@ -1,6 +1,6 @@
 ﻿using SimpleLineLibrary.Extensions;
 using SimpleLineLibrary.Models;
-using SimpleLineLibrary.Models.Data;
+using SimpleLineLibrary.Services.Parsing.Arguments;
 
 namespace SimpleLineLibrary.Services.Execution
 {

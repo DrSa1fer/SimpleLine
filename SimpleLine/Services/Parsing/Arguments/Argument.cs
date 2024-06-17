@@ -1,4 +1,4 @@
-namespace SimpleLineLibrary.Models.Data
+namespace SimpleLineLibrary.Services.Parsing.Arguments
 {
     /// <summary>
     /// Представление аргумента "--key value" из ввода в виде объекта    
