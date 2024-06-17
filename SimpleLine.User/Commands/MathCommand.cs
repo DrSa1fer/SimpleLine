@@ -7,7 +7,6 @@ namespace SimpleLineLibrary.User.Commands
     {
         private StreamWriter? _output;
 
-        [Inject]
         public void Inject(StreamWriter output)
         {
             _output = output;
@@ -15,16 +14,20 @@ namespace SimpleLineLibrary.User.Commands
 
         [Handler("--sum")]
         [Description("Calculate sum of two numbers")]
-        public void Sum(int x, int y)
+        public int Sum(
+            [CustomKeys("-x", "--x")] int x,
+            [CustomKeys("-y", "--y")] int y)
         {           
-            _output?.WriteLine(">>> result: {0}", x + y);
+            return x + y;
         }
 
         [Handler("--multiply")]
         [Description("Calculate multiply of two numbers")]
-        public void Multiply(int x, int y)
+        public int Multiply(
+            [CustomKeys("-x", "--x")] int x,
+            [CustomKeys("-y", "--y")] int y)
         {            
-            _output?.WriteLine(">>> result: {0}", x * y);
+            return x * y;
         }
     }
 }

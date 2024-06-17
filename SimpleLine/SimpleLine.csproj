@@ -24,4 +24,10 @@
     <DebugType>embedded</DebugType>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Services\Finding\Exceptions\**" />
+    <EmbeddedResource Remove="Services\Finding\Exceptions\**" />
+    <None Remove="Services\Finding\Exceptions\**" />
+  </ItemGroup>
+
 </Project>

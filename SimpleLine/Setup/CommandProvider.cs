@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace SimpleLineLibrary.Setup
 {
-    public sealed class CommandProvider
+    internal sealed class CommandProvider
     {
         private readonly IReadOnlySet<string> _keywords;
 
@@ -11,8 +11,8 @@ namespace SimpleLineLibrary.Setup
         {
             _keywords = keywords;
         }
-        
-        internal List<Command> FindCommands(params TypeInfo[] types)
+
+        internal List<Command> FindCommands(IEnumerable<TypeInfo> types)
         {
             var ls = new List<Command>();
 
@@ -31,9 +31,9 @@ namespace SimpleLineLibrary.Setup
                     StringSplitOptions.RemoveEmptyEntries
                 );
 
-                if( sp.Length < 1)
+                if (sp.Length < 1)
                 {
-                    throw new 
+                    throw new
                         SimpleLineLibrary
                         .Exceptions
                         .ArgumentException("Empty name");
@@ -51,50 +51,48 @@ namespace SimpleLineLibrary.Setup
 
                         if (!_keywords.Contains(uid[1..]))
                         {
-                            throw new 
+                            throw new
                                 SimpleLineLibrary
                                 .Exceptions
-                                .ArgumentException("not reserved word");    
+                                .ArgumentException("not reserved word");
                         }
 
                         com = MakeCommand(t, uid, false);
                     }
                     else
                     {
-                        com = MakeCommand(t, uid, true);                    
+                        com = MakeCommand(t, uid, true);
                     }
                 }
                 else if (sp.Length > 1)
                 {
-                    throw new 
+                    throw new
                         SimpleLineLibrary
                         .Exceptions
                         .NotImplementedException();
                 }
 
-                if(com == null)
+                if (com == null)
                 {
                     continue;
                 }
 
                 ls.Add(com);
 
-                
-
                 var ctor = t.GetConstructor(Type.EmptyTypes);
 
-                if(ctor == null)
+                if (ctor == null)
                 {
                     continue;
                 }
 
                 var obj = ctor.Invoke(null);
 
-                foreach(var method in t.GetMethods())
+                foreach (var method in t.GetMethods())
                 {
                     var handlerAttr = method.GetCustomAttribute<HandlerAttribute>();
 
-                    if(handlerAttr == null)
+                    if (handlerAttr == null)
                     {
                         continue;
                     }
@@ -102,7 +100,14 @@ namespace SimpleLineLibrary.Setup
                     var key = handlerAttr.Key;
                     var han = MakeHandler(method, obj, key);
 
-                    com.RegisterHandler(han);
+                    if (com.ContainsHandler(han))
+                    {
+                        Console.WriteLine("Handler will be ignored: " + han.Name);
+                    }
+                    else
+                    {
+                        com.RegisterHandler(han);
+                    }
                 }
             }
 

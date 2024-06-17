@@ -1,4 +1,4 @@
-namespace SimpleLineLibrary.Services.Invokation.Converting
+namespace SimpleLineLibrary.Services.Converting
 {
     internal class StringConverter
     {
@@ -14,7 +14,7 @@ namespace SimpleLineLibrary.Services.Invokation.Converting
 
         public T ConvertTo<T>(string str)
         {
-            if(_dict[typeof(T)].Invoke(str, out object? obj))
+            if (_dict[typeof(T)].Invoke(str, out object? obj))
             {
                 return (T)obj!;
             }
@@ -24,7 +24,7 @@ namespace SimpleLineLibrary.Services.Invokation.Converting
 
         public object? ConvertTo(string str, Type type)
         {
-            if(_dict[type].Invoke(str, out object? obj))
+            if (_dict[type].Invoke(str, out object? obj))
             {
                 return obj;
             }
@@ -34,7 +34,7 @@ namespace SimpleLineLibrary.Services.Invokation.Converting
 
         public bool TryConvertTo<T>(string str, out T value)
         {
-            if(_dict[typeof(T)].Invoke(str, out object? obj))
+            if (_dict[typeof(T)].Invoke(str, out object? obj))
             {
                 value = (T)obj!;
                 return true;
@@ -46,7 +46,7 @@ namespace SimpleLineLibrary.Services.Invokation.Converting
 
         public bool TryConvertTo(string str, Type type, out object? value)
         {
-            if(_dict[type].Invoke(str, out object? obj))
+            if (_dict[type].Invoke(str, out object? obj))
             {
                 value = obj;
                 return true;
@@ -64,9 +64,9 @@ namespace SimpleLineLibrary.Services.Invokation.Converting
 
         private void RegisterDefaultConverters()
         {
-            RegisterConverter<int>((string str, out object? val) => 
-            { 
-                if(int.TryParse(str, out int i))
+            RegisterConverter<int>((string str, out object? val) =>
+            {
+                if (int.TryParse(str, out int i))
                 {
                     val = i;
                     return true;
@@ -75,9 +75,9 @@ namespace SimpleLineLibrary.Services.Invokation.Converting
                 return false;
             });
 
-            RegisterConverter<float>((string str, out object? val) => 
-            { 
-                if(float.TryParse(str, out float i))
+            RegisterConverter<float>((string str, out object? val) =>
+            {
+                if (float.TryParse(str, out float i))
                 {
                     val = i;
                     return true;
@@ -86,9 +86,9 @@ namespace SimpleLineLibrary.Services.Invokation.Converting
                 return false;
             });
 
-            RegisterConverter<bool>((string str, out object? val) => 
-            { 
-                if(bool.TryParse(str, out bool i))
+            RegisterConverter<bool>((string str, out object? val) =>
+            {
+                if (bool.TryParse(str, out bool i))
                 {
                     val = i;
                     return true;
@@ -97,15 +97,15 @@ namespace SimpleLineLibrary.Services.Invokation.Converting
                 return false;
             });
 
-            RegisterConverter<string>((string str, out object? val) => 
-            { 
+            RegisterConverter<string>((string str, out object? val) =>
+            {
                 val = str;
-                return true;                
+                return true;
             });
-            
-            RegisterConverter<char>((string str, out object? val) => 
-            { 
-                if(str.Length == 1)
+
+            RegisterConverter<char>((string str, out object? val) =>
+            {
+                if (str.Length == 1)
                 {
                     val = str[0];
                     return true;
@@ -114,9 +114,9 @@ namespace SimpleLineLibrary.Services.Invokation.Converting
                 return false;
             });
 
-            RegisterConverter<DateTime>((string str, out object? val) => 
-            { 
-                if(DateTime.TryParse(str, out DateTime i))
+            RegisterConverter<DateTime>((string str, out object? val) =>
+            {
+                if (DateTime.TryParse(str, out DateTime i))
                 {
                     val = i;
                     return true;
@@ -125,11 +125,11 @@ namespace SimpleLineLibrary.Services.Invokation.Converting
                 return false;
             });
 
-            RegisterConverter<FileInfo>((string str, out object? val) => 
-            { 
+            RegisterConverter<FileInfo>((string str, out object? val) =>
+            {
                 var info = new FileInfo(str);
 
-                if(info.Exists)
+                if (info.Exists)
                 {
                     val = info;
                     return true;
@@ -139,11 +139,11 @@ namespace SimpleLineLibrary.Services.Invokation.Converting
                 return false;
             });
 
-            RegisterConverter<DirectoryInfo>((string str, out object? val) => 
-            { 
+            RegisterConverter<DirectoryInfo>((string str, out object? val) =>
+            {
                 var info = new DirectoryInfo(str);
 
-                if(info.Exists)
+                if (info.Exists)
                 {
                     val = info;
                     return true;

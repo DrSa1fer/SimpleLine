@@ -11,7 +11,6 @@ namespace SimpleLineLibrary.Models
                 return _valueType;
             }
         }
-
         public bool IsRequired
         {
             get
@@ -19,7 +18,6 @@ namespace SimpleLineLibrary.Models
                 return _isRequired;
             }
         }
-
         public string LongKey
         {
             get
@@ -27,7 +25,6 @@ namespace SimpleLineLibrary.Models
                 return _longkey;
             }
         }
-
         public string ShortKey
         {
             get
@@ -35,7 +32,6 @@ namespace SimpleLineLibrary.Models
                 return _shortkey;
             }
         }
-
         public int Position
         {
             get
@@ -43,7 +39,6 @@ namespace SimpleLineLibrary.Models
                 return _position;
             }
         }
-
         public object? DefaultValue
         {
             get
@@ -51,7 +46,6 @@ namespace SimpleLineLibrary.Models
                 return _defValue;
             }
         }
-
         public bool HasDefaultValue
         {
             get
@@ -87,13 +81,18 @@ namespace SimpleLineLibrary.Models
             _defValue = defValue;
         }                
 
+        public bool Is(string key)
+        {
+            return false 
+                || key.IsEqualsTokenName(this.ShortKey) 
+                || key.IsEqualsTokenName(this.LongKey);
+        }
+
         public override bool Equals(object? obj)
         {
-            return obj is Parameter other && 
-                (false 
-                    || other.ShortKey.IsEqualsTokenName(this.ShortKey)
-                    || other.LongKey.IsEqualsTokenName(this.LongKey)                   
-                );
+            return obj is Parameter other 
+                && Is(other.LongKey) 
+                && Is(other.ShortKey);
         }
 
         public override int GetHashCode()

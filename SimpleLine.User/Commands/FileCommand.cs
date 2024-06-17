@@ -5,16 +5,9 @@ namespace SimpleLineLibrary.User.Commands
     [Command("file")]
     public class FileCommand
     {
-        private StreamWriter? _output;
-
-        [Inject]
-        public void Inject(StreamWriter output)
-        {
-            _output = output;
-        }
-
         [Handler("--read")]
-        public void ReadFile(string path)
+        public void ReadFile(
+            [CustomKeys("-p", "--path")] string path)
         {
             if(File.Exists(path))
             {

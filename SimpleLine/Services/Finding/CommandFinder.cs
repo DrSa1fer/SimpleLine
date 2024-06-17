@@ -1,8 +1,7 @@
 using SimpleLineLibrary.Extensions;
 using SimpleLineLibrary.Models;
 
-
-namespace SimpleLineLibrary.Services.Invokation.Finding
+namespace SimpleLineLibrary.Services.Finding
 {
     internal sealed class CommandFinder
     {
@@ -20,7 +19,7 @@ namespace SimpleLineLibrary.Services.Invokation.Finding
                 return null;
             }
 
-            if(roots is null || roots.Count < 1)
+            if (roots is null || roots.Count < 1)
             {
                 return null;
             }
@@ -33,7 +32,7 @@ namespace SimpleLineLibrary.Services.Invokation.Finding
             }
 
             var root = roots
-                .FirstOrDefault(x => x.Name.IsEqualsTokenName(name));
+                .FirstOrDefault(x => x.Is(name));
 
             if (root == null)
             {
@@ -42,23 +41,22 @@ namespace SimpleLineLibrary.Services.Invokation.Finding
 
             while (args.Any())
             {
-                args.Dequeue();
+                args.Dequeue(); //skip root
 
                 var peek = args.Peek();
-                
                 var temp = root
                     .Subcommands
-                    .FirstOrDefault(x => x.Name.IsEqualsTokenName(peek));
+                    .FirstOrDefault(x => x.Is(peek));
 
                 if (temp == null)
                 {
                     break;
                 }
 
-                root = temp;  
+                root = temp;
             }
 
             return root;
         }
-    } 
+    }
 }

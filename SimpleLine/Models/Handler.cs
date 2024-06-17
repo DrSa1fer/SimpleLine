@@ -52,8 +52,8 @@ namespace SimpleLineLibrary.Models
 
 		public override bool Equals(object? obj)
 		{
-			if (obj is Handler other)
-			{
+            /*if (obj is Handler other)
+			{				 
 				if (other.HasKey && this.HasKey)
 				{
 					return other.Key.IsEqualsTokenName(this.Key);
@@ -97,11 +97,9 @@ namespace SimpleLineLibrary.Models
 					{
 						return true;
 					}
-				}
-			}
-
-
-			return false;
+				} 
+			}*/
+            return obj is Handler other && other.Key.IsEqualsTokenName(this.Key);
 		}
 
 		public override int GetHashCode()

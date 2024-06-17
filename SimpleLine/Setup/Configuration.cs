@@ -2,7 +2,7 @@ namespace SimpleLineLibrary.Setup
 {
     public class Configuration
     {
-        public Action<Exception>? ExceptionHandler { get; init; } =
+        public Action<Exception> ExceptionHandler { get; init; } =
         (ex) =>
         {
             Console.WriteLine(ex.Message);
@@ -25,16 +25,13 @@ namespace SimpleLineLibrary.Setup
             Console.WriteLine(output);
         };
 
-        public Action<string>? CommandNotFound { get; init; } =
-            (name) =>
-            {
-                Console.WriteLine($"Simple Line doesnt contains command with name \"{name}\" name");
-            };
+        public Action<string> CommandNotFound { get; init; } =
+            (name) => Console.WriteLine($"Simple Line doesnt contains command with name \"{name}\" name");            
 
-        public Action<IList<string>>? HandlerNotFound { get; init; } =
-            (args) =>
-            {
-                Console.WriteLine($"Simple Line doesnt contains handler with args {string.Join("; ", args)}");
-            };
+        public Action<IList<string>> HandlerNotFound { get; init; } =
+            (args) => Console.WriteLine($"Simple Line doesnt contains handler with args {string.Join("; ", args)}");
+
+        public HashSet<string> HelpKeys { get; init; } =
+            new() { "-h", "-?", "--help", "--info" };
     }
 }

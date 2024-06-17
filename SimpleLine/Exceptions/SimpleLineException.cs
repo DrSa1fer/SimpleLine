@@ -19,5 +19,10 @@ namespace SimpleLineLibrary.Exceptions
         protected SimpleLineException(string? message, Exception? innerException) : base(message, innerException)
         {
         }
+
+        protected SimpleLineException(int a)
+        {
+
+        }
     }
 }

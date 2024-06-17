@@ -24,16 +24,19 @@ namespace SimpleLineLibrary.Models
         {
             get
             {
-                return Name;
+                return _uid;
             }
         }
 
         private readonly List<Command> _subcommands;
         private readonly List<Handler> _handlers;
 
+        private readonly string _uid;
+
         public Command(string uid, string name, string desc, bool @throw) 
-            : base(uid, desc, @throw, @throw)
+            : base(name, desc, @throw, @throw)
         {
+            _uid = uid;
             _handlers = new();
             _subcommands = new();
         }
@@ -41,6 +44,16 @@ namespace SimpleLineLibrary.Models
         public bool Is(string name)
         {
             return Uid.IsEqualsTokenName(name);
+        }
+
+        public bool ContainsSubcommand(Command subcommand)
+        {
+            return _subcommands.Contains(subcommand);
+        }
+
+        public bool ContainsHandler(Handler handler)
+        {
+            return _handlers.Contains(handler);
         }
 
         public void RegisterSubcommand(Command subcommand)        
@@ -55,7 +68,7 @@ namespace SimpleLineLibrary.Models
             }
 
             _subcommands.Add(subcommand);
-        }
+        }             
         
         public void RegisterHandler(Handler handler)
         {

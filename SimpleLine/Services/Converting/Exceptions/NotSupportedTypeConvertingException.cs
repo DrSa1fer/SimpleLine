@@ -1,6 +1,6 @@
 ﻿using SimpleLineLibrary.Exceptions;
 
-namespace SimpleLineLibrary.Services.Invokation.Converting.Exceptions
+namespace SimpleLineLibrary.Services.Converting.Exceptions
 {
     internal class NotSupportedTypeConvertingException : SimpleLineException
     {

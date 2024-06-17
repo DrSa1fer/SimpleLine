@@ -15,12 +15,12 @@ namespace SimpleLineLibrary.Extensions
         }
         public static bool IsLongKeyTokenName(this string key) => key.Length > 2
                 && key.TokenStartWith("--")
-                && key[2..].IsTokenName();
+                && !key[2].Equals('-');
         public static bool IsShortKeyTokenName(this string key)
         {
             return key.Length > 1
                 && key.TokenStartWith("-")
-                && key[1..].IsTokenName();
+                && !key[1].Equals('-');
         }
 
         public static bool IsValidTextLength(this string text)

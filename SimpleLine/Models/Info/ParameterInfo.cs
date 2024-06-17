@@ -2,31 +2,31 @@ namespace SimpleLineLibrary.Models.Info
 {
     public class ParameterInfo : BaseInfo
     {
-        public const string KEY_SEPARATOR = " | ";
         public const string REQUIRED = "[REQUIRED]";
         public const string OPTIONAL = "[OPTIONAL]";
 
-        private readonly string _name;
-        private readonly string _description;
-        private readonly string _shortKey;
-        private readonly string _longKey;
-        private readonly bool _isRequired;
-        private readonly Type _valueType;
+        internal string Name { get; }
+        internal string Description { get; }
+        internal string ShortKey { get; }
+        internal string LongKey { get; }
+        internal bool IsRequired { get; }
+        internal Type ValueType { get; }
 
-        private readonly bool _hasDefaultValue;
-        private readonly string _defaultValue;
+        internal bool HasDefaultValue { get; }
+        internal string DefaultValue { get; }
 
-        internal ParameterInfo(Parameter parameter)
+        internal ParameterInfo(Parameter parameter, string program, string vers) 
+            : base(program, vers)
         {
-            _name = parameter.Name;
-            _description = parameter.Description;
-            _shortKey = parameter.ShortKey;
-            _longKey = parameter.LongKey;
-            _isRequired = parameter.IsRequired;
-            _valueType = parameter.ValueType;
+            Name = parameter.Name;
+            Description = parameter.Description;
+            ShortKey = parameter.ShortKey;
+            LongKey = parameter.LongKey;
+            IsRequired = parameter.IsRequired;
+            ValueType = parameter.ValueType;
 
-            _hasDefaultValue = parameter.HasDefaultValue;
-            _defaultValue = parameter.DefaultValue?.GetType().Name ?? "";
+            HasDefaultValue = parameter.HasDefaultValue;
+            DefaultValue = parameter.DefaultValue?.GetType().Name ?? "";
         }
 
         public override string ToString()

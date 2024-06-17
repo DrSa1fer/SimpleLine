@@ -1,9 +1,11 @@
-using SimpleLineLibrary.Services.Invokation.Converting;
+using SimpleLineLibrary.Services.Execution.Exceptions.Binding;
+using SimpleLineLibrary.Services.Execution.Exceptions;
+using SimpleLineLibrary.Services.Converting;
 using SimpleLineLibrary.Models;
 using System.Collections;
-using SimpleLineLibrary.Services.Invokation.Execution.Exceptions;
+using System.Reflection;
 
-namespace SimpleLineLibrary.Services.Invokation.Execution
+namespace SimpleLineLibrary.Services.Execution
 {
     internal class HandlerExecutor
     {
@@ -15,18 +17,21 @@ namespace SimpleLineLibrary.Services.Invokation.Execution
         }
 
         internal object? Execute(Handler handler, ExecutionData input)
-        {
-            var bind = Bind(handler.Parameters, input);
-            
+        {            
             try
-            {                
+            {
+                var bind = Bind(handler.Parameters, input);
                 return handler.Invoke(bind);
             }
-            catch(Exception ex)
+            catch (TargetInvocationException ex)
             {
                 throw new UserRuntimeException(ex);
             }
-        }    
+            catch (Exception ex)
+            {
+                throw new ExecutionException(ex);
+            }
+        }
 
         private object?[]? Bind(IReadOnlyList<Parameter> parameters, ExecutionData data)
         {
@@ -35,7 +40,7 @@ namespace SimpleLineLibrary.Services.Invokation.Execution
             for (int i = 0; i < parameters.Count; i++)
             {
                 var p = parameters[i];
-                
+
                 if (p.ValueType == typeof(bool))
                 {
                     if (data.HasParameter(p))
@@ -57,7 +62,7 @@ namespace SimpleLineLibrary.Services.Invokation.Execution
                 {
                     if (p.IsRequired)
                     {
-                        throw new Exception("61");
+                        throw new NoRequiredParameterException(p.Name);
                     }
                     if (p.HasDefaultValue)
                     {
@@ -66,37 +71,33 @@ namespace SimpleLineLibrary.Services.Invokation.Execution
                     }
                 }
 
-                if (p.ValueType.IsAssignableTo(typeof(Array)))
+                if (p.ValueType.IsAssignableTo(typeof(ICollection)))
                 {
-                    throw new NotImplementedException("Array not supported :(");
-
-                    var ls = new List<object?>();
-                    
-                    var t = p.ValueType.GetElementType()!;
-
-                    foreach (var value in data.GetValues(p))
-                    {
-                        var str = value;
-
-                        ls.Add(_converter.Convert(str, t));
-                    }
-                    
-                    arr[i] = ls.ToArray();
-                }
-                else if(p.ValueType.IsAssignableTo(typeof(ICollection)))
-                {
-                    throw new NotSupportedException("86");
+                    var values = data.GetValues(p);
+                    arr[i] = _converter.ConvertEnumerable(p.ValueType, values);
                 }
                 else
                 {
                     var str = data.GetValue(p);
                     var t = p.ValueType;
 
-                    arr[i] = _converter.Convert(str, t);
+                    arr[i] = Convert(str, t);                    
                 }
             }
 
             return arr;
+        }
+
+        private object? Convert(string input, Type t)
+        {
+            if (_converter.IsSupported(t))
+            {
+                return _converter.ConvertType(t, input);
+            }
+            else
+            {
+                throw new NotSupportedTypeException(t);
+            }
         }
     }
 }
