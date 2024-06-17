@@ -52,53 +52,6 @@ namespace SimpleLineLibrary.Models
 
 		public override bool Equals(object? obj)
 		{
-            /*if (obj is Handler other)
-			{				 
-				if (other.HasKey && this.HasKey)
-				{
-					return other.Key.IsEqualsTokenName(this.Key);
-				}
-
-				if(other.Parameters.Count == 0 || this.Parameters.Count == 0)
-				{
-					return other.Parameters.Count == this.Parameters.Count;
-				}
-
-				var otherKeys = new HashSet<string>();
-
-				if(other.HasKey)
-				{
-					otherKeys.Add(other.Key);
-				}
-
-				foreach (var p in other.Parameters)
-				{
-					otherKeys.Add(p.LongKey);
-					otherKeys.Add(p.ShortKey);
-				}
-
-
-				if(this.HasKey)
-				{
-					if (otherKeys.Contains(this.Key))
-					{
-						return true;
-					}
-				}
-
-				foreach (var p in this.Parameters)
-				{
-					if (otherKeys.Contains(p.LongKey))
-					{
-						return true;
-					}
-
-					if (otherKeys.Contains(p.ShortKey))
-					{
-						return true;
-					}
-				} 
-			}*/
             return obj is Handler other && other.Key.IsEqualsTokenName(this.Key);
 		}
 
