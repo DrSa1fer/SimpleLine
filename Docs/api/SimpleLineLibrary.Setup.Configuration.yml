@@ -5,10 +5,13 @@ items:
   id: Configuration
   parent: SimpleLineLibrary.Setup
   children:
+  - SimpleLineLibrary.Setup.Configuration.#ctor(System.Reflection.Assembly)
   - SimpleLineLibrary.Setup.Configuration.CommandNotFound
   - SimpleLineLibrary.Setup.Configuration.ExceptionHandler
   - SimpleLineLibrary.Setup.Configuration.HandlerNotFound
+  - SimpleLineLibrary.Setup.Configuration.HelpKeys
   - SimpleLineLibrary.Setup.Configuration.NoneArgsHandler
+  - SimpleLineLibrary.Setup.Configuration.RegisterType``1(System.Func{System.String,``0})
   langs:
   - csharp
   - vb
@@ -19,11 +22,11 @@ items:
   source:
     remote:
       path: SimpleLine/Setup/Configuration.cs
-      branch: Rewrite
+      branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: Configuration
     path: ../SimpleLine/Setup/Configuration.cs
-    startLine: 2
+    startLine: 6
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary.Setup
@@ -54,16 +57,16 @@ items:
   source:
     remote:
       path: SimpleLine/Setup/Configuration.cs
-      branch: Rewrite
+      branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: ExceptionHandler
     path: ../SimpleLine/Setup/Configuration.cs
-    startLine: 4
+    startLine: 8
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary.Setup
   syntax:
-    content: public Action<Exception>? ExceptionHandler { get; init; }
+    content: public Action<Exception> ExceptionHandler { get; set; }
     parameters: []
     return:
       type: System.Action{System.Exception}
@@ -83,16 +86,16 @@ items:
   source:
     remote:
       path: SimpleLine/Setup/Configuration.cs
-      branch: Rewrite
+      branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: NoneArgsHandler
     path: ../SimpleLine/Setup/Configuration.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary.Setup
   syntax:
-    content: public Action? NoneArgsHandler { get; init; }
+    content: public Action? NoneArgsHandler { get; set; }
     parameters: []
     return:
       type: System.Action
@@ -112,16 +115,16 @@ items:
   source:
     remote:
       path: SimpleLine/Setup/Configuration.cs
-      branch: Rewrite
+      branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: CommandNotFound
     path: ../SimpleLine/Setup/Configuration.cs
-    startLine: 27
+    startLine: 31
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary.Setup
   syntax:
-    content: public Action<string>? CommandNotFound { get; init; }
+    content: public Action<string> CommandNotFound { get; set; }
     parameters: []
     return:
       type: System.Action{System.String}
@@ -141,21 +144,116 @@ items:
   source:
     remote:
       path: SimpleLine/Setup/Configuration.cs
-      branch: Rewrite
+      branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: HandlerNotFound
     path: ../SimpleLine/Setup/Configuration.cs
-    startLine: 33
+    startLine: 34
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary.Setup
   syntax:
-    content: public Action<IList<string>>? HandlerNotFound { get; init; }
+    content: public Action<IEnumerable<string>> HandlerNotFound { get; set; }
     parameters: []
     return:
-      type: System.Action{System.Collections.Generic.IList{System.String}}
-    content.vb: Public Property HandlerNotFound As Action(Of IList(Of String))
+      type: System.Action{System.Collections.Generic.IEnumerable{System.String}}
+    content.vb: Public Property HandlerNotFound As Action(Of IEnumerable(Of String))
   overload: SimpleLineLibrary.Setup.Configuration.HandlerNotFound*
+- uid: SimpleLineLibrary.Setup.Configuration.HelpKeys
+  commentId: P:SimpleLineLibrary.Setup.Configuration.HelpKeys
+  id: HelpKeys
+  parent: SimpleLineLibrary.Setup.Configuration
+  langs:
+  - csharp
+  - vb
+  name: HelpKeys
+  nameWithType: Configuration.HelpKeys
+  fullName: SimpleLineLibrary.Setup.Configuration.HelpKeys
+  type: Property
+  source:
+    remote:
+      path: SimpleLine/Setup/Configuration.cs
+      branch: main
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: HelpKeys
+    path: ../SimpleLine/Setup/Configuration.cs
+    startLine: 37
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Setup
+  syntax:
+    content: public HashSet<string> HelpKeys { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.HashSet{System.String}
+    content.vb: Public Property HelpKeys As HashSet(Of String)
+  overload: SimpleLineLibrary.Setup.Configuration.HelpKeys*
+- uid: SimpleLineLibrary.Setup.Configuration.#ctor(System.Reflection.Assembly)
+  commentId: M:SimpleLineLibrary.Setup.Configuration.#ctor(System.Reflection.Assembly)
+  id: '#ctor(System.Reflection.Assembly)'
+  parent: SimpleLineLibrary.Setup.Configuration
+  langs:
+  - csharp
+  - vb
+  name: Configuration(Assembly)
+  nameWithType: Configuration.Configuration(Assembly)
+  fullName: SimpleLineLibrary.Setup.Configuration.Configuration(System.Reflection.Assembly)
+  type: Constructor
+  source:
+    remote:
+      path: SimpleLine/Setup/Configuration.cs
+      branch: main
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: .ctor
+    path: ../SimpleLine/Setup/Configuration.cs
+    startLine: 91
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Setup
+  syntax:
+    content: public Configuration(Assembly assembly)
+    parameters:
+    - id: assembly
+      type: System.Reflection.Assembly
+    content.vb: Public Sub New(assembly As Assembly)
+  overload: SimpleLineLibrary.Setup.Configuration.#ctor*
+  nameWithType.vb: Configuration.New(Assembly)
+  fullName.vb: SimpleLineLibrary.Setup.Configuration.New(System.Reflection.Assembly)
+  name.vb: New(Assembly)
+- uid: SimpleLineLibrary.Setup.Configuration.RegisterType``1(System.Func{System.String,``0})
+  commentId: M:SimpleLineLibrary.Setup.Configuration.RegisterType``1(System.Func{System.String,``0})
+  id: RegisterType``1(System.Func{System.String,``0})
+  parent: SimpleLineLibrary.Setup.Configuration
+  langs:
+  - csharp
+  - vb
+  name: RegisterType<T>(Func<string, T>)
+  nameWithType: Configuration.RegisterType<T>(Func<string, T>)
+  fullName: SimpleLineLibrary.Setup.Configuration.RegisterType<T>(System.Func<string, T>)
+  type: Method
+  source:
+    remote:
+      path: SimpleLine/Setup/Configuration.cs
+      branch: main
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: RegisterType
+    path: ../SimpleLine/Setup/Configuration.cs
+    startLine: 103
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Setup
+  syntax:
+    content: public void RegisterType<T>(Func<string, T> converter)
+    parameters:
+    - id: converter
+      type: System.Func{System.String,{T}}
+    typeParameters:
+    - id: T
+    content.vb: Public Sub RegisterType(Of T)(converter As Func(Of String, T))
+  overload: SimpleLineLibrary.Setup.Configuration.RegisterType*
+  nameWithType.vb: Configuration.RegisterType(Of T)(Func(Of String, T))
+  fullName.vb: SimpleLineLibrary.Setup.Configuration.RegisterType(Of T)(System.Func(Of String, T))
+  name.vb: RegisterType(Of T)(Func(Of String, T))
 references:
 - uid: SimpleLineLibrary.Setup
   commentId: N:SimpleLineLibrary.Setup
@@ -546,27 +644,27 @@ references:
   name: HandlerNotFound
   nameWithType: Configuration.HandlerNotFound
   fullName: SimpleLineLibrary.Setup.Configuration.HandlerNotFound
-- uid: System.Action{System.Collections.Generic.IList{System.String}}
-  commentId: T:System.Action{System.Collections.Generic.IList{System.String}}
+- uid: System.Action{System.Collections.Generic.IEnumerable{System.String}}
+  commentId: T:System.Action{System.Collections.Generic.IEnumerable{System.String}}
   parent: System
   definition: System.Action`1
   href: https://learn.microsoft.com/dotnet/api/system.action-1
-  name: Action<IList<string>>
-  nameWithType: Action<IList<string>>
-  fullName: System.Action<System.Collections.Generic.IList<string>>
-  nameWithType.vb: Action(Of IList(Of String))
-  fullName.vb: System.Action(Of System.Collections.Generic.IList(Of String))
-  name.vb: Action(Of IList(Of String))
+  name: Action<IEnumerable<string>>
+  nameWithType: Action<IEnumerable<string>>
+  fullName: System.Action<System.Collections.Generic.IEnumerable<string>>
+  nameWithType.vb: Action(Of IEnumerable(Of String))
+  fullName.vb: System.Action(Of System.Collections.Generic.IEnumerable(Of String))
+  name.vb: Action(Of IEnumerable(Of String))
   spec.csharp:
   - uid: System.Action`1
     name: Action
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.action-1
   - name: <
-  - uid: System.Collections.Generic.IList`1
-    name: IList
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: System.String
     name: string
@@ -582,10 +680,10 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: System.Collections.Generic.IList`1
-    name: IList
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -594,4 +692,235 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
+  - name: )
+- uid: SimpleLineLibrary.Setup.Configuration.HelpKeys*
+  commentId: Overload:SimpleLineLibrary.Setup.Configuration.HelpKeys
+  href: SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_HelpKeys
+  name: HelpKeys
+  nameWithType: Configuration.HelpKeys
+  fullName: SimpleLineLibrary.Setup.Configuration.HelpKeys
+- uid: System.Collections.Generic.HashSet{System.String}
+  commentId: T:System.Collections.Generic.HashSet{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.HashSet`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  name: HashSet<string>
+  nameWithType: HashSet<string>
+  fullName: System.Collections.Generic.HashSet<string>
+  nameWithType.vb: HashSet(Of String)
+  fullName.vb: System.Collections.Generic.HashSet(Of String)
+  name.vb: HashSet(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.HashSet`1
+  commentId: T:System.Collections.Generic.HashSet`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  name: HashSet<T>
+  nameWithType: HashSet<T>
+  fullName: System.Collections.Generic.HashSet<T>
+  nameWithType.vb: HashSet(Of T)
+  fullName.vb: System.Collections.Generic.HashSet(Of T)
+  name.vb: HashSet(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: SimpleLineLibrary.Setup.Configuration.#ctor*
+  commentId: Overload:SimpleLineLibrary.Setup.Configuration.#ctor
+  href: SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration__ctor_System_Reflection_Assembly_
+  name: Configuration
+  nameWithType: Configuration.Configuration
+  fullName: SimpleLineLibrary.Setup.Configuration.Configuration
+  nameWithType.vb: Configuration.New
+  fullName.vb: SimpleLineLibrary.Setup.Configuration.New
+  name.vb: New
+- uid: System.Reflection.Assembly
+  commentId: T:System.Reflection.Assembly
+  parent: System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.reflection.assembly
+  name: Assembly
+  nameWithType: Assembly
+  fullName: System.Reflection.Assembly
+- uid: System.Reflection
+  commentId: N:System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Reflection
+  nameWithType: System.Reflection
+  fullName: System.Reflection
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection
+- uid: SimpleLineLibrary.Setup.Configuration.RegisterType*
+  commentId: Overload:SimpleLineLibrary.Setup.Configuration.RegisterType
+  href: SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_RegisterType__1_System_Func_System_String___0__
+  name: RegisterType
+  nameWithType: Configuration.RegisterType
+  fullName: SimpleLineLibrary.Setup.Configuration.RegisterType
+- uid: System.Func{System.String,{T}}
+  commentId: T:System.Func{System.String,``0}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<string, T>
+  nameWithType: Func<string, T>
+  fullName: System.Func<string, T>
+  nameWithType.vb: Func(Of String, T)
+  fullName.vb: System.Func(Of String, T)
+  name.vb: Func(Of String, T)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
   - name: )

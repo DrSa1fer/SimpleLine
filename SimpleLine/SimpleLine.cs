@@ -35,12 +35,17 @@ namespace SimpleLineLibrary
             
             _infoReceiver = new InfoReceiver(_config.ProgramName, _config.ProgramVersion);
         }
-        
-        public object? Run(ICollection<string> args)
+
+        /// <summary>
+        /// Launch Point 
+        /// </summary>
+        /// <param name="args">Input tokens</param>
+        /// <returns></returns>
+        public object? Run(IEnumerable<string> args)
         {
             try
             {
-                if(args.Count == 0)
+                if(!args.Any())
                 {
                     _config.NoneArgsHandler?.Invoke();
                     return null;
@@ -98,6 +103,11 @@ namespace SimpleLineLibrary
             }
         }
 
+        /// <summary>
+        /// Build SimpleLine
+        /// </summary>
+        /// <param name="configuration">SimpleLine configuration</param>
+        /// <returns></returns>
         public static SimpleLine Build(Configuration configuration)
         {
             return new SimpleLine(configuration);

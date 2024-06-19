@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/DrSa1fer/SimpleLine/new/Rewrite/apiSpec/new?filename=SimpleLineLibrary_SimpleLine.md&amp;value=---%0Auid%3A%20SimpleLineLibrary.SimpleLine%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/DrSa1fer/SimpleLine/new/main/apiSpec/new?filename=SimpleLineLibrary_SimpleLine.md&amp;value=---%0Auid%3A%20SimpleLineLibrary.SimpleLine%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -44,8 +44,8 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="">
-            
+            <img id="logo" class="svg" src="../logo.svg" alt="SimpleLine">
+            SimpleLine
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-three-dots"></i>
@@ -89,7 +89,7 @@
 
 
   <h1 id="SimpleLineLibrary_SimpleLine" data-uid="SimpleLineLibrary.SimpleLine" class="text-break">
-Class SimpleLine  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/Rewrite/SimpleLine/SimpleLine.cs/#L7"><i class="bi bi-code-slash"></i></a>
+Class SimpleLine  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/SimpleLine.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -148,68 +148,37 @@ Class SimpleLine  <a class="header-action link-secondary" title="View source" hr
 
 
 
-  <h2 class="section" id="constructors">Constructors
-</h2>
-
-
-  <a id="SimpleLineLibrary_SimpleLine__ctor_" data-uid="SimpleLineLibrary.SimpleLine.#ctor*"></a>
-
-  <h3 id="SimpleLineLibrary_SimpleLine__ctor_SimpleLineLibrary_Setup_Configuration_" data-uid="SimpleLineLibrary.SimpleLine.#ctor(SimpleLineLibrary.Setup.Configuration)">
-  SimpleLine(Configuration)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/Rewrite/SimpleLine/SimpleLine.cs/#L15"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SimpleLine(Configuration config)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>config</code> <a class="xref" href="SimpleLineLibrary.Setup.Configuration.html">Configuration</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
   <h2 class="section" id="methods">Methods
 </h2>
 
 
-  <a id="SimpleLineLibrary_SimpleLine_Run_" data-uid="SimpleLineLibrary.SimpleLine.Run*"></a>
+  <a id="SimpleLineLibrary_SimpleLine_Build_" data-uid="SimpleLineLibrary.SimpleLine.Build*"></a>
 
-  <h3 id="SimpleLineLibrary_SimpleLine_Run_System_Collections_Generic_IReadOnlyList_System_String__SimpleLineLibrary_Setup_CommandProvider_" data-uid="SimpleLineLibrary.SimpleLine.Run(System.Collections.Generic.IReadOnlyList{System.String},SimpleLineLibrary.Setup.CommandProvider)">
-  Run(IReadOnlyList&lt;string&gt;, CommandProvider)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/Rewrite/SimpleLine/SimpleLine.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <h3 id="SimpleLineLibrary_SimpleLine_Build_SimpleLineLibrary_Setup_Configuration_" data-uid="SimpleLineLibrary.SimpleLine.Build(SimpleLineLibrary.Setup.Configuration)">
+  Build(Configuration)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/SimpleLine.cs/#L111"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Hello world</p>
+  <div class="markdown level1 summary"><p>Build SimpleLine</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Run(IReadOnlyList&lt;string&gt; args, CommandProvider provider)</code></pre>
+    <pre><code class="lang-csharp hljs">public static SimpleLine Build(Configuration configuration)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>args</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
-    <dd></dd>
-    <dt><code>provider</code> <a class="xref" href="SimpleLineLibrary.Setup.CommandProvider.html">CommandProvider</a></dt>
-    <dd></dd>
+    <dt><code>configuration</code> <a class="xref" href="SimpleLineLibrary.Setup.Configuration.html">Configuration</a></dt>
+    <dd><p>SimpleLine configuration</p>
+</dd>
   </dl>
 
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SimpleLineLibrary.SimpleLine.html">SimpleLine</a></dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -223,26 +192,31 @@ Class SimpleLine  <a class="header-action link-secondary" title="View source" hr
 
   <a id="SimpleLineLibrary_SimpleLine_Run_" data-uid="SimpleLineLibrary.SimpleLine.Run*"></a>
 
-  <h3 id="SimpleLineLibrary_SimpleLine_Run_System_String_SimpleLineLibrary_Setup_CommandProvider_" data-uid="SimpleLineLibrary.SimpleLine.Run(System.String,SimpleLineLibrary.Setup.CommandProvider)">
-  Run(string, CommandProvider)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/Rewrite/SimpleLine/SimpleLine.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  <h3 id="SimpleLineLibrary_SimpleLine_Run_System_Collections_Generic_IEnumerable_System_String__" data-uid="SimpleLineLibrary.SimpleLine.Run(System.Collections.Generic.IEnumerable{System.String})">
+  Run(IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/SimpleLine.cs/#L44"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Launch Point</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Run(string input, CommandProvider provider)</code></pre>
+    <pre><code class="lang-csharp hljs">public object? Run(IEnumerable&lt;string&gt; args)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-    <dt><code>provider</code> <a class="xref" href="SimpleLineLibrary.Setup.CommandProvider.html">CommandProvider</a></dt>
-    <dd></dd>
+    <dt><code>args</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>Input tokens</p>
+</dd>
   </dl>
 
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -258,7 +232,7 @@ Class SimpleLine  <a class="header-action link-secondary" title="View source" hr
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DrSa1fer/SimpleLine/blob/Rewrite/SimpleLine/SimpleLine.cs/#L7" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/SimpleLine.cs/#L11" class="edit-link">Edit this page</a>
         </div>
 
 
@@ -274,7 +248,7 @@ Class SimpleLine  <a class="header-action link-secondary" title="View source" hr
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          @ 2024 Danil Kucherenko
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
         </div>
       </div>
     </footer>

@@ -1,6 +1,6 @@
 namespace SimpleLineLibrary.Services.Parsing.Tokens
 {
-    public class TokenParser
+    internal class TokenParser
     {
         private Dictionary<char, char> _borders = new()
         {

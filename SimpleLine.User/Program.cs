@@ -9,7 +9,12 @@ internal class Program
 
         SimpleLine.Build(conf).Run(new string[]
         {
-            "test", "sub", "-t", "10", "-t", "9", "-t", "8", "-t", "7"
+            "test", "sub", 
+
+            "-t", "1", 
+            "-t", "9", 
+            "-t", "8", 
+            "-t", "4"
         });          
     }   
 }

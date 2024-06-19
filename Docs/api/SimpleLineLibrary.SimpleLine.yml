@@ -5,9 +5,8 @@ items:
   id: SimpleLine
   parent: SimpleLineLibrary
   children:
-  - SimpleLineLibrary.SimpleLine.#ctor(SimpleLineLibrary.Setup.Configuration)
-  - SimpleLineLibrary.SimpleLine.Run(System.Collections.Generic.IReadOnlyList{System.String},SimpleLineLibrary.Setup.CommandProvider)
-  - SimpleLineLibrary.SimpleLine.Run(System.String,SimpleLineLibrary.Setup.CommandProvider)
+  - SimpleLineLibrary.SimpleLine.Build(SimpleLineLibrary.Setup.Configuration)
+  - SimpleLineLibrary.SimpleLine.Run(System.Collections.Generic.IEnumerable{System.String})
   langs:
   - csharp
   - vb
@@ -18,11 +17,11 @@ items:
   source:
     remote:
       path: SimpleLine/SimpleLine.cs
-      branch: Rewrite
+      branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: SimpleLine
     path: ../SimpleLine/SimpleLine.cs
-    startLine: 6
+    startLine: 10
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
@@ -39,110 +38,79 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: SimpleLineLibrary.SimpleLine.#ctor(SimpleLineLibrary.Setup.Configuration)
-  commentId: M:SimpleLineLibrary.SimpleLine.#ctor(SimpleLineLibrary.Setup.Configuration)
-  id: '#ctor(SimpleLineLibrary.Setup.Configuration)'
+- uid: SimpleLineLibrary.SimpleLine.Run(System.Collections.Generic.IEnumerable{System.String})
+  commentId: M:SimpleLineLibrary.SimpleLine.Run(System.Collections.Generic.IEnumerable{System.String})
+  id: Run(System.Collections.Generic.IEnumerable{System.String})
   parent: SimpleLineLibrary.SimpleLine
   langs:
   - csharp
   - vb
-  name: SimpleLine(Configuration)
-  nameWithType: SimpleLine.SimpleLine(Configuration)
-  fullName: SimpleLineLibrary.SimpleLine.SimpleLine(SimpleLineLibrary.Setup.Configuration)
-  type: Constructor
-  source:
-    remote:
-      path: SimpleLine/SimpleLine.cs
-      branch: Rewrite
-      repo: https://github.com/DrSa1fer/SimpleLine.git
-    id: .ctor
-    path: ../SimpleLine/SimpleLine.cs
-    startLine: 14
-  assemblies:
-  - SimpleLine
-  namespace: SimpleLineLibrary
-  syntax:
-    content: public SimpleLine(Configuration config)
-    parameters:
-    - id: config
-      type: SimpleLineLibrary.Setup.Configuration
-    content.vb: Public Sub New(config As Configuration)
-  overload: SimpleLineLibrary.SimpleLine.#ctor*
-  nameWithType.vb: SimpleLine.New(Configuration)
-  fullName.vb: SimpleLineLibrary.SimpleLine.New(SimpleLineLibrary.Setup.Configuration)
-  name.vb: New(Configuration)
-- uid: SimpleLineLibrary.SimpleLine.Run(System.Collections.Generic.IReadOnlyList{System.String},SimpleLineLibrary.Setup.CommandProvider)
-  commentId: M:SimpleLineLibrary.SimpleLine.Run(System.Collections.Generic.IReadOnlyList{System.String},SimpleLineLibrary.Setup.CommandProvider)
-  id: Run(System.Collections.Generic.IReadOnlyList{System.String},SimpleLineLibrary.Setup.CommandProvider)
-  parent: SimpleLineLibrary.SimpleLine
-  langs:
-  - csharp
-  - vb
-  name: Run(IReadOnlyList<string>, CommandProvider)
-  nameWithType: SimpleLine.Run(IReadOnlyList<string>, CommandProvider)
-  fullName: SimpleLineLibrary.SimpleLine.Run(System.Collections.Generic.IReadOnlyList<string>, SimpleLineLibrary.Setup.CommandProvider)
+  name: Run(IEnumerable<string>)
+  nameWithType: SimpleLine.Run(IEnumerable<string>)
+  fullName: SimpleLineLibrary.SimpleLine.Run(System.Collections.Generic.IEnumerable<string>)
   type: Method
   source:
     remote:
       path: SimpleLine/SimpleLine.cs
-      branch: Rewrite
+      branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: Run
     path: ../SimpleLine/SimpleLine.cs
-    startLine: 29
+    startLine: 43
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
-  summary: Hello world
+  summary: Launch Point
   example: []
   syntax:
-    content: public void Run(IReadOnlyList<string> args, CommandProvider provider)
+    content: public object? Run(IEnumerable<string> args)
     parameters:
     - id: args
-      type: System.Collections.Generic.IReadOnlyList{System.String}
+      type: System.Collections.Generic.IEnumerable{System.String}
+      description: Input tokens
+    return:
+      type: System.Object
       description: ''
-    - id: provider
-      type: SimpleLineLibrary.Setup.CommandProvider
-      description: ''
-    content.vb: Public Sub Run(args As IReadOnlyList(Of String), provider As CommandProvider)
+    content.vb: Public Function Run(args As IEnumerable(Of String)) As Object
   overload: SimpleLineLibrary.SimpleLine.Run*
-  nameWithType.vb: SimpleLine.Run(IReadOnlyList(Of String), CommandProvider)
-  fullName.vb: SimpleLineLibrary.SimpleLine.Run(System.Collections.Generic.IReadOnlyList(Of String), SimpleLineLibrary.Setup.CommandProvider)
-  name.vb: Run(IReadOnlyList(Of String), CommandProvider)
-- uid: SimpleLineLibrary.SimpleLine.Run(System.String,SimpleLineLibrary.Setup.CommandProvider)
-  commentId: M:SimpleLineLibrary.SimpleLine.Run(System.String,SimpleLineLibrary.Setup.CommandProvider)
-  id: Run(System.String,SimpleLineLibrary.Setup.CommandProvider)
+  nameWithType.vb: SimpleLine.Run(IEnumerable(Of String))
+  fullName.vb: SimpleLineLibrary.SimpleLine.Run(System.Collections.Generic.IEnumerable(Of String))
+  name.vb: Run(IEnumerable(Of String))
+- uid: SimpleLineLibrary.SimpleLine.Build(SimpleLineLibrary.Setup.Configuration)
+  commentId: M:SimpleLineLibrary.SimpleLine.Build(SimpleLineLibrary.Setup.Configuration)
+  id: Build(SimpleLineLibrary.Setup.Configuration)
   parent: SimpleLineLibrary.SimpleLine
   langs:
   - csharp
   - vb
-  name: Run(string, CommandProvider)
-  nameWithType: SimpleLine.Run(string, CommandProvider)
-  fullName: SimpleLineLibrary.SimpleLine.Run(string, SimpleLineLibrary.Setup.CommandProvider)
+  name: Build(Configuration)
+  nameWithType: SimpleLine.Build(Configuration)
+  fullName: SimpleLineLibrary.SimpleLine.Build(SimpleLineLibrary.Setup.Configuration)
   type: Method
   source:
     remote:
       path: SimpleLine/SimpleLine.cs
-      branch: Rewrite
+      branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
-    id: Run
+    id: Build
     path: ../SimpleLine/SimpleLine.cs
-    startLine: 67
+    startLine: 110
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
+  summary: Build SimpleLine
+  example: []
   syntax:
-    content: public void Run(string input, CommandProvider provider)
+    content: public static SimpleLine Build(Configuration configuration)
     parameters:
-    - id: input
-      type: System.String
-    - id: provider
-      type: SimpleLineLibrary.Setup.CommandProvider
-    content.vb: Public Sub Run(input As String, provider As CommandProvider)
-  overload: SimpleLineLibrary.SimpleLine.Run*
-  nameWithType.vb: SimpleLine.Run(String, CommandProvider)
-  fullName.vb: SimpleLineLibrary.SimpleLine.Run(String, SimpleLineLibrary.Setup.CommandProvider)
-  name.vb: Run(String, CommandProvider)
+    - id: configuration
+      type: SimpleLineLibrary.Setup.Configuration
+      description: SimpleLine configuration
+    return:
+      type: SimpleLineLibrary.SimpleLine
+      description: ''
+    content.vb: Public Shared Function Build(configuration As Configuration) As SimpleLine
+  overload: SimpleLineLibrary.SimpleLine.Build*
 references:
 - uid: SimpleLineLibrary
   commentId: N:SimpleLineLibrary
@@ -387,66 +355,28 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: SimpleLineLibrary.SimpleLine.#ctor*
-  commentId: Overload:SimpleLineLibrary.SimpleLine.#ctor
-  href: SimpleLineLibrary.SimpleLine.html#SimpleLineLibrary_SimpleLine__ctor_SimpleLineLibrary_Setup_Configuration_
-  name: SimpleLine
-  nameWithType: SimpleLine.SimpleLine
-  fullName: SimpleLineLibrary.SimpleLine.SimpleLine
-  nameWithType.vb: SimpleLine.New
-  fullName.vb: SimpleLineLibrary.SimpleLine.New
-  name.vb: New
-- uid: SimpleLineLibrary.Setup.Configuration
-  commentId: T:SimpleLineLibrary.Setup.Configuration
-  parent: SimpleLineLibrary.Setup
-  href: SimpleLineLibrary.Setup.Configuration.html
-  name: Configuration
-  nameWithType: Configuration
-  fullName: SimpleLineLibrary.Setup.Configuration
-- uid: SimpleLineLibrary.Setup
-  commentId: N:SimpleLineLibrary.Setup
-  href: SimpleLineLibrary.html
-  name: SimpleLineLibrary.Setup
-  nameWithType: SimpleLineLibrary.Setup
-  fullName: SimpleLineLibrary.Setup
-  spec.csharp:
-  - uid: SimpleLineLibrary
-    name: SimpleLineLibrary
-    href: SimpleLineLibrary.html
-  - name: .
-  - uid: SimpleLineLibrary.Setup
-    name: Setup
-    href: SimpleLineLibrary.Setup.html
-  spec.vb:
-  - uid: SimpleLineLibrary
-    name: SimpleLineLibrary
-    href: SimpleLineLibrary.html
-  - name: .
-  - uid: SimpleLineLibrary.Setup
-    name: Setup
-    href: SimpleLineLibrary.Setup.html
 - uid: SimpleLineLibrary.SimpleLine.Run*
   commentId: Overload:SimpleLineLibrary.SimpleLine.Run
-  href: SimpleLineLibrary.SimpleLine.html#SimpleLineLibrary_SimpleLine_Run_System_Collections_Generic_IReadOnlyList_System_String__SimpleLineLibrary_Setup_CommandProvider_
+  href: SimpleLineLibrary.SimpleLine.html#SimpleLineLibrary_SimpleLine_Run_System_Collections_Generic_IEnumerable_System_String__
   name: Run
   nameWithType: SimpleLine.Run
   fullName: SimpleLineLibrary.SimpleLine.Run
-- uid: System.Collections.Generic.IReadOnlyList{System.String}
-  commentId: T:System.Collections.Generic.IReadOnlyList{System.String}
+- uid: System.Collections.Generic.IEnumerable{System.String}
+  commentId: T:System.Collections.Generic.IEnumerable{System.String}
   parent: System.Collections.Generic
-  definition: System.Collections.Generic.IReadOnlyList`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
-  name: IReadOnlyList<string>
-  nameWithType: IReadOnlyList<string>
-  fullName: System.Collections.Generic.IReadOnlyList<string>
-  nameWithType.vb: IReadOnlyList(Of String)
-  fullName.vb: System.Collections.Generic.IReadOnlyList(Of String)
-  name.vb: IReadOnlyList(Of String)
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<string>
+  nameWithType: IEnumerable<string>
+  fullName: System.Collections.Generic.IEnumerable<string>
+  nameWithType.vb: IEnumerable(Of String)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of String)
+  name.vb: IEnumerable(Of String)
   spec.csharp:
-  - uid: System.Collections.Generic.IReadOnlyList`1
-    name: IReadOnlyList
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: System.String
     name: string
@@ -454,10 +384,10 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IReadOnlyList`1
-    name: IReadOnlyList
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -466,36 +396,29 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-- uid: SimpleLineLibrary.Setup.CommandProvider
-  commentId: T:SimpleLineLibrary.Setup.CommandProvider
-  parent: SimpleLineLibrary.Setup
-  href: SimpleLineLibrary.Setup.CommandProvider.html
-  name: CommandProvider
-  nameWithType: CommandProvider
-  fullName: SimpleLineLibrary.Setup.CommandProvider
-- uid: System.Collections.Generic.IReadOnlyList`1
-  commentId: T:System.Collections.Generic.IReadOnlyList`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
-  name: IReadOnlyList<T>
-  nameWithType: IReadOnlyList<T>
-  fullName: System.Collections.Generic.IReadOnlyList<T>
-  nameWithType.vb: IReadOnlyList(Of T)
-  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
-  name.vb: IReadOnlyList(Of T)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: System.Collections.Generic.IReadOnlyList`1
-    name: IReadOnlyList
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: T
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IReadOnlyList`1
-    name: IReadOnlyList
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -538,14 +461,45 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
+- uid: SimpleLineLibrary.SimpleLine.Build*
+  commentId: Overload:SimpleLineLibrary.SimpleLine.Build
+  href: SimpleLineLibrary.SimpleLine.html#SimpleLineLibrary_SimpleLine_Build_SimpleLineLibrary_Setup_Configuration_
+  name: Build
+  nameWithType: SimpleLine.Build
+  fullName: SimpleLineLibrary.SimpleLine.Build
+- uid: SimpleLineLibrary.Setup.Configuration
+  commentId: T:SimpleLineLibrary.Setup.Configuration
+  parent: SimpleLineLibrary.Setup
+  href: SimpleLineLibrary.Setup.Configuration.html
+  name: Configuration
+  nameWithType: Configuration
+  fullName: SimpleLineLibrary.Setup.Configuration
+- uid: SimpleLineLibrary.SimpleLine
+  commentId: T:SimpleLineLibrary.SimpleLine
+  parent: SimpleLineLibrary
+  href: SimpleLineLibrary.SimpleLine.html
+  name: SimpleLine
+  nameWithType: SimpleLine
+  fullName: SimpleLineLibrary.SimpleLine
+- uid: SimpleLineLibrary.Setup
+  commentId: N:SimpleLineLibrary.Setup
+  href: SimpleLineLibrary.html
+  name: SimpleLineLibrary.Setup
+  nameWithType: SimpleLineLibrary.Setup
+  fullName: SimpleLineLibrary.Setup
+  spec.csharp:
+  - uid: SimpleLineLibrary
+    name: SimpleLineLibrary
+    href: SimpleLineLibrary.html
+  - name: .
+  - uid: SimpleLineLibrary.Setup
+    name: Setup
+    href: SimpleLineLibrary.Setup.html
+  spec.vb:
+  - uid: SimpleLineLibrary
+    name: SimpleLineLibrary
+    href: SimpleLineLibrary.html
+  - name: .
+  - uid: SimpleLineLibrary.Setup
+    name: Setup
+    href: SimpleLineLibrary.Setup.html

@@ -1,5 +1,5 @@
-﻿using SimpleLineLibrary.Models;
-using SimpleLineLibrary.Models.Info;
+﻿using SimpleLineLibrary.Services.ReceivingInfo.Info;
+using SimpleLineLibrary.Models;
 
 namespace SimpleLineLibrary.Services.InfoRecieving
 {

@@ -3,7 +3,7 @@
     {
       "src": [
         {
-          "src": "../SimpleLine",
+          "src": "../SimpleLine/",
           "files": [
             "**/*.csproj"
           ]
@@ -30,29 +30,13 @@
         ]
       }
     ],
-    "output": "_site",
-    
-    "template": [
-      "default",
-      "modern",
-      "templates/material"
-    ]
-    
-    ,
+    "dest": "_site",
+    "template": [ "default", "modern" ],
     "globalMetadata": {
-      "_appLogoPath": "",
-      "_appName": "",
+      "_appName": "SimpleLine",
       "_appTitle": "SimpleLine",
-      "_appFooter": "@ 2024 Danil Kucherenko",
       "_enableSearch": true,
       "pdf": true
-    },
-
-    "markdownEngineProperties": {
-      "markdigExtensions": [
-          "Abbreviations",
-          "Footnotes"
-      ]
     }
   }
 }

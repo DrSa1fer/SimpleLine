@@ -53,7 +53,7 @@ internal class Program
 }
 ```
 
-
+---
 ## Invoke
 ```powershell copy
 C:\> dotnet program.dll example -x 10

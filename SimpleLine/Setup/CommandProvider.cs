@@ -1,4 +1,5 @@
 using SimpleLineLibrary.Models;
+using SimpleLineLibrary.Setup.Attributes;
 using System.Reflection;
 
 namespace SimpleLineLibrary.Setup
