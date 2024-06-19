@@ -1,6 +1,6 @@
-﻿using SimpleLineLibrary.Extensions;
-using SimpleLineLibrary.Models;
+﻿using SimpleLineLibrary.Models;
 using SimpleLineLibrary.Services.Parsing.Arguments;
+using SimpleLineLibrary.Utils.Strings;
 
 namespace SimpleLineLibrary.Services.Execution
 {
@@ -34,6 +34,8 @@ namespace SimpleLineLibrary.Services.Execution
                 return values.Append(_args[parameter.Position].Value);
             }
 
+            Console.WriteLine( string.Join(", ", values));
+
             return values;
         }
 
@@ -65,6 +67,15 @@ namespace SimpleLineLibrary.Services.Execution
                     _args[parameter.Position].HasKey() == false &&
                     _args[parameter.Position].HasValue())
                 ;
+        }
+
+        public bool Ensure(bool @throw)
+        {
+            if (@throw)
+            {
+
+            }
+            return false;
         }
     }
 }

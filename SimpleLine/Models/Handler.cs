@@ -1,8 +1,8 @@
-using SimpleLineLibrary.Extensions;
+using SimpleLineLibrary.Utils.Strings;
 
 namespace SimpleLineLibrary.Models
 {
-	internal delegate object? HandlerAction(object?[]? obj);
+    internal delegate object? HandlerAction(object?[]? obj);
 
     internal class Handler : BaseEntity
 	{
@@ -26,7 +26,7 @@ namespace SimpleLineLibrary.Models
 		{
 			get 
 			{
-				return _parameters.AsReadOnly();
+				return _parameters;
 			}
 		}
 

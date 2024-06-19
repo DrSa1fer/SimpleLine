@@ -1,19 +1,19 @@
-﻿using SimpleLineLibrary.Services.Converting;
-using SimpleLineLibrary.Services.Execution;
+﻿using SimpleLineLibrary.Services.Execution;
+using SimpleLineLibrary.Services.Execution.Converting;
 
 namespace SimpleLineLibrary.Tests.Services.Invokation.Execution
 {
     [TestClass]
     public class HandlerExecutorTest
     {
-        private readonly ConverterProvider _converter;
+        private readonly Converter _converter;
         private readonly HandlerExecutor _executor;
 
         public HandlerExecutorTest()
         {
             _converter = new();
 
-            _converter.RegisterConverter(new TypeConverter<string>(x => x));
+
 
             _executor = new(_converter);
         }

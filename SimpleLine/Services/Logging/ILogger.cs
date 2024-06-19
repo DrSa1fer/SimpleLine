@@ -1,8 +1,9 @@
 namespace SimpleLineLibrary.Services.Logging
 {
     internal interface ILogger
-    {
-        void WriteMessage(string? data);
-        void WriteError(string? data);
+    {        
+        void WriteMessage(string? msg);
+        void WriteWarning(string? msg, int level = 0);
+        void WriteError(string? msg);
     }
 }

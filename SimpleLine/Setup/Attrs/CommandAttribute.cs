@@ -7,7 +7,7 @@ namespace SimpleLineLibrary.Setup
         {
             Command = command;
         }
-        
+
         public string Command { get; }
     }
 }

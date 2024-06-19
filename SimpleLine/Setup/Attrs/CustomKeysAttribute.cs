@@ -12,7 +12,7 @@
         /// <param name="longKey">full key "--key"</param>
         /// <param name="shortKey">short key "-k"</param>
         public CustomKeysAttribute(string shortKey, string longKey)
-        { 
+        {
             ShortKey = shortKey;
             LongKey = longKey;
         }

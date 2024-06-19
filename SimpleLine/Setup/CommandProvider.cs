@@ -5,18 +5,17 @@ namespace SimpleLineLibrary.Setup
 {
     internal sealed class CommandProvider
     {
-        private readonly IReadOnlySet<string> _keywords;
-
-        public CommandProvider(IReadOnlySet<string> keywords)
+        private readonly IEnumerable<TypeInfo> _types;
+        public CommandProvider(IEnumerable<TypeInfo> types)
         {
-            _keywords = keywords;
+            _types = types;
         }
 
-        internal List<Command> FindCommands(IEnumerable<TypeInfo> types)
+        internal List<Command> GetCommands()
         {
             var ls = new List<Command>();
 
-            foreach (var t in types.Where(x => x.IsClass && !x.IsAbstract))
+            foreach (var t in _types.Where(x => x.IsClass && !x.IsAbstract))
             {
                 var commandAttr = t.GetCustomAttribute<CommandAttribute>();
 
@@ -33,10 +32,7 @@ namespace SimpleLineLibrary.Setup
 
                 if (sp.Length < 1)
                 {
-                    throw new
-                        SimpleLineLibrary
-                        .Exceptions
-                        .ArgumentException("Empty name");
+                    throw new ArgumentException("Empty name");
                 }
 
                 Command? com = null;
@@ -48,16 +44,8 @@ namespace SimpleLineLibrary.Setup
 
                     if (uid.StartsWith('@'))
                     {
-
-                        if (!_keywords.Contains(uid[1..]))
-                        {
-                            throw new
-                                SimpleLineLibrary
-                                .Exceptions
-                                .ArgumentException("not reserved word");
-                        }
-
-                        com = MakeCommand(t, uid, false);
+                        //   com = MakeCommand(t, uid, false);
+                        throw new NotImplementedException("@names not implemented");
                     }
                     else
                     {
@@ -66,10 +54,7 @@ namespace SimpleLineLibrary.Setup
                 }
                 else if (sp.Length > 1)
                 {
-                    throw new
-                        SimpleLineLibrary
-                        .Exceptions
-                        .NotImplementedException();
+                    throw new NotImplementedException();
                 }
 
                 if (com == null)
@@ -160,10 +145,7 @@ namespace SimpleLineLibrary.Setup
                 {
                     @long = name;
 
-                    throw new 
-                        SimpleLineLibrary
-                        .Exceptions
-                        .NotImplementedException("Short key finding. line 153");
+                    throw new NotImplementedException("Short key finding. line 153");
                 }
                 else
                 {

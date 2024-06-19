@@ -1,19 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>SimpleLineLibrary</RootNamespace>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Title>SimpleLine</Title>
-    <Authors>DanilKucherenko</Authors>
-    <SignAssembly>False</SignAssembly>
-    <AssemblyOriginatorKeyFile>SimpleLine</AssemblyOriginatorKeyFile>
+    <RootNamespace>SimpleLineLibrary</RootNamespace>
+    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Description>Library for impliment cli commnads in c# language</Description>
-    <Copyright>@Hello world!</Copyright>
-	<VersionPrefix>0.0.0.1</VersionPrefix>
-	<VersionSuffix>alpha</VersionSuffix>
+    <RepositoryType>git</RepositoryType>
+    <IncludeSymbols>True</IncludeSymbols>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <NoWin32Manifest>true</NoWin32Manifest>
+    <Title>SimpleLine</Title>
+    <Version>0.0.1</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <Description>An open source library that tagrets to simplify command line interaction.</Description>
+    <Product>Simple Line</Product>
+    <Authors>Danil Kucherenko</Authors>	  
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -23,11 +26,5 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DebugType>embedded</DebugType>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Services\Finding\Exceptions\**" />
-    <EmbeddedResource Remove="Services\Finding\Exceptions\**" />
-    <None Remove="Services\Finding\Exceptions\**" />
-  </ItemGroup>
 
 </Project>

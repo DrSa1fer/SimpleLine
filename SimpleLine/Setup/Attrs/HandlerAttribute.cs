@@ -1,9 +1,9 @@
 namespace SimpleLineLibrary.Setup
 {
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
-    public class HandlerAttribute : Attribute 
-    {        
-        public HandlerAttribute() 
+    public class HandlerAttribute : Attribute
+    {
+        public HandlerAttribute()
         {
             Key = "";
         }

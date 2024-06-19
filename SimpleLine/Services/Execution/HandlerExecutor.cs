@@ -1,17 +1,17 @@
-using SimpleLineLibrary.Services.Execution.Exceptions.Binding;
+using SimpleLineLibrary.Services.Execution.Converting;
 using SimpleLineLibrary.Services.Execution.Exceptions;
-using SimpleLineLibrary.Services.Converting;
 using SimpleLineLibrary.Models;
-using System.Collections;
 using System.Reflection;
+using System.Collections;
+using SimpleLineLibrary.Services.Logging;
 
 namespace SimpleLineLibrary.Services.Execution
 {
     internal class HandlerExecutor
     {
-        private readonly ConverterProvider _converter;
+        private readonly Converter _converter;  
 
-        public HandlerExecutor(ConverterProvider converter)
+        public HandlerExecutor(Converter converter)
         {
             _converter = converter;
         }
@@ -25,11 +25,11 @@ namespace SimpleLineLibrary.Services.Execution
             }
             catch (TargetInvocationException ex)
             {
-                throw new UserRuntimeException(ex);
-            }
-            catch (Exception ex)
+                throw new UserRuntimeException(ex.InnerException);
+            }            
+            catch
             {
-                throw new ExecutionException(ex);
+                throw;
             }
         }
 
@@ -74,30 +74,18 @@ namespace SimpleLineLibrary.Services.Execution
                 if (p.ValueType.IsAssignableTo(typeof(ICollection)))
                 {
                     var values = data.GetValues(p);
-                    arr[i] = _converter.ConvertEnumerable(p.ValueType, values);
+                    arr[i] = _converter.ConvertCollection(p.ValueType, values);
                 }
                 else
                 {
                     var str = data.GetValue(p);
                     var t = p.ValueType;
 
-                    arr[i] = Convert(str, t);                    
+                    arr[i] = _converter.ConvertType(t, str);
                 }
             }
 
             return arr;
-        }
-
-        private object? Convert(string input, Type t)
-        {
-            if (_converter.IsSupported(t))
-            {
-                return _converter.ConvertType(t, input);
-            }
-            else
-            {
-                throw new NotSupportedTypeException(t);
-            }
         }
     }
 }

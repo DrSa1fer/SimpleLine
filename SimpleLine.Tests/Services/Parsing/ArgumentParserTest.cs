@@ -6,11 +6,11 @@ namespace SimpleLineLibrary.Tests.Services.Parsing
     [TestClass]
     public class ArgumentParserTest
     {
-        private readonly ArgumentsParser _parser;
+        private readonly ArgumentParser _parser;
 
         public ArgumentParserTest()
         {
-            _parser = new ArgumentsParser();
+            _parser = new ArgumentParser();
         }
 
         [TestMethod]

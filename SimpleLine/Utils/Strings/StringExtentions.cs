@@ -1,4 +1,4 @@
-namespace SimpleLineLibrary.Extensions
+namespace SimpleLineLibrary.Utils.Strings
 {
     internal static class StringExtentions
     {
@@ -13,26 +13,30 @@ namespace SimpleLineLibrary.Extensions
         {
             return key.IsLongKeyTokenName() || key.IsShortKeyTokenName();
         }
+
         public static bool IsLongKeyTokenName(this string key) => key.Length > 2
                 && key.TokenStartWith("--")
-                && !key[2].Equals('-');
+                && !key[2].Equals('-')
+                && key.All(x => !char.IsWhiteSpace(x));
+
         public static bool IsShortKeyTokenName(this string key)
         {
             return key.Length > 1
                 && key.TokenStartWith("-")
-                && !key[1].Equals('-');
+                && !key[1].Equals('-')
+                && key.All(x => !char.IsWhiteSpace(x));
         }
 
         public static bool IsValidTextLength(this string text)
         {
-            if(text == null)
+            if (text == null)
             {
                 return true;
             }
 
             return text.Length < 81;
         }
-                
+
         public static bool IsEqualsTokenName(this string token, string otherToken)
         {
             return token.Equals(otherToken, StringComparison.OrdinalIgnoreCase);
@@ -60,10 +64,7 @@ namespace SimpleLineLibrary.Extensions
         {
             if (!key.IsKeyTokenName())
             {
-                throw new 
-                    SimpleLineLibrary
-                    .Exceptions
-                    .ArgumentException("Invalid key");
+                throw new ArgumentException("Invalid key");
             }
         }
     }

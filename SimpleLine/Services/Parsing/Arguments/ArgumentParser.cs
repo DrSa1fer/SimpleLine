@@ -1,9 +1,9 @@
-﻿using SimpleLineLibrary.Extensions;
-using SimpleLineLibrary.Services.Parsing.Arguments.Exceptions;
+﻿using SimpleLineLibrary.Services.Parsing.Arguments.Exceptions;
+using SimpleLineLibrary.Utils.Strings;
 
 namespace SimpleLineLibrary.Services.Parsing.Arguments
 {
-    internal class ArgumentsParser
+    internal class ArgumentParser
     {
         public List<Argument> Parse(Queue<string> args)
         {
@@ -51,6 +51,8 @@ namespace SimpleLineLibrary.Services.Parsing.Arguments
                     ls.Add(arg);
                 }
             }
+
+            Console.WriteLine(string.Join(", ", ls.Select(x => x.Key + " " + x.Value)));
 
             return ls;
         }

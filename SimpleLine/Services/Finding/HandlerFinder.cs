@@ -1,5 +1,5 @@
-﻿using SimpleLineLibrary.Extensions;
-using SimpleLineLibrary.Models;
+﻿using SimpleLineLibrary.Models;
+using SimpleLineLibrary.Utils.Strings;
 
 namespace SimpleLineLibrary.Services.Finding
 {
@@ -11,15 +11,12 @@ namespace SimpleLineLibrary.Services.Finding
 
             if (args.TryPeek(out var peek))
             {
-                if (peek.IsKeyTokenName())
-                {
-                    var filtered = handlers.Where(h => h.HasKey && h.Key.IsEqualsTokenName(peek));
+                var filtered = handlers.Where(h => h.HasKey && h.Key.IsEqualsTokenName(peek));
 
-                    if (filtered.Any())
-                    {
-                        args.Dequeue();
-                        return filtered.Single();
-                    }
+                if (filtered.Any())
+                {
+                    args.Dequeue();
+                    return filtered.Single();
                 }
 
                 var withouKey = handlers.Where(x => !x.HasKey);

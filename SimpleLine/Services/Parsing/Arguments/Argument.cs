@@ -7,8 +7,9 @@ namespace SimpleLineLibrary.Services.Parsing.Arguments
     {
         public string Key { get; }
         public string Value { get; }
+        public int Position { get; }
 
-        public Argument(string key = "", string value = "")
+        public Argument(string key = "", string value = "", int position = 0)
         {
             Key = key;
             Value = value;
@@ -17,6 +18,8 @@ namespace SimpleLineLibrary.Services.Parsing.Arguments
             {
                 throw new ArgumentNullException("я никому не нужен. ключ null, значение null");
             }
+
+            Position = position;
         }
 
         public bool HasKey()

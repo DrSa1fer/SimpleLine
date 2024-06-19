@@ -1,16 +1,10 @@
 using SimpleLineLibrary.Setup;
-using System.Reflection;
-using SimpleLineLibrary.Exceptions;
-using SimpleLineLibrary.Setup.Exceptions;
 using SimpleLineLibrary.Services.Parsing.Arguments;
 using SimpleLineLibrary.Services.Parsing.Tokens;
 using SimpleLineLibrary.Services.Finding;
 using SimpleLineLibrary.Services.Execution.Exceptions;
 using SimpleLineLibrary.Services.Execution;
-using SimpleLineLibrary.Services.Converting;
-using SimpleLineLibrary.Services.Exceptions;
-using SimpleLineLibrary.Extensions;
-using SimpleLineLibrary.Services.InfoDisplay;
+using SimpleLineLibrary.Services.InfoRecieving;
 
 namespace SimpleLineLibrary
 {
@@ -18,41 +12,31 @@ namespace SimpleLineLibrary
     {        
         private readonly Configuration _config;
         
-        private readonly ArgumentsParser _argumentParser;
-        private readonly TokensParser _tokenParser;
-
-        private readonly CommandProvider _commandProvider;
+        private readonly ArgumentParser _argumentParser;
+        private readonly TokenParser _tokenParser;
 
         private readonly CommandFinder _commandFinder;
         private readonly HandlerFinder _handlerFinder;
-        private readonly InfoDisplayer _infoDisplayer;
+        private readonly InfoReceiver _infoReceiver;
 
         private readonly HandlerExecutor _handlerExecutor;
 
-        public SimpleLine(Configuration config)
+        private SimpleLine(Configuration config)
         {
             _config = config;
 
-            _commandProvider = new CommandProvider(new HashSet<string>());
-
-            _argumentParser = new ArgumentsParser();
-            _tokenParser= new TokensParser();
+            _argumentParser = new ArgumentParser();
+            _tokenParser = new TokenParser();
             
             _commandFinder = new CommandFinder();
             _handlerFinder = new HandlerFinder();
-            _infoDisplayer = new InfoDisplayer(_config.HelpKeys, "simpleline.dll", "0.01");
 
-            var cp = new ConverterProvider();
-
-            cp.RegisterTypeConverter(x => x);
-            cp.RegisterTypeConverter(int.Parse);
-            cp.RegisterTypeConverter(x => x.IsEqualsTokenName("1"));
-
-            _handlerExecutor = new HandlerExecutor(cp);
+            _handlerExecutor = new HandlerExecutor(_config.Converter);
+            
+            _infoReceiver = new InfoReceiver(_config.ProgramName, _config.ProgramVersion);
         }
-
         
-        public object? Run(ICollection<string> args, Assembly assembly)
+        public object? Run(ICollection<string> args)
         {
             try
             {
@@ -62,19 +46,23 @@ namespace SimpleLineLibrary
                     return null;
                 }
 
+                var coms = _config.CommandProvider.GetCommands();
+
                 var qArgs = new Queue<string>(args);
-                var coms = _commandProvider.FindCommands(assembly.DefinedTypes);
                 var com = _commandFinder.Find(qArgs, coms);
 
                 if (com == null)
                 {
-                    _config.CommandNotFound?.Invoke(qArgs.Peek());
+                    if(qArgs.TryPeek(out string? peek))
+                    {
+                        _config.CommandNotFound?.Invoke(peek);
+                    }
                     return null;
                 }
 
                 if (qArgs.Count > 0 && _config.HelpKeys.Contains(qArgs.Peek()))
                 {
-                    var info = _infoDisplayer.GetInfo(com);
+                    var info = _infoReceiver.ReceiveFrom(com);
                     Console.WriteLine(info);
                     return null;
                 }
@@ -83,14 +71,14 @@ namespace SimpleLineLibrary
 
                 if (han == null)
                 {
-                    _config.HandlerNotFound?.Invoke(qArgs.ToList());
+                    _config.HandlerNotFound?.Invoke(qArgs);
                     return null;
                 }
 
                 if (qArgs.Count > 0 && _config.HelpKeys.Contains(qArgs.Peek()))
                 {
-                    var info = _infoDisplayer.GetInfo(han);
-                    Console.WriteLine(info);
+                    var info = _infoReceiver.ReceiveFrom(han);
+                    //Console.WriteLine(info);
                     return null;
                 }
 
@@ -99,21 +87,9 @@ namespace SimpleLineLibrary
 
                 return _handlerExecutor.Execute(han, execData);
             }
-            catch(SetupException setupEx)
-            {
-                throw setupEx;
-            }
             catch(UserRuntimeException userEx)
             {
-                throw userEx.InnerException!;
-            }
-            catch (ServiceException serviceEx)
-            {
-                throw serviceEx;
-            }
-            catch(SimpleLineException simpEx)
-            {                
-                throw simpEx;
+                throw userEx.InnerException!;                
             }
             catch (Exception ex)
             {
@@ -122,9 +98,9 @@ namespace SimpleLineLibrary
             }
         }
 
-        public void Run(string input)
+        public static SimpleLine Build(Configuration configuration)
         {
-            
+            return new SimpleLine(configuration);
         }
     }
 }

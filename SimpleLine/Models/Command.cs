@@ -1,4 +1,4 @@
-using SimpleLineLibrary.Extensions;
+using SimpleLineLibrary.Utils.Strings;
 
 namespace SimpleLineLibrary.Models
 {
@@ -60,11 +60,11 @@ namespace SimpleLineLibrary.Models
         {
             if(_subcommands.Contains(subcommand))
             {
-                throw new Exceptions.ArgumentException($"subcommand already added. [{subcommand.Name}]");
+                throw new ArgumentException($"subcommand already added. [{subcommand.Name}]");
             }
             if(Equals(subcommand))
             {
-                throw new Exceptions.ArgumentException("What are you doing, yopta?");
+                throw new ArgumentException("What are you doing, yopta?");
             }
 
             _subcommands.Add(subcommand);
@@ -74,7 +74,7 @@ namespace SimpleLineLibrary.Models
         {
             if(_handlers.Contains(handler))
             {
-                throw new Exceptions.ArgumentException("handler already added");
+                throw new ArgumentException("handler already added");
             }
 
             _handlers.Add(handler);

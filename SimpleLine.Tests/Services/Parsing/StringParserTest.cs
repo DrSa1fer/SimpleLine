@@ -9,7 +9,7 @@ namespace SimpleLineLibrary.Tests.Services.Parsing
         [TestMethod]
         public void DoubleQuotesRegionTest2()
         {
-            var t = new TokensParser();
+            var t = new TokenParser();
 
             var res = t.Parse("\"   - _ - _ - _ - _ - _ |\"");
 
@@ -22,13 +22,13 @@ namespace SimpleLineLibrary.Tests.Services.Parsing
         [ExpectedException(typeof(Exception))]
         public void DoubleQuotesRegionTest3()
         {
-            _ = new TokensParser().Parse("dddsd \" ppp!");
+            _ = new TokenParser().Parse("dddsd \" ppp!");
         }
 
         [TestMethod]
         public void QuotesRegionTest1()
         {
-            var t = new TokensParser();
+            var t = new TokenParser();
 
             var res = t.Parse("' |_ _ _ _ _ | '");
 
@@ -40,7 +40,7 @@ namespace SimpleLineLibrary.Tests.Services.Parsing
         [TestMethod]
         public void BracketsRegionTest1()
         {
-            var t = new TokensParser();
+            var t = new TokenParser();
 
             var res = t.Parse(" \\[ [1;_2;_3]");
 
@@ -53,13 +53,13 @@ namespace SimpleLineLibrary.Tests.Services.Parsing
         [ExpectedException(typeof(Exception))]
         public void BracketsRegionTest2()
         {
-            _ = new TokensParser().Parse(" \\[ [1;_2 ] ;_3]");
+            _ = new TokenParser().Parse(" \\[ [1;_2 ] ;_3]");
         }
 
         [TestMethod]
         public void InputTest1()
         {
-            var t = new TokensParser();
+            var t = new TokenParser();
 
             var res = t.Parse("simple-line math sum --left = 100 --right = 5");
 
@@ -70,7 +70,7 @@ namespace SimpleLineLibrary.Tests.Services.Parsing
         [TestMethod]
         public void InputTest2()
         {
-            var t = new TokensParser();
+            var t = new TokenParser();
 
             var res = t.Parse("simple-line math \"s u m\" 100 5");
 
@@ -82,7 +82,7 @@ namespace SimpleLineLibrary.Tests.Services.Parsing
         [TestMethod]
         public void InputTest3()
         {
-            var t = new TokensParser();
+            var t = new TokenParser();
 
             var res = t.Parse("edit_profile --name \"Jane Rotcher\" --email jane@example.com");
 
@@ -93,7 +93,7 @@ namespace SimpleLineLibrary.Tests.Services.Parsing
         [TestMethod]
         public void InputTest4()
         {
-            var t = new TokensParser();
+            var t = new TokenParser();
             
             var res = t.Parse("search --keyword \"apple\"");
 
@@ -105,7 +105,7 @@ namespace SimpleLineLibrary.Tests.Services.Parsing
         [TestMethod]
         public void EmptyTest()
         {
-            var t = new TokensParser();
+            var t = new TokenParser();
 
             var res = t.Parse("");
 
@@ -117,7 +117,7 @@ namespace SimpleLineLibrary.Tests.Services.Parsing
         [TestMethod]
         public void Test()
         {
-            var t = new TokensParser();
+            var t = new TokenParser();
 
             var res = t.Parse("\"My name 'artem', hi!\"");
 

@@ -1,60 +1,40 @@
-using SimpleLineLibrary.Extensions;
 using SimpleLineLibrary.Models;
 
 namespace SimpleLineLibrary.Services.Finding
 {
     internal sealed class CommandFinder
     {
-        private readonly string _rootName;
-
-        public CommandFinder(string rootCommand = "@root")
-        {
-            _rootName = rootCommand;
-        }
-
         public Command? Find(Queue<string> args, IReadOnlyList<Command> roots)
-        {
-            if (args is null || args.Count < 1)
+        {            
+            if(!args.TryPeek(out string? name))
             {
                 return null;
             }
-
-            if (roots is null || roots.Count < 1)
-            {
-                return null;
-            }
-
-            var name = args.Peek();
-
-            var root = roots
-                .FirstOrDefault(x => x.Is(name));
+           
+            var root = roots.FirstOrDefault(x => x.Is(name));
 
             if (root == null)
             {
                 return null;
             }
 
-            while (args.Any())
+            while (args.Count > 0)
             {
-                args.Dequeue(); //skip root
+                args.Dequeue(); //skip root in first pass
 
-                if (args.TryPeek(out string? peek))
-                {
-                    var temp = root
-                        .Subcommands
-                        .FirstOrDefault(x => x.Is(peek));
-
-                    if (temp == null)
-                    {
-                        break;
-                    }
-
-                    root = temp;
-                }
-                else
+                if (!args.TryPeek(out string? peek))
                 {
                     break;
                 }
+
+                var temp = root.Subcommands.FirstOrDefault(x => x.Is(peek));
+
+                if (temp == null)
+                {
+                    break;
+                }
+
+                root = temp;
             }
 
             return root;
