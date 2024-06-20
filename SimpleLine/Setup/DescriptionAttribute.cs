@@ -1,4 +1,4 @@
-﻿namespace SimpleLineLibrary.Setup.Attributes
+﻿namespace SimpleLineLibrary.Setup
 {
     /// <summary>
     /// Adds a description for further use by the library

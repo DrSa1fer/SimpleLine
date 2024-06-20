@@ -4,6 +4,16 @@
   "files": [
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SimpleLineLibrary.Setup.Attributes.CategoryAttribute.yml",
       "output": {
         ".html": {
@@ -18,6 +28,16 @@
       "output": {
         ".html": {
           "relative_path": "api/SimpleLineLibrary.Setup.Attributes.CommandAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Setup.Attributes.CommandDefinitionsAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Setup.Attributes.CommandDefinitionsAttribute.html"
         }
       },
       "version": ""
@@ -64,10 +84,50 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Setup.CommandAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Setup.CommandAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Setup.CommandDefinitionsAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Setup.CommandDefinitionsAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SimpleLineLibrary.Setup.Configuration.yml",
       "output": {
         ".html": {
           "relative_path": "api/SimpleLineLibrary.Setup.Configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Setup.CustomKeysAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Setup.CustomKeysAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimpleLineLibrary.Setup.DescriptionAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimpleLineLibrary.Setup.DescriptionAttribute.html"
         }
       },
       "version": ""

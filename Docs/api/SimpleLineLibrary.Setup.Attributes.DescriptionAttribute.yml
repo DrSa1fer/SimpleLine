@@ -29,11 +29,11 @@ items:
   example: []
   syntax:
     content: >-
-      [AttributeUsage(AttributeTargets.Class|AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
+      [AttributeUsage(AttributeTargets.Method|AttributeTargets.Parameter, AllowMultiple = false, Inherited = true)]
 
       public class DescriptionAttribute : Attribute
     content.vb: >-
-      <AttributeUsage(AttributeTargets.ClassOrAttributeTargets.Method, AllowMultiple:=False, Inherited:=True)>
+      <AttributeUsage(AttributeTargets.MethodOrAttributeTargets.Parameter, AllowMultiple:=False, Inherited:=True)>
 
       Public Class DescriptionAttribute Inherits Attribute
   inheritance:
@@ -87,7 +87,7 @@ items:
     ctor: System.AttributeUsageAttribute.#ctor(System.AttributeTargets)
     arguments:
     - type: System.AttributeTargets
-      value: 68
+      value: 2112
     namedArguments:
     - name: AllowMultiple
       type: System.Boolean
@@ -113,7 +113,7 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: Description
     path: ../SimpleLine/Setup/Attributes/DescriptionAttribute.cs
-    startLine: 9
+    startLine: 8
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary.Setup.Attributes
@@ -142,7 +142,7 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: .ctor
     path: ../SimpleLine/Setup/Attributes/DescriptionAttribute.cs
-    startLine: 11
+    startLine: 10
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary.Setup.Attributes

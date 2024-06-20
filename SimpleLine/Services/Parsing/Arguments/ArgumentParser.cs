@@ -65,7 +65,7 @@ namespace SimpleLineLibrary.Services.Parsing.Arguments
         }
         private static bool IsEqualSign(string token)
         {
-            return token.IsEqualsTokenName("=");
+            return token.IsEqualsToken("=");
         }
     }
 }

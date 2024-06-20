@@ -1,14 +1,16 @@
 using System.Reflection;
 using System.IO;
+using System.Xml.Linq;
 
-namespace SimpleLineLibrary.Setup
+namespace SimpleLineLibrary
 {
     public class Configuration
-    {        
+    {
         public Action<Exception>? OnSimpleLineException { get; init; }
-        public Action<Exception>? OnUserException { get; init; }        
-        public Action<string>? OnCommandNotFound { get; set; }                 
-        public Action? OnNoArguments { get; init; }        
+        public Action<Exception>? OnUserException { get; init; }
+        public Action<string>? OnCommandNotFound { get; init; }
+        public Action<string>? OnHandlerMissing { get; init; }
+        public Action? OnNoArguments { get; init; }
 
         public string ProgramName
         {
@@ -79,7 +81,7 @@ namespace SimpleLineLibrary.Setup
 
         private readonly Dictionary<Type, Func<string, object?>> _types;
         private readonly IEnumerable<TypeInfo> _definedTypes;
-        private IReadOnlySet<string> _helpKeys;        
+        private IReadOnlySet<string> _helpKeys;
 
         public Configuration()
         {
@@ -119,6 +121,10 @@ namespace SimpleLineLibrary.Setup
                 {
                     Console.WriteLine($"Simple Line doesnt contains command with name \"{name}\" name");
                 },
+                OnHandlerMissing = (name) => 
+                {
+                    Console.WriteLine($"Handler for command {name} is missing");
+                },
                 DefinedTypes = assembly.DefinedTypes,
                 HelpKeys = new HashSet<string>() { "-h", "-?", "--help", "--info" },
                 OnNoArguments = () =>
@@ -142,7 +148,7 @@ namespace SimpleLineLibrary.Setup
                 .GetCustomAttribute<AssemblyVersionAttribute>()?.Version ?? string.Empty,
 
                 ProgramDescription = assembly
-                .GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description ?? string.Empty,                
+                .GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description ?? string.Empty,
             };
         }
 
@@ -185,7 +191,7 @@ namespace SimpleLineLibrary.Setup
 
                 throw new ArgumentException($"{x} is not bool");
             });
-            
+
             AddTypeForConverting(char.Parse);
             AddTypeForConverting(x => x);
             AddTypeForConverting(x => new FileInfo(x));

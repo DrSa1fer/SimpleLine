@@ -1,14 +1,15 @@
 ﻿using SimpleLineLibrary.Extentions.Strings;
-using SimpleLineLibrary.Setup.Attributes;
 using SimpleLineLibrary.Models;
 using System.Reflection;
+using SimpleLineLibrary.Setup;
 
-namespace SimpleLineLibrary.Services.Assembly.Receiving.Commands
+namespace SimpleLineLibrary.Services.Assembly.Receiving
 {
     internal class CommandReceiver
     {
         internal List<Command> GetCommands(IEnumerable<TypeInfo> types)
         {
+            var proxy = new Dictionary<string, CommandProxy>();
             var ls = new List<Command>();
 
             foreach (var t in types.Where(x => x.IsClass && !x.IsAbstract))
@@ -20,7 +21,7 @@ namespace SimpleLineLibrary.Services.Assembly.Receiving.Commands
                     continue;
                 }
 
-                var defBindTo = defAttr.BindToCommand?
+                var defBindTo = defAttr.BindTo?
                     .SplitAndRemoveEmptyEntries(' ');
 
                 foreach(var method in t.GetMethods())
@@ -65,8 +66,13 @@ namespace SimpleLineLibrary.Services.Assembly.Receiving.Commands
                         local_name.ThrowIfWrongTokenName();
                         comPath.Add(local_name);
                     }
+                    
+                    if (method.IsAbstract)
+                    {
+                        throw new NotSupportedException("Generic methods not supported");
+                    }
 
-                    if(method.IsGenericMethod)
+                    if (method.IsGenericMethod)
                     {
                         throw new NotSupportedException("Generic methods not supported");
                     }
@@ -99,7 +105,7 @@ namespace SimpleLineLibrary.Services.Assembly.Receiving.Commands
             var pars = MakeParameters(info.GetParameters());
             var handler = new Handler(func, pars);
 
-            return new Command(uid, name, desc, handler, true);
+            return new Command(uid, name, desc, handler);
         }
 
         private Parameter[] MakeParameters(ParameterInfo[] info)

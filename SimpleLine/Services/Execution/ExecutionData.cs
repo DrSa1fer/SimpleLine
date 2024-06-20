@@ -1,6 +1,6 @@
-﻿using SimpleLineLibrary.Extentions.Strings;
+﻿using SimpleLineLibrary.Services.Parsing.Arguments;
+using SimpleLineLibrary.Extentions.Strings;
 using SimpleLineLibrary.Models;
-using SimpleLineLibrary.Services.Parsing.Arguments;
 
 namespace SimpleLineLibrary.Services.Execution
 {
@@ -14,8 +14,17 @@ namespace SimpleLineLibrary.Services.Execution
             }
         }
 
+        public int ArgCount
+        {
+            get
+            {
+                return _notNamedCount + _keys.Count;
+            }
+        }
+
         private readonly IReadOnlyList<Argument> _args;
         private readonly HashSet<string> _keys;
+        private readonly int _notNamedCount;
 
         public ExecutionData(IReadOnlyList<Argument> args)
         {
@@ -26,6 +35,7 @@ namespace SimpleLineLibrary.Services.Execution
             {
                 if (!_args[i].HasKey())
                 {
+                    _notNamedCount++;
                     continue;
                 }
                 if (_keys.Contains(_args[i].Key))
@@ -34,29 +44,6 @@ namespace SimpleLineLibrary.Services.Execution
                 }
                 _keys.Add(_args[i].Key);
             }
-        }
-
-        public int CountOfArgs()
-        {
-            var set = new HashSet<string>();
-            int count = 0;
-
-            foreach (var arg in _args)
-            {
-                if (arg.HasKey())
-                {
-                    if (!set.Contains(arg.Key))
-                    {
-                        set.Add(arg.Key);
-                    }
-                }
-                else
-                {
-                    count++;
-                }               
-            }
-
-            return set.Count + count;
         }
 
         public string GetValue(Parameter parameter)
@@ -68,8 +55,8 @@ namespace SimpleLineLibrary.Services.Execution
         {
             var values = _args
                 .Where(x => x.HasKey())
-                .Where(x => x.Key.IsEqualsTokenName(parameter.LongKey) ||
-                    x.Key.IsEqualsTokenName(parameter.ShortKey))
+                .Where(x => x.Key.IsEqualsToken(parameter.LongKey) ||
+                    x.Key.IsEqualsToken(parameter.ShortKey))
                 .Select(x => x.Value);
 
             if (true
@@ -84,28 +71,26 @@ namespace SimpleLineLibrary.Services.Execution
 
             return values;
         }
-
         public bool HasParameter(Parameter parameter)
         {
             return _args
                 .Where(x => x.HasKey())
                 .Any(x => 
-                    x.Key.IsEqualsTokenName(parameter.LongKey) ||
-                    x.Key.IsEqualsTokenName(parameter.ShortKey)) ||
+                    x.Key.IsEqualsToken(parameter.LongKey) ||
+                    x.Key.IsEqualsToken(parameter.ShortKey)) ||
                     
                     (parameter.Position > -1 &&
                     parameter.Position < _args.Count &&
                     _args[parameter.Position].HasKey() == false)
                 ;
         }
-
         public bool HasValue(Parameter parameter)
         {
             return _args
                 .Where(x => x.HasKey())
                 .Any(x => (
-                    x.Key.IsEqualsTokenName(parameter.LongKey) ||
-                    x.Key.IsEqualsTokenName(parameter.ShortKey)) && 
+                    x.Key.IsEqualsToken(parameter.LongKey) ||
+                    x.Key.IsEqualsToken(parameter.ShortKey)) && 
                     x.HasValue()) ||
 
                     (parameter.Position > -1 &&
@@ -113,15 +98,6 @@ namespace SimpleLineLibrary.Services.Execution
                     _args[parameter.Position].HasKey() == false &&
                     _args[parameter.Position].HasValue())
                 ;
-        }
-
-        public bool Ensure(bool @throw)
-        {
-            if (@throw)
-            {
-
-            }
-            return false;
         }
     }
 }

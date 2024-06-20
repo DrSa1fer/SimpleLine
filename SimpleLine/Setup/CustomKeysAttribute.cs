@@ -1,4 +1,4 @@
-﻿namespace SimpleLineLibrary.Setup.Attributes
+﻿namespace SimpleLineLibrary.Setup
 {
     /// <summary>
     /// Sets the keys for the handler parameter

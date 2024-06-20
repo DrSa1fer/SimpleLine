@@ -33,7 +33,6 @@ namespace SimpleLineLibrary.Models
                 return _subcommands;
             }
         }
-
         public Handler? Handler
         {
             get 
@@ -47,11 +46,13 @@ namespace SimpleLineLibrary.Models
         private readonly string _description;
 
         private readonly List<Command> _subcommands;
-        private readonly Handler _handler;
+        private readonly Handler? _handler;
 
-        public Command(string uid, string name, string desc, Handler handler, bool @throw)             
+        public Command(string uid, string name, string desc, Handler? handler)             
         {
             uid.ThrowIfWrongTokenName();
+            name.ThrowIfWrongTokenName();
+            desc.ThrowIfWrongText();
 
             _uid = uid;
             _name = name; 
@@ -62,7 +63,7 @@ namespace SimpleLineLibrary.Models
 
         public bool Is(string name)
         {
-            return Uid.IsEqualsTokenName(name);
+            return Uid.IsEqualsToken(name);
         }
 
         public bool ContainsSubcommand(Command subcommand)
@@ -87,7 +88,7 @@ namespace SimpleLineLibrary.Models
         public override bool Equals(object? obj)
         {
             return obj is Command other
-                && other.Uid.IsEqualsTokenName(this.Uid);
+                && other.Uid.IsEqualsToken(this.Uid);
         }        
         public override int GetHashCode()
         {

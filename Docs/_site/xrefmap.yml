@@ -7,6 +7,190 @@ references:
   commentId: N:SimpleLineLibrary
   fullName: SimpleLineLibrary
   nameWithType: SimpleLineLibrary
+- uid: SimpleLineLibrary.Configuration
+  name: Configuration
+  href: api/SimpleLineLibrary.Configuration.html
+  commentId: T:SimpleLineLibrary.Configuration
+  fullName: SimpleLineLibrary.Configuration
+  nameWithType: Configuration
+- uid: SimpleLineLibrary.Configuration.#ctor
+  name: Configuration()
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration__ctor
+  commentId: M:SimpleLineLibrary.Configuration.#ctor
+  name.vb: New()
+  fullName: SimpleLineLibrary.Configuration.Configuration()
+  fullName.vb: SimpleLineLibrary.Configuration.New()
+  nameWithType: Configuration.Configuration()
+  nameWithType.vb: Configuration.New()
+- uid: SimpleLineLibrary.Configuration.#ctor*
+  name: Configuration
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration__ctor_
+  commentId: Overload:SimpleLineLibrary.Configuration.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.Configuration.Configuration
+  fullName.vb: SimpleLineLibrary.Configuration.New
+  nameWithType: Configuration.Configuration
+  nameWithType.vb: Configuration.New
+- uid: SimpleLineLibrary.Configuration.AddTypeForConverting*
+  name: AddTypeForConverting
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_AddTypeForConverting_
+  commentId: Overload:SimpleLineLibrary.Configuration.AddTypeForConverting
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Configuration.AddTypeForConverting
+  nameWithType: Configuration.AddTypeForConverting
+- uid: SimpleLineLibrary.Configuration.AddTypeForConverting``1(System.Func{System.String,``0})
+  name: AddTypeForConverting<T>(Func<string, T>)
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_AddTypeForConverting__1_System_Func_System_String___0__
+  commentId: M:SimpleLineLibrary.Configuration.AddTypeForConverting``1(System.Func{System.String,``0})
+  name.vb: AddTypeForConverting(Of T)(Func(Of String, T))
+  fullName: SimpleLineLibrary.Configuration.AddTypeForConverting<T>(System.Func<string, T>)
+  fullName.vb: SimpleLineLibrary.Configuration.AddTypeForConverting(Of T)(System.Func(Of String, T))
+  nameWithType: Configuration.AddTypeForConverting<T>(Func<string, T>)
+  nameWithType.vb: Configuration.AddTypeForConverting(Of T)(Func(Of String, T))
+- uid: SimpleLineLibrary.Configuration.ConvertibleTypes
+  name: ConvertibleTypes
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_ConvertibleTypes
+  commentId: P:SimpleLineLibrary.Configuration.ConvertibleTypes
+  fullName: SimpleLineLibrary.Configuration.ConvertibleTypes
+  nameWithType: Configuration.ConvertibleTypes
+- uid: SimpleLineLibrary.Configuration.ConvertibleTypes*
+  name: ConvertibleTypes
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_ConvertibleTypes_
+  commentId: Overload:SimpleLineLibrary.Configuration.ConvertibleTypes
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Configuration.ConvertibleTypes
+  nameWithType: Configuration.ConvertibleTypes
+- uid: SimpleLineLibrary.Configuration.Default(System.Reflection.Assembly)
+  name: Default(Assembly)
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_Default_System_Reflection_Assembly_
+  commentId: M:SimpleLineLibrary.Configuration.Default(System.Reflection.Assembly)
+  fullName: SimpleLineLibrary.Configuration.Default(System.Reflection.Assembly)
+  nameWithType: Configuration.Default(Assembly)
+- uid: SimpleLineLibrary.Configuration.Default*
+  name: Default
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_Default_
+  commentId: Overload:SimpleLineLibrary.Configuration.Default
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Configuration.Default
+  nameWithType: Configuration.Default
+- uid: SimpleLineLibrary.Configuration.DefinedTypes
+  name: DefinedTypes
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_DefinedTypes
+  commentId: P:SimpleLineLibrary.Configuration.DefinedTypes
+  fullName: SimpleLineLibrary.Configuration.DefinedTypes
+  nameWithType: Configuration.DefinedTypes
+- uid: SimpleLineLibrary.Configuration.DefinedTypes*
+  name: DefinedTypes
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_DefinedTypes_
+  commentId: Overload:SimpleLineLibrary.Configuration.DefinedTypes
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Configuration.DefinedTypes
+  nameWithType: Configuration.DefinedTypes
+- uid: SimpleLineLibrary.Configuration.HelpKeys
+  name: HelpKeys
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_HelpKeys
+  commentId: P:SimpleLineLibrary.Configuration.HelpKeys
+  fullName: SimpleLineLibrary.Configuration.HelpKeys
+  nameWithType: Configuration.HelpKeys
+- uid: SimpleLineLibrary.Configuration.HelpKeys*
+  name: HelpKeys
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_HelpKeys_
+  commentId: Overload:SimpleLineLibrary.Configuration.HelpKeys
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Configuration.HelpKeys
+  nameWithType: Configuration.HelpKeys
+- uid: SimpleLineLibrary.Configuration.OnCommandNotFound
+  name: OnCommandNotFound
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_OnCommandNotFound
+  commentId: P:SimpleLineLibrary.Configuration.OnCommandNotFound
+  fullName: SimpleLineLibrary.Configuration.OnCommandNotFound
+  nameWithType: Configuration.OnCommandNotFound
+- uid: SimpleLineLibrary.Configuration.OnCommandNotFound*
+  name: OnCommandNotFound
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_OnCommandNotFound_
+  commentId: Overload:SimpleLineLibrary.Configuration.OnCommandNotFound
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Configuration.OnCommandNotFound
+  nameWithType: Configuration.OnCommandNotFound
+- uid: SimpleLineLibrary.Configuration.OnNoArguments
+  name: OnNoArguments
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_OnNoArguments
+  commentId: P:SimpleLineLibrary.Configuration.OnNoArguments
+  fullName: SimpleLineLibrary.Configuration.OnNoArguments
+  nameWithType: Configuration.OnNoArguments
+- uid: SimpleLineLibrary.Configuration.OnNoArguments*
+  name: OnNoArguments
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_OnNoArguments_
+  commentId: Overload:SimpleLineLibrary.Configuration.OnNoArguments
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Configuration.OnNoArguments
+  nameWithType: Configuration.OnNoArguments
+- uid: SimpleLineLibrary.Configuration.OnSimpleLineException
+  name: OnSimpleLineException
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_OnSimpleLineException
+  commentId: P:SimpleLineLibrary.Configuration.OnSimpleLineException
+  fullName: SimpleLineLibrary.Configuration.OnSimpleLineException
+  nameWithType: Configuration.OnSimpleLineException
+- uid: SimpleLineLibrary.Configuration.OnSimpleLineException*
+  name: OnSimpleLineException
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_OnSimpleLineException_
+  commentId: Overload:SimpleLineLibrary.Configuration.OnSimpleLineException
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Configuration.OnSimpleLineException
+  nameWithType: Configuration.OnSimpleLineException
+- uid: SimpleLineLibrary.Configuration.OnUserException
+  name: OnUserException
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_OnUserException
+  commentId: P:SimpleLineLibrary.Configuration.OnUserException
+  fullName: SimpleLineLibrary.Configuration.OnUserException
+  nameWithType: Configuration.OnUserException
+- uid: SimpleLineLibrary.Configuration.OnUserException*
+  name: OnUserException
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_OnUserException_
+  commentId: Overload:SimpleLineLibrary.Configuration.OnUserException
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Configuration.OnUserException
+  nameWithType: Configuration.OnUserException
+- uid: SimpleLineLibrary.Configuration.ProgramDescription
+  name: ProgramDescription
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_ProgramDescription
+  commentId: P:SimpleLineLibrary.Configuration.ProgramDescription
+  fullName: SimpleLineLibrary.Configuration.ProgramDescription
+  nameWithType: Configuration.ProgramDescription
+- uid: SimpleLineLibrary.Configuration.ProgramDescription*
+  name: ProgramDescription
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_ProgramDescription_
+  commentId: Overload:SimpleLineLibrary.Configuration.ProgramDescription
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Configuration.ProgramDescription
+  nameWithType: Configuration.ProgramDescription
+- uid: SimpleLineLibrary.Configuration.ProgramName
+  name: ProgramName
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_ProgramName
+  commentId: P:SimpleLineLibrary.Configuration.ProgramName
+  fullName: SimpleLineLibrary.Configuration.ProgramName
+  nameWithType: Configuration.ProgramName
+- uid: SimpleLineLibrary.Configuration.ProgramName*
+  name: ProgramName
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_ProgramName_
+  commentId: Overload:SimpleLineLibrary.Configuration.ProgramName
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Configuration.ProgramName
+  nameWithType: Configuration.ProgramName
+- uid: SimpleLineLibrary.Configuration.ProgramVersion
+  name: ProgramVersion
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_ProgramVersion
+  commentId: P:SimpleLineLibrary.Configuration.ProgramVersion
+  fullName: SimpleLineLibrary.Configuration.ProgramVersion
+  nameWithType: Configuration.ProgramVersion
+- uid: SimpleLineLibrary.Configuration.ProgramVersion*
+  name: ProgramVersion
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_ProgramVersion_
+  commentId: Overload:SimpleLineLibrary.Configuration.ProgramVersion
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Configuration.ProgramVersion
+  nameWithType: Configuration.ProgramVersion
 - uid: SimpleLineLibrary.Setup
   name: SimpleLineLibrary.Setup
   href: api/SimpleLineLibrary.Setup.html
@@ -63,6 +247,25 @@ references:
   isSpec: "True"
   fullName: SimpleLineLibrary.Setup.Attributes.CommandAttribute.Command
   nameWithType: CommandAttribute.Command
+- uid: SimpleLineLibrary.Setup.Attributes.CommandDefinitionsAttribute
+  name: CommandDefinitionsAttribute
+  href: api/SimpleLineLibrary.Setup.Attributes.CommandDefinitionsAttribute.html
+  commentId: T:SimpleLineLibrary.Setup.Attributes.CommandDefinitionsAttribute
+  fullName: SimpleLineLibrary.Setup.Attributes.CommandDefinitionsAttribute
+  nameWithType: CommandDefinitionsAttribute
+- uid: SimpleLineLibrary.Setup.Attributes.CommandDefinitionsAttribute.BindToCommand
+  name: BindToCommand
+  href: api/SimpleLineLibrary.Setup.Attributes.CommandDefinitionsAttribute.html#SimpleLineLibrary_Setup_Attributes_CommandDefinitionsAttribute_BindToCommand
+  commentId: P:SimpleLineLibrary.Setup.Attributes.CommandDefinitionsAttribute.BindToCommand
+  fullName: SimpleLineLibrary.Setup.Attributes.CommandDefinitionsAttribute.BindToCommand
+  nameWithType: CommandDefinitionsAttribute.BindToCommand
+- uid: SimpleLineLibrary.Setup.Attributes.CommandDefinitionsAttribute.BindToCommand*
+  name: BindToCommand
+  href: api/SimpleLineLibrary.Setup.Attributes.CommandDefinitionsAttribute.html#SimpleLineLibrary_Setup_Attributes_CommandDefinitionsAttribute_BindToCommand_
+  commentId: Overload:SimpleLineLibrary.Setup.Attributes.CommandDefinitionsAttribute.BindToCommand
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.Attributes.CommandDefinitionsAttribute.BindToCommand
+  nameWithType: CommandDefinitionsAttribute.BindToCommand
 - uid: SimpleLineLibrary.Setup.Attributes.CustomKeysAttribute
   name: CustomKeysAttribute
   href: api/SimpleLineLibrary.Setup.Attributes.CustomKeysAttribute.html
@@ -199,21 +402,78 @@ references:
   isSpec: "True"
   fullName: SimpleLineLibrary.Setup.Attributes.HandlerAttribute.Key
   nameWithType: HandlerAttribute.Key
+- uid: SimpleLineLibrary.Setup.CommandAttribute
+  name: CommandAttribute
+  href: api/SimpleLineLibrary.Setup.CommandAttribute.html
+  commentId: T:SimpleLineLibrary.Setup.CommandAttribute
+  fullName: SimpleLineLibrary.Setup.CommandAttribute
+  nameWithType: CommandAttribute
+- uid: SimpleLineLibrary.Setup.CommandAttribute.#ctor(System.String)
+  name: CommandAttribute(string)
+  href: api/SimpleLineLibrary.Setup.CommandAttribute.html#SimpleLineLibrary_Setup_CommandAttribute__ctor_System_String_
+  commentId: M:SimpleLineLibrary.Setup.CommandAttribute.#ctor(System.String)
+  name.vb: New(String)
+  fullName: SimpleLineLibrary.Setup.CommandAttribute.CommandAttribute(string)
+  fullName.vb: SimpleLineLibrary.Setup.CommandAttribute.New(String)
+  nameWithType: CommandAttribute.CommandAttribute(string)
+  nameWithType.vb: CommandAttribute.New(String)
+- uid: SimpleLineLibrary.Setup.CommandAttribute.#ctor*
+  name: CommandAttribute
+  href: api/SimpleLineLibrary.Setup.CommandAttribute.html#SimpleLineLibrary_Setup_CommandAttribute__ctor_
+  commentId: Overload:SimpleLineLibrary.Setup.CommandAttribute.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.Setup.CommandAttribute.CommandAttribute
+  fullName.vb: SimpleLineLibrary.Setup.CommandAttribute.New
+  nameWithType: CommandAttribute.CommandAttribute
+  nameWithType.vb: CommandAttribute.New
+- uid: SimpleLineLibrary.Setup.CommandAttribute.Command
+  name: Command
+  href: api/SimpleLineLibrary.Setup.CommandAttribute.html#SimpleLineLibrary_Setup_CommandAttribute_Command
+  commentId: P:SimpleLineLibrary.Setup.CommandAttribute.Command
+  fullName: SimpleLineLibrary.Setup.CommandAttribute.Command
+  nameWithType: CommandAttribute.Command
+- uid: SimpleLineLibrary.Setup.CommandAttribute.Command*
+  name: Command
+  href: api/SimpleLineLibrary.Setup.CommandAttribute.html#SimpleLineLibrary_Setup_CommandAttribute_Command_
+  commentId: Overload:SimpleLineLibrary.Setup.CommandAttribute.Command
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.CommandAttribute.Command
+  nameWithType: CommandAttribute.Command
+- uid: SimpleLineLibrary.Setup.CommandDefinitionsAttribute
+  name: CommandDefinitionsAttribute
+  href: api/SimpleLineLibrary.Setup.CommandDefinitionsAttribute.html
+  commentId: T:SimpleLineLibrary.Setup.CommandDefinitionsAttribute
+  fullName: SimpleLineLibrary.Setup.CommandDefinitionsAttribute
+  nameWithType: CommandDefinitionsAttribute
+- uid: SimpleLineLibrary.Setup.CommandDefinitionsAttribute.BindTo
+  name: BindTo
+  href: api/SimpleLineLibrary.Setup.CommandDefinitionsAttribute.html#SimpleLineLibrary_Setup_CommandDefinitionsAttribute_BindTo
+  commentId: P:SimpleLineLibrary.Setup.CommandDefinitionsAttribute.BindTo
+  fullName: SimpleLineLibrary.Setup.CommandDefinitionsAttribute.BindTo
+  nameWithType: CommandDefinitionsAttribute.BindTo
+- uid: SimpleLineLibrary.Setup.CommandDefinitionsAttribute.BindTo*
+  name: BindTo
+  href: api/SimpleLineLibrary.Setup.CommandDefinitionsAttribute.html#SimpleLineLibrary_Setup_CommandDefinitionsAttribute_BindTo_
+  commentId: Overload:SimpleLineLibrary.Setup.CommandDefinitionsAttribute.BindTo
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.CommandDefinitionsAttribute.BindTo
+  nameWithType: CommandDefinitionsAttribute.BindTo
 - uid: SimpleLineLibrary.Setup.Configuration
   name: Configuration
   href: api/SimpleLineLibrary.Setup.Configuration.html
   commentId: T:SimpleLineLibrary.Setup.Configuration
   fullName: SimpleLineLibrary.Setup.Configuration
   nameWithType: Configuration
-- uid: SimpleLineLibrary.Setup.Configuration.#ctor(System.Reflection.Assembly)
-  name: Configuration(Assembly)
-  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration__ctor_System_Reflection_Assembly_
-  commentId: M:SimpleLineLibrary.Setup.Configuration.#ctor(System.Reflection.Assembly)
-  name.vb: New(Assembly)
-  fullName: SimpleLineLibrary.Setup.Configuration.Configuration(System.Reflection.Assembly)
-  fullName.vb: SimpleLineLibrary.Setup.Configuration.New(System.Reflection.Assembly)
-  nameWithType: Configuration.Configuration(Assembly)
-  nameWithType.vb: Configuration.New(Assembly)
+- uid: SimpleLineLibrary.Setup.Configuration.#ctor
+  name: Configuration()
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration__ctor
+  commentId: M:SimpleLineLibrary.Setup.Configuration.#ctor
+  name.vb: New()
+  fullName: SimpleLineLibrary.Setup.Configuration.Configuration()
+  fullName.vb: SimpleLineLibrary.Setup.Configuration.New()
+  nameWithType: Configuration.Configuration()
+  nameWithType.vb: Configuration.New()
 - uid: SimpleLineLibrary.Setup.Configuration.#ctor*
   name: Configuration
   href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration__ctor_
@@ -224,45 +484,61 @@ references:
   fullName.vb: SimpleLineLibrary.Setup.Configuration.New
   nameWithType: Configuration.Configuration
   nameWithType.vb: Configuration.New
-- uid: SimpleLineLibrary.Setup.Configuration.CommandNotFound
-  name: CommandNotFound
-  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_CommandNotFound
-  commentId: P:SimpleLineLibrary.Setup.Configuration.CommandNotFound
-  fullName: SimpleLineLibrary.Setup.Configuration.CommandNotFound
-  nameWithType: Configuration.CommandNotFound
-- uid: SimpleLineLibrary.Setup.Configuration.CommandNotFound*
-  name: CommandNotFound
-  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_CommandNotFound_
-  commentId: Overload:SimpleLineLibrary.Setup.Configuration.CommandNotFound
+- uid: SimpleLineLibrary.Setup.Configuration.AddTypeForConverting*
+  name: AddTypeForConverting
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_AddTypeForConverting_
+  commentId: Overload:SimpleLineLibrary.Setup.Configuration.AddTypeForConverting
   isSpec: "True"
-  fullName: SimpleLineLibrary.Setup.Configuration.CommandNotFound
-  nameWithType: Configuration.CommandNotFound
-- uid: SimpleLineLibrary.Setup.Configuration.ExceptionHandler
-  name: ExceptionHandler
-  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_ExceptionHandler
-  commentId: P:SimpleLineLibrary.Setup.Configuration.ExceptionHandler
-  fullName: SimpleLineLibrary.Setup.Configuration.ExceptionHandler
-  nameWithType: Configuration.ExceptionHandler
-- uid: SimpleLineLibrary.Setup.Configuration.ExceptionHandler*
-  name: ExceptionHandler
-  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_ExceptionHandler_
-  commentId: Overload:SimpleLineLibrary.Setup.Configuration.ExceptionHandler
+  fullName: SimpleLineLibrary.Setup.Configuration.AddTypeForConverting
+  nameWithType: Configuration.AddTypeForConverting
+- uid: SimpleLineLibrary.Setup.Configuration.AddTypeForConverting``1(System.Func{System.String,``0})
+  name: AddTypeForConverting<T>(Func<string, T>)
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_AddTypeForConverting__1_System_Func_System_String___0__
+  commentId: M:SimpleLineLibrary.Setup.Configuration.AddTypeForConverting``1(System.Func{System.String,``0})
+  name.vb: AddTypeForConverting(Of T)(Func(Of String, T))
+  fullName: SimpleLineLibrary.Setup.Configuration.AddTypeForConverting<T>(System.Func<string, T>)
+  fullName.vb: SimpleLineLibrary.Setup.Configuration.AddTypeForConverting(Of T)(System.Func(Of String, T))
+  nameWithType: Configuration.AddTypeForConverting<T>(Func<string, T>)
+  nameWithType.vb: Configuration.AddTypeForConverting(Of T)(Func(Of String, T))
+- uid: SimpleLineLibrary.Setup.Configuration.ConvertibleTypes
+  name: ConvertibleTypes
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_ConvertibleTypes
+  commentId: P:SimpleLineLibrary.Setup.Configuration.ConvertibleTypes
+  fullName: SimpleLineLibrary.Setup.Configuration.ConvertibleTypes
+  nameWithType: Configuration.ConvertibleTypes
+- uid: SimpleLineLibrary.Setup.Configuration.ConvertibleTypes*
+  name: ConvertibleTypes
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_ConvertibleTypes_
+  commentId: Overload:SimpleLineLibrary.Setup.Configuration.ConvertibleTypes
   isSpec: "True"
-  fullName: SimpleLineLibrary.Setup.Configuration.ExceptionHandler
-  nameWithType: Configuration.ExceptionHandler
-- uid: SimpleLineLibrary.Setup.Configuration.HandlerNotFound
-  name: HandlerNotFound
-  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_HandlerNotFound
-  commentId: P:SimpleLineLibrary.Setup.Configuration.HandlerNotFound
-  fullName: SimpleLineLibrary.Setup.Configuration.HandlerNotFound
-  nameWithType: Configuration.HandlerNotFound
-- uid: SimpleLineLibrary.Setup.Configuration.HandlerNotFound*
-  name: HandlerNotFound
-  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_HandlerNotFound_
-  commentId: Overload:SimpleLineLibrary.Setup.Configuration.HandlerNotFound
+  fullName: SimpleLineLibrary.Setup.Configuration.ConvertibleTypes
+  nameWithType: Configuration.ConvertibleTypes
+- uid: SimpleLineLibrary.Setup.Configuration.Default(System.Reflection.Assembly)
+  name: Default(Assembly)
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_Default_System_Reflection_Assembly_
+  commentId: M:SimpleLineLibrary.Setup.Configuration.Default(System.Reflection.Assembly)
+  fullName: SimpleLineLibrary.Setup.Configuration.Default(System.Reflection.Assembly)
+  nameWithType: Configuration.Default(Assembly)
+- uid: SimpleLineLibrary.Setup.Configuration.Default*
+  name: Default
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_Default_
+  commentId: Overload:SimpleLineLibrary.Setup.Configuration.Default
   isSpec: "True"
-  fullName: SimpleLineLibrary.Setup.Configuration.HandlerNotFound
-  nameWithType: Configuration.HandlerNotFound
+  fullName: SimpleLineLibrary.Setup.Configuration.Default
+  nameWithType: Configuration.Default
+- uid: SimpleLineLibrary.Setup.Configuration.DefinedTypes
+  name: DefinedTypes
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_DefinedTypes
+  commentId: P:SimpleLineLibrary.Setup.Configuration.DefinedTypes
+  fullName: SimpleLineLibrary.Setup.Configuration.DefinedTypes
+  nameWithType: Configuration.DefinedTypes
+- uid: SimpleLineLibrary.Setup.Configuration.DefinedTypes*
+  name: DefinedTypes
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_DefinedTypes_
+  commentId: Overload:SimpleLineLibrary.Setup.Configuration.DefinedTypes
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.Configuration.DefinedTypes
+  nameWithType: Configuration.DefinedTypes
 - uid: SimpleLineLibrary.Setup.Configuration.HelpKeys
   name: HelpKeys
   href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_HelpKeys
@@ -276,46 +552,197 @@ references:
   isSpec: "True"
   fullName: SimpleLineLibrary.Setup.Configuration.HelpKeys
   nameWithType: Configuration.HelpKeys
-- uid: SimpleLineLibrary.Setup.Configuration.NoneArgsHandler
-  name: NoneArgsHandler
-  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_NoneArgsHandler
-  commentId: P:SimpleLineLibrary.Setup.Configuration.NoneArgsHandler
-  fullName: SimpleLineLibrary.Setup.Configuration.NoneArgsHandler
-  nameWithType: Configuration.NoneArgsHandler
-- uid: SimpleLineLibrary.Setup.Configuration.NoneArgsHandler*
-  name: NoneArgsHandler
-  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_NoneArgsHandler_
-  commentId: Overload:SimpleLineLibrary.Setup.Configuration.NoneArgsHandler
+- uid: SimpleLineLibrary.Setup.Configuration.OnCommandNotFound
+  name: OnCommandNotFound
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_OnCommandNotFound
+  commentId: P:SimpleLineLibrary.Setup.Configuration.OnCommandNotFound
+  fullName: SimpleLineLibrary.Setup.Configuration.OnCommandNotFound
+  nameWithType: Configuration.OnCommandNotFound
+- uid: SimpleLineLibrary.Setup.Configuration.OnCommandNotFound*
+  name: OnCommandNotFound
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_OnCommandNotFound_
+  commentId: Overload:SimpleLineLibrary.Setup.Configuration.OnCommandNotFound
   isSpec: "True"
-  fullName: SimpleLineLibrary.Setup.Configuration.NoneArgsHandler
-  nameWithType: Configuration.NoneArgsHandler
-- uid: SimpleLineLibrary.Setup.Configuration.RegisterType*
-  name: RegisterType
-  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_RegisterType_
-  commentId: Overload:SimpleLineLibrary.Setup.Configuration.RegisterType
+  fullName: SimpleLineLibrary.Setup.Configuration.OnCommandNotFound
+  nameWithType: Configuration.OnCommandNotFound
+- uid: SimpleLineLibrary.Setup.Configuration.OnNoArguments
+  name: OnNoArguments
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_OnNoArguments
+  commentId: P:SimpleLineLibrary.Setup.Configuration.OnNoArguments
+  fullName: SimpleLineLibrary.Setup.Configuration.OnNoArguments
+  nameWithType: Configuration.OnNoArguments
+- uid: SimpleLineLibrary.Setup.Configuration.OnNoArguments*
+  name: OnNoArguments
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_OnNoArguments_
+  commentId: Overload:SimpleLineLibrary.Setup.Configuration.OnNoArguments
   isSpec: "True"
-  fullName: SimpleLineLibrary.Setup.Configuration.RegisterType
-  nameWithType: Configuration.RegisterType
-- uid: SimpleLineLibrary.Setup.Configuration.RegisterType``1(System.Func{System.String,``0})
-  name: RegisterType<T>(Func<string, T>)
-  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_RegisterType__1_System_Func_System_String___0__
-  commentId: M:SimpleLineLibrary.Setup.Configuration.RegisterType``1(System.Func{System.String,``0})
-  name.vb: RegisterType(Of T)(Func(Of String, T))
-  fullName: SimpleLineLibrary.Setup.Configuration.RegisterType<T>(System.Func<string, T>)
-  fullName.vb: SimpleLineLibrary.Setup.Configuration.RegisterType(Of T)(System.Func(Of String, T))
-  nameWithType: Configuration.RegisterType<T>(Func<string, T>)
-  nameWithType.vb: Configuration.RegisterType(Of T)(Func(Of String, T))
+  fullName: SimpleLineLibrary.Setup.Configuration.OnNoArguments
+  nameWithType: Configuration.OnNoArguments
+- uid: SimpleLineLibrary.Setup.Configuration.OnSimpleLineException
+  name: OnSimpleLineException
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_OnSimpleLineException
+  commentId: P:SimpleLineLibrary.Setup.Configuration.OnSimpleLineException
+  fullName: SimpleLineLibrary.Setup.Configuration.OnSimpleLineException
+  nameWithType: Configuration.OnSimpleLineException
+- uid: SimpleLineLibrary.Setup.Configuration.OnSimpleLineException*
+  name: OnSimpleLineException
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_OnSimpleLineException_
+  commentId: Overload:SimpleLineLibrary.Setup.Configuration.OnSimpleLineException
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.Configuration.OnSimpleLineException
+  nameWithType: Configuration.OnSimpleLineException
+- uid: SimpleLineLibrary.Setup.Configuration.OnUserException
+  name: OnUserException
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_OnUserException
+  commentId: P:SimpleLineLibrary.Setup.Configuration.OnUserException
+  fullName: SimpleLineLibrary.Setup.Configuration.OnUserException
+  nameWithType: Configuration.OnUserException
+- uid: SimpleLineLibrary.Setup.Configuration.OnUserException*
+  name: OnUserException
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_OnUserException_
+  commentId: Overload:SimpleLineLibrary.Setup.Configuration.OnUserException
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.Configuration.OnUserException
+  nameWithType: Configuration.OnUserException
+- uid: SimpleLineLibrary.Setup.Configuration.ProgramDescription
+  name: ProgramDescription
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_ProgramDescription
+  commentId: P:SimpleLineLibrary.Setup.Configuration.ProgramDescription
+  fullName: SimpleLineLibrary.Setup.Configuration.ProgramDescription
+  nameWithType: Configuration.ProgramDescription
+- uid: SimpleLineLibrary.Setup.Configuration.ProgramDescription*
+  name: ProgramDescription
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_ProgramDescription_
+  commentId: Overload:SimpleLineLibrary.Setup.Configuration.ProgramDescription
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.Configuration.ProgramDescription
+  nameWithType: Configuration.ProgramDescription
+- uid: SimpleLineLibrary.Setup.Configuration.ProgramName
+  name: ProgramName
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_ProgramName
+  commentId: P:SimpleLineLibrary.Setup.Configuration.ProgramName
+  fullName: SimpleLineLibrary.Setup.Configuration.ProgramName
+  nameWithType: Configuration.ProgramName
+- uid: SimpleLineLibrary.Setup.Configuration.ProgramName*
+  name: ProgramName
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_ProgramName_
+  commentId: Overload:SimpleLineLibrary.Setup.Configuration.ProgramName
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.Configuration.ProgramName
+  nameWithType: Configuration.ProgramName
+- uid: SimpleLineLibrary.Setup.Configuration.ProgramVersion
+  name: ProgramVersion
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_ProgramVersion
+  commentId: P:SimpleLineLibrary.Setup.Configuration.ProgramVersion
+  fullName: SimpleLineLibrary.Setup.Configuration.ProgramVersion
+  nameWithType: Configuration.ProgramVersion
+- uid: SimpleLineLibrary.Setup.Configuration.ProgramVersion*
+  name: ProgramVersion
+  href: api/SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_ProgramVersion_
+  commentId: Overload:SimpleLineLibrary.Setup.Configuration.ProgramVersion
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.Configuration.ProgramVersion
+  nameWithType: Configuration.ProgramVersion
+- uid: SimpleLineLibrary.Setup.CustomKeysAttribute
+  name: CustomKeysAttribute
+  href: api/SimpleLineLibrary.Setup.CustomKeysAttribute.html
+  commentId: T:SimpleLineLibrary.Setup.CustomKeysAttribute
+  fullName: SimpleLineLibrary.Setup.CustomKeysAttribute
+  nameWithType: CustomKeysAttribute
+- uid: SimpleLineLibrary.Setup.CustomKeysAttribute.#ctor(System.String,System.String)
+  name: CustomKeysAttribute(string, string)
+  href: api/SimpleLineLibrary.Setup.CustomKeysAttribute.html#SimpleLineLibrary_Setup_CustomKeysAttribute__ctor_System_String_System_String_
+  commentId: M:SimpleLineLibrary.Setup.CustomKeysAttribute.#ctor(System.String,System.String)
+  name.vb: New(String, String)
+  fullName: SimpleLineLibrary.Setup.CustomKeysAttribute.CustomKeysAttribute(string, string)
+  fullName.vb: SimpleLineLibrary.Setup.CustomKeysAttribute.New(String, String)
+  nameWithType: CustomKeysAttribute.CustomKeysAttribute(string, string)
+  nameWithType.vb: CustomKeysAttribute.New(String, String)
+- uid: SimpleLineLibrary.Setup.CustomKeysAttribute.#ctor*
+  name: CustomKeysAttribute
+  href: api/SimpleLineLibrary.Setup.CustomKeysAttribute.html#SimpleLineLibrary_Setup_CustomKeysAttribute__ctor_
+  commentId: Overload:SimpleLineLibrary.Setup.CustomKeysAttribute.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.Setup.CustomKeysAttribute.CustomKeysAttribute
+  fullName.vb: SimpleLineLibrary.Setup.CustomKeysAttribute.New
+  nameWithType: CustomKeysAttribute.CustomKeysAttribute
+  nameWithType.vb: CustomKeysAttribute.New
+- uid: SimpleLineLibrary.Setup.CustomKeysAttribute.LongKey
+  name: LongKey
+  href: api/SimpleLineLibrary.Setup.CustomKeysAttribute.html#SimpleLineLibrary_Setup_CustomKeysAttribute_LongKey
+  commentId: P:SimpleLineLibrary.Setup.CustomKeysAttribute.LongKey
+  fullName: SimpleLineLibrary.Setup.CustomKeysAttribute.LongKey
+  nameWithType: CustomKeysAttribute.LongKey
+- uid: SimpleLineLibrary.Setup.CustomKeysAttribute.LongKey*
+  name: LongKey
+  href: api/SimpleLineLibrary.Setup.CustomKeysAttribute.html#SimpleLineLibrary_Setup_CustomKeysAttribute_LongKey_
+  commentId: Overload:SimpleLineLibrary.Setup.CustomKeysAttribute.LongKey
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.CustomKeysAttribute.LongKey
+  nameWithType: CustomKeysAttribute.LongKey
+- uid: SimpleLineLibrary.Setup.CustomKeysAttribute.ShortKey
+  name: ShortKey
+  href: api/SimpleLineLibrary.Setup.CustomKeysAttribute.html#SimpleLineLibrary_Setup_CustomKeysAttribute_ShortKey
+  commentId: P:SimpleLineLibrary.Setup.CustomKeysAttribute.ShortKey
+  fullName: SimpleLineLibrary.Setup.CustomKeysAttribute.ShortKey
+  nameWithType: CustomKeysAttribute.ShortKey
+- uid: SimpleLineLibrary.Setup.CustomKeysAttribute.ShortKey*
+  name: ShortKey
+  href: api/SimpleLineLibrary.Setup.CustomKeysAttribute.html#SimpleLineLibrary_Setup_CustomKeysAttribute_ShortKey_
+  commentId: Overload:SimpleLineLibrary.Setup.CustomKeysAttribute.ShortKey
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.CustomKeysAttribute.ShortKey
+  nameWithType: CustomKeysAttribute.ShortKey
+- uid: SimpleLineLibrary.Setup.DescriptionAttribute
+  name: DescriptionAttribute
+  href: api/SimpleLineLibrary.Setup.DescriptionAttribute.html
+  commentId: T:SimpleLineLibrary.Setup.DescriptionAttribute
+  fullName: SimpleLineLibrary.Setup.DescriptionAttribute
+  nameWithType: DescriptionAttribute
+- uid: SimpleLineLibrary.Setup.DescriptionAttribute.#ctor(System.String)
+  name: DescriptionAttribute(string)
+  href: api/SimpleLineLibrary.Setup.DescriptionAttribute.html#SimpleLineLibrary_Setup_DescriptionAttribute__ctor_System_String_
+  commentId: M:SimpleLineLibrary.Setup.DescriptionAttribute.#ctor(System.String)
+  name.vb: New(String)
+  fullName: SimpleLineLibrary.Setup.DescriptionAttribute.DescriptionAttribute(string)
+  fullName.vb: SimpleLineLibrary.Setup.DescriptionAttribute.New(String)
+  nameWithType: DescriptionAttribute.DescriptionAttribute(string)
+  nameWithType.vb: DescriptionAttribute.New(String)
+- uid: SimpleLineLibrary.Setup.DescriptionAttribute.#ctor*
+  name: DescriptionAttribute
+  href: api/SimpleLineLibrary.Setup.DescriptionAttribute.html#SimpleLineLibrary_Setup_DescriptionAttribute__ctor_
+  commentId: Overload:SimpleLineLibrary.Setup.DescriptionAttribute.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SimpleLineLibrary.Setup.DescriptionAttribute.DescriptionAttribute
+  fullName.vb: SimpleLineLibrary.Setup.DescriptionAttribute.New
+  nameWithType: DescriptionAttribute.DescriptionAttribute
+  nameWithType.vb: DescriptionAttribute.New
+- uid: SimpleLineLibrary.Setup.DescriptionAttribute.Description
+  name: Description
+  href: api/SimpleLineLibrary.Setup.DescriptionAttribute.html#SimpleLineLibrary_Setup_DescriptionAttribute_Description
+  commentId: P:SimpleLineLibrary.Setup.DescriptionAttribute.Description
+  fullName: SimpleLineLibrary.Setup.DescriptionAttribute.Description
+  nameWithType: DescriptionAttribute.Description
+- uid: SimpleLineLibrary.Setup.DescriptionAttribute.Description*
+  name: Description
+  href: api/SimpleLineLibrary.Setup.DescriptionAttribute.html#SimpleLineLibrary_Setup_DescriptionAttribute_Description_
+  commentId: Overload:SimpleLineLibrary.Setup.DescriptionAttribute.Description
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Setup.DescriptionAttribute.Description
+  nameWithType: DescriptionAttribute.Description
 - uid: SimpleLineLibrary.SimpleLine
   name: SimpleLine
   href: api/SimpleLineLibrary.SimpleLine.html
   commentId: T:SimpleLineLibrary.SimpleLine
   fullName: SimpleLineLibrary.SimpleLine
   nameWithType: SimpleLine
-- uid: SimpleLineLibrary.SimpleLine.Build(SimpleLineLibrary.Setup.Configuration)
+- uid: SimpleLineLibrary.SimpleLine.Build(SimpleLineLibrary.Configuration)
   name: Build(Configuration)
-  href: api/SimpleLineLibrary.SimpleLine.html#SimpleLineLibrary_SimpleLine_Build_SimpleLineLibrary_Setup_Configuration_
-  commentId: M:SimpleLineLibrary.SimpleLine.Build(SimpleLineLibrary.Setup.Configuration)
-  fullName: SimpleLineLibrary.SimpleLine.Build(SimpleLineLibrary.Setup.Configuration)
+  href: api/SimpleLineLibrary.SimpleLine.html#SimpleLineLibrary_SimpleLine_Build_SimpleLineLibrary_Configuration_
+  commentId: M:SimpleLineLibrary.SimpleLine.Build(SimpleLineLibrary.Configuration)
+  fullName: SimpleLineLibrary.SimpleLine.Build(SimpleLineLibrary.Configuration)
   nameWithType: SimpleLine.Build(Configuration)
 - uid: SimpleLineLibrary.SimpleLine.Build*
   name: Build

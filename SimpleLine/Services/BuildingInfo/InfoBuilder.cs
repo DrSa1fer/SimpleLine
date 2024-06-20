@@ -30,8 +30,6 @@ namespace SimpleLineLibrary.Services.BuildingInfo
 
             if (h is not null)
             {
-                
-
                 mb.StartBlock("usage:");
 
                 if (h.Parameters.Any())

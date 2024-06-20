@@ -4,6 +4,7 @@ items:
   commentId: N:SimpleLineLibrary
   id: SimpleLineLibrary
   children:
+  - SimpleLineLibrary.Configuration
   - SimpleLineLibrary.SimpleLine
   langs:
   - csharp
@@ -15,6 +16,13 @@ items:
   assemblies:
   - SimpleLine
 references:
+- uid: SimpleLineLibrary.Configuration
+  commentId: T:SimpleLineLibrary.Configuration
+  parent: SimpleLineLibrary
+  href: SimpleLineLibrary.Configuration.html
+  name: Configuration
+  nameWithType: Configuration
+  fullName: SimpleLineLibrary.Configuration
 - uid: SimpleLineLibrary.SimpleLine
   commentId: T:SimpleLineLibrary.SimpleLine
   parent: SimpleLineLibrary

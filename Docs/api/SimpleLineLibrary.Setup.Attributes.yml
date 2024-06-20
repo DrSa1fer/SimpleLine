@@ -4,11 +4,10 @@ items:
   commentId: N:SimpleLineLibrary.Setup.Attributes
   id: SimpleLineLibrary.Setup.Attributes
   children:
-  - SimpleLineLibrary.Setup.Attributes.CategoryAttribute
   - SimpleLineLibrary.Setup.Attributes.CommandAttribute
+  - SimpleLineLibrary.Setup.Attributes.CommandDefinitionsAttribute
   - SimpleLineLibrary.Setup.Attributes.CustomKeysAttribute
   - SimpleLineLibrary.Setup.Attributes.DescriptionAttribute
-  - SimpleLineLibrary.Setup.Attributes.HandlerAttribute
   langs:
   - csharp
   - vb
@@ -19,18 +18,18 @@ items:
   assemblies:
   - SimpleLine
 references:
-- uid: SimpleLineLibrary.Setup.Attributes.CategoryAttribute
-  commentId: T:SimpleLineLibrary.Setup.Attributes.CategoryAttribute
-  href: SimpleLineLibrary.Setup.Attributes.CategoryAttribute.html
-  name: CategoryAttribute
-  nameWithType: CategoryAttribute
-  fullName: SimpleLineLibrary.Setup.Attributes.CategoryAttribute
 - uid: SimpleLineLibrary.Setup.Attributes.CommandAttribute
   commentId: T:SimpleLineLibrary.Setup.Attributes.CommandAttribute
   href: SimpleLineLibrary.Setup.Attributes.CommandAttribute.html
   name: CommandAttribute
   nameWithType: CommandAttribute
   fullName: SimpleLineLibrary.Setup.Attributes.CommandAttribute
+- uid: SimpleLineLibrary.Setup.Attributes.CommandDefinitionsAttribute
+  commentId: T:SimpleLineLibrary.Setup.Attributes.CommandDefinitionsAttribute
+  href: SimpleLineLibrary.Setup.Attributes.CommandDefinitionsAttribute.html
+  name: CommandDefinitionsAttribute
+  nameWithType: CommandDefinitionsAttribute
+  fullName: SimpleLineLibrary.Setup.Attributes.CommandDefinitionsAttribute
 - uid: SimpleLineLibrary.Setup.Attributes.CustomKeysAttribute
   commentId: T:SimpleLineLibrary.Setup.Attributes.CustomKeysAttribute
   href: SimpleLineLibrary.Setup.Attributes.CustomKeysAttribute.html
@@ -43,9 +42,3 @@ references:
   name: DescriptionAttribute
   nameWithType: DescriptionAttribute
   fullName: SimpleLineLibrary.Setup.Attributes.DescriptionAttribute
-- uid: SimpleLineLibrary.Setup.Attributes.HandlerAttribute
-  commentId: T:SimpleLineLibrary.Setup.Attributes.HandlerAttribute
-  href: SimpleLineLibrary.Setup.Attributes.HandlerAttribute.html
-  name: HandlerAttribute
-  nameWithType: HandlerAttribute
-  fullName: SimpleLineLibrary.Setup.Attributes.HandlerAttribute

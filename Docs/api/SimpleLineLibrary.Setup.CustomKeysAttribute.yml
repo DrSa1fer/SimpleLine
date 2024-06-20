@@ -1,41 +1,42 @@
 ### YamlMime:ManagedReference
 items:
-- uid: SimpleLineLibrary.Setup.Attributes.CommandAttribute
-  commentId: T:SimpleLineLibrary.Setup.Attributes.CommandAttribute
-  id: CommandAttribute
-  parent: SimpleLineLibrary.Setup.Attributes
+- uid: SimpleLineLibrary.Setup.CustomKeysAttribute
+  commentId: T:SimpleLineLibrary.Setup.CustomKeysAttribute
+  id: CustomKeysAttribute
+  parent: SimpleLineLibrary.Setup
   children:
-  - SimpleLineLibrary.Setup.Attributes.CommandAttribute.#ctor(System.String)
-  - SimpleLineLibrary.Setup.Attributes.CommandAttribute.Command
+  - SimpleLineLibrary.Setup.CustomKeysAttribute.#ctor(System.String,System.String)
+  - SimpleLineLibrary.Setup.CustomKeysAttribute.LongKey
+  - SimpleLineLibrary.Setup.CustomKeysAttribute.ShortKey
   langs:
   - csharp
   - vb
-  name: CommandAttribute
-  nameWithType: CommandAttribute
-  fullName: SimpleLineLibrary.Setup.Attributes.CommandAttribute
+  name: CustomKeysAttribute
+  nameWithType: CustomKeysAttribute
+  fullName: SimpleLineLibrary.Setup.CustomKeysAttribute
   type: Class
   source:
     remote:
-      path: SimpleLine/Setup/Attributes/CommandAttribute.cs
+      path: SimpleLine/Setup/CustomKeysAttribute.cs
       branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
-    id: CommandAttribute
-    path: ../SimpleLine/Setup/Attributes/CommandAttribute.cs
+    id: CustomKeysAttribute
+    path: ../SimpleLine/Setup/CustomKeysAttribute.cs
     startLine: 5
   assemblies:
   - SimpleLine
-  namespace: SimpleLineLibrary.Setup.Attributes
-  summary: Marks a class as a command so that the library can use this
+  namespace: SimpleLineLibrary.Setup
+  summary: Sets the keys for the handler parameter
   example: []
   syntax:
     content: >-
-      [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
+      [AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false)]
 
-      public class CommandAttribute : Attribute
+      public class CustomKeysAttribute : Attribute
     content.vb: >-
-      <AttributeUsage(AttributeTargets.Method, AllowMultiple:=False, Inherited:=True)>
+      <AttributeUsage(AttributeTargets.Parameter, AllowMultiple:=False)>
 
-      Public Class CommandAttribute Inherits Attribute
+      Public Class CustomKeysAttribute Inherits Attribute
   inheritance:
   - System.Object
   - System.Attribute
@@ -87,82 +88,114 @@ items:
     ctor: System.AttributeUsageAttribute.#ctor(System.AttributeTargets)
     arguments:
     - type: System.AttributeTargets
-      value: 64
+      value: 2048
     namedArguments:
     - name: AllowMultiple
       type: System.Boolean
       value: false
-    - name: Inherited
-      type: System.Boolean
-      value: true
-- uid: SimpleLineLibrary.Setup.Attributes.CommandAttribute.Command
-  commentId: P:SimpleLineLibrary.Setup.Attributes.CommandAttribute.Command
-  id: Command
-  parent: SimpleLineLibrary.Setup.Attributes.CommandAttribute
+- uid: SimpleLineLibrary.Setup.CustomKeysAttribute.#ctor(System.String,System.String)
+  commentId: M:SimpleLineLibrary.Setup.CustomKeysAttribute.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: SimpleLineLibrary.Setup.CustomKeysAttribute
   langs:
   - csharp
   - vb
-  name: Command
-  nameWithType: CommandAttribute.Command
-  fullName: SimpleLineLibrary.Setup.Attributes.CommandAttribute.Command
-  type: Property
-  source:
-    remote:
-      path: SimpleLine/Setup/Attributes/CommandAttribute.cs
-      branch: main
-      repo: https://github.com/DrSa1fer/SimpleLine.git
-    id: Command
-    path: ../SimpleLine/Setup/Attributes/CommandAttribute.cs
-    startLine: 8
-  assemblies:
-  - SimpleLine
-  namespace: SimpleLineLibrary.Setup.Attributes
-  syntax:
-    content: public string Command { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public ReadOnly Property Command As String
-  overload: SimpleLineLibrary.Setup.Attributes.CommandAttribute.Command*
-- uid: SimpleLineLibrary.Setup.Attributes.CommandAttribute.#ctor(System.String)
-  commentId: M:SimpleLineLibrary.Setup.Attributes.CommandAttribute.#ctor(System.String)
-  id: '#ctor(System.String)'
-  parent: SimpleLineLibrary.Setup.Attributes.CommandAttribute
-  langs:
-  - csharp
-  - vb
-  name: CommandAttribute(string)
-  nameWithType: CommandAttribute.CommandAttribute(string)
-  fullName: SimpleLineLibrary.Setup.Attributes.CommandAttribute.CommandAttribute(string)
+  name: CustomKeysAttribute(string, string)
+  nameWithType: CustomKeysAttribute.CustomKeysAttribute(string, string)
+  fullName: SimpleLineLibrary.Setup.CustomKeysAttribute.CustomKeysAttribute(string, string)
   type: Constructor
   source:
     remote:
-      path: SimpleLine/Setup/Attributes/CommandAttribute.cs
+      path: SimpleLine/Setup/CustomKeysAttribute.cs
       branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: .ctor
-    path: ../SimpleLine/Setup/Attributes/CommandAttribute.cs
-    startLine: 10
+    path: ../SimpleLine/Setup/CustomKeysAttribute.cs
+    startLine: 13
   assemblies:
   - SimpleLine
-  namespace: SimpleLineLibrary.Setup.Attributes
+  namespace: SimpleLineLibrary.Setup
+  summary: ''
+  example: []
   syntax:
-    content: public CommandAttribute(string command)
+    content: public CustomKeysAttribute(string shortKey, string longKey)
     parameters:
-    - id: command
+    - id: shortKey
       type: System.String
-    content.vb: Public Sub New(command As String)
-  overload: SimpleLineLibrary.Setup.Attributes.CommandAttribute.#ctor*
-  nameWithType.vb: CommandAttribute.New(String)
-  fullName.vb: SimpleLineLibrary.Setup.Attributes.CommandAttribute.New(String)
-  name.vb: New(String)
+      description: short key "-k"
+    - id: longKey
+      type: System.String
+      description: full key "--key"
+    content.vb: Public Sub New(shortKey As String, longKey As String)
+  overload: SimpleLineLibrary.Setup.CustomKeysAttribute.#ctor*
+  nameWithType.vb: CustomKeysAttribute.New(String, String)
+  fullName.vb: SimpleLineLibrary.Setup.CustomKeysAttribute.New(String, String)
+  name.vb: New(String, String)
+- uid: SimpleLineLibrary.Setup.CustomKeysAttribute.ShortKey
+  commentId: P:SimpleLineLibrary.Setup.CustomKeysAttribute.ShortKey
+  id: ShortKey
+  parent: SimpleLineLibrary.Setup.CustomKeysAttribute
+  langs:
+  - csharp
+  - vb
+  name: ShortKey
+  nameWithType: CustomKeysAttribute.ShortKey
+  fullName: SimpleLineLibrary.Setup.CustomKeysAttribute.ShortKey
+  type: Property
+  source:
+    remote:
+      path: SimpleLine/Setup/CustomKeysAttribute.cs
+      branch: main
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: ShortKey
+    path: ../SimpleLine/Setup/CustomKeysAttribute.cs
+    startLine: 19
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Setup
+  syntax:
+    content: public string ShortKey { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ShortKey As String
+  overload: SimpleLineLibrary.Setup.CustomKeysAttribute.ShortKey*
+- uid: SimpleLineLibrary.Setup.CustomKeysAttribute.LongKey
+  commentId: P:SimpleLineLibrary.Setup.CustomKeysAttribute.LongKey
+  id: LongKey
+  parent: SimpleLineLibrary.Setup.CustomKeysAttribute
+  langs:
+  - csharp
+  - vb
+  name: LongKey
+  nameWithType: CustomKeysAttribute.LongKey
+  fullName: SimpleLineLibrary.Setup.CustomKeysAttribute.LongKey
+  type: Property
+  source:
+    remote:
+      path: SimpleLine/Setup/CustomKeysAttribute.cs
+      branch: main
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: LongKey
+    path: ../SimpleLine/Setup/CustomKeysAttribute.cs
+    startLine: 20
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary.Setup
+  syntax:
+    content: public string LongKey { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property LongKey As String
+  overload: SimpleLineLibrary.Setup.CustomKeysAttribute.LongKey*
 references:
-- uid: SimpleLineLibrary.Setup.Attributes
-  commentId: N:SimpleLineLibrary.Setup.Attributes
+- uid: SimpleLineLibrary.Setup
+  commentId: N:SimpleLineLibrary.Setup
   href: SimpleLineLibrary.html
-  name: SimpleLineLibrary.Setup.Attributes
-  nameWithType: SimpleLineLibrary.Setup.Attributes
-  fullName: SimpleLineLibrary.Setup.Attributes
+  name: SimpleLineLibrary.Setup
+  nameWithType: SimpleLineLibrary.Setup
+  fullName: SimpleLineLibrary.Setup
   spec.csharp:
   - uid: SimpleLineLibrary
     name: SimpleLineLibrary
@@ -171,10 +204,6 @@ references:
   - uid: SimpleLineLibrary.Setup
     name: Setup
     href: SimpleLineLibrary.Setup.html
-  - name: .
-  - uid: SimpleLineLibrary.Setup.Attributes
-    name: Attributes
-    href: SimpleLineLibrary.Setup.Attributes.html
   spec.vb:
   - uid: SimpleLineLibrary
     name: SimpleLineLibrary
@@ -183,10 +212,6 @@ references:
   - uid: SimpleLineLibrary.Setup
     name: Setup
     href: SimpleLineLibrary.Setup.html
-  - name: .
-  - uid: SimpleLineLibrary.Setup.Attributes
-    name: Attributes
-    href: SimpleLineLibrary.Setup.Attributes.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -1981,12 +2006,15 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: SimpleLineLibrary.Setup.Attributes.CommandAttribute.Command*
-  commentId: Overload:SimpleLineLibrary.Setup.Attributes.CommandAttribute.Command
-  href: SimpleLineLibrary.Setup.Attributes.CommandAttribute.html#SimpleLineLibrary_Setup_Attributes_CommandAttribute_Command
-  name: Command
-  nameWithType: CommandAttribute.Command
-  fullName: SimpleLineLibrary.Setup.Attributes.CommandAttribute.Command
+- uid: SimpleLineLibrary.Setup.CustomKeysAttribute.#ctor*
+  commentId: Overload:SimpleLineLibrary.Setup.CustomKeysAttribute.#ctor
+  href: SimpleLineLibrary.Setup.CustomKeysAttribute.html#SimpleLineLibrary_Setup_CustomKeysAttribute__ctor_System_String_System_String_
+  name: CustomKeysAttribute
+  nameWithType: CustomKeysAttribute.CustomKeysAttribute
+  fullName: SimpleLineLibrary.Setup.CustomKeysAttribute.CustomKeysAttribute
+  nameWithType.vb: CustomKeysAttribute.New
+  fullName.vb: SimpleLineLibrary.Setup.CustomKeysAttribute.New
+  name.vb: New
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -1998,12 +2026,15 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: SimpleLineLibrary.Setup.Attributes.CommandAttribute.#ctor*
-  commentId: Overload:SimpleLineLibrary.Setup.Attributes.CommandAttribute.#ctor
-  href: SimpleLineLibrary.Setup.Attributes.CommandAttribute.html#SimpleLineLibrary_Setup_Attributes_CommandAttribute__ctor_System_String_
-  name: CommandAttribute
-  nameWithType: CommandAttribute.CommandAttribute
-  fullName: SimpleLineLibrary.Setup.Attributes.CommandAttribute.CommandAttribute
-  nameWithType.vb: CommandAttribute.New
-  fullName.vb: SimpleLineLibrary.Setup.Attributes.CommandAttribute.New
-  name.vb: New
+- uid: SimpleLineLibrary.Setup.CustomKeysAttribute.ShortKey*
+  commentId: Overload:SimpleLineLibrary.Setup.CustomKeysAttribute.ShortKey
+  href: SimpleLineLibrary.Setup.CustomKeysAttribute.html#SimpleLineLibrary_Setup_CustomKeysAttribute_ShortKey
+  name: ShortKey
+  nameWithType: CustomKeysAttribute.ShortKey
+  fullName: SimpleLineLibrary.Setup.CustomKeysAttribute.ShortKey
+- uid: SimpleLineLibrary.Setup.CustomKeysAttribute.LongKey*
+  commentId: Overload:SimpleLineLibrary.Setup.CustomKeysAttribute.LongKey
+  href: SimpleLineLibrary.Setup.CustomKeysAttribute.html#SimpleLineLibrary_Setup_CustomKeysAttribute_LongKey
+  name: LongKey
+  nameWithType: CustomKeysAttribute.LongKey
+  fullName: SimpleLineLibrary.Setup.CustomKeysAttribute.LongKey

@@ -4,7 +4,7 @@ namespace SimpleLineLibrary.Services.Finding
 {
     internal sealed class CommandFinder
     {
-        public Command? Find(Queue<string> args, IReadOnlyList<Command> roots)
+        public Command? Find(Queue<string> args, IEnumerable<Command> roots)
         {            
             if(!args.TryPeek(out string? name))
             {

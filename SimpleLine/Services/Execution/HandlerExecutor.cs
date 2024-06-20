@@ -12,7 +12,7 @@ namespace SimpleLineLibrary.Services.Execution
         {            
             try
             {
-                if(input.CountOfArgs() != handler.Parameters.Count)
+                if(input.ArgCount != handler.Parameters.Count)
                 {
                     throw new ArgumentException("Different count of args and handler paramters");
                 }

@@ -4,7 +4,10 @@ items:
   commentId: N:SimpleLineLibrary.Setup
   id: SimpleLineLibrary.Setup
   children:
-  - SimpleLineLibrary.Setup.Configuration
+  - SimpleLineLibrary.Setup.CommandAttribute
+  - SimpleLineLibrary.Setup.CommandDefinitionsAttribute
+  - SimpleLineLibrary.Setup.CustomKeysAttribute
+  - SimpleLineLibrary.Setup.DescriptionAttribute
   langs:
   - csharp
   - vb
@@ -15,32 +18,27 @@ items:
   assemblies:
   - SimpleLine
 references:
-- uid: SimpleLineLibrary.Setup.Configuration
-  commentId: T:SimpleLineLibrary.Setup.Configuration
-  parent: SimpleLineLibrary.Setup
-  href: SimpleLineLibrary.Setup.Configuration.html
-  name: Configuration
-  nameWithType: Configuration
-  fullName: SimpleLineLibrary.Setup.Configuration
-- uid: SimpleLineLibrary.Setup
-  commentId: N:SimpleLineLibrary.Setup
-  href: SimpleLineLibrary.html
-  name: SimpleLineLibrary.Setup
-  nameWithType: SimpleLineLibrary.Setup
-  fullName: SimpleLineLibrary.Setup
-  spec.csharp:
-  - uid: SimpleLineLibrary
-    name: SimpleLineLibrary
-    href: SimpleLineLibrary.html
-  - name: .
-  - uid: SimpleLineLibrary.Setup
-    name: Setup
-    href: SimpleLineLibrary.Setup.html
-  spec.vb:
-  - uid: SimpleLineLibrary
-    name: SimpleLineLibrary
-    href: SimpleLineLibrary.html
-  - name: .
-  - uid: SimpleLineLibrary.Setup
-    name: Setup
-    href: SimpleLineLibrary.Setup.html
+- uid: SimpleLineLibrary.Setup.CommandAttribute
+  commentId: T:SimpleLineLibrary.Setup.CommandAttribute
+  href: SimpleLineLibrary.Setup.CommandAttribute.html
+  name: CommandAttribute
+  nameWithType: CommandAttribute
+  fullName: SimpleLineLibrary.Setup.CommandAttribute
+- uid: SimpleLineLibrary.Setup.CommandDefinitionsAttribute
+  commentId: T:SimpleLineLibrary.Setup.CommandDefinitionsAttribute
+  href: SimpleLineLibrary.Setup.CommandDefinitionsAttribute.html
+  name: CommandDefinitionsAttribute
+  nameWithType: CommandDefinitionsAttribute
+  fullName: SimpleLineLibrary.Setup.CommandDefinitionsAttribute
+- uid: SimpleLineLibrary.Setup.CustomKeysAttribute
+  commentId: T:SimpleLineLibrary.Setup.CustomKeysAttribute
+  href: SimpleLineLibrary.Setup.CustomKeysAttribute.html
+  name: CustomKeysAttribute
+  nameWithType: CustomKeysAttribute
+  fullName: SimpleLineLibrary.Setup.CustomKeysAttribute
+- uid: SimpleLineLibrary.Setup.DescriptionAttribute
+  commentId: T:SimpleLineLibrary.Setup.DescriptionAttribute
+  href: SimpleLineLibrary.Setup.DescriptionAttribute.html
+  name: DescriptionAttribute
+  nameWithType: DescriptionAttribute
+  fullName: SimpleLineLibrary.Setup.DescriptionAttribute

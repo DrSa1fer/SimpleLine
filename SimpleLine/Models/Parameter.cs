@@ -84,7 +84,7 @@ namespace SimpleLineLibrary.Models
             Type valueType, object? defValue)
         {
             name.ThrowIfWrongTokenName();
-            desc.ThrowIfWrongTextLength();
+            desc.ThrowIfWrongText();
 
             longKey.ThrowIfWrongKeyTokenName();
             shortKey.ThrowIfWrongKeyTokenName();
@@ -102,7 +102,7 @@ namespace SimpleLineLibrary.Models
 
         public bool Is(string key)
         {
-            return key.IsEqualsTokenName(ShortKey) || key.IsEqualsTokenName(LongKey);
+            return key.IsEqualsToken(ShortKey) || key.IsEqualsToken(LongKey);
         }
 
         public override bool Equals(object? obj)

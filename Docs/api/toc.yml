@@ -3,24 +3,19 @@ items:
 - uid: SimpleLineLibrary
   name: SimpleLineLibrary
   items:
+  - uid: SimpleLineLibrary.Configuration
+    name: Configuration
   - uid: SimpleLineLibrary.SimpleLine
     name: SimpleLine
 - uid: SimpleLineLibrary.Setup
   name: SimpleLineLibrary.Setup
   items:
-  - uid: SimpleLineLibrary.Setup.Configuration
-    name: Configuration
-- uid: SimpleLineLibrary.Setup.Attributes
-  name: SimpleLineLibrary.Setup.Attributes
-  items:
-  - uid: SimpleLineLibrary.Setup.Attributes.CategoryAttribute
-    name: CategoryAttribute
-  - uid: SimpleLineLibrary.Setup.Attributes.CommandAttribute
+  - uid: SimpleLineLibrary.Setup.CommandAttribute
     name: CommandAttribute
-  - uid: SimpleLineLibrary.Setup.Attributes.CustomKeysAttribute
+  - uid: SimpleLineLibrary.Setup.CommandDefinitionsAttribute
+    name: CommandDefinitionsAttribute
+  - uid: SimpleLineLibrary.Setup.CustomKeysAttribute
     name: CustomKeysAttribute
-  - uid: SimpleLineLibrary.Setup.Attributes.DescriptionAttribute
+  - uid: SimpleLineLibrary.Setup.DescriptionAttribute
     name: DescriptionAttribute
-  - uid: SimpleLineLibrary.Setup.Attributes.HandlerAttribute
-    name: HandlerAttribute
 memberLayout: SamePage

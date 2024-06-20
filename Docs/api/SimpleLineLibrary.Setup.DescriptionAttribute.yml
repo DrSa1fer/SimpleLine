@@ -1,41 +1,41 @@
 ### YamlMime:ManagedReference
 items:
-- uid: SimpleLineLibrary.Setup.Attributes.CommandAttribute
-  commentId: T:SimpleLineLibrary.Setup.Attributes.CommandAttribute
-  id: CommandAttribute
-  parent: SimpleLineLibrary.Setup.Attributes
+- uid: SimpleLineLibrary.Setup.DescriptionAttribute
+  commentId: T:SimpleLineLibrary.Setup.DescriptionAttribute
+  id: DescriptionAttribute
+  parent: SimpleLineLibrary.Setup
   children:
-  - SimpleLineLibrary.Setup.Attributes.CommandAttribute.#ctor(System.String)
-  - SimpleLineLibrary.Setup.Attributes.CommandAttribute.Command
+  - SimpleLineLibrary.Setup.DescriptionAttribute.#ctor(System.String)
+  - SimpleLineLibrary.Setup.DescriptionAttribute.Description
   langs:
   - csharp
   - vb
-  name: CommandAttribute
-  nameWithType: CommandAttribute
-  fullName: SimpleLineLibrary.Setup.Attributes.CommandAttribute
+  name: DescriptionAttribute
+  nameWithType: DescriptionAttribute
+  fullName: SimpleLineLibrary.Setup.DescriptionAttribute
   type: Class
   source:
     remote:
-      path: SimpleLine/Setup/Attributes/CommandAttribute.cs
+      path: SimpleLine/Setup/DescriptionAttribute.cs
       branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
-    id: CommandAttribute
-    path: ../SimpleLine/Setup/Attributes/CommandAttribute.cs
+    id: DescriptionAttribute
+    path: ../SimpleLine/Setup/DescriptionAttribute.cs
     startLine: 5
   assemblies:
   - SimpleLine
-  namespace: SimpleLineLibrary.Setup.Attributes
-  summary: Marks a class as a command so that the library can use this
+  namespace: SimpleLineLibrary.Setup
+  summary: Adds a description for further use by the library
   example: []
   syntax:
     content: >-
-      [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
+      [AttributeUsage(AttributeTargets.Method|AttributeTargets.Parameter, AllowMultiple = false, Inherited = true)]
 
-      public class CommandAttribute : Attribute
+      public class DescriptionAttribute : Attribute
     content.vb: >-
-      <AttributeUsage(AttributeTargets.Method, AllowMultiple:=False, Inherited:=True)>
+      <AttributeUsage(AttributeTargets.MethodOrAttributeTargets.Parameter, AllowMultiple:=False, Inherited:=True)>
 
-      Public Class CommandAttribute Inherits Attribute
+      Public Class DescriptionAttribute Inherits Attribute
   inheritance:
   - System.Object
   - System.Attribute
@@ -87,7 +87,7 @@ items:
     ctor: System.AttributeUsageAttribute.#ctor(System.AttributeTargets)
     arguments:
     - type: System.AttributeTargets
-      value: 64
+      value: 2112
     namedArguments:
     - name: AllowMultiple
       type: System.Boolean
@@ -95,74 +95,74 @@ items:
     - name: Inherited
       type: System.Boolean
       value: true
-- uid: SimpleLineLibrary.Setup.Attributes.CommandAttribute.Command
-  commentId: P:SimpleLineLibrary.Setup.Attributes.CommandAttribute.Command
-  id: Command
-  parent: SimpleLineLibrary.Setup.Attributes.CommandAttribute
+- uid: SimpleLineLibrary.Setup.DescriptionAttribute.Description
+  commentId: P:SimpleLineLibrary.Setup.DescriptionAttribute.Description
+  id: Description
+  parent: SimpleLineLibrary.Setup.DescriptionAttribute
   langs:
   - csharp
   - vb
-  name: Command
-  nameWithType: CommandAttribute.Command
-  fullName: SimpleLineLibrary.Setup.Attributes.CommandAttribute.Command
+  name: Description
+  nameWithType: DescriptionAttribute.Description
+  fullName: SimpleLineLibrary.Setup.DescriptionAttribute.Description
   type: Property
   source:
     remote:
-      path: SimpleLine/Setup/Attributes/CommandAttribute.cs
+      path: SimpleLine/Setup/DescriptionAttribute.cs
       branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
-    id: Command
-    path: ../SimpleLine/Setup/Attributes/CommandAttribute.cs
+    id: Description
+    path: ../SimpleLine/Setup/DescriptionAttribute.cs
     startLine: 8
   assemblies:
   - SimpleLine
-  namespace: SimpleLineLibrary.Setup.Attributes
+  namespace: SimpleLineLibrary.Setup
   syntax:
-    content: public string Command { get; }
+    content: public string Description { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public ReadOnly Property Command As String
-  overload: SimpleLineLibrary.Setup.Attributes.CommandAttribute.Command*
-- uid: SimpleLineLibrary.Setup.Attributes.CommandAttribute.#ctor(System.String)
-  commentId: M:SimpleLineLibrary.Setup.Attributes.CommandAttribute.#ctor(System.String)
+    content.vb: Public ReadOnly Property Description As String
+  overload: SimpleLineLibrary.Setup.DescriptionAttribute.Description*
+- uid: SimpleLineLibrary.Setup.DescriptionAttribute.#ctor(System.String)
+  commentId: M:SimpleLineLibrary.Setup.DescriptionAttribute.#ctor(System.String)
   id: '#ctor(System.String)'
-  parent: SimpleLineLibrary.Setup.Attributes.CommandAttribute
+  parent: SimpleLineLibrary.Setup.DescriptionAttribute
   langs:
   - csharp
   - vb
-  name: CommandAttribute(string)
-  nameWithType: CommandAttribute.CommandAttribute(string)
-  fullName: SimpleLineLibrary.Setup.Attributes.CommandAttribute.CommandAttribute(string)
+  name: DescriptionAttribute(string)
+  nameWithType: DescriptionAttribute.DescriptionAttribute(string)
+  fullName: SimpleLineLibrary.Setup.DescriptionAttribute.DescriptionAttribute(string)
   type: Constructor
   source:
     remote:
-      path: SimpleLine/Setup/Attributes/CommandAttribute.cs
+      path: SimpleLine/Setup/DescriptionAttribute.cs
       branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: .ctor
-    path: ../SimpleLine/Setup/Attributes/CommandAttribute.cs
+    path: ../SimpleLine/Setup/DescriptionAttribute.cs
     startLine: 10
   assemblies:
   - SimpleLine
-  namespace: SimpleLineLibrary.Setup.Attributes
+  namespace: SimpleLineLibrary.Setup
   syntax:
-    content: public CommandAttribute(string command)
+    content: public DescriptionAttribute(string description)
     parameters:
-    - id: command
+    - id: description
       type: System.String
-    content.vb: Public Sub New(command As String)
-  overload: SimpleLineLibrary.Setup.Attributes.CommandAttribute.#ctor*
-  nameWithType.vb: CommandAttribute.New(String)
-  fullName.vb: SimpleLineLibrary.Setup.Attributes.CommandAttribute.New(String)
+    content.vb: Public Sub New(description As String)
+  overload: SimpleLineLibrary.Setup.DescriptionAttribute.#ctor*
+  nameWithType.vb: DescriptionAttribute.New(String)
+  fullName.vb: SimpleLineLibrary.Setup.DescriptionAttribute.New(String)
   name.vb: New(String)
 references:
-- uid: SimpleLineLibrary.Setup.Attributes
-  commentId: N:SimpleLineLibrary.Setup.Attributes
+- uid: SimpleLineLibrary.Setup
+  commentId: N:SimpleLineLibrary.Setup
   href: SimpleLineLibrary.html
-  name: SimpleLineLibrary.Setup.Attributes
-  nameWithType: SimpleLineLibrary.Setup.Attributes
-  fullName: SimpleLineLibrary.Setup.Attributes
+  name: SimpleLineLibrary.Setup
+  nameWithType: SimpleLineLibrary.Setup
+  fullName: SimpleLineLibrary.Setup
   spec.csharp:
   - uid: SimpleLineLibrary
     name: SimpleLineLibrary
@@ -171,10 +171,6 @@ references:
   - uid: SimpleLineLibrary.Setup
     name: Setup
     href: SimpleLineLibrary.Setup.html
-  - name: .
-  - uid: SimpleLineLibrary.Setup.Attributes
-    name: Attributes
-    href: SimpleLineLibrary.Setup.Attributes.html
   spec.vb:
   - uid: SimpleLineLibrary
     name: SimpleLineLibrary
@@ -183,10 +179,6 @@ references:
   - uid: SimpleLineLibrary.Setup
     name: Setup
     href: SimpleLineLibrary.Setup.html
-  - name: .
-  - uid: SimpleLineLibrary.Setup.Attributes
-    name: Attributes
-    href: SimpleLineLibrary.Setup.Attributes.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -1981,12 +1973,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: SimpleLineLibrary.Setup.Attributes.CommandAttribute.Command*
-  commentId: Overload:SimpleLineLibrary.Setup.Attributes.CommandAttribute.Command
-  href: SimpleLineLibrary.Setup.Attributes.CommandAttribute.html#SimpleLineLibrary_Setup_Attributes_CommandAttribute_Command
-  name: Command
-  nameWithType: CommandAttribute.Command
-  fullName: SimpleLineLibrary.Setup.Attributes.CommandAttribute.Command
+- uid: SimpleLineLibrary.Setup.DescriptionAttribute.Description*
+  commentId: Overload:SimpleLineLibrary.Setup.DescriptionAttribute.Description
+  href: SimpleLineLibrary.Setup.DescriptionAttribute.html#SimpleLineLibrary_Setup_DescriptionAttribute_Description
+  name: Description
+  nameWithType: DescriptionAttribute.Description
+  fullName: SimpleLineLibrary.Setup.DescriptionAttribute.Description
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -1998,12 +1990,12 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: SimpleLineLibrary.Setup.Attributes.CommandAttribute.#ctor*
-  commentId: Overload:SimpleLineLibrary.Setup.Attributes.CommandAttribute.#ctor
-  href: SimpleLineLibrary.Setup.Attributes.CommandAttribute.html#SimpleLineLibrary_Setup_Attributes_CommandAttribute__ctor_System_String_
-  name: CommandAttribute
-  nameWithType: CommandAttribute.CommandAttribute
-  fullName: SimpleLineLibrary.Setup.Attributes.CommandAttribute.CommandAttribute
-  nameWithType.vb: CommandAttribute.New
-  fullName.vb: SimpleLineLibrary.Setup.Attributes.CommandAttribute.New
+- uid: SimpleLineLibrary.Setup.DescriptionAttribute.#ctor*
+  commentId: Overload:SimpleLineLibrary.Setup.DescriptionAttribute.#ctor
+  href: SimpleLineLibrary.Setup.DescriptionAttribute.html#SimpleLineLibrary_Setup_DescriptionAttribute__ctor_System_String_
+  name: DescriptionAttribute
+  nameWithType: DescriptionAttribute.DescriptionAttribute
+  fullName: SimpleLineLibrary.Setup.DescriptionAttribute.DescriptionAttribute
+  nameWithType.vb: DescriptionAttribute.New
+  fullName.vb: SimpleLineLibrary.Setup.DescriptionAttribute.New
   name.vb: New

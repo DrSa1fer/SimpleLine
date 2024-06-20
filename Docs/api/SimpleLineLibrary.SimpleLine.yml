@@ -5,7 +5,7 @@ items:
   id: SimpleLine
   parent: SimpleLineLibrary
   children:
-  - SimpleLineLibrary.SimpleLine.Build(SimpleLineLibrary.Setup.Configuration)
+  - SimpleLineLibrary.SimpleLine.Build(SimpleLineLibrary.Configuration)
   - SimpleLineLibrary.SimpleLine.Run(System.Collections.Generic.IEnumerable{System.String})
   langs:
   - csharp
@@ -21,7 +21,7 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: SimpleLine
     path: ../SimpleLine/SimpleLine.cs
-    startLine: 10
+    startLine: 12
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
@@ -56,7 +56,7 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: Run
     path: ../SimpleLine/SimpleLine.cs
-    startLine: 43
+    startLine: 46
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
@@ -76,16 +76,16 @@ items:
   nameWithType.vb: SimpleLine.Run(IEnumerable(Of String))
   fullName.vb: SimpleLineLibrary.SimpleLine.Run(System.Collections.Generic.IEnumerable(Of String))
   name.vb: Run(IEnumerable(Of String))
-- uid: SimpleLineLibrary.SimpleLine.Build(SimpleLineLibrary.Setup.Configuration)
-  commentId: M:SimpleLineLibrary.SimpleLine.Build(SimpleLineLibrary.Setup.Configuration)
-  id: Build(SimpleLineLibrary.Setup.Configuration)
+- uid: SimpleLineLibrary.SimpleLine.Build(SimpleLineLibrary.Configuration)
+  commentId: M:SimpleLineLibrary.SimpleLine.Build(SimpleLineLibrary.Configuration)
+  id: Build(SimpleLineLibrary.Configuration)
   parent: SimpleLineLibrary.SimpleLine
   langs:
   - csharp
   - vb
   name: Build(Configuration)
   nameWithType: SimpleLine.Build(Configuration)
-  fullName: SimpleLineLibrary.SimpleLine.Build(SimpleLineLibrary.Setup.Configuration)
+  fullName: SimpleLineLibrary.SimpleLine.Build(SimpleLineLibrary.Configuration)
   type: Method
   source:
     remote:
@@ -94,7 +94,7 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: Build
     path: ../SimpleLine/SimpleLine.cs
-    startLine: 110
+    startLine: 100
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
@@ -104,7 +104,7 @@ items:
     content: public static SimpleLine Build(Configuration configuration)
     parameters:
     - id: configuration
-      type: SimpleLineLibrary.Setup.Configuration
+      type: SimpleLineLibrary.Configuration
       description: SimpleLine configuration
     return:
       type: SimpleLineLibrary.SimpleLine
@@ -463,17 +463,17 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: SimpleLineLibrary.SimpleLine.Build*
   commentId: Overload:SimpleLineLibrary.SimpleLine.Build
-  href: SimpleLineLibrary.SimpleLine.html#SimpleLineLibrary_SimpleLine_Build_SimpleLineLibrary_Setup_Configuration_
+  href: SimpleLineLibrary.SimpleLine.html#SimpleLineLibrary_SimpleLine_Build_SimpleLineLibrary_Configuration_
   name: Build
   nameWithType: SimpleLine.Build
   fullName: SimpleLineLibrary.SimpleLine.Build
-- uid: SimpleLineLibrary.Setup.Configuration
-  commentId: T:SimpleLineLibrary.Setup.Configuration
-  parent: SimpleLineLibrary.Setup
-  href: SimpleLineLibrary.Setup.Configuration.html
+- uid: SimpleLineLibrary.Configuration
+  commentId: T:SimpleLineLibrary.Configuration
+  parent: SimpleLineLibrary
+  href: SimpleLineLibrary.Configuration.html
   name: Configuration
   nameWithType: Configuration
-  fullName: SimpleLineLibrary.Setup.Configuration
+  fullName: SimpleLineLibrary.Configuration
 - uid: SimpleLineLibrary.SimpleLine
   commentId: T:SimpleLineLibrary.SimpleLine
   parent: SimpleLineLibrary
@@ -481,25 +481,3 @@ references:
   name: SimpleLine
   nameWithType: SimpleLine
   fullName: SimpleLineLibrary.SimpleLine
-- uid: SimpleLineLibrary.Setup
-  commentId: N:SimpleLineLibrary.Setup
-  href: SimpleLineLibrary.html
-  name: SimpleLineLibrary.Setup
-  nameWithType: SimpleLineLibrary.Setup
-  fullName: SimpleLineLibrary.Setup
-  spec.csharp:
-  - uid: SimpleLineLibrary
-    name: SimpleLineLibrary
-    href: SimpleLineLibrary.html
-  - name: .
-  - uid: SimpleLineLibrary.Setup
-    name: Setup
-    href: SimpleLineLibrary.Setup.html
-  spec.vb:
-  - uid: SimpleLineLibrary
-    name: SimpleLineLibrary
-    href: SimpleLineLibrary.html
-  - name: .
-  - uid: SimpleLineLibrary.Setup
-    name: Setup
-    href: SimpleLineLibrary.Setup.html

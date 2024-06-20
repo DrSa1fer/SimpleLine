@@ -1,13 +1,12 @@
-using SimpleLineLibrary.Setup;
 using SimpleLineLibrary.Services.Parsing.Arguments;
 using SimpleLineLibrary.Services.Parsing.Tokens;
 using SimpleLineLibrary.Services.Finding;
 using SimpleLineLibrary.Services.Execution.Exceptions;
 using SimpleLineLibrary.Services.Execution;
 using SimpleLineLibrary.Services.Execution.Converting;
-using SimpleLineLibrary.Services.Assembly.Receiving.Commands;
 using System.Runtime.ExceptionServices;
 using SimpleLineLibrary.Services.BuildingInfo;
+using SimpleLineLibrary.Services.Assembly.Receiving;
 
 namespace SimpleLineLibrary
 {
@@ -15,8 +14,8 @@ namespace SimpleLineLibrary
     {        
         private readonly Configuration _config;
         
-        private readonly ArgumentParser _argumentParser;
         private readonly TokenParser _tokenParser;
+        private readonly ArgumentParser _argumentParser;
 
         private readonly CommandReceiver _commandReceiver;
 
@@ -80,15 +79,22 @@ namespace SimpleLineLibrary
                 var conTypes = _config.ConvertibleTypes;
                 var execData = new ExecutionData(parseArgs);
 
-                return _handlerExecutor.Execute(com.Handler!, execData, conTypes);
+                if(com.Handler == null) 
+                {
+                    _config?.OnHandlerMissing?.Invoke();
+                    return null;
+                }
+
+                return _handlerExecutor.Execute(com.Handler, execData, conTypes);
             }
-            catch(UserRuntimeException)
+            catch(UserRuntimeException e)
             {
-                throw;
+                _config.OnUserException?.Invoke(e);
+                return null;
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                _config.OnUserException?.Invoke(ex);
+               _config.OnSimpleLineException?.Invoke(e);
                 return null;
             }
         }

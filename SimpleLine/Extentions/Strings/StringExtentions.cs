@@ -28,7 +28,7 @@ namespace SimpleLineLibrary.Extentions.Strings
                 && key.All(x => !char.IsWhiteSpace(x));
         }
 
-        public static bool IsValidTextLength(this string text)
+        public static bool IsValidText(this string text)
         {
             if (text == null)
             {
@@ -38,7 +38,7 @@ namespace SimpleLineLibrary.Extentions.Strings
             return text.Length < 81;
         }
 
-        public static bool IsEqualsTokenName(this string token, string otherToken)
+        public static bool IsEqualsToken(this string token, string otherToken)
         {
             return token.Equals(otherToken, StringComparison.OrdinalIgnoreCase);
         }
@@ -58,9 +58,9 @@ namespace SimpleLineLibrary.Extentions.Strings
                 throw new Exceptions.InvalidTokenNameException(tokenName);
             }
         }
-        public static void ThrowIfWrongTextLength(this string text)
+        public static void ThrowIfWrongText(this string text)
         {
-            if (!text.IsValidTextLength())
+            if (!text.IsValidText())
             {
                 throw new Exception("length more than 80");
             }

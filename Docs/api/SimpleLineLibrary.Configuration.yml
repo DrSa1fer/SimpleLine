@@ -1,41 +1,41 @@
 ### YamlMime:ManagedReference
 items:
-- uid: SimpleLineLibrary.Setup.Configuration
-  commentId: T:SimpleLineLibrary.Setup.Configuration
+- uid: SimpleLineLibrary.Configuration
+  commentId: T:SimpleLineLibrary.Configuration
   id: Configuration
-  parent: SimpleLineLibrary.Setup
+  parent: SimpleLineLibrary
   children:
-  - SimpleLineLibrary.Setup.Configuration.#ctor
-  - SimpleLineLibrary.Setup.Configuration.AddTypeForConverting``1(System.Func{System.String,``0})
-  - SimpleLineLibrary.Setup.Configuration.ConvertibleTypes
-  - SimpleLineLibrary.Setup.Configuration.Default(System.Reflection.Assembly)
-  - SimpleLineLibrary.Setup.Configuration.DefinedTypes
-  - SimpleLineLibrary.Setup.Configuration.HelpKeys
-  - SimpleLineLibrary.Setup.Configuration.OnCommandNotFound
-  - SimpleLineLibrary.Setup.Configuration.OnNoArguments
-  - SimpleLineLibrary.Setup.Configuration.OnSimpleLineException
-  - SimpleLineLibrary.Setup.Configuration.OnUserException
-  - SimpleLineLibrary.Setup.Configuration.ProgramDescription
-  - SimpleLineLibrary.Setup.Configuration.ProgramName
-  - SimpleLineLibrary.Setup.Configuration.ProgramVersion
+  - SimpleLineLibrary.Configuration.#ctor
+  - SimpleLineLibrary.Configuration.AddTypeForConverting``1(System.Func{System.String,``0})
+  - SimpleLineLibrary.Configuration.ConvertibleTypes
+  - SimpleLineLibrary.Configuration.Default(System.Reflection.Assembly)
+  - SimpleLineLibrary.Configuration.DefinedTypes
+  - SimpleLineLibrary.Configuration.HelpKeys
+  - SimpleLineLibrary.Configuration.OnCommandNotFound
+  - SimpleLineLibrary.Configuration.OnNoArguments
+  - SimpleLineLibrary.Configuration.OnSimpleLineException
+  - SimpleLineLibrary.Configuration.OnUserException
+  - SimpleLineLibrary.Configuration.ProgramDescription
+  - SimpleLineLibrary.Configuration.ProgramName
+  - SimpleLineLibrary.Configuration.ProgramVersion
   langs:
   - csharp
   - vb
   name: Configuration
   nameWithType: Configuration
-  fullName: SimpleLineLibrary.Setup.Configuration
+  fullName: SimpleLineLibrary.Configuration
   type: Class
   source:
     remote:
-      path: SimpleLine/Setup/Configuration.cs
+      path: SimpleLine/Configuration.cs
       branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: Configuration
-    path: ../SimpleLine/Setup/Configuration.cs
+    path: ../SimpleLine/Configuration.cs
     startLine: 5
   assemblies:
   - SimpleLine
-  namespace: SimpleLineLibrary.Setup
+  namespace: SimpleLineLibrary
   syntax:
     content: public class Configuration
     content.vb: Public Class Configuration
@@ -49,347 +49,347 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: SimpleLineLibrary.Setup.Configuration.OnSimpleLineException
-  commentId: P:SimpleLineLibrary.Setup.Configuration.OnSimpleLineException
+- uid: SimpleLineLibrary.Configuration.OnSimpleLineException
+  commentId: P:SimpleLineLibrary.Configuration.OnSimpleLineException
   id: OnSimpleLineException
-  parent: SimpleLineLibrary.Setup.Configuration
+  parent: SimpleLineLibrary.Configuration
   langs:
   - csharp
   - vb
   name: OnSimpleLineException
   nameWithType: Configuration.OnSimpleLineException
-  fullName: SimpleLineLibrary.Setup.Configuration.OnSimpleLineException
+  fullName: SimpleLineLibrary.Configuration.OnSimpleLineException
   type: Property
   source:
     remote:
-      path: SimpleLine/Setup/Configuration.cs
+      path: SimpleLine/Configuration.cs
       branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: OnSimpleLineException
-    path: ../SimpleLine/Setup/Configuration.cs
+    path: ../SimpleLine/Configuration.cs
     startLine: 7
   assemblies:
   - SimpleLine
-  namespace: SimpleLineLibrary.Setup
+  namespace: SimpleLineLibrary
   syntax:
     content: public Action<Exception>? OnSimpleLineException { get; init; }
     parameters: []
     return:
       type: System.Action{System.Exception}
     content.vb: Public Property OnSimpleLineException As Action(Of Exception)
-  overload: SimpleLineLibrary.Setup.Configuration.OnSimpleLineException*
-- uid: SimpleLineLibrary.Setup.Configuration.OnUserException
-  commentId: P:SimpleLineLibrary.Setup.Configuration.OnUserException
+  overload: SimpleLineLibrary.Configuration.OnSimpleLineException*
+- uid: SimpleLineLibrary.Configuration.OnUserException
+  commentId: P:SimpleLineLibrary.Configuration.OnUserException
   id: OnUserException
-  parent: SimpleLineLibrary.Setup.Configuration
+  parent: SimpleLineLibrary.Configuration
   langs:
   - csharp
   - vb
   name: OnUserException
   nameWithType: Configuration.OnUserException
-  fullName: SimpleLineLibrary.Setup.Configuration.OnUserException
+  fullName: SimpleLineLibrary.Configuration.OnUserException
   type: Property
   source:
     remote:
-      path: SimpleLine/Setup/Configuration.cs
+      path: SimpleLine/Configuration.cs
       branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: OnUserException
-    path: ../SimpleLine/Setup/Configuration.cs
+    path: ../SimpleLine/Configuration.cs
     startLine: 8
   assemblies:
   - SimpleLine
-  namespace: SimpleLineLibrary.Setup
+  namespace: SimpleLineLibrary
   syntax:
     content: public Action<Exception>? OnUserException { get; init; }
     parameters: []
     return:
       type: System.Action{System.Exception}
     content.vb: Public Property OnUserException As Action(Of Exception)
-  overload: SimpleLineLibrary.Setup.Configuration.OnUserException*
-- uid: SimpleLineLibrary.Setup.Configuration.OnCommandNotFound
-  commentId: P:SimpleLineLibrary.Setup.Configuration.OnCommandNotFound
+  overload: SimpleLineLibrary.Configuration.OnUserException*
+- uid: SimpleLineLibrary.Configuration.OnCommandNotFound
+  commentId: P:SimpleLineLibrary.Configuration.OnCommandNotFound
   id: OnCommandNotFound
-  parent: SimpleLineLibrary.Setup.Configuration
+  parent: SimpleLineLibrary.Configuration
   langs:
   - csharp
   - vb
   name: OnCommandNotFound
   nameWithType: Configuration.OnCommandNotFound
-  fullName: SimpleLineLibrary.Setup.Configuration.OnCommandNotFound
+  fullName: SimpleLineLibrary.Configuration.OnCommandNotFound
   type: Property
   source:
     remote:
-      path: SimpleLine/Setup/Configuration.cs
+      path: SimpleLine/Configuration.cs
       branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: OnCommandNotFound
-    path: ../SimpleLine/Setup/Configuration.cs
+    path: ../SimpleLine/Configuration.cs
     startLine: 9
   assemblies:
   - SimpleLine
-  namespace: SimpleLineLibrary.Setup
+  namespace: SimpleLineLibrary
   syntax:
     content: public Action<string>? OnCommandNotFound { get; set; }
     parameters: []
     return:
       type: System.Action{System.String}
     content.vb: Public Property OnCommandNotFound As Action(Of String)
-  overload: SimpleLineLibrary.Setup.Configuration.OnCommandNotFound*
-- uid: SimpleLineLibrary.Setup.Configuration.OnNoArguments
-  commentId: P:SimpleLineLibrary.Setup.Configuration.OnNoArguments
+  overload: SimpleLineLibrary.Configuration.OnCommandNotFound*
+- uid: SimpleLineLibrary.Configuration.OnNoArguments
+  commentId: P:SimpleLineLibrary.Configuration.OnNoArguments
   id: OnNoArguments
-  parent: SimpleLineLibrary.Setup.Configuration
+  parent: SimpleLineLibrary.Configuration
   langs:
   - csharp
   - vb
   name: OnNoArguments
   nameWithType: Configuration.OnNoArguments
-  fullName: SimpleLineLibrary.Setup.Configuration.OnNoArguments
+  fullName: SimpleLineLibrary.Configuration.OnNoArguments
   type: Property
   source:
     remote:
-      path: SimpleLine/Setup/Configuration.cs
+      path: SimpleLine/Configuration.cs
       branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: OnNoArguments
-    path: ../SimpleLine/Setup/Configuration.cs
+    path: ../SimpleLine/Configuration.cs
     startLine: 10
   assemblies:
   - SimpleLine
-  namespace: SimpleLineLibrary.Setup
+  namespace: SimpleLineLibrary
   syntax:
     content: public Action? OnNoArguments { get; init; }
     parameters: []
     return:
       type: System.Action
     content.vb: Public Property OnNoArguments As Action
-  overload: SimpleLineLibrary.Setup.Configuration.OnNoArguments*
-- uid: SimpleLineLibrary.Setup.Configuration.ProgramName
-  commentId: P:SimpleLineLibrary.Setup.Configuration.ProgramName
+  overload: SimpleLineLibrary.Configuration.OnNoArguments*
+- uid: SimpleLineLibrary.Configuration.ProgramName
+  commentId: P:SimpleLineLibrary.Configuration.ProgramName
   id: ProgramName
-  parent: SimpleLineLibrary.Setup.Configuration
+  parent: SimpleLineLibrary.Configuration
   langs:
   - csharp
   - vb
   name: ProgramName
   nameWithType: Configuration.ProgramName
-  fullName: SimpleLineLibrary.Setup.Configuration.ProgramName
+  fullName: SimpleLineLibrary.Configuration.ProgramName
   type: Property
   source:
     remote:
-      path: SimpleLine/Setup/Configuration.cs
+      path: SimpleLine/Configuration.cs
       branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: ProgramName
-    path: ../SimpleLine/Setup/Configuration.cs
+    path: ../SimpleLine/Configuration.cs
     startLine: 12
   assemblies:
   - SimpleLine
-  namespace: SimpleLineLibrary.Setup
+  namespace: SimpleLineLibrary
   syntax:
     content: public string ProgramName { get; init; }
     parameters: []
     return:
       type: System.String
     content.vb: Public Property ProgramName As String
-  overload: SimpleLineLibrary.Setup.Configuration.ProgramName*
-- uid: SimpleLineLibrary.Setup.Configuration.ProgramDescription
-  commentId: P:SimpleLineLibrary.Setup.Configuration.ProgramDescription
+  overload: SimpleLineLibrary.Configuration.ProgramName*
+- uid: SimpleLineLibrary.Configuration.ProgramDescription
+  commentId: P:SimpleLineLibrary.Configuration.ProgramDescription
   id: ProgramDescription
-  parent: SimpleLineLibrary.Setup.Configuration
+  parent: SimpleLineLibrary.Configuration
   langs:
   - csharp
   - vb
   name: ProgramDescription
   nameWithType: Configuration.ProgramDescription
-  fullName: SimpleLineLibrary.Setup.Configuration.ProgramDescription
+  fullName: SimpleLineLibrary.Configuration.ProgramDescription
   type: Property
   source:
     remote:
-      path: SimpleLine/Setup/Configuration.cs
+      path: SimpleLine/Configuration.cs
       branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: ProgramDescription
-    path: ../SimpleLine/Setup/Configuration.cs
+    path: ../SimpleLine/Configuration.cs
     startLine: 23
   assemblies:
   - SimpleLine
-  namespace: SimpleLineLibrary.Setup
+  namespace: SimpleLineLibrary
   syntax:
     content: public string ProgramDescription { get; init; }
     parameters: []
     return:
       type: System.String
     content.vb: Public Property ProgramDescription As String
-  overload: SimpleLineLibrary.Setup.Configuration.ProgramDescription*
-- uid: SimpleLineLibrary.Setup.Configuration.ProgramVersion
-  commentId: P:SimpleLineLibrary.Setup.Configuration.ProgramVersion
+  overload: SimpleLineLibrary.Configuration.ProgramDescription*
+- uid: SimpleLineLibrary.Configuration.ProgramVersion
+  commentId: P:SimpleLineLibrary.Configuration.ProgramVersion
   id: ProgramVersion
-  parent: SimpleLineLibrary.Setup.Configuration
+  parent: SimpleLineLibrary.Configuration
   langs:
   - csharp
   - vb
   name: ProgramVersion
   nameWithType: Configuration.ProgramVersion
-  fullName: SimpleLineLibrary.Setup.Configuration.ProgramVersion
+  fullName: SimpleLineLibrary.Configuration.ProgramVersion
   type: Property
   source:
     remote:
-      path: SimpleLine/Setup/Configuration.cs
+      path: SimpleLine/Configuration.cs
       branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: ProgramVersion
-    path: ../SimpleLine/Setup/Configuration.cs
+    path: ../SimpleLine/Configuration.cs
     startLine: 34
   assemblies:
   - SimpleLine
-  namespace: SimpleLineLibrary.Setup
+  namespace: SimpleLineLibrary
   syntax:
     content: public string ProgramVersion { get; init; }
     parameters: []
     return:
       type: System.String
     content.vb: Public Property ProgramVersion As String
-  overload: SimpleLineLibrary.Setup.Configuration.ProgramVersion*
-- uid: SimpleLineLibrary.Setup.Configuration.ConvertibleTypes
-  commentId: P:SimpleLineLibrary.Setup.Configuration.ConvertibleTypes
+  overload: SimpleLineLibrary.Configuration.ProgramVersion*
+- uid: SimpleLineLibrary.Configuration.ConvertibleTypes
+  commentId: P:SimpleLineLibrary.Configuration.ConvertibleTypes
   id: ConvertibleTypes
-  parent: SimpleLineLibrary.Setup.Configuration
+  parent: SimpleLineLibrary.Configuration
   langs:
   - csharp
   - vb
   name: ConvertibleTypes
   nameWithType: Configuration.ConvertibleTypes
-  fullName: SimpleLineLibrary.Setup.Configuration.ConvertibleTypes
+  fullName: SimpleLineLibrary.Configuration.ConvertibleTypes
   type: Property
   source:
     remote:
-      path: SimpleLine/Setup/Configuration.cs
+      path: SimpleLine/Configuration.cs
       branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: ConvertibleTypes
-    path: ../SimpleLine/Setup/Configuration.cs
+    path: ../SimpleLine/Configuration.cs
     startLine: 45
   assemblies:
   - SimpleLine
-  namespace: SimpleLineLibrary.Setup
+  namespace: SimpleLineLibrary
   syntax:
     content: public IReadOnlyDictionary<Type, Func<string, object?>> ConvertibleTypes { get; }
     parameters: []
     return:
       type: System.Collections.Generic.IReadOnlyDictionary{System.Type,System.Func{System.String,System.Object}}
     content.vb: Public ReadOnly Property ConvertibleTypes As IReadOnlyDictionary(Of Type, Func(Of String, Object))
-  overload: SimpleLineLibrary.Setup.Configuration.ConvertibleTypes*
-- uid: SimpleLineLibrary.Setup.Configuration.DefinedTypes
-  commentId: P:SimpleLineLibrary.Setup.Configuration.DefinedTypes
+  overload: SimpleLineLibrary.Configuration.ConvertibleTypes*
+- uid: SimpleLineLibrary.Configuration.DefinedTypes
+  commentId: P:SimpleLineLibrary.Configuration.DefinedTypes
   id: DefinedTypes
-  parent: SimpleLineLibrary.Setup.Configuration
+  parent: SimpleLineLibrary.Configuration
   langs:
   - csharp
   - vb
   name: DefinedTypes
   nameWithType: Configuration.DefinedTypes
-  fullName: SimpleLineLibrary.Setup.Configuration.DefinedTypes
+  fullName: SimpleLineLibrary.Configuration.DefinedTypes
   type: Property
   source:
     remote:
-      path: SimpleLine/Setup/Configuration.cs
+      path: SimpleLine/Configuration.cs
       branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: DefinedTypes
-    path: ../SimpleLine/Setup/Configuration.cs
+    path: ../SimpleLine/Configuration.cs
     startLine: 52
   assemblies:
   - SimpleLine
-  namespace: SimpleLineLibrary.Setup
+  namespace: SimpleLineLibrary
   syntax:
     content: public IEnumerable<TypeInfo> DefinedTypes { get; init; }
     parameters: []
     return:
       type: System.Collections.Generic.IEnumerable{System.Reflection.TypeInfo}
     content.vb: Public Property DefinedTypes As IEnumerable(Of TypeInfo)
-  overload: SimpleLineLibrary.Setup.Configuration.DefinedTypes*
-- uid: SimpleLineLibrary.Setup.Configuration.HelpKeys
-  commentId: P:SimpleLineLibrary.Setup.Configuration.HelpKeys
+  overload: SimpleLineLibrary.Configuration.DefinedTypes*
+- uid: SimpleLineLibrary.Configuration.HelpKeys
+  commentId: P:SimpleLineLibrary.Configuration.HelpKeys
   id: HelpKeys
-  parent: SimpleLineLibrary.Setup.Configuration
+  parent: SimpleLineLibrary.Configuration
   langs:
   - csharp
   - vb
   name: HelpKeys
   nameWithType: Configuration.HelpKeys
-  fullName: SimpleLineLibrary.Setup.Configuration.HelpKeys
+  fullName: SimpleLineLibrary.Configuration.HelpKeys
   type: Property
   source:
     remote:
-      path: SimpleLine/Setup/Configuration.cs
+      path: SimpleLine/Configuration.cs
       branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: HelpKeys
-    path: ../SimpleLine/Setup/Configuration.cs
+    path: ../SimpleLine/Configuration.cs
     startLine: 63
   assemblies:
   - SimpleLine
-  namespace: SimpleLineLibrary.Setup
+  namespace: SimpleLineLibrary
   syntax:
     content: public IReadOnlySet<string> HelpKeys { get; init; }
     parameters: []
     return:
       type: System.Collections.Generic.IReadOnlySet{System.String}
     content.vb: Public Property HelpKeys As IReadOnlySet(Of String)
-  overload: SimpleLineLibrary.Setup.Configuration.HelpKeys*
-- uid: SimpleLineLibrary.Setup.Configuration.#ctor
-  commentId: M:SimpleLineLibrary.Setup.Configuration.#ctor
+  overload: SimpleLineLibrary.Configuration.HelpKeys*
+- uid: SimpleLineLibrary.Configuration.#ctor
+  commentId: M:SimpleLineLibrary.Configuration.#ctor
   id: '#ctor'
-  parent: SimpleLineLibrary.Setup.Configuration
+  parent: SimpleLineLibrary.Configuration
   langs:
   - csharp
   - vb
   name: Configuration()
   nameWithType: Configuration.Configuration()
-  fullName: SimpleLineLibrary.Setup.Configuration.Configuration()
+  fullName: SimpleLineLibrary.Configuration.Configuration()
   type: Constructor
   source:
     remote:
-      path: SimpleLine/Setup/Configuration.cs
+      path: SimpleLine/Configuration.cs
       branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: .ctor
-    path: ../SimpleLine/Setup/Configuration.cs
+    path: ../SimpleLine/Configuration.cs
     startLine: 83
   assemblies:
   - SimpleLine
-  namespace: SimpleLineLibrary.Setup
+  namespace: SimpleLineLibrary
   syntax:
     content: public Configuration()
     content.vb: Public Sub New()
-  overload: SimpleLineLibrary.Setup.Configuration.#ctor*
+  overload: SimpleLineLibrary.Configuration.#ctor*
   nameWithType.vb: Configuration.New()
-  fullName.vb: SimpleLineLibrary.Setup.Configuration.New()
+  fullName.vb: SimpleLineLibrary.Configuration.New()
   name.vb: New()
-- uid: SimpleLineLibrary.Setup.Configuration.AddTypeForConverting``1(System.Func{System.String,``0})
-  commentId: M:SimpleLineLibrary.Setup.Configuration.AddTypeForConverting``1(System.Func{System.String,``0})
+- uid: SimpleLineLibrary.Configuration.AddTypeForConverting``1(System.Func{System.String,``0})
+  commentId: M:SimpleLineLibrary.Configuration.AddTypeForConverting``1(System.Func{System.String,``0})
   id: AddTypeForConverting``1(System.Func{System.String,``0})
-  parent: SimpleLineLibrary.Setup.Configuration
+  parent: SimpleLineLibrary.Configuration
   langs:
   - csharp
   - vb
   name: AddTypeForConverting<T>(Func<string, T>)
   nameWithType: Configuration.AddTypeForConverting<T>(Func<string, T>)
-  fullName: SimpleLineLibrary.Setup.Configuration.AddTypeForConverting<T>(System.Func<string, T>)
+  fullName: SimpleLineLibrary.Configuration.AddTypeForConverting<T>(System.Func<string, T>)
   type: Method
   source:
     remote:
-      path: SimpleLine/Setup/Configuration.cs
+      path: SimpleLine/Configuration.cs
       branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: AddTypeForConverting
-    path: ../SimpleLine/Setup/Configuration.cs
+    path: ../SimpleLine/Configuration.cs
     startLine: 96
   assemblies:
   - SimpleLine
-  namespace: SimpleLineLibrary.Setup
+  namespace: SimpleLineLibrary
   syntax:
     content: public void AddTypeForConverting<T>(Func<string, T> func)
     parameters:
@@ -398,64 +398,48 @@ items:
     typeParameters:
     - id: T
     content.vb: Public Sub AddTypeForConverting(Of T)(func As Func(Of String, T))
-  overload: SimpleLineLibrary.Setup.Configuration.AddTypeForConverting*
+  overload: SimpleLineLibrary.Configuration.AddTypeForConverting*
   nameWithType.vb: Configuration.AddTypeForConverting(Of T)(Func(Of String, T))
-  fullName.vb: SimpleLineLibrary.Setup.Configuration.AddTypeForConverting(Of T)(System.Func(Of String, T))
+  fullName.vb: SimpleLineLibrary.Configuration.AddTypeForConverting(Of T)(System.Func(Of String, T))
   name.vb: AddTypeForConverting(Of T)(Func(Of String, T))
-- uid: SimpleLineLibrary.Setup.Configuration.Default(System.Reflection.Assembly)
-  commentId: M:SimpleLineLibrary.Setup.Configuration.Default(System.Reflection.Assembly)
+- uid: SimpleLineLibrary.Configuration.Default(System.Reflection.Assembly)
+  commentId: M:SimpleLineLibrary.Configuration.Default(System.Reflection.Assembly)
   id: Default(System.Reflection.Assembly)
-  parent: SimpleLineLibrary.Setup.Configuration
+  parent: SimpleLineLibrary.Configuration
   langs:
   - csharp
   - vb
   name: Default(Assembly)
   nameWithType: Configuration.Default(Assembly)
-  fullName: SimpleLineLibrary.Setup.Configuration.Default(System.Reflection.Assembly)
+  fullName: SimpleLineLibrary.Configuration.Default(System.Reflection.Assembly)
   type: Method
   source:
     remote:
-      path: SimpleLine/Setup/Configuration.cs
+      path: SimpleLine/Configuration.cs
       branch: main
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: Default
-    path: ../SimpleLine/Setup/Configuration.cs
+    path: ../SimpleLine/Configuration.cs
     startLine: 103
   assemblies:
   - SimpleLine
-  namespace: SimpleLineLibrary.Setup
+  namespace: SimpleLineLibrary
   syntax:
     content: public static Configuration Default(Assembly assembly)
     parameters:
     - id: assembly
       type: System.Reflection.Assembly
     return:
-      type: SimpleLineLibrary.Setup.Configuration
+      type: SimpleLineLibrary.Configuration
     content.vb: Public Shared Function [Default](assembly As Assembly) As Configuration
-  overload: SimpleLineLibrary.Setup.Configuration.Default*
+  overload: SimpleLineLibrary.Configuration.Default*
 references:
-- uid: SimpleLineLibrary.Setup
-  commentId: N:SimpleLineLibrary.Setup
+- uid: SimpleLineLibrary
+  commentId: N:SimpleLineLibrary
   href: SimpleLineLibrary.html
-  name: SimpleLineLibrary.Setup
-  nameWithType: SimpleLineLibrary.Setup
-  fullName: SimpleLineLibrary.Setup
-  spec.csharp:
-  - uid: SimpleLineLibrary
-    name: SimpleLineLibrary
-    href: SimpleLineLibrary.html
-  - name: .
-  - uid: SimpleLineLibrary.Setup
-    name: Setup
-    href: SimpleLineLibrary.Setup.html
-  spec.vb:
-  - uid: SimpleLineLibrary
-    name: SimpleLineLibrary
-    href: SimpleLineLibrary.html
-  - name: .
-  - uid: SimpleLineLibrary.Setup
-    name: Setup
-    href: SimpleLineLibrary.Setup.html
+  name: SimpleLineLibrary
+  nameWithType: SimpleLineLibrary
+  fullName: SimpleLineLibrary
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -693,12 +677,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: SimpleLineLibrary.Setup.Configuration.OnSimpleLineException*
-  commentId: Overload:SimpleLineLibrary.Setup.Configuration.OnSimpleLineException
-  href: SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_OnSimpleLineException
+- uid: SimpleLineLibrary.Configuration.OnSimpleLineException*
+  commentId: Overload:SimpleLineLibrary.Configuration.OnSimpleLineException
+  href: SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_OnSimpleLineException
   name: OnSimpleLineException
   nameWithType: Configuration.OnSimpleLineException
-  fullName: SimpleLineLibrary.Setup.Configuration.OnSimpleLineException
+  fullName: SimpleLineLibrary.Configuration.OnSimpleLineException
 - uid: System.Action{System.Exception}
   commentId: T:System.Action{System.Exception}
   parent: System
@@ -762,18 +746,18 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: SimpleLineLibrary.Setup.Configuration.OnUserException*
-  commentId: Overload:SimpleLineLibrary.Setup.Configuration.OnUserException
-  href: SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_OnUserException
+- uid: SimpleLineLibrary.Configuration.OnUserException*
+  commentId: Overload:SimpleLineLibrary.Configuration.OnUserException
+  href: SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_OnUserException
   name: OnUserException
   nameWithType: Configuration.OnUserException
-  fullName: SimpleLineLibrary.Setup.Configuration.OnUserException
-- uid: SimpleLineLibrary.Setup.Configuration.OnCommandNotFound*
-  commentId: Overload:SimpleLineLibrary.Setup.Configuration.OnCommandNotFound
-  href: SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_OnCommandNotFound
+  fullName: SimpleLineLibrary.Configuration.OnUserException
+- uid: SimpleLineLibrary.Configuration.OnCommandNotFound*
+  commentId: Overload:SimpleLineLibrary.Configuration.OnCommandNotFound
+  href: SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_OnCommandNotFound
   name: OnCommandNotFound
   nameWithType: Configuration.OnCommandNotFound
-  fullName: SimpleLineLibrary.Setup.Configuration.OnCommandNotFound
+  fullName: SimpleLineLibrary.Configuration.OnCommandNotFound
 - uid: System.Action{System.String}
   commentId: T:System.Action{System.String}
   parent: System
@@ -809,12 +793,12 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-- uid: SimpleLineLibrary.Setup.Configuration.OnNoArguments*
-  commentId: Overload:SimpleLineLibrary.Setup.Configuration.OnNoArguments
-  href: SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_OnNoArguments
+- uid: SimpleLineLibrary.Configuration.OnNoArguments*
+  commentId: Overload:SimpleLineLibrary.Configuration.OnNoArguments
+  href: SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_OnNoArguments
   name: OnNoArguments
   nameWithType: Configuration.OnNoArguments
-  fullName: SimpleLineLibrary.Setup.Configuration.OnNoArguments
+  fullName: SimpleLineLibrary.Configuration.OnNoArguments
 - uid: System.Action
   commentId: T:System.Action
   parent: System
@@ -823,12 +807,12 @@ references:
   name: Action
   nameWithType: Action
   fullName: System.Action
-- uid: SimpleLineLibrary.Setup.Configuration.ProgramName*
-  commentId: Overload:SimpleLineLibrary.Setup.Configuration.ProgramName
-  href: SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_ProgramName
+- uid: SimpleLineLibrary.Configuration.ProgramName*
+  commentId: Overload:SimpleLineLibrary.Configuration.ProgramName
+  href: SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_ProgramName
   name: ProgramName
   nameWithType: Configuration.ProgramName
-  fullName: SimpleLineLibrary.Setup.Configuration.ProgramName
+  fullName: SimpleLineLibrary.Configuration.ProgramName
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -840,24 +824,24 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: SimpleLineLibrary.Setup.Configuration.ProgramDescription*
-  commentId: Overload:SimpleLineLibrary.Setup.Configuration.ProgramDescription
-  href: SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_ProgramDescription
+- uid: SimpleLineLibrary.Configuration.ProgramDescription*
+  commentId: Overload:SimpleLineLibrary.Configuration.ProgramDescription
+  href: SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_ProgramDescription
   name: ProgramDescription
   nameWithType: Configuration.ProgramDescription
-  fullName: SimpleLineLibrary.Setup.Configuration.ProgramDescription
-- uid: SimpleLineLibrary.Setup.Configuration.ProgramVersion*
-  commentId: Overload:SimpleLineLibrary.Setup.Configuration.ProgramVersion
-  href: SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_ProgramVersion
+  fullName: SimpleLineLibrary.Configuration.ProgramDescription
+- uid: SimpleLineLibrary.Configuration.ProgramVersion*
+  commentId: Overload:SimpleLineLibrary.Configuration.ProgramVersion
+  href: SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_ProgramVersion
   name: ProgramVersion
   nameWithType: Configuration.ProgramVersion
-  fullName: SimpleLineLibrary.Setup.Configuration.ProgramVersion
-- uid: SimpleLineLibrary.Setup.Configuration.ConvertibleTypes*
-  commentId: Overload:SimpleLineLibrary.Setup.Configuration.ConvertibleTypes
-  href: SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_ConvertibleTypes
+  fullName: SimpleLineLibrary.Configuration.ProgramVersion
+- uid: SimpleLineLibrary.Configuration.ConvertibleTypes*
+  commentId: Overload:SimpleLineLibrary.Configuration.ConvertibleTypes
+  href: SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_ConvertibleTypes
   name: ConvertibleTypes
   nameWithType: Configuration.ConvertibleTypes
-  fullName: SimpleLineLibrary.Setup.Configuration.ConvertibleTypes
+  fullName: SimpleLineLibrary.Configuration.ConvertibleTypes
 - uid: System.Collections.Generic.IReadOnlyDictionary{System.Type,System.Func{System.String,System.Object}}
   commentId: T:System.Collections.Generic.IReadOnlyDictionary{System.Type,System.Func{System.String,System.Object}}
   parent: System.Collections.Generic
@@ -1002,12 +986,12 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: SimpleLineLibrary.Setup.Configuration.DefinedTypes*
-  commentId: Overload:SimpleLineLibrary.Setup.Configuration.DefinedTypes
-  href: SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_DefinedTypes
+- uid: SimpleLineLibrary.Configuration.DefinedTypes*
+  commentId: Overload:SimpleLineLibrary.Configuration.DefinedTypes
+  href: SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_DefinedTypes
   name: DefinedTypes
   nameWithType: Configuration.DefinedTypes
-  fullName: SimpleLineLibrary.Setup.Configuration.DefinedTypes
+  fullName: SimpleLineLibrary.Configuration.DefinedTypes
 - uid: System.Collections.Generic.IEnumerable{System.Reflection.TypeInfo}
   commentId: T:System.Collections.Generic.IEnumerable{System.Reflection.TypeInfo}
   parent: System.Collections.Generic
@@ -1071,12 +1055,12 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: SimpleLineLibrary.Setup.Configuration.HelpKeys*
-  commentId: Overload:SimpleLineLibrary.Setup.Configuration.HelpKeys
-  href: SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_HelpKeys
+- uid: SimpleLineLibrary.Configuration.HelpKeys*
+  commentId: Overload:SimpleLineLibrary.Configuration.HelpKeys
+  href: SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_HelpKeys
   name: HelpKeys
   nameWithType: Configuration.HelpKeys
-  fullName: SimpleLineLibrary.Setup.Configuration.HelpKeys
+  fullName: SimpleLineLibrary.Configuration.HelpKeys
 - uid: System.Collections.Generic.IReadOnlySet{System.String}
   commentId: T:System.Collections.Generic.IReadOnlySet{System.String}
   parent: System.Collections.Generic
@@ -1140,21 +1124,21 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: SimpleLineLibrary.Setup.Configuration.#ctor*
-  commentId: Overload:SimpleLineLibrary.Setup.Configuration.#ctor
-  href: SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration__ctor
+- uid: SimpleLineLibrary.Configuration.#ctor*
+  commentId: Overload:SimpleLineLibrary.Configuration.#ctor
+  href: SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration__ctor
   name: Configuration
   nameWithType: Configuration.Configuration
-  fullName: SimpleLineLibrary.Setup.Configuration.Configuration
+  fullName: SimpleLineLibrary.Configuration.Configuration
   nameWithType.vb: Configuration.New
-  fullName.vb: SimpleLineLibrary.Setup.Configuration.New
+  fullName.vb: SimpleLineLibrary.Configuration.New
   name.vb: New
-- uid: SimpleLineLibrary.Setup.Configuration.AddTypeForConverting*
-  commentId: Overload:SimpleLineLibrary.Setup.Configuration.AddTypeForConverting
-  href: SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_AddTypeForConverting__1_System_Func_System_String___0__
+- uid: SimpleLineLibrary.Configuration.AddTypeForConverting*
+  commentId: Overload:SimpleLineLibrary.Configuration.AddTypeForConverting
+  href: SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_AddTypeForConverting__1_System_Func_System_String___0__
   name: AddTypeForConverting
   nameWithType: Configuration.AddTypeForConverting
-  fullName: SimpleLineLibrary.Setup.Configuration.AddTypeForConverting
+  fullName: SimpleLineLibrary.Configuration.AddTypeForConverting
 - uid: System.Func{System.String,{T}}
   commentId: T:System.Func{System.String,``0}
   parent: System
@@ -1230,12 +1214,12 @@ references:
   - name: " "
   - name: TResult
   - name: )
-- uid: SimpleLineLibrary.Setup.Configuration.Default*
-  commentId: Overload:SimpleLineLibrary.Setup.Configuration.Default
-  href: SimpleLineLibrary.Setup.Configuration.html#SimpleLineLibrary_Setup_Configuration_Default_System_Reflection_Assembly_
+- uid: SimpleLineLibrary.Configuration.Default*
+  commentId: Overload:SimpleLineLibrary.Configuration.Default
+  href: SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_Default_System_Reflection_Assembly_
   name: Default
   nameWithType: Configuration.Default
-  fullName: SimpleLineLibrary.Setup.Configuration.Default
+  fullName: SimpleLineLibrary.Configuration.Default
 - uid: System.Reflection.Assembly
   commentId: T:System.Reflection.Assembly
   parent: System.Reflection
@@ -1244,13 +1228,13 @@ references:
   name: Assembly
   nameWithType: Assembly
   fullName: System.Reflection.Assembly
-- uid: SimpleLineLibrary.Setup.Configuration
-  commentId: T:SimpleLineLibrary.Setup.Configuration
-  parent: SimpleLineLibrary.Setup
-  href: SimpleLineLibrary.Setup.Configuration.html
+- uid: SimpleLineLibrary.Configuration
+  commentId: T:SimpleLineLibrary.Configuration
+  parent: SimpleLineLibrary
+  href: SimpleLineLibrary.Configuration.html
   name: Configuration
   nameWithType: Configuration
-  fullName: SimpleLineLibrary.Setup.Configuration
+  fullName: SimpleLineLibrary.Configuration
 - uid: System.Reflection
   commentId: N:System.Reflection
   isExternal: true
