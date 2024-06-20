@@ -1,4 +1,6 @@
-﻿namespace SimpleLineLibrary.Utils.MessageBuilders
+﻿using System.IO;
+
+namespace SimpleLineLibrary.Utils.MessageBuilders
 {
     internal class MessageBuilder
     {

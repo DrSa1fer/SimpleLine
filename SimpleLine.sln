@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleLine", "SimpleLine\Si
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleLine.Tests", "SimpleLine.Tests\SimpleLine.Tests.csproj", "{448CA6E9-5915-4965-9DDE-923933FF0202}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLine.User", "SimpleLine.User\SimpleLine.User.csproj", "{3D1F955E-0BFD-44A1-BDFF-4CE83ABB996F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleLine.Example", "SimpleLine.User\SimpleLine.Example.csproj", "{3D1F955E-0BFD-44A1-BDFF-4CE83ABB996F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

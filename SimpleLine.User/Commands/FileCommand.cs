@@ -1,6 +1,6 @@
 ﻿using SimpleLineLibrary.Setup.Attributes;
 
-namespace SimpleLineLibrary.User.Commands
+namespace SimpleLineLibrary.Example.Commands
 {
     [Command("file")]
     public class FileCommand
@@ -9,10 +9,10 @@ namespace SimpleLineLibrary.User.Commands
         public void ReadFile(
             [CustomKeys("-p", "--path")] string path)
         {
-            if(File.Exists(path))
+            if (File.Exists(path))
             {
                 var text = File.ReadAllText(path);
-                
+
                 Console.WriteLine(text);
             }
         }

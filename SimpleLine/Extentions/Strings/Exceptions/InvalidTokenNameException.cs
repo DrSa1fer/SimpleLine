@@ -1,4 +1,4 @@
-﻿namespace SimpleLineLibrary.Utils.Strings.Exceptions
+﻿namespace SimpleLineLibrary.Extentions.Strings.Exceptions
 {
     internal class InvalidTokenNameException : Exception
     {

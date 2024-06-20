@@ -1,5 +1,5 @@
+using SimpleLineLibrary.Extentions.Strings;
 using SimpleLineLibrary.Services.Execution.Converting;
-using SimpleLineLibrary.Utils.Strings;
 using System.Reflection;
 
 namespace SimpleLineLibrary.Setup

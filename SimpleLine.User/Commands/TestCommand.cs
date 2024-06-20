@@ -1,6 +1,6 @@
 ﻿using SimpleLineLibrary.Setup.Attributes;
 
-namespace SimpleLineLibrary.User.Commands
+namespace SimpleLineLibrary.Example.Commands
 {
     [Command("test")]
     public class TestCommand

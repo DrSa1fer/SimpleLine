@@ -6,9 +6,7 @@
 # User-specific files
 *.rsuser
 *.suo
-
-#It is fucked setting make brainfuck
-#*.user
+*.user
 
 *.userosscache
 *.sln.docstates
@@ -399,3 +397,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/SimpleLine/Properties/PublishProfiles/FolderProfile.pubxml.user

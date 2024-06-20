@@ -1,5 +1,5 @@
-﻿using SimpleLineLibrary.Services.Parsing.Arguments.Exceptions;
-using SimpleLineLibrary.Utils.Strings;
+﻿using SimpleLineLibrary.Extentions.Strings;
+using SimpleLineLibrary.Services.Parsing.Arguments.Exceptions;
 
 namespace SimpleLineLibrary.Services.Parsing.Arguments
 {

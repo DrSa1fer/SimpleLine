@@ -1,5 +1,5 @@
-﻿using SimpleLineLibrary.Models;
-using SimpleLineLibrary.Utils.Strings;
+﻿using SimpleLineLibrary.Extentions.Strings;
+using SimpleLineLibrary.Models;
 
 namespace SimpleLineLibrary.Services.Finding
 {

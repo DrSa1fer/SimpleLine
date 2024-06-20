@@ -2,21 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <ImplicitUsings>False</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>SimpleLineLibrary</RootNamespace>
     <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <RepositoryType>git</RepositoryType>
+	<GenerateAssemblyInfo>False</GenerateAssemblyInfo>
     <IncludeSymbols>True</IncludeSymbols>
-    <NeutralLanguage>en-US</NeutralLanguage>
     <NoWin32Manifest>true</NoWin32Manifest>
-    <Title>SimpleLine</Title>
-    <Version>0.0.1</Version>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <Description>An open source library that tagrets to simplify command line interaction.</Description>
-    <Product>Simple Line</Product>
-    <Authors>Danil Kucherenko</Authors>	  
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

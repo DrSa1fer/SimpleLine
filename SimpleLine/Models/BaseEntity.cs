@@ -1,4 +1,4 @@
-﻿using SimpleLineLibrary.Utils.Strings;
+﻿using SimpleLineLibrary.Extentions.Strings;
 
 namespace SimpleLineLibrary.Models
 {

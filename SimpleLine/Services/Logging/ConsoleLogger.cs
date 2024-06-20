@@ -1,4 +1,6 @@
-﻿namespace SimpleLineLibrary.Services.Logging
+﻿using System.IO;
+
+namespace SimpleLineLibrary.Services.Logging
 {
     internal class ConsoleLogger : ILogger
     {

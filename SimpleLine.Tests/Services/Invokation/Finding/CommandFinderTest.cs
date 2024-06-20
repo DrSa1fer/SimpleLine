@@ -12,7 +12,7 @@ namespace SimpleLineLibrary.Tests.Services.Invokation.Finding
 
         public CommandFinderTest()
         {
-            _finder = new("root");
+           // _finder = new("root");
 
             var hello = new Command("hello", "", "", true);
             var root = new Command("@root", "", "", false);

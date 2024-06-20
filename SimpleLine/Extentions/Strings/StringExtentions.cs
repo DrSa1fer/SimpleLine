@@ -1,4 +1,4 @@
-namespace SimpleLineLibrary.Utils.Strings
+namespace SimpleLineLibrary.Extentions.Strings
 {
     internal static class StringExtentions
     {
