@@ -4,7 +4,10 @@ using SimpleLineLibrary.Services.Parsing.Tokens;
 using SimpleLineLibrary.Services.Finding;
 using SimpleLineLibrary.Services.Execution.Exceptions;
 using SimpleLineLibrary.Services.Execution;
-using SimpleLineLibrary.Services.InfoRecieving;
+using SimpleLineLibrary.Services.Execution.Converting;
+using SimpleLineLibrary.Services.Assembly.Receiving.Commands;
+using System.Runtime.ExceptionServices;
+using SimpleLineLibrary.Services.BuildingInfo;
 
 namespace SimpleLineLibrary
 {
@@ -15,9 +18,10 @@ namespace SimpleLineLibrary
         private readonly ArgumentParser _argumentParser;
         private readonly TokenParser _tokenParser;
 
+        private readonly CommandReceiver _commandReceiver;
+
         private readonly CommandFinder _commandFinder;
-        private readonly HandlerFinder _handlerFinder;
-        private readonly InfoReceiver _infoReceiver;
+        private readonly InfoBuilder _infoBuilder;
 
         private readonly HandlerExecutor _handlerExecutor;
 
@@ -25,15 +29,15 @@ namespace SimpleLineLibrary
         {
             _config = config;
 
+            _commandReceiver = new CommandReceiver();
             _argumentParser = new ArgumentParser();
             _tokenParser = new TokenParser();
             
             _commandFinder = new CommandFinder();
-            _handlerFinder = new HandlerFinder();
 
-            _handlerExecutor = new HandlerExecutor(_config.Converter);
+            _handlerExecutor = new HandlerExecutor();
             
-            _infoReceiver = new InfoReceiver(_config.ProgramName, _config.ProgramVersion);
+            _infoBuilder = new InfoBuilder(_config.ProgramName, _config.ProgramVersion);
         }
 
         /// <summary>
@@ -47,11 +51,11 @@ namespace SimpleLineLibrary
             {
                 if(!args.Any())
                 {
-                    _config.NoneArgsHandler?.Invoke();
+                    _config.OnNoArguments?.Invoke();
                     return null;
                 }
 
-                var coms = _config.CommandProvider.GetCommands();
+                var coms = _commandReceiver.GetCommands(_config.DefinedTypes);
 
                 var qArgs = new Queue<string>(args);
                 var com = _commandFinder.Find(qArgs, coms);
@@ -60,46 +64,32 @@ namespace SimpleLineLibrary
                 {
                     if(qArgs.TryPeek(out string? peek))
                     {
-                        _config.CommandNotFound?.Invoke(peek);
+                        _config.OnCommandNotFound?.Invoke(peek);
                     }
                     return null;
                 }
 
                 if (qArgs.Count > 0 && _config.HelpKeys.Contains(qArgs.Peek()))
                 {
-                    var info = _infoReceiver.ReceiveFrom(com);
+                    var info = _infoBuilder.GetInfo(com);
                     Console.WriteLine(info);
                     return null;
                 }
 
-                var han = _handlerFinder.Find(qArgs, com.Handlers);
-
-                if (han == null)
-                {
-                    _config.HandlerNotFound?.Invoke(qArgs);
-                    return null;
-                }
-
-                if (qArgs.Count > 0 && _config.HelpKeys.Contains(qArgs.Peek()))
-                {
-                    var info = _infoReceiver.ReceiveFrom(han);
-                    //Console.WriteLine(info);
-                    return null;
-                }
-
                 var parseArgs = _argumentParser.Parse(qArgs);
+                var conTypes = _config.ConvertibleTypes;
                 var execData = new ExecutionData(parseArgs);
 
-                return _handlerExecutor.Execute(han, execData);
+                return _handlerExecutor.Execute(com.Handler!, execData, conTypes);
             }
-            catch(UserRuntimeException userEx)
+            catch(UserRuntimeException)
             {
-                throw userEx.InnerException!;                
+                throw;
             }
             catch (Exception ex)
             {
-                _config.ExceptionHandler?.Invoke(ex);
-                throw;
+                _config.OnUserException?.Invoke(ex);
+                return null;
             }
         }
 

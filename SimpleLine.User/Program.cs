@@ -5,16 +5,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var conf = new Configuration(typeof(Program).Assembly);        
-
-        SimpleLine.Build(conf).Run(new string[]
-        {
-            "test", "sub", 
-
-            "-t", "1", 
-            "-t", "9", 
-            "-t", "8", 
-            "-t", "4"
-        });          
+        var conf = Configuration.Default(typeof(Program).Assembly);
+        SimpleLine.Build(conf).Run(new string[] { "sub", "-h", "=", "122" });          
     }   
 }

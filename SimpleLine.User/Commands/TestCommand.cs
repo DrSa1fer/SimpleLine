@@ -2,14 +2,14 @@
 
 namespace SimpleLineLibrary.Example.Commands
 {
-    [Command("test")]
+    [CommandDefinitions]
     public class TestCommand
     {
-        [Handler("sub")]
-        public void Test(
-            [CustomKeys("-t", "--tt")] string[] test)
+        [Command("sub")]
+        [Description("Hello world!")]
+        public void Test([CustomKeys("-t", "--tt")] [Description("meow")] int[] test)
         {
-            Console.WriteLine("Hello world! and " + string.Join(":", test));
+            Console.WriteLine("Hello world! and " + test.Sum());
         }
     }
 }

@@ -41,7 +41,8 @@ namespace SimpleLineLibrary.Utils.MessageBuilders
 
         public MessageBuilder CloseBlock()
         {
-            _tabs--;
+            _tabs = _tabs - 1 > -1 ? _tabs - 1 : 0;
+
             return this;
         }        
         

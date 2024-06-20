@@ -4,18 +4,11 @@ namespace SimpleLineLibrary.Services.Execution.Converting
 {
     internal class Converter
     {
-        private readonly Dictionary<Type, Func<string, object?>> _types;
+        private readonly IReadOnlyDictionary<Type, Func<string, object?>> _types;
 
-        public Converter()
+        public Converter(IReadOnlyDictionary<Type, Func<string, object?>> types)
         {
-            _types = new();
-        }
-
-        public void RegisterType<T>(Func<string, T> func)
-        {
-            var wrapper = new Func<string, object?>(input => func(input));
-
-            _types.Add(typeof(T), wrapper);
+            _types = types;
         }
 
         public object? ConvertType(Type type, string arg)
@@ -38,13 +31,13 @@ namespace SimpleLineLibrary.Services.Execution.Converting
                 var valueType = type.GetElementType()!;
                 var values = args.ToArray();
 
-                var arr = (object?[])Activator.CreateInstance(type, values.Length)!;
+                var arr = (Array)Activator.CreateInstance(type, values.Length)!;
 
                 for (int i = 0; i < arr.Length; i++)
                 {
                     var value = values[i];
 
-                    arr[i] = ConvertType(valueType, value);
+                    arr.SetValue(ConvertType(valueType, value), i);
                 }
 
                 return arr;

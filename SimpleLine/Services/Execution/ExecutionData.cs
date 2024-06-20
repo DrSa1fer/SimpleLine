@@ -6,11 +6,57 @@ namespace SimpleLineLibrary.Services.Execution
 {
     internal class ExecutionData
     {
+        public IReadOnlySet<string> Keys
+        {
+            get
+            {
+                return _keys;
+            }
+        }
+
         private readonly IReadOnlyList<Argument> _args;
+        private readonly HashSet<string> _keys;
 
         public ExecutionData(IReadOnlyList<Argument> args)
         {
             _args = args;
+            _keys = new();
+
+            for(int i = 0; i < _args.Count; i++)
+            {
+                if (!_args[i].HasKey())
+                {
+                    continue;
+                }
+                if (_keys.Contains(_args[i].Key))
+                {
+                    continue;
+                }
+                _keys.Add(_args[i].Key);
+            }
+        }
+
+        public int CountOfArgs()
+        {
+            var set = new HashSet<string>();
+            int count = 0;
+
+            foreach (var arg in _args)
+            {
+                if (arg.HasKey())
+                {
+                    if (!set.Contains(arg.Key))
+                    {
+                        set.Add(arg.Key);
+                    }
+                }
+                else
+                {
+                    count++;
+                }               
+            }
+
+            return set.Count + count;
         }
 
         public string GetValue(Parameter parameter)

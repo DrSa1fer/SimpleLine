@@ -2,10 +2,10 @@
 
 namespace SimpleLineLibrary.Example.Commands
 {
-    [Command("math")]
+    [CommandDefinitions]
     public class MathCommand
     {
-        [Handler("--sum")]
+        [Command("sum")]
         [Description("Calculate sum of two numbers")]
         public void Sum(
             [CustomKeys("-x", "--x")] int x,
@@ -14,7 +14,7 @@ namespace SimpleLineLibrary.Example.Commands
             Console.WriteLine(x + y);
         }
 
-        [Handler("--multiply")]
+        [Command("multiply")]
         [Description("Calculate multiply of two numbers")]
         public void Multiply(
             [CustomKeys("-x", "--x")] int x,

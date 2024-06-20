@@ -2,8 +2,30 @@ using SimpleLineLibrary.Extentions.Strings;
 
 namespace SimpleLineLibrary.Models
 {
-    internal class Command : BaseEntity
-    {              
+    internal class Command
+    {
+        public string Uid
+        {
+            get
+            {
+                return _uid;
+            }
+        }
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+        }
+        public string Description
+        {
+            get
+            {
+                return _description;
+            }
+        }
+
         public virtual IEnumerable<Command> Subcommands
         {
             get
@@ -12,32 +34,29 @@ namespace SimpleLineLibrary.Models
             }
         }
 
-        public virtual IEnumerable<Handler> Handlers
+        public Handler? Handler
         {
             get 
             {
-                return _handlers;
+                return _handler;
             }
         }
-
-        public string Uid
-        {
-            get
-            {
-                return _uid;
-            }
-        }
-
-        private readonly List<Command> _subcommands;
-        private readonly List<Handler> _handlers;
 
         private readonly string _uid;
+        private readonly string _name;
+        private readonly string _description;
 
-        public Command(string uid, string name, string desc, bool @throw) 
-            : base(name, desc, @throw, @throw)
+        private readonly List<Command> _subcommands;
+        private readonly Handler _handler;
+
+        public Command(string uid, string name, string desc, Handler handler, bool @throw)             
         {
+            uid.ThrowIfWrongTokenName();
+
             _uid = uid;
-            _handlers = new();
+            _name = name; 
+            _description = desc;
+            _handler = handler;
             _subcommands = new();
         }
 
@@ -49,11 +68,6 @@ namespace SimpleLineLibrary.Models
         public bool ContainsSubcommand(Command subcommand)
         {
             return _subcommands.Contains(subcommand);
-        }
-
-        public bool ContainsHandler(Handler handler)
-        {
-            return _handlers.Contains(handler);
         }
 
         public void RegisterSubcommand(Command subcommand)        
@@ -68,17 +82,7 @@ namespace SimpleLineLibrary.Models
             }
 
             _subcommands.Add(subcommand);
-        }             
-        
-        public void RegisterHandler(Handler handler)
-        {
-            if(_handlers.Contains(handler))
-            {
-                throw new ArgumentException("handler already added");
-            }
-
-            _handlers.Add(handler);
-        }
+        }     
 
         public override bool Equals(object? obj)
         {

@@ -2,10 +2,10 @@
 
 namespace SimpleLineLibrary.Example.Commands
 {
-    [Command("file")]
+    [CommandDefinitions]
     public class FileCommand
     {
-        [Handler("--read")]
+        [Command("read")]
         public void ReadFile(
             [CustomKeys("-p", "--path")] string path)
         {

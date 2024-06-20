@@ -2,22 +2,22 @@ using SimpleLineLibrary.Extentions.Strings;
 
 namespace SimpleLineLibrary.Models
 {
-    internal sealed class Parameter : BaseEntity
-    {        
-        public Type ValueType
+    internal sealed class Parameter
+    {
+        public string Name
         {
             get
             {
-                return _valueType;
+                return _name;
             }
         }
-        public bool IsRequired
+        public string Description
         {
             get
             {
-                return _isRequired;
+                return _description;
             }
-        }
+        }        
         public string LongKey
         {
             get
@@ -39,6 +39,20 @@ namespace SimpleLineLibrary.Models
                 return _position;
             }
         }
+        public Type ValueType
+        {
+            get
+            {
+                return _valueType;
+            }
+        }
+        public bool IsRequired
+        {
+            get
+            {
+                return _isRequired;
+            }
+        }
         public object? DefaultValue
         {
             get
@@ -54,6 +68,8 @@ namespace SimpleLineLibrary.Models
             }
         }
 
+        private readonly string _name;
+        private readonly string _description;
         private readonly string _longkey;
         private readonly string _shortkey;
         private readonly Type _valueType;
@@ -65,13 +81,16 @@ namespace SimpleLineLibrary.Models
             string name, string desc,
             string longKey, string shortKey,
             int position, bool isRequired,
-            Type valueType, object? defValue) 
-            : base(name, desc, false, true)
+            Type valueType, object? defValue)
         {
+            name.ThrowIfWrongTokenName();
+            desc.ThrowIfWrongTextLength();
 
             longKey.ThrowIfWrongKeyTokenName();
             shortKey.ThrowIfWrongKeyTokenName();
 
+            _name= name;
+            _description= desc;
             _longkey = longKey;
             _shortkey = shortKey;
            
@@ -83,9 +102,7 @@ namespace SimpleLineLibrary.Models
 
         public bool Is(string key)
         {
-            return false 
-                || key.IsEqualsTokenName(this.ShortKey) 
-                || key.IsEqualsTokenName(this.LongKey);
+            return key.IsEqualsTokenName(ShortKey) || key.IsEqualsTokenName(LongKey);
         }
 
         public override bool Equals(object? obj)
@@ -94,7 +111,6 @@ namespace SimpleLineLibrary.Models
                 && Is(other.LongKey) 
                 && Is(other.ShortKey);
         }
-
         public override int GetHashCode()
         {
             return HashCode.Combine(IsRequired, Position, _longkey, _shortkey);

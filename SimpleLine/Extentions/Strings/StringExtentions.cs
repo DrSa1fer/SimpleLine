@@ -6,6 +6,7 @@ namespace SimpleLineLibrary.Extentions.Strings
         {
             return tokenName is not null
                 && tokenName.Length > 0
+                && tokenName.Length < 33
                 && char.IsLetter(tokenName[0])
                 && tokenName.All(x => char.IsLetterOrDigit(x) || x.Equals('-'));
         }
@@ -44,6 +45,10 @@ namespace SimpleLineLibrary.Extentions.Strings
         public static bool TokenStartWith(this string token, string start)
         {
             return token.StartsWith(start, StringComparison.OrdinalIgnoreCase);
+        }
+        public static string[] SplitAndRemoveEmptyEntries(this string text, params char[] separators) 
+        {
+            return text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
         }
 
         public static void ThrowIfWrongTokenName(this string tokenName)

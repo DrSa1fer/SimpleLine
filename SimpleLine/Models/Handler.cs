@@ -1,27 +1,9 @@
-using SimpleLineLibrary.Extentions.Strings;
-
 namespace SimpleLineLibrary.Models
 {
-    internal delegate object? HandlerAction(object?[]? obj);
+	internal delegate object? HandlerAction(object?[]? obj);
 
-    internal class Handler : BaseEntity
-	{
-		public string Key
-		{
-			get
-			{
-				return _key;
-			}
-		}
-
-		public bool HasKey
-		{
-			get
-			{
-				return Key is not null && Key.Length > 0;
-			}
-		}        
-
+    internal class Handler
+	{     
         public IReadOnlyList<Parameter> Parameters
 		{
 			get 
@@ -30,34 +12,34 @@ namespace SimpleLineLibrary.Models
 			}
 		}
 
-		private readonly string _key;
-		
-		private readonly Parameter[] _parameters;
+		public IReadOnlySet<string> AvalibleKeys
+		{
+			get
+			{
+				return _keys;
+			}
+		}
 
+		private readonly HashSet<string> _keys;
+		private readonly Parameter[] _parameters;
         private readonly HandlerAction _method;
 
-		public Handler(string name, string desc, string key, HandlerAction func, Parameter[] parameters)
-			: base(name, desc)
+		public Handler(HandlerAction func, Parameter[] parameters)
 		{
-			_key = key;
-
-			_method = func;
 			_parameters = parameters;
+			_method = func;
+			_keys = new();
+
+			for(int i = 0; i < parameters.Length; i++)
+			{
+				_keys.Add(_parameters[i].LongKey);
+				_keys.Add(_parameters[i].ShortKey);
+            }
 		}
 
 		public object? Invoke(object?[]? args)
 		{
 			return _method?.Invoke(args);
-		}
-
-		public override bool Equals(object? obj)
-		{
-            return obj is Handler other && other.Key.IsEqualsTokenName(this.Key);
-		}
-
-		public override int GetHashCode()
-		{
-			return HashCode.Combine(Key);
 		}
     }
 }

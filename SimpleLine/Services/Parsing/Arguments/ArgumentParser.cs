@@ -52,8 +52,6 @@ namespace SimpleLineLibrary.Services.Parsing.Arguments
                 }
             }
 
-            Console.WriteLine(string.Join(", ", ls.Select(x => x.Key + " " + x.Value)));
-
             return ls;
         }
 

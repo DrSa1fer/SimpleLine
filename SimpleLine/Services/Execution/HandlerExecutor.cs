@@ -3,24 +3,27 @@ using SimpleLineLibrary.Services.Execution.Exceptions;
 using SimpleLineLibrary.Models;
 using System.Reflection;
 using System.Collections;
-using SimpleLineLibrary.Services.Logging;
 
 namespace SimpleLineLibrary.Services.Execution
 {
     internal class HandlerExecutor
     {
-        private readonly Converter _converter;  
-
-        public HandlerExecutor(Converter converter)
-        {
-            _converter = converter;
-        }
-
-        internal object? Execute(Handler handler, ExecutionData input)
+        internal object? Execute(Handler handler, ExecutionData input, IReadOnlyDictionary<Type, Func<string, object?>> types)
         {            
             try
             {
-                var bind = Bind(handler.Parameters, input);
+                if(input.CountOfArgs() != handler.Parameters.Count)
+                {
+                    throw new ArgumentException("Different count of args and handler paramters");
+                }
+                if (!handler.AvalibleKeys.All(input.Keys.Contains))
+                {
+                    throw new ArgumentException("Invalid key");
+                }
+
+                var converter = new Converter(types);
+                var bind = Bind(handler.Parameters, input, converter);
+
                 return handler.Invoke(bind);
             }
             catch (TargetInvocationException ex)
@@ -33,7 +36,7 @@ namespace SimpleLineLibrary.Services.Execution
             }
         }
 
-        private object?[]? Bind(IReadOnlyList<Parameter> parameters, ExecutionData data)
+        private object?[]? Bind(IReadOnlyList<Parameter> parameters, ExecutionData data, Converter converter)
         {
             var arr = new object?[parameters.Count];
 
@@ -74,14 +77,14 @@ namespace SimpleLineLibrary.Services.Execution
                 if (p.ValueType.IsAssignableTo(typeof(ICollection)))
                 {
                     var values = data.GetValues(p);
-                    arr[i] = _converter.ConvertCollection(p.ValueType, values);
+                    arr[i] = converter.ConvertCollection(p.ValueType, values);
                 }
                 else
                 {
                     var str = data.GetValue(p);
                     var t = p.ValueType;
 
-                    arr[i] = _converter.ConvertType(t, str);
+                    arr[i] = converter.ConvertType(t, str);
                 }
             }
 

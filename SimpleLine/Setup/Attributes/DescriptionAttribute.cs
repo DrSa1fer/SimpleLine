@@ -3,8 +3,7 @@
     /// <summary>
     /// Adds a description for further use by the library
     /// </summary>
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method,
-        AllowMultiple = false, Inherited = true)]
+    [AttributeUsage(AttributeTargets.Method | AttributeTargets.Parameter, AllowMultiple = false, Inherited = true)]
     public class DescriptionAttribute : Attribute
     {
         public string Description { get; }
