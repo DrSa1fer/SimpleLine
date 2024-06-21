@@ -29,10 +29,10 @@ To use the library, you need to complete several steps
 
 ### 1. Define Command
 ```csharp copy
-[Command("example")]
+[CommandDefinitions]
 public class Example
 {
-    [Handler]
+    [Command("Example")]
     public void Foo(int x)
     {
         Console.WriteLine($"result: {x * 2}");
@@ -46,9 +46,9 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        SimpleLine
-            .Build(new Configuration(typeof(Program).Assembly)))
-            .Run(args);
+        var conf = Configuration.Default(typeof(Program).Assembly);
+
+        SimpleLine.Build(conf).Run(args);
     }
 }
 ```
