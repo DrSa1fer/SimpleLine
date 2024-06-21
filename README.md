@@ -1,6 +1,5 @@
 # SimpleLine
 
-___
 ## About
 **Simple Line** an open source library that targets to simplify command line interaction.  
 Allows you to define new commands without having to think about getting values, type conversion, 
