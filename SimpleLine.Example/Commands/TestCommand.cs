@@ -3,12 +3,12 @@
 namespace SimpleLineLibrary.Example.Commands
 {
     [CommandDefinitions("test")]
-    public class TestSubCommand
+    public class TestCommand
     {
-        [Command("sub")]
-        public static void Bar()
+        [Command("foo")]
+        public static void Foo()
         {
-            Console.WriteLine("Bye world!");
+            Console.WriteLine("Hello world!");
         }
     }
 }

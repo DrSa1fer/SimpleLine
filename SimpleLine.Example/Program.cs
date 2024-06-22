@@ -5,6 +5,7 @@ internal class Program
     private static void Main(string[] args)
     {
         var conf = Configuration.Default(typeof(Program).Assembly);
-        SimpleLine.Build(conf).Run(new string[] { "test", "test", "asd", "true" });
+
+        SimpleLine.Build(conf).Run(args);
     }   
 }

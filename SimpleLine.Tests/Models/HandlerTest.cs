@@ -11,8 +11,8 @@ namespace SimpleLineLibrary.Tests.Models
             var ps1 = Array.Empty<Parameter>();
             var ps2 = Array.Empty<Parameter>();
 
-            var h1 = MakeTestHandler(ps1, "--test");
-            var h2 = MakeTestHandler(ps2, "--test");
+            var h1 = MakeTestHandler(ps1);
+            var h2 = MakeTestHandler(ps2);
 
             var res = h1.Equals(h2);
 
@@ -93,9 +93,9 @@ namespace SimpleLineLibrary.Tests.Models
 
 
 
-        private static Handler MakeTestHandler(Parameter[] ps, string key = "")
+        private static Handler MakeTestHandler(Parameter[] ps)
         {
-            return new Handler("a", "a", key, (x) => null, ps);
+            return new Handler((x) => null, ps);
         }
 
         private static Parameter MakeTestParameter(string lk, string sk, int i)
