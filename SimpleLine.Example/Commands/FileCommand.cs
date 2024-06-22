@@ -1,4 +1,4 @@
-﻿using SimpleLineLibrary.Setup.Attributes;
+﻿using SimpleLineLibrary.Setup;
 
 namespace SimpleLineLibrary.Example.Commands
 {

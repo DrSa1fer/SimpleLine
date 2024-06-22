@@ -6,8 +6,11 @@
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Parameter, AllowMultiple = false, Inherited = true)]
     public class DescriptionAttribute : Attribute
     {
-        public string Description { get; }
+        internal string Description { get; }
 
-        public DescriptionAttribute(string description) => Description = description;
+        public DescriptionAttribute(string description)
+        {
+            Description = description;
+        }
     }
 }

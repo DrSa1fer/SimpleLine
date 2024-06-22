@@ -6,7 +6,7 @@ namespace SimpleLineLibrary.Setup
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
     public class CommandAttribute : Attribute
     {
-        public string Command { get; }
+        internal string Command { get; }
 
         public CommandAttribute(string command)
         {

@@ -1,4 +1,4 @@
-namespace SimpleLineLibrary.Extentions.Strings
+namespace SimpleLineLibrary.Extentions
 {
     internal static class StringExtentions
     {
@@ -46,7 +46,7 @@ namespace SimpleLineLibrary.Extentions.Strings
         {
             return token.StartsWith(start, StringComparison.OrdinalIgnoreCase);
         }
-        public static string[] SplitAndRemoveEmptyEntries(this string text, params char[] separators) 
+        public static string[] SplitAndRemoveEmptyEntries(this string text, params char[] separators)
         {
             return text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
         }
@@ -55,7 +55,7 @@ namespace SimpleLineLibrary.Extentions.Strings
         {
             if (!tokenName.IsTokenName())
             {
-                throw new Exceptions.InvalidTokenNameException(tokenName);
+                throw new ArgumentException($"Invalid token name {tokenName}");
             }
         }
         public static void ThrowIfWrongText(this string text)
@@ -70,6 +70,20 @@ namespace SimpleLineLibrary.Extentions.Strings
             if (!key.IsKeyTokenName())
             {
                 throw new ArgumentException("Invalid key");
+            }
+        }
+        public static void ThrowIfWrongLongKeyTokenName(this string key)
+        {
+            if (!key.IsLongKeyTokenName())
+            {
+                throw new ArgumentException($"Invalid key \"{key}\"");
+            }
+        }
+        public static void ThrowIfWrongShortKeyTokenName(this string key)
+        {
+            if (!key.IsShortKeyTokenName())
+            {
+                throw new ArgumentException($"Invalid key \"{key}\"");
             }
         }
     }

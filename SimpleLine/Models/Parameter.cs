@@ -1,4 +1,4 @@
-using SimpleLineLibrary.Extentions.Strings;
+using SimpleLineLibrary.Extentions;
 
 namespace SimpleLineLibrary.Models
 {
@@ -86,8 +86,8 @@ namespace SimpleLineLibrary.Models
             name.ThrowIfWrongTokenName();
             desc.ThrowIfWrongText();
 
-            longKey.ThrowIfWrongKeyTokenName();
-            shortKey.ThrowIfWrongKeyTokenName();
+            longKey.ThrowIfWrongLongKeyTokenName();
+            shortKey.ThrowIfWrongShortKeyTokenName();
 
             _name= name;
             _description= desc;

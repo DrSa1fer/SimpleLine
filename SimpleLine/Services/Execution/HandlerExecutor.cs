@@ -12,13 +12,17 @@ namespace SimpleLineLibrary.Services.Execution
         {            
             try
             {
-                if(input.ArgCount != handler.Parameters.Count)
+                if(input.ArgCount < handler.Parameters.Count(x => x.IsRequired))
                 {
-                    throw new ArgumentException("Different count of args and handler paramters");
+                    throw new ArgumentException("Count of args less than count of required handler paramters");
                 }
-                if (!handler.AvalibleKeys.All(input.Keys.Contains))
+                if(input.ArgCount > handler.Parameters.Count)
                 {
-                    throw new ArgumentException("Invalid key");
+                    throw new ArgumentException("Count of args bigger than count of handler paramters");
+                }
+                if (!input.Keys.All(handler.AvalibleKeys.Contains))
+                {
+                    throw new ArgumentException("Key is not supported of command" + string.Join(";", handler.AvalibleKeys));
                 }
 
                 var converter = new Converter(types);

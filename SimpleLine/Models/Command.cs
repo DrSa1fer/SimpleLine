@@ -1,4 +1,4 @@
-using SimpleLineLibrary.Extentions.Strings;
+using SimpleLineLibrary.Extentions;
 
 namespace SimpleLineLibrary.Models
 {
@@ -9,13 +9,6 @@ namespace SimpleLineLibrary.Models
             get
             {
                 return _uid;
-            }
-        }
-        public string Name
-        {
-            get
-            {
-                return _name;
             }
         }
         public string Description
@@ -42,20 +35,17 @@ namespace SimpleLineLibrary.Models
         }
 
         private readonly string _uid;
-        private readonly string _name;
         private readonly string _description;
 
         private readonly List<Command> _subcommands;
         private readonly Handler? _handler;
 
-        public Command(string uid, string name, string desc, Handler? handler)             
+        public Command(string uid, string desc, Handler? handler)             
         {
             uid.ThrowIfWrongTokenName();
-            name.ThrowIfWrongTokenName();
             desc.ThrowIfWrongText();
 
             _uid = uid;
-            _name = name; 
             _description = desc;
             _handler = handler;
             _subcommands = new();
@@ -75,7 +65,7 @@ namespace SimpleLineLibrary.Models
         {
             if(_subcommands.Contains(subcommand))
             {
-                throw new ArgumentException($"subcommand already added. [{subcommand.Name}]");
+                throw new ArgumentException($"subcommand already added. [{subcommand.Uid}]");
             }
             if(Equals(subcommand))
             {
@@ -92,7 +82,7 @@ namespace SimpleLineLibrary.Models
         }        
         public override int GetHashCode()
         {
-            return HashCode.Combine(Uid, Name, Description);
+            return HashCode.Combine(Uid, Description);
         }
     }
 }

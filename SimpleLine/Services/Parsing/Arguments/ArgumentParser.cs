@@ -1,4 +1,4 @@
-﻿using SimpleLineLibrary.Extentions.Strings;
+﻿using SimpleLineLibrary.Extentions;
 using SimpleLineLibrary.Services.Parsing.Arguments.Exceptions;
 
 namespace SimpleLineLibrary.Services.Parsing.Arguments

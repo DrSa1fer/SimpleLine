@@ -3,10 +3,7 @@ using SimpleLineLibrary.Services.Parsing.Tokens;
 using SimpleLineLibrary.Services.Finding;
 using SimpleLineLibrary.Services.Execution.Exceptions;
 using SimpleLineLibrary.Services.Execution;
-using SimpleLineLibrary.Services.Execution.Converting;
-using System.Runtime.ExceptionServices;
 using SimpleLineLibrary.Services.BuildingInfo;
-using SimpleLineLibrary.Services.Assembly.Receiving;
 
 namespace SimpleLineLibrary
 {
@@ -17,8 +14,6 @@ namespace SimpleLineLibrary
         private readonly TokenParser _tokenParser;
         private readonly ArgumentParser _argumentParser;
 
-        private readonly CommandReceiver _commandReceiver;
-
         private readonly CommandFinder _commandFinder;
         private readonly InfoBuilder _infoBuilder;
 
@@ -28,12 +23,10 @@ namespace SimpleLineLibrary
         {
             _config = config;
 
-            _commandReceiver = new CommandReceiver();
-            _argumentParser = new ArgumentParser();
             _tokenParser = new TokenParser();
+            _argumentParser = new ArgumentParser();
             
             _commandFinder = new CommandFinder();
-
             _handlerExecutor = new HandlerExecutor();
             
             _infoBuilder = new InfoBuilder(_config.ProgramName, _config.ProgramVersion);
@@ -52,12 +45,10 @@ namespace SimpleLineLibrary
                 {
                     _config.OnNoArguments?.Invoke();
                     return null;
-                }
-
-                var coms = _commandReceiver.GetCommands(_config.DefinedTypes);
+                }                
 
                 var qArgs = new Queue<string>(args);
-                var com = _commandFinder.Find(qArgs, coms);
+                var com = _commandFinder.Find(qArgs, _config.DefinedTypes);
 
                 if (com == null)
                 {
@@ -75,15 +66,15 @@ namespace SimpleLineLibrary
                     return null;
                 }
 
+                if(com.Handler == null) 
+                {
+                    _config?.OnHandlerMissing?.Invoke(com.Uid);
+                    return null;
+                }
+
                 var parseArgs = _argumentParser.Parse(qArgs);
                 var conTypes = _config.ConvertibleTypes;
                 var execData = new ExecutionData(parseArgs);
-
-                if(com.Handler == null) 
-                {
-                    _config?.OnHandlerMissing?.Invoke();
-                    return null;
-                }
 
                 return _handlerExecutor.Execute(com.Handler, execData, conTypes);
             }

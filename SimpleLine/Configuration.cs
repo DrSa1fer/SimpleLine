@@ -6,11 +6,11 @@ namespace SimpleLineLibrary
 {
     public class Configuration
     {
-        public Action<Exception>? OnSimpleLineException { get; init; }
-        public Action<Exception>? OnUserException { get; init; }
-        public Action<string>? OnCommandNotFound { get; init; }
-        public Action<string>? OnHandlerMissing { get; init; }
-        public Action? OnNoArguments { get; init; }
+        public Action<Exception>? OnSimpleLineException { get; set; }
+        public Action<Exception>? OnUserException { get; set; }        
+        public Action<string>? OnCommandNotFound { get; set; }
+        public Action<string>? OnHandlerMissing { get; set; }
+        public Action? OnNoArguments { get; set; }
 
         public string ProgramName
         {
@@ -119,7 +119,7 @@ namespace SimpleLineLibrary
                 },
                 OnCommandNotFound = (name) =>
                 {
-                    Console.WriteLine($"Simple Line doesnt contains command with name \"{name}\" name");
+                    Console.WriteLine($"Simple Line doesnt contains command with name \"{name}\"");
                 },
                 OnHandlerMissing = (name) => 
                 {
@@ -145,7 +145,7 @@ namespace SimpleLineLibrary
                 ProgramName = assembly.ManifestModule.Name,
 
                 ProgramVersion = assembly
-                .GetCustomAttribute<AssemblyVersionAttribute>()?.Version ?? string.Empty,
+                .GetCustomAttribute<AssemblyVersionAttribute>()?.Version ?? "1.0.0.0",
 
                 ProgramDescription = assembly
                 .GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description ?? string.Empty,

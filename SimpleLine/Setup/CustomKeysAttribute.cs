@@ -6,6 +6,9 @@
     [AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false)]
     public class CustomKeysAttribute : Attribute
     {
+        internal string LongKey { get; }
+        internal string ShortKey { get; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -13,11 +16,8 @@
         /// <param name="shortKey">short key "-k"</param>
         public CustomKeysAttribute(string shortKey, string longKey)
         {
-            ShortKey = shortKey;
             LongKey = longKey;
+            ShortKey = shortKey;
         }
-
-        public string ShortKey { get; }
-        public string LongKey { get; }
     }
 }

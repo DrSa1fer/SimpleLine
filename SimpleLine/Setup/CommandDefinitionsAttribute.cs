@@ -6,6 +6,16 @@
     [AttributeUsage(AttributeTargets.Class)]
     public class CommandDefinitionsAttribute : Attribute
     {
-        public string? BindTo { get; set; }
+        internal string Command { get; }
+
+        public CommandDefinitionsAttribute() 
+        {
+            Command = string.Empty;
+        }
+
+        public CommandDefinitionsAttribute(string rootCommand)
+        {
+            Command = rootCommand;
+        }
     }
 }
