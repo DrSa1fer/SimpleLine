@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>False</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>SimpleLineLibrary</RootNamespace>
+    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <IncludeSymbols>False</IncludeSymbols>
+    <NoWin32Manifest>true</NoWin32Manifest>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageId>SimpleLine</PackageId>
+    <Title>SimpleLine</Title>
+    <Authors>Danil Kucherenko</Authors>
+    <Description>An open source library that tagrets to simplify command line interaction.</Description>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>cli;commandline;c#;library;</PackageTags>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>0.0.0.2</FileVersion>
+    <Version>0.0.2-alpha</Version>
+    <PackRelease>True</PackRelease>
+    <RepositoryUrl>https://github.com/DrSa1fer/SimpleLine</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
