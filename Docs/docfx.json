@@ -31,7 +31,7 @@
       }
     ],
     "dest": "_site",
-    "template": [ "default",  "templates/material-classic" ],
+    "template": [ "default",  "material" ],
     "globalMetadata": {
       "_appName": "SimpleLine",
       "_appTitle": "SimpleLine",      
