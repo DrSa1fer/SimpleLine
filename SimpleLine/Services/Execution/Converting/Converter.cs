@@ -13,7 +13,14 @@
         {
             ThrowIfNotSupported(type);
 
-            return _types[type]?.Invoke(arg);
+            try
+            {    
+                return _types[type]?.Invoke(arg);
+            }
+            catch(Exception e)
+            {
+                throw new InvalidCastException($"Cant convert string to {type}", e);
+            }
         }
         public object? ConvertCollection(Type type, IEnumerable<string> args)
         {            
@@ -48,7 +55,7 @@
         {
             if (!_types.ContainsKey(type))
             {
-                throw new ArgumentException($"{type.Name} is not supported");
+                throw new NotSupportedException($"{type.Name} is not supported");
             }
         }
     }

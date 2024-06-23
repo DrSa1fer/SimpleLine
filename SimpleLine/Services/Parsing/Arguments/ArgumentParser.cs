@@ -39,27 +39,39 @@ namespace SimpleLineLibrary.Services.Parsing.Arguments
                         }
                     }
 
-                    var arg = new Argument(key, value, pos);
+                    var arg = new Argument
+                    {
+                        Key = key, 
+                        Value = value
+                    };
+                    
                     ls.Add(arg);
                 }
-                else if (IsValue(current))
+                else if(IsValue(current))
                 {
                     string key = string.Empty;
                     string value = args.Dequeue();
 
-                    var arg = new Argument(key, value, pos);
+                    var arg = new Argument
+                    {
+                        Key = key, 
+                        Value = value, 
+                        Position = pos
+                    };
 
                     ls.Add(arg);
                 }
-                else if(args.TryPeek(out var s))
+
+                if(args.TryPeek(out var combine) && IsCombine(combine))
                 {
                     args.Dequeue();
-                    continue;
                 }
-                pos++;
+                else
+                {
+                    pos++;
+                }
             }
 
-            System.Console.WriteLine(string.Join("_", ls.Select(x => x.Position)));
             return ls;
         }
 

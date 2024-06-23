@@ -5,15 +5,15 @@ namespace SimpleLineLibrary.Services.Parsing.Arguments
     /// </summary>
     internal class Argument
     {
-        public string Key { get; }
-        public string Value { get; }
-        public int Position { get; }
+        public string Key { get; init; }
+        public string Value { get; init; }
+        public int Position { get; init; }
 
-        public Argument(string key = "", string value = "", int position = 0)
+        public Argument()
         {
-            Key = key;
-            Value = value;
-            Position = position;
+            Key = "";
+            Value = "";
+            Position = -1;
         }
 
         public bool HasKey()

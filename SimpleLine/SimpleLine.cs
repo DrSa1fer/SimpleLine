@@ -80,7 +80,7 @@ namespace SimpleLineLibrary
             }
             catch(UserRuntimeException e)
             {
-                _config.OnUserException?.Invoke(e);
+                _config.OnUserException?.Invoke(e.InnerException ?? new());
                 return null;
             }
             catch (Exception e)

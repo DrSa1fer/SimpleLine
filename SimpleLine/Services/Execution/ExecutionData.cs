@@ -18,31 +18,47 @@ namespace SimpleLineLibrary.Services.Execution
         {
             get
             {
-                return _notNamedCount + _keys.Count;
+                return _pos.Count + _keys.Count;
             }
         }
 
         private readonly IReadOnlyList<Argument> _args;
         private readonly HashSet<string> _keys;
-        private readonly int _notNamedCount;
+        private readonly HashSet<int> _pos;
 
         public ExecutionData(IReadOnlyList<Argument> args)
         {
             _args = args;
             _keys = new();
+            _pos = new();
 
             for(int i = 0; i < _args.Count; i++)
             {
-                if (!_args[i].HasKey())
+                var pos = _args[i].Position;
+                var key = _args[i].Key;
+                
+                if(_args[i].HasKey())
                 {
-                    _notNamedCount++;
-                    continue;
+                    if (pos != -1)
+                    {
+                        throw new ArgumentException("Argument cant have pos and key");
+                    }
+                    if (!_keys.Contains(key))
+                    {
+                        _keys.Add(key);                    
+                    }
                 }
-                if (_keys.Contains(_args[i].Key))
+                else
                 {
-                    continue;
+                    if (pos < 0)
+                    {
+                        throw new ArgumentException("Position must bigger than -1");
+                    }
+                    if (!_pos.Contains(pos))
+                    {                 
+                        _pos.Add(pos);                    
+                    }
                 }
-                _keys.Add(_args[i].Key);
             }
         }
 
@@ -58,16 +74,16 @@ namespace SimpleLineLibrary.Services.Execution
                     || x.Key.IsEqualsToken(parameter.LongKey) 
                     || x.Key.IsEqualsToken(parameter.ShortKey) 
                     || x.Position == parameter.Position)
-                .Select(x => x.Value);
+                .Select(x => x.Value)
+            ;
         }
         public bool HasParameter(Parameter parameter)
         {
-            return
-                _args.Any(x => x.Position == parameter.Position) ||
-                _args.Any(x => false
-                    || x.Key.IsEqualsToken(parameter.LongKey) 
-                    || x.Key.IsEqualsToken(parameter.ShortKey))
-                ;
+            return false
+                || _pos.Contains(parameter.Position)
+                || _keys.Contains(parameter.LongKey)
+                || _keys.Contains(parameter.ShortKey)
+            ;
         }
         public bool HasValue(Parameter parameter)
         {
@@ -76,7 +92,8 @@ namespace SimpleLineLibrary.Services.Execution
                     || x.Key.IsEqualsToken(parameter.LongKey) 
                     || x.Key.IsEqualsToken(parameter.ShortKey) 
                     || x.Position == parameter.Position)
-                .Any(x => x.HasValue());
+                .Any(x => x.HasValue())
+            ;
         }
     }
 }
