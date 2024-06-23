@@ -53,51 +53,30 @@ namespace SimpleLineLibrary.Services.Execution
 
         public IEnumerable<string> GetValues(Parameter parameter)
         {
-            var values = _args
-                .Where(x => x.HasKey())
-                .Where(x => x.Key.IsEqualsToken(parameter.LongKey) ||
-                    x.Key.IsEqualsToken(parameter.ShortKey))
+            return _args
+                .Where(x => false
+                    || x.Key.IsEqualsToken(parameter.LongKey) 
+                    || x.Key.IsEqualsToken(parameter.ShortKey) 
+                    || x.Position == parameter.Position)
                 .Select(x => x.Value);
-
-            if (true
-                && parameter.Position > -1
-                && parameter.Position < _args.Count
-                && !_args[parameter.Position].HasKey())
-            {
-                return values.Append(_args[parameter.Position].Value);
-            }
-
-            Console.WriteLine( string.Join(", ", values));
-
-            return values;
         }
         public bool HasParameter(Parameter parameter)
         {
-            return _args
-                .Where(x => x.HasKey())
-                .Any(x => 
-                    x.Key.IsEqualsToken(parameter.LongKey) ||
-                    x.Key.IsEqualsToken(parameter.ShortKey)) ||
-                    
-                    (parameter.Position > -1 &&
-                    parameter.Position < _args.Count &&
-                    _args[parameter.Position].HasKey() == false)
+            return
+                _args.Any(x => x.Position == parameter.Position) ||
+                _args.Any(x => false
+                    || x.Key.IsEqualsToken(parameter.LongKey) 
+                    || x.Key.IsEqualsToken(parameter.ShortKey))
                 ;
         }
         public bool HasValue(Parameter parameter)
         {
             return _args
-                .Where(x => x.HasKey())
-                .Any(x => (
-                    x.Key.IsEqualsToken(parameter.LongKey) ||
-                    x.Key.IsEqualsToken(parameter.ShortKey)) && 
-                    x.HasValue()) ||
-
-                    (parameter.Position > -1 &&
-                    parameter.Position < _args.Count &&
-                    _args[parameter.Position].HasKey() == false &&
-                    _args[parameter.Position].HasValue())
-                ;
+                .Where(x => false 
+                    || x.Key.IsEqualsToken(parameter.LongKey) 
+                    || x.Key.IsEqualsToken(parameter.ShortKey) 
+                    || x.Position == parameter.Position)
+                .Any(x => x.HasValue());
         }
     }
 }

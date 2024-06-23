@@ -6,6 +6,6 @@ internal class Program
     {
         var conf = Configuration.Default(typeof(Program).Assembly);
 
-        SimpleLine.Build(conf).Run(args);
+        SimpleLine.Build(conf).Run(new string[] { "test", "foo",  "Hello", "&", "World", "&", "!" });
     }   
 }

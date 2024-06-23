@@ -1,6 +1,4 @@
-﻿using SimpleLineLibrary.Services.Execution.Converting.Exceptions;
-
-namespace SimpleLineLibrary.Services.Execution.Converting
+﻿namespace SimpleLineLibrary.Services.Execution.Converting
 {
     internal class Converter
     {
@@ -18,9 +16,7 @@ namespace SimpleLineLibrary.Services.Execution.Converting
             return _types[type]?.Invoke(arg);
         }
         public object? ConvertCollection(Type type, IEnumerable<string> args)
-        {
-            ThrowIfNotSupported(type);
-
+        {            
             if (type.IsArray)
             {
                 if (type.GetArrayRank() > 1)
@@ -29,8 +25,10 @@ namespace SimpleLineLibrary.Services.Execution.Converting
                 }
 
                 var valueType = type.GetElementType()!;
-                var values = args.ToArray();
 
+                ThrowIfNotSupported(valueType);
+
+                var values = args.ToArray();
                 var arr = (Array)Activator.CreateInstance(type, values.Length)!;
 
                 for (int i = 0; i < arr.Length; i++)
@@ -43,12 +41,12 @@ namespace SimpleLineLibrary.Services.Execution.Converting
                 return arr;
             }
 
-            throw new CollectionConvertException();
+            throw new NotSupportedException("Supported only array collections converting");
         }
 
         private void ThrowIfNotSupported(Type type)
         {
-            if (!_types.ContainsKey(type) && !type.IsArray)
+            if (!_types.ContainsKey(type))
             {
                 throw new ArgumentException($"{type.Name} is not supported");
             }

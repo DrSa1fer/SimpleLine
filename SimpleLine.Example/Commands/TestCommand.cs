@@ -6,9 +6,9 @@ namespace SimpleLineLibrary.Example.Commands
     public class TestCommand
     {
         [Command("foo")]
-        public static void Foo()
+        public static void Foo(string[] msgs)
         {
-            Console.WriteLine("Hello world!");
+            Console.WriteLine(string.Join(";", msgs));
         }
     }
 }

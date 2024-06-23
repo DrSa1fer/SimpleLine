@@ -18,6 +18,7 @@ namespace SimpleLineLibrary.Services.Execution
                 }
                 if(input.ArgCount > handler.Parameters.Count)
                 {
+                    System.Console.WriteLine(input.ArgCount);
                     throw new ArgumentException("Count of args bigger than count of handler paramters");
                 }
                 if (!input.Keys.All(handler.AvalibleKeys.Contains))
@@ -69,7 +70,7 @@ namespace SimpleLineLibrary.Services.Execution
                 {
                     if (p.IsRequired)
                     {
-                        throw new NoRequiredParameterException(p.Name);
+                        throw new ArgumentException($"Required parameter is missing {p.Name}");
                     }
                     if (p.HasDefaultValue)
                     {

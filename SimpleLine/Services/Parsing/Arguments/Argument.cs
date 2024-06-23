@@ -1,7 +1,7 @@
 namespace SimpleLineLibrary.Services.Parsing.Arguments
 {
     /// <summary>
-    /// Представление аргумента "--key value" из ввода в виде объекта    
+    ///    
     /// </summary>
     internal class Argument
     {
@@ -13,12 +13,6 @@ namespace SimpleLineLibrary.Services.Parsing.Arguments
         {
             Key = key;
             Value = value;
-
-            if (!HasKey() && !HasValue())
-            {
-                throw new ArgumentNullException("я никому не нужен. ключ null, значение null");
-            }
-
             Position = position;
         }
 
