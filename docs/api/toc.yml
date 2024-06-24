@@ -1,0 +1,21 @@
+### YamlMime:TableOfContent
+items:
+- uid: SimpleLineLibrary
+  name: SimpleLineLibrary
+  items:
+  - uid: SimpleLineLibrary.Configuration
+    name: Configuration
+  - uid: SimpleLineLibrary.SimpleLine
+    name: SimpleLine
+- uid: SimpleLineLibrary.Setup
+  name: SimpleLineLibrary.Setup
+  items:
+  - uid: SimpleLineLibrary.Setup.CommandAttribute
+    name: CommandAttribute
+  - uid: SimpleLineLibrary.Setup.CommandDefinitionsAttribute
+    name: CommandDefinitionsAttribute
+  - uid: SimpleLineLibrary.Setup.CustomKeysAttribute
+    name: CustomKeysAttribute
+  - uid: SimpleLineLibrary.Setup.DescriptionAttribute
+    name: DescriptionAttribute
+memberLayout: SamePage
