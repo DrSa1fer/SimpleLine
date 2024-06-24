@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>This is the HOMEPAGE. | SimpleLine </title>
+      <title>SimpleLine | SimpleLine </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="This is the HOMEPAGE. | SimpleLine ">
+      <meta name="title" content="SimpleLine | SimpleLine ">
       
       
       <link rel="icon" href="favicon.ico">
@@ -13,7 +13,7 @@
       <meta name="docfx:navrel" content="toc.html">
       <meta name="docfx:tocrel" content="toc.html">
       
-      
+      <meta name="docfx:rel" content="">
       
       
       <meta name="docfx:docurl" content="https://github.com/DrSa1fer/SimpleLine/blob/main/docs/index.md/#L1">
@@ -39,7 +39,7 @@
 
   </head>
 
-  <body class="tex2jax_ignore" data-layout="landing" data-yaml-mime="">
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
@@ -52,6 +52,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navpanel">
             <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
             </div>
           </div>
         </div>
@@ -67,13 +71,84 @@
         </div>
 
         <article data-uid="">
-<h1 id="this-is-the-homepage">This is the <strong>HOMEPAGE</strong>.</h1>
+<h1 id="simpleline">SimpleLine</h1>
 
-<p>Refer to <a href="http://daringfireball.net/projects/markdown/">Markdown</a> for how to write markdown files.</p>
-<h2 id="quick-start-notes">Quick Start Notes:</h2>
-<ol>
-<li>Add images to the <em>images</em> folder if the file is referencing an image.</li>
-</ol>
+<hr>
+<h2 id="about">About</h2>
+<p><strong>SimpleLine</strong> an open source library that targets to simplify command line interaction.<br>
+Allows you to define new commands without having to think about getting values, type conversion,
+calling a specific type, and a lot of other troubles.
+It s written in C# language.</p>
+<hr>
+<h2 id="why">Why?</h2>
+<p><strong>SimpleLine</strong> library makes it easy to write command-line applications</p>
+<ul>
+<li>Facilitates development</li>
+<li>Fairly easy to use</li>
+<li>Easy enough to embed</li>
+<li>Does not affect the testability of the system</li>
+</ul>
+<hr>
+<h2 id="installation">Installation</h2>
+<p>.NET CLI</p>
+<pre><code class="lang-powershell">&gt; dotnet add package SimpleLine --version 0.0.2-alpha
+</code></pre>
+<p>Package Manager</p>
+<pre><code class="lang-powershell">PM&gt; NuGet\Install-Package SimpleLine -Version 0.0.2-alpha
+</code></pre>
+<p>Package Reference</p>
+<pre><code class="lang-powershell">&lt;PackageReference Include=&quot;SimpleLine&quot; Version=&quot;0.0.2-alpha&quot; /&gt;
+</code></pre>
+<blockquote>
+<p>Required <a href="https://dotnet.microsoft.com/en-us/download">.NET SDK</a> 6.0+</p>
+</blockquote>
+<hr>
+<h2 id="usage">Usage</h2>
+<p>To use the library, you need to complete several steps</p>
+<h3 id="1-define-commands">1. Define commands</h3>
+<pre><code class="lang-csharp">using SimpleLineLibrary.Setup;
+
+[CommandDefinitions]
+public class Example
+{
+    [Command(&quot;example&quot;)]
+    public void Foo(int x)
+    {
+        Console.WriteLine($&quot;result: {x * 2}&quot;);
+    }
+}
+</code></pre>
+<h3 id="2-set-run-library">2. Set run library</h3>
+<pre><code class="lang-csharp">using SimpleLineLibrary;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        var conf = Configuration.Default(typeof(Program).Assembly);
+
+        SimpleLine.Build(conf).Run(args);
+    }
+}
+</code></pre>
+<h3 id="3-invoke">3. Invoke</h3>
+<pre><code class="lang-powershell">C:\&gt; dotnet program.dll example -x 10
+result: 20
+</code></pre>
+<hr>
+<h2 id="feedback-or-suggestion">Feedback or Suggestion</h2>
+<ul>
+<li><a href="https://github.com/DrSa1fer">Github</a></li>
+<li><a href="https://t.me/DanilKucherenko">Telegram</a></li>
+<li><a href="https://discord.com/invite/XmQqXuHQ">Discord</a></li>
+</ul>
+<hr>
+<h2 id="docs">Docs</h2>
+<p>You can find fully documentation about project
+<a href="https://drsa1fer.github.io/SimpleLine/">docs link</a></p>
+<hr>
+<h2 id="license">License</h2>
+<p><a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU GPL-3.0</a></p>
 
 </article>
 
@@ -90,6 +165,7 @@
       </div>
     </main>
 
+    <div class="container-xxl search-results" id="search-results"></div>
 
     <footer class="border-top text-secondary">
       <div class="container-xxl">

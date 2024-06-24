@@ -83,12 +83,6 @@ namespace SimpleLineLibrary.Models
             int position, bool isRequired,
             Type valueType, object? defValue)
         {
-            name.ThrowIfWrongTokenName();
-            desc.ThrowIfWrongText();
-
-            longKey.ThrowIfWrongLongKeyTokenName();
-            shortKey.ThrowIfWrongShortKeyTokenName();
-
             _name= name;
             _description= desc;
             _longkey = longKey;

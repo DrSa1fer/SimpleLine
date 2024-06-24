@@ -1,2 +1,2 @@
 
-{"items":[{"name":"Introduction","href":"introduction.html","topicHref":"introduction.html"},{"name":"Getting Started","href":"getting-started.html","topicHref":"getting-started.html"}],"pdf":true}
+{"items":[{"name":"Docs","includedFrom":"~/articles/toc.yml","items":[{"name":"Introduction","href":"base/"},{"name":"Installation","href":"intallation/"},{"name":"Usage","href":"usage/"}]},{"name":"API","href":"api/"}],"pdf":true}

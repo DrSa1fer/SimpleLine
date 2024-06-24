@@ -42,9 +42,6 @@ namespace SimpleLineLibrary.Models
 
         public Command(string uid, string desc, Handler? handler)             
         {
-            uid.ThrowIfWrongTokenName();
-            desc.ThrowIfWrongText();
-
             _uid = uid;
             _description = desc;
             _handler = handler;

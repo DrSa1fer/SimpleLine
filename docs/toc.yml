@@ -1,4 +1,5 @@
-- name: Introduction
-  href: introduction.md
-- name: Getting Started
-  href: getting-started.md
+- name: Docs
+  href: articles/toc.yml
+
+- name: API
+  href: api/
