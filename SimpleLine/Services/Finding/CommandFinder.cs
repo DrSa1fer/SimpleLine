@@ -1,4 +1,4 @@
-﻿using SimpleLineLibrary.Services.Finding.Reading;
+﻿using SimpleLineLibrary.Services.Finding.Parsing;
 using SimpleLineLibrary.Extentions;
 using SimpleLineLibrary.Models;
 using SimpleLineLibrary.Setup;
@@ -8,7 +8,7 @@ namespace SimpleLineLibrary.Services.Finding
 {
     internal class CommandFinder
     {
-        private readonly CommandDefinitionsReader _definitionsReader;
+        private readonly CommandDefinitionsParser _definitionsReader;
 
         public CommandFinder()
         {

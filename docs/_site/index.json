@@ -1,7 +1,102 @@
 {
+  "api/SimpleLineLibrary.Configuration.html": {
+    "href": "api/SimpleLineLibrary.Configuration.html",
+    "title": "Class Configuration | SimpleLine",
+    "keywords": "Class Configuration Namespace SimpleLineLibrary Assembly SimpleLine.dll public class Configuration Inheritance object Configuration Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors Configuration() public Configuration() Properties ConvertibleTypes public IReadOnlyDictionary<Type, Func<string, object?>> ConvertibleTypes { get; } Property Value IReadOnlyDictionary<Type, Func<string, object>> DefinedTypes public IEnumerable<TypeInfo> DefinedTypes { get; init; } Property Value IEnumerable<TypeInfo> HelpKeys public IReadOnlySet<string> HelpKeys { get; init; } Property Value IReadOnlySet<string> OnCommandNotFound public Action<string>? OnCommandNotFound { get; set; } Property Value Action<string> OnHandlerMissing public Action<string>? OnHandlerMissing { get; set; } Property Value Action<string> OnNoArguments public Action? OnNoArguments { get; set; } Property Value Action OnSimpleLineException public Action<Exception>? OnSimpleLineException { get; set; } Property Value Action<Exception> OnUserException public Action<Exception>? OnUserException { get; set; } Property Value Action<Exception> ProgramDescription public string ProgramDescription { get; init; } Property Value string ProgramName public string ProgramName { get; init; } Property Value string ProgramVersion public string ProgramVersion { get; init; } Property Value string Methods AddTypeForConverting<T>(Func<string, T>) public void AddTypeForConverting<T>(Func<string, T> func) Parameters func Func<string, T> Type Parameters T Default(Assembly) public static Configuration Default(Assembly assembly) Parameters assembly Assembly Returns Configuration"
+  },
+  "api/SimpleLineLibrary.Setup.CommandAttribute.html": {
+    "href": "api/SimpleLineLibrary.Setup.CommandAttribute.html",
+    "title": "Class CommandAttribute | SimpleLine",
+    "keywords": "Class CommandAttribute Namespace SimpleLineLibrary.Setup Assembly SimpleLine.dll Marks a method as a command so that the library can use this [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = true)] public class CommandAttribute : Attribute Inheritance object Attribute CommandAttribute Inherited Members Attribute.Equals(object) Attribute.GetCustomAttribute(Assembly, Type) Attribute.GetCustomAttribute(Assembly, Type, bool) Attribute.GetCustomAttribute(MemberInfo, Type) Attribute.GetCustomAttribute(MemberInfo, Type, bool) Attribute.GetCustomAttribute(Module, Type) Attribute.GetCustomAttribute(Module, Type, bool) Attribute.GetCustomAttribute(ParameterInfo, Type) Attribute.GetCustomAttribute(ParameterInfo, Type, bool) Attribute.GetCustomAttributes(Assembly) Attribute.GetCustomAttributes(Assembly, bool) Attribute.GetCustomAttributes(Assembly, Type) Attribute.GetCustomAttributes(Assembly, Type, bool) Attribute.GetCustomAttributes(MemberInfo) Attribute.GetCustomAttributes(MemberInfo, bool) Attribute.GetCustomAttributes(MemberInfo, Type) Attribute.GetCustomAttributes(MemberInfo, Type, bool) Attribute.GetCustomAttributes(Module) Attribute.GetCustomAttributes(Module, bool) Attribute.GetCustomAttributes(Module, Type) Attribute.GetCustomAttributes(Module, Type, bool) Attribute.GetCustomAttributes(ParameterInfo) Attribute.GetCustomAttributes(ParameterInfo, bool) Attribute.GetCustomAttributes(ParameterInfo, Type) Attribute.GetCustomAttributes(ParameterInfo, Type, bool) Attribute.GetHashCode() Attribute.IsDefaultAttribute() Attribute.IsDefined(Assembly, Type) Attribute.IsDefined(Assembly, Type, bool) Attribute.IsDefined(MemberInfo, Type) Attribute.IsDefined(MemberInfo, Type, bool) Attribute.IsDefined(Module, Type) Attribute.IsDefined(Module, Type, bool) Attribute.IsDefined(ParameterInfo, Type) Attribute.IsDefined(ParameterInfo, Type, bool) Attribute.Match(object) Attribute.TypeId object.Equals(object, object) object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors CommandAttribute(string) public CommandAttribute(string command) Parameters command string"
+  },
+  "api/SimpleLineLibrary.Setup.CommandDefinitionsAttribute.html": {
+    "href": "api/SimpleLineLibrary.Setup.CommandDefinitionsAttribute.html",
+    "title": "Class CommandDefinitionsAttribute | SimpleLine",
+    "keywords": "Class CommandDefinitionsAttribute Namespace SimpleLineLibrary.Setup Assembly SimpleLine.dll Marks a class as a command definition holder so that the library can use this [AttributeUsage(AttributeTargets.Class)] public class CommandDefinitionsAttribute : Attribute Inheritance object Attribute CommandDefinitionsAttribute Inherited Members Attribute.Equals(object) Attribute.GetCustomAttribute(Assembly, Type) Attribute.GetCustomAttribute(Assembly, Type, bool) Attribute.GetCustomAttribute(MemberInfo, Type) Attribute.GetCustomAttribute(MemberInfo, Type, bool) Attribute.GetCustomAttribute(Module, Type) Attribute.GetCustomAttribute(Module, Type, bool) Attribute.GetCustomAttribute(ParameterInfo, Type) Attribute.GetCustomAttribute(ParameterInfo, Type, bool) Attribute.GetCustomAttributes(Assembly) Attribute.GetCustomAttributes(Assembly, bool) Attribute.GetCustomAttributes(Assembly, Type) Attribute.GetCustomAttributes(Assembly, Type, bool) Attribute.GetCustomAttributes(MemberInfo) Attribute.GetCustomAttributes(MemberInfo, bool) Attribute.GetCustomAttributes(MemberInfo, Type) Attribute.GetCustomAttributes(MemberInfo, Type, bool) Attribute.GetCustomAttributes(Module) Attribute.GetCustomAttributes(Module, bool) Attribute.GetCustomAttributes(Module, Type) Attribute.GetCustomAttributes(Module, Type, bool) Attribute.GetCustomAttributes(ParameterInfo) Attribute.GetCustomAttributes(ParameterInfo, bool) Attribute.GetCustomAttributes(ParameterInfo, Type) Attribute.GetCustomAttributes(ParameterInfo, Type, bool) Attribute.GetHashCode() Attribute.IsDefaultAttribute() Attribute.IsDefined(Assembly, Type) Attribute.IsDefined(Assembly, Type, bool) Attribute.IsDefined(MemberInfo, Type) Attribute.IsDefined(MemberInfo, Type, bool) Attribute.IsDefined(Module, Type) Attribute.IsDefined(Module, Type, bool) Attribute.IsDefined(ParameterInfo, Type) Attribute.IsDefined(ParameterInfo, Type, bool) Attribute.Match(object) Attribute.TypeId object.Equals(object, object) object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors CommandDefinitionsAttribute() public CommandDefinitionsAttribute() CommandDefinitionsAttribute(string) public CommandDefinitionsAttribute(string rootCommand) Parameters rootCommand string"
+  },
+  "api/SimpleLineLibrary.Setup.CustomKeysAttribute.html": {
+    "href": "api/SimpleLineLibrary.Setup.CustomKeysAttribute.html",
+    "title": "Class CustomKeysAttribute | SimpleLine",
+    "keywords": "Class CustomKeysAttribute Namespace SimpleLineLibrary.Setup Assembly SimpleLine.dll Sets the keys for the handler parameter [AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false)] public class CustomKeysAttribute : Attribute Inheritance object Attribute CustomKeysAttribute Inherited Members Attribute.Equals(object) Attribute.GetCustomAttribute(Assembly, Type) Attribute.GetCustomAttribute(Assembly, Type, bool) Attribute.GetCustomAttribute(MemberInfo, Type) Attribute.GetCustomAttribute(MemberInfo, Type, bool) Attribute.GetCustomAttribute(Module, Type) Attribute.GetCustomAttribute(Module, Type, bool) Attribute.GetCustomAttribute(ParameterInfo, Type) Attribute.GetCustomAttribute(ParameterInfo, Type, bool) Attribute.GetCustomAttributes(Assembly) Attribute.GetCustomAttributes(Assembly, bool) Attribute.GetCustomAttributes(Assembly, Type) Attribute.GetCustomAttributes(Assembly, Type, bool) Attribute.GetCustomAttributes(MemberInfo) Attribute.GetCustomAttributes(MemberInfo, bool) Attribute.GetCustomAttributes(MemberInfo, Type) Attribute.GetCustomAttributes(MemberInfo, Type, bool) Attribute.GetCustomAttributes(Module) Attribute.GetCustomAttributes(Module, bool) Attribute.GetCustomAttributes(Module, Type) Attribute.GetCustomAttributes(Module, Type, bool) Attribute.GetCustomAttributes(ParameterInfo) Attribute.GetCustomAttributes(ParameterInfo, bool) Attribute.GetCustomAttributes(ParameterInfo, Type) Attribute.GetCustomAttributes(ParameterInfo, Type, bool) Attribute.GetHashCode() Attribute.IsDefaultAttribute() Attribute.IsDefined(Assembly, Type) Attribute.IsDefined(Assembly, Type, bool) Attribute.IsDefined(MemberInfo, Type) Attribute.IsDefined(MemberInfo, Type, bool) Attribute.IsDefined(Module, Type) Attribute.IsDefined(Module, Type, bool) Attribute.IsDefined(ParameterInfo, Type) Attribute.IsDefined(ParameterInfo, Type, bool) Attribute.Match(object) Attribute.TypeId object.Equals(object, object) object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors CustomKeysAttribute(string, string) public CustomKeysAttribute(string shortKey, string longKey) Parameters shortKey string short key \"-k\" longKey string full key \"--key\""
+  },
+  "api/SimpleLineLibrary.Setup.DescriptionAttribute.html": {
+    "href": "api/SimpleLineLibrary.Setup.DescriptionAttribute.html",
+    "title": "Class DescriptionAttribute | SimpleLine",
+    "keywords": "Class DescriptionAttribute Namespace SimpleLineLibrary.Setup Assembly SimpleLine.dll Adds a description for further use by the library [AttributeUsage(AttributeTargets.Method|AttributeTargets.Parameter, AllowMultiple = false, Inherited = true)] public class DescriptionAttribute : Attribute Inheritance object Attribute DescriptionAttribute Inherited Members Attribute.Equals(object) Attribute.GetCustomAttribute(Assembly, Type) Attribute.GetCustomAttribute(Assembly, Type, bool) Attribute.GetCustomAttribute(MemberInfo, Type) Attribute.GetCustomAttribute(MemberInfo, Type, bool) Attribute.GetCustomAttribute(Module, Type) Attribute.GetCustomAttribute(Module, Type, bool) Attribute.GetCustomAttribute(ParameterInfo, Type) Attribute.GetCustomAttribute(ParameterInfo, Type, bool) Attribute.GetCustomAttributes(Assembly) Attribute.GetCustomAttributes(Assembly, bool) Attribute.GetCustomAttributes(Assembly, Type) Attribute.GetCustomAttributes(Assembly, Type, bool) Attribute.GetCustomAttributes(MemberInfo) Attribute.GetCustomAttributes(MemberInfo, bool) Attribute.GetCustomAttributes(MemberInfo, Type) Attribute.GetCustomAttributes(MemberInfo, Type, bool) Attribute.GetCustomAttributes(Module) Attribute.GetCustomAttributes(Module, bool) Attribute.GetCustomAttributes(Module, Type) Attribute.GetCustomAttributes(Module, Type, bool) Attribute.GetCustomAttributes(ParameterInfo) Attribute.GetCustomAttributes(ParameterInfo, bool) Attribute.GetCustomAttributes(ParameterInfo, Type) Attribute.GetCustomAttributes(ParameterInfo, Type, bool) Attribute.GetHashCode() Attribute.IsDefaultAttribute() Attribute.IsDefined(Assembly, Type) Attribute.IsDefined(Assembly, Type, bool) Attribute.IsDefined(MemberInfo, Type) Attribute.IsDefined(MemberInfo, Type, bool) Attribute.IsDefined(Module, Type) Attribute.IsDefined(Module, Type, bool) Attribute.IsDefined(ParameterInfo, Type) Attribute.IsDefined(ParameterInfo, Type, bool) Attribute.Match(object) Attribute.TypeId object.Equals(object, object) object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors DescriptionAttribute(string) public DescriptionAttribute(string description) Parameters description string"
+  },
+  "api/SimpleLineLibrary.Setup.html": {
+    "href": "api/SimpleLineLibrary.Setup.html",
+    "title": "Namespace SimpleLineLibrary.Setup | SimpleLine",
+    "keywords": "Namespace SimpleLineLibrary.Setup Classes CommandAttribute Marks a method as a command so that the library can use this CommandDefinitionsAttribute Marks a class as a command definition holder so that the library can use this CustomKeysAttribute Sets the keys for the handler parameter DescriptionAttribute Adds a description for further use by the library"
+  },
+  "api/SimpleLineLibrary.SimpleLine.html": {
+    "href": "api/SimpleLineLibrary.SimpleLine.html",
+    "title": "Class SimpleLine | SimpleLine",
+    "keywords": "Class SimpleLine Namespace SimpleLineLibrary Assembly SimpleLine.dll public class SimpleLine Inheritance object SimpleLine Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods Build(Configuration) Build SimpleLine public static SimpleLine Build(Configuration configuration) Parameters configuration Configuration SimpleLine configuration Returns SimpleLine Run(IEnumerable<string>) Launch Point public object? Run(IEnumerable<string> args) Parameters args IEnumerable<string> Input tokens Returns object"
+  },
+  "api/SimpleLineLibrary.html": {
+    "href": "api/SimpleLineLibrary.html",
+    "title": "Namespace SimpleLineLibrary | SimpleLine",
+    "keywords": "Namespace SimpleLineLibrary Classes Configuration SimpleLine"
+  },
+  "articles/essentials/command-registration.html": {
+    "href": "articles/essentials/command-registration.html",
+    "title": "Command Registration | SimpleLine",
+    "keywords": "Command Registration Attributes"
+  },
+  "articles/package/installing.html": {
+    "href": "articles/package/installing.html",
+    "title": "Installation | SimpleLine",
+    "keywords": "Installation"
+  },
+  "articles/package/uninstalling.html": {
+    "href": "articles/package/uninstalling.html",
+    "title": "| SimpleLine",
+    "keywords": ""
+  },
+  "articles/ru/essentials/command-registration.html": {
+    "href": "articles/ru/essentials/command-registration.html",
+    "title": "Регистрация команд | SimpleLine",
+    "keywords": "Регистрация команд 1. Подготовка Для регистрации команд нам нужно импортировать пространство имен SimpleLineLibrary.Setup. В нем находятся необходимые нам атрибуты [CommandDefinitions] - нужен для определения групп команд. Применим к классу [Command] - нужен для определения команд. Применим к методу Также нам следует подготовить класс и реализовать в нем методы using SimpleLineLibrary.Setup; public class MyCommand { public void Say(string msg) { Console.WriteLine($\"I say: {msg}\"); } } Warning Классы и методы должен быть с публичным модификаторами доступа - public, иначе они будут попросту недоступны для SimpleLine Tip Советую давать название, окончивающееся на Command/Commands, это не несет никакой функциональности, лишь совет для ясности в наименованиях 2. Регистрация В классе, который мы определили, добавим несколько новых строчек Мы помечаем класс атрибутом CommandDefinitions, чтобы в дальнейшем система знала, что в этом классе могут быть определения команд [CommandDefinitions] public class MyCommand { ... } Мы помечаем метод атрибутом Command, чтобы система могла использовать егокак команду [Command(\"say\")] public void Say(string msg) { ... }"
+  },
+  "articles/ru/essentials/groupping.html": {
+    "href": "articles/ru/essentials/groupping.html",
+    "title": "Группировка | SimpleLine",
+    "keywords": "Группировка SimpleLine обладает возможностью группировки команд. Для этого у атрибута CommandDefinitions есть перегрузка, которая принимает имя корневой команды [CommandDefinitions(\"command\")] Примеры Расмотрим примеры, где это может пригодиться Здесь мы группируем команды внутри блока math [CommandDefinitions(\"math\")] public class MathCommands { [Command(\"sum\")] public void Sum(int x, int y) { ... } [Command(\"substract\")] public void Substract(int x, int y) { ... } [Command(\"multiply\")] public void Multiply(int x, int y) { ... } [Command(\"divive\")] public void Divive(int x, int y) { ... } } по итогу этой группировки комманды будут зарегистрированы и доступны по таким именам dotnet program.dll math sum dotnet program.dll math substract dotnet program.dll math divive dotnet program.dll math multiply"
+  },
+  "articles/ru/package/installing.html": {
+    "href": "articles/ru/package/installing.html",
+    "title": "Installation | SimpleLine",
+    "keywords": "Installation"
+  },
+  "articles/ru/package/uninstalling.html": {
+    "href": "articles/ru/package/uninstalling.html",
+    "title": "| SimpleLine",
+    "keywords": ""
+  },
+  "articles/ru/start/getting-started.html": {
+    "href": "articles/ru/start/getting-started.html",
+    "title": "Getting Started | SimpleLine",
+    "keywords": "Getting Started"
+  },
+  "articles/ru/start/introduction.html": {
+    "href": "articles/ru/start/introduction.html",
+    "title": "Introduction | SimpleLine",
+    "keywords": "Introduction"
+  },
+  "articles/start/getting-started.html": {
+    "href": "articles/start/getting-started.html",
+    "title": "Getting Started | SimpleLine",
+    "keywords": "Getting Started"
+  },
+  "articles/start/introduction.html": {
+    "href": "articles/start/introduction.html",
+    "title": "Introduction | SimpleLine",
+    "keywords": "Introduction"
+  },
   "index.html": {
     "href": "index.html",
     "title": "SimpleLine | SimpleLine",
-    "keywords": "SimpleLine About SimpleLine an open source library that targets to simplify command line interaction. Allows you to define new commands without having to think about getting values, type conversion, calling a specific type, and a lot of other troubles. It s written in C# language. Why? SimpleLine library makes it easy to write command-line applications Facilitates development Fairly easy to use Easy enough to embed Does not affect the testability of the system Installation .NET CLI > dotnet add package SimpleLine --version 0.0.2-alpha Package Manager PM> NuGet\\Install-Package SimpleLine -Version 0.0.2-alpha Package Reference <PackageReference Include=\"SimpleLine\" Version=\"0.0.2-alpha\" /> Required .NET SDK 6.0+ Usage To use the library, you need to complete several steps 1. Define commands using SimpleLineLibrary.Setup; [CommandDefinitions] public class Example { [Command(\"example\")] public void Foo(int x) { Console.WriteLine($\"result: {x * 2}\"); } } 2. Set run library using SimpleLineLibrary; internal class Program { static void Main(string[] args) { var conf = Configuration.Default(typeof(Program).Assembly); SimpleLine.Build(conf).Run(args); } } 3. Invoke C:\\> dotnet program.dll example -x 10 result: 20 Feedback or Suggestion Github Telegram Discord Docs You can find fully documentation about project docs link License GNU GPL-3.0"
+    "keywords": "SimpleLine About SimpleLine an open source library that targets to simplify command line interaction. Allows you to define new commands without having to think about getting values, type conversion, calling a specific type, and a lot of other troubles. It s written in C# language. Why? SimpleLine library makes it easy to write command-line applications Facilitates development Fairly easy to use Easy enough to embed Does not affect the testability of the system Installation .NET CLI > dotnet add package SimpleLine --version 0.0.2-alpha Package Manager PM> NuGet\\Install-Package SimpleLine -Version 0.0.2-alpha Package Reference <PackageReference Include=\"SimpleLine\" Version=\"0.0.2-alpha\" /> Required .NET SDK 6.0+ Usage To use the library, you need to complete several steps 1. Define commands using SimpleLineLibrary.Setup; [CommandDefinitions] public class Example { [Command(\"example\")] public void Foo(int x) { Console.WriteLine($\"result: {x * 2}\"); } } 2. Set run library using SimpleLineLibrary; internal class Program { static void Main(string[] args) { var conf = Configuration.Default(typeof(Program).Assembly); SimpleLine.Build(conf).Run(args); } } 3. Invoke C:\\> dotnet program.dll example -x 10 result: 20 Feedback or Suggestion Github Telegram Discord License GNU GPL-3.0"
   }
 }

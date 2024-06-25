@@ -21,7 +21,7 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: SimpleLine
     path: ../SimpleLine/SimpleLine.cs
-    startLine: 9
+    startLine: 7
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
@@ -56,7 +56,7 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: Run
     path: ../SimpleLine/SimpleLine.cs
-    startLine: 39
+    startLine: 31
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
@@ -94,7 +94,7 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: Build
     path: ../SimpleLine/SimpleLine.cs
-    startLine: 97
+    startLine: 87
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary

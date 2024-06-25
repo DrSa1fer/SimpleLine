@@ -1,3 +1,5 @@
+using SimpleLineLibrary.Extentions.Exceptions;
+
 namespace SimpleLineLibrary.Extentions
 {
     internal static class StringExtentions
@@ -55,35 +57,35 @@ namespace SimpleLineLibrary.Extentions
         {
             if (!tokenName.IsTokenName())
             {
-                throw new ArgumentException($"Invalid token name {tokenName}");
+                throw new InvalidTokenException(tokenName);
             }
         }
         public static void ThrowIfWrongText(this string text)
         {
             if (!text.IsValidText())
             {
-                throw new Exception("length more than 80");
+                throw new InvalidTextException(text.Length, 80);
             }
         }
         public static void ThrowIfWrongKeyTokenName(this string key)
         {
             if (!key.IsKeyTokenName())
             {
-                throw new ArgumentException("Invalid key");
+                throw new InvalidKeyException(key);
             }
         }
         public static void ThrowIfWrongLongKeyTokenName(this string key)
         {
             if (!key.IsLongKeyTokenName())
             {
-                throw new ArgumentException($"Invalid key \"{key}\"");
+                throw new InvalidKeyException(key);
             }
         }
         public static void ThrowIfWrongShortKeyTokenName(this string key)
         {
             if (!key.IsShortKeyTokenName())
             {
-                throw new ArgumentException($"Invalid key \"{key}\"");
+                throw new InvalidKeyException(key);
             }
         }
     }

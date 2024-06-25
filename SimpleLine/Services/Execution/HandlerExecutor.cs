@@ -4,6 +4,7 @@ using SimpleLineLibrary.Models;
 using System.Reflection;
 using System.Collections;
 using SimpleLineLibrary.Services.Execution.Binding;
+using SimpleLineLibrary.Services.Execution.Parsing;
 
 namespace SimpleLineLibrary.Services.Execution
 {
@@ -13,7 +14,8 @@ namespace SimpleLineLibrary.Services.Execution
         {            
             try
             {
-                var exData = ExecutionData.Build(args);
+                var parser = new ExecutionDataParser();
+                var exData = parser.Parse(args);
                 
                 if(exData.ArgCount < handler.Parameters.Count(x => x.IsRequired))
                 {
@@ -23,9 +25,12 @@ namespace SimpleLineLibrary.Services.Execution
                 {
                     throw new ArgumentException("Count of args bigger than count of handler paramters");
                 }
-                if (!exData.Keys.All(handler.AvalibleKeys.Contains))
+                foreach(var i in exData.Keys)
                 {
-                    throw new ArgumentException("Key is not supported of command" + string.Join(";", handler.AvalibleKeys));
+                    if(!handler.AvalibleKeys.Contains(i))
+                    {
+                        throw new UnknowKeyException(i, handler.AvalibleKeys);
+                    }
                 }
                 
                 var converter = new Converter(types);                
@@ -36,10 +41,6 @@ namespace SimpleLineLibrary.Services.Execution
             catch (TargetInvocationException ex)
             {
                 throw new UserRuntimeException(ex.InnerException);
-            }            
-            catch
-            {
-                throw;
             }
         }        
     }

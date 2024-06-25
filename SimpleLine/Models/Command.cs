@@ -53,11 +53,6 @@ namespace SimpleLineLibrary.Models
             return Uid.IsEqualsToken(name);
         }
 
-        public bool ContainsSubcommand(Command subcommand)
-        {
-            return _subcommands.Contains(subcommand);
-        }
-
         public void RegisterSubcommand(Command subcommand)        
         {
             if(_subcommands.Contains(subcommand))

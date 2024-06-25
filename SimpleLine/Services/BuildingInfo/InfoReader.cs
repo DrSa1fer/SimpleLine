@@ -3,17 +3,17 @@ using SimpleLineLibrary.Models;
 
 namespace SimpleLineLibrary.Services.BuildingInfo
 {
-    internal class InfoBuilder
+    internal class InfoReader
     {
         private readonly string _program;
         private readonly string _vers;
 
-        public InfoBuilder(string program, string vers)
+        public InfoReader(string program, string vers)
         {
             _program = program;
             _vers = vers;
         }
-
+        
         public string GetInfo(Command command)
         {
             var mb = new MessageBuilder();

@@ -10,7 +10,7 @@ namespace SimpleLineLibrary
         private readonly Configuration _config;
 
         private readonly CommandFinder _commandFinder;
-        private readonly InfoBuilder _infoBuilder;
+        private readonly InfoReader _infoBuilder;
 
         private readonly HandlerExecutor _handlerExecutor;
 
@@ -21,7 +21,7 @@ namespace SimpleLineLibrary
             _commandFinder = new CommandFinder();
             _handlerExecutor = new HandlerExecutor();
             
-            _infoBuilder = new InfoBuilder(_config.ProgramName, _config.ProgramVersion);
+            _infoBuilder = new InfoReader(_config.ProgramName, _config.ProgramVersion);
         }
 
         /// <summary>

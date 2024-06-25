@@ -2,9 +2,9 @@ using SimpleLineLibrary.Extentions;
 using SimpleLineLibrary.Setup;
 using System.Reflection;
 
-namespace SimpleLineLibrary.Services.Finding.Reading
+namespace SimpleLineLibrary.Services.Finding.Parsing
 {
-    internal class CommandDefinitionsReader
+    internal class CommandDefinitionsParser
     {
         internal Dictionary<string, CommandDefinition> GetDefinitions(IEnumerable<TypeInfo> types)
         {
@@ -51,21 +51,26 @@ namespace SimpleLineLibrary.Services.Finding.Reading
                         throw new NotSupportedException("Generic method is not supported");
                     }
 
+
                     var comRoot = defRoot;
-                    var comTokens = comAttr.Command.SplitAndRemoveEmptyEntries(' ');
 
-                    if (comTokens.Length < 1)
-                    {
-                        throw new ArgumentException("Empty command name");
+                    if(!comAttr.Command.IsEqualsToken("@"))
+                    {                        
+                        var comTokens = comAttr.Command.SplitAndRemoveEmptyEntries(' ');
+
+                        if (comTokens.Length < 1)
+                        {
+                            throw new ArgumentException("Empty command name");
+                        }
+
+                        foreach (var comToken in comTokens)
+                        {
+                            comToken.ThrowIfWrongTokenName();
+                        }
+
+                        comRoot = MakeDefinition(comRoot, comTokens);
                     }
-
-                    foreach (var comToken in comTokens)
-                    {
-                        comToken.ThrowIfWrongTokenName();
-                    }
-
-                    comRoot = MakeDefinition(comRoot, comTokens);
-
+                    
                     if(comRoot.Method != null || comRoot.Type != null)
                     {
                         throw new Exception($"Already register command to uid \"{comRoot.Uid}\"");
