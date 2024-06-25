@@ -18,15 +18,15 @@ It s written in C# language.
 ---
 ## Installation
 .NET CLI
-```powershell copy
+```powershell
 > dotnet add package SimpleLine --version 0.0.2-alpha
 ```
 Package Manager
-```powershell copy
+```powershell
 PM> NuGet\Install-Package SimpleLine -Version 0.0.2-alpha
 ```
 Package Reference
-```powershell copy
+```powershell
 <PackageReference Include="SimpleLine" Version="0.0.2-alpha" />
 ```
 
@@ -37,7 +37,7 @@ Package Reference
 To use the library, you need to complete several steps
 
 ### 1. Define commands
-```csharp copy
+```csharp
 using SimpleLineLibrary.Setup;
 
 [CommandDefinitions]
@@ -52,7 +52,7 @@ public class Example
 ```
 
 ### 2. Set run library
-```csharp copy
+```csharp
 using SimpleLineLibrary;
 
 internal class Program
@@ -77,12 +77,6 @@ result: 20
 - [Github](https://github.com/DrSa1fer)
 - [Telegram](https://t.me/DanilKucherenko)
 - [Discord](https://discord.com/invite/XmQqXuHQ)
-
-
----
-## Docs
-You can find fully documentation about project
-[docs link](https://drsa1fer.github.io/SimpleLine/)
 
 ---
 ## License
