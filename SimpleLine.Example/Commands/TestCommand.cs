@@ -32,13 +32,13 @@ namespace SimpleLineLibrary.Example.Commands
         }
     }
 
-    [CommandDefinitions("test test test test")]
+    [CommandDefinitions]
     public class TestCommand3
     {
-        [Command("foo")]
-        public static void Foo(string[] msgs)
+        [Command("sum")]
+        public static void Foo(int x, int y)
         {
-            Console.WriteLine(string.Join(";", msgs));
+            Console.WriteLine(x + y);
         }
     }
 

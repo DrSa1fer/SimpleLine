@@ -1,4 +1,4 @@
-namespace SimpleLineLibrary.Services.Parsing.Tokens
+namespace SimpleLineLibrary.Services.Parsing
 {
     internal class TokenParser
     {

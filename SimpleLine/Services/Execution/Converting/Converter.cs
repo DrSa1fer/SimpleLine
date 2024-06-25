@@ -15,13 +15,14 @@
 
             try
             {    
-                return _types[type]?.Invoke(arg);
+                return _types[type]?.Invoke(arg.Trim());
             }
             catch(Exception e)
             {
                 throw new InvalidCastException($"Cant convert string to {type}", e);
             }
         }
+
         public object? ConvertCollection(Type type, IEnumerable<string> args)
         {            
             if (type.IsArray)

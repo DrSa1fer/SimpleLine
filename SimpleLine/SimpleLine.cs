@@ -1,5 +1,3 @@
-using SimpleLineLibrary.Services.Parsing.Arguments;
-using SimpleLineLibrary.Services.Parsing.Tokens;
 using SimpleLineLibrary.Services.Finding;
 using SimpleLineLibrary.Services.Execution.Exceptions;
 using SimpleLineLibrary.Services.Execution;
@@ -10,9 +8,6 @@ namespace SimpleLineLibrary
     public class SimpleLine
     {        
         private readonly Configuration _config;
-        
-        private readonly TokenParser _tokenParser;
-        private readonly ArgumentParser _argumentParser;
 
         private readonly CommandFinder _commandFinder;
         private readonly InfoBuilder _infoBuilder;
@@ -22,9 +17,6 @@ namespace SimpleLineLibrary
         private SimpleLine(Configuration config)
         {
             _config = config;
-
-            _tokenParser = new TokenParser();
-            _argumentParser = new ArgumentParser();
             
             _commandFinder = new CommandFinder();
             _handlerExecutor = new HandlerExecutor();
@@ -72,11 +64,9 @@ namespace SimpleLineLibrary
                     return null;
                 }
 
-                var parseArgs = _argumentParser.Parse(qArgs);
                 var conTypes = _config.ConvertibleTypes;
-                var execData = new ExecutionData(parseArgs);
 
-                return _handlerExecutor.Execute(com.Handler, execData, conTypes);
+                return _handlerExecutor.Execute(com.Handler, qArgs, conTypes);
             }
             catch(UserRuntimeException e)
             {

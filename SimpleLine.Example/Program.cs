@@ -8,9 +8,9 @@ internal class Program
         var s = new Stopwatch();
 
         s.Start();
-        var conf = Configuration.Default(typeof(Program).Assembly);
 
-        SimpleLine.Build(conf).Run(new string[] { "test", "test", "test", "test", "foo", "100", "&", "nknkjj", "&", "asfsdff", "&", "World", "&", "nknk" });
+        var conf = Configuration.Default(typeof(Program).Assembly);
+        SimpleLine.Build(conf).Run(args);
 
         s.Stop();
 
