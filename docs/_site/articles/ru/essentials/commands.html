@@ -1,0 +1,252 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Команды | SimpleLine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Команды | SimpleLine ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/DrSa1fer/SimpleLine/blob/docs-changing/docs/articles/ru/essentials/commands.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="SimpleLine">
+            SimpleLine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="команды">Команды</h1>
+
+<hr>
+<h2 id="1-зависимости">1. Зависимости</h2>
+<hr>
+<h3 id="пространства-имен">Пространства имен</h3>
+<p>Все необходимые для регистрации команд атрибуты находится в пространстве имен <code>SimpleLineLibrary.Setup</code>.</p>
+<h3 id="типы">Типы</h3>
+<ul>
+<li><code>[CommandDefinitions]</code> - нужен для определения групп команд.</li>
+<li><code>[Command]</code> - нужен для определения команды.</li>
+<li><code>[Description]</code> - нужен для добавления описания к команде или параметру.</li>
+<li><code>[CustomKeys]</code> - нужен для установки своих собственных ключей параметров.</li>
+</ul>
+<hr>
+<h2 id="2-именование">2. Именование</h2>
+<hr>
+<p>Имя команды может содержать <code>Буквы</code>, <code>Цифры</code>, &quot;<code>-</code>&quot;, но должно начинаться с  <code>Буквы</code>.
+Примеры:</p>
+<ul>
+<li><code>make</code></li>
+<li><code>t123</code></li>
+<li><code>new-file</code></li>
+</ul>
+<hr>
+<h2 id="3-объявление">3. Объявление</h2>
+<hr>
+<h3 id="подготовка">Подготовка</h3>
+<p>Нам следует подготовить класс и реализовать в нем методы. Для примера, создадим класс <code>MyCommand</code> и реализуем в нем метод <code>Say</code>.
+Это выглядит так:</p>
+<pre><code class="lang-csharp">public class MyCommand
+{
+    public void Say(string msg)
+    {
+        Console.WriteLine($&quot;I say: {msg}&quot;);
+    }
+}
+</code></pre>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Классы и методы должен быть с публичным модификаторами доступа - <code>public</code>, иначе они будут попросту недоступны для SimpleLine</p>
+</div>
+<h3 id="добавление-атрибутов">Добавление атрибутов</h3>
+<p>В классе, который мы определили, добавим несколько новых строчек.</p>
+<h5 id="--добавляем-пространство-имен">- Добавляем пространство имен</h5>
+<p>В нем содержится определение нужных нам атрибутов.</p>
+<pre><code class="lang-csharp">using SimpleLineLibrary.Setup;
+</code></pre>
+<h5 id="--помечаем-класс-атрибутом-commanddefinitions">- Помечаем класс атрибутом <code>[CommandDefinitions]</code></h5>
+<p>Это нужно для того, чтобы в дальнейшем система знала, что в этом классе могут быть определения команд.</p>
+<pre><code class="lang-csharp">[CommandDefinitions]
+public class MyCommand { ... }
+</code></pre>
+<h5 id="--помечаем-метод-атрибутом-command">- Помечаем метод атрибутом <code>[Command]</code></h5>
+<p>Это нужно для того, чтобы система могла использовать метод как команду и даем имя, по которому она будет доступна.</p>
+<pre><code class="lang-csharp">[Command(&quot;say&quot;)]
+public void Say(string msg) { ... }
+</code></pre>
+<hr>
+<h2 id="4-дополнительно">4. Дополнительно</h2>
+<hr>
+<h5 id="помечаем-метод-атрибутом-description">Помечаем метод атрибутом <code>[Description]</code></h5>
+<p>Это нужно для того, чтобы система получила описание команды и вывести его при необходимости.
+В случае, если атрибут не применен, описание будет пустым.</p>
+<pre><code class="lang-csharp">[Command(&quot;say&quot;)]
+[Description(&quot;Command print your message&quot;)]
+public void Say(string msg) { ... }
+</code></pre>
+<h5 id="помечаем-параметр-метода-атрибутом-description">Помечаем параметр метода атрибутом <code>[Description]</code></h5>
+<p>Это нужно для того, чтобы система получила описание команды и вывести его при необходимости.
+В случае, если атрибут не применен, описание будет пустым.</p>
+<pre><code class="lang-csharp">[Command(&quot;say&quot;)]
+[Description(&quot;Command print your message&quot;)]
+public void Say([Description(&quot;Your message&quot;)] string msg) { ... }
+</code></pre>
+<h5 id="помечаем-параметр-метода-атрибутом-customkeys-m---msg">Помечаем параметр метода атрибутом <code>[CustomKeys(&quot;-m&quot;, &quot;--msg&quot;)]</code></h5>
+<p>Это нужно для того, чтобы указывать свои ключей параметров, которые будут использоваться во время получения значений.
+В случае, если атрибут не применен, ключи будут созданы автоматически.</p>
+<pre><code class="lang-csharp">[Command(&quot;say&quot;)]
+[Description(&quot;Command print your message&quot;)]
+public void Say([Description(&quot;Your message&quot;)] [CustomKeys(&quot;-m&quot;, &quot;--msg&quot;)] string msg) { ... }
+</code></pre>
+<hr>
+<h2 id="5-вложенные-команды">5. Вложенные команды</h2>
+<hr>
+<p>Команды могут быть вложенными в другую команду для примера возьмем <code>math</code>, мы хотим добавить в нее вложенну команду, чтобы получить <code>math sum</code>. Для этого нам понадобится при объявлении команды передать имена команд через пробел от старшей к младшей:</p>
+<pre><code class="lang-csharp">[Command(&quot;math sum&quot;)]
+public void Sum(int x, int y) { ... }
+</code></pre>
+<p>Или воспользоваться группировкой. Подробнее в следующем пункте</p>
+<hr>
+<h2 id="6-группировка">6. Группировка</h2>
+<hr>
+<p>Для понимания зачем это нужно нам стоит рассмотреть пример.
+Возьмем пример с командой <code>math</code> и вложенной командой <code>sum</code>:</p>
+<pre><code class="lang-csharp">public class MathCommands
+{
+    public void Math()
+    {
+        Console.WriteLine(&quot;Math is cool!&quot;);
+    }
+
+    public void Sum(int x, int y)
+    {
+        Console.WriteLine($&quot;Result: {x + y}&quot;);
+    }
+}
+</code></pre>
+<p>Первый вариант решения задачи, вероятнее всего, который вы бы использовали:</p>
+<pre><code class="lang-csharp">using SimpleLineLibrary.Setup;
+
+[CommandDefinitions]
+public class MathCommands
+{
+    [Command(&quot;math&quot;)]
+    public void Math() { ... }
+
+    [Command(&quot;math sum&quot;)]
+    public void Sum(int x, int y) { ... }
+}
+</code></pre>
+<p>В том варианте все верно, но можно упростить. Давайте применим группировку. Для этого в атрибуте <code>[CommandDefinitions]</code> есть перегрузка, которая принимает имя команды к которой надо прикрепиться. Вот тот же код. работающий точно также, что и в прошлом примере, но на этот раз с использованием группировки:</p>
+<pre><code class="lang-csharp">using SimpleLineLibrary.Setup;
+
+[CommandDefinitions(&quot;math&quot;)]
+public class MathCommands
+{
+    [Command(&quot;@&quot;)]
+    public void Math() { ... }
+
+    [Command(&quot;sum&quot;)]
+    public void Sum(int x, int y) { ... }
+}
+</code></pre>
+<blockquote>
+<p>Это становить более актуальным, когда глубина вложенности растет</p>
+</blockquote>
+<p>Символ <code>@</code> - это контекстная функция библиотеки, позволяющая дать определение команде, к которой привязана группа, в данном случае <code>math</code>.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/DrSa1fer/SimpleLine/blob/docs-changing/docs/articles/ru/essentials/commands.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

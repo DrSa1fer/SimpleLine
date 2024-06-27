@@ -1,5 +1,8 @@
 - name: Docs
-  href: articles/toc.yml
-
-- name: API
   href: api/
+
+- name: Usage-en
+  href: articles/en/
+  
+- name: Usage-ru
+  href: articles/ru/
