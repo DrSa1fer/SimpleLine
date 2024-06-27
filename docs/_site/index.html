@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="">
       
       
-      <meta name="docfx:docurl" content="https://github.com/DrSa1fer/SimpleLine/blob/docs-changing/docs/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/DrSa1fer/SimpleLine/blob/main/docs/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,39 +89,6 @@ It s written in C# language.</p>
 <li>Does not affect the testability of the system</li>
 </ul>
 <hr>
-<h2 id="usage">Usage</h2>
-<p>To use the library, you need to complete several steps</p>
-<h3 id="1-define-commands">1. Define commands</h3>
-<pre><code class="lang-csharp">using SimpleLineLibrary.Setup;
-
-[CommandDefinitions]
-public class Example
-{
-    [Command(&quot;example&quot;)]
-    public void Foo(int x)
-    {
-        Console.WriteLine($&quot;result: {x * 2}&quot;);
-    }
-}
-</code></pre>
-<h3 id="2-set-run-library">2. Set run library</h3>
-<pre><code class="lang-csharp">using SimpleLineLibrary;
-
-internal class Program
-{
-    static void Main(string[] args)
-    {
-        var conf = Configuration.Default(typeof(Program).Assembly);
-
-        SimpleLine.Build(conf).Run(args);
-    }
-}
-</code></pre>
-<h3 id="3-invoke">3. Invoke</h3>
-<pre><code class="lang-powershell">C:\&gt; dotnet program.dll example -x = 10
-result: 20
-</code></pre>
-<hr>
 <h2 id="feedback-or-suggestion">Feedback or Suggestion</h2>
 <ul>
 <li><a href="https://github.com/DrSa1fer">Github</a></li>
@@ -135,7 +102,7 @@ result: 20
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DrSa1fer/SimpleLine/blob/docs-changing/docs/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DrSa1fer/SimpleLine/blob/main/docs/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

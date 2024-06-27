@@ -1,3 +1,7 @@
+---
+landing: 0
+---
+
 # SimpleLine
 
 ---
@@ -14,46 +18,6 @@ It s written in C# language.
 - Fairly easy to use 
 - Easy enough to embed
 - Does not affect the testability of the system
-
----
-## Usage
-To use the library, you need to complete several steps
-
-### 1. Define commands
-```csharp
-using SimpleLineLibrary.Setup;
-
-[CommandDefinitions]
-public class Example
-{
-    [Command("example")]
-    public void Foo(int x)
-    {
-        Console.WriteLine($"result: {x * 2}");
-    }
-}
-```
-
-### 2. Set run library
-```csharp
-using SimpleLineLibrary;
-
-internal class Program
-{
-    static void Main(string[] args)
-    {
-        var conf = Configuration.Default(typeof(Program).Assembly);
-
-        SimpleLine.Build(conf).Run(args);
-    }
-}
-```
-
-### 3. Invoke
-```powershell copy
-C:\> dotnet program.dll example -x = 10
-result: 20
-```
 
 ---
 ## Feedback or Suggestion
