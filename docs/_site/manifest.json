@@ -105,123 +105,72 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/essentials/command-registration.md",
+      "source_relative_path": "articles/en/essentials/commands.md",
       "output": {
         ".html": {
-          "relative_path": "articles/essentials/command-registration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "articles/package/installing.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/package/installing.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "articles/package/uninstalling.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/package/uninstalling.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "articles/ru/essentials/command-registration.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/ru/essentials/command-registration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "articles/ru/essentials/groupping.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/ru/essentials/groupping.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "articles/ru/package/installing.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/ru/package/installing.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "articles/ru/package/uninstalling.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/ru/package/uninstalling.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "articles/ru/start/getting-started.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/ru/start/getting-started.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "articles/ru/start/introduction.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/ru/start/introduction.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "articles/start/getting-started.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/start/getting-started.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "articles/start/introduction.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/start/introduction.html"
+          "relative_path": "articles/en/essentials/commands.html"
         }
       },
       "version": ""
     },
     {
       "type": "Toc",
-      "source_relative_path": "articles/toc.yml",
+      "source_relative_path": "articles/en/essentials/toc.yml",
       "output": {
         ".json": {
-          "relative_path": "articles/toc.json"
+          "relative_path": "articles/en/essentials/toc.json"
         },
         ".html": {
-          "relative_path": "articles/toc.html"
+          "relative_path": "articles/en/essentials/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/en/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "articles/en/toc.json"
+        },
+        ".html": {
+          "relative_path": "articles/en/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/ru/essentials/commands.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/ru/essentials/commands.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/ru/essentials/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "articles/ru/essentials/toc.json"
+        },
+        ".html": {
+          "relative_path": "articles/ru/essentials/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/ru/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "articles/ru/toc.json"
+        },
+        ".html": {
+          "relative_path": "articles/ru/toc.html"
         }
       },
       "version": ""

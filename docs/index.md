@@ -16,23 +16,6 @@ It s written in C# language.
 - Does not affect the testability of the system
 
 ---
-## Installation
-.NET CLI
-```powershell
-> dotnet add package SimpleLine --version 0.0.2-alpha
-```
-Package Manager
-```powershell
-PM> NuGet\Install-Package SimpleLine -Version 0.0.2-alpha
-```
-Package Reference
-```powershell
-<PackageReference Include="SimpleLine" Version="0.0.2-alpha" />
-```
-
-> Required [.NET SDK](https://dotnet.microsoft.com/en-us/download) 6.0+
-
----
 ## Usage
 To use the library, you need to complete several steps
 
@@ -68,7 +51,7 @@ internal class Program
 
 ### 3. Invoke
 ```powershell copy
-C:\> dotnet program.dll example -x 10
+C:\> dotnet program.dll example -x = 10
 result: 20
 ```
 

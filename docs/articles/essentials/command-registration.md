@@ -1,3 +1,0 @@
-# Command Registration
-
-## Attributes

@@ -17,8 +17,10 @@
       { 
         "files": 
         [
-          "articles/**/**/*.{md,yml}", 
-          "api/**/**/*.{md,yml}"    ,
+          "articles/**.md", 
+          "articles/**.yml", 
+          "api/**.yml",
+          "api/**.md",
           "index.md",
           "toc.yml"
         ],
