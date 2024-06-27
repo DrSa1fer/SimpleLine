@@ -25,31 +25,27 @@
 
         public object? ConvertCollection(Type type, IEnumerable<string> args)
         {            
-            if (type.IsArray)
+            if (!type.IsArray)
             {
-                if (type.GetArrayRank() > 1)
-                {
-                    throw new ArgumentException("Array rank cant be more than 1 ");
-                }
-
-                var valueType = type.GetElementType()!;
-
-                ThrowIfNotSupported(valueType);
-
-                var values = args.ToArray();
-                var arr = (Array)Activator.CreateInstance(type, values.Length)!;
-
-                for (int i = 0; i < arr.Length; i++)
-                {
-                    var value = values[i];
-
-                    arr.SetValue(ConvertType(valueType, value), i);
-                }
-
-                return arr;
+                throw new NotSupportedException("Supported only array collections converting");
             }
 
-            throw new NotSupportedException("Supported only array collections converting");
+            if (type.GetArrayRank() > 1)
+            {
+                throw new ArgumentException("Array rank cant be more than 1 ");
+            }
+
+            var valueType = type.GetElementType()!;
+
+            var values = args.ToArray();
+            var arr = (Array)Activator.CreateInstance(type, values.Length)!;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr.SetValue(ConvertType(valueType, values[i]), i);
+            }
+
+            return arr;
         }
 
         private void ThrowIfNotSupported(Type type)
