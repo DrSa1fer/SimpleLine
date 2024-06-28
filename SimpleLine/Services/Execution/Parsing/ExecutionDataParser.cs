@@ -24,14 +24,12 @@ namespace SimpleLineLibrary.Services.Execution.Parsing
                         {
                             args.Dequeue(); //skip '='
 
-                            if (args.TryDequeue(out string? keyValue))
-                            {
-                                value = keyValue;
-                            }
-                            else
+                            if (!args.TryDequeue(out string? keyValue))
                             {
                                 throw new ArgumentException($"key {key} wait value after '=' ");
                             }
+                            
+                            value = keyValue;
                         }
                         else if (IsValue(nextToken))
                         {

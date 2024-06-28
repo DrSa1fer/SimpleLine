@@ -1,2 +1,2 @@
 
-{"items":[{"name":"Команды","href":"commands.html","topicHref":"commands.html"}],"pdf":true}
+{"items":[{"name":"Подготовка","href":"preparation.html","topicHref":"preparation.html"},{"name":"Именование","href":"naming.html","topicHref":"naming.html"},{"name":"Объявление команды","href":"def-commands.html","topicHref":"def-commands.html"},{"name":"Вложенные команды","href":"nessed-commands.html","topicHref":"nessed-commands.html"},{"name":"Группировка","href":"grouping.html","topicHref":"grouping.html"}],"pdf":true}

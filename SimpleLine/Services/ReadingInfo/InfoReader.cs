@@ -1,7 +1,7 @@
 ﻿using SimpleLineLibrary.Utils.MessageBuilders;
 using SimpleLineLibrary.Models;
 
-namespace SimpleLineLibrary.Services.BuildingInfo
+namespace SimpleLineLibrary.Services.ReadingInfo
 {
     internal class InfoReader
     {
@@ -25,12 +25,12 @@ namespace SimpleLineLibrary.Services.BuildingInfo
 
             mb
                 .StartBlock("command:")
-                    .WriteLine($"[release] {uid}{(command.Description.Length > 0 ? $" - {command.Description}" : "")}")
+                    .WriteLine($"{uid} - {(command.Description.Length > 0 ? command.Description : "no description")}")
                 .CloseBlock();
 
             if (h is not null)
             {
-                mb.StartBlock("usage:");
+                mb.StartBlock("parameters:");
 
                 if (h.Parameters.Any())
                 {
@@ -39,9 +39,9 @@ namespace SimpleLineLibrary.Services.BuildingInfo
                         var req = p.IsRequired ? "req" : "opt";
                         var keys = $"{p.ShortKey}|{p.LongKey}";
                         var type = p.ValueType.Name.ToLower();
-                        var desc = p.Description.Length > 0 ? $" - {p.Description}" : "";
+                        var desc = p.Description.Length > 0 ? p.Description : "no description";
 
-                        var str = $"[{req}] {keys} <{type}>{desc}";
+                        var str = $"[{req}] {keys} <{type}> - {desc}";
 
                         mb.WriteLine(str);
                     }
@@ -59,7 +59,7 @@ namespace SimpleLineLibrary.Services.BuildingInfo
                  .WriteLine("...")
             .CloseBlock()
                 .SkipLine()
-            .AddFooter("by simpleline");
+            .AddFooter("simpleline");
 
             return mb.ToString();
         }

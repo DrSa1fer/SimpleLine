@@ -1,17 +1,15 @@
-using SimpleLineLibrary.Services.Finding;
 using SimpleLineLibrary.Services.Execution.Exceptions;
+using SimpleLineLibrary.Services.ReadingInfo;
 using SimpleLineLibrary.Services.Execution;
-using SimpleLineLibrary.Services.BuildingInfo;
+using SimpleLineLibrary.Services.Finding;
 
 namespace SimpleLineLibrary
 {
     public class SimpleLine
     {        
         private readonly Configuration _config;
-
         private readonly CommandFinder _commandFinder;
         private readonly InfoReader _infoBuilder;
-
         private readonly HandlerExecutor _handlerExecutor;
 
         private SimpleLine(Configuration config)
@@ -33,6 +31,8 @@ namespace SimpleLineLibrary
         {
             try
             {
+                _config.OnBeforeRun?.Invoke();
+
                 if(!args.Any())
                 {
                     _config.OnNoArguments?.Invoke();
@@ -66,11 +66,15 @@ namespace SimpleLineLibrary
 
                 var conTypes = _config.ConvertibleTypes;
 
-                return _handlerExecutor.Execute(com.Handler, qArgs, conTypes);
+                var result = _handlerExecutor.Execute(com.Handler, qArgs, conTypes);
+
+                _config.OnAfterRun?.Invoke();
+
+                return result;
             }
             catch(UserRuntimeException e)
             {
-                _config.OnUserException?.Invoke(e.InnerException ?? new());
+                _config.OnUserException?.Invoke(e);
                 return null;
             }
             catch (Exception e)

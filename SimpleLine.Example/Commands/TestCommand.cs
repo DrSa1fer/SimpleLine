@@ -5,8 +5,11 @@ namespace SimpleLineLibrary.Example.Commands
     [CommandDefinitions("test")]
     public class TestCommand
     {
+
+        public TestCommand(int i) {}
+
         [Command("foo")]
-        public static void Foo(string[] msgs)
+        public static void Foo(int[] msgs)
         {
             Console.WriteLine(string.Join(";", msgs));
         }
@@ -16,9 +19,10 @@ namespace SimpleLineLibrary.Example.Commands
     public class TestCommand2
     {
         [Command("@")]
-        public static void Foo(string message)
+        [Description("meow")]
+        public static void Foo(int x, int y)
         {
-            Console.WriteLine("| " + message + " |");
+            Console.WriteLine("| " + (x + y) + " |");
         }
     }
 }

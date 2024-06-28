@@ -20,7 +20,7 @@ namespace SimpleLineLibrary.Services.Finding.Parsing
                 }
 
                 var defRoot = root;
-                var defTokens = defAttr.Command.SplitAndRemoveEmptyEntries(' ');
+                var defTokens = defAttr.Command.SplitOnTokens(' ');
                 
                 if (defTokens.Length > 0)
                 {
@@ -56,7 +56,7 @@ namespace SimpleLineLibrary.Services.Finding.Parsing
 
                     if(!comAttr.Command.IsEqualsToken("@"))
                     {                        
-                        var comTokens = comAttr.Command.SplitAndRemoveEmptyEntries(' ');
+                        var comTokens = comAttr.Command.SplitOnTokens(' ');
 
                         if (comTokens.Length < 1)
                         {

@@ -25,7 +25,7 @@ jobs:
   publish-docs:
     environment:
       name: github-pages
-      url: https://drsa1fer.github.io/SimpleLine/
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
     - name: Checkout

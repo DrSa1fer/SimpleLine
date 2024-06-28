@@ -2,21 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>SimpleLine | SimpleLine </title>
+      <title>Вложенные команды | SimpleLine </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="SimpleLine | SimpleLine ">
+      <meta name="title" content="Вложенные команды | SimpleLine ">
       
       
-      <link rel="icon" href="favicon.ico">
-      <link rel="stylesheet" href="public/docfx.min.css">
-      <link rel="stylesheet" href="public/main.css">
-      <meta name="docfx:navrel" content="toc.html">
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
       <meta name="docfx:tocrel" content="toc.html">
       
-      <meta name="docfx:rel" content="">
+      <meta name="docfx:rel" content="../../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/DrSa1fer/SimpleLine/blob/global-patch/docs/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/DrSa1fer/SimpleLine/blob/global-patch/docs/articles/ru/essentials/nessed-commands.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -30,7 +30,7 @@
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
 
-      <script type="module" src="./public/docfx.min.js"></script>
+      <script type="module" src="./../../../public/docfx.min.js"></script>
 
       <script>
         const theme = localStorage.getItem('theme') || 'auto'
@@ -43,8 +43,8 @@
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="index.html">
-            <img id="logo" class="svg" src="logo.svg" alt="SimpleLine">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="SimpleLine">
             SimpleLine
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,46 +63,40 @@
     </header>
 
     <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
 
       <div class="content">
         <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
           <nav id="breadcrumb"></nav>
         </div>
 
         <article data-uid="">
-<h1 id="simpleline">SimpleLine</h1>
+<h1 id="вложенные-команды">Вложенные команды</h1>
 
 <hr>
-<h2 id="about">About</h2>
-<p><strong>SimpleLine</strong> an open source library that targets to simplify command line interaction.<br>
-Allows you to define new commands without having to think about getting values, type conversion,
-calling a specific type, and a lot of other troubles.
-It s written in C# language.</p>
-<hr>
-<h2 id="why">Why?</h2>
-<p><strong>SimpleLine</strong> library makes it easy to write command-line applications</p>
-<ul>
-<li>Facilitates development</li>
-<li>Fairly easy to use</li>
-<li>Easy enough to embed</li>
-<li>Does not affect the testability of the system</li>
-</ul>
-<hr>
-<h2 id="feedback-or-suggestion">Feedback or Suggestion</h2>
-<ul>
-<li><a href="https://github.com/DrSa1fer">Github</a></li>
-<li><a href="https://t.me/DanilKucherenko">Telegram</a></li>
-<li><a href="https://discord.com/invite/XmQqXuHQ">Discord</a></li>
-</ul>
-<hr>
-<h2 id="license">License</h2>
-<p><a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU GPL-3.0</a></p>
+<p>Команды могут быть вложенными в другую команду для примера возьмем <code>math</code>, мы хотим добавить в нее вложенную команду, чтобы получить <code>math sum</code>. Для этого нам понадобится при объявлении команды передать имена команд через пробел:</p>
+<pre><code class="lang-csharp">[Command(&quot;math sum&quot;)]
+public void Sum(int x, int y) { ... }
+</code></pre>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DrSa1fer/SimpleLine/blob/global-patch/docs/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DrSa1fer/SimpleLine/blob/global-patch/docs/articles/ru/essentials/nessed-commands.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

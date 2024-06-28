@@ -141,10 +141,50 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/ru/essentials/commands.md",
+      "source_relative_path": "articles/ru/essentials/def-commands.md",
       "output": {
         ".html": {
-          "relative_path": "articles/ru/essentials/commands.html"
+          "relative_path": "articles/ru/essentials/def-commands.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/ru/essentials/grouping.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/ru/essentials/grouping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/ru/essentials/naming.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/ru/essentials/naming.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/ru/essentials/nessed-commands.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/ru/essentials/nessed-commands.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/ru/essentials/preparation.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/ru/essentials/preparation.html"
         }
       },
       "version": ""

@@ -1,4 +1,11 @@
 items:
-
-- name: Команды
-  href: commands.md
+- name: Подготовка
+  href: preparation.md
+- name: Именование
+  href: naming.md
+- name: Объявление команды
+  href: def-commands.md
+- name: Вложенные команды
+  href: nessed-commands.md
+- name: Группировка
+  href: grouping.md

@@ -11,6 +11,8 @@ namespace SimpleLineLibrary
         public Action<string>? OnCommandNotFound { get; set; }
         public Action<string>? OnHandlerMissing { get; set; }
         public Action? OnNoArguments { get; set; }
+        public Action? OnBeforeRun { get; set; }
+        public Action? OnAfterRun { get; set; }
 
         public string ProgramName
         {
@@ -107,10 +109,12 @@ namespace SimpleLineLibrary
         {
             return new()
             {
+                OnBeforeRun = () => {},
+                OnAfterRun = () => {},
                 OnUserException = (ex) =>
                 {
-                    Console.WriteLine(ex.Message);
-                    Console.WriteLine(ex.StackTrace);
+                    Console.WriteLine(ex.InnerException?.Message);
+                    Console.WriteLine(ex.InnerException?.StackTrace);
                 },
                 OnSimpleLineException = (ex) =>
                 {
