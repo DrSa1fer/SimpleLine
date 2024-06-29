@@ -7,10 +7,14 @@ items:
   children:
   - SimpleLineLibrary.Configuration.#ctor
   - SimpleLineLibrary.Configuration.AddTypeForConverting``1(System.Func{System.String,``0})
+  - SimpleLineLibrary.Configuration.AddTypeForInject``1(System.Func{``0})
   - SimpleLineLibrary.Configuration.ConvertibleTypes
   - SimpleLineLibrary.Configuration.Default(System.Reflection.Assembly)
   - SimpleLineLibrary.Configuration.DefinedTypes
   - SimpleLineLibrary.Configuration.HelpKeys
+  - SimpleLineLibrary.Configuration.InjectibleTypes
+  - SimpleLineLibrary.Configuration.OnAfterRun
+  - SimpleLineLibrary.Configuration.OnBeforeRun
   - SimpleLineLibrary.Configuration.OnCommandNotFound
   - SimpleLineLibrary.Configuration.OnHandlerMissing
   - SimpleLineLibrary.Configuration.OnNoArguments
@@ -33,7 +37,7 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: Configuration
     path: ../SimpleLine/Configuration.cs
-    startLine: 6
+    startLine: 5
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
@@ -68,15 +72,18 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: OnSimpleLineException
     path: ../SimpleLine/Configuration.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
+  summary: Action when an error occurs inside the library
+  example: []
   syntax:
     content: public Action<Exception>? OnSimpleLineException { get; set; }
     parameters: []
     return:
       type: System.Action{System.Exception}
+      description: ''
     content.vb: Public Property OnSimpleLineException As Action(Of Exception)
   overload: SimpleLineLibrary.Configuration.OnSimpleLineException*
 - uid: SimpleLineLibrary.Configuration.OnUserException
@@ -97,15 +104,18 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: OnUserException
     path: ../SimpleLine/Configuration.cs
-    startLine: 9
+    startLine: 16
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
+  summary: Action when an error occurs inside the user code
+  example: []
   syntax:
     content: public Action<Exception>? OnUserException { get; set; }
     parameters: []
     return:
       type: System.Action{System.Exception}
+      description: ''
     content.vb: Public Property OnUserException As Action(Of Exception)
   overload: SimpleLineLibrary.Configuration.OnUserException*
 - uid: SimpleLineLibrary.Configuration.OnCommandNotFound
@@ -126,15 +136,18 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: OnCommandNotFound
     path: ../SimpleLine/Configuration.cs
-    startLine: 10
+    startLine: 21
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
+  summary: Action when the command is not found
+  example: []
   syntax:
     content: public Action<string>? OnCommandNotFound { get; set; }
     parameters: []
     return:
       type: System.Action{System.String}
+      description: ''
     content.vb: Public Property OnCommandNotFound As Action(Of String)
   overload: SimpleLineLibrary.Configuration.OnCommandNotFound*
 - uid: SimpleLineLibrary.Configuration.OnHandlerMissing
@@ -155,15 +168,18 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: OnHandlerMissing
     path: ../SimpleLine/Configuration.cs
-    startLine: 11
+    startLine: 26
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
+  summary: ''
+  example: []
   syntax:
     content: public Action<string>? OnHandlerMissing { get; set; }
     parameters: []
     return:
       type: System.Action{System.String}
+      description: ''
     content.vb: Public Property OnHandlerMissing As Action(Of String)
   overload: SimpleLineLibrary.Configuration.OnHandlerMissing*
 - uid: SimpleLineLibrary.Configuration.OnNoArguments
@@ -184,17 +200,84 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: OnNoArguments
     path: ../SimpleLine/Configuration.cs
-    startLine: 12
+    startLine: 31
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
+  summary: Action when no arguments were passed
+  example: []
   syntax:
     content: public Action? OnNoArguments { get; set; }
     parameters: []
     return:
       type: System.Action
+      description: ''
     content.vb: Public Property OnNoArguments As Action
   overload: SimpleLineLibrary.Configuration.OnNoArguments*
+- uid: SimpleLineLibrary.Configuration.OnBeforeRun
+  commentId: P:SimpleLineLibrary.Configuration.OnBeforeRun
+  id: OnBeforeRun
+  parent: SimpleLineLibrary.Configuration
+  langs:
+  - csharp
+  - vb
+  name: OnBeforeRun
+  nameWithType: Configuration.OnBeforeRun
+  fullName: SimpleLineLibrary.Configuration.OnBeforeRun
+  type: Property
+  source:
+    remote:
+      path: SimpleLine/Configuration.cs
+      branch: main
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: OnBeforeRun
+    path: ../SimpleLine/Configuration.cs
+    startLine: 36
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary
+  summary: Action before run the library
+  example: []
+  syntax:
+    content: public Action? OnBeforeRun { get; set; }
+    parameters: []
+    return:
+      type: System.Action
+      description: ''
+    content.vb: Public Property OnBeforeRun As Action
+  overload: SimpleLineLibrary.Configuration.OnBeforeRun*
+- uid: SimpleLineLibrary.Configuration.OnAfterRun
+  commentId: P:SimpleLineLibrary.Configuration.OnAfterRun
+  id: OnAfterRun
+  parent: SimpleLineLibrary.Configuration
+  langs:
+  - csharp
+  - vb
+  name: OnAfterRun
+  nameWithType: Configuration.OnAfterRun
+  fullName: SimpleLineLibrary.Configuration.OnAfterRun
+  type: Property
+  source:
+    remote:
+      path: SimpleLine/Configuration.cs
+      branch: main
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: OnAfterRun
+    path: ../SimpleLine/Configuration.cs
+    startLine: 41
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary
+  summary: Action after run the library
+  example: []
+  syntax:
+    content: public Action? OnAfterRun { get; set; }
+    parameters: []
+    return:
+      type: System.Action
+      description: ''
+    content.vb: Public Property OnAfterRun As Action
+  overload: SimpleLineLibrary.Configuration.OnAfterRun*
 - uid: SimpleLineLibrary.Configuration.ProgramName
   commentId: P:SimpleLineLibrary.Configuration.ProgramName
   id: ProgramName
@@ -213,15 +296,18 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: ProgramName
     path: ../SimpleLine/Configuration.cs
-    startLine: 14
+    startLine: 47
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
+  summary: Program name
+  example: []
   syntax:
     content: public string ProgramName { get; init; }
     parameters: []
     return:
       type: System.String
+      description: ''
     content.vb: Public Property ProgramName As String
   overload: SimpleLineLibrary.Configuration.ProgramName*
 - uid: SimpleLineLibrary.Configuration.ProgramDescription
@@ -242,15 +328,18 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: ProgramDescription
     path: ../SimpleLine/Configuration.cs
-    startLine: 25
+    startLine: 62
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
+  summary: Progrram description
+  example: []
   syntax:
     content: public string ProgramDescription { get; init; }
     parameters: []
     return:
       type: System.String
+      description: ''
     content.vb: Public Property ProgramDescription As String
   overload: SimpleLineLibrary.Configuration.ProgramDescription*
 - uid: SimpleLineLibrary.Configuration.ProgramVersion
@@ -271,15 +360,18 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: ProgramVersion
     path: ../SimpleLine/Configuration.cs
-    startLine: 36
+    startLine: 77
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
+  summary: Program version
+  example: []
   syntax:
     content: public string ProgramVersion { get; init; }
     parameters: []
     return:
       type: System.String
+      description: ''
     content.vb: Public Property ProgramVersion As String
   overload: SimpleLineLibrary.Configuration.ProgramVersion*
 - uid: SimpleLineLibrary.Configuration.ConvertibleTypes
@@ -300,17 +392,52 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: ConvertibleTypes
     path: ../SimpleLine/Configuration.cs
-    startLine: 47
+    startLine: 92
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
+  summary: Convertible Types
+  example: []
   syntax:
     content: public IReadOnlyDictionary<Type, Func<string, object?>> ConvertibleTypes { get; }
     parameters: []
     return:
       type: System.Collections.Generic.IReadOnlyDictionary{System.Type,System.Func{System.String,System.Object}}
+      description: ''
     content.vb: Public ReadOnly Property ConvertibleTypes As IReadOnlyDictionary(Of Type, Func(Of String, Object))
   overload: SimpleLineLibrary.Configuration.ConvertibleTypes*
+- uid: SimpleLineLibrary.Configuration.InjectibleTypes
+  commentId: P:SimpleLineLibrary.Configuration.InjectibleTypes
+  id: InjectibleTypes
+  parent: SimpleLineLibrary.Configuration
+  langs:
+  - csharp
+  - vb
+  name: InjectibleTypes
+  nameWithType: Configuration.InjectibleTypes
+  fullName: SimpleLineLibrary.Configuration.InjectibleTypes
+  type: Property
+  source:
+    remote:
+      path: SimpleLine/Configuration.cs
+      branch: main
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: InjectibleTypes
+    path: ../SimpleLine/Configuration.cs
+    startLine: 103
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary
+  summary: ''
+  example: []
+  syntax:
+    content: public IReadOnlyDictionary<Type, Func<object?>> InjectibleTypes { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyDictionary{System.Type,System.Func{System.Object}}
+      description: ''
+    content.vb: Public ReadOnly Property InjectibleTypes As IReadOnlyDictionary(Of Type, Func(Of Object))
+  overload: SimpleLineLibrary.Configuration.InjectibleTypes*
 - uid: SimpleLineLibrary.Configuration.DefinedTypes
   commentId: P:SimpleLineLibrary.Configuration.DefinedTypes
   id: DefinedTypes
@@ -329,15 +456,18 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: DefinedTypes
     path: ../SimpleLine/Configuration.cs
-    startLine: 54
+    startLine: 114
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
+  summary: ''
+  example: []
   syntax:
     content: public IEnumerable<TypeInfo> DefinedTypes { get; init; }
     parameters: []
     return:
       type: System.Collections.Generic.IEnumerable{System.Reflection.TypeInfo}
+      description: ''
     content.vb: Public Property DefinedTypes As IEnumerable(Of TypeInfo)
   overload: SimpleLineLibrary.Configuration.DefinedTypes*
 - uid: SimpleLineLibrary.Configuration.HelpKeys
@@ -358,15 +488,18 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: HelpKeys
     path: ../SimpleLine/Configuration.cs
-    startLine: 65
+    startLine: 129
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
+  summary: Keys which are considered keys to call help
+  example: []
   syntax:
     content: public IReadOnlySet<string> HelpKeys { get; init; }
     parameters: []
     return:
       type: System.Collections.Generic.IReadOnlySet{System.String}
+      description: ''
     content.vb: Public Property HelpKeys As IReadOnlySet(Of String)
   overload: SimpleLineLibrary.Configuration.HelpKeys*
 - uid: SimpleLineLibrary.Configuration.#ctor
@@ -387,10 +520,12 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: .ctor
     path: ../SimpleLine/Configuration.cs
-    startLine: 85
+    startLine: 154
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
+  summary: Make empty configuration
+  example: []
   syntax:
     content: public Configuration()
     content.vb: Public Sub New()
@@ -398,6 +533,44 @@ items:
   nameWithType.vb: Configuration.New()
   fullName.vb: SimpleLineLibrary.Configuration.New()
   name.vb: New()
+- uid: SimpleLineLibrary.Configuration.AddTypeForInject``1(System.Func{``0})
+  commentId: M:SimpleLineLibrary.Configuration.AddTypeForInject``1(System.Func{``0})
+  id: AddTypeForInject``1(System.Func{``0})
+  parent: SimpleLineLibrary.Configuration
+  langs:
+  - csharp
+  - vb
+  name: AddTypeForInject<T>(Func<T>)
+  nameWithType: Configuration.AddTypeForInject<T>(Func<T>)
+  fullName: SimpleLineLibrary.Configuration.AddTypeForInject<T>(System.Func<T>)
+  type: Method
+  source:
+    remote:
+      path: SimpleLine/Configuration.cs
+      branch: main
+      repo: https://github.com/DrSa1fer/SimpleLine.git
+    id: AddTypeForInject
+    path: ../SimpleLine/Configuration.cs
+    startLine: 173
+  assemblies:
+  - SimpleLine
+  namespace: SimpleLineLibrary
+  summary: Add type for inject
+  example: []
+  syntax:
+    content: public void AddTypeForInject<T>(Func<T> func)
+    parameters:
+    - id: func
+      type: System.Func{{T}}
+      description: Getting instance method
+    typeParameters:
+    - id: T
+      description: Type for inject
+    content.vb: Public Sub AddTypeForInject(Of T)(func As Func(Of T))
+  overload: SimpleLineLibrary.Configuration.AddTypeForInject*
+  nameWithType.vb: Configuration.AddTypeForInject(Of T)(Func(Of T))
+  fullName.vb: SimpleLineLibrary.Configuration.AddTypeForInject(Of T)(System.Func(Of T))
+  name.vb: AddTypeForInject(Of T)(Func(Of T))
 - uid: SimpleLineLibrary.Configuration.AddTypeForConverting``1(System.Func{System.String,``0})
   commentId: M:SimpleLineLibrary.Configuration.AddTypeForConverting``1(System.Func{System.String,``0})
   id: AddTypeForConverting``1(System.Func{System.String,``0})
@@ -416,17 +589,21 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: AddTypeForConverting
     path: ../SimpleLine/Configuration.cs
-    startLine: 98
+    startLine: 185
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
+  summary: Add type for converting
+  example: []
   syntax:
     content: public void AddTypeForConverting<T>(Func<string, T> func)
     parameters:
     - id: func
       type: System.Func{System.String,{T}}
+      description: Convertation method
     typeParameters:
     - id: T
+      description: Type for converting
     content.vb: Public Sub AddTypeForConverting(Of T)(func As Func(Of String, T))
   overload: SimpleLineLibrary.Configuration.AddTypeForConverting*
   nameWithType.vb: Configuration.AddTypeForConverting(Of T)(Func(Of String, T))
@@ -450,17 +627,21 @@ items:
       repo: https://github.com/DrSa1fer/SimpleLine.git
     id: Default
     path: ../SimpleLine/Configuration.cs
-    startLine: 105
+    startLine: 197
   assemblies:
   - SimpleLine
   namespace: SimpleLineLibrary
+  summary: Make configuration with default values
+  example: []
   syntax:
     content: public static Configuration Default(Assembly assembly)
     parameters:
     - id: assembly
       type: System.Reflection.Assembly
+      description: Target assembly
     return:
       type: SimpleLineLibrary.Configuration
+      description: Configuration
     content.vb: Public Shared Function [Default](assembly As Assembly) As Configuration
   overload: SimpleLineLibrary.Configuration.Default*
 references:
@@ -843,6 +1024,18 @@ references:
   name: Action
   nameWithType: Action
   fullName: System.Action
+- uid: SimpleLineLibrary.Configuration.OnBeforeRun*
+  commentId: Overload:SimpleLineLibrary.Configuration.OnBeforeRun
+  href: SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_OnBeforeRun
+  name: OnBeforeRun
+  nameWithType: Configuration.OnBeforeRun
+  fullName: SimpleLineLibrary.Configuration.OnBeforeRun
+- uid: SimpleLineLibrary.Configuration.OnAfterRun*
+  commentId: Overload:SimpleLineLibrary.Configuration.OnAfterRun
+  href: SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_OnAfterRun
+  name: OnAfterRun
+  nameWithType: Configuration.OnAfterRun
+  fullName: SimpleLineLibrary.Configuration.OnAfterRun
 - uid: SimpleLineLibrary.Configuration.ProgramName*
   commentId: Overload:SimpleLineLibrary.Configuration.ProgramName
   href: SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_ProgramName
@@ -1022,6 +1215,73 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: SimpleLineLibrary.Configuration.InjectibleTypes*
+  commentId: Overload:SimpleLineLibrary.Configuration.InjectibleTypes
+  href: SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_InjectibleTypes
+  name: InjectibleTypes
+  nameWithType: Configuration.InjectibleTypes
+  fullName: SimpleLineLibrary.Configuration.InjectibleTypes
+- uid: System.Collections.Generic.IReadOnlyDictionary{System.Type,System.Func{System.Object}}
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary{System.Type,System.Func{System.Object}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<Type, Func<object>>
+  nameWithType: IReadOnlyDictionary<Type, Func<object>>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<System.Type, System.Func<object>>
+  nameWithType.vb: IReadOnlyDictionary(Of Type, Func(Of Object))
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of System.Type, System.Func(Of Object))
+  name.vb: IReadOnlyDictionary(Of Type, Func(Of Object))
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  - name: )
 - uid: SimpleLineLibrary.Configuration.DefinedTypes*
   commentId: Overload:SimpleLineLibrary.Configuration.DefinedTypes
   href: SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_DefinedTypes
@@ -1169,6 +1429,69 @@ references:
   nameWithType.vb: Configuration.New
   fullName.vb: SimpleLineLibrary.Configuration.New
   name.vb: New
+- uid: SimpleLineLibrary.Configuration.AddTypeForInject*
+  commentId: Overload:SimpleLineLibrary.Configuration.AddTypeForInject
+  href: SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_AddTypeForInject__1_System_Func___0__
+  name: AddTypeForInject
+  nameWithType: Configuration.AddTypeForInject
+  fullName: SimpleLineLibrary.Configuration.AddTypeForInject
+- uid: System.Func{{T}}
+  commentId: T:System.Func{``0}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<T>
+  nameWithType: Func<T>
+  fullName: System.Func<T>
+  nameWithType.vb: Func(Of T)
+  fullName.vb: System.Func(Of T)
+  name.vb: Func(Of T)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
 - uid: SimpleLineLibrary.Configuration.AddTypeForConverting*
   commentId: Overload:SimpleLineLibrary.Configuration.AddTypeForConverting
   href: SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_AddTypeForConverting__1_System_Func_System_String___0__

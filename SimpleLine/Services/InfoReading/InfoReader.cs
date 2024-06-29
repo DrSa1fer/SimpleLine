@@ -1,7 +1,7 @@
 ﻿using SimpleLineLibrary.Utils.MessageBuilders;
 using SimpleLineLibrary.Models;
 
-namespace SimpleLineLibrary.Services.ReadingInfo
+namespace SimpleLineLibrary.Services.InfoReading
 {
     internal class InfoReader
     {

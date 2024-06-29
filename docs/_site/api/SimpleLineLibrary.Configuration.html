@@ -89,7 +89,7 @@
 
 
   <h1 id="SimpleLineLibrary_Configuration" data-uid="SimpleLineLibrary.Configuration" class="text-break">
-Class Configuration  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L7"><i class="bi bi-code-slash"></i></a>
+Class Configuration  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L6"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -156,10 +156,11 @@ Class Configuration  <a class="header-action link-secondary" title="View source"
 
   <h3 id="SimpleLineLibrary_Configuration__ctor" data-uid="SimpleLineLibrary.Configuration.#ctor">
   Configuration()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L155"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Make empty configuration</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -186,10 +187,11 @@ Class Configuration  <a class="header-action link-secondary" title="View source"
 
   <h3 id="SimpleLineLibrary_Configuration_ConvertibleTypes" data-uid="SimpleLineLibrary.Configuration.ConvertibleTypes">
   ConvertibleTypes
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L93"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Convertible Types</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -217,7 +219,7 @@ Class Configuration  <a class="header-action link-secondary" title="View source"
 
   <h3 id="SimpleLineLibrary_Configuration_DefinedTypes" data-uid="SimpleLineLibrary.Configuration.DefinedTypes">
   DefinedTypes
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L115"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -248,10 +250,11 @@ Class Configuration  <a class="header-action link-secondary" title="View source"
 
   <h3 id="SimpleLineLibrary_Configuration_HelpKeys" data-uid="SimpleLineLibrary.Configuration.HelpKeys">
   HelpKeys
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L130"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Keys which are considered keys to call help</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -275,14 +278,110 @@ Class Configuration  <a class="header-action link-secondary" title="View source"
 
 
 
+  <a id="SimpleLineLibrary_Configuration_InjectibleTypes_" data-uid="SimpleLineLibrary.Configuration.InjectibleTypes*"></a>
+
+  <h3 id="SimpleLineLibrary_Configuration_InjectibleTypes" data-uid="SimpleLineLibrary.Configuration.InjectibleTypes">
+  InjectibleTypes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L104"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyDictionary&lt;Type, Func&lt;object?&gt;&gt; InjectibleTypes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SimpleLineLibrary_Configuration_OnAfterRun_" data-uid="SimpleLineLibrary.Configuration.OnAfterRun*"></a>
+
+  <h3 id="SimpleLineLibrary_Configuration_OnAfterRun" data-uid="SimpleLineLibrary.Configuration.OnAfterRun">
+  OnAfterRun
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Action after run the library</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Action? OnAfterRun { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SimpleLineLibrary_Configuration_OnBeforeRun_" data-uid="SimpleLineLibrary.Configuration.OnBeforeRun*"></a>
+
+  <h3 id="SimpleLineLibrary_Configuration_OnBeforeRun" data-uid="SimpleLineLibrary.Configuration.OnBeforeRun">
+  OnBeforeRun
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Action before run the library</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Action? OnBeforeRun { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="SimpleLineLibrary_Configuration_OnCommandNotFound_" data-uid="SimpleLineLibrary.Configuration.OnCommandNotFound*"></a>
 
   <h3 id="SimpleLineLibrary_Configuration_OnCommandNotFound" data-uid="SimpleLineLibrary.Configuration.OnCommandNotFound">
   OnCommandNotFound
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Action when the command is not found</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -310,7 +409,7 @@ Class Configuration  <a class="header-action link-secondary" title="View source"
 
   <h3 id="SimpleLineLibrary_Configuration_OnHandlerMissing" data-uid="SimpleLineLibrary.Configuration.OnHandlerMissing">
   OnHandlerMissing
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -341,10 +440,11 @@ Class Configuration  <a class="header-action link-secondary" title="View source"
 
   <h3 id="SimpleLineLibrary_Configuration_OnNoArguments" data-uid="SimpleLineLibrary.Configuration.OnNoArguments">
   OnNoArguments
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Action when no arguments were passed</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -372,10 +472,11 @@ Class Configuration  <a class="header-action link-secondary" title="View source"
 
   <h3 id="SimpleLineLibrary_Configuration_OnSimpleLineException" data-uid="SimpleLineLibrary.Configuration.OnSimpleLineException">
   OnSimpleLineException
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Action when an error occurs inside the library</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -403,10 +504,11 @@ Class Configuration  <a class="header-action link-secondary" title="View source"
 
   <h3 id="SimpleLineLibrary_Configuration_OnUserException" data-uid="SimpleLineLibrary.Configuration.OnUserException">
   OnUserException
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Action when an error occurs inside the user code</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -434,10 +536,11 @@ Class Configuration  <a class="header-action link-secondary" title="View source"
 
   <h3 id="SimpleLineLibrary_Configuration_ProgramDescription" data-uid="SimpleLineLibrary.Configuration.ProgramDescription">
   ProgramDescription
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L63"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Progrram description</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -465,10 +568,11 @@ Class Configuration  <a class="header-action link-secondary" title="View source"
 
   <h3 id="SimpleLineLibrary_Configuration_ProgramName" data-uid="SimpleLineLibrary.Configuration.ProgramName">
   ProgramName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Program name</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -496,10 +600,11 @@ Class Configuration  <a class="header-action link-secondary" title="View source"
 
   <h3 id="SimpleLineLibrary_Configuration_ProgramVersion" data-uid="SimpleLineLibrary.Configuration.ProgramVersion">
   ProgramVersion
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L78"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Program version</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -531,10 +636,11 @@ Class Configuration  <a class="header-action link-secondary" title="View source"
 
   <h3 id="SimpleLineLibrary_Configuration_AddTypeForConverting__1_System_Func_System_String___0__" data-uid="SimpleLineLibrary.Configuration.AddTypeForConverting``1(System.Func{System.String,``0})">
   AddTypeForConverting&lt;T&gt;(Func&lt;string, T&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L186"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Add type for converting</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -544,14 +650,55 @@ Class Configuration  <a class="header-action link-secondary" title="View source"
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>func</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, T&gt;</dt>
-    <dd></dd>
+    <dd><p>Convertation method</p>
+</dd>
   </dl>
 
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>Type for converting</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="SimpleLineLibrary_Configuration_AddTypeForInject_" data-uid="SimpleLineLibrary.Configuration.AddTypeForInject*"></a>
+
+  <h3 id="SimpleLineLibrary_Configuration_AddTypeForInject__1_System_Func___0__" data-uid="SimpleLineLibrary.Configuration.AddTypeForInject``1(System.Func{``0})">
+  AddTypeForInject&lt;T&gt;(Func&lt;T&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L174"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add type for inject</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddTypeForInject&lt;T&gt;(Func&lt;T&gt; func)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>func</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;T&gt;</dt>
+    <dd><p>Getting instance method</p>
+</dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>Type for inject</p>
+</dd>
   </dl>
 
 
@@ -567,10 +714,11 @@ Class Configuration  <a class="header-action link-secondary" title="View source"
 
   <h3 id="SimpleLineLibrary_Configuration_Default_System_Reflection_Assembly_" data-uid="SimpleLineLibrary.Configuration.Default(System.Reflection.Assembly)">
   Default(Assembly)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L198"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Make configuration with default values</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -580,13 +728,15 @@ Class Configuration  <a class="header-action link-secondary" title="View source"
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>assembly</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.reflection.assembly">Assembly</a></dt>
-    <dd></dd>
+    <dd><p>Target assembly</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="SimpleLineLibrary.Configuration.html">Configuration</a></dt>
-    <dd></dd>
+    <dd><p>Configuration</p>
+</dd>
   </dl>
 
 
@@ -603,7 +753,7 @@ Class Configuration  <a class="header-action link-secondary" title="View source"
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L7" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DrSa1fer/SimpleLine/blob/main/SimpleLine/Configuration.cs/#L6" class="edit-link">Edit this page</a>
         </div>
 
 

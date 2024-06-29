@@ -1,19 +1,50 @@
 using System.Reflection;
 using System.IO;
-using System.Xml.Linq;
 
 namespace SimpleLineLibrary
 {
     public class Configuration
     {
+        /// <summary>
+        /// Action when an error occurs inside the library
+        /// </summary>
+        /// <value></value>
         public Action<Exception>? OnSimpleLineException { get; set; }
+        /// <summary>
+        /// Action when an error occurs inside the user code
+        /// </summary>
+        /// <value></value>
         public Action<Exception>? OnUserException { get; set; }        
+        /// <summary>
+        /// Action when the command is not found
+        /// </summary>
+        /// <value></value>
         public Action<string>? OnCommandNotFound { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
         public Action<string>? OnHandlerMissing { get; set; }
+        /// <summary>
+        /// Action when no arguments were passed
+        /// </summary>
+        /// <value></value>
         public Action? OnNoArguments { get; set; }
+        /// <summary>
+        /// Action before run the library
+        /// </summary>
+        /// <value></value>
         public Action? OnBeforeRun { get; set; }
+        /// <summary>
+        /// Action after run the library
+        /// </summary>
+        /// <value></value>
         public Action? OnAfterRun { get; set; }
 
+        /// <summary>
+        /// Program name
+        /// </summary>
+        /// <value></value>
         public string ProgramName
         {
             get
@@ -25,6 +56,10 @@ namespace SimpleLineLibrary
                 _programName = value;
             }
         }
+        /// <summary>
+        /// Progrram description
+        /// </summary>
+        /// <value></value>
         public string ProgramDescription
         {
             get
@@ -36,6 +71,10 @@ namespace SimpleLineLibrary
                 _programDesc = value;
             }
         }
+        /// <summary>
+        /// Program version
+        /// </summary>
+        /// <value></value>
         public string ProgramVersion
         {
             get
@@ -47,13 +86,32 @@ namespace SimpleLineLibrary
                 _programVers = value;
             }
         }
+        /// <summary>
+        /// Convertible Types
+        /// </summary>
+        /// <value></value>
         public IReadOnlyDictionary<Type, Func<string, object?>> ConvertibleTypes
         {
             get
             {
-                return _types;
+                return _convertibleTypes;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        public IReadOnlyDictionary<Type, Func<object?>> InjectibleTypes
+        {
+            get
+            {
+                return _injectibleTypes;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
         public IEnumerable<TypeInfo> DefinedTypes
         {
             get
@@ -65,6 +123,10 @@ namespace SimpleLineLibrary
                 _definedTypes = value;
             }
         }
+        /// <summary>
+        /// Keys which are considered keys to call help
+        /// </summary>
+        /// <value></value>
         public IReadOnlySet<string> HelpKeys
         {
             get
@@ -81,30 +143,59 @@ namespace SimpleLineLibrary
         private readonly string _programVers;
         private readonly string _programDesc;
 
-        private readonly Dictionary<Type, Func<string, object?>> _types;
+        private readonly Dictionary<Type, Func<string, object?>> _convertibleTypes;
+        private readonly Dictionary<Type, Func<object?>> _injectibleTypes;
+
         private readonly IEnumerable<TypeInfo> _definedTypes;
         private IReadOnlySet<string> _helpKeys;
 
+        /// <summary>
+        /// Make empty configuration  
+        /// </summary>
         public Configuration()
         {
             _programName = string.Empty;
             _programDesc = string.Empty;
             _programVers = string.Empty;
 
-            _types = new Dictionary<Type, Func<string, object?>>();
+            _convertibleTypes = new Dictionary<Type, Func<string, object?>>();
+            _injectibleTypes = new Dictionary<Type, Func<object?>>();
             _definedTypes = Enumerable.Empty<TypeInfo>();
             _helpKeys = new HashSet<string>();
 
             RegisterDefaultConverters();
+            RegisterDefaultInjects();
         }
 
+        /// <summary>
+        /// Add type for inject
+        /// </summary>
+        /// <param name="func">Getting instance method</param>
+        /// <typeparam name="T">Type for inject</typeparam>
+        public void AddTypeForInject<T>(Func<T> func)
+        {
+            var wrapper = new Func<object?>(() => func());
+
+            _injectibleTypes[typeof(T)] = wrapper;
+        }
+
+        /// <summary>
+        /// Add type for converting 
+        /// </summary>
+        /// <param name="func">Convertation method</param>
+        /// <typeparam name="T">Type for converting</typeparam>
         public void AddTypeForConverting<T>(Func<string, T> func)
         {
             var wrapper = new Func<string, object?>(input => func(input));
 
-            _types[typeof(T)] = wrapper;
+            _convertibleTypes[typeof(T)] = wrapper;
         }
 
+        /// <summary>
+        /// Make configuration with default values
+        /// </summary>
+        /// <param name="assembly">Target assembly</param>
+        /// <returns>Configuration</returns>
         public static Configuration Default(Assembly assembly)
         {
             return new()
@@ -173,33 +264,36 @@ namespace SimpleLineLibrary
 
             AddTypeForConverting(x =>
             {
-                var trueSet = new HashSet<string>()
-                {
-                    "1", "y", "true"
-                };
-
-                var falseSet = new HashSet<string>()
-                {
-                    "0", "n", "false"
-                };
-
-                if (trueSet.Contains(x.ToLower()))
+                if (new HashSet<string>(){"1", "y", "true"}.Contains(x.ToLower()))
                 {
                     return true;
                 }
 
-                if (falseSet.Contains(x.ToLower()))
+                if (new HashSet<string>(){"0", "n", "false"}.Contains(x.ToLower()))
                 {
                     return false;
                 }
 
-                throw new ArgumentException($"{x} is not bool");
+                throw new FormatException($"{x} is not bool");
             });
 
             AddTypeForConverting(char.Parse);
             AddTypeForConverting(x => x);
             AddTypeForConverting(x => new FileInfo(x));
             AddTypeForConverting(x => new DirectoryInfo(x));
+        }
+
+        private void RegisterDefaultInjects()
+        {
+            AddTypeForInject(() => new byte());
+            AddTypeForInject(() => new short());
+            AddTypeForInject(() => new int());
+            AddTypeForInject(() => new long());
+            AddTypeForInject(() => new float());
+            AddTypeForInject(() => new double());
+            AddTypeForInject(() => new decimal());
+            AddTypeForInject(() => string.Empty);
+            AddTypeForInject(() => new bool());
         }
     }
 }

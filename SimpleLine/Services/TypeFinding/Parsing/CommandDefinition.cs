@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace SimpleLineLibrary.Services.Finding.Parsing
+namespace SimpleLineLibrary.Services.TypeFinding.Parsing
 {
     internal class CommandDefinition
     {

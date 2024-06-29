@@ -1,59 +1,49 @@
-﻿using SimpleLineLibrary.Services.Finding.Parsing;
+﻿using SimpleLineLibrary.Services.TypeFinding.Activation;
+using SimpleLineLibrary.Services.TypeFinding.Parsing;
 using SimpleLineLibrary.Extentions;
 using SimpleLineLibrary.Models;
 using SimpleLineLibrary.Setup;
 using System.Reflection;
 
-namespace SimpleLineLibrary.Services.Finding
+namespace SimpleLineLibrary.Services.TypeFinding
 {
     internal class CommandFinder
     {
         private readonly CommandDefinitionsParser _definitionsReader;
+        private readonly DIActivator _activator;
 
-        public CommandFinder()
+        public CommandFinder(IReadOnlyDictionary<Type, Func<object?>> injectibleTypes)
         {
+            _activator = new DIActivator(injectibleTypes);
             _definitionsReader = new();
         }
 
         public Command? Find(Queue<string> args, IEnumerable<TypeInfo> types)
         {
-            if (args.Count < 1)
-            {
-                return null;
-            }
+            var root = _definitionsReader.GetDefinitions(types);
 
-            var dict = _definitionsReader.GetDefinitions(types);
-
-            if (dict.TryGetValue(args.Peek(), out CommandDefinition? command))
+            while (args.TryPeek(out string? peek))
             {
-                args.Dequeue();
-            }
-            else
-            {
-                return null;
-            }
-
-            while (args.Count > 0)
-            {
-                if (command.Subcommands.ContainsKey(args.Peek()))
-                {
-                    command = command.Subcommands[args.Peek()];
-                    args.Dequeue();
-                }
-                else
+                if(!peek.IsTokenName())
                 {
                     break;
                 }
-            }
+                if (!root.Subcommands.ContainsKey(peek))
+                {
+                    break;
+                }
 
-            if (command.Method == null || command.Type == null)
+                root = root.Subcommands[args.Dequeue()];
+            }
+            
+
+            if (root.Type == null)
             {
                 throw new InvalidOperationException("Command not register");
             }
 
-            var obj = command.Method.IsStatic ? null : Activator.CreateInstance(command.Type);
-
-            return MakeCommand(command.Uid, command.Method, obj);
+            var obj = root.Method?.IsStatic is true ? null : _activator.CreateInstance(root.Type);
+            return MakeCommand(root.Uid, root.Method, obj);
         }
 
         private static Command MakeCommand(string uid, MethodInfo? info, object? obj)

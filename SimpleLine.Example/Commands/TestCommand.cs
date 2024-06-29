@@ -3,20 +3,23 @@
 namespace SimpleLineLibrary.Example.Commands
 {
     [CommandDefinitions("test")]
-    public class TestCommand
+    public class TestCommands
     {
-
-        public TestCommand(int i) {}
+        [Command("@")]
+        public static void Test()
+        {
+            Console.WriteLine("It is test command");
+        }
 
         [Command("foo")]
-        public static void Foo(int[] msgs)
+        public static void Foo(string[] msgs)
         {
-            Console.WriteLine(string.Join(";", msgs));
+            Console.WriteLine(string.Join(';', msgs));
         }
     }
 
-    [CommandDefinitions("test")]
-    public class TestCommand2
+    [CommandDefinitions]
+    public class RootCommands
     {
         [Command("@")]
         [Description("meow")]

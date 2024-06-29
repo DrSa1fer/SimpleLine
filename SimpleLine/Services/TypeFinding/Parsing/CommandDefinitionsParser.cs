@@ -2,11 +2,11 @@ using SimpleLineLibrary.Extentions;
 using SimpleLineLibrary.Setup;
 using System.Reflection;
 
-namespace SimpleLineLibrary.Services.Finding.Parsing
+namespace SimpleLineLibrary.Services.TypeFinding.Parsing
 {
     internal class CommandDefinitionsParser
     {
-        internal Dictionary<string, CommandDefinition> GetDefinitions(IEnumerable<TypeInfo> types)
+        internal CommandDefinition GetDefinitions(IEnumerable<TypeInfo> types)
         {
             var root = new CommandDefinition("");
 
@@ -51,7 +51,6 @@ namespace SimpleLineLibrary.Services.Finding.Parsing
                         throw new NotSupportedException("Generic method is not supported");
                     }
 
-
                     var comRoot = defRoot;
 
                     if(!comAttr.Command.IsEqualsToken("@"))
@@ -81,7 +80,7 @@ namespace SimpleLineLibrary.Services.Finding.Parsing
                 }
             }
 
-            return root.Subcommands;
+            return root;
         }
 
         private static CommandDefinition MakeDefinition(CommandDefinition root, string[] tokens)

@@ -1,7 +1,7 @@
 using SimpleLineLibrary.Services.Execution.Exceptions;
-using SimpleLineLibrary.Services.ReadingInfo;
+using SimpleLineLibrary.Services.TypeFinding;
+using SimpleLineLibrary.Services.InfoReading;
 using SimpleLineLibrary.Services.Execution;
-using SimpleLineLibrary.Services.Finding;
 
 namespace SimpleLineLibrary
 {
@@ -11,16 +11,6 @@ namespace SimpleLineLibrary
         private readonly CommandFinder _commandFinder;
         private readonly InfoReader _infoBuilder;
         private readonly HandlerExecutor _handlerExecutor;
-
-        private SimpleLine(Configuration config)
-        {
-            _config = config;
-            
-            _commandFinder = new CommandFinder();
-            _handlerExecutor = new HandlerExecutor();
-            
-            _infoBuilder = new InfoReader(_config.ProgramName, _config.ProgramVersion);
-        }
 
         /// <summary>
         /// Launch Point 
@@ -84,6 +74,14 @@ namespace SimpleLineLibrary
             }
         }
 
+        private SimpleLine(Configuration config)
+        {
+            _config = config;
+
+            _infoBuilder = new InfoReader(_config.ProgramName, _config.ProgramVersion);
+            _commandFinder = new CommandFinder(_config.InjectibleTypes);
+            _handlerExecutor = new HandlerExecutor();
+        }
         /// <summary>
         /// Build SimpleLine
         /// </summary>

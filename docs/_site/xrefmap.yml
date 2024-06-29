@@ -48,6 +48,22 @@ references:
   fullName.vb: SimpleLineLibrary.Configuration.AddTypeForConverting(Of T)(System.Func(Of String, T))
   nameWithType: Configuration.AddTypeForConverting<T>(Func<string, T>)
   nameWithType.vb: Configuration.AddTypeForConverting(Of T)(Func(Of String, T))
+- uid: SimpleLineLibrary.Configuration.AddTypeForInject*
+  name: AddTypeForInject
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_AddTypeForInject_
+  commentId: Overload:SimpleLineLibrary.Configuration.AddTypeForInject
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Configuration.AddTypeForInject
+  nameWithType: Configuration.AddTypeForInject
+- uid: SimpleLineLibrary.Configuration.AddTypeForInject``1(System.Func{``0})
+  name: AddTypeForInject<T>(Func<T>)
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_AddTypeForInject__1_System_Func___0__
+  commentId: M:SimpleLineLibrary.Configuration.AddTypeForInject``1(System.Func{``0})
+  name.vb: AddTypeForInject(Of T)(Func(Of T))
+  fullName: SimpleLineLibrary.Configuration.AddTypeForInject<T>(System.Func<T>)
+  fullName.vb: SimpleLineLibrary.Configuration.AddTypeForInject(Of T)(System.Func(Of T))
+  nameWithType: Configuration.AddTypeForInject<T>(Func<T>)
+  nameWithType.vb: Configuration.AddTypeForInject(Of T)(Func(Of T))
 - uid: SimpleLineLibrary.Configuration.ConvertibleTypes
   name: ConvertibleTypes
   href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_ConvertibleTypes
@@ -100,6 +116,45 @@ references:
   isSpec: "True"
   fullName: SimpleLineLibrary.Configuration.HelpKeys
   nameWithType: Configuration.HelpKeys
+- uid: SimpleLineLibrary.Configuration.InjectibleTypes
+  name: InjectibleTypes
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_InjectibleTypes
+  commentId: P:SimpleLineLibrary.Configuration.InjectibleTypes
+  fullName: SimpleLineLibrary.Configuration.InjectibleTypes
+  nameWithType: Configuration.InjectibleTypes
+- uid: SimpleLineLibrary.Configuration.InjectibleTypes*
+  name: InjectibleTypes
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_InjectibleTypes_
+  commentId: Overload:SimpleLineLibrary.Configuration.InjectibleTypes
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Configuration.InjectibleTypes
+  nameWithType: Configuration.InjectibleTypes
+- uid: SimpleLineLibrary.Configuration.OnAfterRun
+  name: OnAfterRun
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_OnAfterRun
+  commentId: P:SimpleLineLibrary.Configuration.OnAfterRun
+  fullName: SimpleLineLibrary.Configuration.OnAfterRun
+  nameWithType: Configuration.OnAfterRun
+- uid: SimpleLineLibrary.Configuration.OnAfterRun*
+  name: OnAfterRun
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_OnAfterRun_
+  commentId: Overload:SimpleLineLibrary.Configuration.OnAfterRun
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Configuration.OnAfterRun
+  nameWithType: Configuration.OnAfterRun
+- uid: SimpleLineLibrary.Configuration.OnBeforeRun
+  name: OnBeforeRun
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_OnBeforeRun
+  commentId: P:SimpleLineLibrary.Configuration.OnBeforeRun
+  fullName: SimpleLineLibrary.Configuration.OnBeforeRun
+  nameWithType: Configuration.OnBeforeRun
+- uid: SimpleLineLibrary.Configuration.OnBeforeRun*
+  name: OnBeforeRun
+  href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_OnBeforeRun_
+  commentId: Overload:SimpleLineLibrary.Configuration.OnBeforeRun
+  isSpec: "True"
+  fullName: SimpleLineLibrary.Configuration.OnBeforeRun
+  nameWithType: Configuration.OnBeforeRun
 - uid: SimpleLineLibrary.Configuration.OnCommandNotFound
   name: OnCommandNotFound
   href: api/SimpleLineLibrary.Configuration.html#SimpleLineLibrary_Configuration_OnCommandNotFound

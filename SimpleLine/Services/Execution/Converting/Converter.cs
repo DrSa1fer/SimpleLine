@@ -12,9 +12,13 @@
         public object? ConvertType(Type type, string arg)
         {
             ThrowIfNotSupported(type);
-
+            
             try
-            {    
+            {
+                if(type.IsEnum)
+                {
+                    return Enum.Parse(type, arg);
+                }    
                 return _types[type]?.Invoke(arg.Trim());
             }
             catch(Exception e)
