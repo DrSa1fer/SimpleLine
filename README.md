@@ -17,15 +17,15 @@ It s written in C# language.
 ## Installation
 .NET CLI
 ```powershell copy
-> dotnet add package SimpleLine --version 0.1.0-beta
+> dotnet add package SimpleLine --version 0.1.1-beta
 ```
 Package Manager
 ```powershell copy
-PM> NuGet\Install-Package SimpleLine -Version 0.1.0-beta
+PM> NuGet\Install-Package SimpleLine -Version 0.1.1-beta
 ```
 Package Reference
 ```powershell copy
-<PackageReference Include="SimpleLine" Version="0.1.0-beta" />
+<PackageReference Include="SimpleLine" Version="0.1.1-beta" />
 ```
 
 > Required [.NET SDK](https://dotnet.microsoft.com/en-us/download) 6.0+
