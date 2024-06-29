@@ -10,7 +10,7 @@
 	  <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
     <IncludeSymbols>False</IncludeSymbols>
     <NoWin32Manifest>true</NoWin32Manifest>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReadmeFile>index.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageId>SimpleLine</PackageId>
     <Title>SimpleLine</Title>
@@ -34,11 +34,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\LICENSE.txt">
+    <None Include="..\docs\LICENSE.txt">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="..\README.md">
+    <None Include="..\docs\index.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
