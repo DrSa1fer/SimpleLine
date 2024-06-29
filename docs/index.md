@@ -1,7 +1,3 @@
----
-landing: 0
----
-
 # SimpleLine
 
 ---
