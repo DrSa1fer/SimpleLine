@@ -123,6 +123,19 @@ namespace SimpleLineLibrary
                 _definedTypes = value;
             }
         }
+
+        public string ContextOperator
+        {
+            get
+            {
+                return _contextOperator;
+            }
+            init
+            {
+                _contextOperator = value;
+            }
+        }
+
         /// <summary>
         /// Keys which are considered keys to call help
         /// </summary>
@@ -143,11 +156,13 @@ namespace SimpleLineLibrary
         private readonly string _programVers;
         private readonly string _programDesc;
 
+        private readonly string _contextOperator;
+
         private readonly Dictionary<Type, Func<string, object?>> _convertibleTypes;
         private readonly Dictionary<Type, Func<object?>> _injectibleTypes;
 
         private readonly IEnumerable<TypeInfo> _definedTypes;
-        private IReadOnlySet<string> _helpKeys;
+        private readonly IReadOnlySet<string> _helpKeys;
 
         /// <summary>
         /// Make empty configuration  
@@ -157,11 +172,14 @@ namespace SimpleLineLibrary
             _programName = string.Empty;
             _programDesc = string.Empty;
             _programVers = string.Empty;
+            
+            _helpKeys = new HashSet<string>() { "-?", "-h", "--help" };
 
             _convertibleTypes = new Dictionary<Type, Func<string, object?>>();
             _injectibleTypes = new Dictionary<Type, Func<object?>>();
             _definedTypes = Enumerable.Empty<TypeInfo>();
-            _helpKeys = new HashSet<string>();
+
+            _contextOperator = "@";
 
             RegisterDefaultConverters();
             RegisterDefaultInjects();
@@ -175,6 +193,18 @@ namespace SimpleLineLibrary
         public void AddTypeForInject<T>(Func<T> func)
         {
             var wrapper = new Func<object?>(() => func());
+
+            _injectibleTypes[typeof(T)] = wrapper;
+        }
+
+        /// <summary>
+        /// Add type for inject
+        /// </summary>
+        /// <param name="obj">Instance of object</param>
+        /// <typeparam name="T">Type for inject</typeparam>
+        public void AddTypeForInject<T>(T obj)
+        {
+            var wrapper = new Func<object?>(() => obj);
 
             _injectibleTypes[typeof(T)] = wrapper;
         }
@@ -220,8 +250,6 @@ namespace SimpleLineLibrary
                 {
                     Console.WriteLine($"Handler for command {name} is missing");
                 },
-                DefinedTypes = assembly.DefinedTypes,
-                HelpKeys = new HashSet<string>() { "-h", "-?", "--help", "--info" },
                 OnNoArguments = () =>
                 {
                     var output = "";
@@ -236,14 +264,12 @@ namespace SimpleLineLibrary
 
                     Console.WriteLine(output);
                 },
-
+                ContextOperator = "@",
+                DefinedTypes = assembly.DefinedTypes,
                 ProgramName = assembly.ManifestModule.Name,
-
-                ProgramVersion = assembly
-                .GetCustomAttribute<AssemblyVersionAttribute>()?.Version ?? "1.0.0.0",
-
-                ProgramDescription = assembly
-                .GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description ?? string.Empty,
+                ProgramVersion = assembly.GetCustomAttribute<AssemblyVersionAttribute>()?.Version ?? "1.0.0.0",
+                ProgramDescription = assembly.GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description ?? string.Empty,
+                HelpKeys = new HashSet<string>() { "-h", "-?", "--help", "--info" },
             };
         }
 
@@ -285,15 +311,15 @@ namespace SimpleLineLibrary
 
         private void RegisterDefaultInjects()
         {
-            AddTypeForInject(() => new byte());
-            AddTypeForInject(() => new short());
-            AddTypeForInject(() => new int());
-            AddTypeForInject(() => new long());
-            AddTypeForInject(() => new float());
-            AddTypeForInject(() => new double());
-            AddTypeForInject(() => new decimal());
-            AddTypeForInject(() => string.Empty);
-            AddTypeForInject(() => new bool());
+            AddTypeForInject(new byte());
+            AddTypeForInject(new short());
+            AddTypeForInject(new int());
+            AddTypeForInject(new long());
+            AddTypeForInject(new float());
+            AddTypeForInject(new double());
+            AddTypeForInject(new decimal());
+            AddTypeForInject(string.Empty);
+            AddTypeForInject(new bool());
         }
     }
 }

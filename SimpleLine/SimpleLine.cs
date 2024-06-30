@@ -2,6 +2,7 @@ using SimpleLineLibrary.Services.Execution.Exceptions;
 using SimpleLineLibrary.Services.TypeFinding;
 using SimpleLineLibrary.Services.InfoReading;
 using SimpleLineLibrary.Services.Execution;
+using SimpleLineLibrary.Services.TypeParsing;
 
 namespace SimpleLineLibrary
 {
@@ -11,6 +12,7 @@ namespace SimpleLineLibrary
         private readonly CommandFinder _commandFinder;
         private readonly InfoReader _infoBuilder;
         private readonly HandlerExecutor _handlerExecutor;
+        private readonly CommandDefinitionsParser _definitionsParser;
 
         /// <summary>
         /// Launch Point 
@@ -27,10 +29,23 @@ namespace SimpleLineLibrary
                 {
                     _config.OnNoArguments?.Invoke();
                     return null;
-                }                
-
+                }
+                
+                var root = _definitionsParser.GetDefinitions(_config.DefinedTypes);
+                
                 var qArgs = new Queue<string>(args);
-                var com = _commandFinder.Find(qArgs, _config.DefinedTypes);
+                
+                if(qArgs.TryPeek(out string? a) && a == "list")
+                {
+                    foreach(var s in root.Subcommands)
+                    {
+                        Console.WriteLine(s.Key);
+                    }
+                    return null;
+                }
+
+
+                var com = _commandFinder.Find(qArgs, root);
 
                 if (com == null)
                 {
@@ -79,6 +94,7 @@ namespace SimpleLineLibrary
             _config = config;
 
             _infoBuilder = new InfoReader(_config.ProgramName, _config.ProgramVersion);
+            _definitionsParser = new CommandDefinitionsParser(_config.ContextOperator);
             _commandFinder = new CommandFinder(_config.InjectibleTypes);
             _handlerExecutor = new HandlerExecutor();
         }

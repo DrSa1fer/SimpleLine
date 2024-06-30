@@ -1,14 +1,22 @@
 using SimpleLineLibrary.Extentions;
+using SimpleLineLibrary.Models;
 using SimpleLineLibrary.Setup;
 using System.Reflection;
 
-namespace SimpleLineLibrary.Services.TypeFinding.Parsing
+namespace SimpleLineLibrary.Services.TypeParsing
 {
     internal class CommandDefinitionsParser
     {
+        private readonly string _contextOperator;
+
+        public CommandDefinitionsParser(string contexOperator)
+        {
+            _contextOperator = contexOperator;
+        }
+
         internal CommandDefinition GetDefinitions(IEnumerable<TypeInfo> types)
         {
-            var root = new CommandDefinition("");
+            var root = new CommandDefinition("root");
 
             foreach (var t in types.Where(x => x.IsClass && !x.IsAbstract))
             {
@@ -21,7 +29,7 @@ namespace SimpleLineLibrary.Services.TypeFinding.Parsing
 
                 var defRoot = root;
                 var defTokens = defAttr.Command.SplitOnTokens(' ');
-                
+
                 if (defTokens.Length > 0)
                 {
                     foreach (var defToken in defTokens)
@@ -53,8 +61,8 @@ namespace SimpleLineLibrary.Services.TypeFinding.Parsing
 
                     var comRoot = defRoot;
 
-                    if(!comAttr.Command.IsEqualsToken("@"))
-                    {                        
+                    if (!comAttr.Command.IsEqualsToken(_contextOperator))
+                    {
                         var comTokens = comAttr.Command.SplitOnTokens(' ');
 
                         if (comTokens.Length < 1)
@@ -69,8 +77,8 @@ namespace SimpleLineLibrary.Services.TypeFinding.Parsing
 
                         comRoot = MakeDefinition(comRoot, comTokens);
                     }
-                    
-                    if(comRoot.Method != null || comRoot.Type != null)
+
+                    if (comRoot.Method != null || comRoot.Type != null)
                     {
                         throw new Exception($"Already register command to uid \"{comRoot.Uid}\"");
                     }
@@ -99,7 +107,7 @@ namespace SimpleLineLibrary.Services.TypeFinding.Parsing
                 {
                     var temp = new CommandDefinition(token);
 
-                    locRoot .Subcommands[temp.Uid] = temp;
+                    locRoot.Subcommands[temp.Uid] = temp;
                     locRoot = temp;
                 }
             }

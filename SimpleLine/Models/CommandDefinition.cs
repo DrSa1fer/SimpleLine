@@ -1,28 +1,28 @@
 using System.Reflection;
 
-namespace SimpleLineLibrary.Services.TypeFinding.Parsing
+namespace SimpleLineLibrary.Models
 {
     internal class CommandDefinition
     {
-        public string Uid 
+        public string Uid
         {
             get;
         }
 
         public Dictionary<string, CommandDefinition> Subcommands
-        { 
+        {
             get;
         }
 
-        public TypeInfo? Type 
-        {   
-            get;     
+        public TypeInfo? Type
+        {
+            get;
             set;
         }
 
         public MethodInfo? Method
         {
-            get; 
+            get;
             set;
         }
 

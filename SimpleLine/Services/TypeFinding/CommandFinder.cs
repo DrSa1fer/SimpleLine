@@ -1,27 +1,23 @@
 ﻿using SimpleLineLibrary.Services.TypeFinding.Activation;
-using SimpleLineLibrary.Services.TypeFinding.Parsing;
 using SimpleLineLibrary.Extentions;
 using SimpleLineLibrary.Models;
 using SimpleLineLibrary.Setup;
 using System.Reflection;
+using SimpleLineLibrary.Services.TypeParsing;
 
 namespace SimpleLineLibrary.Services.TypeFinding
 {
     internal class CommandFinder
     {
-        private readonly CommandDefinitionsParser _definitionsReader;
         private readonly DIActivator _activator;
 
         public CommandFinder(IReadOnlyDictionary<Type, Func<object?>> injectibleTypes)
         {
             _activator = new DIActivator(injectibleTypes);
-            _definitionsReader = new();
         }
 
-        public Command? Find(Queue<string> args, IEnumerable<TypeInfo> types)
+        public Command? Find(Queue<string> args, CommandDefinition root)
         {
-            var root = _definitionsReader.GetDefinitions(types);
-
             while (args.TryPeek(out string? peek))
             {
                 if(!peek.IsTokenName())
@@ -36,13 +32,13 @@ namespace SimpleLineLibrary.Services.TypeFinding
                 root = root.Subcommands[args.Dequeue()];
             }
             
-
             if (root.Type == null)
             {
                 throw new InvalidOperationException("Command not register");
             }
 
             var obj = root.Method?.IsStatic is true ? null : _activator.CreateInstance(root.Type);
+
             return MakeCommand(root.Uid, root.Method, obj);
         }
 
@@ -69,7 +65,7 @@ namespace SimpleLineLibrary.Services.TypeFinding
         
         private static Parameter[] MakeParameters(ParameterInfo[] info)
         {
-            var names = info.Select(x => x.Name ?? x.Position.ToString()).ToArray();
+            var names = info.Select(x => x.Name ?? ((char)(x.Position % 26 + 67)).ToString());
 
             var arr = new Parameter[info.Length];
 
@@ -82,8 +78,8 @@ namespace SimpleLineLibrary.Services.TypeFinding
                 var val = p.ParameterType;
                 var def = p.DefaultValue;
 
-                var name = p.Name ?? pos.ToString();
-                var desc = p.GetCustomAttribute<DescriptionAttribute>()?.Description ?? "";
+                var name = p.Name ?? ((char)(pos % 26 + 67)).ToString();
+                var desc = p.GetCustomAttribute<DescriptionAttribute>()?.Description ?? string.Empty;
 
                 var @long = string.Empty;
                 var @short = string.Empty;
