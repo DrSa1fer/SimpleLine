@@ -26,11 +26,6 @@ namespace SimpleLineLibrary
         /// <value></value>
         public Action<string>? OnHandlerMissing { get; set; }
         /// <summary>
-        /// Action when no arguments were passed
-        /// </summary>
-        /// <value></value>
-        public Action? OnNoArguments { get; set; }
-        /// <summary>
         /// Action before run the library
         /// </summary>
         /// <value></value>
@@ -116,7 +111,7 @@ namespace SimpleLineLibrary
         {
             get
             {
-                return _definedTypes ?? Array.Empty<TypeInfo>();
+                return _definedTypes ?? Enumerable.Empty<TypeInfo>();
             }
             init
             {
@@ -190,7 +185,7 @@ namespace SimpleLineLibrary
         /// </summary>
         /// <param name="func">Getting instance method</param>
         /// <typeparam name="T">Type for inject</typeparam>
-        public void AddTypeForInject<T>(Func<T> func)
+        public void AddTypeForInjecting<T>(Func<T> func)
         {
             var wrapper = new Func<object?>(() => func());
 
@@ -202,7 +197,7 @@ namespace SimpleLineLibrary
         /// </summary>
         /// <param name="obj">Instance of object</param>
         /// <typeparam name="T">Type for inject</typeparam>
-        public void AddTypeForInject<T>(T obj)
+        public void AddTypeForInjecting<T>(T obj)
         {
             var wrapper = new Func<object?>(() => obj);
 
@@ -249,20 +244,6 @@ namespace SimpleLineLibrary
                 OnHandlerMissing = (name) => 
                 {
                     Console.WriteLine($"Handler for command {name} is missing");
-                },
-                OnNoArguments = () =>
-                {
-                    var output = "";
-                    var newline = Environment.NewLine;
-
-                    output += " _____   _   ___   ___   _____   _       _____      _       _   ___   _   _____  " + newline;
-                    output += "|  ___| |_| |   |_|   | |  _  | | |     |  ___|    | |     |_| |   |_| | |  ___| " + newline;
-                    output += "| |___   _  | |_   _| | | |_| | | |     | |___     | |      _  | |_  | | | |___  " + newline;
-                    output += "|___  | | | | | |_| | | |  ___| | |     |  ___|    | |     | | | | |_  | |  ___| " + newline;
-                    output += " ___| | | | | |     | | | |     | |___  | |___     | |___  | | | |   | | | |___  " + newline;
-                    output += "|_____| |_| |_|     |_| |_|     |_____| |_____|    |_____| |_| |_|   |_| |_____| " + newline;
-
-                    Console.WriteLine(output);
                 },
                 ContextOperator = "@",
                 DefinedTypes = assembly.DefinedTypes,
@@ -311,15 +292,15 @@ namespace SimpleLineLibrary
 
         private void RegisterDefaultInjects()
         {
-            AddTypeForInject(new byte());
-            AddTypeForInject(new short());
-            AddTypeForInject(new int());
-            AddTypeForInject(new long());
-            AddTypeForInject(new float());
-            AddTypeForInject(new double());
-            AddTypeForInject(new decimal());
-            AddTypeForInject(string.Empty);
-            AddTypeForInject(new bool());
+            AddTypeForInjecting(new byte());
+            AddTypeForInjecting(new short());
+            AddTypeForInjecting(new int());
+            AddTypeForInjecting(new long());
+            AddTypeForInjecting(new float());
+            AddTypeForInjecting(new double());
+            AddTypeForInjecting(new decimal());
+            AddTypeForInjecting(string.Empty);
+            AddTypeForInjecting(new bool());
         }
     }
 }

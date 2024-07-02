@@ -1,29 +1,29 @@
-﻿using SimpleLineLibrary.Services.TypeFinding.Activation;
+﻿using SimpleLineLibrary.Services.CommandFinding.Activation;
 using SimpleLineLibrary.Extentions;
 using SimpleLineLibrary.Models;
 using SimpleLineLibrary.Setup;
 using System.Reflection;
-using SimpleLineLibrary.Services.TypeParsing;
+using SimpleLineLibrary.Services.CommandFinding.Parsing;
 
-namespace SimpleLineLibrary.Services.TypeFinding
+namespace SimpleLineLibrary.Services.CommandFinding
 {
     internal class CommandFinder
     {
         private readonly DIActivator _activator;
+        private readonly NodeParser _nodeParser;
 
-        public CommandFinder(IReadOnlyDictionary<Type, Func<object?>> injectibleTypes)
+        public CommandFinder(IReadOnlyDictionary<Type, Func<object?>> injectibleTypes, string contextOperator = ".")
         {
             _activator = new DIActivator(injectibleTypes);
+            _nodeParser = new NodeParser(contextOperator);
         }
 
-        public Command? Find(Queue<string> args, CommandDefinition root)
+        public Command? Find(Queue<string> args, IEnumerable<TypeInfo> types)
         {
+            var root = _nodeParser.GetNode(types);
+
             while (args.TryPeek(out string? peek))
             {
-                if(!peek.IsTokenName())
-                {
-                    break;
-                }
                 if (!root.Subcommands.ContainsKey(peek))
                 {
                     break;
@@ -31,13 +31,13 @@ namespace SimpleLineLibrary.Services.TypeFinding
 
                 root = root.Subcommands[args.Dequeue()];
             }
-            
+
             if (root.Type == null)
             {
                 throw new InvalidOperationException("Command not register");
             }
 
-            var obj = root.Method?.IsStatic is true ? null : _activator.CreateInstance(root.Type);
+            var obj = root.Method?.IsStatic is false ? _activator.CreateInstance(root.Type) : null;
 
             return MakeCommand(root.Uid, root.Method, obj);
         }
@@ -62,7 +62,7 @@ namespace SimpleLineLibrary.Services.TypeFinding
 
             return new Handler(func, pars);
         }
-        
+
         private static Parameter[] MakeParameters(ParameterInfo[] info)
         {
             var names = info.Select(x => x.Name ?? ((char)(x.Position % 26 + 67)).ToString());
@@ -89,20 +89,20 @@ namespace SimpleLineLibrary.Services.TypeFinding
                 if (keysAttr == null)
                 {
                     @long = $"--{name}";
-                    
-                    for(int j = 0; j < name.Length; j++)
+
+                    for (int j = 0; j < name.Length; j++)
                     {
                         int count = 0;
-                        foreach(var n in names)
+                        foreach (var n in names)
                         {
                             var sym = n.Skip(j).Take(1).SingleOrDefault();
-                            
-                            if(sym == name[j])
+
+                            if (sym == name[j])
                             {
                                 count++;
                             }
                         }
-                        if(count < 2)
+                        if (count < 2)
                         {
                             @short = $"-{name[..(j + 1)]}";
                             break;
@@ -123,5 +123,5 @@ namespace SimpleLineLibrary.Services.TypeFinding
 
             return arr;
         }
-    }       
+    }
 }

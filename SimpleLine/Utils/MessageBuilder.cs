@@ -1,18 +1,18 @@
 ﻿using System.IO;
 
-namespace SimpleLineLibrary.Utils.MessageBuilders
+namespace SimpleLineLibrary.Utils
 {
-    internal class MessageBuilder
+    internal sealed class MessageBuilder
     {
-        private List<string> _page;
-        private string _enter;
+        private readonly List<string> _page;
+        private readonly string _enter;
         private int _tabs;
 
         public MessageBuilder()
         {
             _enter = Environment.NewLine;
             _page = new();
-            _tabs = 0;            
+            _tabs = 0;
         }
 
         public MessageBuilder AddHeader(string header)
@@ -27,13 +27,8 @@ namespace SimpleLineLibrary.Utils.MessageBuilders
             return this;
         }
 
-        public MessageBuilder StartBlock(string text = "", bool newLine = true)
+        public MessageBuilder StartBlock(string text = "")
         {
-            if (newLine)
-            {
-                WriteLine("", 0);
-            }
-            
             WriteLine(text);
             _tabs++;
             return this;
@@ -44,8 +39,8 @@ namespace SimpleLineLibrary.Utils.MessageBuilders
             _tabs = _tabs - 1 > -1 ? _tabs - 1 : 0;
 
             return this;
-        }        
-        
+        }
+
         public MessageBuilder WriteLine(string text)
         {
             _page.Add($"{new string(' ', _tabs * 4)}{text}");

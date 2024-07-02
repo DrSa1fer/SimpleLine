@@ -6,7 +6,7 @@ namespace SimpleLineLibrary.Services.Execution.Binding
 {
     internal class ValueBinder
     {
-        public static object?[]? Bind(IReadOnlyList<Parameter> parameters, ExecutionData data, Converter converter)
+        public object?[]? Bind(IReadOnlyList<Parameter> parameters, ExecutionData data, Converter converter)
         {
             var arr = new object?[parameters.Count];
 

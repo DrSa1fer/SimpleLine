@@ -23,7 +23,7 @@ namespace SimpleLineLibrary.Example.Commands
     {
         [Command("@")]
         [Description("meow")]
-        public static void Foo(int x, int y)
+        public static void Foo(int x, int y = 1)
         {
             Console.WriteLine("| " + (x + y) + " |");
         }

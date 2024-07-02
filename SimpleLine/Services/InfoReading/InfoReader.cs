@@ -1,5 +1,5 @@
-﻿using SimpleLineLibrary.Utils.MessageBuilders;
-using SimpleLineLibrary.Models;
+﻿using SimpleLineLibrary.Models;
+using SimpleLineLibrary.Utils;
 
 namespace SimpleLineLibrary.Services.InfoReading
 {
@@ -18,19 +18,25 @@ namespace SimpleLineLibrary.Services.InfoReading
         {
             var mb = new MessageBuilder();
 
-            mb.AddHeader($"{_program} #{_vers}");
+            //mb.AddHeader($"{_program} #{_vers}").SkipLine();
 
             var uid = command.Uid;
             var h = command.Handler;
 
             mb
-                .StartBlock("command:")
-                    .WriteLine($"{uid} - {(command.Description.Length > 0 ? command.Description : "no description")}")
-                .CloseBlock();
+            .StartBlock("Usage:")
+                .WriteLine("program.dll [options]")
+                .WriteLine("program.dll [command] [options]")
+            .CloseBlock();
+
+            mb
+            .StartBlock("Description:")
+                .WriteLine($"{(command.Description.Length > 0 ? command.Description : "nothing")}")
+            .CloseBlock();
 
             if (h is not null)
             {
-                mb.StartBlock("parameters:");
+                mb.StartBlock("Options:");
 
                 if (h.Parameters.Any())
                 {
@@ -39,20 +45,27 @@ namespace SimpleLineLibrary.Services.InfoReading
                         var req = p.IsRequired ? "req" : "opt";
                         var keys = $"{p.ShortKey}|{p.LongKey}";
                         var type = p.ValueType.Name.ToLower();
-                        var desc = p.Description.Length > 0 ? p.Description : "no description";
+                        var desc = p.Description.Length > 0 ? p.Description : "nothing";
 
-                        var str = $"[{req}] {keys} <{type}> - {desc}";
+                        var str = $"{p.Position}: [{req}] {keys} <{type}> - {desc}";
 
                         mb.WriteLine(str);
                     }
                 }
                 else
                 {
-                    mb.WriteLine("[no parameters]");
+                    mb.WriteLine("nothing");
                 }
 
                 mb.CloseBlock();
             }
+
+            
+
+            mb
+            .StartBlock("Commands:")
+                .WriteLine("test")
+            .CloseBlock();
 
             mb
             .StartBlock("docs:")

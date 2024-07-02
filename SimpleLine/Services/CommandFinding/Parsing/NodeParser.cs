@@ -1,22 +1,21 @@
 using SimpleLineLibrary.Extentions;
-using SimpleLineLibrary.Models;
 using SimpleLineLibrary.Setup;
 using System.Reflection;
 
-namespace SimpleLineLibrary.Services.TypeParsing
+namespace SimpleLineLibrary.Services.CommandFinding.Parsing
 {
-    internal class CommandDefinitionsParser
+    internal class NodeParser
     {
         private readonly string _contextOperator;
 
-        public CommandDefinitionsParser(string contexOperator)
+        public NodeParser(string contexOperator)
         {
             _contextOperator = contexOperator;
         }
 
-        internal CommandDefinition GetDefinitions(IEnumerable<TypeInfo> types)
+        internal Node GetNode(IEnumerable<TypeInfo> types)
         {
-            var root = new CommandDefinition("root");
+            var root = new Node("root");
 
             foreach (var t in types.Where(x => x.IsClass && !x.IsAbstract))
             {
@@ -37,7 +36,7 @@ namespace SimpleLineLibrary.Services.TypeParsing
                         defToken.ThrowIfWrongTokenName();
                     }
 
-                    defRoot = MakeDefinition(defRoot, defTokens);
+                    defRoot = MakeNode(defRoot, defTokens);
                 }
 
                 foreach (var m in t.GetMethods())
@@ -75,7 +74,7 @@ namespace SimpleLineLibrary.Services.TypeParsing
                             comToken.ThrowIfWrongTokenName();
                         }
 
-                        comRoot = MakeDefinition(comRoot, comTokens);
+                        comRoot = MakeNode(comRoot, comTokens);
                     }
 
                     if (comRoot.Method != null || comRoot.Type != null)
@@ -91,28 +90,19 @@ namespace SimpleLineLibrary.Services.TypeParsing
             return root;
         }
 
-        private static CommandDefinition MakeDefinition(CommandDefinition root, string[] tokens)
-        {
-            var locRoot = root;
-
+        private static Node MakeNode(Node root, string[] tokens)
+        {            
             for (int i = 0; i < tokens.Length; i++)
-            {
-                var token = tokens[i];
-
-                if (locRoot.Subcommands.ContainsKey(token))
+            {                
+                if (!root.Subcommands.ContainsKey(tokens[i]))
                 {
-                    locRoot = locRoot.Subcommands[token];
+                    root.Subcommands[tokens[i]] = new Node(tokens[i]);                    
                 }
-                else
-                {
-                    var temp = new CommandDefinition(token);
 
-                    locRoot.Subcommands[temp.Uid] = temp;
-                    locRoot = temp;
-                }
+                root = root.Subcommands[tokens[i]];
             }
 
-            return locRoot;
+            return root;
         }
     }
 }
