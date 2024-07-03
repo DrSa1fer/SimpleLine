@@ -3,6 +3,7 @@ using SimpleLineLibrary.Services.CommandFinding;
 using SimpleLineLibrary.Services.InfoReading;
 using SimpleLineLibrary.Services.Execution;
 using SimpleLineLibrary.Services.CommandParsing;
+using SimpleLineLibrary.Services.CommandParsing.Exceptions;
 
 namespace SimpleLineLibrary
 {
@@ -48,7 +49,12 @@ namespace SimpleLineLibrary
 
                 return result;
             }
-            catch(UserRuntimeException e)
+            catch(InitializationException e)
+            {
+                config.OnInitializationException?.Invoke(e);
+                return null;
+            }
+            catch(UserException e)
             {
                 config.OnUserException?.Invoke(e);
                 return null;

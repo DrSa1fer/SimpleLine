@@ -3,17 +3,17 @@
     /// <summary>
     /// Marks a class as a command definition holder so that the library can use this
     /// </summary>
-    [AttributeUsage(AttributeTargets.Class)]
-    public class CommandDefinitionsAttribute : Attribute
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
+    public class CommandsDefinitionsAttribute : Attribute
     {
         internal string Command { get; }
 
-        public CommandDefinitionsAttribute() 
+        public CommandsDefinitionsAttribute() 
         {
             Command = string.Empty;
         }
 
-        public CommandDefinitionsAttribute(string rootCommand)
+        public CommandsDefinitionsAttribute(string rootCommand)
         {
             Command = rootCommand;
         }

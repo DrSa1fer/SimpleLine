@@ -1,8 +1,9 @@
-﻿using SimpleLineLibrary.Setup;
+﻿using SimpleLineLibrary.Setup.Help;
+using SimpleLineLibrary.Setup;
 
 namespace SimpleLineLibrary.Example.Commands
 {
-    [CommandDefinitions("test")]
+    [CommandsDefinitions("test")]
     public class TestCommands
     {
         [Command]
@@ -23,17 +24,17 @@ namespace SimpleLineLibrary.Example.Commands
         }
     }
 
-    [CommandDefinitions]
+    [CommandsDefinitions]
     public class RootCommands
     {
         [Command]
         [Description("Root command of project")]
         [DocsLink("https://docs.com?com=root")]
         public static void Root(
-            [Description("left operand") ] int x, 
-            [Description("right operand")] int y = 1)
+            [Description("left operand") ] bool x, 
+            [Description("right operand")] int y)
         {
-            Console.WriteLine("| " + (x + y) + " |");
+            Console.WriteLine("| " + " |");
         }
 
         

@@ -10,6 +10,12 @@ namespace SimpleLineLibrary
         /// </summary>
         /// <value></value>
         public Action<Exception>? OnSimpleLineException { get; set; }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        public Action<Exception>? OnInitializationException { get; set; }
         /// <summary>
         /// Action when an error occurs inside the user code
         /// </summary>
@@ -205,15 +211,18 @@ namespace SimpleLineLibrary
             {
                 OnBeforeRun = () => {},
                 OnAfterRun = () => {},
+                OnInitializationException = (ex) =>
+                {
+                    Console.WriteLine(ex.Message);
+                },
                 OnUserException = (ex) =>
                 {
-                    Console.WriteLine(ex.InnerException?.Message);
+                    Console.WriteLine(ex.Message);
                     Console.WriteLine(ex.InnerException?.StackTrace);
                 },
                 OnSimpleLineException = (ex) =>
                 {
                     Console.WriteLine(ex.Message);
-                    Console.WriteLine(ex.StackTrace);
                 },
                 OnHandlerMissing = (name) => 
                 {
@@ -244,17 +253,17 @@ namespace SimpleLineLibrary
 
             AddTypeForConverting(x =>
             {
-                if (new HashSet<string>(){"1", "y", "true"}.Contains(x.ToLower()))
+                if (new HashSet<string>(){"1", "y", "yes", "true"}.Contains(x.ToLower()))
                 {
                     return true;
                 }
 
-                if (new HashSet<string>(){"0", "n", "false"}.Contains(x.ToLower()))
+                if (new HashSet<string>(){"0", "n", "no", "false"}.Contains(x.ToLower()))
                 {
                     return false;
                 }
 
-                throw new FormatException($"{x} is not bool");
+                throw new FormatException($"Cant convert {typeof(string).Name} to {typeof(bool).FullName}");
             });
 
             AddTypeForConverting(char.Parse);

@@ -1,4 +1,5 @@
-﻿using SimpleLineLibrary.Models;
+﻿using SimpleLineLibrary.Extentions;
+using SimpleLineLibrary.Models;
 using SimpleLineLibrary.Utils;
 
 namespace SimpleLineLibrary.Services.InfoReading
@@ -10,25 +11,26 @@ namespace SimpleLineLibrary.Services.InfoReading
             var mb = new MessageBuilder();
             
             var stack = new Stack<string>();
-
-            var parc = command;
+            var c = command;
+            
             do
             {
-                stack.Push(parc.Uid);
-                parc = parc.Parent;
+                stack.Push(c.Uid);
+                c = c.Parent;
             }
-            while (parc is not null);
+            while (c is not null);
 
+            command.HelpBlocks.Add(new("Usage", string.Join(" ", stack), 0));
+            command.HelpBlocks.Add(new("Subcommands", string.Join("\n    ", command.Children.Select(x => x.Value.Uid + " " + x.Value.HelpBlocks.FirstOrDefault(x => x.Equals("Description")))), 2));            
 
-            mb
-            .StartBlock("Usage:")
-                .WriteLine($"{string.Join(" ", stack)} [options]")
-            .CloseBlock();
-
-            mb
-            .StartBlock("Description:")
-                .WriteLine($"{(command.Description.Length > 0 ? command.Description : "nothing")}")
-            .CloseBlock();
+            var orderedBlocks = command.HelpBlocks.OrderBy(x => x.Priority);
+            foreach(var b in orderedBlocks)
+            {
+                mb
+                .StartBlock(b.Header + ":")
+                    .WriteLine(b.Body)
+                .CloseBlock();
+            }
 
             if (command.Handler is not null)
             {
@@ -54,24 +56,6 @@ namespace SimpleLineLibrary.Services.InfoReading
                 }
 
                 mb.CloseBlock();
-            }
-            
-            if(command.Children.Any())
-            {
-                mb.StartBlock("Subcommands:");
-                foreach(var c in command.Children.Values)
-                {
-                    mb.WriteLine($"{c.Uid} - {c.Description}");
-                }
-                mb.CloseBlock();
-            }
-
-            if(command.DocsLink.Length > 0)
-            {
-                mb
-                .StartBlock("Docs:")
-                    .WriteLine(command.DocsLink)
-                .CloseBlock();
             }
 
             return mb.ToString();
