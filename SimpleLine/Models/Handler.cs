@@ -4,37 +4,24 @@ namespace SimpleLineLibrary.Models
 
     internal class Handler
 	{     
-        public IReadOnlyList<Parameter> Parameters
-		{
-			get 
-			{
-				return _parameters;
-			}
-		}
+        public IReadOnlyList<Parameter> Parameters { get; }
+		public IReadOnlySet<string> AvalibleKeys { get; }
 
-		public IReadOnlySet<string> AvalibleKeys
-		{
-			get
-			{
-				return _keys;
-			}
-		}
-
-		private readonly HashSet<string> _keys;
-		private readonly Parameter[] _parameters;
         private readonly HandlerAction _method;
 
 		public Handler(HandlerAction func, Parameter[] parameters)
 		{
-			_parameters = parameters;
 			_method = func;
-			_keys = new();
+			var keys = new HashSet<string>();
 
 			for(int i = 0; i < parameters.Length; i++)
 			{
-				_keys.Add(_parameters[i].LongKey);
-				_keys.Add(_parameters[i].ShortKey);
+				keys.Add(parameters[i].LongKey);
+				keys.Add(parameters[i].ShortKey);
             }
+
+			Parameters = parameters;
+			AvalibleKeys = keys;
 		}
 
 		public object? Invoke(object?[]? args)

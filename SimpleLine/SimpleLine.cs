@@ -2,6 +2,7 @@ using SimpleLineLibrary.Services.Execution.Exceptions;
 using SimpleLineLibrary.Services.CommandFinding;
 using SimpleLineLibrary.Services.InfoReading;
 using SimpleLineLibrary.Services.Execution;
+using SimpleLineLibrary.Services.CommandParsing;
 
 namespace SimpleLineLibrary
 {
@@ -19,36 +20,29 @@ namespace SimpleLineLibrary
                 config.OnBeforeRun?.Invoke();
 
                 var qArgs = new Queue<string>(args);
-                var commandFinder = new CommandFinder(config.InjectibleTypes, config.ContextOperator);
-                var com = commandFinder.Find(qArgs, config.DefinedTypes);
 
-                if (com == null)
-                {
-                    if(qArgs.TryPeek(out string? peek))
-                    {
-                        config.OnCommandNotFound?.Invoke(peek);
-                    }
-                    return null;
-                }
+                var commandParser = new CommandParser(config.ProgramName, config.InjectibleTypes);
+                var root = commandParser.GetCommands(config.DefinedTypes);
+
+                var commandFinder = new CommandFinder();
+                var com = commandFinder.Find(qArgs, root);
 
                 if (qArgs.Count > 0 && config.HelpKeys.Contains(qArgs.Peek()))
                 {
-                    var infoBuilder = new InfoReader(config.ProgramName, config.ProgramVersion);
+                    var infoBuilder = new InfoReader();
                     var info = infoBuilder.GetInfo(com);
                     Console.WriteLine(info);
                     return null;
                 }
 
-                if(com.Handler == null) 
+                if(com.Handler == null)
                 {
-                    config?.OnHandlerMissing?.Invoke(com.Uid);
+                    config.OnHandlerMissing?.Invoke(com.Uid);
                     return null;
                 }
 
                 var handlerExecutor = new HandlerExecutor(com.Handler); 
-                var conTypes = config.ConvertibleTypes;
-
-                var result = handlerExecutor.Execute(qArgs, conTypes);
+                var result = handlerExecutor.Execute(qArgs, config.ConvertibleTypes);
 
                 config.OnAfterRun?.Invoke();
 

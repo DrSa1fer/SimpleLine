@@ -55,6 +55,10 @@ namespace SimpleLineLibrary.Services.Execution.Parsing
 
                     posed[pos].Add(value);
                 }
+                else if(IsEqualSign(args.Peek()))
+                {
+                    throw new ArgumentException("Invalid token in this context '='");
+                }
 
                 if(args.TryPeek(out var combine) && IsCombine(combine))
                 {
@@ -78,7 +82,7 @@ namespace SimpleLineLibrary.Services.Execution.Parsing
             }
             bool IsCombine(string token)
             {
-                return token.IsEqualsToken("&");
+                return token.IsEqualsToken(",");
             }
             bool IsEqualSign(string token)
             {

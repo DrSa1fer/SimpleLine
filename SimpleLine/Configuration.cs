@@ -16,11 +16,6 @@ namespace SimpleLineLibrary
         /// <value></value>
         public Action<Exception>? OnUserException { get; set; }        
         /// <summary>
-        /// Action when the command is not found
-        /// </summary>
-        /// <value></value>
-        public Action<string>? OnCommandNotFound { get; set; }
-        /// <summary>
         /// 
         /// </summary>
         /// <value></value>
@@ -118,19 +113,6 @@ namespace SimpleLineLibrary
                 _definedTypes = value;
             }
         }
-
-        public string ContextOperator
-        {
-            get
-            {
-                return _contextOperator;
-            }
-            init
-            {
-                _contextOperator = value;
-            }
-        }
-
         /// <summary>
         /// Keys which are considered keys to call help
         /// </summary>
@@ -150,8 +132,6 @@ namespace SimpleLineLibrary
         private readonly string _programName;
         private readonly string _programVers;
         private readonly string _programDesc;
-
-        private readonly string _contextOperator;
 
         private readonly Dictionary<Type, Func<string, object?>> _convertibleTypes;
         private readonly Dictionary<Type, Func<object?>> _injectibleTypes;
@@ -173,8 +153,6 @@ namespace SimpleLineLibrary
             _convertibleTypes = new Dictionary<Type, Func<string, object?>>();
             _injectibleTypes = new Dictionary<Type, Func<object?>>();
             _definedTypes = Enumerable.Empty<TypeInfo>();
-
-            _contextOperator = "@";
 
             RegisterDefaultConverters();
             RegisterDefaultInjects();
@@ -237,15 +215,10 @@ namespace SimpleLineLibrary
                     Console.WriteLine(ex.Message);
                     Console.WriteLine(ex.StackTrace);
                 },
-                OnCommandNotFound = (name) =>
-                {
-                    Console.WriteLine($"Simple Line doesnt contains command with name \"{name}\"");
-                },
                 OnHandlerMissing = (name) => 
                 {
                     Console.WriteLine($"Handler for command {name} is missing");
                 },
-                ContextOperator = "@",
                 DefinedTypes = assembly.DefinedTypes,
                 ProgramName = assembly.ManifestModule.Name,
                 ProgramVersion = assembly.GetCustomAttribute<AssemblyVersionAttribute>()?.Version ?? "1.0.0.0",

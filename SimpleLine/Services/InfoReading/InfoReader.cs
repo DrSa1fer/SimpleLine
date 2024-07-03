@@ -4,29 +4,25 @@ using SimpleLineLibrary.Utils;
 namespace SimpleLineLibrary.Services.InfoReading
 {
     internal class InfoReader
-    {
-        private readonly string _program;
-        private readonly string _vers;
-
-        public InfoReader(string program, string vers)
-        {
-            _program = program;
-            _vers = vers;
-        }
-        
+    {   
         public string GetInfo(Command command)
         {
             var mb = new MessageBuilder();
+            
+            var stack = new Stack<string>();
 
-            //mb.AddHeader($"{_program} #{_vers}").SkipLine();
+            var parc = command;
+            do
+            {
+                stack.Push(parc.Uid);
+                parc = parc.Parent;
+            }
+            while (parc is not null);
 
-            var uid = command.Uid;
-            var h = command.Handler;
 
             mb
             .StartBlock("Usage:")
-                .WriteLine("program.dll [options]")
-                .WriteLine("program.dll [command] [options]")
+                .WriteLine($"{string.Join(" ", stack)} [options]")
             .CloseBlock();
 
             mb
@@ -34,13 +30,13 @@ namespace SimpleLineLibrary.Services.InfoReading
                 .WriteLine($"{(command.Description.Length > 0 ? command.Description : "nothing")}")
             .CloseBlock();
 
-            if (h is not null)
+            if (command.Handler is not null)
             {
                 mb.StartBlock("Options:");
 
-                if (h.Parameters.Any())
+                if (command.Handler.Parameters.Any())
                 {
-                    foreach (var p in h.Parameters)
+                    foreach (var p in command.Handler.Parameters)
                     {
                         var req = p.IsRequired ? "req" : "opt";
                         var keys = $"{p.ShortKey}|{p.LongKey}";
@@ -59,20 +55,24 @@ namespace SimpleLineLibrary.Services.InfoReading
 
                 mb.CloseBlock();
             }
-
             
+            if(command.Children.Any())
+            {
+                mb.StartBlock("Subcommands:");
+                foreach(var c in command.Children.Values)
+                {
+                    mb.WriteLine($"{c.Uid} - {c.Description}");
+                }
+                mb.CloseBlock();
+            }
 
-            mb
-            .StartBlock("Commands:")
-                .WriteLine("test")
-            .CloseBlock();
-
-            mb
-            .StartBlock("docs:")
-                 .WriteLine("...")
-            .CloseBlock()
-                .SkipLine()
-            .AddFooter("simpleline");
+            if(command.DocsLink.Length > 0)
+            {
+                mb
+                .StartBlock("Docs:")
+                    .WriteLine(command.DocsLink)
+                .CloseBlock();
+            }
 
             return mb.ToString();
         }

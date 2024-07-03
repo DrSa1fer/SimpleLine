@@ -1,6 +1,6 @@
-using SimpleLineLibrary.Services.CommandFinding.Activation.Exceptions;
+using SimpleLineLibrary.Services.CommandParsing.Activation.Exceptions;
 
-namespace SimpleLineLibrary.Services.CommandFinding.Activation
+namespace SimpleLineLibrary.Services.CommandParsing.Activation
 {
     internal class DIActivator
     {

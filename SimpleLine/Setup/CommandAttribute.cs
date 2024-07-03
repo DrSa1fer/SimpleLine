@@ -8,6 +8,10 @@ namespace SimpleLineLibrary.Setup
     {
         internal string Command { get; }
 
+        public CommandAttribute()
+        {
+            Command = string.Empty;
+        }
         public CommandAttribute(string command)
         {
             Command = command;

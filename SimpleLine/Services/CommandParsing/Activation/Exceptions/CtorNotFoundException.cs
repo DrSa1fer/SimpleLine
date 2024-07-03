@@ -1,4 +1,4 @@
-namespace SimpleLineLibrary.Services.CommandFinding.Activation.Exceptions
+namespace SimpleLineLibrary.Services.CommandParsing.Activation.Exceptions
 {
     internal class CtorNotFoundException : Exception
     {
