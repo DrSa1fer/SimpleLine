@@ -16,17 +16,15 @@ namespace SimpleLineLibrary.Services.Execution.Binding
 
                 if (p.ValueType == typeof(bool))
                 {
-                    if (data.HasParameter(p))
-                    {
-                        if (!data.HasValue(p))
-                        {
-                            arr[i] = true;
-                            continue;
-                        }
-                    }
-                    else
+                    if (!data.HasParameter(p))
                     {
                         arr[i] = false;
+                        continue;
+                    }
+
+                    if (!data.HasValue(p))
+                    {
+                        arr[i] = true;
                         continue;
                     }
                 }
@@ -37,25 +35,28 @@ namespace SimpleLineLibrary.Services.Execution.Binding
                     {
                         throw new ArgumentException($"Required parameter is missing {p.Name}");
                     }
+                    
                     if (p.HasDefaultValue)
                     {
                         arr[i] = p.DefaultValue;
                         continue;
                     }
+
+                    throw new ArgumentException("Parameter is missing, but he is not required and hasnt default value");
                 }
 
                 if (p.ValueType.IsAssignableTo(typeof(ICollection)))
                 {
                     var values = data.GetValues(p);
                     arr[i] = converter.ConvertCollection(p.ValueType, values);
+                    
+                    continue;
                 }
-                else
-                {
-                    var str = data.GetValue(p);
-                    var t = p.ValueType;
 
-                    arr[i] = converter.ConvertType(t, str);
-                }
+                var str = data.GetValue(p);
+                var t = p.ValueType;
+
+                arr[i] = converter.ConvertType(t, str);        
             }
 
             return arr;

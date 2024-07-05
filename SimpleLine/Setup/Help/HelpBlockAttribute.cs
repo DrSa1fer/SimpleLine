@@ -5,13 +5,13 @@ namespace SimpleLineLibrary.Setup.Help
     {
         public string Header { get; }
         public string Body { get; }
-        public int Priority { get; }
+        public int Order { get; }
 
-        public HelpBlockAttribute(string header, string body, int priority)
+        public HelpBlockAttribute(string header, string body, int order)
         {
             Header = header;
             Body = body;
-            Priority = priority;
+            Order = order;
         }
     }
 }

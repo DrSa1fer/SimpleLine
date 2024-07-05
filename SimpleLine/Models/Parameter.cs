@@ -29,6 +29,8 @@ namespace SimpleLineLibrary.Models
             ValueType = valueType;
             IsRequired = isRequired;
             DefaultValue = defValue;
+
+            HasDefaultValue = valueType.IsAssignableTo(typeof(Nullable)) || valueType != null;
         }                
 
         public bool Is(string key)

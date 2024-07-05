@@ -1,4 +1,6 @@
-﻿namespace SimpleLineLibrary.Services.Execution.Converting
+﻿using SimpleLineLibrary.Extentions;
+
+namespace SimpleLineLibrary.Services.Execution.Converting
 {
     internal class Converter
     {
@@ -15,8 +17,16 @@
             
             try
             {
-                if(type.IsEnum)
+                if(type.IsEnum && !_types.ContainsKey(type))
                 {
+                    foreach(var n in Enum.GetNames(type))
+                    {
+                        if(n.IsEqualsToken(arg))
+                        {
+                            return Enum.Parse(type, n);
+                        }
+                    }
+
                     return Enum.Parse(type, arg);
                 }    
                 return _types[type]?.Invoke(arg.Trim());
@@ -54,7 +64,7 @@
 
         private void ThrowIfNotSupported(Type type)
         {
-            if (!_types.ContainsKey(type))
+            if (!_types.ContainsKey(type) && !type.IsEnum)
             {
                 throw new NotSupportedException($"{type.Name} is not supported");
             }

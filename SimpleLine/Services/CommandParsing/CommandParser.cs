@@ -1,9 +1,10 @@
-using SimpleLineLibrary.Extentions;
-using SimpleLineLibrary.Models;
 using SimpleLineLibrary.Services.CommandParsing.Activation;
 using SimpleLineLibrary.Services.CommandParsing.Exceptions;
-using SimpleLineLibrary.Setup;
+using SimpleLineLibrary.Services.CommandParsing.HelpBlocks;
+using SimpleLineLibrary.Extentions;
 using SimpleLineLibrary.Setup.Help;
+using SimpleLineLibrary.Models;
+using SimpleLineLibrary.Setup;
 using System.Reflection;
 
 namespace SimpleLineLibrary.Services.CommandParsing
@@ -24,6 +25,8 @@ namespace SimpleLineLibrary.Services.CommandParsing
             try
             {
                 var root = new Command(_programName);
+                root.AddHelpBlock(new UsageBlock(root));
+                root.AddHelpBlock(new SubcommandBlock(root));
 
                 foreach (var t in types.Where(x => x.IsClass && !x.IsAbstract))
                 {
@@ -46,14 +49,7 @@ namespace SimpleLineLibrary.Services.CommandParsing
                         }
 
                         defRoot = MakeCommand(defRoot, defTokens);
-                    }
-
-                    foreach(var help in t.GetCustomAttributes<HelpBlockAttribute>())
-                    {
-                        defRoot.HelpBlocks.Add(new HelpBlock(help.Header, help.Body, help.Priority));
-                    }
-
-                    
+                    }                    
 
                     foreach (var m in t.GetMethods())
                     {
@@ -95,7 +91,7 @@ namespace SimpleLineLibrary.Services.CommandParsing
 
                         foreach(var help in m.GetCustomAttributes<HelpBlockAttribute>())
                         {
-                            comRoot.HelpBlocks.Add(new HelpBlock(help.Header, help.Body, help.Priority));
+                            comRoot.AddHelpBlock(new HelpBlock(help.Header, help.Body, help.Order));
                         }
 
                         var obj = m.IsStatic ? null : _activator.CreateInstance(t);
@@ -103,7 +99,14 @@ namespace SimpleLineLibrary.Services.CommandParsing
                         var ps = MakeParameters(m.GetParameters());
 
                         comRoot.Handler = new Handler(func, ps);
-                    }                    
+
+                        comRoot.AddHelpBlock(new OptionBlock(comRoot));                        
+                    }              
+
+                    foreach(var help in t.GetCustomAttributes<HelpBlockAttribute>())
+                    {
+                       defRoot.AddHelpBlock(new HelpBlock(help.Header, help.Body, help.Order));
+                    }
                 }
                 
                 return root;
@@ -121,6 +124,8 @@ namespace SimpleLineLibrary.Services.CommandParsing
                 if (!root.Children.ContainsKey(tokens[i]))
                 {
                     root.Children[tokens[i]] = new Command(tokens[i]);
+                    root.Children[tokens[i]].AddHelpBlock(new UsageBlock(root.Children[tokens[i]]));
+                    root.Children[tokens[i]].AddHelpBlock(new SubcommandBlock(root.Children[tokens[i]]));
                 }
 
                 var temp = root;

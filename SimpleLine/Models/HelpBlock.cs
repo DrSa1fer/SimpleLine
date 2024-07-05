@@ -3,14 +3,25 @@ namespace SimpleLineLibrary.Models
     internal class HelpBlock
     {
         public string Header { get; }
-        public string Body { get; }
-        public int Priority { get; }
+        public string Body => _body();
+        public int Order { get; }
 
-        public HelpBlock(string header, string body, int priority)
+        private readonly Func<string> _body;
+
+        public HelpBlock(string header, Func<string> body, int order)
         {
             Header = header;
-            Body = body;
-            Priority = priority;
+            Order = order;
+
+            _body = body;
+        }
+
+        public HelpBlock(string header, string body, int order)
+        {
+            Header = header;
+            Order = order;
+            
+            _body = () => body;
         }
     }
 }
