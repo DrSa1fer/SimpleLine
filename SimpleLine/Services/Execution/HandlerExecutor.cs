@@ -49,7 +49,11 @@ namespace SimpleLineLibrary.Services.Execution
             }
             catch (TargetInvocationException ex)
             {
-                throw new UserRuntimeException(ex.InnerException);
+                throw new UserException(ex.InnerException!);
+            }
+            catch(Exception e)
+            {
+                throw new ExecutionException(e);
             }
         }        
     }
