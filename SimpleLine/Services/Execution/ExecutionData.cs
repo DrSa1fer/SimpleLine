@@ -23,10 +23,12 @@ namespace SimpleLineLibrary.Services.Execution
         private readonly IReadOnlyDictionary<int, IEnumerable<string>> _posedArgs;
         private readonly IReadOnlyDictionary<string, IEnumerable<string>> _namedArgs;
 
-        public ExecutionData(Dictionary<int, IEnumerable<string>> posed, Dictionary<string, IEnumerable<string>> named)
+        public ExecutionData(
+            Dictionary<string, IEnumerable<string>> named,
+            Dictionary<int, IEnumerable<string>> posed)
         {
-            _posedArgs = posed;
             _namedArgs = named;
+            _posedArgs = posed;
         }
 
         public string GetValue(Parameter parameter)
@@ -38,30 +40,30 @@ namespace SimpleLineLibrary.Services.Execution
         {
             var ls = new List<string>();
 
-            if(_namedArgs.ContainsKey(parameter.LongKey))
+            if (_namedArgs.ContainsKey(parameter.LongKey))
             {
                 var value = _namedArgs[parameter.LongKey];
                 ls.AddRange(value);
             }
 
-            if(_namedArgs.ContainsKey(parameter.ShortKey))
+            if (_namedArgs.ContainsKey(parameter.ShortKey))
             {
                 var value = _namedArgs[parameter.ShortKey];
                 ls.AddRange(value);
             }
 
-            if(_posedArgs.ContainsKey(parameter.Position))
+            if (_posedArgs.ContainsKey(parameter.Position))
             {
                 var value = _posedArgs[parameter.Position];
                 ls.AddRange(value);
             }
 
-            if(ls.Any(x => x is null || x.Length < 0))
+            if (ls.Any(x => x is null || x.Length < 1))
             {
-                throw new Exception("Empty value");
+                throw new ArgumentException("Empty value");
             }
 
-            return ls.Where(x => x is not null && x.Length > 0);
+            return ls;
         }
 
         public bool HasParameter(Parameter parameter)
@@ -72,14 +74,17 @@ namespace SimpleLineLibrary.Services.Execution
                 || _posedArgs.ContainsKey(parameter.Position)
             ;
         }
-        
+
         public bool HasValue(Parameter parameter)
         {
             return false
-                || _namedArgs.TryGetValue(parameter.LongKey, out var l) && l.Any(x => x is not null && x.Length > 0)
-                || _namedArgs.TryGetValue(parameter.ShortKey, out var s) && s.Any(x => x is not null && x.Length > 0)
-                || _posedArgs.TryGetValue(parameter.Position, out var p) && p.Any(x => x is not null && x.Length > 0)
+                || _namedArgs.TryGetValue(parameter.LongKey, out var l)
+                    && l.Any(x => x is not null && x.Length > 0)
+                || _namedArgs.TryGetValue(parameter.ShortKey, out var s)
+                    && s.Any(x => x is not null && x.Length > 0)
+                || _posedArgs.TryGetValue(parameter.Position, out var p)
+                    && p.Any(x => x is not null && x.Length > 0)
             ;
-        }        
+        }
     }
 }

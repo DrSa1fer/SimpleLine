@@ -1,6 +1,9 @@
-using SimpleLineLibrary.Extentions;
-using SimpleLineLibrary.Models;
 using SimpleLineLibrary.Services.CommandParsing.Activation;
+using SimpleLineLibrary.Services.CommandParsing.Exceptions;
+using SimpleLineLibrary.Services.CommandParsing.HelpBlocks;
+using SimpleLineLibrary.Extentions;
+using SimpleLineLibrary.Setup.Help;
+using SimpleLineLibrary.Models;
 using SimpleLineLibrary.Setup;
 using System.Reflection;
 
@@ -19,84 +22,105 @@ namespace SimpleLineLibrary.Services.CommandParsing
 
         internal Command GetCommands(IEnumerable<TypeInfo> types)
         {
-            var root = new Command(_programName);
-
-            foreach (var t in types.Where(x => x.IsClass && !x.IsAbstract))
+            try
             {
-                var defAttr = t.GetCustomAttribute<CommandDefinitionsAttribute>();
+                var root = new Command(_programName);
+                root.AddHelpBlock(new UsageBlock(root));
+                root.AddHelpBlock(new SubcommandBlock(root));
 
-                if (defAttr == null)
+                foreach (var t in types.Where(x => x.IsClass))
                 {
-                    continue;
-                }
+                    var defAttr = t.GetCustomAttribute<CommandsDefinitionsAttribute>();
 
-                var defRoot = root;
-
-                if (defAttr.Command.Length > 0)
-                {
-                    var defTokens = defAttr.Command.SplitOnTokens(' ');
-
-                    foreach (var defToken in defTokens)
-                    {
-                        defToken.ThrowIfWrongTokenName();
-                    }
-
-                    defRoot = MakeCommand(defRoot, defTokens);
-                }
-
-                foreach (var m in t.GetMethods())
-                {
-                    var comAttr = m.GetCustomAttribute<CommandAttribute>();
-
-                    if (comAttr == null)
+                    if (defAttr == null)
                     {
                         continue;
                     }
 
-                    if (m.IsAbstract)
+                    var defRoot = root;
+
+                    if (defAttr.Command.Length > 0)
                     {
-                        throw new NotSupportedException("Abstract method is not supported");
-                    }
+                        var defTokens = defAttr.Command.SplitOnTokens(' ');
 
-                    if (m.IsGenericMethod)
-                    {
-                        throw new NotSupportedException("Generic method is not supported");
-                    }
-
-                    var comRoot = defRoot;
-
-                    if (comAttr.Command.Length > 0)
-                    {
-                        var comTokens = comAttr.Command.SplitOnTokens(' ');
-
-                        foreach (var comToken in comTokens)
-                        {                           
-                            comToken.ThrowIfWrongTokenName();
+                        foreach (var defToken in defTokens)
+                        {
+                            defToken.ThrowIfWrongTokenName();
                         }
 
-                        comRoot = MakeCommand(comRoot, comTokens);
+                        defRoot = MakeCommand(defRoot, defTokens);
                     }
 
-                    if (comRoot.Handler != null)
+                    foreach (var help in t.GetCustomAttributes<HelpBlockAttribute>())
                     {
-                        throw new Exception($"Already impliment command with uid \"{comRoot.Uid}\"");
+                        defRoot.AddHelpBlock(new HelpBlock(help.Header, help.Body, help.Order));
                     }
 
-                    var desc = m.GetCustomAttribute<DescriptionAttribute>()?.Description ?? string.Empty;
-                    var docs = m.GetCustomAttribute<DocsLinkAttribute>()?.Url ?? string.Empty;
-                
-                    comRoot.Description = desc;
-                    comRoot.DocsLink = docs;
+                    object? obj = null;
 
-                    var obj = m.IsStatic ? null : _activator.CreateInstance(t);
-                    var func = new HandlerAction(x => m.Invoke(obj, x));
-                    var ps = MakeParameters(m.GetParameters());
+                    foreach (var m in t.GetMethods())
+                    {
+                        var comAttr = m.GetCustomAttribute<CommandAttribute>();
 
-                    comRoot.Handler = new Handler(func, ps);
+                        if (comAttr == null)
+                        {
+                            continue;
+                        }
+
+                        if (m.IsAbstract)
+                        {
+                            throw new NotSupportedException("Abstract method is not supported");
+                        }
+
+                        if (m.IsGenericMethod)
+                        {
+                            throw new NotSupportedException("Generic method is not supported");
+                        }
+
+                        var comRoot = defRoot;
+
+                        if (comAttr.Command.Length > 0)
+                        {
+                            var comTokens = comAttr.Command.SplitOnTokens(' ');
+
+                            foreach (var comToken in comTokens)
+                            {                           
+                                comToken.ThrowIfWrongTokenName();
+                            }
+
+                            comRoot = MakeCommand(comRoot, comTokens);
+                        }
+
+                        if (comRoot.Handler != null)
+                        {
+                            throw new Exception($"Already impliment command with uid \"{comRoot.Uid}\"");
+                        }
+
+                        foreach(var help in m.GetCustomAttributes<HelpBlockAttribute>())
+                        {
+                            comRoot.AddHelpBlock(new HelpBlock(help.Header, help.Body, help.Order));
+                        }
+
+                        if (!m.IsStatic)
+                        {                            
+                            obj = _activator.CreateInstance(t);
+                        }
+
+                        var func = new HandlerAction(x => m.Invoke(obj, x));
+                        var ps = MakeParameters(m.GetParameters());
+
+                        comRoot.Handler = new Handler(func, ps);
+
+                        comRoot.AddHelpBlock(new OptionBlock(comRoot));                        
+                    }
                 }
+                
+                return root;
             }
-
-            return root;
+            catch(Exception e)
+            {
+                throw new InitializationException(e);
+            }
         }
 
         private static Command MakeCommand(Command root, string[] tokens)
@@ -106,6 +130,8 @@ namespace SimpleLineLibrary.Services.CommandParsing
                 if (!root.Children.ContainsKey(tokens[i]))
                 {
                     root.Children[tokens[i]] = new Command(tokens[i]);
+                    root.Children[tokens[i]].AddHelpBlock(new UsageBlock(root.Children[tokens[i]]));
+                    root.Children[tokens[i]].AddHelpBlock(new SubcommandBlock(root.Children[tokens[i]]));
                 }
 
                 var temp = root;
@@ -133,7 +159,7 @@ namespace SimpleLineLibrary.Services.CommandParsing
                 var def = p.DefaultValue;
 
                 var name = p.Name ?? ((char)(pos % 26 + 67)).ToString();
-                var desc = p.GetCustomAttribute<DescriptionAttribute>()?.Description ?? string.Empty;
+                var desc = p.GetCustomAttribute<DescriptionAttribute>()?.Body ?? string.Empty;
 
                 var @long = string.Empty;
                 var @short = string.Empty;
