@@ -10,7 +10,8 @@ namespace SimpleLineLibrary.Example.Commands
     [HelpBlock("Feature", "new feature", -1)]
     public class FileCommands
     {
-        [Command("test")]
+        [Command("read file")]
+        [Description("desc")]
         public static void ReadFile(FileInfo f)
         {
             if(!f.Exists)

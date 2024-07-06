@@ -37,6 +37,8 @@ namespace SimpleLineLibrary.Example.Commands
             Console.WriteLine("| " + " |");
         }
 
-        
+        [Command("file")]
+        [Description("Method. group of file interaction commands")]
+        public static void A() { }
     }
 }

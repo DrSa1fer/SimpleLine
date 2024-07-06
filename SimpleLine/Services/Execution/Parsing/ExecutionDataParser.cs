@@ -12,7 +12,7 @@ namespace SimpleLineLibrary.Services.Execution.Parsing
             int pos = 0;
 
             while (args.Count > 0)
-            { 
+            {         
                 if (IsKey(args.Peek()))
                 {
                     string key = args.Dequeue();
@@ -43,37 +43,28 @@ namespace SimpleLineLibrary.Services.Execution.Parsing
                     }
 
                     named[key].Add(value);
-                }
-                else if(IsValue(args.Peek()))
+                    continue;
+                }                    
+                if (IsValue(args.Peek()))
                 {
                     string value = args.Dequeue();
-
+                    
                     if(!posed.ContainsKey(pos) || posed[pos] == null)
                     {
                         posed[pos] = new List<string>();
                     }
 
-                    posed[pos].Add(value);
+                    posed[pos++].Add(value);
+                    continue;
                 }
-                else if(IsEqualSign(args.Peek()))
-                {
-                    throw new ArgumentException("Invalid token in this context '='");
-                }
-
-                if(args.TryPeek(out var combine) && IsCombine(combine))
-                {
-                    args.Dequeue();
-                }
-                else
-                {
-                    pos++;
-                }
+               
+                throw new ArgumentException($"Invalid token in this context {args.Peek()}");                
             }
 
-            var pdict = posed.ToDictionary(x => x.Key, x => (IEnumerable<string>)x.Value);
             var ndict = named.ToDictionary(x => x.Key, x => (IEnumerable<string>)x.Value);
+            var pdict = posed.ToDictionary(x => x.Key, x => (IEnumerable<string>)x.Value);
 
-            return new ExecutionData(pdict, ndict);
+            return new ExecutionData(ndict, pdict);
 
 
             bool IsKey(string token)

@@ -13,7 +13,10 @@ namespace SimpleLineLibrary.Services.Execution.Converting
 
         public object? ConvertType(Type type, string arg)
         {
-            ThrowIfNotSupported(type);
+            if (!_types.ContainsKey(type) && !type.IsEnum)
+            {
+                throw new NotSupportedException($"{type.Name} is not supported");
+            }
             
             try
             {
@@ -29,6 +32,7 @@ namespace SimpleLineLibrary.Services.Execution.Converting
 
                     return Enum.Parse(type, arg);
                 }    
+
                 return _types[type]?.Invoke(arg.Trim());
             }
             catch(Exception e)
@@ -60,14 +64,6 @@ namespace SimpleLineLibrary.Services.Execution.Converting
             }
 
             return arr;
-        }
-
-        private void ThrowIfNotSupported(Type type)
-        {
-            if (!_types.ContainsKey(type) && !type.IsEnum)
-            {
-                throw new NotSupportedException($"{type.Name} is not supported");
-            }
         }
     }
 }

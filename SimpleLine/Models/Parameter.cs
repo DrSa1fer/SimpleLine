@@ -30,7 +30,7 @@ namespace SimpleLineLibrary.Models
             IsRequired = isRequired;
             DefaultValue = defValue;
 
-            HasDefaultValue = valueType.IsAssignableTo(typeof(Nullable)) || valueType != null;
+            HasDefaultValue = valueType.IsAssignableTo(typeof(Nullable)) || defValue != null;
         }                
 
         public bool Is(string key)

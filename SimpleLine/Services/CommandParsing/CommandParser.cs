@@ -28,7 +28,7 @@ namespace SimpleLineLibrary.Services.CommandParsing
                 root.AddHelpBlock(new UsageBlock(root));
                 root.AddHelpBlock(new SubcommandBlock(root));
 
-                foreach (var t in types.Where(x => x.IsClass && !x.IsAbstract))
+                foreach (var t in types.Where(x => x.IsClass))
                 {
                     var defAttr = t.GetCustomAttribute<CommandsDefinitionsAttribute>();
 
@@ -49,7 +49,14 @@ namespace SimpleLineLibrary.Services.CommandParsing
                         }
 
                         defRoot = MakeCommand(defRoot, defTokens);
-                    }                    
+                    }
+
+                    foreach (var help in t.GetCustomAttributes<HelpBlockAttribute>())
+                    {
+                        defRoot.AddHelpBlock(new HelpBlock(help.Header, help.Body, help.Order));
+                    }
+
+                    object? obj = null;
 
                     foreach (var m in t.GetMethods())
                     {
@@ -94,18 +101,17 @@ namespace SimpleLineLibrary.Services.CommandParsing
                             comRoot.AddHelpBlock(new HelpBlock(help.Header, help.Body, help.Order));
                         }
 
-                        var obj = m.IsStatic ? null : _activator.CreateInstance(t);
+                        if (!m.IsStatic)
+                        {                            
+                            obj = _activator.CreateInstance(t);
+                        }
+
                         var func = new HandlerAction(x => m.Invoke(obj, x));
                         var ps = MakeParameters(m.GetParameters());
 
                         comRoot.Handler = new Handler(func, ps);
 
                         comRoot.AddHelpBlock(new OptionBlock(comRoot));                        
-                    }              
-
-                    foreach(var help in t.GetCustomAttributes<HelpBlockAttribute>())
-                    {
-                       defRoot.AddHelpBlock(new HelpBlock(help.Header, help.Body, help.Order));
                     }
                 }
                 

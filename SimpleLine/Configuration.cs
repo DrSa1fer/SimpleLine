@@ -25,7 +25,7 @@ namespace SimpleLineLibrary
         /// 
         /// </summary>
         /// <value></value>
-        public Action<string>? OnHandlerMissing { get; set; }
+        public Action<string>? OnImplementationMissing { get; set; }
         /// <summary>
         /// Action before run the library
         /// </summary>
@@ -36,6 +36,11 @@ namespace SimpleLineLibrary
         /// </summary>
         /// <value></value>
         public Action? OnAfterRun { get; set; }
+
+        /// <summary>
+        /// Action on getting help
+        /// </summary>
+        public Action<string>? OnGetHelp { get; set; }
 
         /// <summary>
         /// Program name
@@ -218,15 +223,21 @@ namespace SimpleLineLibrary
                 OnUserException = (ex) =>
                 {
                     Console.WriteLine(ex.Message);
+
+                    Console.WriteLine(ex.InnerException?.Message);
                     Console.WriteLine(ex.InnerException?.StackTrace);
                 },
                 OnSimpleLineException = (ex) =>
                 {
                     Console.WriteLine(ex.Message);
                 },
-                OnHandlerMissing = (name) => 
+                OnImplementationMissing = (name) => 
+                {                    
+                    Console.WriteLine($"Implimentation of command {name} is missing");
+                },
+                OnGetHelp = (help) =>
                 {
-                    Console.WriteLine($"Handler for command {name} is missing");
+                    Console.WriteLine(help);
                 },
                 DefinedTypes = assembly.DefinedTypes,
                 ProgramName = assembly.ManifestModule.Name,
@@ -253,15 +264,11 @@ namespace SimpleLineLibrary
 
             AddTypeForConverting(x =>
             {
-                if (new HashSet<string>(){"1", "y", "yes", "true"}.Contains(x.ToLower()))
-                {
+                if (new HashSet<string>() { "1", "y", "yes", "true" }.Contains(x.ToLower()))
                     return true;
-                }
 
-                if (new HashSet<string>(){"0", "n", "no", "false"}.Contains(x.ToLower()))
-                {
+                if (new HashSet<string>() { "0", "n", "no", "false" }.Contains(x.ToLower()))
                     return false;
-                }
 
                 throw new FormatException($"Cant convert {typeof(string).Name} to {typeof(bool).FullName}");
             });

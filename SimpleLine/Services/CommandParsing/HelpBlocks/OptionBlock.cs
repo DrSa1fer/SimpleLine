@@ -7,32 +7,32 @@ namespace SimpleLineLibrary.Services.CommandParsing.HelpBlocks
         public OptionBlock(Command command) : base("Options",  
         () => 
         {
-            var res = string.Empty;
-
             if(command.Handler == null)
             {
-                return res;
+                return Enumerable.Empty<string>();
             }
 
             if (!command.Handler.Parameters.Any())
             {
-                res += "nothing";
-                return res;
+                return Enumerable.Empty<string>();
             }
 
-            foreach (var p in command.Handler.Parameters)
+            var ps = command.Handler.Parameters;
+            var lines = new string[ps.Count];
+
+            for (int i = 0; i < ps.Count; i++)
             {
+                var p = ps[i];
+
                 var req = p.IsRequired ? "req" : "opt";
                 var keys = $"{p.ShortKey}|{p.LongKey}";
                 var type = p.ValueType.Name.ToLower();
                 var desc = p.Description.Length > 0 ? p.Description : "nothing";
 
-                var str = $"{p.Position}: [{req}] {keys} <{type}> - {desc}";
-
-                res+= str + "\n    ";
+                lines[i] = $"{p.Position}: [{req}] {keys} <{type}> - {desc}";                
             }
             
-            return res;
+            return lines;
         }, 4) { }
     }
 }

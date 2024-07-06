@@ -13,6 +13,19 @@ namespace SimpleLineLibrary.Services.CommandParsing.Activation
 
         public object? CreateInstance(Type type)
         {
+            if (type.IsAbstract)
+            {
+                throw new AbstractTypeException(type);
+            }
+            if(type.IsGenericType)
+            {
+                throw new GenericTypeException(type);
+            }
+            if(!type.IsClass)
+            {
+                throw new NotClassException(type);
+            }
+
             foreach(var ctor in type.GetConstructors())
             {
                 var eReq = ctor.GetParameters().Where(x => !x.IsOptional);

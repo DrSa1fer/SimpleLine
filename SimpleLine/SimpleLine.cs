@@ -1,9 +1,9 @@
+using SimpleLineLibrary.Services.CommandParsing.Exceptions;
 using SimpleLineLibrary.Services.Execution.Exceptions;
 using SimpleLineLibrary.Services.CommandFinding;
-using SimpleLineLibrary.Services.InfoReading;
-using SimpleLineLibrary.Services.Execution;
 using SimpleLineLibrary.Services.CommandParsing;
-using SimpleLineLibrary.Services.CommandParsing.Exceptions;
+using SimpleLineLibrary.Services.HelpReading;
+using SimpleLineLibrary.Services.Execution;
 
 namespace SimpleLineLibrary
 {
@@ -20,28 +20,35 @@ namespace SimpleLineLibrary
             {
                 config.OnBeforeRun?.Invoke();
 
-                var qArgs = new Queue<string>(args);
+                //Preparation
+                var qArgs = new Queue<string>(args);               
 
+                //Parse command from types
                 var commandParser = new CommandParser(config.ProgramName, config.InjectibleTypes);
                 var root = commandParser.GetCommands(config.DefinedTypes);
 
+                //Find command from parse
                 var commandFinder = new CommandFinder();
                 var com = commandFinder.Find(qArgs, root);
 
+                //Getting help if conditions are true
                 if (qArgs.Count > 0 && config.HelpKeys.Contains(qArgs.Peek()))
                 {
-                    var infoBuilder = new InfoReader();
-                    var info = infoBuilder.GetInfo(com);
-                    Console.WriteLine(info);
+                    var helpReader = new HelpReader();
+                    var text = helpReader.GetHelp(com);
+
+                    config.OnGetHelp?.Invoke(text);
                     return null;
                 }
 
+                //Check handler
                 if(com.Handler == null)
                 {
-                    config.OnHandlerMissing?.Invoke(com.Uid);
+                    config.OnImplementationMissing?.Invoke(com.Uid);
                     return null;
                 }
 
+                //Execute command handler
                 var handlerExecutor = new HandlerExecutor(com.Handler); 
                 var result = handlerExecutor.Execute(qArgs, config.ConvertibleTypes);
 
