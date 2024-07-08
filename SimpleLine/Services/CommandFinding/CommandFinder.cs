@@ -4,7 +4,7 @@ namespace SimpleLineLibrary.Services.CommandFinding
 {
     internal class CommandFinder
     {
-        public Command Find(Queue<string> args, Command root)
+        public Command? Find(Queue<string> args, CommandNode root)
         {
             while (args.TryPeek(out string? peek))
             {
@@ -17,7 +17,7 @@ namespace SimpleLineLibrary.Services.CommandFinding
                 args.Dequeue();
             }
 
-            return root;
+            return root.Command;
         }
     }
 }

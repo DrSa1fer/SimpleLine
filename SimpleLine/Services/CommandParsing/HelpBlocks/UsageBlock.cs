@@ -4,12 +4,17 @@ namespace SimpleLineLibrary.Services.CommandParsing.HelpBlocks
 {
     internal class UsageBlock : HelpBlock
     {
-        public UsageBlock(Command com) : base("Usage", 
+        public UsageBlock(Command com, params string[] x) : base("Usage", 
         () => 
         {
             var stack = new Stack<string>();
             var c = com;
             
+            foreach(var a in x)
+            {
+                stack.Push(a);
+            }
+
             do
             {
                 stack.Push(c.Uid);

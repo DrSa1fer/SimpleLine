@@ -1,5 +1,3 @@
-using SimpleLineLibrary.Extentions;
-
 namespace SimpleLineLibrary.Models
 {
     internal sealed class Parameter
@@ -20,7 +18,7 @@ namespace SimpleLineLibrary.Models
             int position, bool isRequired,
             Type valueType, object? defValue)
         {
-            Name= name;
+            Name = name;
             Description= desc;
             LongKey = longKey;
             ShortKey = shortKey;
@@ -31,22 +29,6 @@ namespace SimpleLineLibrary.Models
             DefaultValue = defValue;
 
             HasDefaultValue = valueType.IsAssignableTo(typeof(Nullable)) || defValue != null;
-        }                
-
-        public bool Is(string key)
-        {
-            return key.IsEqualsToken(ShortKey) || key.IsEqualsToken(LongKey);
-        }
-
-        public override bool Equals(object? obj)
-        {
-            return obj is Parameter other 
-                && Is(other.LongKey) 
-                && Is(other.ShortKey);
-        }
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(IsRequired, Position, LongKey, ShortKey);
-        }      
+        }    
     }
 }

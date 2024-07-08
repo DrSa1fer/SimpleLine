@@ -10,7 +10,9 @@ namespace SimpleLineLibrary.Services.HelpReading
             var sb = new StringBuilder();
             var offset = "    ";
 
-            var orderedBlocks = command.GetHelpBlocks().OrderBy(x => x.Order);
+            var orderedBlocks = command
+                .GetHelpBlocks()
+                .OrderBy(x => x.Order);
             
             foreach(var block in orderedBlocks)
             {
@@ -28,7 +30,7 @@ namespace SimpleLineLibrary.Services.HelpReading
                     sb.AppendLine(offset + "Nothing");                    
                 }
             }
-
+          
             return sb.ToString();
         }
     }

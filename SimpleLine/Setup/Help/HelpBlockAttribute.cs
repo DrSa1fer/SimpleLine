@@ -1,6 +1,6 @@
 namespace SimpleLineLibrary.Setup.Help
 {
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     public class HelpBlockAttribute : Attribute
     {
         public string Header { get; }

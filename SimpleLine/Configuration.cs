@@ -20,12 +20,19 @@ namespace SimpleLineLibrary
         /// Action when an error occurs inside the user code
         /// </summary>
         /// <value></value>
-        public Action<Exception>? OnUserException { get; set; }        
+        public Action<Exception>? OnUserException { get; set; }
         /// <summary>
-        /// 
+        /// Action on exception in command execution 
         /// </summary>
-        /// <value></value>
-        public Action<string>? OnImplementationMissing { get; set; }
+        public Action<Exception>? OnExecutionException { get; set; }
+        /// <summary>
+        /// Action on command not found
+        /// </summary>
+        public Action<string>? OnCommandNotFound { get; set; }
+        /// <summary>
+        /// Action on implimentation of command is missing
+        /// </summary>
+        public Action<string>? OnActionMissing { get; set; }
         /// <summary>
         /// Action before run the library
         /// </summary>
@@ -99,7 +106,7 @@ namespace SimpleLineLibrary
             }
         }
         /// <summary>
-        /// 
+        /// Injectible types
         /// </summary>
         /// <value></value>
         public IReadOnlyDictionary<Type, Func<object?>> InjectibleTypes
@@ -132,7 +139,7 @@ namespace SimpleLineLibrary
         {
             get
             {
-                return _helpKeys;
+                return _helpKeys ?? new HashSet<string>();
             }
             init
             {
@@ -147,8 +154,8 @@ namespace SimpleLineLibrary
         private readonly Dictionary<Type, Func<string, object?>> _convertibleTypes;
         private readonly Dictionary<Type, Func<object?>> _injectibleTypes;
 
-        private readonly IEnumerable<TypeInfo> _definedTypes;
-        private readonly IReadOnlySet<string> _helpKeys;
+        private readonly IEnumerable<TypeInfo>? _definedTypes;
+        private readonly IReadOnlySet<string>? _helpKeys;
 
         /// <summary>
         /// Make empty configuration  
@@ -227,18 +234,23 @@ namespace SimpleLineLibrary
                     Console.WriteLine(ex.InnerException?.Message);
                     Console.WriteLine(ex.InnerException?.StackTrace);
                 },
+                OnExecutionException = (ex) =>
+                {
+                    Console.WriteLine(ex.Message);
+                    Console.WriteLine("Use --help for more info about command");
+                },
                 OnSimpleLineException = (ex) =>
                 {
                     Console.WriteLine(ex.Message);
                 },
-                OnImplementationMissing = (name) => 
+                OnActionMissing = (name) => 
                 {                    
                     Console.WriteLine($"Implimentation of command {name} is missing");
                 },
                 OnGetHelp = (help) =>
                 {
                     Console.WriteLine(help);
-                },
+                },                
                 DefinedTypes = assembly.DefinedTypes,
                 ProgramName = assembly.ManifestModule.Name,
                 ProgramVersion = assembly.GetCustomAttribute<AssemblyVersionAttribute>()?.Version ?? "1.0.0.0",
@@ -262,6 +274,11 @@ namespace SimpleLineLibrary
             AddTypeForConverting(double.Parse);
             AddTypeForConverting(decimal.Parse);
 
+            AddTypeForConverting(char.Parse);
+            AddTypeForConverting(x => x);
+            AddTypeForConverting(x => new FileInfo(x));
+            AddTypeForConverting(x => new DirectoryInfo(x));
+           
             AddTypeForConverting(x =>
             {
                 if (new HashSet<string>() { "1", "y", "yes", "true" }.Contains(x.ToLower()))
@@ -271,12 +288,7 @@ namespace SimpleLineLibrary
                     return false;
 
                 throw new FormatException($"Cant convert {typeof(string).Name} to {typeof(bool).FullName}");
-            });
-
-            AddTypeForConverting(char.Parse);
-            AddTypeForConverting(x => x);
-            AddTypeForConverting(x => new FileInfo(x));
-            AddTypeForConverting(x => new DirectoryInfo(x));
+            }); 
         }
 
         private void RegisterDefaultInjects()

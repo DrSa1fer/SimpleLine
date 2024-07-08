@@ -20,8 +20,8 @@ namespace SimpleLineLibrary.Tests.Services.CommandFinding
             var @new = new Command("new");
             var @msg = new Command("msg");
 
-            root.Children.Add(@new.Uid, @new);
-            @new.Children.Add(@msg.Uid, @msg);
+            root._children.Add(@new.Uid, @new);
+            @new._children.Add(@msg.Uid, @msg);
 
             var res = _finder.Find(q, root);
 

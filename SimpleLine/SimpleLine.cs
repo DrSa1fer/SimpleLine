@@ -8,7 +8,7 @@ using SimpleLineLibrary.Services.Execution;
 namespace SimpleLineLibrary
 {
     public static class SimpleLine
-    {        
+    {
         /// <summary>
         /// Launch Point 
         /// </summary>
@@ -21,15 +21,23 @@ namespace SimpleLineLibrary
                 config.OnBeforeRun?.Invoke();
 
                 //Preparation
-                var qArgs = new Queue<string>(args);               
+                var qArgs = new Queue<string>(args);
 
                 //Parse command from types
-                var commandParser = new CommandParser(config.ProgramName, config.InjectibleTypes);
+                var commandParser = new CommandParser(config.InjectibleTypes);
                 var root = commandParser.GetCommands(config.DefinedTypes);
 
                 //Find command from parse
                 var commandFinder = new CommandFinder();
                 var com = commandFinder.Find(qArgs, root);
+
+                if (com == null)
+                {
+                    var token = qArgs.Count > 0 ? qArgs.Peek() : string.Empty;
+
+                    config.OnCommandNotFound?.Invoke(token);
+                    return null;
+                }
 
                 //Getting help if conditions are true
                 if (qArgs.Count > 0 && config.HelpKeys.Contains(qArgs.Peek()))
@@ -42,28 +50,33 @@ namespace SimpleLineLibrary
                 }
 
                 //Check handler
-                if(com.Handler == null)
+                if (com.Action == null)
                 {
-                    config.OnImplementationMissing?.Invoke(com.Uid);
+                    config.OnActionMissing?.Invoke(com.Uid);
                     return null;
                 }
 
                 //Execute command handler
-                var handlerExecutor = new HandlerExecutor(com.Handler); 
+                var handlerExecutor = new HandlerExecutor(com.Action);
                 var result = handlerExecutor.Execute(qArgs, config.ConvertibleTypes);
 
                 config.OnAfterRun?.Invoke();
 
                 return result;
             }
-            catch(InitializationException e)
+            catch (InitializationException e)
             {
                 config.OnInitializationException?.Invoke(e);
                 return null;
             }
-            catch(UserException e)
+            catch (UserException e)
             {
                 config.OnUserException?.Invoke(e);
+                return null;
+            }
+            catch (ExecutionException e)
+            {
+                config.OnExecutionException?.Invoke(e);
                 return null;
             }
             catch (Exception e)

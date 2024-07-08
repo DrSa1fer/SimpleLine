@@ -9,9 +9,9 @@ namespace SimpleLineLibrary.Services.Execution
 {
     internal class HandlerExecutor
     {
-        private readonly Handler _handler;
+        private readonly CommandAction _handler;
 
-        public HandlerExecutor(Handler handler)
+        public HandlerExecutor(CommandAction handler)
         {
             _handler = handler;
         }
@@ -34,9 +34,9 @@ namespace SimpleLineLibrary.Services.Execution
 
                 foreach(var i in exData.Keys)
                 {
-                    if(!_handler.AvalibleKeys.Contains(i))
+                    if(!_handler.GetAvalibleKeys().Contains(i))
                     {
-                        throw new UnknowKeyException(i, _handler.AvalibleKeys);
+                        throw new UnknowKeyException(i, _handler.GetAvalibleKeys());
                     }
                 }
                 

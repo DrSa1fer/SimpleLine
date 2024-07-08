@@ -7,17 +7,17 @@ namespace SimpleLineLibrary.Services.CommandParsing.HelpBlocks
         public OptionBlock(Command command) : base("Options",  
         () => 
         {
-            if(command.Handler == null)
+            if(command.Action == null)
             {
                 return Enumerable.Empty<string>();
             }
 
-            if (!command.Handler.Parameters.Any())
+            if (!command.Action.Parameters.Any())
             {
                 return Enumerable.Empty<string>();
             }
 
-            var ps = command.Handler.Parameters;
+            var ps = command.Action.Parameters;
             var lines = new string[ps.Count];
 
             for (int i = 0; i < ps.Count; i++)

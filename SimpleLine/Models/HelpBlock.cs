@@ -1,9 +1,7 @@
 namespace SimpleLineLibrary.Models
 {
     internal class HelpBlock
-    {
-        public const string EmptyBody = "Nothing";
-
+    {        
         public string Header { get; }
         public IEnumerable<string> Body => _body();
         public int Order { get; }
@@ -17,17 +15,14 @@ namespace SimpleLineLibrary.Models
 
             _body = body;
         }
-
         public HelpBlock(string header, IEnumerable<string> body, int order)
             : this(header, () => body, order)
         {
         }
-
         public HelpBlock(string header, Func<string> body, int order)
             : this(header, () => new string[] { body() }, order)
         {
         }
-
         public HelpBlock(string header, string body, int order)
             : this(header, () => new string[] { body }, order)
         {
