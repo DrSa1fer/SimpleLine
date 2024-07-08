@@ -4,7 +4,7 @@ namespace SimpleLineLibrary.Services.CommandParsing.HelpBlocks
 {
     internal class UsageBlock : HelpBlock
     {
-        public UsageBlock(Command com, params string[] x) : base("Usage", 
+        public UsageBlock(CommandNode com, params string[] x) : base("Usage", 
         () => 
         {
             var stack = new Stack<string>();

@@ -28,11 +28,11 @@ namespace SimpleLineLibrary
         /// <summary>
         /// Action on command not found
         /// </summary>
-        public Action<string>? OnCommandNotFound { get; set; }
+        public Action<string>? OnCommandMissing { get; set; }
         /// <summary>
         /// Action on implimentation of command is missing
         /// </summary>
-        public Action<string>? OnActionMissing { get; set; }
+        public Action<string>? OnCommandActionMissing { get; set; }
         /// <summary>
         /// Action before run the library
         /// </summary>
@@ -243,9 +243,13 @@ namespace SimpleLineLibrary
                 {
                     Console.WriteLine(ex.Message);
                 },
-                OnActionMissing = (name) => 
+                OnCommandMissing = (name) =>
+                {
+                    Console.WriteLine($"Command with name \"{name}\" is missing");
+                },
+                OnCommandActionMissing = (name) => 
                 {                    
-                    Console.WriteLine($"Implimentation of command {name} is missing");
+                    Console.WriteLine($"Action of command with name \"{name}\" is missing");
                 },
                 OnGetHelp = (help) =>
                 {

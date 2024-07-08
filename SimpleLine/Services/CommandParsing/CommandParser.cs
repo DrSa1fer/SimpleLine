@@ -1,11 +1,11 @@
 using SimpleLineLibrary.Services.CommandParsing.Activation;
 using SimpleLineLibrary.Services.CommandParsing.Exceptions;
+using SimpleLineLibrary.Services.CommandParsing.HelpBlocks;
 using SimpleLineLibrary.Extentions;
 using SimpleLineLibrary.Setup.Help;
 using SimpleLineLibrary.Models;
 using SimpleLineLibrary.Setup;
 using System.Reflection;
-using SimpleLineLibrary.Services.CommandParsing.HelpBlocks;
 
 namespace SimpleLineLibrary.Services.CommandParsing
 {
@@ -22,7 +22,7 @@ namespace SimpleLineLibrary.Services.CommandParsing
         {
             try
             {
-                var root = new CommandNode("");
+                var root = new CommandNode("root");
 
                 foreach (var t in types.Where(x => x.IsClass))
                 {
@@ -59,7 +59,7 @@ namespace SimpleLineLibrary.Services.CommandParsing
                         local.Command.AddHelpBlock(new HelpBlock(h.Header, h.Body, h.Order));
                     }
 
-                    MethodInfo? m = null;             
+                    MethodInfo? m = null;
                     
                     foreach(var i in t.GetMethods())
                     {
@@ -75,11 +75,12 @@ namespace SimpleLineLibrary.Services.CommandParsing
                         }
                     }
 
+                    local.Command.AddHelpBlock(new SubcommandBlock(local));
+
                     if (m == null)
                     {
+                        local.Command.AddHelpBlock(new UsageBlock(local, "[COMMANDS] [OPTIONS] <ARGS>"));
                         //TODO
-                        local.Command.AddHelpBlock(new UsageBlock(local.Command, "[COMMANDS]"));
-                        local.Command.AddHelpBlock(new SubcommandBlock(local));
                         continue;
                     }
 
@@ -98,12 +99,14 @@ namespace SimpleLineLibrary.Services.CommandParsing
                     }
 
                     var obj = m.IsStatic ? null : _activator.CreateInstance(t);
-                    local.Command.Action = MakeCommandAction(m, obj);                    
-                    
+
+                    var fn = new Func<object?[]?, object?>(x => m.Invoke(obj, x));
+                    var ps = MakeParameters(m.GetParameters());
+
+                    local.Command.Action = new CommandAction(fn, ps);
+
                     //TODO
-                    local.Command.AddHelpBlock(new UsageBlock(local.Command, "[OPTIONS]"));
-                    
-                    local.Command.AddHelpBlock(new SubcommandBlock(local));
+                    local.Command.AddHelpBlock(new UsageBlock(local, "[OPTIONS] <ARGS>"));                    
                     local.Command.AddHelpBlock(new OptionBlock(local.Command));
                 }
                 
@@ -131,14 +134,6 @@ namespace SimpleLineLibrary.Services.CommandParsing
             }
 
             return root;
-        }
-
-        private static CommandAction MakeCommandAction(MethodInfo m, object? obj)
-        {
-            var func = new Func<object?[]?, object?>(x => m.Invoke(obj, x));
-            var ps = MakeParameters(m.GetParameters());
-
-            return new CommandAction(func, ps);
         }
 
         private static Parameter[] MakeParameters(ParameterInfo[] info)

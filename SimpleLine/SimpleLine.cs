@@ -35,7 +35,7 @@ namespace SimpleLineLibrary
                 {
                     var token = qArgs.Count > 0 ? qArgs.Peek() : string.Empty;
 
-                    config.OnCommandNotFound?.Invoke(token);
+                    config.OnCommandMissing?.Invoke(token);
                     return null;
                 }
 
@@ -43,7 +43,7 @@ namespace SimpleLineLibrary
                 if (qArgs.Count > 0 && config.HelpKeys.Contains(qArgs.Peek()))
                 {
                     var helpReader = new HelpReader();
-                    var text = helpReader.GetHelp(com);
+                    var text = helpReader.GetHelp(com.GetHelpBlocks());
 
                     config.OnGetHelp?.Invoke(text);
                     return null;
@@ -52,7 +52,7 @@ namespace SimpleLineLibrary
                 //Check handler
                 if (com.Action == null)
                 {
-                    config.OnActionMissing?.Invoke(com.Uid);
+                    config.OnCommandActionMissing?.Invoke(com.Uid);
                     return null;
                 }
 

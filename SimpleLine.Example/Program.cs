@@ -14,7 +14,7 @@ internal class Program
         conf.AddTypeForInjecting(Console.Out);
         
 
-        SimpleLine.Run(new string[] { "file", "read", "C:\\Programming Projects\\SimpleLine\\SimpleLine.Example\\bin\\Release\\net6.0\\TestFile.txt" }, conf);
+        SimpleLine.Run(args, conf);
         s.Stop();
         Console.WriteLine(s.Elapsed.ToString());
     }   

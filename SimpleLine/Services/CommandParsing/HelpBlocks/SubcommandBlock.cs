@@ -1,3 +1,4 @@
+using SimpleLineLibrary.Extentions;
 using SimpleLineLibrary.Models;
 
 namespace SimpleLineLibrary.Services.CommandParsing.HelpBlocks
@@ -6,7 +7,10 @@ namespace SimpleLineLibrary.Services.CommandParsing.HelpBlocks
     {
         public SubcommandBlock(CommandNode com) : base("Subcommands", 
         com.Children.Values
-            .Select(x => x.Uid + " - " + x.Command?.GetHelpBlock("Description")?.Body.FirstOrDefault()), 3) 
+            .Select(x => x.Uid + " - " + x.Command?
+                .GetHelpBlocks()
+                .FirstOrDefault(x => x.Header.IsEqualsToken("Description"))?.Body
+                .FirstOrDefault()), 3) 
         {}
     }
 }

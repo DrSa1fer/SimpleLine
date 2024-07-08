@@ -5,16 +5,14 @@ namespace SimpleLineLibrary.Services.HelpReading
 {
     internal class HelpReader
     {   
-        public string GetHelp(Command command)
+        public string GetHelp(IEnumerable<HelpBlock> blocks)
         {
             var sb = new StringBuilder();
             var offset = "    ";
 
-            var orderedBlocks = command
-                .GetHelpBlocks()
-                .OrderBy(x => x.Order);
+            var ordered = blocks.OrderBy(x => x.Order);
             
-            foreach(var block in orderedBlocks)
+            foreach(var block in ordered)
             {
                 sb.AppendLine(block.Header + ":");
 

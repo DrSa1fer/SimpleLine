@@ -12,11 +12,11 @@ namespace SimpleLineLibrary.Example.Commands
             _writer = writer;
         }
 
-        [CommandAction]
+        //[CommandAction]
         public void Root()
         {
-           // _writer.WriteLine("Hello World!");
-           // _writer.WriteLine(":)");
+           _writer.WriteLine("Hello World!");
+           _writer.WriteLine(":)");
         }
 
         [CommandHelp]
