@@ -7,7 +7,7 @@
         public CommandNode? Parent { get; set; }
         public Dictionary<string, CommandNode> Children { get; } = new();
 
-        public CommandNode(string uid) 
+        public CommandNode(string uid)
         {
             Uid = uid;
         }

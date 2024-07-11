@@ -20,12 +20,12 @@ namespace SimpleLineLibrary.Services.Execution
             }
         }
 
-        private readonly IReadOnlyDictionary<int, IEnumerable<string>> _posedArgs;
-        private readonly IReadOnlyDictionary<string, IEnumerable<string>> _namedArgs;
+        private readonly IReadOnlyDictionary<int, ICollection<string>> _posedArgs;
+        private readonly IReadOnlyDictionary<string, ICollection<string>> _namedArgs;
 
         public ExecutionData(
-            Dictionary<string, IEnumerable<string>> named,
-            Dictionary<int, IEnumerable<string>> posed)
+            Dictionary<string, ICollection<string>> named,
+            Dictionary<int, ICollection<string>> posed)
         {
             _namedArgs = named;
             _posedArgs = posed;
@@ -38,7 +38,7 @@ namespace SimpleLineLibrary.Services.Execution
 
         public IEnumerable<string> GetValues(Parameter parameter)
         {
-            var ls = new List<string>();
+            var ls = new List<string>(ArgCount / 2);
 
             if (_namedArgs.ContainsKey(parameter.LongKey))
             {

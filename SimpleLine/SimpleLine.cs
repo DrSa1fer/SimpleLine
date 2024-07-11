@@ -1,31 +1,57 @@
-using SimpleLineLibrary.Services.CommandParsing.Exceptions;
-using SimpleLineLibrary.Services.Execution.Exceptions;
 using SimpleLineLibrary.Services.CommandFinding;
 using SimpleLineLibrary.Services.CommandParsing;
-using SimpleLineLibrary.Services.HelpReading;
+using SimpleLineLibrary.Services.CommandParsing.Exceptions;
 using SimpleLineLibrary.Services.Execution;
+using SimpleLineLibrary.Services.Execution.Exceptions;
+using SimpleLineLibrary.Services.HelpReading;
+using SimpleLineLibrary.Services.SetupValidation;
 
 namespace SimpleLineLibrary
 {
+    /// <summary>
+    /// Main class to using SimpleLineLibrary
+    /// </summary>
     public static class SimpleLine
     {
         /// <summary>
         /// Launch Point 
         /// </summary>
         /// <param name="args">Input tokens</param>
-        /// <returns></returns>
-        public static object? Run(IEnumerable<string> args, Configuration config)
+        /// <param name="conf">Configuration of SimpleLine</param>
+        /// <param name="validate">Use validate of setup. Use false only you know all data in attributes is valid. Need to make execution a few faster</param>
+        /// <returns>Return value of executed command</returns>
+        public static object? Run(IEnumerable<string> args, Configuration conf, bool validate = true)
         {
             try
             {
-                config.OnBeforeRun?.Invoke();
+                conf.OnBeforeRun?.Invoke();
+
+                if (conf == null)
+                {
+                    throw new ArgumentNullException(nameof(conf));
+                }
+
+                if (validate)
+                {
+                    var sv = new SetupValidator();
+                    var ex = sv.Validate(conf.DefinedTypes);
+
+                    if (ex.Any())
+                    {
+                        foreach (var e in ex)
+                        {
+                            conf.OnInitializationException?.Invoke(e);
+                        }
+                        return null;
+                    }
+                }
 
                 //Preparation
                 var qArgs = new Queue<string>(args);
 
                 //Parse command from types
-                var commandParser = new CommandParser(config.InjectibleTypes);
-                var root = commandParser.GetCommands(config.DefinedTypes);
+                var commandParser = new CommandParser(conf.InjectibleTypes);
+                var root = commandParser.GetCommands(conf.DefinedTypes);
 
                 //Find command from parse
                 var commandFinder = new CommandFinder();
@@ -35,53 +61,53 @@ namespace SimpleLineLibrary
                 {
                     var token = qArgs.Count > 0 ? qArgs.Peek() : string.Empty;
 
-                    config.OnCommandMissing?.Invoke(token);
+                    conf.OnCommandMissing?.Invoke(token);
                     return null;
                 }
 
                 //Getting help if conditions are true
-                if (qArgs.Count > 0 && config.HelpKeys.Contains(qArgs.Peek()))
+                if (qArgs.Count > 0 && conf.HelpKeys.Contains(qArgs.Peek()))
                 {
                     var helpReader = new HelpReader();
-                    var text = helpReader.GetHelp(com.GetHelpBlocks());
+                    var text = helpReader.GetHelp(com.ChachedHelpBlocks);
 
-                    config.OnGetHelp?.Invoke(text);
+                    conf.OnGetHelp?.Invoke(text);
                     return null;
                 }
 
                 //Check handler
-                if (com.Action == null)
+                if (com.ChachedAction == null)
                 {
-                    config.OnCommandActionMissing?.Invoke(com.Uid);
+                    conf.OnCommandActionMissing?.Invoke(com.Uid);
                     return null;
                 }
 
                 //Execute command handler
-                var handlerExecutor = new HandlerExecutor(com.Action);
-                var result = handlerExecutor.Execute(qArgs, config.ConvertibleTypes);
+                var handlerExecutor = new CommandActionExecutor(com.ChachedAction);
+                var result = handlerExecutor.Execute(qArgs, conf.ConvertibleTypes);
 
-                config.OnAfterRun?.Invoke();
+                conf.OnAfterRun?.Invoke();
 
                 return result;
             }
             catch (InitializationException e)
             {
-                config.OnInitializationException?.Invoke(e);
+                conf.OnInitializationException?.Invoke(e);
                 return null;
             }
             catch (UserException e)
             {
-                config.OnUserException?.Invoke(e);
+                conf.OnUserException?.Invoke(e);
                 return null;
             }
             catch (ExecutionException e)
             {
-                config.OnExecutionException?.Invoke(e);
+                conf.OnExecutionException?.Invoke(e);
                 return null;
             }
             catch (Exception e)
             {
-                config.OnSimpleLineException?.Invoke(e);
+                conf.OnSimpleLineException?.Invoke(e);
                 return null;
             }
         }

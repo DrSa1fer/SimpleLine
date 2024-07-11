@@ -1,4 +1,5 @@
 ﻿using SimpleLineLibrary.Extentions;
+using SimpleLineLibrary.Services.Execution.Converting.Exceptions;
 
 namespace SimpleLineLibrary.Services.Execution.Converting
 {
@@ -15,42 +16,38 @@ namespace SimpleLineLibrary.Services.Execution.Converting
         {
             if (!_types.ContainsKey(type) && !type.IsEnum)
             {
-                throw new NotSupportedException($"{type.Name} is not supported");
+                throw new NotSupportedTypeException(type.Name);
             }
-            
+
             try
             {
-                if(type.IsEnum && !_types.ContainsKey(type))
+                if (type.IsEnum && !_types.ContainsKey(type))
                 {
-                    foreach(var n in Enum.GetNames(type))
-                    {
-                        if(n.IsEqualsToken(arg))
-                        {
-                            return Enum.Parse(type, n);
-                        }
-                    }
+                    var name = Enum.GetNames(type)
+                        .FirstOrDefault(x => x.IsEqualsToken(arg));
 
-                    return Enum.Parse(type, arg);
-                }    
+                    return name == null
+                        ? Enum.Parse(type, arg)
+                        : Enum.Parse(type, name);
+                }
 
                 return _types[type]?.Invoke(arg.Trim());
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                throw new InvalidCastException($"Cant convert string to {type}", e);
+                throw new TypeConvertingException(type.Name, e);
             }
         }
 
         public object? ConvertCollection(Type type, IEnumerable<string> args)
-        {            
+        {
             if (!type.IsArray)
             {
-                throw new NotSupportedException("Supported only array collections converting");
+                throw new IsNotArrayException();
             }
-
             if (type.GetArrayRank() > 1)
             {
-                throw new ArgumentException("Array rank cant be more than 1 ");
+                throw new InvalidRankException();
             }
 
             var valueType = type.GetElementType()!;
@@ -60,7 +57,8 @@ namespace SimpleLineLibrary.Services.Execution.Converting
 
             for (int i = 0; i < arr.Length; i++)
             {
-                arr.SetValue(ConvertType(valueType, values[i]), i);
+                var value = ConvertType(valueType, values[i]);
+                arr.SetValue(value, i);
             }
 
             return arr;

@@ -6,7 +6,7 @@
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     public class DescriptionAttribute : HelpBlockAttribute
     {
-        public DescriptionAttribute(string description, int order = 1) 
+        public DescriptionAttribute(string description, int order = 1)
             : base("Description", description, order)
         {
         }

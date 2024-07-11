@@ -34,97 +34,75 @@ namespace SimpleLineLibrary.Services.CommandParsing
                     }
 
                     var local = root;
-                             
+
                     if (comAttr.Command != null && comAttr.Command.Length > 0)
                     {
                         var tokens = comAttr.Command.SplitOnTokens(' ');
-
-                        foreach (var defToken in tokens)
-                        {
-                            defToken.ThrowIfWrongTokenName();
-                        }
 
                         local = MakeNode(local, tokens);
                     }
 
                     if (local.Command != null)
                     {
-                        throw new ArgumentException("Command already is registered");
+                        throw new ArgumentException("Command already is registered: " + local.Uid);
                     }
 
                     local.Command = new Command(local.Uid);
-             
-                    foreach (var h in t.GetCustomAttributes<HelpBlockAttribute>())
-                    {
-                        local.Command.AddHelpBlock(new HelpBlock(h.Header, h.Body, h.Order));
-                    }
-
-                    MethodInfo? m = null;
                     
-                    foreach(var i in t.GetMethods())
-                    {
-                        if(i.GetCustomAttribute<CommandActionAttribute>() != null)
-                        {
-                            if(m == null)
-                            {
-                                m = i;
-                                continue;
-                            }
-
-                            throw new InvalidOperationException($"Multiply {nameof(CommandActionAttribute)} use in command class");
-                        }
-                    }
-
-                    local.Command.AddHelpBlock(new SubcommandBlock(local));
+                    MethodInfo? m = t
+                        .GetMethods()
+                        .FirstOrDefault((x) => x.GetCustomAttribute<CommandActionAttribute>() != null);
 
                     if (m == null)
                     {
-                        local.Command.AddHelpBlock(new UsageBlock(local, "[COMMANDS] [OPTIONS] <ARGS>"));
-                        //TODO
+                        local.Command.HelpBlocksFunc = () =>
+                        {
+                            return new List<HelpBlock>
+                            {
+                                new SubcommandBlock(local),
+                                new UsageBlock(local, "[OPTIONS] <ARGS>"),
+                                new OptionBlock(local.Command)
+                            };
+                        };
+
                         continue;
                     }
-
-                    //Validation
-                    if (m.IsAbstract)
+                    
+                    local.Command.ActionFunc = () =>
                     {
-                        throw new NotSupportedException("Abstract method is not supported");
-                    }
-                    if (m.IsConstructor)
+                        var obj = m.IsStatic ? null : _activator.CreateInstance(t);
+                        var fn = new Func<object?[]?, object?>(x => m.Invoke(obj, x));
+                        var ps = MakeParameters(m.GetParameters());
+
+                        return new CommandAction(fn, ps);
+                    };
+
+                    local.Command.HelpBlocksFunc = () =>
                     {
-                        throw new NotSupportedException("Constructor method is not supported");
-                    }
-                    if (m.IsGenericMethod) 
-                    {
-                        throw new NotSupportedException("Generic method is not supported");
-                    }
-
-                    var obj = m.IsStatic ? null : _activator.CreateInstance(t);
-
-                    var fn = new Func<object?[]?, object?>(x => m.Invoke(obj, x));
-                    var ps = MakeParameters(m.GetParameters());
-
-                    local.Command.Action = new CommandAction(fn, ps);
-
-                    //TODO
-                    local.Command.AddHelpBlock(new UsageBlock(local, "[OPTIONS] <ARGS>"));                    
-                    local.Command.AddHelpBlock(new OptionBlock(local.Command));
+                        return new List<HelpBlock>
+                        {
+                            new UsageBlock(local, "[OPTIONS] <ARGS>"),
+                            new SubcommandBlock(local),
+                            new OptionBlock(local.Command)
+                        };                        
+                    };
                 }
-                
+
                 return root;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new InitializationException(e);
             }
         }
 
         private static CommandNode MakeNode(CommandNode root, string[] tokens)
-        {            
+        {
             for (int i = 0; i < tokens.Length; i++)
-            {           
+            {
                 if (!root.Children.ContainsKey(tokens[i]))
                 {
-                    root.Children.Add(tokens[i], new CommandNode(tokens[i]));                    
+                    root.Children.Add(tokens[i], new CommandNode(tokens[i]));
                 }
 
                 var temp = root;
@@ -159,7 +137,7 @@ namespace SimpleLineLibrary.Services.CommandParsing
 
                 var pAttr = p.GetCustomAttribute<ParameterDataAttribute>();
 
-                if(pAttr?.LongKey == null)
+                if (pAttr?.LongKey == null)
                 {
                     @long = $"--{name}";
                 }
@@ -168,7 +146,7 @@ namespace SimpleLineLibrary.Services.CommandParsing
                     @long = pAttr.LongKey;
                 }
 
-                if(pAttr?.ShortKey == null)
+                if (pAttr?.ShortKey == null)
                 {
                     for (int j = 0; j < name.Length; j++)
                     {
@@ -199,9 +177,6 @@ namespace SimpleLineLibrary.Services.CommandParsing
                 {
                     desc = pAttr.Description;
                 }
-
-                @long.ThrowIfWrongLongKeyTokenName();
-                @short.ThrowIfWrongShortKeyTokenName();
 
                 arr[i] = new Parameter(name, desc, @long, @short, pos, req, val, def);
             }

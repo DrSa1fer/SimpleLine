@@ -1,5 +1,5 @@
-using System.Reflection;
 using System.IO;
+using System.Reflection;
 
 namespace SimpleLineLibrary
 {
@@ -10,7 +10,7 @@ namespace SimpleLineLibrary
         /// </summary>
         /// <value></value>
         public Action<Exception>? OnSimpleLineException { get; set; }
-        
+
         /// <summary>
         /// 
         /// </summary>
@@ -93,7 +93,7 @@ namespace SimpleLineLibrary
             {
                 _programVers = value;
             }
-        }
+        }        
         /// <summary>
         /// Convertible Types
         /// </summary>
@@ -165,7 +165,7 @@ namespace SimpleLineLibrary
             _programName = string.Empty;
             _programDesc = string.Empty;
             _programVers = string.Empty;
-            
+
             _helpKeys = new HashSet<string>() { "-?", "-h", "--help" };
 
             _convertibleTypes = new Dictionary<Type, Func<string, object?>>();
@@ -221,8 +221,8 @@ namespace SimpleLineLibrary
         {
             return new()
             {
-                OnBeforeRun = () => {},
-                OnAfterRun = () => {},
+                OnBeforeRun = () => { },
+                OnAfterRun = () => { },
                 OnInitializationException = (ex) =>
                 {
                     Console.WriteLine(ex.Message);
@@ -247,18 +247,15 @@ namespace SimpleLineLibrary
                 {
                     Console.WriteLine($"Command with name \"{name}\" is missing");
                 },
-                OnCommandActionMissing = (name) => 
-                {                    
+                OnCommandActionMissing = (name) =>
+                {
                     Console.WriteLine($"Action of command with name \"{name}\" is missing");
                 },
                 OnGetHelp = (help) =>
                 {
                     Console.WriteLine(help);
-                },                
+                },
                 DefinedTypes = assembly.DefinedTypes,
-                ProgramName = assembly.ManifestModule.Name,
-                ProgramVersion = assembly.GetCustomAttribute<AssemblyVersionAttribute>()?.Version ?? "1.0.0.0",
-                ProgramDescription = assembly.GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description ?? string.Empty,
                 HelpKeys = new HashSet<string>() { "-h", "-?", "--help", "--info" },
             };
         }
@@ -282,7 +279,7 @@ namespace SimpleLineLibrary
             AddTypeForConverting(x => x);
             AddTypeForConverting(x => new FileInfo(x));
             AddTypeForConverting(x => new DirectoryInfo(x));
-           
+
             AddTypeForConverting(x =>
             {
                 if (new HashSet<string>() { "1", "y", "yes", "true" }.Contains(x.ToLower()))
@@ -292,9 +289,8 @@ namespace SimpleLineLibrary
                     return false;
 
                 throw new FormatException($"Cant convert {typeof(string).Name} to {typeof(bool).FullName}");
-            }); 
+            });
         }
-
         private void RegisterDefaultInjects()
         {
             AddTypeForInjecting(new byte());

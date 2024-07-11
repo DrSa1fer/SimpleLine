@@ -4,13 +4,13 @@ namespace SimpleLineLibrary.Services.CommandParsing.HelpBlocks
 {
     internal class UsageBlock : HelpBlock
     {
-        public UsageBlock(CommandNode com, params string[] x) : base("Usage", 
-        () => 
+        public UsageBlock(CommandNode com, params string[] x) : base("Usage",
+        () =>
         {
             var stack = new Stack<string>();
             var c = com;
-            
-            foreach(var a in x)
+
+            foreach (var a in x)
             {
                 stack.Push(a);
             }
@@ -22,8 +22,9 @@ namespace SimpleLineLibrary.Services.CommandParsing.HelpBlocks
             }
             while (c is not null);
 
-            return string.Join(" ", stack); 
+            return string.Join(" ", stack);
 
-        }, 0) { }
+        }, 0)
+        { }
     }
 }

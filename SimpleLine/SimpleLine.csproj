@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>False</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>SimpleLineLibrary</RootNamespace>
@@ -23,14 +23,17 @@
     <Version>0.2.1-beta</Version>
     <PackRelease>True</PackRelease>
     <RepositoryUrl>https://github.com/DrSa1fer/SimpleLine</RepositoryUrl>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>embedded</DebugType>
+    <Optimize>False</Optimize>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DebugType>embedded</DebugType>
+    <Optimize>True</Optimize>
   </PropertyGroup>
 
   <ItemGroup>
@@ -46,6 +49,7 @@
 
   <ItemGroup>
     <Folder Include="Services\Aliasses\" />
+    <Folder Include="Services\Execution\Parsing\Exceptions\" />
   </ItemGroup>
 
 </Project>

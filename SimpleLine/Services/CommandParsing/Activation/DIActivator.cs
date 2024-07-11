@@ -2,9 +2,9 @@ using SimpleLineLibrary.Services.CommandParsing.Activation.Exceptions;
 
 namespace SimpleLineLibrary.Services.CommandParsing.Activation
 {
-    internal class DIActivator
+    internal sealed class DIActivator
     {
-        private IReadOnlyDictionary<Type, Func<object?>> _types;
+        private readonly IReadOnlyDictionary<Type, Func<object?>> _types;
 
         public DIActivator(IReadOnlyDictionary<Type, Func<object?>> types)
         {
@@ -17,19 +17,19 @@ namespace SimpleLineLibrary.Services.CommandParsing.Activation
             {
                 throw new AbstractTypeException(type);
             }
-            if(type.IsGenericType)
+            if (type.IsGenericType)
             {
                 throw new GenericTypeException(type);
             }
-            if(!type.IsClass)
+            if (!type.IsClass)
             {
                 throw new NotClassException(type);
             }
 
-            foreach(var ctor in type.GetConstructors())
+            foreach (var ctor in type.GetConstructors())
             {
                 var eReq = ctor.GetParameters().Where(x => !x.IsOptional);
-                
+
                 if (eReq.All(p => _types.ContainsKey(p.ParameterType)))
                 {
                     var aReq = eReq.ToArray();
@@ -39,7 +39,7 @@ namespace SimpleLineLibrary.Services.CommandParsing.Activation
                     {
                         args[i] = _types[aReq[i].ParameterType].Invoke();
                     }
-                    
+
                     return ctor.Invoke(args);
                 }
             }

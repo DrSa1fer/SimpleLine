@@ -19,7 +19,7 @@ namespace SimpleLineLibrary.Extentions
         {
             return key.IsLongKeyTokenName() || key.IsShortKeyTokenName();
         }
-        public static bool IsLongKeyTokenName(this string key) 
+        public static bool IsLongKeyTokenName(this string key)
         {
 
             return key.Length > 2
@@ -41,8 +41,8 @@ namespace SimpleLineLibrary.Extentions
 
             return text.Length <= MAX_TEXT_LENGTH;
         }
-    
-    
+
+
         public static bool IsEqualsToken(this string token, string otherToken)
         {
             return token.Equals(otherToken, StringComparison.OrdinalIgnoreCase);

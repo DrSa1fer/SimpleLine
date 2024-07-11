@@ -16,16 +16,18 @@ namespace SimpleLineLibrary.Tests.Services.CommandFinding
             q.Enqueue("new");
             q.Enqueue("msg");
 
-            var root = new Command("root");
-            var @new = new Command("new");
-            var @msg = new Command("msg");
+            var root = new CommandNode("root");
+            var @new = new CommandNode("new");
+            var @msg = new CommandNode("msg");
 
-            root._children.Add(@new.Uid, @new);
-            @new._children.Add(@msg.Uid, @msg);
+            msg.Command = new Command("a");
+
+            root.Children.Add(@new.Uid, @new);
+            @new.Children.Add(@msg.Uid, @msg);
 
             var res = _finder.Find(q, root);
 
-            Assert.AreEqual(@msg, res);
+            Assert.AreEqual(@msg.Command, res);
         }
     }
 }

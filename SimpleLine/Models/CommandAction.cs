@@ -1,30 +1,28 @@
 namespace SimpleLineLibrary.Models
 {
-	internal class CommandAction
-	{
-		public IReadOnlyList<Parameter> Parameters { get; }
-		
-		private readonly Func<object?[]?, object?> _method;
+    internal class CommandAction
+    {
+        public Func<object?[]?, object?> Method { get; }
+        public IReadOnlyList<Parameter> Parameters { get; }
 
-		public CommandAction(Func<object?[]?, object?> func, Parameter[] parameters)
-		{
-			_method = func;
-			Parameters = parameters;
-		}
+        public IReadOnlySet<string> AvalibleKeys => _chachedKeys ??= GetAvalibleKeys();
 
-		public object? Invoke(object?[]? args)
-		{
-			return _method?.Invoke(args);
-		}
+        private IReadOnlySet<string>? _chachedKeys;
 
-        public HashSet<string> GetAvalibleKeys()
+        public CommandAction(Func<object?[]?, object?> func, IReadOnlyList<Parameter> parameters)
+        {
+            Method = func;
+            Parameters = parameters;
+        }
+
+        private HashSet<string> GetAvalibleKeys()
         {
             var keys = new HashSet<string>();
 
-            for (int i = 0; i < Parameters.Count; i++)
+            foreach (var p in Parameters)
             {
-                keys.Add(Parameters[i].LongKey);
-                keys.Add(Parameters[i].ShortKey);
+                keys.Add(p.LongKey);
+                keys.Add(p.ShortKey);
             }
 
             return keys;

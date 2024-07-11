@@ -1,8 +1,10 @@
-﻿namespace SimpleLineLibrary.Services.CommandParsing.Activation.Exceptions
+﻿using SimpleLineLibrary.Exceptions;
+
+namespace SimpleLineLibrary.Services.CommandParsing.Activation.Exceptions
 {
-    internal class AbstractTypeException : Exception
+    internal class AbstractTypeException : SimpleLineException
     {
-        public AbstractTypeException(Type type) 
+        public AbstractTypeException(Type type)
             : base($"Type \"{type}\" must be not abstract")
         {
         }

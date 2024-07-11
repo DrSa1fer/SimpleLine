@@ -3,7 +3,7 @@ namespace SimpleLineLibrary.Models
     internal sealed class Parameter
     {
         public string Name { get; }
-        public string Description { get; }   
+        public string Description { get; }
         public string LongKey { get; }
         public string ShortKey { get; }
         public int Position { get; }
@@ -19,16 +19,16 @@ namespace SimpleLineLibrary.Models
             Type valueType, object? defValue)
         {
             Name = name;
-            Description= desc;
+            Description = desc;
             LongKey = longKey;
             ShortKey = shortKey;
-           
+
             Position = position;
             ValueType = valueType;
             IsRequired = isRequired;
             DefaultValue = defValue;
 
             HasDefaultValue = valueType.IsAssignableTo(typeof(Nullable)) || defValue != null;
-        }    
+        }
     }
 }

@@ -4,20 +4,20 @@ namespace SimpleLineLibrary.Services.CommandParsing.HelpBlocks
 {
     internal class OptionBlock : HelpBlock
     {
-        public OptionBlock(Command command) : base("Options",  
-        () => 
+        public OptionBlock(Command command) : base("Options",
+        () =>
         {
-            if(command.Action == null)
+            if (command.ChachedAction == null)
             {
                 return Enumerable.Empty<string>();
             }
 
-            if (!command.Action.Parameters.Any())
+            if (!command.ChachedAction.Parameters.Any())
             {
                 return Enumerable.Empty<string>();
             }
 
-            var ps = command.Action.Parameters;
+            var ps = command.ChachedAction.Parameters;
             var lines = new string[ps.Count];
 
             for (int i = 0; i < ps.Count; i++)
@@ -29,10 +29,11 @@ namespace SimpleLineLibrary.Services.CommandParsing.HelpBlocks
                 var type = p.ValueType.Name.ToLower();
                 var desc = p.Description.Length > 0 ? p.Description : "nothing";
 
-                lines[i] = $"{p.Position}: [{req}] {keys} <{type}> - {desc}";                
+                lines[i] = $"{p.Position}: [{req}] {keys} <{type}> - {desc}";
             }
-            
+
             return lines;
-        }, 4) { }
+        }, 4)
+        { }
     }
 }

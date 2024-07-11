@@ -1,5 +1,5 @@
-﻿using SimpleLineLibrary.Setup.Help;
-using SimpleLineLibrary.Setup;
+﻿using SimpleLineLibrary.Setup;
+using SimpleLineLibrary.Setup.Help;
 
 namespace SimpleLineLibrary.Example.Commands.Test
 {

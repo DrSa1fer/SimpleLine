@@ -1,24 +1,21 @@
-using SimpleLineLibrary.Extentions;
-
 namespace SimpleLineLibrary.Models
 {
     internal class Command
     {
         public string Uid { get; }
 
-        public CommandAction? Action { get; set; }
+        public CommandAction? ChachedAction => _chachedAction ??= ActionFunc?.Invoke();
+        public List<HelpBlock> ChachedHelpBlocks => (_chachedHelp ??= HelpBlocksFunc?.Invoke()) ?? new();
         
-        private readonly List<HelpBlock> _helpBlocks;
+        public Func<CommandAction?>? ActionFunc { get; set; }
+        public Func<List<HelpBlock>?>? HelpBlocksFunc { get; set; }
 
-        public Command(string uid)             
+        private CommandAction? _chachedAction;
+        private List<HelpBlock>? _chachedHelp;
+
+        public Command(string uid)
         {
             Uid = uid;
-            Action = null;
-
-            _helpBlocks = new();
         }
-
-        public void AddHelpBlock(HelpBlock block) => _helpBlocks.Add(block);        
-        public IEnumerable<HelpBlock> GetHelpBlocks() => _helpBlocks;
     }
 }

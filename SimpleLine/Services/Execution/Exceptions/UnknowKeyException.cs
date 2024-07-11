@@ -6,6 +6,6 @@ namespace SimpleLineLibrary.Services.Execution.Exceptions
             : base($"Key is not contains in command. Avalible keys: {string.Join("|", avalible)}")
         {
 
-        }  
+        }
     }
 }

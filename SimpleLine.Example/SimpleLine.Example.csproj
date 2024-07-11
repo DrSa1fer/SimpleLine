@@ -3,14 +3,10 @@
   <PropertyGroup>
 	<RootNamespace>SimpleLineLibrary.Example</RootNamespace>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Include="bin\Release\net6.0\TestFile.txt" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SimpleLine\SimpleLine.csproj" />

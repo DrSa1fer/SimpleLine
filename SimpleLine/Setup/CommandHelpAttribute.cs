@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SimpleLineLibrary.Setup
+﻿namespace SimpleLineLibrary.Setup
 {
+    /// <summary>
+    /// In delepment now. No affect
+    /// </summary>
     [AttributeUsage(AttributeTargets.Method)]
     public class CommandHelpAttribute : Attribute
     {

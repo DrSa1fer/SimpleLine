@@ -1,12 +1,20 @@
-using System.Collections;
-using SimpleLineLibrary.Models;
+using SimpleLineLibrary.Services.Execution.Binding.Exceptions;
 using SimpleLineLibrary.Services.Execution.Converting;
+using SimpleLineLibrary.Models;
+using System.Collections;
 
 namespace SimpleLineLibrary.Services.Execution.Binding
 {
     internal class ValueBinder
     {
-        public object?[]? Bind(IReadOnlyList<Parameter> parameters, ExecutionData data, Converter converter)
+        private readonly Converter _converter;
+
+        public ValueBinder(Converter converter)
+        {
+            _converter = converter;
+        }
+
+        public object?[]? Bind(IReadOnlyList<Parameter> parameters, ExecutionData data)
         {
             var arr = new object?[parameters.Count];
 
@@ -33,9 +41,9 @@ namespace SimpleLineLibrary.Services.Execution.Binding
                 {
                     if (p.IsRequired)
                     {
-                        throw new ArgumentException($"Required parameter is missing {p.Name}");
+                        throw new RequiredParameterIsMissingException(p.Name);
                     }
-                    
+
                     if (p.HasDefaultValue)
                     {
                         arr[i] = p.DefaultValue;
@@ -47,16 +55,18 @@ namespace SimpleLineLibrary.Services.Execution.Binding
 
                 if (p.ValueType.IsAssignableTo(typeof(ICollection)))
                 {
-                    var values = data.GetValues(p);
-                    arr[i] = converter.ConvertCollection(p.ValueType, values);
-                    
-                    continue;
+                    var t = p.ValueType;
+                    var v = data.GetValues(p);
+
+                    arr[i] = _converter.ConvertCollection(t, v);
                 }
+                else
+                {
+                    var t = p.ValueType;
+                    var v = data.GetValue(p);
 
-                var str = data.GetValue(p);
-                var t = p.ValueType;
-
-                arr[i] = converter.ConvertType(t, str);        
+                    arr[i] = _converter.ConvertType(t, v);
+                }
             }
 
             return arr;

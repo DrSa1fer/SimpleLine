@@ -9,7 +9,7 @@ namespace SimpleLineLibrary.Example.Commands.Test.Foo
     {
         private readonly TextWriter _writer;
 
-        public FooCommand(TextWriter writer) 
+        public FooCommand(TextWriter writer)
         {
             _writer = writer;
         }

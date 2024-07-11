@@ -6,19 +6,21 @@ namespace SimpleLineLibrary.Services.Execution.Parsing
     {
         public ExecutionData Parse(Queue<string> args)
         {
-            var named = new Dictionary<string, List<string>>();
-            var posed = new Dictionary<int, List<string>>();
+            var named = new Dictionary<string, ICollection<string>>(args.Count / 2);
+            var posed = new Dictionary<int, ICollection<string>>(args.Count / 4);
 
             int pos = 0;
 
             while (args.Count > 0)
-            {         
-                if (IsKey(args.Peek()))
+            {
+                var peek = args.Peek();
+
+                if (IsKey(peek))
                 {
                     string key = args.Dequeue();
                     string value = string.Empty;
 
-                    if(args.TryPeek(out string? nextToken))
+                    if (args.TryPeek(out string? nextToken))
                     {
                         if (IsEqualSign(nextToken))
                         {
@@ -28,7 +30,7 @@ namespace SimpleLineLibrary.Services.Execution.Parsing
                             {
                                 throw new ArgumentException($"key {key} wait value after '=' ");
                             }
-                            
+
                             value = keyValue;
                         }
                         else if (IsValue(nextToken))
@@ -36,35 +38,32 @@ namespace SimpleLineLibrary.Services.Execution.Parsing
                             value = args.Dequeue();
                         }
                     }
-                    
-                    if(!named.ContainsKey(key) || named[key] == null)
+
+                    if (!named.ContainsKey(key) || named[key] == null)
                     {
-                        named[key] = new List<string>();
+                        named[key] = new List<string>(2);
                     }
 
                     named[key].Add(value);
                     continue;
-                }                    
-                if (IsValue(args.Peek()))
+                }
+                if (IsValue(peek))
                 {
                     string value = args.Dequeue();
-                    
-                    if(!posed.ContainsKey(pos) || posed[pos] == null)
+
+                    if (!posed.ContainsKey(pos) || posed[pos] == null)
                     {
-                        posed[pos] = new List<string>();
+                        posed[pos] = new List<string>(2);
                     }
 
                     posed[pos++].Add(value);
                     continue;
                 }
-               
-                throw new ArgumentException($"Invalid token in this context {args.Peek()}");                
+
+                throw new ArgumentException($"Invalid token in current context {peek}");
             }
 
-            var ndict = named.ToDictionary(x => x.Key, x => (IEnumerable<string>)x.Value);
-            var pdict = posed.ToDictionary(x => x.Key, x => (IEnumerable<string>)x.Value);
-
-            return new ExecutionData(ndict, pdict);
+            return new ExecutionData(named, posed);
 
 
             bool IsKey(string token)

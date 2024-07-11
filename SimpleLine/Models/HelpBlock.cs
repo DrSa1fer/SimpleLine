@@ -1,7 +1,7 @@
 namespace SimpleLineLibrary.Models
 {
     internal class HelpBlock
-    {        
+    {
         public string Header { get; }
         public IEnumerable<string> Body => _body();
         public int Order { get; }
