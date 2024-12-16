@@ -27,3 +27,4 @@
 //
 //     protected abstract Action.IsDelegate Handle(T mark);
 // }
+

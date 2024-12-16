@@ -8,9 +8,9 @@ public static class SymbolValidatorHelper
                || char.IsLetter(symbol[0])
                || symbol
                    .All(sym => false
-                               || char.IsLetter (sym)
-                               || char.IsDigit  (sym)
-                               || '-' .Equals   (sym)
+                               || char.IsLetter(sym)
+                               || char.IsDigit(sym)
+                               || '-'.Equals(sym)
                    );
     }
 }

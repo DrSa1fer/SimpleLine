@@ -1,4 +1,5 @@
 using System.Reflection;
+using simpleline.factories;
 using simpleline.models;
 
 namespace simpleline.services.registration;
@@ -8,18 +9,18 @@ public class Registrar : RegistrarBase
     public override Node Register(Context context)
     {
         var root = new Node("");
-        
+
         var filtered = context
             .ApplicationConfig
             .DefinedTypes
             .Where(typeInfo => typeInfo is
-            {
-                IsClass: true,
-                IsAbstract: false,
-                IsGenericType: false
-            }
-        );
-        
+                {
+                    IsClass: true,
+                    IsAbstract: false,
+                    IsGenericType: false
+                }
+            );
+
         foreach (var type in filtered)
         {
             var attr = type
@@ -27,16 +28,13 @@ public class Registrar : RegistrarBase
                 .OfType<IRegistered>()
                 .FirstOrDefault();
 
-            if (attr == null)
-            {
-                continue;
-            }
-            
+            if (attr == null) continue;
+
             var route = attr.Route.Split([' '], StringSplitOptions.RemoveEmptyEntries);
             var target = GetNode(root, route);
 
-            
-            target.Type = type;
+
+            target.Command = CommandFactory.CommandFrom(type);
         }
 
         return root;

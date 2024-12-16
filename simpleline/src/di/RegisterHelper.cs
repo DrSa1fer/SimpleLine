@@ -7,7 +7,7 @@ public static class RegisterHelper
     public static IServiceCollection Register(IServiceCollection collection)
     {
         // collection.AddSingleton<>()
-        
+
         return collection;
     }
 }

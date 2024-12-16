@@ -7,18 +7,14 @@ namespace simpleline.user.controllers;
 [Route("")]
 public class HomeController
 {
-    [Parameter(["l", "left"])]
-    public int Left;
+    [Flag(["h", "help"])] public bool Help;
 
-    [Argument(0)]
-    public int Operator;
-    
-    [Parameter(["l", "left"])]
-    public int Right;
-    
-    [Flag(["h", "help"])]
-    public bool Help;
-    
+    [Parameter(["l", "left"])] public int Left;
+
+    [Argument(0)] public int Operator;
+
+    [Parameter(["l", "left"])] public int Right;
+
     [Action]
     public TestView Invoke()
     {

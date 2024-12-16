@@ -1,11 +1,12 @@
 using simpleline.models;
+using simpleline.models.commands;
 
 namespace simpleline.services.execution;
 
 public class Executor : ExecutorBase
 {
-    public override void Execute(Context context, Type? type)
+    public override void Execute(Context context, Command? command)
     {
-        type?.GetMethod("Invoke")?.Invoke(Activator.CreateInstance(type), null);
+        command?.Actions.FirstOrDefault()?.Invoke(null);
     }
 }

@@ -1,9 +1,9 @@
-using System.Reflection;
 using simpleline.models;
+using simpleline.models.commands;
 
 namespace simpleline.services.routing;
 
 public abstract class RouterBase
 {
-    public abstract Type? Route(Context context, Node root);
+    public abstract Command? Route(Context context, Node root);
 }

@@ -18,46 +18,46 @@ public static class SimpleLine
         {
             var types = Assembly.GetCallingAssembly().DefinedTypes;
 
-            app = new ApplicationConfig()
+            app = new ApplicationConfig
             {
                 DefinedTypes = types
             };
         }
-        
+
         Run(new Input(input.Split().Select(x => (Symbol)x)), app);
     }
 
     public static void Run(IEnumerable<string> symbols, ApplicationConfig? app = null)
     {
         ArgumentNullException.ThrowIfNull(symbols, nameof(symbols));
-        
+
         if (app == null)
         {
             var types = Assembly.GetCallingAssembly().DefinedTypes;
 
-            app = new ApplicationConfig()
+            app = new ApplicationConfig
             {
                 DefinedTypes = types
             };
         }
-        
+
         Run(new Input(symbols.Select(x => (Symbol)x)), app);
     }
 
     private static void Run(Input input, ApplicationConfig app)
     {
         var registrar = new Registrar();
-        var router    = new Router();
-        var executor  = new Executor();
+        var router = new Router();
+        var executor = new Executor();
 
         var context = new Context(app, input);
-        
+
         var node = registrar
             .Register(context);
-        
-        var type  = router
+
+        var type = router
             .Route(context, node);
-        
+
         executor
             .Execute(context, type);
     }

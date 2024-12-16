@@ -16,10 +16,10 @@ public abstract class OptionHandlerBase<T> : OptionHandlerBase where T : IOption
         return typeof(T) == mark.GetType();
     }
 
-    public sealed override Action<Context> Handle(IOptionMarker mark,  Lazy<object>? instance, FieldInfo field)
+    public sealed override Action<Context> Handle(IOptionMarker mark, Lazy<object>? instance, FieldInfo field)
     {
         return Handle((T)mark, instance, field);
     }
-    
+
     protected abstract void Handle(T mark, Func<object?> init);
 }

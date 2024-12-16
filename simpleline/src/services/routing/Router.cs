@@ -1,11 +1,11 @@
-using System.Reflection;
 using simpleline.models;
+using simpleline.models.commands;
 
 namespace simpleline.services.routing;
 
 public class Router : RouterBase
 {
-    public override Type? Route(Context context, Node root)
+    public override Command? Route(Context context, Node root)
     {
         var input = context.RouteInput;
         var local = root;
@@ -22,6 +22,6 @@ public class Router : RouterBase
             local = tmp;
         }
 
-        return local.Type;
+        return local.Command;
     }
 }
