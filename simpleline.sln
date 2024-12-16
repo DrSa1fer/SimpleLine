@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simpleline", "simpleline\simpleline.csproj", "{C221D9F0-D550-45ED-8491-298D8D0AC6DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simpleline.user", "simpleline.user\simpleline.user.csproj", "{FC03E0C9-580E-44DA-97F9-A8FE61126085}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C221D9F0-D550-45ED-8491-298D8D0AC6DE} = {C221D9F0-D550-45ED-8491-298D8D0AC6DE}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simpleline.unit", "simpleline.unit\simpleline.unit.csproj", "{A82B423F-E6EA-4127-900F-C4BAB27620A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C221D9F0-D550-45ED-8491-298D8D0AC6DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C221D9F0-D550-45ED-8491-298D8D0AC6DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C221D9F0-D550-45ED-8491-298D8D0AC6DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C221D9F0-D550-45ED-8491-298D8D0AC6DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC03E0C9-580E-44DA-97F9-A8FE61126085}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC03E0C9-580E-44DA-97F9-A8FE61126085}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC03E0C9-580E-44DA-97F9-A8FE61126085}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC03E0C9-580E-44DA-97F9-A8FE61126085}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A82B423F-E6EA-4127-900F-C4BAB27620A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A82B423F-E6EA-4127-900F-C4BAB27620A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A82B423F-E6EA-4127-900F-C4BAB27620A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A82B423F-E6EA-4127-900F-C4BAB27620A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -4,10 +4,8 @@ namespace simpleline.services.execution;
 
 public class Executor : ExecutorBase
 {
-    public override void Execute(Input input, Controller controller)
+    public override void Execute(Context context, Type? type)
     {
-        controller.Actions
-            .FirstOrDefault(x => x.Is(input))?
-            .Do(input);
+        type?.GetMethod("Invoke")?.Invoke(Activator.CreateInstance(type), null);
     }
 }
