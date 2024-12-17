@@ -5,8 +5,8 @@ namespace simpleline.services.execution;
 
 public class Executor : ExecutorBase
 {
-    public override void Execute(Context context, Command? command)
+    public override object? Execute(Context context, Command command)
     {
-        command?.Actions.FirstOrDefault()?.Invoke(null);
+        return command.Actions.FirstOrDefault()?.Invoke(null, null);
     }
 }

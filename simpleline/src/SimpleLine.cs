@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using simpleline.configs;
 using simpleline.models;
+using simpleline.models.commands;
 using simpleline.models.inputs;
 using simpleline.services.execution;
 using simpleline.services.registration;
@@ -46,19 +47,27 @@ public static class SimpleLine
 
     private static void Run(Input input, ApplicationConfig app)
     {
+        var context = new Context(app, input);
         var registrar = new Registrar();
+        
+        var commands = registrar
+            .Register(context);
+        
+        
         var router = new Router();
         var executor = new Executor();
 
-        var context = new Context(app, input);
+        try
+        {
+            var command = router
+                .Route(context, commands);
 
-        var node = registrar
-            .Register(context);
-
-        var type = router
-            .Route(context, node);
-
-        executor
-            .Execute(context, type);
+            var result = executor
+                .Execute(context, command);
+        }
+        catch (Exception e)
+        {
+            
+        }
     }
 }

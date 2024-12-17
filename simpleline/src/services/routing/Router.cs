@@ -3,25 +3,26 @@ using simpleline.models.commands;
 
 namespace simpleline.services.routing;
 
-public class Router : RouterBase
+internal class Router : RouterBase
 {
-    public override Command? Route(Context context, Node root)
+    public override Command Route(Context context, IEnumerable<Command> commands)
     {
-        var input = context.RouteInput;
-        var local = root;
+        var input = context.Route;
+        var result = default(Command);
 
-        while (input.MoveNext())
+        foreach (var command in commands)
         {
-            var tmp = local.Next
-                .OrderBy(node => ((string)node.Symbol).Length)
-                .FirstOrDefault(node => node.Symbol == input.Current);
-
-            if (tmp == null)
-                break;
-
-            local = tmp;
+            var attr = command
+                .Attributes
+                .OfType<IRouted>()
+                .SingleOrDefault();
+            
+            if(attr == null)
+                continue;
+            
+            
         }
-
-        return local.Command;
+        
+        return result ?? throw new Exception("Command is missing");
     }
 }

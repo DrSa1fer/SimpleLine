@@ -3,7 +3,7 @@ using simpleline.models.commands;
 
 namespace simpleline.services.routing;
 
-public abstract class RouterBase
+internal abstract class RouterBase
 {
-    public abstract Command? Route(Context context, Node root);
+    public abstract Command Route(Context context, IEnumerable<Command> commands);
 }

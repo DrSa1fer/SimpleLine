@@ -9,8 +9,6 @@
 
     <ItemGroup>
         <Folder Include="docs\"/>
-        <Folder Include="src\formatters\"/>
-        <Folder Include="src\middleware\"/>
         <Folder Include="src\workers\completor\"/>
         <Folder Include="src\workers\helper\"/>
         <Folder Include="src\workers\tokenizer\"/>

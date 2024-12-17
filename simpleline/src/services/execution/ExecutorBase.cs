@@ -5,5 +5,5 @@ namespace simpleline.services.execution;
 
 public abstract class ExecutorBase
 {
-    public abstract void Execute(Context context, Command? command);
+    public abstract object? Execute(Context context, Command command);
 }

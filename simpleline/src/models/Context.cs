@@ -7,6 +7,6 @@ public sealed class Context(ApplicationConfig app, Input input)
 {
     public ApplicationConfig ApplicationConfig { get; } = app;
 
-    public RouteInput RouteInput { get; } = new(input);
-    public OptionInput OptionInput { get; } = new(input);
+    public Route Route { get; } = new(input);
+    public Data  Data { get; } = new(input);
 }

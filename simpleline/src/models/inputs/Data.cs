@@ -1,6 +1,6 @@
 namespace simpleline.models.inputs;
 
-public class OptionInput(Input input)
+public class Data(Input input)
 {
     public void GetValues()
     {

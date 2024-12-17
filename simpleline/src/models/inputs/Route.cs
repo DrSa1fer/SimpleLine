@@ -2,13 +2,13 @@ using System.Collections;
 
 namespace simpleline.models.inputs;
 
-public class RouteInput(Input input) : IEnumerator<Symbol>
+public class Route(Input input) : IEnumerator<Symbol>
 {
     private const int DefaultSeek = -1;
 
     private int _seek = DefaultSeek;
 
-    public IEnumerable<Symbol> Route => _seek != DefaultSeek
+    public IEnumerable<Symbol> PWD => _seek != DefaultSeek
         ? input.Items[..(_seek + 1)].Select(x => x.Symbol)
         : [];
 

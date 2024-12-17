@@ -6,7 +6,7 @@ public class Action(
     Type returnType,
     Action.InvokeDelegate invoke)
 {
-    public delegate object? InvokeDelegate(object?[]? args);
+    public delegate object? InvokeDelegate(object? obj, object?[]? args);
 
     public IEnumerable<IActionAttribute> Attributes { get; } = attributes;
 

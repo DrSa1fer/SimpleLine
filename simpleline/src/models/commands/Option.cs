@@ -9,9 +9,8 @@ public class Option(
     Option.GetValueDelegate getValue,
     Option.SetValueDelegate setValue)
 {
-    public delegate object? GetValueDelegate();
-
-    public delegate void SetValueDelegate(object? value);
+    public delegate object? GetValueDelegate(object? obj);
+    public delegate void SetValueDelegate(object? obj, object? value);
 
     public IEnumerable<IOptionAttribute> Attributes { get; } = attributes;
 
