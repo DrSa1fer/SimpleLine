@@ -1,6 +1,5 @@
+using simpleline.models.commands;
+
 namespace simpleline.services.registration;
 
-public interface IRegistered
-{
-    public string Route { get; }
-}
+public interface IRegistered : ICommandAttribute;

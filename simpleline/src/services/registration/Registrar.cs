@@ -1,15 +1,14 @@
 using System.Reflection;
-using simpleline.factories;
 using simpleline.models;
+using simpleline.models.commands;
+using Action = simpleline.models.commands.Action;
 
 namespace simpleline.services.registration;
 
 public class Registrar : RegistrarBase
 {
-    public override Node Register(Context context)
+    public override IEnumerable<Command> Register(Context context)
     {
-        var root = new Node("");
-
         var filtered = context
             .ApplicationConfig
             .DefinedTypes
@@ -19,49 +18,99 @@ public class Registrar : RegistrarBase
                     IsAbstract: false,
                     IsGenericType: false
                 }
+            )
+            .Where(typeInfo => typeInfo
+                .GetCustomAttributes()
+                .OfType<IRegistered>()
+                .Any()
             );
 
         foreach (var type in filtered)
         {
-            var attr = type
+            var attrs = type
                 .GetCustomAttributes()
-                .OfType<IRegistered>()
-                .FirstOrDefault();
+                .OfType<ICommandAttribute>();
 
-            if (attr == null) continue;
+            var actions = GetActions(type);
+            var options = GetOptions(type);
 
-            var route = attr.Route.Split([' '], StringSplitOptions.RemoveEmptyEntries);
-            var target = GetNode(root, route);
-
-
-            target.Command = CommandFactory.CommandFrom(type);
+            Console.WriteLine(type.Name);
+            yield return new Command(attrs, actions, options);
         }
-
-        return root;
     }
 
-    private static Node GetNode(Node root, IEnumerable<string> route)
+    private static IEnumerable<Action> GetActions(Type type)
     {
-        var target = root;
-
-        foreach (var i in route)
+        foreach (var method in type.GetMethods())
         {
-            var t = target
-                .Next
-                .FirstOrDefault(
-                    node => node.Symbol == i
-                );
+            var attrs = method
+                .GetCustomAttributes()
+                .OfType<IActionAttribute>();
 
-            if (t == null)
-            {
-                var node = new Node(i);
-                target.Next.Add(node);
-                t = node;
-            }
+            yield return new Action(
+                attrs, 
+                GetActionOptions(method.GetParameters()), 
+                method.ReturnType, 
+                method.Invoke);
+        }
+    }
+    
+    private static ActionOption[] GetActionOptions(ParameterInfo[] parameters)
+    {
+        var arr = new ActionOption[parameters.Length];
 
-            target = t;
+        for (var i = 0; i < parameters.Length; i++)
+        {
+            var attrs = parameters[i]
+                .GetCustomAttributes()
+                .OfType<IActionOptionAttribute>();
+            
+            arr[i] = new ActionOption(
+                attrs,
+                parameters[i].ParameterType,
+                !parameters[i].IsOptional,
+                parameters[i].IsOptional,
+                parameters[i].DefaultValue
+            );
+        }
+        
+        return arr;
+    }
+
+    private static IEnumerable<Option> GetOptions(Type type)
+    {
+        foreach (var field in type.GetFields())
+        {
+            var attrs = field
+                .GetCustomAttributes()
+                .OfType<IOptionAttribute>();
+            
+            yield return new Option(
+                attrs,
+                field.FieldType,
+                true,
+                false,
+                null,
+                field.GetValue,
+                field.SetValue
+            );
         }
 
-        return target;
+        foreach (var prop in type.GetProperties())
+        {
+            var attrs = prop
+                .GetCustomAttributes()
+                .OfType<IOptionAttribute>();
+            
+            yield return new Option(
+                attrs,
+                prop.PropertyType,
+                true,
+                false,
+                null,
+                prop.GetValue,
+                prop.SetValue
+            );
+        }
     }
 }
