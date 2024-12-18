@@ -1,3 +1,3 @@
-namespace simpleline.services.registration.reflection.actions;
+namespace simpleline.services.execution.actions;
 
 public interface IActionMarker;

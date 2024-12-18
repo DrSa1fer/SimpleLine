@@ -5,5 +5,5 @@ namespace simpleline.services.routing;
 
 internal abstract class RouterBase
 {
-    public abstract Command Route(Context context, IEnumerable<Command> commands);
+    public abstract Command Route(Context context);
 }

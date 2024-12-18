@@ -11,47 +11,36 @@ namespace simpleline;
 
 public static class SimpleLine
 {
-    public static void Run(string input, ApplicationConfig? app = null)
+    
+    
+    public static void Run(string input)
     {
-        ArgumentNullException.ThrowIfNull(input, nameof(input));
+        var types = Assembly.GetCallingAssembly().DefinedTypes;
 
-        if (app == null)
-        {
-            var types = Assembly.GetCallingAssembly().DefinedTypes;
-
-            app = new ApplicationConfig
-            {
-                DefinedTypes = types
-            };
-        }
-
-        Run(new Input(input.Split().Select(x => (Symbol)x)), app);
+        // Run(new Input(input.Split().Select(x => (Symbol)x)), app);
     }
 
-    public static void Run(IEnumerable<string> symbols, ApplicationConfig? app = null)
+    public static void Run(IEnumerable<string> symbols)
     {
-        ArgumentNullException.ThrowIfNull(symbols, nameof(symbols));
+        var input = new Input(symbols.Select(x => (Symbol)x));
+        var asm = Assembly.GetCallingAssembly();
+        
 
-        if (app == null)
-        {
-            var types = Assembly.GetCallingAssembly().DefinedTypes;
-
-            app = new ApplicationConfig
-            {
-                DefinedTypes = types
-            };
-        }
-
-        Run(new Input(symbols.Select(x => (Symbol)x)), app);
+        Run(input, asm);
     }
 
-    private static void Run(Input input, ApplicationConfig app)
+    private static void Run(Input input, Assembly assembly)
     {
-        var context = new Context(app, input);
         var registrar = new Registrar();
         
         var commands = registrar
-            .Register(context);
+            .Register(assembly.DefinedTypes);
+        
+        var context = new Context(input)
+        {
+            ApplicationConfig = new ApplicationConfig(),
+            Commands = commands
+        };
         
         
         var router = new Router();
@@ -60,14 +49,15 @@ public static class SimpleLine
         try
         {
             var command = router
-                .Route(context, commands);
+                .Route(context);
 
             var result = executor
                 .Execute(context, command);
         }
         catch (Exception e)
         {
-            
+            Console.WriteLine(e);
+            Console.WriteLine(e.InnerException);
         }
     }
 }

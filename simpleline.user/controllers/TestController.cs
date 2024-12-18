@@ -16,7 +16,7 @@ public class TestController
     [Parameter(["l", "left"])] public int Right;
 
     [Action]
-    public TestView Invoke()
+    public static TestView Invoke()
     {
         Console.WriteLine("Hello World! I am a test controller!");
         return new TestView(new TestModel());

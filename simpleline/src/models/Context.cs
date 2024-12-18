@@ -1,12 +1,15 @@
 using simpleline.configs;
+using simpleline.models.commands;
 using simpleline.models.inputs;
 
 namespace simpleline.models;
 
-public sealed class Context(ApplicationConfig app, Input input)
+public sealed class Context(Input input)
 {
-    public ApplicationConfig ApplicationConfig { get; } = app;
-
-    public Route Route { get; } = new(input);
+    public required ApplicationConfig ApplicationConfig { get; init; }
+    public required IEnumerable<Command> Commands { get; init; }
+    
+    
     public Data  Data { get; } = new(input);
+    public Route Route { get; } = new(input);
 }

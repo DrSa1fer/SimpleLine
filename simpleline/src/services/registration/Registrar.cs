@@ -7,11 +7,9 @@ namespace simpleline.services.registration;
 
 public class Registrar : RegistrarBase
 {
-    public override IEnumerable<Command> Register(Context context)
+    public override IEnumerable<Command> Register(IEnumerable<TypeInfo> types)
     {
-        var filtered = context
-            .ApplicationConfig
-            .DefinedTypes
+        var filtered = types
             .Where(typeInfo => typeInfo is
                 {
                     IsClass: true,
@@ -33,9 +31,8 @@ public class Registrar : RegistrarBase
 
             var actions = GetActions(type);
             var options = GetOptions(type);
-
-            Console.WriteLine(type.Name);
-            yield return new Command(attrs, actions, options);
+            
+            yield return new Command(attrs, actions, options, new Lazy<object?>(() => Activator.CreateInstance(type)));
         }
     }
 
@@ -46,7 +43,10 @@ public class Registrar : RegistrarBase
             var attrs = method
                 .GetCustomAttributes()
                 .OfType<IActionAttribute>();
-
+            
+            if (!attrs.Any())
+                continue;
+            
             yield return new Action(
                 attrs, 
                 GetActionOptions(method.GetParameters()), 
@@ -61,16 +61,18 @@ public class Registrar : RegistrarBase
 
         for (var i = 0; i < parameters.Length; i++)
         {
+            var p = parameters[i];
+            
             var attrs = parameters[i]
                 .GetCustomAttributes()
                 .OfType<IActionOptionAttribute>();
             
             arr[i] = new ActionOption(
                 attrs,
-                parameters[i].ParameterType,
-                !parameters[i].IsOptional,
-                parameters[i].IsOptional,
-                parameters[i].DefaultValue
+                p.ParameterType,
+                p.IsOptional == false,
+                p.IsOptional,
+                p.DefaultValue
             );
         }
         
@@ -84,6 +86,9 @@ public class Registrar : RegistrarBase
             var attrs = field
                 .GetCustomAttributes()
                 .OfType<IOptionAttribute>();
+            
+            if (!attrs.Any())
+                continue;
             
             yield return new Option(
                 attrs,
@@ -101,6 +106,9 @@ public class Registrar : RegistrarBase
             var attrs = prop
                 .GetCustomAttributes()
                 .OfType<IOptionAttribute>();
+            
+            if (!attrs.Any())
+                continue;
             
             yield return new Option(
                 attrs,

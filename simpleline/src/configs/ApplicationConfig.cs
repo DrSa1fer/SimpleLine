@@ -11,7 +11,4 @@ public class ApplicationConfig
     public string? License { get; set; } = "GPL";
     public string? Website { get; set; } = "https://example.com/";
     public string? Documentation { get; set; } = "https://example.com/";
-    
-    public IServiceProvider ServiceProvider { get; init; }
-    public IEnumerable<TypeInfo> DefinedTypes { get; init; }
 }

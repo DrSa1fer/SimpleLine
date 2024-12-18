@@ -16,13 +16,17 @@ public class HomeController
     [Parameter(["l", "left"])] public int Right;
 
     [Action]
-    public TestView Invoke()
+    public TestView a()
     {
         Console.WriteLine("Hello World! I am home controller!");
+        Console.WriteLine($"Left = {Left}, Operator = {Operator}, Right = {Right}");
+        return new TestView(new TestModel());
+    }
+    
+    [Action]
+    public TestView b()
+    {
+        Console.WriteLine("Its is second action of HomeController!");
         return new TestView(new TestModel());
     }
 }
-
-// Создать экземпляр
-// Назначить поля
-// Вызвать обработчик
