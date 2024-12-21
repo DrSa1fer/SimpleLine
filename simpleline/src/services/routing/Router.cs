@@ -1,5 +1,4 @@
 using simpleline.models;
-using simpleline.models.commands;
 
 namespace simpleline.services.routing;
 
@@ -16,13 +15,13 @@ internal class Router : RouterBase
                 .Attributes
                 .OfType<IRouted>()
                 .SingleOrDefault();
-            
-            if(attr == null)
+
+            if (attr == null)
                 continue;
 
             return command;
         }
-        
+
         return result ?? throw new Exception("Command is missing");
     }
 }

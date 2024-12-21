@@ -1,5 +1,3 @@
-using System.Reflection;
-
 namespace simpleline.configs;
 
 public class ApplicationConfig

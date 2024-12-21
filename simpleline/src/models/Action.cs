@@ -1,16 +1,19 @@
-namespace simpleline.models.commands;
+using simpleline.models.attributes;
+
+namespace simpleline.models;
 
 public class Action(
-    IEnumerable<IActionAttribute> attributes,
+    AttributeCollection<IActionAttribute> attributes,
     ActionOption[] options,
     Type returnType,
     Action.InvokeDelegate invoke)
 {
-    public delegate object? InvokeDelegate(object? instance, object?[]? args);
+    public delegate object? InvokeDelegate(object?[]? args);
 
-    public IEnumerable<IActionAttribute> Attributes { get; } = attributes;
+    public AttributeCollection<IActionAttribute> Attributes { get; } = attributes;
 
     public ActionOption[] Options { get; } = options;
+
     public Type ReturnType { get; } = returnType;
 
     public InvokeDelegate Invoke { get; } = invoke;

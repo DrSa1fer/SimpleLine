@@ -1,4 +1,4 @@
-using simpleline.models.commands;
+using simpleline.models.attributes;
 
 namespace simpleline.services.execution.options.arguments;
 

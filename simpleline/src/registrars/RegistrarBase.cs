@@ -1,8 +1,7 @@
 using System.Reflection;
 using simpleline.models;
-using simpleline.models.commands;
 
-namespace simpleline.services.registration;
+namespace simpleline.registrars;
 
 public abstract class RegistrarBase
 {

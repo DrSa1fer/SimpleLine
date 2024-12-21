@@ -1,4 +1,4 @@
-using simpleline.services.registration;
+using simpleline.registrars;
 
 namespace simpleline.attributes;
 

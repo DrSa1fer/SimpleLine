@@ -9,6 +9,6 @@ public sealed class Input(IEnumerable<Symbol> symbols)
     {
         public Symbol Symbol { get; } = symbol;
         public bool IsRoute { get; set; }
-        public bool IsUsed  { get; set; }
+        public bool IsUsed { get; set; }
     }
 }

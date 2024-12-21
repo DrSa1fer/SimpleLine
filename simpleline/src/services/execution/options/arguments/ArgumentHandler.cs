@@ -1,4 +1,4 @@
-using simpleline.models.commands;
+using simpleline.models;
 
 namespace simpleline.services.execution.options.arguments;
 
@@ -6,9 +6,6 @@ public class ArgumentHandler : OptionHandlerBase<IArgumentAttribute>
 {
     protected override InitOptionDelegate Handle(IArgumentAttribute attribute, Option option)
     {
-        return (instance, data) =>
-        {
-            option.SetValue(instance, 9);
-        };
+        return data => { option.SetValue(9); };
     }
 }
