@@ -6,7 +6,7 @@ public class Option(
     AttributeCollection<IOptionAttribute> attributes,
     Option.GetDelegate get,
     Option.SetDelegate set,
-    Type optionType,
+    Type type,
     bool isRequired,
     bool hasDefaultValue,
     object? defaultValue)
@@ -20,9 +20,9 @@ public class Option(
     public GetDelegate GetValue { get; } = get;
     public SetDelegate SetValue { get; } = set;
 
-    public Type OptionType { get; } = optionType;
+    public Type Type { get; } = type;
     public bool IsRequired { get; } = isRequired;
 
-    public bool HasDefaultValueValue { get; } = hasDefaultValue;
+    public bool HasDefaultValue { get; } = hasDefaultValue;
     public object? DefaultValue { get; } = defaultValue;
 }

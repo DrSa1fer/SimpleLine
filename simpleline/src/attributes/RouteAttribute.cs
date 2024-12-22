@@ -7,5 +7,5 @@ namespace simpleline.attributes;
 public class RouteAttribute(string route) : Attribute,
     IRouted, IRegistered
 {
-    public IEnumerable<string> Route { get; }
+    public IReadOnlyList<string> Route { get; } = route.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 }

@@ -1,16 +1,43 @@
+using simpleline.parsers.@base;
+
 namespace simpleline.parsers;
 
 public class ParserProvider
 {
-    private readonly ParserCollection _parsers;
-
-    public object? Parse(Type type, string value)
+    private readonly ParserCollection _parsers = new(new Dictionary<Type, ParserBase>
     {
-        return _parsers[type].Parse(value, InternalParse);
-    }
+        {
+            typeof(bool),
+            new BoolParser()
+        },
+        {
+            typeof(byte),
+            new ByteParser()
+        },
+        {
+            typeof(short),
+            new Int16Parser()
+        },
+        {
+            typeof(int),
+            new Int32Parser()
+        },
+        {
+            typeof(long),
+            new Int64Parser()
+        },
+        {
+            typeof(string),
+            new StringParser()
+        },
+        {
+            typeof(char),
+            new CharParser()
+        },
+    });
 
-    private object? InternalParse(Type t, string v)
+    public object? Parse(Type type, string[] values)
     {
-        return _parsers[t].Parse(v, InternalParse);
+        return _parsers[type].Parse(values);
     }
 }

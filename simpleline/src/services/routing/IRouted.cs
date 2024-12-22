@@ -4,5 +4,5 @@ namespace simpleline.services.routing;
 
 internal interface IRouted : ICommandAttribute
 {
-    IEnumerable<string> Route { get; }
+    IReadOnlyList<string> Route { get; }
 }

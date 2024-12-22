@@ -6,22 +6,45 @@ internal class Router : RouterBase
 {
     public override Command Route(Context context)
     {
+        var current = default(Command);
+        
         var input = context.Route;
-        var result = default(Command);
 
-        foreach (var command in context.Commands)
+        var commands = context.Commands.Select(command => new
         {
-            var attr = command
+            command, 
+            attr = command
                 .Attributes
                 .OfType<IRouted>()
-                .SingleOrDefault();
+                .First()
+        });
 
-            if (attr == null)
+        for (var i = 0; i < input.Count; i++)
+        {
+            var symbol = input.Peek(i);
+
+            var wi = i;
+            commands = commands.Where(x => x.attr
+                .Route[wi]
+                .Equals(
+                    symbol,
+                    StringComparison.InvariantCultureIgnoreCase
+                )
+            );
+
+            var tmp = commands
+                .Select(x => x.command)
+                .FirstOrDefault();
+
+            if (tmp == null)
+            {
                 continue;
-
-            return command;
+            }
+            
+            current = tmp;
+            input.Take(i);
         }
-
-        return result ?? throw new Exception("Command is missing");
+        
+        return current ?? throw new Exception("Command is missing");
     }
 }

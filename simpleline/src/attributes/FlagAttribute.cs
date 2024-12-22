@@ -3,6 +3,5 @@ using simpleline.models.attributes;
 namespace simpleline.attributes;
 
 [AttributeUsage(AttributeTargets.Field)]
-public class FlagAttribute(string[] aliases) : Attribute, IOptionAttribute
-{
-}
+public class FlagAttribute(string[] aliases) 
+    : Attribute, IOptionAttribute;

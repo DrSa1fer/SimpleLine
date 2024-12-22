@@ -4,7 +4,7 @@ namespace simpleline.models;
 
 public class ActionOption(
     AttributeCollection<IActionOptionAttribute> attributes,
-    Type optionType,
+    Type type,
     bool isRequired,
     bool hasDefaultValue,
     object? defaultValue)
@@ -19,7 +19,7 @@ public class ActionOption(
     public GetDelegate GetValue => () => _value;
     public SetDelegate SetValue => value => _value = value;
 
-    public Type OptionType { get; } = optionType;
+    public Type Type { get; } = type;
     public bool IsRequired { get; } = isRequired;
 
     public bool HasDefaultValue { get; } = hasDefaultValue;

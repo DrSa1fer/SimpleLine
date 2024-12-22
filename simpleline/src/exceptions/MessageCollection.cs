@@ -4,24 +4,20 @@ namespace simpleline.exceptions;
 
 public class MessageCollection : IReadOnlyCollection<Message>
 {
-    private readonly IReadOnlyDictionary<int, Message> _msg = new Dictionary<int, Message>
+    private readonly IReadOnlyDictionary<MessageCodes, Message> _msg = new Dictionary<MessageCodes, Message>
     {
-        { 0, new Message("Not implemented") }
+        { MessageCodes.NotImplemented, new Message("Not implemented method $") }
     };
 
-    public Message this[int index]
+    public Message this[MessageCodes index]
         => _msg[index];
-
+    public Message this[int index]
+        => _msg[(MessageCodes)index];
+    
     public int Count
         => _msg.Count;
-
-    public IEnumerator<Message> GetEnumerator()
-    {
-        return _msg.Values.GetEnumerator();
-    }
-
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return _msg.Values.GetEnumerator();
-    }
+    public IEnumerator<Message> GetEnumerator() 
+        => _msg.Values.GetEnumerator();
+    IEnumerator IEnumerable.GetEnumerator() 
+        => _msg.Values.GetEnumerator();
 }

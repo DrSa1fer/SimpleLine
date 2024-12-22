@@ -2,8 +2,8 @@ namespace simpleline.parsers.@base;
 
 public class Int32Parser : ParserBase
 {
-    public override object? Parse(string value, ParseDelegate parse)
+    public override object? Parse(string[] value)
     {
-        return int.Parse(value);
+        return int.Parse(value.Single());
     }
 }

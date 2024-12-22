@@ -1,37 +1,25 @@
 using System.Collections;
+using System.Diagnostics.CodeAnalysis;
 
 namespace simpleline.models.inputs;
 
-public class Route(Input input) : IEnumerator<Symbol>
+public class Route(Input input) : IReadOnlyList<string>
 {
-    private const int DefaultSeek = -1;
-
-    private int _seek = DefaultSeek;
-
-    public IEnumerable<Symbol> PWD => _seek != DefaultSeek
-        ? input.Items[..(_seek + 1)].Select(x => x.Symbol)
-        : [];
-
-    public Symbol Current => input.Items[_seek].Symbol;
-    object? IEnumerator.Current => Current;
-
-    public bool MoveNext()
+    public int Count => input.Items.Length;
+    
+    public string this[int index] => Peek(index);
+    
+    public string Peek(int index) => input.Items[index].Symbol;
+    public string Take(int index) => input.Items[index].Symbol;
+    
+    public IEnumerator<string> GetEnumerator()
     {
-        if (_seek != DefaultSeek) input.Items[_seek].IsRoute = true;
-
-        return ++_seek < input.Items.Length;
+        throw new NotImplementedException();
     }
 
-    public void Reset()
+    IEnumerator IEnumerable.GetEnumerator()
     {
-        foreach (var t in input.Items) t.IsRoute = false;
-
-        _seek = DefaultSeek;
+        return GetEnumerator();
     }
 
-
-    public void Dispose()
-    {
-        // TODO release managed resources here
-    }
 }

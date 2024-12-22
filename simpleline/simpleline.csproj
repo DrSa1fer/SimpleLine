@@ -8,7 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Folder Include="docs\"/>
+        <Folder Include="docs\home\quick\" />
+        <Folder Include="docs\home\registration\" />
         <Folder Include="src\helpers\"/>
         <Folder Include="src\workers\completor\"/>
         <Folder Include="src\workers\helper\"/>
