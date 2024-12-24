@@ -1,10 +1,10 @@
-namespace simpleline.parsers.@base;
+namespace simpleline.services.typizer.common;
 
-public class BoolParser : ParserBase
+public class Boolean : CommonHandlerBase
 {
-    public override object? Parse(string[] value)
+    public override object? Handle(IEnumerable<string> values)
     {
-        return value.Single() switch
+        return values.Single() switch
         {
             "true" or "yes" or "t" or "y" or "1" or "+" => true,
             "false" or "no" or "f" or "n" or "0" or "-" => false,
