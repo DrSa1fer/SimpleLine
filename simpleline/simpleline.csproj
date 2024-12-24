@@ -8,16 +8,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Folder Include="docs\home\quick\" />
-        <Folder Include="docs\home\registration\" />
-        <Folder Include="src\helpers\"/>
-        <Folder Include="src\workers\completor\"/>
-        <Folder Include="src\workers\helper\"/>
-        <Folder Include="src\workers\tokenizer\"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0"/>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0"/>
+      <Folder Include="src\services\dto\" />
+      <Folder Include="src\services\helper\" />
     </ItemGroup>
 
 </Project>

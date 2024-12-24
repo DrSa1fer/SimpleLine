@@ -1,7 +1,7 @@
 using simpleline.models.attributes;
-using simpleline.registrars;
+using simpleline.services.registrar;
 
 namespace simpleline.attributes;
 
 [AttributeUsage(AttributeTargets.Class)]
-public class CommandAttribute : Attribute, ICommandAttribute, IRegistered;
+public class CommandAttribute : Attribute, ICommandAttribute, IRegisteredAttribute;

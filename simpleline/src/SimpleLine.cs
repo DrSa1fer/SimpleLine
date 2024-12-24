@@ -1,11 +1,8 @@
 ﻿using System.Reflection;
 using simpleline.configs;
-using simpleline.exceptions;
 using simpleline.models;
 using simpleline.models.inputs;
-using simpleline.registrars;
-using simpleline.services.execution;
-using simpleline.services.routing;
+using simpleline.services.registrar;
 
 namespace simpleline;
 
@@ -43,16 +40,10 @@ public static class SimpleLine
 
     private static void Run(Context context)
     {
-        var router = new Router();
-        var executor = new Executor();
-
         try
         {
-            var command = router
-                .Route(context);
-            
-            var result = executor
-                .Execute(context, command);
+            // new Pipeline()
+            //     .Run();
         }
         catch (Exception e)
         {
