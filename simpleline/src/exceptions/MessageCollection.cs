@@ -11,13 +11,20 @@ public class MessageCollection : IReadOnlyCollection<Message>
 
     public Message this[MessageCodes index]
         => _msg[index];
+
     public Message this[int index]
         => _msg[(MessageCodes)index];
-    
+
     public int Count
         => _msg.Count;
-    public IEnumerator<Message> GetEnumerator() 
-        => _msg.Values.GetEnumerator();
-    IEnumerator IEnumerable.GetEnumerator() 
-        => _msg.Values.GetEnumerator();
+
+    public IEnumerator<Message> GetEnumerator()
+    {
+        return _msg.Values.GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return _msg.Values.GetEnumerator();
+    }
 }

@@ -1,3 +1,4 @@
+using simpleline.services.typizer.primitive;
 using Boolean = simpleline.services.typizer.primitive.Boolean;
 using Byte = simpleline.services.typizer.primitive.Byte;
 using Char = simpleline.services.typizer.primitive.Char;
@@ -12,9 +13,9 @@ using String = simpleline.services.typizer.primitive.String;
 
 namespace simpleline.services.typizer;
 
-public class Typizer : TypizerBase
+internal class Typizer : TypizerBase
 {
-    private readonly Dictionary<Type, PrimitiveHandlerBase> _primitive = new()
+    private readonly Dictionary<Type, Primitive> _primitive = new()
     {
         { typeof(object), new Object() },
         { typeof(byte), new Byte() },
@@ -26,17 +27,17 @@ public class Typizer : TypizerBase
         { typeof(decimal), new Decimal() },
         { typeof(bool), new Boolean() },
         { typeof(char), new Char() },
-        { typeof(string), new String() },
+        { typeof(string), new String() }
     };
-    
+
     public override object? Typize(Type type, IEnumerable<string> values)
     {
         return type switch
         {
-            { IsPrimitive: true } 
+            { IsPrimitive: true }
                 => _primitive[type].Bind(values),
-            _ 
+            _
                 => throw new ArgumentException("Type not supported")
-        }; 
+        };
     }
 }

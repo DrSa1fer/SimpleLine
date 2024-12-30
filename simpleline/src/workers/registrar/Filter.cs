@@ -2,8 +2,18 @@ using System.Reflection;
 
 namespace simpleline.workers.registrar;
 
-public static class Filter
+internal static class Filter
 {
+    public static IEnumerable<Assembly> Assemblies(IEnumerable<Assembly> infos)
+    {
+        return infos
+            .Where(info => info
+                .GetCustomAttributes()
+                .OfType<IRegistered>()
+                .Any()
+            );
+    }
+    
     public static IEnumerable<TypeInfo> Types(IEnumerable<TypeInfo> infos)
     {
         return infos
@@ -11,7 +21,7 @@ public static class Filter
                 {
                     IsClass: true,
                     IsAbstract: false,
-                    IsGenericType: false,
+                    IsGenericType: false
                 }
             )
             .Where(info => info
@@ -20,13 +30,14 @@ public static class Filter
                 .Any()
             );
     }
+
     public static IEnumerable<MethodInfo> Methods(IEnumerable<MethodInfo> infos)
     {
         return infos
             .Where(info => info is
                 {
                     IsAbstract: false,
-                    IsGenericMethod: false,
+                    IsGenericMethod: false
                 }
             )
             .Where(info => info
@@ -35,12 +46,13 @@ public static class Filter
                 .Any()
             );
     }
+
     public static IEnumerable<FieldInfo> Fields(IEnumerable<FieldInfo> infos)
     {
         return infos
             .Where(info => info is
             {
-                IsInitOnly: false,
+                IsInitOnly: false
             })
             .Where(info => info
                 .GetCustomAttributes()
@@ -48,13 +60,14 @@ public static class Filter
                 .Any()
             );
     }
+
     public static IEnumerable<PropertyInfo> Properties(IEnumerable<PropertyInfo> infos)
     {
         return infos
             .Where(info => info is
             {
                 GetMethod: not null,
-                SetMethod: not null,
+                SetMethod: not null
             })
             .Where(info => info
                 .GetCustomAttributes()

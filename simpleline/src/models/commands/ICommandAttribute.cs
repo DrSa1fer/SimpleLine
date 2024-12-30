@@ -1,3 +1,3 @@
 namespace simpleline.models.commands;
 
-public interface ICommandAttribute : IAttribute;
+internal interface ICommandAttribute;

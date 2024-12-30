@@ -1,11 +1,11 @@
 using simpleline.models.commands;
-using simpleline.services;
+using simpleline.models.scopes;
 
 namespace simpleline.workers.router;
 
 internal class Router : RouterBase
 {
-    public override Command Route(Context context)
+    public override Command Route(Scope[] scopes)
     {
         throw new NotImplementedException();
     }

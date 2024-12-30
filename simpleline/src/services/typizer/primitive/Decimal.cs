@@ -1,6 +1,6 @@
 namespace simpleline.services.typizer.primitive;
 
-public class Decimal : PrimitiveHandlerBase
+internal class Decimal : Primitive
 {
     public override object? Bind(IEnumerable<string> values)
     {

@@ -1,6 +1,6 @@
 namespace simpleline.services.typizer.primitive;
 
-public class String : PrimitiveHandlerBase
+internal class String : Primitive
 {
     public override object? Bind(IEnumerable<string> values)
     {

@@ -1,6 +1,6 @@
 namespace simpleline.services.helper;
 
-public class Helper : HelperBase
+internal class Helper : HelperBase
 {
     public override void Help(Context context)
     {

@@ -1,9 +1,10 @@
 using System.Reflection;
 using simpleline.models.commands;
+using simpleline.models.scopes;
 
 namespace simpleline.workers.registrar;
 
-public abstract class RegistrarBase
+internal abstract class RegistrarBase
 {
-    public abstract IEnumerable<Command> Register(IEnumerable<TypeInfo> types);
+    public abstract Scope[] Register(IEnumerable<Assembly> assemblies);
 }

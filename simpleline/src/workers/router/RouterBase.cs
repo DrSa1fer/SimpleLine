@@ -1,9 +1,10 @@
+using System.Reflection;
 using simpleline.models.commands;
-using simpleline.services;
+using simpleline.models.scopes;
 
 namespace simpleline.workers.router;
 
 internal abstract class RouterBase
 {
-    public abstract Command Route(Context context);
+    public abstract Command Route(Scope[] scopes);
 }
