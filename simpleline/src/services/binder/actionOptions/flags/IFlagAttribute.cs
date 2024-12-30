@@ -1,8 +1,8 @@
-using simpleline.models.attributes;
+using simpleline.models.options;
 
 namespace simpleline.services.binder.actionOptions.flags;
 
-public interface IFlagAttribute : IOptionAttribute
+public interface IFlagAttribute : ICommandOptionAttribute
 {
     public IEnumerable<string> Keys { get; }
 }

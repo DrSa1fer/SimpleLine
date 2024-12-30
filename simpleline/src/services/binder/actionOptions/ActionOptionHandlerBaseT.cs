@@ -1,17 +1,15 @@
-using simpleline.models;
-using simpleline.models.attributes;
-using simpleline.models.inputs;
+using simpleline.models.options;
 
 namespace simpleline.services.binder.actionOptions;
 
-public abstract class ActionOptionHandlerBase<T> : ActionOptionHandlerBase where T : IOptionAttribute
+public abstract class ActionOptionHandlerBase<T> : ActionOptionHandlerBase where T : ICommandOptionAttribute
 {
-    public sealed override bool Is(IOptionAttribute attribute)
+    public sealed override bool Is(ICommandOptionAttribute attribute)
     {
         return attribute is T;
     }
 
-    public sealed override void Handle(IOptionAttribute attribute, CommandOption option, Data data)
+    public sealed override void Handle(ICommandOptionAttribute attribute, CommandOption option, Data data)
     {
         OnHandle((T)attribute, option, data);
     }

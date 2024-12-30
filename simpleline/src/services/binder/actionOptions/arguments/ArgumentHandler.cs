@@ -1,5 +1,4 @@
-using simpleline.models;
-using simpleline.models.inputs;
+using simpleline.models.options;
 using simpleline.services.binder.commandOptions;
 
 namespace simpleline.services.binder.actionOptions.arguments;

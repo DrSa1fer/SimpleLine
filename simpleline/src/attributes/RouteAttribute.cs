@@ -1,11 +1,11 @@
-using simpleline.services.registrar;
-using simpleline.services.router;
+using simpleline.workers.registrar;
+using simpleline.workers.router;
 
 namespace simpleline.attributes;
 
 [AttributeUsage(AttributeTargets.Class)]
 public class RouteAttribute(string route) : Attribute,
-    IRouted, IRegisteredAttribute
+    IRouted, IRegistered
 {
     public IReadOnlyList<string> Route { get; } = route.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 }

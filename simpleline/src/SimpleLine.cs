@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
 using simpleline.configs;
 using simpleline.models;
-using simpleline.models.inputs;
-using simpleline.services.registrar;
+using simpleline.services;
+using simpleline.workers.registrar;
 
 namespace simpleline;
 
@@ -31,8 +31,6 @@ public static class SimpleLine
         {
             ApplicationConfig = new ApplicationConfig(),
             EventConfig = new EventConfig(),
-
-            Commands = commands,
         };
 
         Run(context);
