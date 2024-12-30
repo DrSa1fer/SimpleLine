@@ -1,10 +1,13 @@
 using simpleline.services.binder.actionOptions;
 using simpleline.models.options;
+using simpleline.models.options.actions;
+using simpleline.services.typizer;
 
 namespace simpleline.services.binder;
 
-public abstract class ActionOptionBinderBase(params ActionOptionHandlerBase[] handlers)
+internal abstract class ActionOptionBinderBase(TypizerBase typizer, params ActionOptionHandlerBase[] handlers)
 {
     protected IReadOnlyList<ActionOptionHandlerBase> Handlers { get; } = handlers;
-    public abstract void Bind(IEnumerable<ActionOption> options, Data data); 
+    protected TypizerBase Typizer { get; } = typizer;
+    public abstract void Bind(IEnumerable<ActionOption> options, Data data);
 }

@@ -2,7 +2,7 @@ using Action = simpleline.models.actions.Action;
 
 namespace simpleline.services.invoker;
 
-public abstract class ActionInvokerBase
+internal abstract class ActionInvokerBase
 {
-    public abstract object? Invoke(Action action, params object[] parameters);
+    public abstract object? Invoke(IEnumerable<Action> action);
 }

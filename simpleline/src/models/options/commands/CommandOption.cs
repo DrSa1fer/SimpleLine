@@ -1,7 +1,7 @@
-namespace simpleline.models.options;
+namespace simpleline.models.options.commands;
 
-public class CommandOption(
-    IEnumerable<ICommandOptionAttribute> attributes,
+internal class CommandOption(
+    IReadOnlyCollection<ICommandOptionAttribute> attributes,
     CommandOption.GetDelegate get,
     CommandOption.SetDelegate set,
     Type type,
@@ -10,9 +10,10 @@ public class CommandOption(
     object? defaultValue)
 {
     public delegate object? GetDelegate();
+
     public delegate void SetDelegate(object? value);
 
-    public AttributeCollection<ICommandOptionAttribute> Attributes { get; } = new(attributes);
+    public IReadOnlyCollection<ICommandOptionAttribute> Attributes { get; } = attributes;
 
     public GetDelegate GetValue { get; } = get;
     public SetDelegate SetValue { get; } = set;

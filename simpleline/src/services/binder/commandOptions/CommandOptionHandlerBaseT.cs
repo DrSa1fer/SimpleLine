@@ -1,8 +1,9 @@
 using simpleline.models.options;
+using simpleline.models.options.commands;
 
 namespace simpleline.services.binder.commandOptions;
 
-public abstract class CommandOptionHandlerBaseT<T> : CommandOptionHandlerBase where T : ICommandOptionAttribute
+internal abstract class CommandOptionHandlerBase<T> : CommandOptionHandlerBase where T : ICommandOptionAttribute
 {
     public override bool Is(ICommandOptionAttribute attribute)
     {

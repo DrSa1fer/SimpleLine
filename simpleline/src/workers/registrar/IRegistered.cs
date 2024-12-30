@@ -1,3 +1,3 @@
 namespace simpleline.workers.registrar;
 
-public interface IRegistered;
+internal interface IRegistered;

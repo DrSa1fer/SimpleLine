@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using simpleline.configs;
 using simpleline.models;
 using simpleline.services;
 using simpleline.workers.registrar;
@@ -19,21 +18,10 @@ public static class SimpleLine
     {
         var registrar = new Registrar();
         var input = new Input(symbols);
-        
+
         var types = Assembly
             .GetCallingAssembly()
             .DefinedTypes;
-        
-        var commands = registrar
-            .Register(types);
-        
-        var context = new Context(input)
-        {
-            ApplicationConfig = new ApplicationConfig(),
-            EventConfig = new EventConfig(),
-        };
-
-        Run(context);
     }
 
     private static void Run(Context context)

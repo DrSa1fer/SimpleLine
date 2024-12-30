@@ -1,6 +1,5 @@
 namespace simpleline.workers.tokenizer;
 
-public class Tokenizer
+internal class Tokenizer
 {
-    
 }

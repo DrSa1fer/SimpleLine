@@ -1,9 +1,9 @@
 using simpleline.models.options;
+using simpleline.models.options.actions;
 
 namespace simpleline.services.binder.actionOptions.arguments;
 
-public interface IArgumentAttribute : ICommandOptionAttribute
+internal interface IActionOptionArgumentAttribute : IActionOptionAttribute
 {
     public int Position { get; }
-    public int Arity { get; }
 }

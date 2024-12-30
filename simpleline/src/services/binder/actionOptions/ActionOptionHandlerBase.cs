@@ -1,9 +1,10 @@
 using simpleline.models.options;
+using simpleline.models.options.actions;
 
 namespace simpleline.services.binder.actionOptions;
 
-public abstract class ActionOptionHandlerBase
+internal abstract class ActionOptionHandlerBase
 {
-    public abstract bool Is(ICommandOptionAttribute attribute);
-    public abstract void Handle(ICommandOptionAttribute attribute, CommandOption commandOption, Data data);
+    public abstract bool Is(IActionOptionAttribute attribute);
+    public abstract void Handle(IActionOptionAttribute attribute, ActionOption option, Data data);
 }

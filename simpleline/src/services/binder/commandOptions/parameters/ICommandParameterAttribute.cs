@@ -1,8 +1,9 @@
 using simpleline.models.options;
+using simpleline.models.options.commands;
 
 namespace simpleline.services.binder.commandOptions.parameters;
 
-public interface ICommandParameterAttribute : ICommandOptionAttribute
+internal interface ICommandParameterAttribute : ICommandOptionAttribute
 {
     public IEnumerable<string> Keys { get; }
 }

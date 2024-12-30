@@ -2,10 +2,10 @@ using Action = simpleline.models.actions.Action;
 
 namespace simpleline.services.invoker;
 
-public class ActionInvoker : ActionInvokerBase
+internal class ActionInvoker : ActionInvokerBase
 {
-    public override object? Invoke(Action action, params object[] parameters)
+    public override object? Invoke(IEnumerable<Action> action)
     {
-        throw new NotImplementedException();
+        return action.First().Invoke();
     }
 }

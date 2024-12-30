@@ -5,7 +5,7 @@ namespace simpleline.attributes;
 
 [AttributeUsage(AttributeTargets.Class)]
 public class RouteAttribute(string route) : Attribute,
-    IRouted, IRegistered
+    IRoute, IRegistered
 {
-    public IReadOnlyList<string> Route { get; } = route.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+    public string Route { get; } = route;
 }

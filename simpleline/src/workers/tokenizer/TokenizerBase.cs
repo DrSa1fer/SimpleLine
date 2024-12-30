@@ -1,6 +1,6 @@
 namespace simpleline.workers.tokenizer;
 
-public class TokenizerBase
+internal abstract class TokenizerBase
 {
-    
+    public abstract IEnumerable<string> Tokenize(string input);
 }

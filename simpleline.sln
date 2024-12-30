@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simpleline", "simpleline\simpleline.csproj", "{C221D9F0-D550-45ED-8491-298D8D0AC6DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simpleline.user.cs", "simpleline.user.cs\simpleline.user.cs.csproj", "{FC03E0C9-580E-44DA-97F9-A8FE61126085}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simpleline.user", "simpleline.user\simpleline.user.csproj", "{FC03E0C9-580E-44DA-97F9-A8FE61126085}"
 	ProjectSection(ProjectDependencies) = postProject
 		{C221D9F0-D550-45ED-8491-298D8D0AC6DE} = {C221D9F0-D550-45ED-8491-298D8D0AC6DE}
 	EndProjectSection
