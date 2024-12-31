@@ -1,4 +1,3 @@
-using simpleline.models.options;
 using simpleline.models.options.commands;
 using Action = simpleline.models.actions.Action;
 

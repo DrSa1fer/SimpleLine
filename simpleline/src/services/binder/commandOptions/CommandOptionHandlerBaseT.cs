@@ -1,4 +1,3 @@
-using simpleline.models.options;
 using simpleline.models.options.commands;
 
 namespace simpleline.services.binder.commandOptions;
@@ -10,10 +9,10 @@ internal abstract class CommandOptionHandlerBase<T> : CommandOptionHandlerBase w
         return attribute is T;
     }
 
-    public override void Handle(ICommandOptionAttribute attribute, CommandOption commandOption, Data data)
+    public override void Handle(ICommandOptionAttribute attribute, CommandOption option, InputData inputData)
     {
-        OnHandle((T)attribute, commandOption, data);
+        OnHandle((T)attribute, option, inputData);
     }
 
-    protected abstract void OnHandle(T attribute, CommandOption commandOption, Data data);
+    protected abstract void OnHandle(T attribute, CommandOption option, InputData inputData);
 }

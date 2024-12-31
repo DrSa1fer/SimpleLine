@@ -1,14 +1,12 @@
-using simpleline.models.options;
 using simpleline.models.options.commands;
 
 namespace simpleline.services.binder.commandOptions.flags;
 
 internal class CommandFlagHandler : CommandOptionHandlerBase<ICommandFlagAttribute>
 {
-    protected override void OnHandle(ICommandFlagAttribute attribute, CommandOption commandOption, Data data)
+    protected override void OnHandle(ICommandFlagAttribute attribute, CommandOption option, InputData inputData)
     {
-        if (!commandOption.Type.IsAssignableTo(typeof(bool))) throw new ArgumentException("Flag type must be bool");
-
-        commandOption.SetValue(attribute.Keys.Any(key => data.TryGetValue(key, 0, out _)));
+        option.SetValue(attribute.Keys
+            .Any(key => inputData.TryGetValues(key, 0, out _)));
     }
 }

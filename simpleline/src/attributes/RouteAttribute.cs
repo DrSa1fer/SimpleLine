@@ -7,5 +7,5 @@ namespace simpleline.attributes;
 public class RouteAttribute(string route) : Attribute,
     IRoute, IRegistered
 {
-    public string Route { get; } = route;
+    public IReadOnlyList<string> Route { get; } = default;
 }

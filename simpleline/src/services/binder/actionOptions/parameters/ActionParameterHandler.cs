@@ -1,0 +1,20 @@
+using simpleline.models.options.actions;
+using simpleline.services.typizer;
+
+namespace simpleline.services.binder.actionOptions.parameters;
+
+internal class ActionParameterHandler(TypizerBase typizer) : ActionOptionHandlerBase<IActionParameterAttribute>
+{
+    protected override void OnHandle(IActionParameterAttribute attribute, ActionOption option, InputData inputData)
+    {
+        foreach (var key in attribute.Keys)
+        {
+            if (!inputData.TryGetValues(key, 1, out var values)) continue;
+
+            option.SetValue(typizer.Typize(option.Type, [values[1]]));
+            return;
+        }
+
+        throw new Exception("Key not found");
+    }
+}

@@ -1,4 +1,3 @@
-using simpleline.models.options;
 using simpleline.models.options.commands;
 
 namespace simpleline.services.binder.commandOptions.parameters;

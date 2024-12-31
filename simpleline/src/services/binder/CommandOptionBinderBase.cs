@@ -1,11 +1,8 @@
-using simpleline.services.binder.commandOptions;
-using simpleline.models.options;
 using simpleline.models.options.commands;
 
 namespace simpleline.services.binder;
 
-internal abstract class CommandOptionBinderBase(params CommandOptionHandlerBase[] handlers)
+internal abstract class CommandOptionBinderBase
 {
-    protected IReadOnlyList<CommandOptionHandlerBase> Handlers { get; } = handlers;
-    public abstract void Bind(IEnumerable<CommandOption> options, Data data);
+    public abstract void Bind(IEnumerable<CommandOption> options, InputData data);
 }

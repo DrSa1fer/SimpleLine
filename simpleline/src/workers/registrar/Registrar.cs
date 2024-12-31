@@ -1,7 +1,6 @@
 using System.Reflection;
 using simpleline.models.actions;
 using simpleline.models.commands;
-using simpleline.models.options;
 using simpleline.models.options.actions;
 using simpleline.models.options.commands;
 using simpleline.models.scopes;

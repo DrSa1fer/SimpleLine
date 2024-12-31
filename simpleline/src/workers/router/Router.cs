@@ -1,3 +1,4 @@
+using simpleline.extensions;
 using simpleline.models.commands;
 using simpleline.models.scopes;
 
@@ -5,8 +6,21 @@ namespace simpleline.workers.router;
 
 internal class Router : RouterBase
 {
-    public override Command Route(Scope[] scopes)
+    public override Command Route(Input input, Scope[] scopes)
     {
+        foreach (var scope in scopes)
+        {
+            var prefix = scope.Attributes
+                .FirstOrDefault(x => x is IRoutePrefix) as IRoutePrefix;
+
+            if (prefix != null)
+            {
+                var isPrefix = prefix.Route.IsPrefix([]);
+
+                if (!isPrefix) continue;
+            }
+        }
+
         throw new NotImplementedException();
     }
 }

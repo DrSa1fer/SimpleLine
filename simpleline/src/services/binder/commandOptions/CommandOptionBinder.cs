@@ -1,22 +1,27 @@
-using simpleline.models.options;
-using simpleline.models.options.commands;
+using simpleline.services.binder.commandOptions.parameters;
 using simpleline.services.binder.commandOptions.arguments;
 using simpleline.services.binder.commandOptions.flags;
-using simpleline.services.binder.commandOptions.parameters;
+using simpleline.models.options.commands;
+using System.Collections.Immutable;
+using simpleline.services.typizer;
 
 namespace simpleline.services.binder.commandOptions;
 
-internal class CommandOptionBinder() : CommandOptionBinderBase(
-    new CommandParameterHandler(),
-    new CommandArgumentHandler(),
-    new CommandFlagHandler())
+internal class CommandOptionBinder(TypizerBase typizer) : CommandOptionBinderBase
 {
-    public override void Bind(IEnumerable<CommandOption> options, Data data)
+    private readonly ImmutableArray<CommandOptionHandlerBase> _handlers =
+    [
+        new CommandParameterHandler(typizer),
+        new CommandArgumentHandler(typizer),
+        new CommandFlagHandler()
+    ];
+
+    public override void Bind(IEnumerable<CommandOption> options, InputData data)
     {
         foreach (var option in options)
-        foreach (var attr in option.Attributes)
-            Handlers
-                .First(handler => handler.Is(attr))
-                .Handle(attr, option, data);
+        foreach (var attribute in option.Attributes)
+            _handlers
+                .First(handler => handler.Is(attribute))
+                .Handle(attribute, option, data);
     }
 }

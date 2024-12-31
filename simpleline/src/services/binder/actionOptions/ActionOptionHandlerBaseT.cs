@@ -1,4 +1,3 @@
-using simpleline.models.options;
 using simpleline.models.options.actions;
 
 namespace simpleline.services.binder.actionOptions;
@@ -10,10 +9,10 @@ internal abstract class ActionOptionHandlerBase<T> : ActionOptionHandlerBase whe
         return attribute is T;
     }
 
-    public sealed override void Handle(IActionOptionAttribute attribute, ActionOption option, Data data)
+    public sealed override void Handle(IActionOptionAttribute attribute, ActionOption option, InputData inputData)
     {
-        OnHandle((T)attribute, option, data);
+        OnHandle((T)attribute, option, inputData);
     }
 
-    protected abstract void OnHandle(T attribute, ActionOption option, Data data);
+    protected abstract void OnHandle(T attribute, ActionOption option, InputData inputData);
 }

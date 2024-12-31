@@ -1,15 +1,15 @@
-using simpleline.services.typizer.primitive;
-using Boolean = simpleline.services.typizer.primitive.Boolean;
-using Byte = simpleline.services.typizer.primitive.Byte;
-using Char = simpleline.services.typizer.primitive.Char;
-using Decimal = simpleline.services.typizer.primitive.Decimal;
-using Double = simpleline.services.typizer.primitive.Double;
-using Int16 = simpleline.services.typizer.primitive.Int16;
-using Int32 = simpleline.services.typizer.primitive.Int32;
-using Int64 = simpleline.services.typizer.primitive.Int64;
-using Object = simpleline.services.typizer.primitive.Object;
-using Single = simpleline.services.typizer.primitive.Single;
-using String = simpleline.services.typizer.primitive.String;
+using simpleline.services.typizer.primitives;
+using Boolean = simpleline.services.typizer.primitives.Boolean;
+using Byte = simpleline.services.typizer.primitives.Byte;
+using Char = simpleline.services.typizer.primitives.Char;
+using Decimal = simpleline.services.typizer.primitives.Decimal;
+using Double = simpleline.services.typizer.primitives.Double;
+using Int16 = simpleline.services.typizer.primitives.Int16;
+using Int32 = simpleline.services.typizer.primitives.Int32;
+using Int64 = simpleline.services.typizer.primitives.Int64;
+using Object = simpleline.services.typizer.primitives.Object;
+using Single = simpleline.services.typizer.primitives.Single;
+using String = simpleline.services.typizer.primitives.String;
 
 namespace simpleline.services.typizer;
 
@@ -35,7 +35,7 @@ internal class Typizer : TypizerBase
         return type switch
         {
             { IsPrimitive: true }
-                => _primitive[type].Bind(values),
+                => _primitive[type].Bind(values.Single()),
             _
                 => throw new ArgumentException("Type not supported")
         };

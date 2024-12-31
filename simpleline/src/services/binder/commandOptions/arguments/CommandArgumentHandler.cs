@@ -1,16 +1,14 @@
-using simpleline.models.options;
 using simpleline.models.options.commands;
+using simpleline.services.typizer;
 
 namespace simpleline.services.binder.commandOptions.arguments;
 
-internal class CommandArgumentHandler : CommandOptionHandlerBase<ICommandArgumentAttribute>
+internal class CommandArgumentHandler(TypizerBase typizer) : CommandOptionHandlerBase<ICommandArgumentAttribute>
 {
-    protected override void OnHandle(ICommandArgumentAttribute attribute, CommandOption commandOption, Data data)
+    protected override void OnHandle(ICommandArgumentAttribute attribute, CommandOption option, InputData inputData)
     {
-        if (data.TryGetValue(attribute.Position, 0, out var values)) return;
+        if (!inputData.TryGetValues(attribute.Position, 1, out var values)) throw new Exception("Key not found");
 
-        if (commandOption.IsRequired)
-        {
-        }
+        option.SetValue(typizer.Typize(option.Type, [values[1]]));
     }
 }

@@ -7,18 +7,14 @@ namespace simpleline.user.controllers;
 [Route("")]
 public class HomeController
 {
-    [Argument(0)] 
-    public int Operator;
+    [Argument(0)] public int Operator;
 
-    [Parameter(["l", "left"])] 
-    public int Left;
+    [Parameter(["l", "left"])] public int Left;
 
-    [Parameter(["r", "right"])] 
-    public int Right;
+    [Parameter(["r", "right"])] public int Right;
 
-    [Flag(["h", "help"])] 
-    public bool Help;
-    
+    [Flag(["h", "help"])] public bool Help;
+
     [Action]
     public TestView a()
     {
@@ -26,7 +22,7 @@ public class HomeController
         Console.WriteLine($"Left = {Left}, Operator = {Operator}, Right = {Right}");
         return new TestView(new TestModel());
     }
-    
+
     [Action]
     public TestView b()
     {

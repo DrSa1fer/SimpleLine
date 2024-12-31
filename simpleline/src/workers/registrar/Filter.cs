@@ -13,7 +13,7 @@ internal static class Filter
                 .Any()
             );
     }
-    
+
     public static IEnumerable<TypeInfo> Types(IEnumerable<TypeInfo> infos)
     {
         return infos

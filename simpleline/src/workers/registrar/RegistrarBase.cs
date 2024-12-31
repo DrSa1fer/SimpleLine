@@ -1,5 +1,4 @@
 using System.Reflection;
-using simpleline.models.commands;
 using simpleline.models.scopes;
 
 namespace simpleline.workers.registrar;

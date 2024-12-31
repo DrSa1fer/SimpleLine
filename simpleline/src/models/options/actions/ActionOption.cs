@@ -8,23 +8,25 @@ internal class ActionOption(
     object? defaultValue)
 {
     public delegate object? GetDelegate();
+
     public delegate void SetDelegate(object? value);
 
     private bool _isInit;
     private object? _value;
 
     public IReadOnlyCollection<IActionOptionAttribute> Attributes { get; } = attributes;
+
     public GetDelegate GetValue => () =>
     {
         if (_isInit)
             return _value;
-        
-        if(hasDefaultValue)
+
+        if (hasDefaultValue)
             return defaultValue;
-        
+
         throw new InvalidOperationException("ActionOption has not been initialized.");
     };
-    
+
     public SetDelegate SetValue => value =>
     {
         _isInit = true;
