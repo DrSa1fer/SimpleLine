@@ -1,9 +1,9 @@
 using simpleline.models.commands;
-using simpleline.services.binder;
+using simpleline.workers;
 
 namespace simpleline.services.invoker;
 
 internal abstract class InvokerBase
 {
-    public abstract object? Invoke(Command command, InputData inputData);
+    public abstract void Invoke(Command command, Data data);
 }

@@ -5,13 +5,13 @@ namespace simpleline.services.binder.actionOptions.parameters;
 
 internal class ActionParameterHandler(TypizerBase typizer) : ActionOptionHandlerBase<IActionParameterAttribute>
 {
-    protected override void OnHandle(IActionParameterAttribute attribute, ActionOption option, InputData inputData)
+    protected override void OnHandle(IActionParameterAttribute attribute, ActionOption option, Data data)
     {
         foreach (var key in attribute.Keys)
         {
-            if (!inputData.TryGetValues(key, 1, out var values)) continue;
+            if (!data.TryGetValues(key, 1, out var values)) continue;
 
-            option.SetValue(typizer.Typize(option.Type, [values[1]]));
+            option.Init(typizer.Typize(option.Type, [values[1]]));
             return;
         }
 

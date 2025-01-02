@@ -16,7 +16,7 @@ internal class ActionOptionBinder(TypizerBase typizer) : ActionOptionBinderBase
         new ActionFlagHandler()
     ];
 
-    public override void Bind(IEnumerable<ActionOption> options, InputData data)
+    protected override void OnBind(IEnumerable<ActionOption> options, Data data)
     {
         foreach (var option in options)
         foreach (var attribute in option.Attributes)

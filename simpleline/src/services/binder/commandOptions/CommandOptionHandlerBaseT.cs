@@ -9,10 +9,10 @@ internal abstract class CommandOptionHandlerBase<T> : CommandOptionHandlerBase w
         return attribute is T;
     }
 
-    public override void Handle(ICommandOptionAttribute attribute, CommandOption option, InputData inputData)
+    public override void Handle(ICommandOptionAttribute attribute, CommandOption option, Data data)
     {
-        OnHandle((T)attribute, option, inputData);
+        OnHandle((T)attribute, option, data);
     }
 
-    protected abstract void OnHandle(T attribute, CommandOption option, InputData inputData);
+    protected abstract void OnHandle(T attribute, CommandOption option, Data data);
 }

@@ -1,6 +1,3 @@
 ﻿using simpleline;
-using simpleline.attributes;
 
-[assembly: RoutePrefix("user")]
-
-SimpleLine.Run(args);
+SimpleLine.Run(["100", "99", "77", "l", "9"]);

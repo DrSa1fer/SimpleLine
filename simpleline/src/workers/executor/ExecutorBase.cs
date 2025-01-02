@@ -1,8 +1,9 @@
+using simpleline.models.commands;
 using simpleline.services;
 
 namespace simpleline.workers.executor;
 
 internal abstract class ExecutorBase
 {
-    public abstract object? Execute(Context context);
+    public abstract void Execute(Context context);
 }

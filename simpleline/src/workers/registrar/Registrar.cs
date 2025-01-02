@@ -3,36 +3,22 @@ using simpleline.models.actions;
 using simpleline.models.commands;
 using simpleline.models.options.actions;
 using simpleline.models.options.commands;
-using simpleline.models.scopes;
 using Action = simpleline.models.actions.Action;
 
 namespace simpleline.workers.registrar;
 
 internal class Registrar : RegistrarBase
 {
-    public override Scope[] Register(IEnumerable<Assembly> assemblies)
+    public override Command[] Register(IEnumerable<Assembly> assemblies)
     {
-        return GetScopes(assemblies);
-    }
+        var e = Enumerable.Empty<Command>();
 
-    private static Scope[] GetScopes(IEnumerable<Assembly> assemblies)
-    {
-        var aArr = assemblies.ToArray();
-        var sArr = new Scope[aArr.Length];
-
-        for (var i = 0; i < aArr.Length; i++)
+        foreach (var assembly in assemblies)
         {
-            var attrs = aArr[i]
-                .GetCustomAttributes()
-                .OfType<IScopeAttribute>()
-                .ToArray();
-
-            var commands = GetCommands(aArr[i]);
-
-            sArr[i] = new Scope(attrs, commands);
+            e = e.Concat(GetCommands(assembly));
         }
-
-        return sArr;
+        
+        return e.ToArray();
     }
 
     private static Command[] GetCommands(Assembly assembly)
@@ -71,53 +57,38 @@ internal class Registrar : RegistrarBase
                 .OfType<IActionAttribute>()
                 .ToArray();
 
-            var options = GetActionOptions(m);
+            var parameters = m.GetParameters();
+            
+            var options = new ActionOption[parameters.Length];
+            var values = new object?[options.Length];
 
-            var invoke = new Action.InvokeDelegate(() =>
+            for (var j = 0; j < parameters.Length; j++)
             {
-                var arr = new object?[options.Length];
-                for (var j = 0; j < options.Length; j++) arr[j] = options[j].GetValue();
+                var p = parameters[j];
+                
+                var oAttrs = p
+                    .GetCustomAttributes()
+                    .OfType<IActionOptionAttribute>()
+                    .ToArray();
 
-                return m.Invoke(instance, arr);
-            });
+                var v = j;
+                options[j] = new ActionOption(
+                    oAttrs,
+                    value => values[v] = value,
+                    p.ParameterType
+                );
+            }
 
             aArr[i] = new Action(
                 attrs,
                 options,
-                m.ReturnType,
-                invoke
+                () => m.Invoke(instance, values)
             );
         }
 
         return aArr;
     }
-
-    private static ActionOption[] GetActionOptions(MethodInfo method)
-    {
-        var parameters = method.GetParameters();
-        var arr = new ActionOption[parameters.Length];
-
-        for (var i = 0; i < parameters.Length; i++)
-        {
-            var p = parameters[i];
-
-            var attrs = p
-                .GetCustomAttributes()
-                .OfType<IActionOptionAttribute>()
-                .ToArray();
-
-            arr[i] = new ActionOption(
-                attrs,
-                p.ParameterType,
-                p.IsOptional == false,
-                p.IsOptional,
-                p.DefaultValue
-            );
-        }
-
-        return arr;
-    }
-
+    
     private static CommandOption[] GetOptions(Type type, object? instance)
     {
         var pArr = Filter.Properties(type.GetProperties()).ToArray();
@@ -138,12 +109,8 @@ internal class Registrar : RegistrarBase
 
             oArr[i] = new CommandOption(
                 attrs,
-                () => p.GetValue(instance),
-                va => p.SetValue(instance, va),
-                p.PropertyType,
-                true,
-                false,
-                null
+                value => p.SetValue(instance, value),
+                p.PropertyType
             );
         }
 
@@ -158,12 +125,8 @@ internal class Registrar : RegistrarBase
 
             oArr[i] = new CommandOption(
                 attrs,
-                () => f.GetValue(instance),
-                va => f.SetValue(instance, va),
-                f.FieldType,
-                true,
-                false,
-                null
+                value => f.SetValue(instance, value),
+                f.FieldType
             );
         }
 

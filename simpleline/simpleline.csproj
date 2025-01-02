@@ -12,7 +12,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="src\services\typizer\objects\collections\"/>
         <Folder Include="src\workers\tokenizer\formatter\"/>
     </ItemGroup>
 

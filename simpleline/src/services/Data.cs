@@ -2,9 +2,9 @@ using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using simpleline.extensions;
 
-namespace simpleline.services.binder;
+namespace simpleline.services;
 
-internal sealed class InputData(IEnumerable<string> input)
+internal sealed class Data(IEnumerable<string> input)
 {
     private readonly ImmutableArray<Item> _input = [..input.Select(x => new Item(x))];
 
@@ -32,21 +32,29 @@ internal sealed class InputData(IEnumerable<string> input)
 
     public bool TryGetValues(int position, int count, [MaybeNullWhen(false)] out string[] values)
     {
+        ArgumentOutOfRangeException.ThrowIfGreaterThan(position + count, _input.Length);
         ArgumentOutOfRangeException.ThrowIfNegative(position);
         ArgumentOutOfRangeException.ThrowIfNegative(count);
-        ArgumentOutOfRangeException.ThrowIfGreaterThan(position + count, _input.Length);
 
         values = new string[count + 1];
-
-        for (var i = position; i < _input.Length; i++)
+        
+        for (int i = position, j = 0; i < _input.Length && j < values.Length; i++, j++)
         {
-            if (_input[i].IsUsed) return false;
+            if (_input[i].IsUsed) 
+                return false;
 
-            values[i] = _input[i].Value;
+            values[j] = _input[i].Value;
             _input[i].IsUsed = true;
         }
 
         return true;
+    }
+
+    //TODO
+    //temporary solution  
+    public bool Ensure()
+    {
+        return _input.All(x => x.IsUsed);
     }
 
     private class Item(string value)

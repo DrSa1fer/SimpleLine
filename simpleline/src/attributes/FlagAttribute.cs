@@ -4,9 +4,7 @@ using simpleline.workers.registrar;
 namespace simpleline.attributes;
 
 [AttributeUsage(AttributeTargets.Field)]
-public class FlagAttribute(string[] aliases) : Attribute,
-    ICommandFlagAttribute,
-    IRegistered
+public class FlagAttribute(string[] aliases) : Attribute, ICommandFlagAttribute, IRegistered
 {
     public IEnumerable<string> Keys { get; } = aliases;
 }

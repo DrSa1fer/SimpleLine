@@ -16,7 +16,7 @@ internal class CommandOptionBinder(TypizerBase typizer) : CommandOptionBinderBas
         new CommandFlagHandler()
     ];
 
-    public override void Bind(IEnumerable<CommandOption> options, InputData data)
+    protected override void OnBind(IEnumerable<CommandOption> options, Data data)
     {
         foreach (var option in options)
         foreach (var attribute in option.Attributes)

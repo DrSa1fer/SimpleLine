@@ -1,9 +1,8 @@
 using simpleline.models.commands;
-using simpleline.models.scopes;
 
 namespace simpleline.workers.router;
 
 internal abstract class RouterBase
 {
-    public abstract Command Route(Input input, Scope[] scopes);
+    public abstract Command Route(Command[] commands, Input input);
 }

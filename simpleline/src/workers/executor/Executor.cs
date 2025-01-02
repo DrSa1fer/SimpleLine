@@ -1,4 +1,7 @@
+using simpleline.configs;
+using simpleline.models.commands;
 using simpleline.services;
+using simpleline.services.binder;
 using simpleline.services.binder.actionOptions;
 using simpleline.services.binder.commandOptions;
 using simpleline.services.helper;
@@ -9,8 +12,7 @@ namespace simpleline.workers.executor;
 
 internal class Executor : ExecutorBase
 {
-
-    public override object? Execute(Context context)
+    public override void Execute(Context context)
     {
         var typizer = new Typizer();
 
@@ -18,12 +20,7 @@ internal class Executor : ExecutorBase
         var aOptBinder = new ActionOptionBinder(typizer);
 
         var invoker = new Invoker(cOptBinder, aOptBinder);
-        var helper = new Helper();
-
-        if (!helper.Is(context.Command))
-            return invoker.Invoke(context.Command, context.InputData);
         
-        helper.Help(context.Command);
-        return null;
+        invoker.Invoke(context.Command, context.Data);
     }
 }

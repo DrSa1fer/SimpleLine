@@ -4,9 +4,9 @@ namespace simpleline.services.binder.commandOptions.flags;
 
 internal class CommandFlagHandler : CommandOptionHandlerBase<ICommandFlagAttribute>
 {
-    protected override void OnHandle(ICommandFlagAttribute attribute, CommandOption option, InputData inputData)
+    protected override void OnHandle(ICommandFlagAttribute attribute, CommandOption option, Data data)
     {
-        option.SetValue(attribute.Keys
-            .Any(key => inputData.TryGetValues(key, 0, out _)));
+        option.Init(attribute.Keys
+            .Any(key => data.TryGetValues(key, 0, out _)));
     }
 }

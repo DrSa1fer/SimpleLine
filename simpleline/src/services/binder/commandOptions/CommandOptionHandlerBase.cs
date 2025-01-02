@@ -5,5 +5,5 @@ namespace simpleline.services.binder.commandOptions;
 internal abstract class CommandOptionHandlerBase
 {
     public abstract bool Is(ICommandOptionAttribute attribute);
-    public abstract void Handle(ICommandOptionAttribute attribute, CommandOption option, InputData inputData);
+    public abstract void Handle(ICommandOptionAttribute attribute, CommandOption option, Data data);
 }
