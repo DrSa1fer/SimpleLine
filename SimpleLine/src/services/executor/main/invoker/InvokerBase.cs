@@ -5,24 +5,18 @@ using simpleline.services.executor.main.typizer.exceptions;
 
 namespace simpleline.services.executor.main.invoker;
 
-internal abstract class InvokerBase
-{
-    public void Invoke(Command command, Data data)
-    {
-        try
-        {
+internal abstract class InvokerBase {
+    public void Invoke(Command command, Data data) {
+        try {
             OnInvoke(command, data);
         }
-        catch (BindException)
-        {
+        catch (BindException) {
             throw;
         }
-        catch (TypizeException)
-        {
+        catch (TypizeException) {
             throw;
         }
-        catch (Exception e)
-        {
+        catch (Exception e) {
             throw new InvokeException(e);
         }
     }

@@ -3,54 +3,40 @@ using simpleline.helpers;
 
 namespace simpleline.services.executor;
 
-internal sealed class Data(Symbol[] symbols)
-{
+internal sealed class Data(Symbol[] symbols) {
     private readonly Symbol?[] _input = symbols;
 
-    public bool TryGetValues(string key, int count, [MaybeNullWhen(false)] out string[] values)
-    {
+    public bool ContainsKey(string key) {
+        return IndexOfKey(key) > -1;
+    }
+
+    public bool TryGetValues(string key, int count, [MaybeNullWhen(false)] out string[] values) {
         ArgumentOutOfRangeException.ThrowIfNegative(count);
         ArgumentException.ThrowIfNullOrEmpty(key);
 
-        values = [];
+        var i = IndexOfKey(key);
 
-        if (count > _input.Length)
+        if (i == -1) {
+            values = [];
             return false;
-
-        for (var i = 0; i < _input.Length; i++)
-        {
-            if(_input[i] == null)
-                continue;
-            
-            if(_input[i]!.IsValue())
-                continue;
-            
-            if (_input[i]!.Value.Compare(key) != 0)
-                continue;
-            //
-            // if (_input[i] == null)
-            //     return false;
-
-            _input[i] = null;
-            return TryGetValues(i + 1, count, out values);
         }
 
-        return false;
+        _input[i] = null;
+        return TryGetValues(i + 1, count, out values);
     }
 
-    public bool TryGetValues(int position, int count, [MaybeNullWhen(false)] out string[] values)
-    {
+    public bool TryGetValues(int position, int count, [MaybeNullWhen(false)] out string[] values) {
         ArgumentOutOfRangeException.ThrowIfNegative(position);
         ArgumentOutOfRangeException.ThrowIfNegative(count);
 
         values = new string[count];
 
-        for (int i = position, j = 0; i < _input.Length && j < values.Length; i++, j++)
-        {
-            if (_input[i] == null)
+        for (int i = position, j = 0; i < _input.Length && j < values.Length; i++, j++) {
+            if (_input[i] == null) {
                 return false;
+            }
 
-            values[j] = _input[i].Value ?? throw new Exception(0xDEAD.ToString());
+            values[j] = _input[i]?.Value ?? throw new Exception(0xDEAD.ToString());
             _input[i] = null;
         }
 
@@ -59,8 +45,27 @@ internal sealed class Data(Symbol[] symbols)
 
     //TODO
     //temporary solution  
-    public bool Ensure()
-    {
+    public bool Ensure() {
         return _input.All(x => x is null);
+    }
+
+    private int IndexOfKey(string key) {
+        for (var i = 0; i < _input.Length; i++) {
+            if (_input[i] == null) {
+                continue;
+            }
+
+            if (_input[i]!.IsValue()) {
+                continue;
+            }
+
+            if (!_input[i]!.Value.HEquals(key)) {
+                continue;
+            }
+
+            return i;
+        }
+
+        return -1;
     }
 }

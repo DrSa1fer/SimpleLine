@@ -7,7 +7,6 @@ namespace simpleline.attributes;
 [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property | AttributeTargets.Parameter)]
 public class FlagAttribute(string[] aliases) : Attribute, IRegistered,
     IActionFlagAttribute,
-    ICommandFlagAttribute
-{
+    ICommandFlagAttribute {
     public IEnumerable<string> Keys { get; } = aliases;
 }

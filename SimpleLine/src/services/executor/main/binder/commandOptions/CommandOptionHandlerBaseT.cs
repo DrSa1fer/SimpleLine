@@ -2,15 +2,12 @@ using simpleline.models.options.commands;
 
 namespace simpleline.services.executor.main.binder.commandOptions;
 
-internal abstract class CommandOptionHandlerBase<T> : CommandOptionHandlerBase where T : ICommandOptionAttribute
-{
-    public override bool Is(ICommandOptionAttribute attribute)
-    {
+internal abstract class CommandOptionHandlerBase<T> : CommandOptionHandlerBase where T : ICommandOptionAttribute {
+    public override bool Is(ICommandOptionAttribute attribute) {
         return attribute is T;
     }
 
-    public override void Handle(ICommandOptionAttribute attribute, CommandOption option, Data data)
-    {
+    public override void Handle(ICommandOptionAttribute attribute, CommandOption option, Data data) {
         OnHandle((T)attribute, option, data);
     }
 

@@ -1,5 +1,3 @@
 namespace simpleline.user.models;
 
-public class TestModel
-{
-}
+public class TestModel { }

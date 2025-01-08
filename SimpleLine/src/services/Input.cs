@@ -1,6 +1,3 @@
 namespace simpleline.services;
 
-internal class Input(IReadOnlyList<Symbol> input)
-{
-    
-}
+internal class Input(IReadOnlyList<Symbol> input) { }

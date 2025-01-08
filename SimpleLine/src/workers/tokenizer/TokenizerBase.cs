@@ -1,17 +1,14 @@
+using simpleline.workers.tokenizer.exceptions;
+
 namespace simpleline.workers.tokenizer;
 
-internal abstract class TokenizerBase
-{
-    public IEnumerable<string> Tokenize(string input)
-    {
-        try
-        {
+public abstract class TokenizerBase {
+    public IEnumerable<string> Tokenize(string input) {
+        try {
             return OnTokenize(input);
         }
-        catch (Exception e)
-        {
-            //TODO
-            throw;
+        catch (Exception e) {
+            throw new TokenizerException(e);
         }
     }
 

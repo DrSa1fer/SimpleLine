@@ -1,13 +1,10 @@
 using simpleline.attributes;
-using simpleline.user.models;
-using simpleline.user.views;
 
 namespace simpleline.user.controllers;
 
 [Command]
 [Route("test do")]
-public class TestController
-{
+public class TestController {
     [Flag(["h", "help"])] public bool Help;
 
     [Parameter(["l", "left"])] public int Left;
@@ -17,13 +14,7 @@ public class TestController
     [Parameter(["l", "left"])] public int Right;
 
     [Action]
-    public static TestView Invoke([Argument(1)] int test)
-    {
+    public static void Invoke([Argument(1)] int test) {
         Console.WriteLine("Hello World! I am a test controller!");
-        return new TestView(new TestModel());
     }
 }
-
-// Создать экземпляр
-// Назначить поля
-// Вызвать обработчик

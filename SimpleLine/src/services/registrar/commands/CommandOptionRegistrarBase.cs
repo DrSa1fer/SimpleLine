@@ -1,5 +1,3 @@
 namespace simpleline.services.registrar.commands;
 
-public class CommandOptionRegistrarBase
-{
-}
+public class CommandOptionRegistrarBase { }

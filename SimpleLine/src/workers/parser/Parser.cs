@@ -1,4 +1,5 @@
 using simpleline.configs;
+using simpleline.helpers;
 using simpleline.services;
 
 namespace simpleline.workers.parser;
@@ -6,21 +7,24 @@ namespace simpleline.workers.parser;
 internal class Parser(ParserConfig conf) : ParserBase {
     protected override Symbol[] OnParse(IEnumerable<string> args) {
         var ls = new List<Symbol>();
+        var fArgs = args.Where(x => !x.HEquals("="));
 
-        foreach (var arg in args) {
-            if (arg.StartsWith(conf.ShortKeyPrefix)) {
+        foreach (var arg in fArgs) {
+            if (arg.HStartsWith(conf.ShortKeyPrefix)) {
                 var t = arg[conf.ShortKeyPrefix.Length..];
                 ArgumentException.ThrowIfNullOrEmpty(t);
 
-                if (conf.UseShortKeySplitting)
+                if (conf.UseShortKeySplitting) {
                     ls.AddRange(t.Select(c => Symbol.CreateKey(c.ToString())));
-                else
+                }
+                else {
                     ls.Add(Symbol.CreateKey(t));
+                }
 
                 continue;
             }
 
-            if (arg.StartsWith(conf.LongKeyPrefix)) {
+            if (arg.HStartsWith(conf.LongKeyPrefix)) {
                 var t = arg[conf.LongKeyPrefix.Length..];
                 ArgumentException.ThrowIfNullOrEmpty(t);
 

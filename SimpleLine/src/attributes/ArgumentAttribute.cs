@@ -7,7 +7,6 @@ namespace simpleline.attributes;
 [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property | AttributeTargets.Parameter)]
 public class ArgumentAttribute(int position) : Attribute, IRegistered,
     IActionArgumentAttribute,
-    ICommandArgumentAttribute
-{
+    ICommandArgumentAttribute {
     public int Position => position;
 }

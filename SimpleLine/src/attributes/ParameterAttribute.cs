@@ -7,7 +7,6 @@ namespace simpleline.attributes;
 [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property | AttributeTargets.Parameter)]
 public class ParameterAttribute(string[] aliases) : Attribute, IRegistered,
     IActionParameterAttribute,
-    ICommandParameterAttribute
-{
+    ICommandParameterAttribute {
     public IEnumerable<string> Keys => aliases;
 }

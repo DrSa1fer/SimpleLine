@@ -7,10 +7,8 @@ using Action = simpleline.models.actions.Action;
 
 namespace simpleline.services.registrar;
 
-internal class Registrar : RegistrarBase
-{
-    public override Command[] Register(IEnumerable<Assembly> assemblies)
-    {
+internal class Registrar : RegistrarBase {
+    protected override Command[] OnRegister(IEnumerable<Assembly> assemblies) {
         return assemblies
             .Aggregate(
                 Enumerable.Empty<Command>(),
@@ -19,13 +17,11 @@ internal class Registrar : RegistrarBase
             .ToArray();
     }
 
-    private static Command[] GetCommands(Assembly assembly)
-    {
+    private static Command[] GetCommands(Assembly assembly) {
         var tArr = Filter.Types(assembly.DefinedTypes).ToArray();
         var cArr = new Command[tArr.Length];
 
-        for (var i = 0; i < cArr.Length; i++)
-        {
+        for (var i = 0; i < cArr.Length; i++) {
             var attrs = tArr[i]
                 .GetCustomAttributes()
                 .OfType<ICommandAttribute>()
@@ -41,13 +37,11 @@ internal class Registrar : RegistrarBase
         return cArr;
     }
 
-    private static Action[] GetActions(Type type, object? instance)
-    {
+    private static Action[] GetActions(Type type, object? instance) {
         var mArr = Filter.Methods(type.GetMethods()).ToArray();
         var aArr = new Action[mArr.Length];
 
-        for (var i = 0; i < mArr.Length; i++)
-        {
+        for (var i = 0; i < mArr.Length; i++) {
             var m = mArr[i];
 
             var attrs = m
@@ -60,8 +54,7 @@ internal class Registrar : RegistrarBase
             var options = new ActionOption[parameters.Length];
             var values = new object?[options.Length];
 
-            for (var j = 0; j < parameters.Length; j++)
-            {
+            for (var j = 0; j < parameters.Length; j++) {
                 var p = parameters[j];
 
                 var oAttrs = p
@@ -87,8 +80,7 @@ internal class Registrar : RegistrarBase
         return aArr;
     }
 
-    private static CommandOption[] GetOptions(Type type, object? instance)
-    {
+    private static CommandOption[] GetOptions(Type type, object? instance) {
         var pArr = Filter.Properties(type.GetProperties()).ToArray();
         var fArr = Filter.Fields(type.GetFields()).ToArray();
 
@@ -96,8 +88,7 @@ internal class Registrar : RegistrarBase
         var oArr = new CommandOption[pArr.Length + fArr.Length];
 
 
-        for (var j = 0; j < pArr.Length; j++, i++)
-        {
+        for (var j = 0; j < pArr.Length; j++, i++) {
             var p = pArr[j];
 
             var attrs = p
@@ -112,8 +103,7 @@ internal class Registrar : RegistrarBase
             );
         }
 
-        for (var j = 0; j < fArr.Length; j++, i++)
-        {
+        for (var j = 0; j < fArr.Length; j++, i++) {
             var f = fArr[j];
 
             var attrs = f

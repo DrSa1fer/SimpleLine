@@ -1,7 +1,6 @@
 namespace simpleline.configs;
 
-public class HelperConfig
-{
+public class HelperConfig {
     public string? Name { get; set; } = "program";
     public string? Version { get; set; } = "1.0.0-stable";
     public string? Description { get; set; } = "My cli program";

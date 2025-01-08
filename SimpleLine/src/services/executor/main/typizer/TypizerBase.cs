@@ -2,16 +2,12 @@ using simpleline.services.executor.main.typizer.exceptions;
 
 namespace simpleline.services.executor.main.typizer;
 
-internal abstract class TypizerBase
-{
-    public object? Typize(Type type, IEnumerable<string> values)
-    {
-        try
-        {
+internal abstract class TypizerBase {
+    public object? Typize(Type type, IEnumerable<string> values) {
+        try {
             return OnTypize(type, values);
         }
-        catch (Exception e)
-        {
+        catch (Exception e) {
             throw new TypizeException(e);
         }
     }

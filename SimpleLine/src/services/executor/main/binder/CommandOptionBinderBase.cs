@@ -4,20 +4,15 @@ using simpleline.services.executor.main.typizer.exceptions;
 
 namespace simpleline.services.executor.main.binder;
 
-internal abstract class CommandOptionBinderBase
-{
-    public void Bind(IEnumerable<CommandOption> options, Data data)
-    {
-        try
-        {
+internal abstract class CommandOptionBinderBase {
+    public void Bind(IEnumerable<CommandOption> options, Data data) {
+        try {
             OnBind(options, data);
         }
-        catch (TypizeException)
-        {
+        catch (TypizeException) {
             throw;
         }
-        catch (Exception e)
-        {
+        catch (Exception e) {
             throw new BindException(e);
         }
     }

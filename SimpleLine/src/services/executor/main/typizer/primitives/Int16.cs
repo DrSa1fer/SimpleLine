@@ -1,9 +1,7 @@
 namespace simpleline.services.executor.main.typizer.primitives;
 
-internal class Int16 : Primitive
-{
-    public override object? Bind(string value)
-    {
+internal class Int16 : Primitive {
+    public override object? Bind(string value) {
         return short.Parse(value);
     }
 }

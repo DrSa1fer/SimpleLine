@@ -1,14 +1,9 @@
 ﻿namespace simpleline.unit.extensions;
 
-public class CollectionExtensionTests
-{
+public class CollectionExtensionTests {
     [SetUp]
-    public void Setup()
-    {
-    }
+    public void Setup() { }
 
     [Test]
-    public void Empty()
-    {
-    }
+    public void Empty() { }
 }

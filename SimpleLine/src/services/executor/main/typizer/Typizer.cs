@@ -12,10 +12,8 @@ using String = simpleline.services.executor.main.typizer.primitives.String;
 
 namespace simpleline.services.executor.main.typizer;
 
-internal class Typizer : TypizerBase
-{
-    private readonly Dictionary<Type, Primitive> _primitive = new()
-    {
+internal class Typizer : TypizerBase {
+    private readonly Dictionary<Type, Primitive> _primitive = new() {
         { typeof(byte), new Byte() },
         { typeof(short), new Int16() },
         { typeof(int), new Int32() },
@@ -30,10 +28,10 @@ internal class Typizer : TypizerBase
         { typeof(string), new String() }
     };
 
-    protected override object? OnTypize(Type type, IEnumerable<string> values)
-    {
-        if (_primitive.TryGetValue(type, out var primitive))
+    protected override object? OnTypize(Type type, IEnumerable<string> values) {
+        if (_primitive.TryGetValue(type, out var primitive)) {
             return primitive.Bind(values.Single());
+        }
 
         throw new ArgumentException("Type not supported");
     }

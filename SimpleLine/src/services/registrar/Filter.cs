@@ -2,13 +2,10 @@ using System.Reflection;
 
 namespace simpleline.services.registrar;
 
-internal static class Filter
-{
-    public static IEnumerable<TypeInfo> Types(IEnumerable<TypeInfo> infos)
-    {
+internal static class Filter {
+    public static IEnumerable<TypeInfo> Types(IEnumerable<TypeInfo> infos) {
         return infos
-            .Where(info => info is
-                {
+            .Where(info => info is {
                     IsClass: true,
                     IsAbstract: false,
                     IsGenericType: false
@@ -21,11 +18,9 @@ internal static class Filter
             );
     }
 
-    public static IEnumerable<MethodInfo> Methods(IEnumerable<MethodInfo> infos)
-    {
+    public static IEnumerable<MethodInfo> Methods(IEnumerable<MethodInfo> infos) {
         return infos
-            .Where(info => info is
-                {
+            .Where(info => info is {
                     IsAbstract: false,
                     IsGenericMethod: false
                 }
@@ -37,11 +32,9 @@ internal static class Filter
             );
     }
 
-    public static IEnumerable<FieldInfo> Fields(IEnumerable<FieldInfo> infos)
-    {
+    public static IEnumerable<FieldInfo> Fields(IEnumerable<FieldInfo> infos) {
         return infos
-            .Where(info => info is
-            {
+            .Where(info => info is {
                 IsInitOnly: false
             })
             .Where(info => info
@@ -51,11 +44,9 @@ internal static class Filter
             );
     }
 
-    public static IEnumerable<PropertyInfo> Properties(IEnumerable<PropertyInfo> infos)
-    {
+    public static IEnumerable<PropertyInfo> Properties(IEnumerable<PropertyInfo> infos) {
         return infos
-            .Where(info => info is
-            {
+            .Where(info => info is {
                 GetMethod: not null,
                 SetMethod: not null
             })

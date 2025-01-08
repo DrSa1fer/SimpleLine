@@ -6,8 +6,7 @@ namespace simpleline.models.commands;
 internal class Command(
     IReadOnlyCollection<ICommandAttribute> attributes,
     IReadOnlyCollection<Action> actions,
-    IReadOnlyCollection<CommandOption> options)
-{
+    IReadOnlyCollection<CommandOption> options) {
     public IReadOnlyCollection<ICommandAttribute> Attributes { get; } = attributes;
 
     public IReadOnlyCollection<Action> Actions { get; } = actions;
