@@ -1,23 +1,20 @@
 using simpleline.services.executor.main.invoker;
 using Microsoft.Extensions.DependencyInjection;
+using simpleline.models.commands;
 
 namespace simpleline.services.executor.main;
 
-internal class Main : Case
+internal class Main(IServiceProvider provider) : Case
 {
-    public override bool Is(Context context)
+    public override bool Is(Data data)
     {
         return true;
     }
 
-    public override void Invoke(Context context)
+    public override void Invoke(Command command, Data data)
     {
-        var invoker = context
-            .Provider
-            .GetService<InvokerBase>();
-
-        ArgumentNullException.ThrowIfNull(invoker);
-
-        invoker.Invoke(context.Command, context.Data);
+        provider
+            .GetRequiredService<InvokerBase>()
+            .Invoke(command, data);
     }
 }

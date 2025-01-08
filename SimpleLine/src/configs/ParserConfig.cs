@@ -1,7 +1,39 @@
+using System.Runtime.InteropServices;
+
 namespace simpleline.configs;
 
-public class ParserConfig(string? shortKey, string? longKey)
+public class ParserConfig
 {
-    public string? ShortKey { get; } = shortKey;
-    public string? LongKey { get; } = longKey;
+    public ParserConfig(string shortKeyPrefix, string longKeyPrefix, bool useShortKeySplitting)
+    {
+        ShortKeyPrefix = shortKeyPrefix;
+        LongKeyPrefix = longKeyPrefix;
+
+        UseShortKeySplitting = useShortKeySplitting;
+    }
+
+    public ParserConfig()
+    {
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            UseShortKeySplitting = false;
+            ShortKeyPrefix = "/";
+            LongKeyPrefix = "/";
+        }
+        else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+        {
+            UseShortKeySplitting = true;
+            ShortKeyPrefix = "-";
+            LongKeyPrefix = "--";
+        }
+        else
+        {
+            throw new PlatformNotSupportedException();
+        }
+    }
+
+    public string ShortKeyPrefix { get; }
+    public string LongKeyPrefix { get; }
+
+    public bool UseShortKeySplitting { get; }
 }

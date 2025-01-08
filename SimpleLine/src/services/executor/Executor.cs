@@ -1,20 +1,21 @@
+using simpleline.models.commands;
 using simpleline.services.executor.help;
 using simpleline.services.executor.main;
 
 namespace simpleline.services.executor;
 
-internal class Executor : ExecutorBase
+internal class Executor(IServiceProvider provider) : ExecutorBase
 {
     private readonly Case[] _cases =
     [
-        new Help(),
-        new Main()
+        // new Help(provider),
+        new Main(provider)
     ];
 
-    public override void Execute(Context context)
+    public override void Execute(Command command, Data data)
     {
         _cases
-            .First(x => x.Is(context))
-            .Invoke(context);
+            .First(x => x.Is(data))
+            .Invoke(command, data);
     }
 }

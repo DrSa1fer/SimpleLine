@@ -1,13 +1,15 @@
+using simpleline.models.commands;
+
 namespace simpleline.services.executor.help;
 
-internal class Help : Case
+internal class Help(IServiceProvider provider) : Case
 {
-    public override bool Is(Context context)
+    public override bool Is(Data data)
     {
         throw new NotImplementedException();
     }
 
-    public override void Invoke(Context context)
+    public override void Invoke(Command command, Data data)
     {
         throw new NotImplementedException();
     }

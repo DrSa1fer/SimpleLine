@@ -5,5 +5,5 @@ namespace simpleline.services.executor.help.helper;
 
 internal abstract class HelperBase
 {
-    public abstract void Help(ApplicationConfig config, Command command);
+    public abstract void Help(HelperConfig config, Command command);
 }

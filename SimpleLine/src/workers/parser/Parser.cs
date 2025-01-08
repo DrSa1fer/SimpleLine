@@ -5,26 +5,37 @@ namespace simpleline.workers.parser;
 
 internal class Parser(ParserConfig conf) : ParserBase
 {
-    protected override IEnumerable<Symbol> OnParse(IEnumerable<string> args)
+    protected override Input OnParse(IEnumerable<string> args)
     {
+        var ls = new List<Symbol>();
+        
         foreach (var arg in args)
         {
-            if (conf.ShortKey != null && arg.StartsWith(conf.ShortKey))
+            if (arg.StartsWith(conf.ShortKeyPrefix))
             {
-                foreach (var c in arg[conf.ShortKey.Length..])
-                    yield return Symbol.CreateKey(c.ToString());
-                
+                var t = arg[conf.ShortKeyPrefix.Length..];
+                ArgumentException.ThrowIfNullOrEmpty(t);
+
+                if (conf.UseShortKeySplitting)
+                    ls.AddRange(t.Select(c => Symbol.CreateKey(c.ToString())));
+                else
+                    ls.Add(Symbol.CreateKey(t));
+
                 continue;
             }
 
-            if (conf.LongKey != null && arg.StartsWith(conf.LongKey))
+            if (arg.StartsWith(conf.LongKeyPrefix))
             {
-                yield return Symbol.CreateKey(arg[conf.LongKey.Length..]);
-                
+                var t = arg[conf.LongKeyPrefix.Length..];
+                ArgumentException.ThrowIfNullOrEmpty(t);
+
+                ls.Add(Symbol.CreateKey(t));
                 continue;
             }
-            
-            yield return Symbol.CreateValue(arg);
+
+            ls.Add(Symbol.CreateValue(arg));
         }
+        
+        return new Input(ls);
     }
 }

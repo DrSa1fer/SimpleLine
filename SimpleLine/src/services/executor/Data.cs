@@ -3,9 +3,9 @@ using simpleline.helpers;
 
 namespace simpleline.services.executor;
 
-internal sealed class Data(string[] input)
+internal sealed class Data(Symbol[] symbols)
 {
-    private readonly string?[] _input = input;
+    private readonly Symbol?[] _input = symbols;
 
     public bool TryGetValues(string key, int count, [MaybeNullWhen(false)] out string[] values)
     {
@@ -17,21 +17,25 @@ internal sealed class Data(string[] input)
         if (count > _input.Length)
             return false;
 
-        var position = -1;
-
         for (var i = 0; i < _input.Length; i++)
         {
-            if (_input[i].Compare(key) != 0)
+            if(_input[i] == null)
                 continue;
+            
+            if(_input[i]!.IsValue())
+                continue;
+            
+            if (_input[i]!.Value.Compare(key) != 0)
+                continue;
+            //
+            // if (_input[i] == null)
+            //     return false;
 
-            if (_input[i] == null)
-                return false;
-
-            position = i;
-            break;
+            _input[i] = null;
+            return TryGetValues(i + 1, count, out values);
         }
 
-        return position != -1 && TryGetValues(position, count, out values);
+        return false;
     }
 
     public bool TryGetValues(int position, int count, [MaybeNullWhen(false)] out string[] values)
@@ -46,7 +50,7 @@ internal sealed class Data(string[] input)
             if (_input[i] == null)
                 return false;
 
-            values[j] = _input[i] ?? throw new Exception(0xDEAD.ToString());
+            values[j] = _input[i].Value ?? throw new Exception(0xDEAD.ToString());
             _input[i] = null;
         }
 

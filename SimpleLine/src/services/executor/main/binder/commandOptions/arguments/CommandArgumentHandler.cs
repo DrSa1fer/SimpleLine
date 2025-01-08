@@ -7,7 +7,7 @@ internal class CommandArgumentHandler(TypizerBase typizer) : CommandOptionHandle
 {
     protected override void OnHandle(ICommandArgumentAttribute attribute, CommandOption option, Data data)
     {
-        if (!data.TryGetValues(attribute.Position, 0, out var values))
+        if (!data.TryGetValues(attribute.Position, 1, out var values))
             throw new Exception("Key not found");
 
         option.Init(typizer.Typize(option.Type, values));

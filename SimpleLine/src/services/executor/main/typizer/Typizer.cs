@@ -26,7 +26,8 @@ internal class Typizer : TypizerBase
         { typeof(char), new Char() },
         { typeof(bool), new Boolean() },
 
-        { typeof(string), new String() } //Is not primitive, but is base type
+        //Is not primitive, but is base type
+        { typeof(string), new String() }
     };
 
     protected override object? OnTypize(Type type, IEnumerable<string> values)

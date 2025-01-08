@@ -8,15 +8,14 @@ internal abstract class ParserBase
     {
         try
         {
-            var ls = OnParse(args).ToList();
-            return new Input(ls);
+            return OnParse(args);
         }
         catch (Exception e)
         {
             //todo
             throw;
-        }    
+        }
     }
-    
-    protected abstract IEnumerable<Symbol> OnParse(IEnumerable<string> args);
+
+    protected abstract Input OnParse(IEnumerable<string> args);
 }

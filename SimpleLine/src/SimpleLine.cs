@@ -1,44 +1,28 @@
 ﻿using simpleline.services.registrar;
 using simpleline.services.executor;
 using simpleline.services.router;
-using simpleline.services;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
+using simpleline.configs;
 using simpleline.workers.parser;
 
 namespace simpleline;
 
-public static class SimpleLine
+public static partial class SimpleLine
 {
-    public static void Run(IEnumerable<string> args)
+    public static void Run(IEnumerable<string> args,
+        ParserConfig? parserConfig = null,
+        HelperConfig? helperConfig = null,
+        Assembly[]? assemblies = null)
     {
-        var provider = InitServices();
-
-        var assembly = Assembly.GetCallingAssembly();
+        var services = new ServiceCollection();
         
-        var router = provider.GetService<RouterBase>()
-                     ?? throw new ApplicationException("Router not found");
-        var parser = provider.GetService<ParserBase>()
-                     ?? throw new ApplicationException("Parser not found");
-        var executor = provider.GetService<ExecutorBase>()
-                       ?? throw new ApplicationException("Executor not found");
-        var registrar = provider.GetService<RegistrarBase>()
-                        ?? throw new ApplicationException("Registrar not found");
+        if(parserConfig != null) services.AddTransient<ParserConfig>(_ => parserConfig);
+        if(helperConfig != null) services.AddTransient<HelperConfig>(_ => helperConfig);
         
-        var commands = registrar.Register([assembly]);
-        var input = parser.Parse(args);
-        
-        var command = router.Route(commands, input);
+        var assembly = assemblies ?? [Assembly.GetCallingAssembly()];
+        var provider = Init(services);
 
-        var ctx = new Context(default, command, new Data([ /*todo*/]));
-
-
-
-        executor.Execute(ctx);
-    }
-
-    private static IServiceProvider InitServices()
-    {
-        return default;
+        _Run(args, assembly, provider);
     }
 }

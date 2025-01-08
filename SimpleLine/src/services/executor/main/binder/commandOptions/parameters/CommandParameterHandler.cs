@@ -11,7 +11,7 @@ internal class CommandParameterHandler(TypizerBase typizer) : CommandOptionHandl
         {
             if (!data.TryGetValues(key, 1, out var values)) continue;
 
-            option.Init(typizer.Typize(option.Type, [values[1]]));
+            option.Init(typizer.Typize(option.Type, [values[0]]));
             return;
         }
 
