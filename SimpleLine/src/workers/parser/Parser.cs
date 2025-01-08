@@ -3,16 +3,12 @@ using simpleline.services;
 
 namespace simpleline.workers.parser;
 
-internal class Parser(ParserConfig conf) : ParserBase
-{
-    protected override Input OnParse(IEnumerable<string> args)
-    {
+internal class Parser(ParserConfig conf) : ParserBase {
+    protected override Symbol[] OnParse(IEnumerable<string> args) {
         var ls = new List<Symbol>();
-        
-        foreach (var arg in args)
-        {
-            if (arg.StartsWith(conf.ShortKeyPrefix))
-            {
+
+        foreach (var arg in args) {
+            if (arg.StartsWith(conf.ShortKeyPrefix)) {
                 var t = arg[conf.ShortKeyPrefix.Length..];
                 ArgumentException.ThrowIfNullOrEmpty(t);
 
@@ -24,8 +20,7 @@ internal class Parser(ParserConfig conf) : ParserBase
                 continue;
             }
 
-            if (arg.StartsWith(conf.LongKeyPrefix))
-            {
+            if (arg.StartsWith(conf.LongKeyPrefix)) {
                 var t = arg[conf.LongKeyPrefix.Length..];
                 ArgumentException.ThrowIfNullOrEmpty(t);
 
@@ -35,7 +30,7 @@ internal class Parser(ParserConfig conf) : ParserBase
 
             ls.Add(Symbol.CreateValue(arg));
         }
-        
-        return new Input(ls);
+
+        return ls.ToArray();
     }
 }
