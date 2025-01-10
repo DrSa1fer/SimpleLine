@@ -1,10 +1,10 @@
-using simpleline.services.registrar;
+using simpleline.services.executor.help.helper;
 using simpleline.services.router;
 
 namespace simpleline.attributes;
 
 [AttributeUsage(AttributeTargets.Class)]
 public class RouteAttribute(string route) : Attribute,
-    IRoute, IRegistered {
-    public IReadOnlyList<string> Route { get; } = default;
+    IRoute, IHelpRoute {
+    public string Route { get; } = route;
 }

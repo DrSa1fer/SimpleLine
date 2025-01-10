@@ -2,7 +2,7 @@ using simpleline.workers.tokenizer.exceptions;
 
 namespace simpleline.workers.tokenizer;
 
-public abstract class TokenizerBase {
+internal abstract class TokenizerBase {
     public IEnumerable<string> Tokenize(string input) {
         try {
             return OnTokenize(input);

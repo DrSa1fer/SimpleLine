@@ -6,11 +6,11 @@ namespace simpleline.services.executor.main.binder.commandOptions.parameters;
 internal class CommandParameterHandler(TypizerBase typizer) : CommandOptionHandlerBase<ICommandParameterAttribute> {
     protected override void OnHandle(ICommandParameterAttribute attribute, CommandOption option, Data data) {
         foreach (var key in attribute.Keys) {
-            if (!data.TryGetValues(key, 1, out var values)) {
+            if (!data.TryGetValues(key, attribute.Arity, out var values)) {
                 continue;
             }
 
-            option.Init(typizer.Typize(option.Type, [values[0]]));
+            option.Init(typizer.Typize(option.Type, values));
             return;
         }
 

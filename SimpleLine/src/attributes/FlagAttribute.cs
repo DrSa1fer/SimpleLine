@@ -8,5 +8,5 @@ namespace simpleline.attributes;
 public class FlagAttribute(string[] aliases) : Attribute, IRegistered,
     IActionFlagAttribute,
     ICommandFlagAttribute {
-    public IEnumerable<string> Keys { get; } = aliases;
+    public ICollection<string> Keys { get; } = aliases;
 }

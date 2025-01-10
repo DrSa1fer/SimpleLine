@@ -1,3 +1,3 @@
 namespace simpleline.workers.parser.exceptions;
 
-public class ParserException(Exception innerException) : Exception(innerException.Message, innerException);
+internal class ParserException(Exception innerException) : Exception(innerException.Message, innerException);

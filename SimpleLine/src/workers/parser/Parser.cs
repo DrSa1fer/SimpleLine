@@ -4,35 +4,32 @@ using simpleline.services;
 
 namespace simpleline.workers.parser;
 
-internal class Parser(ParserConfig conf) : ParserBase {
+internal class Parser(ParseConfig conf) : ParserBase {
     protected override Symbol[] OnParse(IEnumerable<string> args) {
         var ls = new List<Symbol>();
-        var fArgs = args.Where(x => !x.HEquals("="));
+        var fArgs = args.SelectMany(arg => arg.Split("="))
+            .Select(x => x.Trim())
+            .Where(x => !string.IsNullOrWhiteSpace(x));
 
         foreach (var arg in fArgs) {
-            if (arg.HStartsWith(conf.ShortKeyPrefix)) {
-                var t = arg[conf.ShortKeyPrefix.Length..];
-                ArgumentException.ThrowIfNullOrEmpty(t);
+            var prefix = conf.KeyPrefixes.FirstOrDefault(arg.HStartsWith);
 
-                if (conf.UseShortKeySplitting) {
-                    ls.AddRange(t.Select(c => Symbol.CreateKey(c.ToString())));
-                }
-                else {
-                    ls.Add(Symbol.CreateKey(t));
-                }
-
+            if (prefix == null) {
+                ls.Add(Symbol.CreateValue(arg));
                 continue;
             }
 
-            if (arg.HStartsWith(conf.LongKeyPrefix)) {
-                var t = arg[conf.LongKeyPrefix.Length..];
-                ArgumentException.ThrowIfNullOrEmpty(t);
-
+            if (prefix.Length == arg.Length) {
+                throw new ArgumentException($"Awaits value after prefix: [{arg}]");
+            }
+            
+            var t = arg[prefix.Length..];
+            if (conf.GnuKeyMode && prefix.Length == 1) {
+                ls.AddRange(t.Select(c => Symbol.CreateKey(c.ToString())));
+            }
+            else {
                 ls.Add(Symbol.CreateKey(t));
-                continue;
             }
-
-            ls.Add(Symbol.CreateValue(arg));
         }
 
         return ls.ToArray();

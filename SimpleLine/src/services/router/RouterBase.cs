@@ -6,7 +6,7 @@ namespace simpleline.services.router;
 internal abstract class RouterBase {
     public Command Route(ICollection<Command> commands, Input input) {
         try {
-            return OnRoute(commands, new Route([]));
+            return OnRoute(commands, new Route(input));
         }
         catch (Exception e) {
             throw new RouterException(e);

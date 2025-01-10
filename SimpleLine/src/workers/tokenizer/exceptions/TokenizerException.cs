@@ -1,3 +1,3 @@
 namespace simpleline.workers.tokenizer.exceptions;
 
-public class TokenizerException(Exception innerException) : Exception(innerException.Message, innerException);
+internal class TokenizerException(Exception innerException) : Exception(innerException.Message, innerException);

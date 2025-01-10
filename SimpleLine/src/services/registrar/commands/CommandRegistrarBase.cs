@@ -1,3 +1,8 @@
+using System.Reflection;
+using simpleline.models.commands;
+
 namespace simpleline.services.registrar.commands;
 
-public class CommandRegistrarBase { }
+internal abstract class CommandRegistrarBase {
+    public abstract Command[] GetCommands(Assembly assembly);
+}

@@ -6,12 +6,12 @@ using simpleline.services.executor.main.typizer;
 
 namespace simpleline.services.executor.main.binder.commandOptions;
 
-internal class CommandOptionBinder(TypizerBase typizer) : CommandOptionBinderBase {
-    private readonly CommandOptionHandlerBase[] _handlers = [
-        new CommandParameterHandler(typizer),
-        new CommandArgumentHandler(typizer),
-        new CommandFlagHandler()
-    ];
+internal class CommandOptionBinder(
+    CommandParameterHandler cph,
+    CommandArgumentHandler cah,
+    CommandFlagHandler cfh
+) : CommandOptionBinderBase {
+    private readonly CommandOptionHandlerBase[] _handlers = [cph, cah, cfh];
 
     protected override void OnBind(IEnumerable<CommandOption> options, Data data) {
         foreach (var option in options)

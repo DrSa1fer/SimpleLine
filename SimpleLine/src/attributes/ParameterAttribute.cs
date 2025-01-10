@@ -5,8 +5,9 @@ using simpleline.services.registrar;
 namespace simpleline.attributes;
 
 [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property | AttributeTargets.Parameter)]
-public class ParameterAttribute(string[] aliases) : Attribute, IRegistered,
+public class ParameterAttribute(string[] aliases, int arity = 1) : Attribute, IRegistered,
     IActionParameterAttribute,
     ICommandParameterAttribute {
-    public IEnumerable<string> Keys => aliases;
+    public ICollection<string> Keys => aliases;
+    public int Arity => arity;
 }

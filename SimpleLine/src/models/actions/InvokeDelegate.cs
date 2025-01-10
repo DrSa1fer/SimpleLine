@@ -1,3 +1,3 @@
 namespace simpleline.models.actions;
 
-internal delegate void InvokeDelegate();
+internal delegate object? InvokeDelegate();

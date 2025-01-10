@@ -9,9 +9,6 @@ internal abstract class ActionOptionBinderBase {
         try {
             OnBind(options, data);
         }
-        catch (TypizeException) {
-            throw;
-        }
         catch (Exception e) {
             throw new BindException(e);
         }

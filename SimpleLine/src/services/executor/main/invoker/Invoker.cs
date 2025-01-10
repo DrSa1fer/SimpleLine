@@ -7,7 +7,7 @@ internal class Invoker(
     CommandOptionBinderBase comOptBinder,
     ActionOptionBinderBase actOptBinder
 ) : InvokerBase {
-    protected override void OnInvoke(Command command, Data data) {
+    protected override object? OnInvoke(Command command, Data data) {
         var action = command.Actions.First();
 
         var commandOptionCollection = command.Options;
@@ -16,10 +16,8 @@ internal class Invoker(
         comOptBinder.Bind(commandOptionCollection, data);
         actOptBinder.Bind(actionOptionCollection, data);
 
-        if (!data.Ensure()) {
-            throw new Exception("unused arguments");
-        }
+        data.Ensure();
 
-        action.Invoke();
+        return action.Invoke();
     }
 }
