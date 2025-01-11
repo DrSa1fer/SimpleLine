@@ -4,3 +4,5 @@ obj/
 riderModule.iml
 /_ReSharper.Caches/
 .idea
+SimpleLine.Docs/_site
+SimpleLine.Docs/api

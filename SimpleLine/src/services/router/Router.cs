@@ -14,12 +14,13 @@ internal class Router : RouterBase {
             if (attr == null) {
                 continue;
             }
+
             var r = attr.Route.Split();
             candidates.Add(new Candidate(command, r));
         }
 
         var exclude = new HashSet<int>();
-        for(var seek = 0; route.TryPeek(out var value) && candidates.Count > 0; seek++) {
+        for (var seek = 0; route.TryPeek(out var value) && candidates.Count > 0; seek++) {
             for (var i = 0; i < candidates.Count; i++) {
                 var current = candidates[i];
 

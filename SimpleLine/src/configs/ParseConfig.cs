@@ -30,6 +30,7 @@ public class ParseConfig {
     /// A mode where after a single prefix each character is broken down into separate keys
     /// </summary>
     public bool GnuKeyMode { get; }
+
     /// <summary>
     /// A set of prefixes that indicate that the passed argument is key
     /// </summary>

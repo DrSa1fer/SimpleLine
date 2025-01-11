@@ -22,7 +22,7 @@ internal class Parser(ParseConfig conf) : ParserBase {
             if (prefix.Length == arg.Length) {
                 throw new ArgumentException($"Awaits value after prefix: [{arg}]");
             }
-            
+
             var t = arg[prefix.Length..];
             if (conf.GnuKeyMode && prefix.Length == 1) {
                 ls.AddRange(t.Select(c => Symbol.CreateKey(c.ToString())));
