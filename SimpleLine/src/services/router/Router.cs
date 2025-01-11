@@ -4,13 +4,13 @@ using simpleline.models.commands;
 namespace simpleline.services.router;
 
 internal class Router : RouterBase {
-    private readonly record struct Candidate(Command Command, string[] Route);
+    private record Candidate(Command Command, string[] Route);
 
     protected override Command OnRoute(IEnumerable<Command> commands, Route route) {
         var candidates = new List<Candidate>();
 
         foreach (var command in commands) {
-            var attr = command.Attributes.OfType<IRoute>().FirstOrDefault();
+            var attr = command.Attributes.OfType<IRouteAttribute>().FirstOrDefault();
             if (attr == null) {
                 continue;
             }
@@ -19,32 +19,39 @@ internal class Router : RouterBase {
             candidates.Add(new Candidate(command, r));
         }
 
-        var exclude = new HashSet<int>();
-        for (var seek = 0; route.TryPeek(out var value) && candidates.Count > 0; seek++) {
-            for (var i = 0; i < candidates.Count; i++) {
-                var current = candidates[i];
+        for (var seek = 0; route.TryPeek(out var value); seek++) {
+            var iValue = value;
+            var iSeek = seek;
 
-                if (current.Route.Length <= seek) {
-                    exclude.Add(i);
-                }
-                else if (!current.Route[seek].HEquals(value)) {
-                    exclude.Add(i);
+            var t = candidates
+                .Where(current => current.Route.Length > iSeek)
+                .Where(current => current.Route[iSeek].HEquals(iValue))
+                .ToList();
+
+            if (t.Count == 0) {
+                var f = candidates
+                    .FirstOrDefault(x => x.Route.Length == iSeek - 1);
+
+                if (iSeek == 0) {
+                    f ??= candidates
+                        .FirstOrDefault(x => x.Route.Length == 0);
                 }
 
-                if (candidates.Count != 1) {
-                    continue;
+                if (f != null) {
+                    return f.Command;
                 }
 
-                _ = route.Take();
-                return current.Command;
+                break;
             }
 
-            foreach (var ex in exclude) {
-                candidates.RemoveAt(ex);
-            }
-
-            exclude.Clear();
             _ = route.Take();
+            if (t.Count == 1) {
+                if (t[0].Route.Length == iSeek + 1) {
+                    return t[0].Command;
+                }
+            }
+
+            candidates = t;
         }
 
         throw new Exception("Command not found");

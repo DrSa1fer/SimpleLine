@@ -3,7 +3,7 @@ using simpleline.attributes;
 namespace simpleline.user.controllers;
 
 [Command]
-[Route("test do")]
+[IRouteAttribute("test do")]
 public class TestController {
     [Flag(["h", "help"])] public bool Help;
 

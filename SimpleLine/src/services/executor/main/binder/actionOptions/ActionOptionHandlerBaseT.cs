@@ -2,14 +2,10 @@ using simpleline.models.options.actions;
 
 namespace simpleline.services.executor.main.binder.actionOptions;
 
-internal abstract class ActionOptionHandlerBase<T> : ActionOptionHandlerBase where T : IActionOptionAttribute {
-    public sealed override bool Is(IActionOptionAttribute attribute) {
-        return attribute is T;
+internal abstract class ActionOptionHandlerBase<T>() : ActionOptionHandlerBase(typeof(T)) where T : IActionOptionAttribute {
+    public sealed override object? Handle(IActionOptionAttribute attribute, Type valueType, Data data) {
+        return OnHandle((T)attribute, valueType, data);
     }
 
-    public sealed override void Handle(IActionOptionAttribute attribute, ActionOption option, Data data) {
-        OnHandle((T)attribute, option, data);
-    }
-
-    protected abstract void OnHandle(T attribute, ActionOption option, Data data);
+    protected abstract object? OnHandle(T attribute,  Type valueType, Data data);
 }

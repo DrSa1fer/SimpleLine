@@ -1,5 +1,4 @@
 using System.Reflection;
-using simpleline.models.commands;
 using simpleline.services;
 using simpleline.services.executor;
 using simpleline.services.registrar;
@@ -31,6 +30,7 @@ internal class Pipeline(
         }
         catch (Exception e) {
             Console.WriteLine(e.Message);
+            Console.WriteLine(e.StackTrace);
         }
     }
 
@@ -49,6 +49,7 @@ internal class Pipeline(
         }
         catch (Exception e) {
             Console.WriteLine(e.Message);
+            Console.WriteLine(e.StackTrace);
         }
     }
 }

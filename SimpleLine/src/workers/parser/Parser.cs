@@ -7,8 +7,10 @@ namespace simpleline.workers.parser;
 internal class Parser(ParseConfig conf) : ParserBase {
     protected override Symbol[] OnParse(IEnumerable<string> args) {
         var ls = new List<Symbol>();
-        var fArgs = args.SelectMany(arg => arg.Split("="))
-            .Select(x => x.Trim())
+        var fArgs = args
+            // It s a responsibility of parser?
+            // .SelectMany(arg => arg.Split("="))
+            // .Select(x => x.Trim())
             .Where(x => !string.IsNullOrWhiteSpace(x));
 
         foreach (var arg in fArgs) {

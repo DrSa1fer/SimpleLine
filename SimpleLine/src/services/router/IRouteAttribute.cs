@@ -2,6 +2,6 @@ using simpleline.models.commands;
 
 namespace simpleline.services.router;
 
-internal interface IRoute : ICommandAttribute {
+internal interface IRouteAttribute : ICommandAttribute {
     string Route { get; }
 }

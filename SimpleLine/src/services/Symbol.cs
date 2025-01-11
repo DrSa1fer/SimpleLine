@@ -1,5 +1,8 @@
 namespace simpleline.services;
 
+/// <summary>
+/// Passed in input argument that present as Key or Value
+/// </summary>
 internal sealed class Symbol {
     public string Value { get; }
 
@@ -24,6 +27,10 @@ internal sealed class Symbol {
 
     public bool IsValue() {
         return _type == Type.Value;
+    }
+
+    public override string ToString() {
+        return $"Type: {_type}, Value: {Value}";
     }
 
     private enum Type : byte {

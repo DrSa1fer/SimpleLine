@@ -70,9 +70,10 @@ internal sealed class Data(Input input) {
     //TODO
     //temporary solution  
     public void Ensure() {
-        if (_input.All(x => x is not null)) {
-            throw new Exception("unused arguments: " +
-                                string.Join<string>(", ", _input.Where(x => x != null).Select(x => x!.Value)));
+        if (_input.Any(x => x is not null)) {
+            throw new Exception("Unused symbols: \n" +
+                                string.Join<string>(", \n",
+                                    _input.Where(x => x is not null).Select(x => x!.ToString())));
         }
     }
 

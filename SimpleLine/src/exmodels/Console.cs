@@ -1,13 +1,13 @@
-namespace simpleline.configs;
+namespace simpleline.exmodels;
 
-public class ConsoleFacade(
+public class Console(
     TextReader input,
     TextWriter output,
     TextWriter error) {
-    public ConsoleFacade() : this(
-        Console.In,
-        Console.Out,
-        Console.Error
+    public Console() : this(
+        System.Console.In,
+        System.Console.Out,
+        System.Console.Error
     ) { }
 
     public TextReader In { get; } = input; //may be  

@@ -1,6 +1,5 @@
 using simpleline.models.options.commands;
 using simpleline.services.executor.main.binder.exceptions;
-using simpleline.services.executor.main.typizer.exceptions;
 
 namespace simpleline.services.executor.main.binder;
 

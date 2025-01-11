@@ -4,7 +4,7 @@ using simpleline.services.router.exceptions;
 namespace simpleline.services.router;
 
 internal abstract class RouterBase {
-    public Command Route(ICollection<Command> commands, Input input) {
+    public Command Route(IEnumerable<Command> commands, Input input) {
         try {
             return OnRoute(commands, new Route(input));
         }

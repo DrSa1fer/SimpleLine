@@ -22,12 +22,13 @@ using simpleline.services.registrar.options.commands;
 using simpleline.services.router;
 using simpleline.workers.parser;
 using simpleline.workers.tokenizer;
+using Console = simpleline.exmodels.Console;
 
 namespace simpleline;
 
 public static class SimpleLine {
     public static void Run(IEnumerable<string> input,
-        ConsoleFacade? consoleConfig = null,
+        Console? consoleConfig = null,
         HelpConfig? helpConfig = null,
         ParseConfig? parseConfig = null,
         IReadOnlyCollection<string>? helpKeys = null,
@@ -37,7 +38,7 @@ public static class SimpleLine {
 
         services.AddSingleton(helpConfig ?? new HelpConfig());
         services.AddSingleton(parseConfig ?? new ParseConfig());
-        services.AddSingleton(consoleConfig ?? new ConsoleFacade());
+        services.AddSingleton(consoleConfig ?? new Console());
 
         services.AddSingleton(helpKeys == null ? new HelpKeyConfig() : new HelpKeyConfig(helpKeys));
 

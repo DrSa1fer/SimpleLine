@@ -1,3 +1,5 @@
+using System.Collections.ObjectModel;
+using simpleline.exmodels.typizer;
 using simpleline.services.executor.main.typizer.primitives;
 using Boolean = simpleline.services.executor.main.typizer.primitives.Boolean;
 using Byte = simpleline.services.executor.main.typizer.primitives.Byte;
@@ -12,7 +14,9 @@ using String = simpleline.services.executor.main.typizer.primitives.String;
 
 namespace simpleline.services.executor.main.typizer;
 
-internal class Typizer : TypizerBase {
+internal class Typizer(TypizerCollection collection) : TypizerBase {
+    private readonly ReadOnlyDictionary<Type, Func<IEnumerable<string>, object?>> _custom = collection.Typizers;
+
     private readonly Dictionary<Type, Primitive> _primitive = new() {
         { typeof(byte), new Byte() },
         { typeof(short), new Int16() },
@@ -29,6 +33,10 @@ internal class Typizer : TypizerBase {
     };
 
     protected override object? OnTypize(Type type, IEnumerable<string> values) {
+        if (_custom.TryGetValue(type, out var custom)) {
+            return custom(values);
+        }
+        
         if (_primitive.TryGetValue(type, out var primitive)) {
             return primitive.Bind(values.Single());
         }

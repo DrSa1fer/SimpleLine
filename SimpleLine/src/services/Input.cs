@@ -2,6 +2,10 @@ using System.Collections;
 
 namespace simpleline.services;
 
+/// <summary>
+/// Implementation of List`Symbol. Present user input  
+/// </summary>
+/// <param name="input"></param>
 internal class Input(IEnumerable<Symbol> input) : IList<Symbol> {
     bool ICollection<Symbol>.IsReadOnly => false;
     public int Count => _input.Count;

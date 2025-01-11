@@ -4,7 +4,8 @@
 ## Command
 
 #### Definition
-Command is set of actions and options that work together.
+Command is set of actions and options that work together that are declared
+as class.
 
 #### Example
 ```csharp
@@ -16,7 +17,8 @@ public class YourClass;
 ## Action
 
 #### Definition
-Action is the command action that needs to be performed.
+Action is the command action that needs to be performed that are declared
+as method method.
 
 #### Example
 
