@@ -1,8 +1,8 @@
 using System.Reflection;
-using simpleline.models.options.actions;
+using simpleline.models.options;
 
 namespace simpleline.services.registrar.options.actions;
 
 internal abstract class ActionOptionRegistrarBase {
-    public abstract ActionOption[] GetActionOptions(ParameterInfo[] parametersInfo, object?[] sync);
+    public abstract Option[] GetActionOptions(ParameterInfo[] parametersInfo, object?[] sync);
 }

@@ -1,16 +1,16 @@
 using System.Reflection;
-using simpleline.models.options.commands;
+using simpleline.models.options;
 
 namespace simpleline.services.registrar.options.commands;
 
 internal class CommandOptionRegistrar : CommandOptionRegistrarBase {
-    public override CommandOption[] GetCommandOptions(FieldInfo[] fieldsInfo, PropertyInfo[] propertiesInfo,
+    public override Option[] GetCommandOptions(FieldInfo[] fieldsInfo, PropertyInfo[] propertiesInfo,
         object? instance) {
         var pArr = Filter.Properties(propertiesInfo).ToArray();
         var fArr = Filter.Fields(fieldsInfo).ToArray();
 
         var i = 0;
-        var oArr = new CommandOption[pArr.Length + fArr.Length];
+        var oArr = new Option[pArr.Length + fArr.Length];
 
 
         for (var j = 0; j < pArr.Length; j++, i++) {
@@ -18,10 +18,10 @@ internal class CommandOptionRegistrar : CommandOptionRegistrarBase {
 
             var attrs = p
                 .GetCustomAttributes()
-                .OfType<ICommandOptionAttribute>()
+                .OfType<IOptionAttribute>()
                 .ToList();
 
-            oArr[i] = new CommandOption(
+            oArr[i] = new Option(
                 attrs,
                 value => p.SetValue(instance, value),
                 p.PropertyType
@@ -33,10 +33,10 @@ internal class CommandOptionRegistrar : CommandOptionRegistrarBase {
 
             var attrs = f
                 .GetCustomAttributes()
-                .OfType<ICommandOptionAttribute>()
+                .OfType<IOptionAttribute>()
                 .ToList();
 
-            oArr[i] = new CommandOption(
+            oArr[i] = new Option(
                 attrs,
                 value => f.SetValue(instance, value),
                 f.FieldType

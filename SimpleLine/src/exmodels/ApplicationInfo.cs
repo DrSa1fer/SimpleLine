@@ -1,6 +1,6 @@
-namespace simpleline.configs;
+namespace simpleline.exmodels;
 
-public class HelpConfig(
+public class ApplicationInfo(
     string? program,
     string? version,
     string? description,
@@ -9,7 +9,7 @@ public class HelpConfig(
     string? website,
     string? documentation
 ) {
-    public HelpConfig() : this(
+    public ApplicationInfo() : this(
         "program",
         "1.0.0-stable",
         "My cli program",

@@ -1,10 +1,10 @@
+using simpleline.models.options;
 using simpleline.services.executor.main.binder.exceptions;
-using simpleline.models.options.actions;
 
 namespace simpleline.services.executor.main.binder;
 
-internal abstract class ActionOptionBinderBase {
-    public void Bind(IEnumerable<ActionOption> options, Data data) {
+internal abstract class OptionBinderBase {
+    public void Bind(IEnumerable<Option> options, Data data) {
         try {
             OnBind(options, data);
         }
@@ -13,5 +13,5 @@ internal abstract class ActionOptionBinderBase {
         }
     }
 
-    protected abstract void OnBind(IEnumerable<ActionOption> options, Data data);
+    protected abstract void OnBind(IEnumerable<Option> options, Data data);
 }

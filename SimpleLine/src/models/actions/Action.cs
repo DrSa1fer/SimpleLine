@@ -1,12 +1,12 @@
-using simpleline.models.options.actions;
+using simpleline.models.options;
 
 namespace simpleline.models.actions;
 
 internal class Action(
     IReadOnlyCollection<IActionAttribute> attributes,
-    IReadOnlyCollection<ActionOption> options,
+    IReadOnlyCollection<Option> options,
     InvokeDelegate invoke) {
     public IReadOnlyCollection<IActionAttribute> Attributes { get; } = attributes;
-    public IReadOnlyCollection<ActionOption> Options { get; } = options;
+    public IReadOnlyCollection<Option> Options { get; } = options;
     public InvokeDelegate Invoke { get; } = invoke;
 }

@@ -4,17 +4,16 @@ using simpleline.services.executor.main.binder;
 namespace simpleline.services.executor.main.invoker;
 
 internal class Invoker(
-    CommandOptionBinderBase comOptBinder,
-    ActionOptionBinderBase actOptBinder
+    OptionBinderBase optBinder
 ) : InvokerBase {
     protected override object? OnInvoke(Command command, Data data) {
         var action = command.Actions.First();
 
-        var commandOptionCollection = command.Options;
-        var actionOptionCollection = action.Options;
+        var commandOptions = command.Options;
+        var actionOptions = action.Options;
 
-        comOptBinder.Bind(commandOptionCollection, data);
-        actOptBinder.Bind(actionOptionCollection, data);
+        optBinder.Bind(commandOptions, data);
+        optBinder.Bind(actionOptions, data);
 
         data.Ensure();
 
