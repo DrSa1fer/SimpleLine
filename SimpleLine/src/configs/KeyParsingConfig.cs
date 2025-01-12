@@ -2,13 +2,13 @@ using System.Runtime.InteropServices;
 
 namespace simpleline.configs;
 
-public class ParseConfig {
-    public ParseConfig(ICollection<string> keyPrefixes, bool gnuKeyMode) {
+public class KeyParsingConfig {
+    public KeyParsingConfig(ICollection<string> keyPrefixes, bool gnuKeyMode) {
         GnuKeyMode = gnuKeyMode;
         KeyPrefixes = keyPrefixes;
     }
 
-    public ParseConfig() {
+    public KeyParsingConfig() {
         if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) {
             GnuKeyMode = false;
             KeyPrefixes = ["/"];

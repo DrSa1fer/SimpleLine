@@ -4,7 +4,7 @@ namespace simpleline.services.router;
 
 internal class Route(Input input) {
     public string Peek() {
-        var t = input[0];
+        var t = input.Peek();
         if (t.IsKey()) {
             throw new Exception();
         }
@@ -13,43 +13,43 @@ internal class Route(Input input) {
     }
 
     public string Take() {
-        var t = input[0];
+        var t = input.Peek();
         if (t.IsKey()) {
             throw new Exception();
         }
 
-        input.RemoveAt(0);
+        input.Dequeue();
         return t.Value;
     }
 
     public bool TryPeek([MaybeNullWhen(false)] out string value) {
         value = null;
 
-        if (input.Count < 1) {
+        if (!input.TryPeek(out var t)) {
+            return false;
+        }
+        
+        if (t.IsKey()) {
             return false;
         }
 
-        if (input[0].IsKey()) {
-            return false;
-        }
-
-        value = input[0].Value;
+        value = t.Value;
         return true;
     }
 
     public bool TryTake([MaybeNullWhen(false)] out string value) {
         value = null;
-
-        if (input.Count < 1) {
+        
+        if (!input.TryPeek(out var t)) {
+            return false;
+        }
+        
+        if (t.IsKey()) {
             return false;
         }
 
-        if (input[0].IsKey()) {
-            return false;
-        }
-
-        value = input[0].Value;
-        input.RemoveAt(0);
+        value = t.Value;
+        input.Dequeue();
         return true;
     }
 }

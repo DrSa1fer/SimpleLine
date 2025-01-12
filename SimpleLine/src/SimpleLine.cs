@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 using simpleline.configs;
+using simpleline.exmodels.typizer;
 using simpleline.services.executor;
 using simpleline.services.executor.help.helper;
 using simpleline.services.executor.main.binder;
@@ -28,19 +29,20 @@ namespace simpleline;
 
 public static class SimpleLine {
     public static void Run(IEnumerable<string> input,
-        Console? consoleConfig = null,
+        Console? console = null,
         HelpConfig? helpConfig = null,
-        ParseConfig? parseConfig = null,
-        IReadOnlyCollection<string>? helpKeys = null,
+        SpecialFlagConfig? helpKeys = null,
+        KeyParsingConfig? parseConfig = null,
+        CustomTypizerCollection? typizerCollection = null,
         Assembly[]? assemblies = null
     ) {
         var services = new ServiceCollection();
 
+        services.AddSingleton(typizerCollection ?? new CustomTypizerCollection());
+        services.AddSingleton(parseConfig ?? new KeyParsingConfig());
         services.AddSingleton(helpConfig ?? new HelpConfig());
-        services.AddSingleton(parseConfig ?? new ParseConfig());
-        services.AddSingleton(consoleConfig ?? new Console());
-
-        services.AddSingleton(helpKeys == null ? new HelpKeyConfig() : new HelpKeyConfig(helpKeys));
+        services.AddSingleton(helpKeys ?? new SpecialFlagConfig());
+        services.AddSingleton(console ?? new Console());
 
         var provider = Init(services);
         var assembly = assemblies ?? [Assembly.GetCallingAssembly()];
@@ -48,29 +50,6 @@ public static class SimpleLine {
         provider.GetRequiredService<Pipeline>().Run(input, assembly);
     }
 
-    // public static void Run(string input,
-    //     ParserConfig? parserConfig = null,
-    //     HelperConfig? helperConfig = null,
-    //     IReadOnlyCollection<string>? helpKeys = null,
-    //     IReadOnlyCollection<string>? versionKeys = null,
-    //     Assembly[]? assemblies = null
-    // ) {
-    //     var services = new ServiceCollection();
-    //
-    //     services.AddSingleton(versionKeys == null ? 
-    //         new VersionKeyConfig() : new VersionKeyConfig(versionKeys));
-    //     services.AddSingleton(helpKeys == null ? 
-    //         new HelpKeyConfig() : new HelpKeyConfig(helpKeys));
-    //     
-    //     services.AddSingleton(parserConfig ?? new ParserConfig());
-    //     services.AddSingleton(helperConfig ?? new HelperConfig());
-    //
-    //     var assembly = assemblies ?? [Assembly.GetCallingAssembly()];
-    //     var provider = Init(services);
-    //
-    //     provider.GetRequiredService<Pipeline>().Run(input, assembly);
-    // }
-    //
     private static ServiceProvider Init(IServiceCollection services) {
         //Pipeline
         services.AddScoped<RegistrarBase, Registrar>();

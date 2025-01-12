@@ -10,23 +10,21 @@ namespace simpleline.services.executor;
 
 internal class Executor(IServiceProvider provider) : ExecutorBase {
     protected override void OnExecute(Command command, Data data) {
+        var sf = provider.GetRequiredService<SpecialFlagConfig>();
         var console = provider.GetRequiredService<Console>();
-        var result = default(string);
+        var output = default(string);
         
-        var hk = provider.GetRequiredService<HelpKeyConfig>();
-        if (data.ContainsAny(hk.HelpKeys)) {
+        if (data.ContainsAny(sf.HelpKeys)) {
             var helper = provider.GetRequiredService<HelperBase>();
-            result = helper.Help(command);
+            output = helper.Help(command);
         }
         else {
             var invoker = provider.GetRequiredService<InvokerBase>();
-            result = invoker.Invoke(command, data)?.ToString();
+            output = invoker.Invoke(command, data)?.ToString();
         }
-        
-        if (result is null) {
-            return;
+
+        if (output is not null) {
+            console.Out.WriteLine(output);
         }
-            
-        console.Out.WriteLine(result);
     }
 }

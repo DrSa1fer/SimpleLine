@@ -22,4 +22,24 @@
         <Using Include="NUnit.Framework"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="src\extensions\" />
+      <Folder Include="src\services\executor\help\helper\" />
+      <Folder Include="src\services\executor\main\binder\actionOptions\arguments\" />
+      <Folder Include="src\services\executor\main\binder\actionOptions\flags\" />
+      <Folder Include="src\services\executor\main\binder\actionOptions\parameters\" />
+      <Folder Include="src\services\executor\main\binder\commandOptions\arguments\" />
+      <Folder Include="src\services\executor\main\binder\commandOptions\flags\" />
+      <Folder Include="src\services\executor\main\binder\commandOptions\parameters\" />
+      <Folder Include="src\services\executor\main\invoker\" />
+      <Folder Include="src\services\executor\main\typizer\" />
+      <Folder Include="src\services\registrar\" />
+      <Folder Include="src\workers\parser\" />
+      <Folder Include="src\workers\tokenizer\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SimpleLine\SimpleLine.csproj" />
+    </ItemGroup>
+
 </Project>

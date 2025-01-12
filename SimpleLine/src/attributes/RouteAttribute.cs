@@ -4,7 +4,7 @@ using simpleline.services.router;
 namespace simpleline.attributes;
 
 [AttributeUsage(AttributeTargets.Class)]
-public class IRouteAttributeAttribute(string route) : Attribute,
+public class RouteAttribute(string route) : Attribute,
     IRouteAttribute, IHelpRoute {
     public string Route { get; } = route;
 }

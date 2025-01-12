@@ -3,8 +3,13 @@ using simpleline.helpers;
 
 namespace simpleline.services.executor.main.binder;
 
-internal sealed class Data(Input input) {
-    private readonly Symbol?[] _input = [..input];
+internal sealed class Data {
+    public Data(Input input) {
+        _input = input.ToArray();
+        input.Clear();
+    }
+
+    private readonly Symbol?[] _input;
 
     public bool Contains(int position) {
         return ~position < 0 && position < _input.Length;

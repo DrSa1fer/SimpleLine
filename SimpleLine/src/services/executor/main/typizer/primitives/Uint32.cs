@@ -1,7 +1,7 @@
 namespace simpleline.services.executor.main.typizer.primitives;
 
-internal class String {
+internal class Uint32 {
     public static object Bind(string value) {
-        return value;
+        return uint.Parse(value);
     }
 }
