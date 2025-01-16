@@ -5,7 +5,7 @@ using simpleline.services.executor.main.invoker.exceptions;
 namespace simpleline.services.executor.main.invoker;
 
 internal abstract class InvokerBase {
-    public object? Invoke(Command command, Data data) {
+    public string Invoke(Command command, Data data) {
         try {
             return OnInvoke(command, data);
         }
@@ -14,5 +14,5 @@ internal abstract class InvokerBase {
         }
     }
 
-    protected abstract object? OnInvoke(Command command, Data data);
+    protected abstract string OnInvoke(Command command, Data data);
 }

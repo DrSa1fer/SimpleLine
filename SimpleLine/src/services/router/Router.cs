@@ -1,5 +1,7 @@
 using simpleline.helpers;
 using simpleline.models.commands;
+using simpleline.services.router.exceptions;
+using FormatException = simpleline.services.router.exceptions.FormatException;
 
 namespace simpleline.services.router;
 
@@ -16,6 +18,23 @@ internal class Router : RouterBase {
             }
 
             var r = attr.Route.Split();
+
+            foreach (var tmp in r) {
+                if (tmp.Length <= 0 || !char.IsLetter(tmp[0])) {
+                    throw new FormatException(attr.Route, tmp);
+                }
+
+                if (tmp.Length == 1) {
+                    continue;
+                }
+
+                if (tmp[1..].All(char.IsLetterOrDigit)) {
+                    continue;
+                }
+
+                throw new FormatException(attr.Route, tmp);
+            }
+            
             candidates.Add(new Candidate(command, r));
         }
 

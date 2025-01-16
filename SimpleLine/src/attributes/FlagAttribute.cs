@@ -1,4 +1,4 @@
-using simpleline.services.executor.main.binder.options.flags;
+using simpleline.services.executor.main.binder.handlers.flags;
 using simpleline.services.registrar;
 
 namespace simpleline.attributes;

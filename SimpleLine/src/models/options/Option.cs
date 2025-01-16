@@ -2,9 +2,12 @@ namespace simpleline.models.options;
 
 internal class Option(
     IReadOnlyCollection<IOptionAttribute> attributes,
-    InitDelegate init,
+    GetDelegate get,
+    SetDelegate set,
     Type type) {
     public IReadOnlyCollection<IOptionAttribute> Attributes { get; } = attributes;
-    public InitDelegate Init { get; } = init;
     public Type Type { get; } = type;
+    
+    public GetDelegate Get { get; } = get;
+    public SetDelegate Set { get; } = set;
 }

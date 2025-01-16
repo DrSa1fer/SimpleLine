@@ -10,7 +10,7 @@ namespace simpleline.services.executor;
 
 internal class Executor(IServiceProvider provider) : ExecutorBase {
     protected override void OnExecute(Command command, Data data) {
-        var sf = provider.GetRequiredService<SpecialFlagConfig>();
+        var sf = provider.GetRequiredService<FlagConfig>();
         var console = provider.GetRequiredService<Console>();
         var output = default(string);
         
@@ -20,10 +20,10 @@ internal class Executor(IServiceProvider provider) : ExecutorBase {
         }
         else {
             var invoker = provider.GetRequiredService<InvokerBase>();
-            output = invoker.Invoke(command, data)?.ToString();
+            output = invoker.Invoke(command, data);
         }
 
-        if (output is not null) {
+        if (!string.IsNullOrWhiteSpace(output)) {
             console.Out.WriteLine(output);
         }
     }

@@ -1,6 +1,6 @@
 using simpleline.models.options;
 
-namespace simpleline.services.executor.main.binder.options.arguments;
+namespace simpleline.services.executor.main.binder.handlers.arguments;
 
 internal interface IArgumentAttribute : IOptionAttribute {
     int Position { get; }

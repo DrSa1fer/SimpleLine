@@ -1,4 +1,4 @@
-using simpleline.exmodels.typizer;
+using simpleline.exmodels;
 using simpleline.services.executor.main.typizer.primitives;
 using Boolean = simpleline.services.executor.main.typizer.primitives.Boolean;
 using Byte = simpleline.services.executor.main.typizer.primitives.Byte;
@@ -19,46 +19,46 @@ internal class Typizer(CustomTypizerCollection collection) : TypizerBase {
     private readonly Dictionary<Type, Func<string, object?>> _primitive = new() {
         {
             typeof(sbyte),
-            SByte.Bind
+            SByte.Typize
         }, {
             typeof(short),
-            Int16.Bind
+            Int16.Typize
         }, {
             typeof(int),
-            Int32.Bind
+            Int32.Typize
         }, {
             typeof(long),
-            Int64.Bind
+            Int64.Typize
         }, {
             typeof(byte),
-            Byte.Bind
+            Byte.Typize
         }, {
             typeof(ushort),
-            Uint16.Bind
+            Uint16.Typize
         }, {
             typeof(uint),
-            Uint32.Bind
+            Uint32.Typize
         }, {
             typeof(ulong),
-            Uint64.Bind
+            Uint64.Typize
         }, {
             typeof(float),
-            Single.Bind
+            Single.Typize
         }, {
             typeof(double),
-            Double.Bind
+            Double.Typize
         }, {
             typeof(decimal),
-            Decimal.Bind
+            Decimal.Typize
         }, {
             typeof(char),
-            Char.Bind
+            Char.Typize
         }, {
             typeof(bool),
-            Boolean.Bind
+            Boolean.Typize
         }, {
             typeof(string),
-            String.Bind
+            String.Typize
         }
     };
 
@@ -66,7 +66,7 @@ internal class Typizer(CustomTypizerCollection collection) : TypizerBase {
         if (_custom.TryGetValue(type, out var custom)) {
             return custom(values);
         }
-
+        
         if (_primitive.TryGetValue(type, out var primitive)) {
             return primitive(values.Single());
         }

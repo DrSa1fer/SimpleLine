@@ -1,4 +1,4 @@
-using simpleline.services.executor.main.binder.options.arguments;
+using simpleline.services.executor.main.binder.handlers.arguments;
 using simpleline.services.registrar;
 
 namespace simpleline.attributes;

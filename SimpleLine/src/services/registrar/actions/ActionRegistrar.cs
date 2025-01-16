@@ -19,14 +19,12 @@ internal class ActionRegistrar(ActionOptionRegistrarBase optionRegistrar) : Acti
                 .ToList();
 
             var parameters = m.GetParameters();
-            var sync = new object[parameters.Length];
-
-            var options = optionRegistrar.GetActionOptions(parameters, sync);
-
+            var options = optionRegistrar.GetActionOptions(parameters);
+            
             aArr[i] = new Action(
                 attrs,
                 options,
-                () => m.Invoke(instance, sync)
+                args => m.Invoke(instance, args)
             );
         }
 

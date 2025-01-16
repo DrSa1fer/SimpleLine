@@ -1,4 +1,4 @@
-namespace simpleline.exmodels.typizer;
+namespace simpleline.exmodels;
 
 public sealed class CustomTypizerCollection {
     internal Dictionary<Type, Func<IEnumerable<string>, object?>> Typizers { get; } = new();

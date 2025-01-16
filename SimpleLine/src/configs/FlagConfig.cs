@@ -1,10 +1,10 @@
 namespace simpleline.configs;
 
-public class SpecialFlagConfig {
-    public SpecialFlagConfig(IReadOnlyCollection<string> helpKeys) {
+public class FlagConfig {
+    public FlagConfig(IReadOnlyCollection<string> helpKeys) {
         HelpKeys = helpKeys;
     }
-    public SpecialFlagConfig() {
+    public FlagConfig() {
         HelpKeys = ["h", "help"];
     }
 

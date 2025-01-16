@@ -4,7 +4,7 @@ using simpleline.services;
 
 namespace simpleline.workers.parser;
 
-internal class Parser(KeyConfig conf) : ParserBase {
+internal class Parser(ParseConfig conf) : ParserBase {
     protected override Symbol[] OnParse(IEnumerable<string> args) {
         var ls = new List<Symbol>();
         var fArgs = args

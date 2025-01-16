@@ -3,7 +3,7 @@ using simpleline.services.executor.main.binder.exceptions;
 
 namespace simpleline.services.executor.main.binder;
 
-internal abstract class OptionBinderBase {
+internal abstract class BinderBase {
     public void Bind(IEnumerable<Option> options, Data data) {
         try {
             OnBind(options, data);

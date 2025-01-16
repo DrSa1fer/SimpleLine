@@ -2,14 +2,12 @@
 using Microsoft.Extensions.DependencyInjection;
 using simpleline.configs;
 using simpleline.exmodels;
-using simpleline.exmodels.typizer;
 using simpleline.services.executor;
 using simpleline.services.executor.help.helper;
 using simpleline.services.executor.main.binder;
-using simpleline.services.executor.main.binder.options;
-using simpleline.services.executor.main.binder.options.arguments;
-using simpleline.services.executor.main.binder.options.flags;
-using simpleline.services.executor.main.binder.options.parameters;
+using simpleline.services.executor.main.binder.handlers.arguments;
+using simpleline.services.executor.main.binder.handlers.flags;
+using simpleline.services.executor.main.binder.handlers.parameters;
 using simpleline.services.executor.main.invoker;
 using simpleline.services.executor.main.typizer;
 using simpleline.services.registrar;
@@ -20,6 +18,7 @@ using simpleline.services.registrar.options.commands;
 using simpleline.services.router;
 using simpleline.workers.parser;
 using simpleline.workers.tokenizer;
+using Binder = simpleline.services.executor.main.binder.Binder;
 using Console = simpleline.exmodels.Console;
 
 namespace simpleline;
@@ -27,18 +26,18 @@ namespace simpleline;
 public static class SimpleLine {
     public static void Run(IEnumerable<string> input,
         Console? console = null,
-        ApplicationInfo? helpConfig = null,
-        SpecialFlagConfig? helpKeys = null,
-        KeyConfig? parseConfig = null,
+        ApplicationMeta? helpConfig = null,
+        FlagConfig? helpKeys = null,
+        ParseConfig? parseConfig = null,
         CustomTypizerCollection? typizerCollection = null,
         Assembly[]? assemblies = null
     ) {
         var services = new ServiceCollection();
 
         services.AddSingleton(typizerCollection ?? new CustomTypizerCollection());
-        services.AddSingleton(parseConfig ?? new KeyConfig());
-        services.AddSingleton(helpConfig ?? new ApplicationInfo());
-        services.AddSingleton(helpKeys ?? new SpecialFlagConfig());
+        services.AddSingleton(parseConfig ?? new ParseConfig());
+        services.AddSingleton(helpConfig ?? new ApplicationMeta());
+        services.AddSingleton(helpKeys ?? new FlagConfig());
         services.AddSingleton(console ?? new Console());
 
         var provider = Init(services);
@@ -67,7 +66,7 @@ public static class SimpleLine {
         services.AddScoped<TypizerBase, Typizer>();
 
         //*Options
-        services.AddScoped<OptionBinderBase, OptionBinder>();
+        services.AddScoped<BinderBase, Binder>();
         services.AddScoped<ParameterHandler>();
         services.AddScoped<ArgumentHandler>();
         services.AddScoped<FlagHandler>();

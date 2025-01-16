@@ -1,10 +1,11 @@
 using simpleline.attributes;
+using simpleline.user.models;
 using simpleline.user.views;
 
 namespace simpleline.user.controllers;
 
 [Command]
-[Route("home")] // program + -l 100 -r = 80 -h
+[Route("home 10o")] // program + -l 100 -r = 80 -h
 public class HomeController {
     [Parameter(["l", "left"])] public int Left;
 
@@ -20,6 +21,6 @@ public class HomeController {
         Console.WriteLine($"Left = {Left}, Operator = {Operator}, Right = {Right}");
         Console.WriteLine($"Flag = {Help}");
 
-        return null; // new TestView(new TestModel());
+        return new TestView(new TestModel());
     }
 }

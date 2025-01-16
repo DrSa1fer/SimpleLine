@@ -1,6 +1,6 @@
 namespace simpleline.exmodels;
 
-public class ApplicationInfo(
+public class ApplicationMeta(
     string? program,
     string? version,
     string? description,
@@ -9,7 +9,7 @@ public class ApplicationInfo(
     string? website,
     string? documentation
 ) {
-    public ApplicationInfo() : this(
+    public ApplicationMeta() : this(
         "program",
         "1.0.0-stable",
         "My cli program",
