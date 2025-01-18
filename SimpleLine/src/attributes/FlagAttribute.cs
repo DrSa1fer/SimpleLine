@@ -4,7 +4,8 @@ using simpleline.services.registrar;
 namespace simpleline.attributes;
 
 [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property | AttributeTargets.Parameter)]
-public class FlagAttribute(string[] aliases) : Attribute, IRegistered,
-    IFlagAttribute {
-    public ICollection<string> Keys { get; } = aliases;
+public class FlagAttribute(
+    string[] aliases
+) : Attribute, IRegistered, IFlagAttribute {
+    public ICollection<string> Aliases { get; } = aliases;
 }

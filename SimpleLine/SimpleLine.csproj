@@ -12,4 +12,8 @@
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="src\services\executor\help\helper\exceptions\" />
+    </ItemGroup>
+
 </Project>

@@ -16,4 +16,11 @@ internal static class StringHelper {
     public static string HReplace(this string source, string oldValue, string newValue) {
         return source.Replace(oldValue, newValue, StringComparison.Ordinal);
     }
+
+    public static string[] HSplit(this string source) {
+        return source.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+    }
+    public static string[] HSplit(this string source, string[] separators) {
+        return source.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+    }
 }

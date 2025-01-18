@@ -15,27 +15,35 @@ internal sealed class Data {
         return ~position < 0 && position < _input.Length;
     }
 
-    public bool Contains(string key) {
-        return IndexOfKey(key) > -1;
+    public bool Contains(string alias) {
+        return IndexOfAlias(alias) > -1;
     }
 
-    public bool ContainsAny(IEnumerable<int> positions) {
-        return positions.Any(Contains);
+    public bool ContainsAny(IEnumerable<string> aliass) {
+        return aliass.Any(Contains);
     }
 
-    public bool ContainsAny(IEnumerable<string> keys) {
-        return keys.Any(Contains);
-    }
-
-    public string[] GetValues(int position, int count) {
+    public void TakeKey(int position) {
         throw new NotImplementedException();
     }
 
-    public string[] GetValues(string key, int count) {
+    public void TakeKey(string alias) {
         throw new NotImplementedException();
     }
 
-    public bool TryGetValues(int position, int count, [MaybeNullWhen(false)] out string[] values) {
+    public bool TryTakeKey(int position) {
+        throw new NotImplementedException();
+    }
+    
+    public string[] TakeValues(int position, int count) {
+        throw new NotImplementedException();
+    }
+
+    public string[] TakeValues(string alias, int count) {
+        throw new NotImplementedException();
+    }
+
+    public bool TryTakeValues(int position, int count, [MaybeNullWhen(false)] out string[] values) {
         values = null;
 
         if (count < 0 &&
@@ -60,8 +68,8 @@ internal sealed class Data {
         return true;
     }
 
-    public bool TryGetValues(string key, int count, [MaybeNullWhen(false)] out string[] values) {
-        var i = IndexOfKey(key);
+    public bool TryTakeValues(string alias, int count, [MaybeNullWhen(false)] out string[] values) {
+        var i = IndexOfAlias(alias);
 
         if (i == -1) {
             values = [];
@@ -69,7 +77,7 @@ internal sealed class Data {
         }
 
         _input[i] = null;
-        return TryGetValues(i + 1, count, out values);
+        return TryTakeValues(i + 1, count, out values);
     }
 
     //TODO
@@ -82,7 +90,7 @@ internal sealed class Data {
         }
     }
 
-    private int IndexOfKey(string key) {
+    private int IndexOfAlias(string alias) {
         for (var i = 0; i < _input.Length; i++) {
             if (_input[i] == null) {
                 continue;
@@ -92,7 +100,7 @@ internal sealed class Data {
                 continue;
             }
 
-            if (_input[i]!.Value.HEquals(key) == false) {
+            if (_input[i]!.Value.HEquals(alias) == false) {
                 continue;
             }
 

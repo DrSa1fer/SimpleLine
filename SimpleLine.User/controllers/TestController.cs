@@ -11,6 +11,8 @@ public class TestController {
     
     [Parameter(["l", "left"])] public int Left;
     [Parameter(["r", "right"])] public int Right;
+    
+    [Env("as")] public string Env;
 
     [Action]
     public static void Invoke([Argument(1)] int test) {

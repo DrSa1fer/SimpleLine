@@ -6,6 +6,7 @@ using simpleline.services.executor;
 using simpleline.services.executor.help.helper;
 using simpleline.services.executor.main.binder;
 using simpleline.services.executor.main.binder.handlers.arguments;
+using simpleline.services.executor.main.binder.handlers.envs;
 using simpleline.services.executor.main.binder.handlers.flags;
 using simpleline.services.executor.main.binder.handlers.parameters;
 using simpleline.services.executor.main.invoker;
@@ -23,7 +24,7 @@ using Console = simpleline.exmodels.Console;
 
 namespace simpleline;
 
-public static class SimpleLine {
+public class SimpleLine {
     public static void Run(IEnumerable<string> input,
         Console? console = null,
         ApplicationMeta? helpConfig = null,
@@ -70,6 +71,7 @@ public static class SimpleLine {
         services.AddScoped<ParameterHandler>();
         services.AddScoped<ArgumentHandler>();
         services.AddScoped<FlagHandler>();
+        services.AddScoped<EnvHandler>();
 
         //Help
         services.AddScoped<HelperBase, Helper>();
