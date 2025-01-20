@@ -1,4 +1,4 @@
-namespace simpleline.exmodels;
+namespace simpleline.external;
 
 public class ApplicationMeta(
     string? program,

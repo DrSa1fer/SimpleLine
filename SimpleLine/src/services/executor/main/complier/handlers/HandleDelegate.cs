@@ -1,6 +1,5 @@
 using simpleline.models.options;
-using simpleline.services.executor.main.binder;
 
-namespace simpleline.services.executor.main.validator.handlers;
+namespace simpleline.services.executor.main.complier.handlers;
 
 internal delegate void HandleDelegate(IOptionAttribute attribute, Option option);

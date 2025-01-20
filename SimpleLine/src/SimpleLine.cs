@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 using simpleline.configs;
-using simpleline.exmodels;
+using simpleline.external;
 using simpleline.services.executor;
 using simpleline.services.executor.help.helper;
 using simpleline.services.executor.main.binder;
@@ -20,7 +20,7 @@ using simpleline.services.router;
 using simpleline.workers.parser;
 using simpleline.workers.tokenizer;
 using Binder = simpleline.services.executor.main.binder.Binder;
-using Console = simpleline.exmodels.Console;
+using Console = simpleline.external.Console;
 
 namespace simpleline;
 

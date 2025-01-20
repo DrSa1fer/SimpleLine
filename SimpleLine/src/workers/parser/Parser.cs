@@ -17,7 +17,8 @@ internal class Parser(ParseConfig conf) : ParserBase {
             var prefix = conf.KeyPrefixes.FirstOrDefault(arg.HStartsWith);
 
             if (Path.Exists(arg)) {
-                
+                ls.Add(Symbol.CreateValue(arg));
+                continue;
             }
             
             if (prefix == null) {
