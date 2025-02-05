@@ -4,7 +4,7 @@ using simpleline.workers.parser.exceptions;
 namespace simpleline.workers.parser;
 
 internal abstract class ParserBase {
-    public Symbol[] Parse(IEnumerable<string> args) {
+    public IEnumerable<Symbol> Parse(IEnumerable<string> args) {
         try {
             return OnParse(args);
         }
@@ -13,5 +13,5 @@ internal abstract class ParserBase {
         }
     }
 
-    protected abstract Symbol[] OnParse(IEnumerable<string> args);
+    protected abstract IEnumerable <Symbol> OnParse(IEnumerable<string> args);
 }

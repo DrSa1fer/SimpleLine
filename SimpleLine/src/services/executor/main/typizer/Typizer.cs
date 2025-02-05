@@ -1,84 +1,79 @@
-using simpleline.external;
-using simpleline.services.executor.main.typizer.primitives;
-using Boolean = simpleline.services.executor.main.typizer.primitives.Boolean;
-using Byte = simpleline.services.executor.main.typizer.primitives.Byte;
-using Char = simpleline.services.executor.main.typizer.primitives.Char;
-using Decimal = simpleline.services.executor.main.typizer.primitives.Decimal;
-using Double = simpleline.services.executor.main.typizer.primitives.Double;
-using Int16 = simpleline.services.executor.main.typizer.primitives.Int16;
-using Int32 = simpleline.services.executor.main.typizer.primitives.Int32;
-using Int64 = simpleline.services.executor.main.typizer.primitives.Int64;
-using SByte = simpleline.services.executor.main.typizer.primitives.SByte;
-using Single = simpleline.services.executor.main.typizer.primitives.Single;
-using String = simpleline.services.executor.main.typizer.primitives.String;
+using System.Globalization;
+using simpleline.models.options;
 
-namespace simpleline.services.executor.main.typizer;
+namespace simpleline.services.executor.typizer;
 
-internal class Typizer(CustomTypizerCollection collection) : TypizerBase {
-    private readonly Dictionary<Type, Func<IEnumerable<string>, object?>> _custom = collection.Typizers;
-    private readonly Dictionary<Type, Func<string, object?>> _primitive = new() {
-        {
-            typeof(sbyte),
-            SByte.Typize
-        }, {
-            typeof(short),
-            Int16.Typize
-        }, {
-            typeof(int),
-            Int32.Typize
-        }, {
-            typeof(long),
-            Int64.Typize
-        }, {
-            typeof(byte),
-            Byte.Typize
-        }, {
-            typeof(ushort),
-            Uint16.Typize
-        }, {
-            typeof(uint),
-            Uint32.Typize
-        }, {
-            typeof(ulong),
-            Uint64.Typize
-        }, {
-            typeof(float),
-            Single.Typize
-        }, {
-            typeof(double),
-            Double.Typize
-        }, {
-            typeof(decimal),
-            Decimal.Typize
-        }, {
-            typeof(char),
-            Char.Typize
-        }, {
-            typeof(bool),
-            Boolean.Typize
-        }, {
-            typeof(string),
-            String.Typize
+internal class Typizer : TypizerBase {
+    protected override object? OnTypize(Option option, IEnumerable<string> values) {
+        var arr = values.ToArray();
+        var type = option.Type;
+
+        if (option.Attributes.FirstOrDefault(x => x is ITypizeAttribute) is {} attribute) {
+            return null;
         }
-    };
 
-    protected override object? OnTypize(Type type, IEnumerable<string> values) {
-        if (_custom.TryGetValue(type, out var custom)) {
-            return custom(values);
+        return arr.Length switch {
+            > 1 => TypizeMultiply(type, arr),
+            1 => TypizeSingle(type, arr[0]),
+            _ => TypizeZero(type)
+        };
+    }
+
+    private static object? TypizeZero(Type type) {
+        if (type == typeof(bool)) {
+            return false;
+        }
+
+        if (type == typeof(string)) {
+            return string.Empty;
         }
         
-        if (_primitive.TryGetValue(type, out var primitive)) {
-            return primitive(values.Single());
+        
+        
+        throw new Exception();
+    }
+
+    private static object? TypizeSingle(Type type, string value) {
+        if (type == typeof(string)) {
+            return value;
+        }
+        
+        if (type == typeof(bool)) {
+            return value switch {
+                "true" or "t" or "yes" or "y" or "1" => true,
+                "false" or "f" or "no" or "n" or "0" => false,
+                _ => throw new Exception()
+            };
+        }
+        
+        if (type.IsEnum) {
+            return Enum.Parse(type, value);
+        }
+        
+        if (type.IsAssignableTo(typeof(IConvertible))) {
+            return Convert.ChangeType(value, type, CultureInfo.InvariantCulture);
         }
 
-        if (_custom.Keys.FirstOrDefault(x => x.IsAssignableTo(type)) is { } customKey) {
-            return _custom[customKey](values);
+        if (type.GetConstructor([typeof(string)]) is {} stringCtor) {
+            return stringCtor.Invoke([value]);
+        }
+        
+        throw new Exception();
+    }
+
+    private static object? TypizeMultiply(Type type, string[] values) {
+        if (type.IsArray) {
+            var elementType = type.GetElementType()!;
+            var lArray = Array.CreateInstance(elementType, values.Length);
+
+            for (var i = 0; i < lArray.Length; i++) {
+                lArray.SetValue(TypizeSingle(elementType, values[i]), i);
+            }
+
+            return lArray;
         }
 
-        if (_primitive.Keys.FirstOrDefault(x => x.IsAssignableTo(type)) is { } primitiveKey) {
-            return _primitive[primitiveKey](values.Single());
-        }
 
-        throw new NotSupportedException($"Type: [{type}] not supported");
+        throw new NotSupportedException("Not array collections not supported");
     }
 }

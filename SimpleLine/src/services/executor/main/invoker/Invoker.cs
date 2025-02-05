@@ -5,19 +5,20 @@ using simpleline.services.executor.main.complier;
 namespace simpleline.services.executor.main.invoker;
 
 internal class Invoker(BinderBase binder, ComplierBase complier) : InvokerBase {
-    protected override string OnInvoke(Command command, Data data) {
+    protected override string OnInvoke(Command command, DataInput dataInput) {
         var action = command.Actions.First();
 
-        binder.Bind(command.Options, data);
-        binder.Bind(action.Options, data);
+        binder.Bind(command.Options, dataInput);
+        binder.Bind(action.Options, dataInput);
         
-        data.Ensure();
+        if (dataInput.Any()) {
+            throw new Exception("Some values not used: " + string.Join(", ", dataInput));
+        }
         
         complier.Compliant(command.Options);
         complier.Compliant(action.Options);
-
-        var args = action.Options.Select(x => x.Get()).ToArray();
         
-        return action.Invoke(args)?.ToString() ?? string.Empty;
+        var ps = action.Options.Select(x => x.Get()).ToArray();
+        return action.Invoke(ps)?.ToString() ?? string.Empty;
     }
 }

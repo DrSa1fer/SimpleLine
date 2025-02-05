@@ -5,7 +5,7 @@ using simpleline.user.views;
 namespace simpleline.user.controllers;
 
 [Command]
-[Route("home 10o")] // program + -l 100 -r = 80 -h
+// [Route("home 10o")] // program + -l 100 -r = 80 -h
 public class HomeController {
     [Parameter(["l", "left"])] public int Left;
 

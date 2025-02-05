@@ -1,12 +1,7 @@
 namespace simpleline.configs;
 
-public class FlagConfig {
-    public FlagConfig(IReadOnlyCollection<string> helpKeys) {
-        HelpKeys = helpKeys;
-    }
-    public FlagConfig() {
-        HelpKeys = ["h", "help"];
-    }
+public class FlagConfig(IReadOnlyCollection<string> helpKeys) {
+    public FlagConfig() : this(["h", "help"]) { }
 
-    public IReadOnlyCollection<string> HelpKeys { get; }
+    public IReadOnlyCollection<string> HelpKeys { get; } = helpKeys;
 }

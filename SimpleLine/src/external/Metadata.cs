@@ -1,6 +1,6 @@
 namespace simpleline.external;
 
-public class ApplicationMeta(
+public class Metadata(
     string? program,
     string? version,
     string? description,
@@ -9,7 +9,7 @@ public class ApplicationMeta(
     string? website,
     string? documentation
 ) {
-    public ApplicationMeta() : this(
+    public Metadata() : this(
         "program",
         "1.0.0-stable",
         "My cli program",

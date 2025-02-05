@@ -1,45 +1,30 @@
+using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 using simpleline.helpers;
 
-namespace simpleline.services.executor.main.binder;
+namespace simpleline.services.executor;
 
-internal sealed class Data {
-    private readonly Symbol?[] _input;
-    
-    public Data(Input input) {
-        _input = input.ToArray();
-        input.Clear();
-    }
+internal sealed class DataInput(IEnumerable<Symbol> input) : IEnumerable<Symbol> {
+    private readonly Symbol?[] _input = input.ToArray();
 
     public bool Contains(int position) {
         return ~position < 0 && position < _input.Length;
     }
 
     public bool Contains(string alias) {
-        return IndexOfAlias(alias) > -1;
-    }
-
-    public bool ContainsAny(IEnumerable<string> aliass) {
-        return aliass.Any(Contains);
-    }
-
-    public void TakeKey(int position) {
-        throw new NotImplementedException();
-    }
-
-    public void TakeKey(string alias) {
-        throw new NotImplementedException();
+        return _input.Any(x =>
+            x is { IsKey: true } && 
+            x.Value.HEquals(alias)
+        );
     }
 
     public bool TryTakeKey(int position) {
-        throw new NotImplementedException();
+        return Contains(position)
+               && _input[position] != null
+               && _input[position]!.IsKey;
     }
     
-    public string[] TakeValues(int position, int count) {
-        throw new NotImplementedException();
-    }
-
-    public string[] TakeValues(string alias, int count) {
+    public bool TryTakeKey(string alias) {
         throw new NotImplementedException();
     }
 
@@ -96,7 +81,7 @@ internal sealed class Data {
                 continue;
             }
 
-            if (_input[i]!.IsValue()) {
+            if (_input[i]!.IsKey) {
                 continue;
             }
 
@@ -108,5 +93,16 @@ internal sealed class Data {
         }
 
         return -1;
+    }
+
+    public IEnumerator<Symbol> GetEnumerator() {
+        return _input
+            .Where(x => x is not null)
+            .OfType<Symbol>()
+            .GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator() {
+        return GetEnumerator();
     }
 }

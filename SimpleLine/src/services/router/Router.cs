@@ -1,6 +1,5 @@
 using simpleline.helpers;
 using simpleline.models.commands;
-using simpleline.services.router.exceptions;
 using FormatException = simpleline.services.router.exceptions.FormatException;
 
 namespace simpleline.services.router;
@@ -8,9 +7,10 @@ namespace simpleline.services.router;
 internal class Router : RouterBase {
     private record Candidate(Command Command, string[] Route);
 
-    protected override Command OnRoute(IEnumerable<Command> commands, Route route) {
+    protected override Command OnRoute(IEnumerable<Command> commands, RouteInput routeInput) {
+        return commands.First();
+        
         var candidates = new List<Candidate>();
-
         foreach (var command in commands) {
             var attr = command.Attributes.OfType<IRouteAttribute>().FirstOrDefault();
             if (attr == null) {
@@ -38,8 +38,8 @@ internal class Router : RouterBase {
             candidates.Add(new Candidate(command, r));
         }
 
-        for (var seek = 0; route.TryPeek(out var value); seek++) {
-            var iValue = value;
+        for (var seek = 0; routeInput.TryPeek(out var value); seek++) {
+            var iValue = value.Value;
             var iSeek = seek;
 
             var t = candidates
@@ -63,7 +63,7 @@ internal class Router : RouterBase {
                 break;
             }
 
-            _ = route.Take();
+            _ = routeInput.Dequeue();
             if (t.Count == 1) {
                 if (t[0].Route.Length == iSeek + 1) {
                     return t[0].Command;

@@ -5,7 +5,7 @@ using simpleline.services.registrar.exceptions;
 namespace simpleline.services.registrar;
 
 internal abstract class RegistrarBase {
-    public Command[] Register(IEnumerable<Assembly> assemblies) {
+    public Command[] Register(IEnumerable<TypeInfo> assemblies) {
         try {
             return OnRegister(assemblies);
         }
@@ -14,5 +14,5 @@ internal abstract class RegistrarBase {
         }
     }
 
-    protected abstract Command[] OnRegister(IEnumerable<Assembly> assemblies);
+    protected abstract Command[] OnRegister(IEnumerable<TypeInfo> types);
 }

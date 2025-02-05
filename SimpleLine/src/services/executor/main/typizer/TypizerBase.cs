@@ -1,16 +1,17 @@
-using simpleline.services.executor.main.typizer.exceptions;
+using simpleline.models.options;
+using simpleline.services.executor.typizer.exceptions;
 
-namespace simpleline.services.executor.main.typizer;
+namespace simpleline.services.executor.typizer;
 
 internal abstract class TypizerBase {
-    public object? Typize(Type type, IEnumerable<string> values) {
+    public object? Typize(Option option, IEnumerable<string> values) {
         try {
-            return OnTypize(type, values);
+            return OnTypize(option, values);
         }
         catch (Exception e) {
             throw new TypizeException(e);
         }
     }
 
-    protected abstract object? OnTypize(Type type, IEnumerable<string> values);
+    protected abstract object? OnTypize(Option option, IEnumerable<string> values);
 }
